@@ -14,4 +14,4 @@ Run all tests with `mvn test`.
 ## Log
 | Date | Week/Day | Done | Notes |
 |------|----------|------|-------|
-| 23 Oct 2026 | W1 D1 | Valid Parentheses (understood); Min Stack started | Min Stack file pushed as a skeleton; implementation pending |
+| 23 Oct 2026 | W1 D1 | Valid Parentheses (understood); Min Stack done, 10/10 tests passing | Two-stack approach, O(1) ops. Next: space-optimized version (push to mins only when x <= min) |
