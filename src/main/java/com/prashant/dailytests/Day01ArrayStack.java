@@ -30,14 +30,14 @@ public class Day01ArrayStack {
     }
 
     public void push(int x) {
-        if (size > data.length) {
+        if (size >= data.length) {
             grow();
         }
         data[size++] = x;
     }
 
     public int pop() {
-        if (size < 0) {
+        if (isEmpty()) {
             throw new NoSuchElementException("stack is empty");
         }
         return data[--size];
@@ -63,6 +63,8 @@ public class Day01ArrayStack {
     }
 
     private void grow() {
-        data = Arrays.copyOf(data, data.length * 2);
+
+        int newCapacity = data.length == 0 ? 1 : data.length * 2;
+        data = Arrays.copyOf(data, newCapacity );
     }
 }
