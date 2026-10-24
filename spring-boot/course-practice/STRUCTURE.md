@@ -1,6 +1,9 @@
-# course-practice: package structure
+# 🏗️ course-practice: package structure
 
-Base package: `com.prashant.coursepractice` (only `CoursePracticeApplication` lives here).
+![Layered](https://img.shields.io/badge/architecture-layered-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen)
+
+> [!NOTE]
+> Base package: `com.prashant.coursepractice` (only `CoursePracticeApplication` lives here).
 
 | Package | Responsibility | Example |
 |---|---|---|
@@ -14,19 +17,60 @@ Base package: `com.prashant.coursepractice` (only `CoursePracticeApplication` li
 | `exception` | Custom exceptions + `@RestControllerAdvice` `GlobalExceptionHandler` (404/400 JSON). | `StudentNotFoundException` |
 | `config` | `@Configuration` / `@Bean` / `@ConfigurationProperties` (create when needed). | — |
 
-## Request flow
+### 🧱 Layer diagram
+```mermaid
+flowchart TB
+  controller --> service
+  service -. implemented by .-> impl[service.impl]
+  impl --> repository
+  impl --> mapper
+  mapper --> dto
+  mapper --> model
+  repository --> model
+  controller --> dto
+  exception -. handles errors from .-> impl
 ```
+
+## 🔀 Request flow
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant D as DispatcherServlet
+  participant CT as Controller
+  participant S as Service
+  participant R as Repository
+  participant DB as DB
+  C->>D: HTTP JSON
+  D->>CT: @Valid StudentRequest
+  CT->>S: business rules
+  S->>R: query
+  R->>DB: Student entity
+  DB-->>R: Student
+  R-->>S: Student
+  S-->>CT: Mapper (Student -> StudentResponse)
+  CT-->>C: Jackson -> JSON
+  Note over S,CT: Errors: Service throws StudentNotFoundException -> GlobalExceptionHandler -> 404 JSON
+```
+
+</details>
+
+<details><summary>Text version</summary>
+
+```text
 HTTP JSON -> DispatcherServlet -> Controller (@Valid StudentRequest)
           -> Service (business rules) -> Repository -> DB (Student entity)
           <- Mapper (Student -> StudentResponse) <- Controller -> Jackson -> JSON
 Errors: Service throws StudentNotFoundException -> GlobalExceptionHandler -> 404 JSON
 ```
 
-## Naming conventions
+</details>
+
+## 🏷️ Naming conventions
 - `XxxController`, `XxxService` + `XxxServiceImpl`, `XxxRepository`, `XxxRequest` / `XxxResponse`, `XxxMapper`, `XxxNotFoundException`.
-- Constructor injection only (no field `@Autowired` in main code).
+- ⚠️ Constructor injection only (no field `@Autowired` in main code).
 - Controllers depend on services (interfaces), services depend on repositories.
 - Tests mirror main packages, e.g. `src/test/java/.../controller/StudentControllerTest`.
 
-## Rule
-Every future Spring Boot task in this repo must follow this structure: new features add classes to the matching package, never back into one flat folder.
+## 📌 Rule
+> [!IMPORTANT]
+> Every future Spring Boot task in this repo must follow this structure: new features add classes to the matching package, never back into one flat folder.
