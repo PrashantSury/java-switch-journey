@@ -42,14 +42,18 @@ public class Day02RpnEvaluator {
                 stack.push(Integer.parseInt(token));
             }
         }
-        if (stack.isEmpty()) {
+        if (stack.size() != 1) {
             throw new IllegalArgumentException("no result");
         }
         return stack.pop();
     }
 
     private static boolean isOperator(String token) {
-        return "+-*/".indexOf(token.charAt(0)) >= 0;
+
+       if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
+           return true;
+       }
+        return false;
     }
 
     private static int apply(int a, int b, String op) {
@@ -59,7 +63,7 @@ public class Day02RpnEvaluator {
             case "-":
                 return Math.subtractExact(a, b);
             case "*":
-                return a * b;
+                return Math.multiplyExact(a,  b);
             case "/":
                 if (b == 0) {
                     throw new ArithmeticException("division by zero");

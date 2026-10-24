@@ -30,4 +30,25 @@ public class StudentController {
     public Student create(@Valid @RequestBody Student student) {
         return repository.save(student);
     }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Student update(@Valid @RequestBody Student student) {
+          Student st  = repository.findById(student.getId()).orElseThrow(() -> new StudentNotFoundException(student.getId()));
+          st.setEmail(student.getEmail());
+          st.setName(student.getName());
+          return repository.save(st);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@Valid @RequestBody Student student) {
+        repository.deleteById(student.getId());
+    }
+
+    @GetMapping ("/search?name=")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Student> search(@Valid @RequestParam String name) {
+        return repository.findByNameContainingIgnoreCase(name);
+    }
 }
