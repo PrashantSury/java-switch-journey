@@ -14,3 +14,6 @@ Done when `mvn test` passes inside `spring-boot/course-practice`.
 1. What's the difference between `@PathVariable`, `@RequestParam` and `@RequestBody`? When would you use each?
 2. `@RestController` vs `@Controller`: what does `@RestController` add?
 3. Should PUT be idempotent? How is it different from PATCH, and what status codes would you return for create vs update vs delete?
+
+---
+**Note (structure update):** the module now uses a layered layout (see `course-practice/STRUCTURE.md`). Your PUT/DELETE/search fixes now go in `controller/StudentController.java` (endpoint mappings) and `service/impl/StudentServiceImpl.java` (lookup/delete logic). Request body is now `dto/StudentRequest`; tests are in `src/test/java/com/prashant/coursepractice/controller/StudentControllerTest.java`.
