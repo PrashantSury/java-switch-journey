@@ -1,6 +1,12 @@
-# Mistake log
+# 🔁 Mistake log
 
-Add every problem you got wrong or got stuck on. Redo it after 3 days and again after 7 days.
+![Spaced repetition](https://img.shields.io/badge/redo-day%203%20%2B%20day%207-purple)
+
+> [!IMPORTANT]
+> Add every problem you got wrong or got stuck on. Redo it after 3 days and again after 7 days.
+
+> [!NOTE]
+> **Legend:** 🐞 buggy round · 🧩 DSA · 🗄️ SQL · 🌱 Spring — mark a redo ✅ when done cleanly, ❌ if you got stuck again.
 
 | Date | Problem | What went wrong | Redo on day 3 | Redo on day 7 |
 |------|---------|-----------------|---------------|---------------|
