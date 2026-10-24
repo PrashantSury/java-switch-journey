@@ -1,0 +1,56 @@
+package com.prashant.coursepractice.service.impl;
+
+import com.prashant.coursepractice.dto.StudentRequest;
+import com.prashant.coursepractice.dto.StudentResponse;
+import com.prashant.coursepractice.exception.StudentNotFoundException;
+import com.prashant.coursepractice.mapper.StudentMapper;
+import com.prashant.coursepractice.model.Student;
+import com.prashant.coursepractice.repository.StudentRepository;
+import com.prashant.coursepractice.service.StudentService;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class StudentServiceImpl implements StudentService {
+    private final StudentRepository repository;
+
+    public StudentServiceImpl(StudentRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public List<StudentResponse> findAll() {
+        return repository.findAll().stream().map(StudentMapper::toResponse).toList();
+    }
+
+    @Override
+    public StudentResponse findById(Long id) {
+        return StudentMapper.toResponse(
+                repository.findById(id).orElseThrow(() -> new StudentNotFoundException(id)));
+    }
+
+    @Override
+    public StudentResponse create(StudentRequest request) {
+        return StudentMapper.toResponse(repository.save(StudentMapper.toEntity(request)));
+    }
+
+    @Override
+    public StudentResponse update(StudentRequest request) {
+        Student st = repository.findById(request.getId())
+                .orElseThrow(() -> new StudentNotFoundException(request.getId()));
+        st.setEmail(request.getEmail());
+        st.setName(request.getName());
+        return StudentMapper.toResponse(repository.save(st));
+    }
+
+    @Override
+    public void delete(StudentRequest request) {
+        repository.deleteById(request.getId());
+    }
+
+    @Override
+    public List<StudentResponse> searchByName(String name) {
+        return repository.findByNameContainingIgnoreCase(name).stream().map(StudentMapper::toResponse).toList();
+    }
+}
