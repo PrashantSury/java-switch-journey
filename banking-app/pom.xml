@@ -47,7 +47,17 @@
         <plugins>
             <plugin><groupId>org.springframework.boot</groupId><artifactId>spring-boot-maven-plugin</artifactId></plugin>
             <!-- Runs *IT.java tests during `mvn verify` -->
-            <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-failsafe-plugin</artifactId></plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <!-- Windows reports the legacy zone "Asia/Calcutta", which Postgres rejects; run tests in UTC -->
+                <configuration><argLine>-Duser.timezone=UTC</argLine></configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration><argLine>-Duser.timezone=UTC</argLine></configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
