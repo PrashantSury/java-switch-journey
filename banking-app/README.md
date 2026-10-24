@@ -1,104 +1,103 @@
-# 🏦 banking-app: project setup
+# 🏦 banking-app: infrastructure skeleton
 
-![Phase](https://img.shields.io/badge/Phase-1%20Retail%20core-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.1-brightgreen) ![DB](https://img.shields.io/badge/DB-PostgreSQL-blue) ![Status](https://img.shields.io/badge/status-skeleton-yellow)
+![Phase](https://img.shields.io/badge/Phase-1%20Retail%20core-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen) ![Java](https://img.shields.io/badge/Java-21-blue) ![DB](https://img.shields.io/badge/PostgreSQL-16%20in%20Docker-blue) ![Status](https://img.shields.io/badge/status-skeleton-yellow)
 
 > [!NOTE]
-> Base package: `com.prashant.banking`. Layers follow [`spring-boot/course-practice/STRUCTURE.md`](../spring-boot/course-practice/STRUCTURE.md), plus `security` and `config`. Schema and roadmap: the **Banking Practice App: Schema & Security Design** Page.
+> Plumbing only: no entities, services or endpoints. Every `TODO(write by hand)` is **your** practice. Layout: [`STRUCTURE.md`](STRUCTURE.md).
 
 ## 🗂️ What's here
 ```text
 banking-app/
-├── pom.xml                         Boot 4.1.1: webmvc, validation, data-jpa, security, actuator, flyway + postgres
-├── src/main/java/com/prashant/banking/
-│   ├── BankingApplication.java
-│   ├── controller/  service/  service/impl/  repository/
-│   ├── model/  dto/  mapper/  exception/  config/
-│   └── security/SecurityConfig.java   ⚠️ permit-all for now (TODO)
-├── src/main/resources/
-│   ├── application.yml             DB_URL / DB_USERNAME / DB_PASSWORD env vars
-│   └── db/migration/V1__auth.sql, V2__core.sql
-└── src/test/   BankingApplicationTests (context, /actuator/health, BCrypt) on H2, Flyway off
+├── pom.xml                  Boot 4.1.2, Java 21, springdoc 3.2.0, Testcontainers (no H2, no Lombok)
+├── docker-compose.yml       postgres:16 on localhost:5433, healthcheck
+├── docker/init/01-roles.sh  creates banking_migrator (DDL) + banking_app (DML only)
+├── .env.example             copy to .env (git-ignored)
+└── src/
+    ├── main/java/com/prashant/banking/  common/ config/ security/ + 6 feature packages
+    ├── main/resources/application.yml   all secrets from env vars, ddl-auto=validate
+    ├── main/resources/db/migration/V1__create_schemas.sql   auth, core, audit
+    └── test/  AbstractIntegrationTest (Testcontainers) + BankingApplicationIT
 ```
 
-> [!WARNING]
-> `SecurityConfig` currently **permits every request** so you can start. It gets replaced by the JWT chain in the auth week.
-
-## ✅ Setup checklist for tomorrow
-
-### 🐘 1. PostgreSQL + pgAdmin 4
-- [ ] Open pgAdmin, connect to your local server as `postgres`.
-- [ ] Open **Query Tool** on the `postgres` database and run:
-
-```sql
-CREATE ROLE banking_app LOGIN PASSWORD 'choose-a-local-password';
-CREATE DATABASE java_switch OWNER banking_app;
-```
-
-- [ ] Check your version is 13+ (`SELECT version();`), because `gen_random_uuid()` is built in from PG 13.
-
-> [!CAUTION]
-> Never put the real password in `application.yml` or any committed file. It only lives in env vars.
-
-### ⚙️ 2. Environment variables
-| Variable | Value | Default if unset |
+## 🛡️ Two database roles
+| Role | Used by | Can do |
 |---|---|---|
-| `DB_URL` | `jdbc:postgresql://localhost:5432/java_switch` | same |
-| `DB_USERNAME` | `banking_app` | `banking_app` |
-| `DB_PASSWORD` | your local password | empty (will fail) |
-
-- [ ] **IntelliJ:** Run ▸ Edit Configurations ▸ `BankingApplication` ▸ Environment variables:
-
-```text
-DB_URL=jdbc:postgresql://localhost:5432/java_switch;DB_USERNAME=banking_app;DB_PASSWORD=choose-a-local-password
-```
-
-- [ ] **Windows PowerShell** (current session only, for `mvn spring-boot:run`):
-
-```bash
-$env:DB_URL="jdbc:postgresql://localhost:5432/java_switch"
-$env:DB_USERNAME="banking_app"
-$env:DB_PASSWORD="choose-a-local-password"
-mvn spring-boot:run
-```
-
-- [ ] **Windows CMD** alternative: `set DB_PASSWORD=choose-a-local-password` (or `setx DB_PASSWORD "..."` to keep it permanently, then reopen the terminal).
-
-### ▶️ 3. Run the app so Flyway creates the schema
-- [ ] In IntelliJ: right-click `banking-app/pom.xml` ▸ **Add as Maven Project** (it's a separate module), then reload Maven.
-- [ ] Run `BankingApplication`. Look for `Successfully applied 2 migrations to schema "auth"` in the log.
-- [ ] Open http://localhost:8080/actuator/health and expect `"status":"UP"` with `db` UP.
-
-### 🔍 4. Verify in pgAdmin
-- [ ] Refresh `java_switch` ▸ Schemas. You should see `auth`, `core` and Flyway's history table.
-- [ ] `auth`: users, roles, permissions, role_permissions, user_roles, refresh_tokens, login_attempts, password_reset_tokens.
-- [ ] `core`: branches, customers, kyc_documents, account_types, accounts, transactions.
-
-```sql
-SELECT table_schema, table_name FROM information_schema.tables
-WHERE table_schema IN ('auth','core') ORDER BY 1, 2;
-SELECT version, description, success FROM auth.flyway_schema_history;
-```
-
-> [!WARNING]
-> Never edit `V1__auth.sql` or `V2__core.sql` after they've run: Flyway checksums them. Changes go in a new `V3__...sql`.
-
-### 🧪 5. Tests
-- [ ] `cd banking-app && mvn test` gives 3 tests green. They use H2 with Flyway off; Testcontainers (real PostgreSQL) replaces this in week 3.
-
-### 🐳 6. Docker Desktop (needed by end of Phase 1)
-- [ ] Install Docker Desktop for Windows with the WSL 2 backend, then check `docker run hello-world`.
-- [ ] Needed for docker-compose (app + postgres) in week 4 and Testcontainers in week 3.
-
-### ☁️ 7. AWS account (before Phase 2, not urgent)
-- [ ] Create the account, enable **MFA on root**, then stop using root.
-- [ ] Billing ▸ enable free tier usage alerts, create an **AWS Budget** ($1 and $5 email alerts).
-- [ ] IAM Identity Center or an IAM user for yourself with MFA; use region `ap-south-1` (Mumbai).
-
-> [!CAUTION]
-> Stop or delete EC2/RDS when you're not practising. NAT gateways, load balancers and Fargate are not free.
-
-### 📮 8. HTTP client
-- [ ] Install Postman (or use IntelliJ's HTTP Client with `.http` files). Make a `Banking local` environment with `baseUrl = http://localhost:8080`.
+| `banking_migrator` | Flyway | owns schemas and tables, DDL |
+| `banking_app` | the running app | `SELECT, INSERT, UPDATE, DELETE` only (via default privileges) |
 
 > [!IMPORTANT]
-> **Done when:** the app starts against PostgreSQL, `/actuator/health` is UP, pgAdmin shows the `auth` and `core` tables, and `mvn test` is green.
+> Why 5433? Your PostgreSQL installed on Windows already uses **5432**. Docker's Postgres is published on **5433**, so both can run side by side. The app uses the Docker one.
+
+## ✅ Tonight's steps (≈ 40 min)
+
+### 1. Pull and create `.env`
+```bash
+git pull
+cd banking-app
+copy .env.example .env
+```
+- [ ] Open `.env` and replace every `CHANGE_ME` with your own passwords.
+
+> [!CAUTION]
+> `.env` is git-ignored. Never commit it, and never put passwords in `application.yml`.
+
+### 2. 🐳 Start PostgreSQL (Docker Desktop must be running)
+```bash
+docker compose up -d
+docker compose ps        # STATUS should say (healthy)
+```
+> [!WARNING]
+> The roles script runs only on the **first** start of an empty volume. If you change passwords later: `docker compose down -v` then `up -d` (this wipes the Docker DB).
+
+### 3. 🐘 Connect pgAdmin
+- [ ] Register server → Host `localhost`, Port **5433**, DB `java_switch`, user `postgres` (password from `.env`).
+- [ ] Check **Login/Group Roles** shows `banking_migrator` and `banking_app`.
+
+### 4. 🔑 Create the JWT key pair (outside the repo)
+Git Bash (comes with Git for Windows) has `openssl`:
+```bash
+mkdir -p /c/dev/banking-keys && cd /c/dev/banking-keys
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out jwt-private.pem
+openssl rsa -in jwt-private.pem -pubout -out jwt-public.pem
+```
+- [ ] In `.env`: `JWT_PUBLIC_KEY_LOCATION=file:C:/dev/banking-keys/jwt-public.pem`
+> [!TIP]
+> The private key is for the `/auth/login` you'll write later (JwtEncoder). The app only needs the public key today.
+
+### 5. ⚙️ IntelliJ
+- [ ] Open `banking-app/pom.xml` as a Maven project, Project SDK = JDK 21+ (language level 21).
+- [ ] Run config for `BankingApplication` → **Environment variables**: either install the **EnvFile** plugin and point it at `.env`, or paste the `.env` lines in manually (`DB_URL`, `DB_APP_USER`, `DB_APP_PASSWORD`, `DB_MIGRATOR_USER`, `DB_MIGRATOR_PASSWORD`, `JWT_PUBLIC_KEY_LOCATION`).
+
+### 6. 🧪 Verify
+```bash
+mvn verify
+```
+- [ ] `BankingApplicationIT` passes (it starts its own throwaway Postgres; Docker Desktop must be running).
+
+### 7. ▶️ Run the app
+- [ ] Log shows `Successfully applied 1 migration` … `v1`.
+- [ ] http://localhost:8080/actuator/health → `{"status":"UP"}`
+- [ ] http://localhost:8080/swagger-ui.html opens.
+- [ ] Any other URL returns **401** (security works).
+
+### 8. 🔒 Before committing anything
+```bash
+git status    # .env and *.pem must NOT appear
+```
+
+> [!IMPORTANT]
+> Done when: tests pass, the app is UP on Docker Postgres, pgAdmin shows both roles, and `git status` is clean of secrets.
+
+## ✍️ What you write by hand
+- 🔥 Flyway migrations V2+: auth (users, roles, permissions), core (customers, accounts, transactions), audit_logs + its trigger and `REVOKE UPDATE, DELETE, TRUNCATE`
+- 🔥 JPA entities and relations, fetch types, and the N+1 you create and then fix
+- 🔥 Services: deposit, withdraw, transfer, idempotency (key + request hash), `@Version` and `FOR UPDATE` (lock accounts in fixed order)
+- 🔥 `/auth/login` with `JwtEncoder`, `@PreAuthorize` rules, `AccountSecurity.isOwner`, maker-checker for KYC
+- 🔥 The concurrent-withdrawal test and the migration test
+- 🔥 All SQL evening queries and the `generate_series` seed script
+
+> [!WARNING]
+> **Explain every line of `SecurityConfig`** before you build on it: why CSRF is off, what STATELESS means, how the JWT is validated, and what `@EnableMethodSecurity` enables. "The agent wrote it" won't work in an interview.
+
+> [!NOTE]
+> In tests, Flyway and the app both use the Testcontainers superuser; the two-role split applies to the Docker Compose database.
