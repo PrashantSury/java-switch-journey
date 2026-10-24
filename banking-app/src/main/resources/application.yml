@@ -1,18 +1,39 @@
 spring:
   application:
     name: banking-app
+
+  # Runtime connection: banking_app (DML only). No defaults for secrets on purpose.
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/java_switch}
-    username: ${DB_USERNAME:banking_app}
-    password: ${DB_PASSWORD:}          # set as env var, never commit it
-  jpa:
-    hibernate:
-      ddl-auto: validate               # Flyway owns the schema
-    open-in-view: false
+    url: ${DB_URL}
+    username: ${DB_APP_USER}
+    password: ${DB_APP_PASSWORD}
+
+  # Migrations run as banking_migrator (owns schemas, can do DDL).
   flyway:
-    enabled: true
-    schemas: auth,core
-    create-schemas: true
+    user: ${DB_MIGRATOR_USER}
+    password: ${DB_MIGRATOR_PASSWORD}
+    # Flyway history table stays in public; V1 creates auth, core, audit.
+    default-schema: public
+    locations: classpath:db/migration
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # e.g. file:C:/dev/keys/jwt-public.pem
+          public-key-location: ${JWT_PUBLIC_KEY_LOCATION}
+
+server:
+  port: ${SERVER_PORT:8080}
 
 management:
   endpoints:
@@ -21,7 +42,9 @@ management:
         include: health,info
   endpoint:
     health:
-      show-details: always
+      probes:
+        enabled: true
 
-server:
-  port: 8080
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
