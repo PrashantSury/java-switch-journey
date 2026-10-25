@@ -1,5 +1,8 @@
 package com.prashant.dsa.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Day 03 DSA (Sunday revision, Stack): Score of Parentheses (LeetCode 856), with extra rules.
  *
@@ -32,8 +35,63 @@ package com.prashant.dsa.stack;
  */
 public class ScoreOfParentheses {
 
-    public int scoreOfParentheses(String s) {
-        // TODO: implement
-        return 0;
+
+    public static int scoreOfParentheses(String s) {
+
+        if (s == null) {
+            throw new IllegalArgumentException("Input cannot be null");
+        }
+
+        if (s.isEmpty()) {
+            return 0;
+        }
+
+        Deque<Integer> stack = new ArrayDeque<>();
+        stack.push(0); // Base score for the current level
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch = s.charAt(i);
+
+            if (ch == '(') {
+                // Start a new nested group
+                stack.push(0);
+
+            } else if (ch == ')') {
+
+                // No matching opening parenthesis
+                if (stack.size() == 1) {
+                    throw new IllegalArgumentException(
+                            "Unbalanced parentheses"
+                    );
+                }
+
+                int innerScore = stack.pop();
+
+                // Empty pair () scores 1.
+                // Otherwise, (A) scores 2 * score(A).
+                int groupScore = (innerScore == 0)
+                        ? 1
+                        : Math.multiplyExact(innerScore, 2);
+
+                // Add the completed group's score to its parent.
+                int parentScore = stack.pop();
+                stack.push(Math.addExact(parentScore, groupScore));
+
+            } else {
+                throw new IllegalArgumentException(
+                        "Invalid character: " + ch
+                );
+            }
+        }
+
+        // Extra opening parentheses mean the input is unbalanced.
+        if (stack.size() != 1) {
+            throw new IllegalArgumentException(
+                    "Unbalanced parentheses"
+            );
+        }
+
+        return stack.pop();
     }
 }
