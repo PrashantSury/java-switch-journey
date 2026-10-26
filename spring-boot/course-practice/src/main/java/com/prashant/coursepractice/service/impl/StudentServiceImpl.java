@@ -36,17 +36,17 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public StudentResponse update(StudentRequest request) {
-        Student st = repository.findById(request.getId())
-                .orElseThrow(() -> new StudentNotFoundException(request.getId()));
+    public StudentResponse update(Long id,StudentRequest request) {
+        Student st = repository.findById(id)
+                .orElseThrow(() -> new StudentNotFoundException(id));
         st.setEmail(request.getEmail());
         st.setName(request.getName());
         return StudentMapper.toResponse(repository.save(st));
     }
 
     @Override
-    public void delete(StudentRequest request) {
-        repository.deleteById(request.getId());
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 
     @Override

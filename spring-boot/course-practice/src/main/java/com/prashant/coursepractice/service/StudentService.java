@@ -9,7 +9,7 @@ public interface StudentService {
     List<StudentResponse> findAll();
     StudentResponse findById(Long id);
     StudentResponse create(StudentRequest request);
-    StudentResponse update(StudentRequest request);
-    void delete(StudentRequest request);
+    StudentResponse update(Long id,StudentRequest request);
+    void delete(Long id);
     List<StudentResponse> searchByName(String name);
 }

@@ -5,8 +5,10 @@ import com.prashant.coursepractice.dto.StudentResponse;
 import com.prashant.coursepractice.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 /** HTTP only: mapping, validation trigger, status codes. Logic lives in StudentService. */
@@ -30,27 +32,52 @@ public class StudentController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public StudentResponse create(@Valid @RequestBody StudentRequest request) {
-        return service.create(request);
+    public ResponseEntity<StudentResponse> create(@Valid @RequestBody StudentRequest request) {
+
+        StudentResponse createdStudent =
+                service.create(request);
+
+        URI location = URI.create(
+                "/api/students/" + createdStudent.id());
+
+        return ResponseEntity
+                .created(location)
+                .body(createdStudent);
     }
 
     // TODO(Day02): your PUT/DELETE/search mapping fixes go here (see tasks/day02-morning.md)
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public StudentResponse update(@Valid @RequestBody StudentRequest request) {
-        return service.update(request);
+    public ResponseEntity<StudentResponse> update(@PathVariable Long id,@Valid @RequestBody StudentRequest request) {
+
+        StudentResponse studentResponse= service.update(id,request);
+        if(id.equals(studentResponse.id())){
+            return ResponseEntity.ok(studentResponse);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
-    @DeleteMapping
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@Valid @RequestBody StudentRequest request) {
-        service.delete(request);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+       StudentResponse studentResponse =service.findById(id);
+       if(studentResponse!=null){
+           service.delete(studentResponse.id());
+           return ResponseEntity.ok().build();
+       } else {
+           return ResponseEntity.notFound().build();
+       }
+
     }
 
     @GetMapping ("/search?name=")
-    @ResponseStatus(HttpStatus.OK)
-    public List<StudentResponse> search(@Valid @RequestParam String name) {
-        return service.searchByName(name);
+    public ResponseEntity<List<StudentResponse>> search(@Valid @RequestParam String name) {
+        List<StudentResponse> studentResponse = service.searchByName(name);
+
+        if(studentResponse!=null){
+            return ResponseEntity.ok(studentResponse);
+        } else{
+            return ResponseEntity.notFound().build();
     }
+  }
+
 }
