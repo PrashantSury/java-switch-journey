@@ -1,5 +1,6 @@
 package com.prashant.coursepractice.controller;
 
+import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,9 @@ import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -40,5 +43,83 @@ class StudentControllerTest {
     void notFound() throws Exception {
         mvc.perform(get("/api/students/9999"))
            .andExpect(status().isNotFound());
+    }
+
+    @Test @DisplayName("POST valid student returns 201 and Location /api/students/{id}")
+    void createReturnsLocation() throws Exception {
+        MvcResult result = mvc.perform(post("/api/students")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\":\"LocationCheck\",\"email\":\"loc@example.com\"}"))
+           .andExpect(status().isCreated())
+           .andExpect(jsonPath("$.id").exists())
+           .andExpect(jsonPath("$.name").value("LocationCheck"))
+           .andReturn();
+
+        long id = jsonId(result);
+        assertEquals("/api/students/" + id, result.getResponse().getHeader("Location"));
+    }
+
+    @Test @DisplayName("GET by id returns 200")
+    void getById() throws Exception {
+        long id = createStudent("GetMe", "get@example.com");
+
+        mvc.perform(get("/api/students/" + id))
+           .andExpect(status().isOk())
+           .andExpect(jsonPath("$.id").value(Math.toIntExact(id)))
+           .andExpect(jsonPath("$.name").value("GetMe"))
+           .andExpect(jsonPath("$.email").value("get@example.com"));
+    }
+
+    @Test @DisplayName("PUT existing student returns 200")
+    void updateExisting() throws Exception {
+        long id = createStudent("Before", "before@example.com");
+
+        mvc.perform(put("/api/students/" + id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\":\"After\",\"email\":\"after@example.com\"}"))
+           .andExpect(status().isOk())
+           .andExpect(jsonPath("$.id").value(Math.toIntExact(id)))
+           .andExpect(jsonPath("$.name").value("After"))
+           .andExpect(jsonPath("$.email").value("after@example.com"));
+    }
+
+    @Test @DisplayName("DELETE existing student returns 204 with an empty body")
+    void deleteExisting() throws Exception {
+        long id = createStudent("DeleteMe", "del@example.com");
+
+        mvc.perform(delete("/api/students/" + id))
+           .andExpect(status().isNoContent())
+           .andExpect(content().string(""));
+    }
+
+    @Test @DisplayName("DELETE unknown id returns 404")
+    void deleteUnknown() throws Exception {
+        mvc.perform(delete("/api/students/99999"))
+           .andExpect(status().isNotFound())
+           .andExpect(jsonPath("$.error").value("Student not found: 99999"));
+    }
+
+    @Test @DisplayName("GET search by name returns 200 with matches")
+    void searchByName() throws Exception {
+        createStudent("SearchableZeta", "zeta@example.com");
+
+        mvc.perform(get("/api/students/search").param("name", "SearchableZeta"))
+           .andExpect(status().isOk())
+           .andExpect(jsonPath("$[0].name").value("SearchableZeta"))
+           .andExpect(jsonPath("$[0].email").value("zeta@example.com"));
+    }
+
+    private long createStudent(String name, String email) throws Exception {
+        MvcResult result = mvc.perform(post("/api/students")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\":\"" + name + "\",\"email\":\"" + email + "\"}"))
+           .andExpect(status().isCreated())
+           .andReturn();
+        return jsonId(result);
+    }
+
+    private static long jsonId(MvcResult result) throws Exception {
+        Number id = JsonPath.read(result.getResponse().getContentAsString(), "$.id");
+        return id.longValue();
     }
 }

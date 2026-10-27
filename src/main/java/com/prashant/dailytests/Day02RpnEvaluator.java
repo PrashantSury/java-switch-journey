@@ -26,6 +26,7 @@ public class Day02RpnEvaluator {
         if (tokens == null || tokens.length == 0) {
             throw new IllegalArgumentException("tokens must not be null or empty");
         }
+        //"10 6 9 3 + -11 * / * 17 + 5 +"
         Deque<Integer> stack = new ArrayDeque<>();
         for (String token : tokens) {
             if (token == null) {
@@ -49,11 +50,7 @@ public class Day02RpnEvaluator {
     }
 
     private static boolean isOperator(String token) {
-
-       if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
-           return true;
-       }
-        return false;
+        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 
     private static int apply(int a, int b, String op) {
@@ -75,5 +72,9 @@ public class Day02RpnEvaluator {
             default:
                 throw new IllegalArgumentException("unknown operator: " + op);
         }
+    }
+
+    public static void main(String[] args) {
+        evaluate("10 6 9 3 + -11 * / * 17 + 5 +".split(" "));
     }
 }
