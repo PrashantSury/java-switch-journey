@@ -48,12 +48,12 @@ mvn test
 | ValidParentheses | DSA | 2/2 | starter | ✅ Completed and verified |
 | MinStack | DSA | 10/10 | 156a339 | ✅ Completed and verified |
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
-| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started |
+| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started · 🔥 assigned Day 05 evening |
 | AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started |
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
 | Day02RpnEvaluator | 🐞 Buggy round | 44/44 | 1f1be84 | ✅ Fixed (hint on `-3`) · 🔵 redo due 27 Oct + 31 Oct |
-| Day02RpnEvaluatorRedo | 🔁 Redo (day 3) | 0/44 | — (stub only) | ⬜ Not started · assigned Day 05 |
+| Day02RpnEvaluatorRedo | 🔁 Redo (day 3) | 44/44 | bddf14c | 🟠 Attempted · passes, but done by re-reading the original, not from memory · 🔵 cold redo due 31 Oct |
 | Day03NextGreaterIndex | 🐞 Buggy round | 13/37 | — | ⬜ Not started |
 | Day04LargestRectangle | 🐞 Buggy round | 15/36 | — | ⬜ Not started |
 
@@ -84,14 +84,14 @@ mvn test
 | Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
 | SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started |
+| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · 🔥 Q1 assigned Day 05 evening |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
 
 ## 🌱 Spring tasks (`spring-boot/course-practice`)
 | Task | Status | Notes |
 |---|---|---|
 | Day 02 endpoints | 🔴 Needs correction | Rolled into Day 03 Part A |
-| Day 03 / Day 04 Part A (endpoint fixes) | 🔴 Needs correction | Pushed 11dfcc8. ❌ `/search` → 400 (query string in mapping) · ❌ DELETE 200 not 204 · not-found check still in controller · ❌ still 3 controller tests (need +6) |
+| Day 03 / Day 04 Part A (endpoint fixes) | 🔴 Needs correction (almost there) | 11dfcc8 → 27b70d6 → bddf14c. ✅ `/search` mapping, DELETE 204, not-found in service · `StudentControllerTest` now 9 tests. ❌ still missing: PUT unknown id → 404 test, search without `name` → 400 test · ⚠️ clean up `@Valid`/dead null branch on search · ⚠️ stray `main()` in `Day02RpnEvaluator` |
 | Day 04 Part B (`@Size`, 409, ProblemDetail, +5 tests) | ⬜ Not started | After §3/§4 verified |
 
 ## 🏦 Banking-app milestones (`banking-app/`)
@@ -122,16 +122,17 @@ pie title Tracked items (27 Oct 2026)
   "Ready for revision" : 3
   "Needs correction" : 3
   "In progress" : 1
-  "Not started" : 18
+  "Attempted" : 1
+  "Not started" : 17
 ```
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Day 05 (27 Oct) task file:** `spring-boot/tasks/day05-morning.md`
-> 1. 🌱 Main: fix Day 03 Part A: `/search` mapping, DELETE status, not-found check into the service, ≥6 controller tests. Then answer the 3 Day 03 questions in chat.
-> 2. 🔁 Small: `Day02RpnEvaluatorRedo` from memory (due 27 Oct), 0/44 → 44/44.
-> 3. 🗄️ Paired SQL (evening or later): `sql/day03.sql` Q1.
-> 4. 🔁 Overdue: Day01ArrayStack redo (was due 26 Oct).
+> **Day 05 (27 Oct) evening (backlog only, ~60 min):**
+> 1. 🧩 DSA: `RemoveKAdjacentDuplicates` (LeetCode 1209), 0/26 → 26/26.
+> 2. 🗄️ SQL: `sql/day03.sql` **Q1** only (answer in `sql/day03-answers.md`).
+>
+> **Day 06 (28 Oct) morning:** close Day 03 Part A (2 missing controller tests + search cleanup), then Day01ArrayStack redo (overdue). No new DSA stub while 3 DSA problems are not started; no new SQL file while 5 are unanswered.
 
 ## 📝 Log
 | Date | Week/Day | Done | Notes |
@@ -141,3 +142,4 @@ pie title Tracked items (27 Oct 2026)
 | 26 Oct 2026 | W1 D4 | Day 03 Spring Part A pushed (11dfcc8) | Needs correction: /search, DELETE 204, tests |
 | 26 Oct 2026 | — | Backlog reconciliation | This file + interview-answers.md |
 | 27 Oct 2026 | W1 D5 | Morning round assigned (backlog only) | Day 03 Part A corrections + Day02 RPN redo stub. No new buggy round (Day 03/04 unattempted), no new Spring task (§3/§4 open) |
+| 27 Oct 2026 | W1 D5 | Spring Part A mostly fixed (27b70d6, bddf14c); RPN redo 44/44 but not from memory | Evening: backlog only — RemoveKAdjacentDuplicates + SQL 03 Q1. Verified with `mvn test` (328 tests; my finished classes all green) |
