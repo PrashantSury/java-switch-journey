@@ -48,7 +48,7 @@ mvn test
 | ValidParentheses | DSA | 2/2 | starter | ✅ Completed and verified |
 | MinStack | DSA | 10/10 | 156a339 | ✅ Completed and verified |
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
-| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started · 🔥 assigned Day 05 evening |
+| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started · assigned Day 05 evening, not pushed (still 0/26 on 27 Oct 10 PM) · 🔥 carried to Day 06 evening |
 | AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started |
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
@@ -84,7 +84,7 @@ mvn test
 | Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
 | SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · 🔥 Q1 assigned Day 05 evening |
+| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 evening, no `sql/day03-answers.md` yet · 🔥 carried to Day 06 evening |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
 
 ## 🌱 Spring tasks (`spring-boot/course-practice`)
@@ -128,11 +128,13 @@ pie title Tracked items (27 Oct 2026)
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Day 05 (27 Oct) evening (backlog only, ~60 min):**
+> **Day 06 (28 Oct) morning — first thing:** in `StudentControllerTest`, add the **PUT unknown id → 404** test, then the **search without `name` → 400** test, then remove the `@Valid`/dead null branch on search and the stray `main()` in `Day02RpnEvaluator`. That closes Day 03/04 Part A. Then Day01ArrayStack redo (overdue since 26 Oct).
+>
+> **Day 06 (28 Oct) evening (carried from Day 05, backlog only):**
 > 1. 🧩 DSA: `RemoveKAdjacentDuplicates` (LeetCode 1209), 0/26 → 26/26.
 > 2. 🗄️ SQL: `sql/day03.sql` **Q1** only (answer in `sql/day03-answers.md`).
 >
-> **Day 06 (28 Oct) morning:** close Day 03 Part A (2 missing controller tests + search cleanup), then Day01ArrayStack redo (overdue). No new DSA stub while 3 DSA problems are not started; no new SQL file while 5 are unanswered.
+> No new DSA stub while 3 DSA problems are not started; no new SQL file while 5 are unanswered.
 
 ## 📝 Log
 | Date | Week/Day | Done | Notes |
@@ -143,3 +145,4 @@ pie title Tracked items (27 Oct 2026)
 | 26 Oct 2026 | — | Backlog reconciliation | This file + interview-answers.md |
 | 27 Oct 2026 | W1 D5 | Morning round assigned (backlog only) | Day 03 Part A corrections + Day02 RPN redo stub. No new buggy round (Day 03/04 unattempted), no new Spring task (§3/§4 open) |
 | 27 Oct 2026 | W1 D5 | Spring Part A mostly fixed (27b70d6, bddf14c); RPN redo 44/44 but not from memory | Evening: backlog only — RemoveKAdjacentDuplicates + SQL 03 Q1. Verified with `mvn test` (328 tests; my finished classes all green) |
+| 27 Oct 2026 | W1 D5 | 10 PM check: no new pushes after the evening assignment | `RemoveKAdjacentDuplicates` still 0/26, no `sql/day03-answers.md`; both carried to Day 06 evening. Re-verified: Day02RpnEvaluator 44/44, Redo 44/44 (🟠 Attempted), StudentControllerTest 9/9 |
