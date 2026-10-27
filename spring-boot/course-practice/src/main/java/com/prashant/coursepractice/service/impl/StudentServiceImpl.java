@@ -46,6 +46,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void delete(Long id) {
+        if (!repository.existsById(id)) {
+            throw new StudentNotFoundException(id);
+        }
         repository.deleteById(id);
     }
 

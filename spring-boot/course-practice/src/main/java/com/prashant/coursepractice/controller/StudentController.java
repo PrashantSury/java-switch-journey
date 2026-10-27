@@ -45,31 +45,19 @@ public class StudentController {
                 .body(createdStudent);
     }
 
-    // TODO(Day02): your PUT/DELETE/search mapping fixes go here (see tasks/day02-morning.md)
     @PutMapping("/{id}")
-    public ResponseEntity<StudentResponse> update(@PathVariable Long id,@Valid @RequestBody StudentRequest request) {
-
-        StudentResponse studentResponse= service.update(id,request);
-        if(id.equals(studentResponse.id())){
-            return ResponseEntity.ok(studentResponse);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<StudentResponse> update(
+            @PathVariable Long id, @Valid @RequestBody StudentRequest request) {
+        return ResponseEntity.ok(service.update(id, request));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-       StudentResponse studentResponse =service.findById(id);
-       if(studentResponse!=null){
-           service.delete(studentResponse.id());
-           return ResponseEntity.ok().build();
-       } else {
-           return ResponseEntity.notFound().build();
-       }
-
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
-    @GetMapping ("/search?name=")
+    @GetMapping ("/search")
     public ResponseEntity<List<StudentResponse>> search(@Valid @RequestParam String name) {
         List<StudentResponse> studentResponse = service.searchByName(name);
 
