@@ -53,11 +53,22 @@ mvn test
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
 | Day02RpnEvaluator | 🐞 Buggy round | 44/44 | 1f1be84 | ✅ Fixed (hint on `-3`) · 🔵 redo due 27 Oct + 31 Oct |
+| Day02RpnEvaluatorRedo | 🔁 Redo (day 3) | 0/44 | — (stub only) | ⬜ Not started · assigned Day 05 |
 | Day03NextGreaterIndex | 🐞 Buggy round | 13/37 | — | ⬜ Not started |
 | Day04LargestRectangle | 🐞 Buggy round | 15/36 | — | ⬜ Not started |
 
 > [!TIP]
 > Stub tests that pass by accident (e.g. empty-input cases) don't count as progress.
+
+## 🧭 NeetCode 150 tracker
+> [!NOTE]
+> Pattern order from [neetcode.io/practice](https://neetcode.io/practice). The next pattern starts only when every problem here is ✅. Buggy rounds use the current pattern.
+
+| Pattern | Status |
+|---|---|
+| Arrays & Hashing | ⬜ Not started (skipped for now; started at Stack) |
+| Two Pointers · Sliding Window | ⬜ Not started |
+| 🔥 **Stack** (current) | 🟡 In progress: Valid Parentheses ✅ · Min Stack ✅ · Car Fleet ⬜ · Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle ⬜ not yet assigned as problems |
 
 ## 🐞 Daily-test bug backlog
 | Day | Problem | Topic | Original mistake | Correct approach | Status | Next revision |
@@ -83,6 +94,18 @@ mvn test
 | Day 03 / Day 04 Part A (endpoint fixes) | 🔴 Needs correction | Pushed 11dfcc8. ❌ `/search` → 400 (query string in mapping) · ❌ DELETE 200 not 204 · not-found check still in controller · ❌ still 3 controller tests (need +6) |
 | Day 04 Part B (`@Size`, 409, ProblemDetail, +5 tests) | ⬜ Not started | After §3/§4 verified |
 
+## 🏦 Banking-app milestones (`banking-app/`)
+| # | Milestone | Status |
+|---|---|---|
+| 0 | Setup: Docker Postgres 5433, Flyway, health UP | ✅ Completed and verified |
+| 1 | Auth tables (V2: users, roles, permissions) + login returning a JWT | ⬜ Not started · waits for §3/§4 → §5 verified |
+| 2 | Customers and accounts | ⬜ Not started |
+| 3 | Transactions with locking and idempotency | ⬜ Not started |
+| 4 | Admin and audit | ⬜ Not started |
+
+> [!NOTE]
+> 🔗 SQL pairing: §3/§4 corrections pair with `sql/day03.sql` (branch max + net flow, banking tables). Milestone 1 will pair with SQL on the auth tables.
+
 ## 🎤 Interview Q&A → see [interview-answers.md](interview-answers.md)
 | Set | Status |
 |---|---|
@@ -94,19 +117,21 @@ mvn test
 
 ## 📊 Status counts
 ```mermaid
-pie title Tracked items (26 Oct 2026)
+pie title Tracked items (27 Oct 2026)
   "Completed and verified" : 4
   "Ready for revision" : 3
   "Needs correction" : 3
   "In progress" : 1
-  "Not started" : 17
+  "Not started" : 18
 ```
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> 1. 🌱 Fix Day 03 Part A: `/search` mapping, DELETE → 204, move not-found check into the service, add ≥6 controller tests. Then answer the 3 Day 03 questions in chat.
-> 2. 🗄️ Paired SQL: `sql/day03.sql` Q1 (then `day02.sql`).
-> 3. 🔁 Day01ArrayStack redo from memory (due 26 Oct).
+> **Day 05 (27 Oct) task file:** `spring-boot/tasks/day05-morning.md`
+> 1. 🌱 Main: fix Day 03 Part A: `/search` mapping, DELETE status, not-found check into the service, ≥6 controller tests. Then answer the 3 Day 03 questions in chat.
+> 2. 🔁 Small: `Day02RpnEvaluatorRedo` from memory (due 27 Oct), 0/44 → 44/44.
+> 3. 🗄️ Paired SQL (evening or later): `sql/day03.sql` Q1.
+> 4. 🔁 Overdue: Day01ArrayStack redo (was due 26 Oct).
 
 ## 📝 Log
 | Date | Week/Day | Done | Notes |
@@ -115,3 +140,4 @@ pie title Tracked items (26 Oct 2026)
 | 25 Oct 2026 | W1 D3 | ScoreOfParentheses 37/37 (c909bb8) | Got help writing; dry-ran line by line. Follow-up Qs pending |
 | 26 Oct 2026 | W1 D4 | Day 03 Spring Part A pushed (11dfcc8) | Needs correction: /search, DELETE 204, tests |
 | 26 Oct 2026 | — | Backlog reconciliation | This file + interview-answers.md |
+| 27 Oct 2026 | W1 D5 | Morning round assigned (backlog only) | Day 03 Part A corrections + Day02 RPN redo stub. No new buggy round (Day 03/04 unattempted), no new Spring task (§3/§4 open) |
