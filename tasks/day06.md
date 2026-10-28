@@ -70,3 +70,18 @@ The three Day 03 questions are still ⬜ Pending in `interview-answers.md`. Day 
 > [!IMPORTANT]
 > ✅ Done when `RemoveKAdjacentDuplicatesTest` is 26/26 on your pushed code and `sql/day03-answers.md` has Q1. Reply in chat when you're ready for grading.
 
+## 🌒 End of day (10 PM check, 28 Oct)
+
+| Item | Outcome |
+|---|---|
+| Part A: PUT unknown id → 404 test | ✅ Completed and verified (`course-practice` 12/12) |
+| Part A: search without `name` → 400 test | ✅ Completed and verified |
+| Part A: `search` clean-up (`@Valid` + dead branch) | ✅ Completed and verified |
+| Part A: stray `main()` in `Day02RpnEvaluator` | ✅ Completed and verified (44/44) |
+| `Day01ArrayStackRedo` (cold) | ✅ Completed and verified (17/17) |
+| Day 03 interview Q&A | ✅ Graded 17/30 · 🔵 Q1, Q2 ready for revision |
+| 🧩 `RemoveKAdjacentDuplicates` | ⬜ Not started (0/26) · carried to Day 07 |
+| 🗄️ `sql/day03.sql` Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to Day 07 |
+
+> [!IMPORTANT]
+> ▶️ **Next task (29 Oct, 6 AM):** Day 04 Part B in `spring-boot/course-practice` (409 handler with `ProblemDetail`, `@Size` coverage, +5 tests). See [day04-morning.md](day04-morning.md).
