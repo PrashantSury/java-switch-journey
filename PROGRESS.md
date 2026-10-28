@@ -9,7 +9,7 @@
 - 🧩 `src/main/java/com/prashant/dsa/<topic>/` : DSA solutions, tests in `src/test/java/...`
 - 🐞 `src/main/java/com/prashant/dailytests/` : fix-the-buggy-code rounds, tests in `src/test/java/...`
 - 🗄️ `sql/` : SQL queries, one file per day
-- 📋 `tasks/` : all daily task files (`dayNN-morning.md`)
+- 📋 `tasks/` : all daily task files (one file per day, `dayNN.md`, with Morning and Evening sections; earlier days are `dayNN-morning.md`)
 - 🌱 `spring-boot/` : Spring Boot and microservices notes
 - 🔁 `revision/` : mistake log and weekly revision notes
 
@@ -49,7 +49,7 @@ mvn test
 | ValidParentheses | DSA | 2/2 | starter | ✅ Completed and verified |
 | MinStack | DSA | 10/10 | 156a339 | ✅ Completed and verified |
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
-| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started · assigned Day 05 evening, not pushed (still 0/26 on 27 Oct 10 PM) · 🔥 carried to Day 06 evening |
+| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started · assigned Day 05 evening, still 0/26 at 8 PM on 28 Oct · 🔥 assigned Day 06 evening ([day06.md](tasks/day06.md)) |
 | AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started |
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
@@ -86,14 +86,14 @@ mvn test
 | Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
 | SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 evening, no `sql/day03-answers.md` yet · 🔥 carried to Day 06 evening |
+| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 evening, no `sql/day03-answers.md` at 8 PM on 28 Oct · 🔥 assigned Day 06 evening ([day06.md](tasks/day06.md)) |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
 
 ## 🌱 Spring tasks (`spring-boot/course-practice`)
 | Task | Status | Notes |
 |---|---|---|
 | Day 02 endpoints | ✅ Rolled into Day 03 Part A | Verified together with Part A |
-| Day 03 / Day 04 Part A (endpoint fixes) | ✅ Completed and verified (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571. `course-practice` 12/12 (`StudentControllerTest` 11 + context test 1). `/search` mapping, DELETE 204, not-found in service, PUT unknown id → 404, search without `name` → 400, `@Valid`/dead branch removed from `search`, stray `main()` removed from `Day02RpnEvaluator`. See [day06-morning.md](tasks/day06-morning.md) |
+| Day 03 / Day 04 Part A (endpoint fixes) | ✅ Completed and verified (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571. `course-practice` 12/12 (`StudentControllerTest` 11 + context test 1). `/search` mapping, DELETE 204, not-found in service, PUT unknown id → 404, search without `name` → 400, `@Valid`/dead branch removed from `search`, stray `main()` removed from `Day02RpnEvaluator`. See [day06.md](tasks/day06.md) |
 | Day 04 Part B (`@Size`, 409, ProblemDetail, +5 tests) | 🟡 In progress · 🔥 active | `@Size` and `DuplicateEmailException` already in the repo. Still to verify: 409 handler with `ProblemDetail`, +5 tests |
 
 ## 🏦 Banking-app milestones (`banking-app/`)
@@ -135,7 +135,7 @@ pie title Tracked items (28 Oct 2026)
 > [!IMPORTANT]
 > **Next task (28 Oct):** **Day 04 Part B** in `spring-boot/course-practice`: finish the 409 handler with `ProblemDetail`, add `@Size` coverage and the email-exists queries, and add the +5 tests. Full list in [day04-morning.md](tasks/day04-morning.md). You've already started it (`@Size`, `DuplicateEmailException`).
 >
-> **Day 06 (28 Oct) evening (carried from Day 05, backlog only):**
+> **Day 06 (28 Oct) evening, in [day06.md](tasks/day06.md) (backlog only, second time assigned):**
 > 1. 🧩 DSA: `RemoveKAdjacentDuplicates` (LeetCode 1209), 0/26 → 26/26.
 > 2. 🗄️ SQL: `sql/day03.sql` **Q1** only (answer in `sql/day03-answers.md`).
 >
@@ -155,3 +155,4 @@ pie title Tracked items (28 Oct 2026)
 | 27 Oct 2026 | W1 D5 | 10 PM check: no new pushes after the evening assignment | `RemoveKAdjacentDuplicates` still 0/26, no `sql/day03-answers.md`; both carried to Day 06 evening. Re-verified: Day02RpnEvaluator 44/44, Redo 44/44 (🟠 Attempted), StudentControllerTest 9/9 |
 | 28 Oct 2026 | W1 D6 | Morning round assigned (backlog only) | Finish Part A (2 tests + 2 clean-ups) + `Day01ArrayStackRedo` stub (0/17, verified 17/17 against a correct version). No new buggy round (Day 03/04 unattempted), no new Spring task (§3/§4 open) |
 | 28 Oct 2026 | W1 D6 | Day 03/04 Part A ✅ verified (af4f8e7, 6e3d6be, c047571); `Day01ArrayStackRedo` 17/17 ✅; Day 03 Q&A graded 17/30 | Verified with `mvn test`: `course-practice` 12/12, `Day01ArrayStackRedoTest` 17/17, `Day02RpnEvaluatorTest` 44/44, `Day02RpnEvaluatorRedoTest` 44/44 (still 🟠 Attempted, cold redo 31 Oct). `tasks/` moved to the repo root. §3/§4 Ready for revision (Q1/Q2 5/10); active section is now §5 |
+| 28 Oct 2026 | W1 D6 | Evening session assigned (backlog only) | Re-checked at 8 PM: `RemoveKAdjacentDuplicatesTest` 0/26, no `sql/day03-answers.md`. Both assigned again in `tasks/day06.md` (renamed from `day06-morning.md`, now Morning + Evening). No new stub or SQL file (3 DSA not started, 5 SQL unanswered) |
