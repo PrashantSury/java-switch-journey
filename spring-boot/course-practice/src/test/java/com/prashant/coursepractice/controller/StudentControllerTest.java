@@ -70,14 +70,11 @@ class StudentControllerTest {
            .andExpect(jsonPath("$.email").value("get@example.com"));
     }
 
-    @Test @DisplayName("PUT no id parameter returns 400")
-    void noIdParameter() throws Exception {
-        long id = createStudent("Before", "before@example.com");
-
-        mvc.perform(put("/api/students/" )
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"name\":\"After\",\"email\":\"after@example.com\"}"))
-                .andExpect(status().isBadRequest());
+    @Test @DisplayName("GET search without name returns 400")
+    void searchMissingName() throws Exception {
+        mvc.perform(get("/api/students/search"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("name parameter is missing"));
     }
 
     @Test @DisplayName("PUT existing student returns 200")
@@ -95,12 +92,11 @@ class StudentControllerTest {
 
     @Test @DisplayName("PUT non-existing student returns 404")
     void updateNonExisting() throws Exception {
-        long id = createStudent("Before", "before@example.com");
-
-        mvc.perform(put("/api/students/" + id)
+        mvc.perform(put("/api/students/99999")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"name\":\"After\",\"email\":\"after@example.com\"}"))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.error").value("Student not found: 99999"));
     }
 
     @Test @DisplayName("DELETE existing student returns 204 with an empty body")
