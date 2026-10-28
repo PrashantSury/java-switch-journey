@@ -1,5 +1,8 @@
 package com.prashant.dailytests.redo;
 
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
 /**
  * Redo of the Day 01 buggy round: write this from memory, without opening
  * Day01ArrayStack. Run Day01ArrayStackRedoTest until all tests pass.
@@ -19,31 +22,56 @@ package com.prashant.dailytests.redo;
  */
 public class Day01ArrayStackRedo {
 
+    private int[] data ;
+    private int size ;
+
     public Day01ArrayStackRedo(int initialCapacity) {
         // TODO(Day 06 redo): write it from memory
+        if (initialCapacity < 0){
+            throw new IllegalArgumentException("Capacity can not be less than zero " + initialCapacity);
+        }
+         data = new int[initialCapacity];
     }
 
     public void push(int x) {
-        throw new UnsupportedOperationException("not written yet");
+        if(size >= data.length ){
+            grow();
+        }
+       data[size++]=x;
+    }
+
+    private void grow() {
+        int newCapacity = data.length == 0 ? 1 : data.length* 2;
+        data = Arrays.copyOf(data, newCapacity);
     }
 
     public int pop() {
-        throw new UnsupportedOperationException("not written yet");
+
+        if (isEmpty()){
+            throw new NoSuchElementException("empty stack");
+        }
+        return data[--size];
     }
 
     public int peek() {
-        throw new UnsupportedOperationException("not written yet");
+
+        if (isEmpty()){
+            throw new NoSuchElementException("empty stack");
+        }
+        return data[size-1];
     }
 
     public int size() {
-        throw new UnsupportedOperationException("not written yet");
+
+        return size;
     }
 
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("not written yet");
+
+        return size == 0;
     }
 
     public int[] toArray() {
-        throw new UnsupportedOperationException("not written yet");
+        return Arrays.copyOf(data, size);
     }
 }

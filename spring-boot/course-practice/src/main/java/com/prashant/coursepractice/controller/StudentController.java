@@ -58,7 +58,7 @@ public class StudentController {
     }
 
     @GetMapping ("/search")
-    public ResponseEntity<List<StudentResponse>> search(@Valid @RequestParam String name) {
+    public ResponseEntity<List<StudentResponse>> search(@RequestParam String name) {
         List<StudentResponse> studentResponse = service.searchByName(name);
 
         if(studentResponse!=null){
