@@ -6,3 +6,12 @@ Daily Java, DSA, SQL and Spring Boot practice: 12-week plan to switch back to a 
 
 > [!TIP]
 > Markdown conventions for this repo: see [docs/STYLE-GUIDE.md](docs/STYLE-GUIDE.md).
+
+## 🗂️ Layout
+- 📋 `tasks/` : all daily task files (`dayNN-morning.md` and so on)
+- 🧩 `src/` : DSA solutions and buggy rounds (Maven project)
+- 🗄️ `sql/` : SQL practice, one file per day
+- 🌱 `spring-boot/` : Spring Boot notes, `course-practice` and interview answers
+- 🏦 `banking-app/` : the banking project
+- 🔁 `revision/` : mistake log and revision notes
+- 📈 `PROGRESS.md` and `interview-answers.md` : sources of truth

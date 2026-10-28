@@ -26,7 +26,7 @@
 - Day / Week / meta: `blue`; slot: `yellow`.
 
 ## 📄 Per file type
-- **Daily tasks** (`spring-boot/tasks/`, `sql/`): emoji headings, Day/Week/slot badges, acceptance criteria as `- [ ]` checklists, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`.
+- **Daily tasks** (`tasks/`, `sql/`): emoji headings, Day/Week/slot badges, acceptance criteria as `- [ ]` checklists, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`.
 - **Interview answers**: grade badges at top, verbatim answer in a `diff` block with `-` lines, grade in `[!WARNING]` (<7) or `[!NOTE]`, model answer in `[!TIP]`.
 - **Mistake log**: keep the table exactly as is (`| Date | Problem | What went wrong | Redo on day 3 | Redo on day 7 |`) — routines append rows. Styling only above the table.
 - **Revision sheets**: key points in `[!IMPORTANT]`, examples in `` ```java ``.

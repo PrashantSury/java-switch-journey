@@ -1,6 +1,6 @@
 # 🎤 Interview answers — index
 
-![Answered](https://img.shields.io/badge/graded-Day%2002-brightgreen) ![Pending](https://img.shields.io/badge/pending-Day%2003%20%C2%B7%20Day%2004%20%C2%B7%20SoP-orange)
+![Answered](https://img.shields.io/badge/graded-Day%2002%20%C2%B7%20Day%2003-brightgreen) ![Pending](https://img.shields.io/badge/pending-Day%2004%20%C2%B7%20SoP-orange)
 
 > [!IMPORTANT]
 > A set is only ✅ when my own answers are written and graded. Graded day files live in `spring-boot/interview-answers/` and are linked here, not copied.
@@ -9,26 +9,20 @@
 |---|---|---|---|
 | 01 | — | ⬜ No graded record found | — |
 | 02 | Core / DI / mapping | ✅ Graded: Q1 5/10 · Q2 7/10 · Q3 5/10 | [day02-answers.md](spring-boot/interview-answers/day02-answers.md) |
-| 03 | HTTP semantics, mapping | ⏳ Pending | below |
+| 03 | HTTP semantics, mapping | ✅ Graded: Q1 5/10 · Q2 5/10 · Q3 7/10 (17/30) · 🔵 Q1, Q2 ready for revision | [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
 | 04 | Request flow, DTOs, errors | ⏳ Pending | below |
 | SoP | Score of Parentheses follow-up | ⏳ Pending | below |
 
 ---
 
-## 📅 Day 03 — ⏳ Pending
-Source: [day03-morning.md](spring-boot/tasks/day03-morning.md)
+## 📅 Day 03 — ✅ Graded (17/30)
+Source: [day03-morning.md](tasks/day03-morning.md) · Full answers and grades: [day03-answers.md](spring-boot/interview-answers/day03-answers.md)
 
-**Q1.** Is DELETE idempotent, and what should a second delete of the same id return?
-> _Answer:_
-
-**Q2.** When would you use `ResponseEntity` and when `@ResponseStatus`, and why send `Location` with a 201?
-> _Answer:_
-
-**Q3.** What happens when a required `@RequestParam` is missing, and what does `@Valid` on a plain `String` do?
-> _Answer:_
+> [!NOTE]
+> Q1 5/10 · Q2 5/10 · Q3 7/10. Q1 and Q2 are 🔵 Ready for revision.
 
 ## 📅 Day 04 — ⏳ Pending
-Source: [day04-morning.md](spring-boot/tasks/day04-morning.md)
+Source: [day04-morning.md](tasks/day04-morning.md)
 
 **Q1.** How does a JSON body become a validated `StudentRequest`? Which component converts it, which exception is thrown when validation fails, and what happens with malformed JSON?
 > _Answer:_
