@@ -11,6 +11,7 @@ Daily Java, DSA, SQL and Spring Boot practice: 12-week plan to switch back to a 
 - 📋 `tasks/` : all daily task files (`dayNN-morning.md` and so on)
 - 🧩 `src/` : DSA solutions and buggy rounds (Maven project)
 - 🗄️ `sql/` : SQL practice, one file per day
+- 🎓 `sql/learn/` : guided SQL lessons (setup, exercises, auto-check): [sql/learn/README.md](sql/learn/README.md)
 - 🌱 `spring-boot/` : Spring Boot notes, `course-practice` and interview answers
 - 🏦 `banking-app/` : the banking project
 - 🔁 `revision/` : mistake log and revision notes
