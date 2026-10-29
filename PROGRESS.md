@@ -28,7 +28,7 @@ mvn test
 
 ## 🎯 Current phase
 - **Phase:** Week 1 foundations — Spring Boot prerequisites (`course-practice` Students API) + SQL (banking-flavoured) + DSA Stack. Banking app setup is done (health UP); hand-written V2 migrations have not started.
-- 🔥 **Active Spring section:** §5 Validation & error handling (Day 04 Part B). §3 and §4 are code-verified (Part A ✅, 28 Oct), pending revision because the Day 03 Q1/Q2 answers scored 5/10. You've already started Part B (`@Size`, `DuplicateEmailException`).
+- 🔥 **Active Spring section:** §5 Validation & error handling (Day 04 Part B). §3 and §4 are code-verified (Part A ✅, 28 Oct), pending revision because the Day 03 Q1/Q2 answers scored 5/10. You've already started Part B (`@Size`, `DuplicateEmailException`). Part B is split into B1 (Day 07) and B2.
 - ✅ **Sections completed:** none yet. The Revision log in `spring-boot/prerequisites.md` is still empty.
 
 | Section | Status |
@@ -94,7 +94,8 @@ mvn test
 |---|---|---|
 | Day 02 endpoints | ✅ Rolled into Day 03 Part A | Verified together with Part A |
 | Day 03 / Day 04 Part A (endpoint fixes) | ✅ Completed and verified (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571. `course-practice` 12/12 (`StudentControllerTest` 11 + context test 1). `/search` mapping, DELETE 204, not-found in service, PUT unknown id → 404, search without `name` → 400, `@Valid`/dead branch removed from `search`, stray `main()` removed from `Day02RpnEvaluator`. See [day06.md](tasks/day06.md) |
-| Day 04 Part B (`@Size`, 409, ProblemDetail, +5 tests) | 🟡 In progress · 🔥 active | `@Size` and `DuplicateEmailException` already in the repo. Still to verify: 409 handler with `ProblemDetail`, +5 tests |
+| Day 04 Part B1 (`@Size` message, `exists...` queries, 409 for duplicate email, +2 tests) | 🟡 In progress · 🔥 assigned Day 07 morning ([day07.md](tasks/day07.md)) | `@Size` (no message) and an unused `DuplicateEmailException` already in the repo. Done when `StudentControllerTest` has 13+ tests and passes |
+| Day 04 Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) | ⬜ Not started | Next morning after B1 is verified |
 
 ## 🏦 Banking-app milestones (`banking-app/`)
 | # | Milestone | Status |
@@ -114,7 +115,7 @@ mvn test
 | Day 01 | ⬜ Not started (no graded file found) |
 | Day 02 | ✅ Graded (5 / 7 / 5) · 🔵 Q1, Q3 ready for revision |
 | Day 03 | ✅ Graded 17/30 (5 / 5 / 7) · 🔵 Q1, Q2 ready for revision · [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| Day 04 | ⬜ Pending |
+| Day 04 | ⬜ Pending · Q3 assigned Day 07 morning ([day07.md](tasks/day07.md)) |
 | Score of Parentheses follow-up | ⬜ Pending |
 
 ## 📊 Status counts
@@ -133,7 +134,7 @@ pie title Tracked items (28 Oct 2026)
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (29 Oct, 6 AM):** **Day 04 Part B** in `spring-boot/course-practice`: finish the 409 handler with `ProblemDetail`, add `@Size` coverage and the email-exists queries, and add the +5 tests. Full list in [day04-morning.md](tasks/day04-morning.md). You've already started it (`@Size`, `DuplicateEmailException`).
+> **Next task (29 Oct, 6 AM):** **Day 04 Part B1** in `spring-boot/course-practice`: `@Size` message, two `exists...` queries, 409 for duplicate email, +2 tests, then Day 04 Q3 in chat. Full list in [day07.md](tasks/day07.md). Part B2 (`ProblemDetail` everywhere, malformed JSON, +3 tests) comes after.
 >
 > **Still carried from Day 06 evening (third time, no pressure, it simply stays in the queue):**
 > 1. 🧩 DSA: `RemoveKAdjacentDuplicates` (LeetCode 1209), 0/26 → 26/26.
@@ -157,3 +158,4 @@ pie title Tracked items (28 Oct 2026)
 | 28 Oct 2026 | W1 D6 | Day 03/04 Part A ✅ verified (af4f8e7, 6e3d6be, c047571); `Day01ArrayStackRedo` 17/17 ✅; Day 03 Q&A graded 17/30 | Verified with `mvn test`: `course-practice` 12/12, `Day01ArrayStackRedoTest` 17/17, `Day02RpnEvaluatorTest` 44/44, `Day02RpnEvaluatorRedoTest` 44/44 (still 🟠 Attempted, cold redo 31 Oct). `tasks/` moved to the repo root. §3/§4 Ready for revision (Q1/Q2 5/10); active section is now §5 |
 | 28 Oct 2026 | W1 D6 | Evening session assigned (backlog only) | Re-checked at 8 PM: `RemoveKAdjacentDuplicatesTest` 0/26, no `sql/day03-answers.md`. Both assigned again in `tasks/day06.md` (renamed from `day06-morning.md`, now Morning + Evening). No new stub or SQL file (3 DSA not started, 5 SQL unanswered) |
 | 28 Oct 2026 | W1 D6 | 10 PM check: no new pushes after the evening assignment | Re-verified with `mvn test`: `course-practice` 12/12, `Day01ArrayStackRedoTest` 17/17, `Day02RpnEvaluatorTest` 44/44, `Day02RpnEvaluatorRedoTest` 44/44. `RemoveKAdjacentDuplicatesTest` still 0/26, no `sql/day03-answers.md`; both carried to Day 07 evening. No new mistakes. Next: Day 04 Part B |
+| 29 Oct 2026 | W1 D7 | Morning round assigned (backlog only) | Re-checked: no pushes since cf74132, `course-practice` still green (`StudentControllerTest` 11). Part B split: B1 (`@Size` message, `exists...` queries, 409, +2 tests) + Day 04 Q3 in [day07.md](tasks/day07.md). No new buggy round (Day 03/04 unattempted), no new Spring task (§5 open) |
