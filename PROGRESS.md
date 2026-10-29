@@ -51,7 +51,7 @@ mvn test
 | MinStack | DSA | 10/10 | 156a339 | ✅ Completed and verified |
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
 | RemoveKAdjacentDuplicates | DSA (Day 01) | 26/26 | 2d36911 | ✅ Completed and verified (29 Oct) · O(n) quiz 3/5 (missed the push/pop-once reasoning), re-ask |
-| AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started · 🔥 assigned Day 07 evening ([day07.md](tasks/day07.md)) |
+| AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started · assigned Day 07 evening, no push by the 10 PM check · carried to Day 08 evening |
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
 | Day02RpnEvaluator | 🐞 Buggy round | 44/44 | 1f1be84 | ✅ Fixed (hint on `-3`) · 🔵 redo due 27 Oct + 31 Oct |
@@ -87,7 +87,7 @@ mvn test
 | Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
 | SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · 🔥 assigned Day 07 evening ([day07.md](tasks/day07.md)) |
+| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · assigned Day 07 evening too, no push by the 10 PM check · carried to Day 08 |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
 
 ## 🎓 SQL learn track (`sql/learn/`)
@@ -107,7 +107,7 @@ mvn test
 |---|---|---|
 | Day 02 endpoints | ✅ Rolled into Day 03 Part A | Verified together with Part A |
 | Day 03 / Day 04 Part A (endpoint fixes) | ✅ Completed and verified (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571. `course-practice` 12/12 (`StudentControllerTest` 11 + context test 1). `/search` mapping, DELETE 204, not-found in service, PUT unknown id → 404, search without `name` → 400, `@Valid`/dead branch removed from `search`, stray `main()` removed from `Day02RpnEvaluator`. See [day06.md](tasks/day06.md) |
-| Day 04 Part B1 (`@Size` message, `exists...` queries, 409 for duplicate email, +2 tests) | 🟡 In progress · 🔥 assigned Day 07 morning ([day07.md](tasks/day07.md)) | `@Size` (no message) and an unused `DuplicateEmailException` already in the repo. Done when `StudentControllerTest` has 13+ tests and passes |
+| Day 04 Part B1 (`@Size` message, `exists...` queries, 409 for duplicate email, +2 tests) | 🟡 In progress · assigned Day 07 morning, no Spring push on 29 Oct · 🔥 carried to 30 Oct 6 AM | `@Size` (no message) and an unused `DuplicateEmailException` already in the repo. Done when `StudentControllerTest` has 13+ tests and passes |
 | Day 04 Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) | ⬜ Not started | Next morning after B1 is verified |
 
 ## 🏦 Banking-app milestones (`banking-app/`)
@@ -139,19 +139,19 @@ pie title Tracked items (29 Oct 2026)
   "Needs correction" : 0
   "In progress" : 2
   "Attempted" : 1
-  "Not started" : 13
+  "Not started" : 18
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 28 Oct tally: on 29 Oct `RemoveKAdjacentDuplicates` and `Day03NextGreaterIndex` moved from Not started to Completed.
+> Counts are adjusted from the 28 Oct tally: on 29 Oct `RemoveKAdjacentDuplicates` and `Day03NextGreaterIndex` moved from Not started to Completed, and the 5 new SQL learn lessons were added as Not started.
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (29 Oct, 8 PM evening):** 🧩 `AsteroidCollision` (LeetCode 735), 8/28 → 28/28, and 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), plus untracking the committed `.postman/` files. Full list in the Evening section of [day07.md](tasks/day07.md).
+> **Next task (30 Oct, 6 AM morning):** Day 04 **Part B1** in `spring-boot/course-practice`: add a `message` to the `@Size` on `name` in `StudentRequest`, then the two `exists...` email queries, 409 for duplicate email, +2 tests (`StudentControllerTest` 13+). Then Day 04 Q3 in chat. Full brief in the Morning section of [day07.md](tasks/day07.md). Part B2 comes after B1 is verified.
 >
-> **Next morning (30 Oct, 6 AM):** Day 04 **Part B1** in `spring-boot/course-practice` is still open (no Spring push on 29 Oct): `@Size` message, two `exists...` queries, 409 for duplicate email, +2 tests, then Day 04 Q3 in chat. Part B2 comes after.
+> **Next evening (30 Oct, 8 PM):** 🧩 `AsteroidCollision` (LeetCode 735), still 8/28, and 🗄️ `sql/day03.sql` **Q1** (fourth evening; answer in `sql/day03-answers.md`) or SQL learn lesson 01, plus untracking the committed `.postman/` and `postman/globals/` files.
 >
-> 🔁 Revision due: `Day01ArrayStack` redo on 30 Oct, cold `Day02RpnEvaluator` redo on 31 Oct, Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5).
+> 🔁 Revision due: `Day01ArrayStack` day-7 redo on 30 Oct, cold `Day02RpnEvaluator` redo on 31 Oct, Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5) on 1 Nov.
 >
 > No new DSA stub while 2 DSA problems are not started (`AsteroidCollision`, `CarFleet`); no new SQL file while 5 are unanswered.
 
@@ -170,3 +170,4 @@ pie title Tracked items (29 Oct 2026)
 | 28 Oct 2026 | W1 D6 | Evening session assigned (backlog only) | Re-checked at 8 PM: `RemoveKAdjacentDuplicatesTest` 0/26, no `sql/day03-answers.md`. Both assigned again in `tasks/day06.md` (renamed from `day06-morning.md`, now Morning + Evening). No new stub or SQL file (3 DSA not started, 5 SQL unanswered) |
 | 28 Oct 2026 | W1 D6 | 10 PM check: no new pushes after the evening assignment | Re-verified with `mvn test`: `course-practice` 12/12, `Day01ArrayStackRedoTest` 17/17, `Day02RpnEvaluatorTest` 44/44, `Day02RpnEvaluatorRedoTest` 44/44. `RemoveKAdjacentDuplicatesTest` still 0/26, no `sql/day03-answers.md`; both carried to Day 07 evening. No new mistakes. Next: Day 04 Part B |
 | 29 Oct 2026 | W1 D7 | Morning round assigned (backlog only) | Re-checked: no pushes since cf74132, `course-practice` still green (`StudentControllerTest` 11). Part B split: B1 (`@Size` message, `exists...` queries, 409, +2 tests) + Day 04 Q3 in [day07.md](tasks/day07.md). No new buggy round (Day 03/04 unattempted), no new Spring task (§5 open) |
+| 29 Oct 2026 | W1 D7 | ✅ `RemoveKAdjacentDuplicates` 26/26 and `Day03NextGreaterIndex` 37/37 (2d36911, bcb37f3); SQL learn track lessons 01-05 added | 10 PM check: no pushes from me after the 8 PM evening assignment. Part B1 and Day 04 Q3 (morning), `AsteroidCollision` 8/28, SQL 03 Q1 and the `.postman` clean-up (evening) all carried. No new mistakes beyond the two logged this afternoon. Next: Part B1 on 30 Oct 6 AM |

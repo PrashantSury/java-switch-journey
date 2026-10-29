@@ -96,3 +96,20 @@ Answer this one in chat after the code. It's copied in `interview-answers.md` un
 
 > [!IMPORTANT]
 > ✅ Done when `AsteroidCollisionTest` is 28/28 on your pushed code, `sql/day03-answers.md` has Q1, and `git ls-files` no longer lists the Postman globals. Reply in chat when you're ready for grading.
+
+## 🌃 End of day (10 PM check)
+
+| Item | Outcome |
+|---|---|
+| 🧩 RemoveKAdjacentDuplicates | ✅ Completed and verified (26/26, 2d36911) · O(n) quiz 3/5, re-ask 1 Nov |
+| 🐞 Day03NextGreaterIndex | ✅ Completed and verified (37/37, both bugs found; stray `main()` removed in bcb37f3) |
+| 🌱 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | 🟡 In progress, no push today · carried to 30 Oct 6 AM |
+| 🎤 Day 04 Q3 | ⬜ Pending · carried to 30 Oct morning |
+| 🧩 AsteroidCollision | ⬜ Not started (8/28) · carried to 30 Oct evening |
+| 🗄️ SQL 03 Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to 30 Oct evening |
+| 🧹 Untrack `.postman/` and `postman/globals/` | ⬜ Not started · carried to 30 Oct evening |
+| 🎓 SQL learn track | 🆕 Lessons 01-05 added to `sql/learn/`, all ⬜ Not started |
+
+> [!IMPORTANT]
+> **Next task (30 Oct, 6 AM):** Part B1, starting with a clear `message` on the `@Size` in `StudentRequest`.
+
