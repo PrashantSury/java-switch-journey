@@ -9,6 +9,7 @@
 - 🧩 `src/main/java/com/prashant/dsa/<topic>/` : DSA solutions, tests in `src/test/java/...`
 - 🐞 `src/main/java/com/prashant/dailytests/` : fix-the-buggy-code rounds, tests in `src/test/java/...`
 - 🗄️ `sql/` : SQL queries, one file per day
+- 🎓 `sql/learn/` : guided SQL lessons with an auto-checker (see the SQL learn track section)
 - 📋 `tasks/` : all daily task files (one file per day, `dayNN.md`, with Morning and Evening sections; earlier days are `dayNN-morning.md`)
 - 🌱 `spring-boot/` : Spring Boot and microservices notes
 - 🔁 `revision/` : mistake log and weekly revision notes
@@ -88,6 +89,18 @@ mvn test
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
 | SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · 🔥 assigned Day 07 evening ([day07.md](tasks/day07.md)) |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
+
+## 🎓 SQL learn track (`sql/learn/`)
+> [!NOTE]
+> Bite-size guided lessons (15-20 min each) on the banking domain, checked by `mvn test -Dtest=SqlLessonCheckTest -Dlesson=NN`. See [sql/learn/README.md](sql/learn/README.md). Status only becomes ✅ after the checker passes on my own queries and Lumi has reviewed them.
+
+| Lesson | Topic | Files | Checker | Status |
+|---|---|---|---|---|
+| 01 | SELECT, WHERE, ORDER BY, LIMIT | `sql/learn/lesson01.md` | 0/5 | ⬜ Not started |
+| 02 | NULL handling and CASE | `sql/learn/lesson02.md` | 0/5 | ⬜ Not started |
+| 03 | Aggregates, GROUP BY, HAVING | `sql/learn/lesson03.md` | 0/5 | ⬜ Not started |
+| 04 | INNER JOIN and LEFT JOIN | `sql/learn/lesson04.md` | 0/5 | ⬜ Not started |
+| 05 | Subqueries and EXISTS | `sql/learn/lesson05.md` | 0/5 | ⬜ Not started |
 
 ## 🌱 Spring tasks (`spring-boot/course-practice`)
 | Task | Status | Notes |
