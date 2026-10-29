@@ -13,6 +13,7 @@ Daily Java, DSA, SQL and Spring Boot practice: 12-week plan to switch back to a 
 - 🗄️ `sql/` : SQL practice, one file per day
 - 🎓 `sql/learn/` : guided SQL lessons (setup, exercises, auto-check): [sql/learn/README.md](sql/learn/README.md)
 - 🌱 `spring-boot/` : Spring Boot notes, `course-practice` and interview answers
+- 📘 `spring-boot/spring-boot-revision-sheet.md` : the single Spring Boot revision workbook (questions only, you write the answers): [spring-boot/spring-boot-revision-sheet.md](spring-boot/spring-boot-revision-sheet.md)
 - 🏦 `banking-app/` : the banking project
 - 🔁 `revision/` : mistake log and revision notes
 - 📈 `PROGRESS.md` and `interview-answers.md` : sources of truth

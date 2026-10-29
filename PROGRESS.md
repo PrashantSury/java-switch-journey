@@ -12,6 +12,7 @@
 - 🎓 `sql/learn/` : guided SQL lessons with an auto-checker (see the SQL learn track section)
 - 📋 `tasks/` : all daily task files (one file per day, `dayNN.md`, with Morning and Evening sections; earlier days are `dayNN-morning.md`)
 - 🌱 `spring-boot/` : Spring Boot and microservices notes
+- 📘 `spring-boot/spring-boot-revision-sheet.md` : the **single Spring revision workbook** (concept notes + questions, no answers; sections map to the prerequisite §1-§8 numbering in the table below, plus Milestone 1 extras). `spring-boot/prerequisites.md` stays only as the §-numbering and Revision-log reference the `tasks/` files point to
 - 🔁 `revision/` : mistake log and weekly revision notes
 
 > [!TIP]
