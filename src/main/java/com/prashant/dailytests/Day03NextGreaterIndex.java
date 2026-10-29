@@ -40,8 +40,4 @@ public class Day03NextGreaterIndex {
         return result;
     }
 
-    public static void main(String[] args) {
-      nextGreaterIndex(new int[]{1, 2, 3, 4, 5});
-
-    }
 }
