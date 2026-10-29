@@ -49,14 +49,14 @@ mvn test
 | ValidParentheses | DSA | 2/2 | starter | ✅ Completed and verified |
 | MinStack | DSA | 10/10 | 156a339 | ✅ Completed and verified |
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
-| RemoveKAdjacentDuplicates | DSA (Day 01) | 0/26 | — (stub only) | ⬜ Not started · assigned Day 05 evening, still 0/26 at 10 PM on 28 Oct · 🔥 assigned Day 06 evening, carried to Day 07 ([day06.md](tasks/day06.md)) |
-| AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started |
+| RemoveKAdjacentDuplicates | DSA (Day 01) | 26/26 | 2d36911 | ✅ Completed and verified (29 Oct) · O(n) quiz 3/5 (missed the push/pop-once reasoning), re-ask |
+| AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started · 🔥 assigned Day 07 evening ([day07.md](tasks/day07.md)) |
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
 | Day02RpnEvaluator | 🐞 Buggy round | 44/44 | 1f1be84 | ✅ Fixed (hint on `-3`) · 🔵 redo due 27 Oct + 31 Oct |
 | Day02RpnEvaluatorRedo | 🔁 Redo (day 3) | 44/44 | bddf14c | 🟠 Attempted · passes, but done by re-reading the original, not from memory · 🔵 cold redo due 31 Oct |
 | Day01ArrayStackRedo | 🔁 Redo (overdue from 26 Oct) | 17/17 | af4f8e7 | ✅ Completed and verified (cold redo, 28 Oct) · next revision 30 Oct stays |
-| Day03NextGreaterIndex | 🐞 Buggy round | 13/37 | — | ⬜ Not started |
+| Day03NextGreaterIndex | 🐞 Buggy round | 37/37 | 2d36911 + bcb37f3 | ✅ Completed and verified (29 Oct, both bugs found) · stray `main()` repeated, removed in bcb37f3 |
 | Day04LargestRectangle | 🐞 Buggy round | 15/36 | — | ⬜ Not started |
 
 > [!TIP]
@@ -77,7 +77,7 @@ mvn test
 |---|---|---|---|---|---|---|
 | 01 | Day01ArrayStack | Array stack | Grow check `>` vs `>=`, `size < 0` empty check, zero capacity never grows | Trace checks with 0, 1, full array | 🔵 Ready for revision | 26 Oct, 30 Oct |
 | 02 | Day02RpnEvaluator | Stack / RPN | `-3` treated as operator; overflow; end check | Check whole token; `multiplyExact`; `size() != 1` | 🔵 Ready for revision | 27 Oct, 31 Oct |
-| 03 | Day03NextGreaterIndex | Monotonic stack | not attempted | — | ⬜ Not started | — |
+| 03 | Day03NextGreaterIndex | Monotonic stack | Found both bugs; repeat stray `main()`, unused `java.beans` import | Clean the file before pushing | ✅ Completed and verified | 1 Nov, 5 Nov |
 | 04 | Day04LargestRectangle | Monotonic stack | not attempted | — | ⬜ Not started | — |
 
 ## 🗄️ SQL
@@ -86,7 +86,7 @@ mvn test
 | Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
 | SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 evening, no `sql/day03-answers.md` at 10 PM on 28 Oct · 🔥 assigned Day 06 evening, carried to Day 07 ([day06.md](tasks/day06.md)) |
+| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · 🔥 assigned Day 07 evening ([day07.md](tasks/day07.md)) |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
 
 ## 🌱 Spring tasks (`spring-boot/course-practice`)
@@ -120,29 +120,27 @@ mvn test
 
 ## 📊 Status counts
 ```mermaid
-pie title Tracked items (28 Oct 2026)
-  "Completed and verified" : 6
+pie title Tracked items (29 Oct 2026)
+  "Completed and verified" : 8
   "Ready for revision" : 6
   "Needs correction" : 0
   "In progress" : 2
   "Attempted" : 1
-  "Not started" : 15
+  "Not started" : 13
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 28 Oct morning tally: Part A and Day01ArrayStackRedo moved to Completed, §3, §4 and the Day 03 Q&A set to Ready for revision, §5 to In progress.
+> Counts are adjusted from the 28 Oct tally: on 29 Oct `RemoveKAdjacentDuplicates` and `Day03NextGreaterIndex` moved from Not started to Completed.
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (29 Oct, 6 AM):** **Day 04 Part B1** in `spring-boot/course-practice`: `@Size` message, two `exists...` queries, 409 for duplicate email, +2 tests, then Day 04 Q3 in chat. Full list in [day07.md](tasks/day07.md). Part B2 (`ProblemDetail` everywhere, malformed JSON, +3 tests) comes after.
+> **Next task (29 Oct, 8 PM evening):** 🧩 `AsteroidCollision` (LeetCode 735), 8/28 → 28/28, and 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), plus untracking the committed `.postman/` files. Full list in the Evening section of [day07.md](tasks/day07.md).
 >
-> **Still carried from Day 06 evening (third time, no pressure, it simply stays in the queue):**
-> 1. 🧩 DSA: `RemoveKAdjacentDuplicates` (LeetCode 1209), 0/26 → 26/26.
-> 2. 🗄️ SQL: `sql/day03.sql` **Q1** only (answer in `sql/day03-answers.md`).
+> **Next morning (30 Oct, 6 AM):** Day 04 **Part B1** in `spring-boot/course-practice` is still open (no Spring push on 29 Oct): `@Size` message, two `exists...` queries, 409 for duplicate email, +2 tests, then Day 04 Q3 in chat. Part B2 comes after.
 >
-> 🔁 Revision due: `Day01ArrayStack` redo on 30 Oct, cold `Day02RpnEvaluator` redo on 31 Oct, and Day 03 Q1/Q2 re-answers.
+> 🔁 Revision due: `Day01ArrayStack` redo on 30 Oct, cold `Day02RpnEvaluator` redo on 31 Oct, Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5).
 >
-> No new DSA stub while 3 DSA problems are not started; no new SQL file while 5 are unanswered.
+> No new DSA stub while 2 DSA problems are not started (`AsteroidCollision`, `CarFleet`); no new SQL file while 5 are unanswered.
 
 ## 📝 Log
 | Date | Week/Day | Done | Notes |
