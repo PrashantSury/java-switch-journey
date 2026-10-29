@@ -27,16 +27,21 @@ public class Day03NextGreaterIndex {
         }
         int n = nums.length;
         int[] result = new int[n];
-        Arrays.fill(result, 1, n, -1);
+        Arrays.fill(result, -1);
 
         // indices whose next greater element hasn't been found yet (values non-increasing)
         Deque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < n; i++) {
-            while (!stack.isEmpty() && nums[i] - nums[stack.peek()] >= 0) {
+            while (!stack.isEmpty() &&  nums[stack.peek()] < nums[i]  ) {
                 result[stack.pop()] = i;
             }
             stack.push(i);
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+      nextGreaterIndex(new int[]{1, 2, 3, 4, 5});
+
     }
 }
