@@ -119,12 +119,14 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 
 | Item | Path | Status |
 |---|---|---|
-| 🌱 Day 04 Part B1 | `spring-boot/course-practice` | 🟡 In progress · no push today |
+| 🌱 Day 04 Part B1 | `spring-boot/course-practice` | 🔴 Needs correction · 71a5f07 pushed 00:13 (14/14); missing `@Size` message and a PUT-conflict test |
+| 🧩 `AsteroidCollision` | `src/main/java/com/prashant/dsa/stack/` | 🔴 Needs correction · 28/28, but remove the stray `+6` from the Javadoc |
+| 🎓 SQL learn lesson 02 | `sql/learn/` | ✅ Completed and verified (5/5, f2e5a58) |
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo) | `src/main/java/com/prashant/dailytests/redo/` | ⬜ Not started (0/17) |
 | 🎤 Day 04 Q3 | in chat | ⬜ Pending |
 
 > [!IMPORTANT]
-> ✅ Done when `AsteroidCollisionTest` is 28/28 on your pushed code, `sql/day03-answers.md` has Q1, and `git ls-files` no longer lists the Postman files. Reply in chat when you're ready for grading.
+> ✅ Done when `AsteroidCollisionTest` is 28/28 and its Javadoc is clean on your pushed code (28/28 reached at 22:53, only the `+6` fix is left), `sql/day03-answers.md` has Q1, and `git ls-files` no longer lists the Postman files. Reply in chat when you're ready for grading.
 
 ## 🌃 End of day (10 PM check)
 
