@@ -2,12 +2,19 @@
 
 ![Week](https://img.shields.io/badge/Week-1-blue) ![Day](https://img.shields.io/badge/Day-05-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~60%20min-blue)
 
+> [!IMPORTANT]
+> Backlog day: fix the Day 03 Part A corrections in `spring-boot/course-practice` and redo `Day02RpnEvaluator` from memory (44/44).
+
 > [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
+>
 > Backlog day, no new material. The Day 03 Part A work you pushed in `11dfcc8` is 🔴 **Needs correction**, and §3/§4 must be verified before §5 (Day 04 Part B) or the banking-app V2 auth migration can start. Two buggy rounds (Day 03, Day 04) are still unattempted, so there's no new buggy round today.
 
 ## 📚 Revise first (~10 min) in `spring-boot/prerequisites.md`
-- 🔥 **3. Request mapping**: what belongs in the mapping path vs. what `@RequestParam` reads from the query string.
-- 🔥 **4. HTTP semantics**: which status a successful DELETE should return, and why it has no body.
+| Topic | What to recall |
+|---|---|
+| 🔥 **3. Request mapping** | what belongs in the mapping path vs. what `@RequestParam` reads from the query string. |
+| 🔥 **4. HTTP semantics** | which status a successful DELETE should return, and why it has no body. |
 
 > [!TIP]
 > Add one row per topic to the **Revision log** at the bottom of `prerequisites.md` with your confidence (1-5).

@@ -2,12 +2,19 @@
 
 ![Week](https://img.shields.io/badge/Week-1-blue) ![Day](https://img.shields.io/badge/Day-03-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Sunday](https://img.shields.io/badge/Sunday-light%20catch--up-blue)
 
+> [!IMPORTANT]
+> Light Sunday round (~35 min): finish the Day 02 endpoints properly and add `ResponseEntity`. Done when `mvn test` passes inside `spring-boot/course-practice` and no endpoint reads the id from the request body.
+
 > [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
+>
 > It's Sunday, so this is a **light round (~35 min)**. It finishes the Day 02 endpoints properly and adds `ResponseEntity`. Work in `spring-boot/course-practice`, base package `com.prashant.coursepractice`, and follow `course-practice/STRUCTURE.md`.
 
 ## 📚 Revise first (~15 min) in `spring-boot/prerequisites.md`
-- 🔥 **3. Request mapping**: `@PathVariable` vs `@RequestParam` defaults (`required = true` gives 400), and why a query string never goes in the mapping path.
-- 🔥 **4. HTTP semantics**: safe vs idempotent, PUT vs PATCH, the status code table, and why 201 comes with a `Location` header.
+| Topic | What to recall |
+|---|---|
+| 🔥 **3. Request mapping** | `@PathVariable` vs `@RequestParam` defaults (`required = true` gives 400), and why a query string never goes in the mapping path. |
+| 🔥 **4. HTTP semantics** | safe vs idempotent, PUT vs PATCH, the status code table, and why 201 comes with a `Location` header. |
 
 > [!TIP]
 > These two came up as weak spots in `interview-answers/day02-answers.md` (Q1 and Q3 at 5/10). After revising, add a row to the Revision log at the bottom of `prerequisites.md` with your confidence (1-5).

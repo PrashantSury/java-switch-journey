@@ -2,15 +2,22 @@
 
 ![Week](https://img.shields.io/badge/Week-1-blue) ![Day](https://img.shields.io/badge/Day-04-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~45%20min-blue)
 
+> [!IMPORTANT]
+> REST: `ResponseEntity`, status codes and DTOs. Part A finishes Day 03; Part B adds validation, a 409 for duplicate email and `ProblemDetail` errors in `spring-boot/course-practice`.
+
 > [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
+>
 > Plan for today: **REST: ResponseEntity, status codes, DTOs**. Work in `spring-boot/course-practice`, base package `com.prashant.coursepractice`, and follow `course-practice/STRUCTURE.md`.
 
 > [!WARNING]
 > ⚠️ **Day 03's Spring tasks aren't in the repo yet** (`StudentController` still reads the id from the body, and `/search?name=` is still in the mapping path). Do **Part A** first: it's tasks 1-6 of `tasks/day03-morning.md`, and today's work builds on it. If time runs out, finish Part A and push; Part B can move to a later slot.
 
 ## 📚 Revise first (~15 min) in `spring-boot/prerequisites.md`
-- 🔥 **5. Validation & error handling**: what `@Valid` triggers, `MethodArgumentNotValidException` (400), `@RestControllerAdvice`, and the **ProblemDetail** fields (`type`, `title`, `status`, `detail`, `instance`).
-- 🔥 **2. Request flow**: where Jackson turns JSON into your DTO and back (HttpMessageConverter), and why controllers stay thin.
+| Topic | What to recall |
+|---|---|
+| 🔥 **5. Validation & error handling** | what `@Valid` triggers, `MethodArgumentNotValidException` (400), `@RestControllerAdvice`, and the **ProblemDetail** fields (`type`, `title`, `status`, `detail`, `instance`). |
+| 🔥 **2. Request flow** | where Jackson turns JSON into your DTO and back (HttpMessageConverter), and why controllers stay thin. |
 
 > [!TIP]
 > Next in the rotation after Day 03's sections 3 and 4. After revising, add a row per topic to the **Revision log** at the bottom of `prerequisites.md` with your confidence (1-5), so future rounds can target the weak ones.
