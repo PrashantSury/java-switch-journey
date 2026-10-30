@@ -57,7 +57,7 @@ mvn test
 | MinStack | DSA | 10/10 | 156a339 | ✅ Completed and verified |
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
 | RemoveKAdjacentDuplicates | DSA (Day 01) | 26/26 | 2d36911 | ✅ Completed and verified (29 Oct) · O(n) quiz 3/5 (missed the push/pop-once reasoning), re-ask |
-| AsteroidCollision | DSA (Day 02) | 8/28 | — (stub only) | ⬜ Not started · assigned Day 07 evening, no push by the 10 PM check · 🔥 assigned again Day 08 evening ([day08.md](tasks/day08.md)) |
+| AsteroidCollision | DSA (Day 02) | 28/28 | 6ddde32 | 🔴 Needs correction · all 28 pass (O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified) but a stray `+6` was typed into the Javadoc (`Rules for this repo:+6`). Remove it and push a one-line fix, then ✅ |
 | CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
 | Day02RpnEvaluator | 🐞 Buggy round | 44/44 | 1f1be84 | ✅ Fixed (hint on `-3`) · 🔵 redo due 27 Oct + 31 Oct |
@@ -104,7 +104,7 @@ mvn test
 | Lesson | Topic | Files | Checker | Status |
 |---|---|---|---|---|
 | 01 | SELECT, WHERE, ORDER BY, LIMIT | `sql/learn/lesson01.md` | 5/5 | ✅ Completed and verified (735056a, checker `LESSON 01 COMPLETE` and queries reviewed, 30 Oct) |
-| 02 | NULL handling and CASE | `sql/learn/lesson02.md` | 0/5 | ⬜ Not started |
+| 02 | NULL handling and CASE | `sql/learn/lesson02.md` | 5/5 | 🔴 Needs correction · checker passes (b26bfc8) but ex 1 has no `ORDER BY customer_id` although the task says sorted (passes only because the rows come back in insert order). Add it and push, then ✅ |
 | 03 | Aggregates, GROUP BY, HAVING | `sql/learn/lesson03.md` | 0/5 | ⬜ Not started |
 | 04 | INNER JOIN and LEFT JOIN | `sql/learn/lesson04.md` | 0/5 | ⬜ Not started |
 | 05 | Subqueries and EXISTS | `sql/learn/lesson05.md` | 0/5 | ⬜ Not started |
@@ -140,27 +140,27 @@ mvn test
 
 ## 📊 Status counts
 ```mermaid
-pie title Tracked items (30 Oct 2026)
+pie title Tracked items (31 Oct 2026)
   "Completed and verified" : 9
   "Ready for revision" : 6
-  "Needs correction" : 0
+  "Needs correction" : 2
   "In progress" : 2
   "Attempted" : 1
-  "Not started" : 18
+  "Not started" : 16
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 29 Oct tally: on 30 Oct SQL learn lesson 01 moved from Not started to Completed, and `Day01ArrayStackRedo7` was added as Not started.
+> Counts are adjusted from the 30 Oct tally: `AsteroidCollision` and SQL learn lesson 02 moved from Not started to Needs correction (both pass, one small fix each).
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (31 Oct, 6 AM):** Day 04 **Part B1** in `spring-boot/course-practice`, starting with a clear `message` on the `@Size` in `StudentRequest` (then the two `exists...` email queries, 409 for duplicate email, +2 tests, `StudentControllerTest` 13+), plus the cold `Day01ArrayStackRedo7` (0/17). Both carried from [day08.md](tasks/day08.md).
+> **Next task (31 Oct, 6 AM):** first two one-line fixes (`AsteroidCollision` Javadoc `+6`, `ORDER BY customer_id` in lesson 02 ex 1), then Day 04 **Part B1** in `spring-boot/course-practice`, starting with a clear `message` on the `@Size` in `StudentRequest` (then the two `exists...` email queries, 409 for duplicate email, +2 tests, `StudentControllerTest` 13+), plus the cold `Day01ArrayStackRedo7` (0/17). Both carried from [day08.md](tasks/day08.md).
 >
-> **Evening (31 Oct):** 🧩 `AsteroidCollision` (LeetCode 735), still 8/28, 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), and untracking the committed `.postman/` and `postman/globals/` files, all carried from 30 Oct evening.
+> **Evening (31 Oct):** 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), and untracking the committed `.postman/` and `postman/globals/` files, all carried from 30 Oct evening (SQL learn lesson 03 only after Q1).
 >
 > 🔁 Revision due: cold `Day02RpnEvaluator` redo on 31 Oct, Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5) on 1 Nov.
 >
-> No new DSA stub while 2 DSA problems are not started (`AsteroidCollision`, `CarFleet`); no new SQL file while 5 are unanswered.
+> No new DSA stub while a DSA problem is not started (`CarFleet`); no new SQL file while 5 are unanswered.
 
 ## 📝 Log
 | Date | Week/Day | Done | Notes |
@@ -181,3 +181,4 @@ pie title Tracked items (30 Oct 2026)
 | 30 Oct 2026 | W2 D8 | ✅ SQL learn lesson 01 5/5 (735056a); Spring revision workbook added (d12849e, 9bfb07d); morning round assigned (backlog only) | Ran the lesson 01 checker on a scratch Postgres: `LESSON 01 COMPLETE`, queries reviewed. No Spring push since c047571, so Part B1 is assigned again in [day08.md](tasks/day08.md) with the `Day01ArrayStackRedo7` day-7 redo (stub 0/17, tests verified 17/17 against a correct version). No new buggy round, no new Spring task (§5 open) |
 | 30 Oct 2026 | W2 D8 | Evening session assigned (backlog only) | Re-checked at 8 PM with `mvn test`: no pushes since the morning, `AsteroidCollisionTest` 8/28, `Day01ArrayStackRedo7Test` 0/17, `CarFleetTest` 2/37, no `sql/day03-answers.md`. `AsteroidCollision`, SQL 03 Q1 and the `.postman` clean-up assigned in the Evening section of [day08.md](tasks/day08.md). No new stub or SQL file (2 DSA not started, 5 SQL unanswered) |
 | 30 Oct 2026 | W2 D8 | 10 PM check: no new verified work | No pushes from me after the 8 PM evening assignment (only Markdown restyle commits today, presentation only). Part B1, `Day01ArrayStackRedo7` (0/17) and Day 04 Q3 carried to 31 Oct morning; `AsteroidCollision` 8/28, SQL 03 Q1 and the `.postman` clean-up carried to 31 Oct evening. No new mistakes. Next: Part B1 on 31 Oct 6 AM |
+| 30 Oct 2026 | W2 D8 | 11:40 PM review of 6ddde32 + b26bfc8: `AsteroidCollision` 28/28 and SQL learn lesson 02 5/5, both 🔴 Needs correction (one-line fixes) | Ran `AsteroidCollisionTest` 28/28 and the lesson 02 checker 5/5 (`LESSON 02 COMPLETE`) on a scratch Postgres. Code is correct; review found a stray `+6` in the `AsteroidCollision` Javadoc and a missing `ORDER BY` in lesson 02 ex 1. Still not pushed: Part B1, `Day01ArrayStackRedo7` (0/17), Day 04 Q3, SQL 03 Q1, `.postman` clean-up. Logged in the mistake log |
