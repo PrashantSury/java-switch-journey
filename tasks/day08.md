@@ -119,7 +119,7 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 
 | Item | Path | Status |
 |---|---|---|
-| 🌱 Day 04 Part B1 | `spring-boot/course-practice` | 🔴 Needs correction · 71a5f07 pushed 00:13 (14/14); still to do: `@Size` message and a PUT-with-another-email 409 test |
+| 🌱 Day 04 Part B1 | `spring-boot/course-practice` | ✅ Completed and verified (15/15, 71a5f07 + c344203, 31 Oct) |
 | 🧩 `AsteroidCollision` | `src/main/java/com/prashant/dsa/stack/` | ✅ Completed and verified (28/28, 31 Oct) · Lumi removed the stray `+6` and added braces |
 | 🎓 SQL learn lesson 02 | `sql/learn/` | ✅ Completed and verified (5/5, f2e5a58) |
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo) | `src/main/java/com/prashant/dailytests/redo/` | ⬜ Not started (0/17) |
@@ -132,13 +132,14 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 
 | Item | Outcome |
 |---|---|
-| 🌱 Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | 🟡 In progress, no push today · carried to 31 Oct 6 AM |
+| 🌱 Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | ✅ Completed and verified (15/15, 31 Oct 12:35 AM) |
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo) | ⬜ Not started (0/17) · carried to 31 Oct 6 AM |
 | 🎤 Day 04 Q3 | ⬜ Pending · carried to 31 Oct morning |
 | 🧩 AsteroidCollision | ✅ Completed and verified (28/28, pushed 22:53, verified 31 Oct) |
 | 🗄️ SQL 03 Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to 31 Oct evening |
 | 🧹 Untrack `.postman/` and `postman/globals/` | ⬜ Not started · carried to 31 Oct evening |
 | 🎓 SQL learn lesson 01 | ✅ Completed and verified (5/5, 735056a) |
+| 🎓 SQL learn lesson 02 | ✅ Completed and verified (5/5, f2e5a58) |
 
 > [!IMPORTANT]
-> **Next task (31 Oct, 6 AM):** Part B1, starting with a clear `message` on the `@Size` in `StudentRequest`, then the cold `Day01ArrayStackRedo7`.
+> **Next task (31 Oct, 6 AM):** the cold `Day01ArrayStackRedo7` (0/17), then Day 04 Q3 in chat. Part B1 is done.

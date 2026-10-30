@@ -36,7 +36,7 @@ mvn test
 
 ## 🎯 Current phase
 - **Phase:** Week 1 foundations — Spring Boot prerequisites (`course-practice` Students API) + SQL (banking-flavoured) + DSA Stack. Banking app setup is done (health UP); hand-written V2 migrations have not started.
-- 🔥 **Active Spring section:** §5 Validation & error handling (Day 04 Part B). §3 and §4 are code-verified (Part A ✅, 28 Oct), pending revision because the Day 03 Q1/Q2 answers scored 5/10. You've already started Part B (`@Size`, `DuplicateEmailException`). Part B is split into B1 (Day 07) and B2.
+- 🔥 **Active Spring section:** §5 Validation & error handling (Day 04 Part B). §3 and §4 are code-verified (Part A ✅, 28 Oct), pending revision because the Day 03 Q1/Q2 answers scored 5/10. Part B1 is ✅ (31 Oct); B2 is next.
 - ✅ **Sections completed:** none yet. The Revision log in `spring-boot/prerequisites.md` is still empty.
 
 | Section | Status |
@@ -45,7 +45,7 @@ mvn test
 | §2 Request flow | 🟡 In progress (Day 04 Q1 pending) |
 | §3 Request mapping | 🔵 Ready for revision (code verified 28 Oct, `course-practice` 12/12; Q3 7/10) |
 | §4 HTTP semantics | 🔵 Ready for revision (code verified 28 Oct; Day 03 Q1/Q2 scored 5/10) |
-| §5 Validation & error handling | 🟡 In progress (Day 04 Part B started: `@Size`, `DuplicateEmailException`) |
+| §5 Validation & error handling | 🟡 In progress (Part B1 ✅ 31 Oct; B2 and the workbook answers pending) |
 | §6 JPA · §7 Testing · §8 Config | ⬜ Not started |
 
 ## 🧩 DSA & 🐞 buggy rounds
@@ -115,8 +115,8 @@ mvn test
 |---|---|---|
 | Day 02 endpoints | ✅ Rolled into Day 03 Part A | Verified together with Part A |
 | Day 03 / Day 04 Part A (endpoint fixes) | ✅ Completed and verified (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571. `course-practice` 12/12 (`StudentControllerTest` 11 + context test 1). `/search` mapping, DELETE 204, not-found in service, PUT unknown id → 404, search without `name` → 400, `@Valid`/dead branch removed from `search`, stray `main()` removed from `Day02RpnEvaluator`. See [day06.md](tasks/day06.md) |
-| Day 04 Part B1 (`@Size` message, `exists...` queries, 409 for duplicate email, +2 tests) | 🔴 Needs correction · 71a5f07 (31 Oct) · `course-practice` 14/14 (`StudentControllerTest` 13 + context 1) | Done: `existsByEmailIgnoreCase` and `...AndIdNot` queries, `DuplicateEmailException` thrown in create and update, 409 handler, 2 new tests (POST duplicate → 409, PUT own email → 200). Still to do: the `@Size` on `name` has **no `message`** (the first B1 item); no test for PUT with another student's email → 409. The stale comment was removed by Lumi (cosmetic). Then ✅ |
-| Day 04 Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) | ⬜ Not started | Next morning after B1 is verified |
+| Day 04 Part B1 (`@Size` message, `exists...` queries, 409 for duplicate email, +2 tests) | ✅ Completed and verified (31 Oct) · 71a5f07 + c344203 · `course-practice` 15/15 (`StudentControllerTest` 14 + context 1) | `@Size(min=2, max=50, message="name must be between {min} and {max} characters")` (checked: a 1-char name returns exactly `name must be between 2 and 50 characters`), `existsByEmailIgnoreCase` and `...AndIdNot` queries, `DuplicateEmailException` in create and update, 409 handler, tests for POST duplicate → 409, PUT own email → 200, PUT another student's email → 409. Open note: no unique constraint on `email` yet (race), a JPA topic for §6 |
+| Day 04 Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) | ⬜ Not started | B1 is verified; starts once the backlog is under about 8 open items |
 
 ## 🏦 Banking-app milestones (`banking-app/`)
 | # | Milestone | Status |
@@ -142,20 +142,20 @@ mvn test
 ## 📊 Status counts
 ```mermaid
 pie title Tracked items (31 Oct 2026)
-  "Completed and verified" : 11
+  "Completed and verified" : 12
   "Ready for revision" : 6
-  "Needs correction" : 1
+  "Needs correction" : 0
   "In progress" : 1
   "Attempted" : 1
   "Not started" : 16
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02 and `AsteroidCollision` are now Completed, and Part B1 moved from In progress to Needs correction (`@Size` message and the PUT-conflict test are still his to do).
+> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; nothing is in Needs correction.
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (31 Oct, 6 AM):** finish Day 04 **Part B1**: (1) add `message = "..."` to the `@Size` on `name` in `StudentRequest`, (2) add a test: PUT with another student's email returns 409. Then the cold `Day01ArrayStackRedo7` (0/17) from [day08.md](tasks/day08.md).
+> **Next task (31 Oct, 6 AM):** the cold `Day01ArrayStackRedo7` (0/17, no peeking), then Day 04 **Q3** in chat. Part B1 is done, so the next Spring step is Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests), but only after the backlog is under about 8 open items.
 >
 > **Evening (31 Oct):** 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), and untracking the committed `.postman/` and `postman/globals/` files, all carried from 30 Oct evening (SQL learn lesson 03 only after Q1).
 >
@@ -185,3 +185,4 @@ pie title Tracked items (31 Oct 2026)
 | 30 Oct 2026 | W2 D8 | 11:40 PM review of 6ddde32 + b26bfc8: `AsteroidCollision` 28/28 and SQL learn lesson 02 5/5, both 🔴 Needs correction (one-line fixes) | Ran `AsteroidCollisionTest` 28/28 and the lesson 02 checker 5/5 (`LESSON 02 COMPLETE`) on a scratch Postgres. Code is correct; review found a stray `+6` in the `AsteroidCollision` Javadoc and a missing `ORDER BY` in lesson 02 ex 1. Still not pushed: Part B1, `Day01ArrayStackRedo7` (0/17), Day 04 Q3, SQL 03 Q1, `.postman` clean-up. Logged in the mistake log |
 | 31 Oct 2026 | W2 D8 | 12:15 AM review of f2e5a58 + 71a5f07: ✅ SQL learn lesson 02 5/5; Part B1 pushed, 🔴 Needs correction | Lesson 02 checker 5/5 (ex 1 now has `ORDER BY`). `course-practice` 14/14, `AsteroidCollisionTest` 28/28 but `+6` still in the Javadoc (🔴), `Day01ArrayStackRedo7Test` 0/17. B1: queries, 409 in create/update and 2 tests done; `@Size` has no `message`, no PUT-conflict test. Still pending: Redo7, Day 04 Q3, SQL 03 Q1, `.postman` untracking (both files still tracked, `.gitignore` lacks `postman/globals/`) |
 | 31 Oct 2026 | W2 D8 | ✅ `AsteroidCollision` 28/28 after Lumi's cosmetic clean-up; mistake log split per section | Standing rules from Prashant: Lumi fixes cosmetic issues directly (removed `+6` and added braces in `AsteroidCollision`, removed the stale 409 comment in `StudentServiceImpl`); only conceptual mistakes are logged. Re-ran `AsteroidCollisionTest` 28/28 and `course-practice` 14/14. `revision/mistake-log.md` is now an index of `revision/mistakes/dsa.md`, `sql.md`, `spring.md`; the purely cosmetic rows (AsteroidCollision, Day03NextGreaterIndex hygiene) were dropped, all conceptual rows kept with their redo dates. Still his: B1 `@Size` message + PUT-conflict test, `Day01ArrayStackRedo7`, Day 04 Q3, SQL 03 Q1, `.postman` untracking |
+| 31 Oct 2026 | W2 D8 | 12:35 AM review of c344203: ✅ Day 04 Part B1 15/15 | `@Size` message added and checked (a 1-char name returns `name must be between 2 and 50 characters`); PUT with another student's email → 409 test added and passing. `course-practice` 15/15. No cosmetic issues found. Still his: `Day01ArrayStackRedo7` (0/17), Day 04 Q3, SQL 03 Q1, `.postman` untracking |
