@@ -5,8 +5,6 @@
 > [!TIP]
 > Re-read before revising. Answer format to practise: **definition → difference → when to use → example**.
 
----
-
 ## ❓ Q1. `@PathVariable` vs `@RequestParam` vs `@RequestBody` – when would you use each?
 
 **❌ Your answer (verbatim):**
@@ -33,8 +31,6 @@
 > [!TIP]
 > `@PathVariable` binds part of the URL path, e.g. `GET /students/{id}`. I use it to identify a specific resource. `@RequestParam` binds query-string or form parameters, e.g. `GET /students/search?name=ram`. I use it for filtering, sorting, paging and other optional inputs. It is required by default, so a missing param gives 400 unless I set `required=false` or a `defaultValue`. `@RequestBody` deserialises the request body (JSON) into a DTO through Spring's HttpMessageConverters (Jackson). I use it for POST/PUT/PATCH payloads, usually with `@Valid`. Example: `PUT /students/{id}` takes the id from `@PathVariable` and the new data from `@RequestBody`.
 
----
-
 ## ❓ Q2. `@RestController` vs `@Controller` – what does `@RestController` add?
 
 **❌ Your answer (verbatim):**
@@ -52,8 +48,6 @@
 **✅ Model answer**
 > [!TIP]
 > `@RestController` is a meta-annotation: `@Controller` + `@ResponseBody` on every method. A plain `@Controller` returns view names that a ViewResolver renders as HTML. `@RestController` skips view resolution and writes the return value to the HTTP response body with an HttpMessageConverter, usually as JSON. I use `@Controller` for MVC pages and `@RestController` for REST APIs.
-
----
 
 ## ❓ Q3. Should PUT be idempotent? PUT vs PATCH? Status codes for create / update / delete?
 
@@ -84,8 +78,6 @@
 **✅ Model answer**
 > [!TIP]
 > Yes, PUT should be idempotent: repeating the same PUT gives the same server state. PUT sends the full representation and replaces the resource. PATCH sends only the changes (a partial update) and isn't necessarily idempotent. POST create returns 201 Created with a Location header. Update returns 200 with the updated body, or 204 if there's no body. Delete returns 204. Unknown id returns 404, and an invalid body returns 400.
-
----
 
 ## 🔥 What to focus on
 

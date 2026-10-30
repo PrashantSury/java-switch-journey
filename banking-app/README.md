@@ -30,7 +30,7 @@ banking-app/
 
 ## ✅ Tonight's steps (≈ 40 min)
 
-### 1. Pull and create `.env`
+### 1. 📥 Pull and create `.env`
 ```bash
 git pull
 cd banking-app

@@ -9,8 +9,6 @@
 > [!WARNING]
 > **Total: 17/30.** Q1 and Q2 go to 🔵 Ready for revision. Q3 is solid, with small gaps.
 
----
-
 ## ❓ Q1. What does idempotent mean? Is DELETE idempotent, and if a client deletes the same id twice, what status should the second call return? Does that break idempotency?
 
 **❌ Your answer (verbatim):**
@@ -35,8 +33,6 @@
 **✅ Model answer**
 > [!TIP]
 > An operation is idempotent if repeating the same request N times leaves the **server state** the same as sending it once. The response can differ between calls. GET, PUT and DELETE are idempotent, and POST is not. DELETE is idempotent: the first call returns 204 and removes the student. A second call on my API returns 404 because the resource no longer exists. That doesn't break idempotency, since the state (student is gone) is the same after one call or ten. Some APIs return 204 every time, which is also valid.
-
----
 
 ## ❓ Q2. `ResponseEntity` vs `@ResponseStatus`: when would you use each, and why return a `Location` header with 201?
 
@@ -69,8 +65,6 @@
 > [!TIP]
 > `ResponseEntity` represents the whole HTTP response, so I use it when the status, headers or body are decided at runtime, for example `ResponseEntity.created(uri).body(dto)` or `ResponseEntity.noContent().build()`. `@ResponseStatus` declares a fixed status for a handler method or an exception class (`@ResponseStatus(NOT_FOUND)` on `StudentNotFoundException`), and I use it when the outcome never varies. After a POST creates a resource I return **201** with a **`Location` header** holding the URL of the new resource (built with `ServletUriComponentsBuilder`), so the client knows where to fetch it.
 
----
-
 ## ❓ Q3. What happens when a required `@RequestParam` is missing? How do you make it optional, and what does `@Valid` on a plain `String` param do?
 
 **❌ Your answer (verbatim):**
@@ -90,8 +84,6 @@
 **✅ Model answer**
 > [!TIP]
 > A required `@RequestParam` that is missing throws `MissingServletRequestParameterException`, which gives **400 Bad Request**. To make it optional I use `required = false`, `defaultValue`, or `Optional<String>`. `@Valid` on a plain `String` does nothing, because there are no constraints on `String` to cascade into. To validate it, I put a constraint such as `@NotBlank` directly on the parameter, and Spring 6.1+ built-in method validation checks it.
-
----
 
 ## 🏁 Summary
 | Q | Topic | Grade | Status |

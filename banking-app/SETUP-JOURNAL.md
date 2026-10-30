@@ -17,8 +17,6 @@ flowchart LR
     MVN["mvn verify"] --> TC[("Testcontainers postgres:16 throwaway")]
 ```
 
----
-
 ## ✅ 1. Setup steps (in the order I did them)
 
 ### 1.1 🧰 Prerequisites
@@ -91,11 +89,9 @@ mvn verify
 ### 1.8 ▶️ Run and check health
 - [x] `http://localhost:9078/actuator/health` → `{"status":"UP"}` 🎉 (I run on port 9078 via `SERVER_PORT`; default is 8080).
 
----
-
 ## 🔥 2. Challenges faced and fixes
 
-### (a) pgAdmin: `password authentication failed for user "CHANGE_ME"`
+### (a) 🐞 pgAdmin: `password authentication failed for user "CHANGE_ME"`
 | | |
 |---|---|
 | ❌ Problem | pgAdmin couldn't log in. |
@@ -103,7 +99,7 @@ mvn verify
 | ✅ Fix | Fixed `.env`, then `docker compose down -v` and `up -d`. |
 | 📌 Lesson | Container init is one-shot. Changing config later needs a fresh volume (or an `ALTER ROLE`). |
 
-### (b) `mvn verify`: `FATAL: invalid value for parameter "TimeZone": "Asia/Calcutta"`
+### (b) 🐞 `mvn verify`: `FATAL: invalid value for parameter "TimeZone": "Asia/Calcutta"`
 | | |
 |---|---|
 | ❌ Problem | Integration test couldn't load the ApplicationContext. |
@@ -111,7 +107,7 @@ mvn verify
 | ✅ Fix | `<argLine>-Duser.timezone=UTC</argLine>` for surefire and failsafe ([commit e56f950](https://github.com/PrashantSury/java-switch-journey/commit/e56f95025cb6975f9ff7332f42ad2e14c6de51fe)) + `-Duser.timezone=UTC` VM option in IntelliJ. |
 | 📌 Lesson | Store and process in **UTC**, convert to IST only at the edge (UI/reports). |
 
-### (c) `Could not resolve placeholder 'JWT_PUBLIC_KEY_LOCATION'`
+### (c) 🐞 `Could not resolve placeholder 'JWT_PUBLIC_KEY_LOCATION'`
 | | |
 |---|---|
 | ❌ Problem | App failed at startup from IntelliJ while `mvn verify` passed. |
@@ -119,26 +115,24 @@ mvn verify
 | ✅ Fix | Pasted env vars into the run config, set working dir to `banking-app`. |
 | 📌 Lesson | Read the **last** `Caused by:`. Config comes from the environment, so each runner (IDE, Maven, CI) must supply it. |
 
-### (d) Port clash avoided: local Postgres 5432 vs Docker 5433
+### (d) 🐞 Port clash avoided: local Postgres 5432 vs Docker 5433
 Local PostgreSQL 18 already owns **5432**, so Docker publishes `5433:5432`. Both run side by side; the app's `DB_URL` points at 5433.
 
-### (e) H2 can't run Postgres-specific DDL
+### (e) 🐞 H2 can't run Postgres-specific DDL
 H2 doesn't support `INET`, `JSONB` or Postgres triggers the way we use them → **Testcontainers** runs tests on the same `postgres:16` as dev. No H2 in the pom.
 
-### (f) DB role design: owner could drop the audit trigger
+### (f) 🐞 DB role design: owner could drop the audit trigger
 If the app connected as the table owner, it could `DROP TRIGGER` and silently stop auditing → **two roles**: `banking_migrator` (owns schemas, DDL, used by Flyway) and `banking_app` (DML only).
 
-### (g) Git Bash paste
+### (g) 🐞 Git Bash paste
 Ctrl+V doesn't paste → **Shift + Insert** or right-click.
 
 > [!WARNING]
 > 🧹 To clean: my home folder showed `(master)` in Git Bash — a stray `git init` in `C:\Users\Prashant Suryawanshi`. Check with `git -C ~ rev-parse --show-toplevel`; if it's the home folder, remove only `~/.git` (after confirming nothing there matters).
 
----
-
 ## 🎤 3. How to tell this in an interview
 
-### 3.1 STAR talking points
+### 3.1 ⭐ STAR talking points
 | Challenge | Situation | Task | Action | Result |
 |---|---|---|---|---|
 | Timezone | Integration tests failed on Windows only | Make the build reproducible | Read the root `Caused by`, found the legacy `Asia/Calcutta` ID rejected by Postgres 16; pinned JVM to UTC in surefire/failsafe and run config | Green build; UTC-everywhere policy |
@@ -201,8 +195,6 @@ Open Session in View keeps the DB connection open during view rendering, hiding 
 > [!TIP]
 > **"Why not H2 for tests?"**
 > "My schema uses Postgres features like JSONB, INET and triggers, which H2 doesn't handle the same way. So I use Testcontainers: each test run starts a real Postgres 16 in Docker, Flyway applies the migrations, and the test runs against exactly what production will use. It's a bit slower, but a green build actually means something."
-
----
 
 ## 📌 4. Daily checklist
 ```bash
