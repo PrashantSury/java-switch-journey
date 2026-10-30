@@ -29,7 +29,11 @@
 - **Daily tasks** (`tasks/`, `sql/`): emoji headings, Day/Week/slot badges, acceptance criteria as `- [ ]` checklists, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`.
 - **Interview answers**: grade badges at top, verbatim answer in a `diff` block with `-` lines, grade in `[!WARNING]` (<7) or `[!NOTE]`, model answer in `[!TIP]`.
 - **Mistake log**: keep the table exactly as is (`| Date | Problem | What went wrong | Redo on day 3 | Redo on day 7 |`) — routines append rows. Styling only above the table.
-- **Revision sheets**: key points in `[!IMPORTANT]`, examples in `` ```java ``.
+- **Revision sheets / workbook** (`spring-boot/spring-boot-revision-sheet.md`): keep the lighter, notes-first layout.
+  - One badge row under the title (Spring Boot, Java, mode, sections). **No per-section badges** and **no emoji in the numbered `##` headings** (`## 5. Validation and error handling`), so the anchors stay plain (`#5-validation-and-error-handling`, `#contents`).
+  - Under each `##` section, a status line `> 🔗 **P§n** · <status>`, then these `###` blocks in order: `### 📖 Concept notes` (key points in `[!IMPORTANT]`), `### 💡 Concept example` (`` ```java `` or `` ```mermaid ``), `### ❓ Questions` (`**5.1** ...` each followed by `> ✍️ My answer:`), `### ✅ Section check` (`- [ ] Revised (answered from memory)` + `Score: _/5`), then `[⬆ Back to contents](#contents)`.
+  - Emoji live in the `###` labels and in the Contents / Map tables only as ⬜🟡🟠🔴🔵✅ status icons; don't add emoji to section titles.
+  - Other sheets (`prerequisites.md`): key points in `[!IMPORTANT]`, examples in `` ```java ``.
 
 ## 🧪 Mermaid rules
 - Use `flowchart LR/TB` or `sequenceDiagram`; keep node labels plain (avoid `@`, `()`, `{}` unquoted; wrap in `"..."` if needed).
