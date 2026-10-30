@@ -2,8 +2,11 @@
 
 ![Layout](https://img.shields.io/badge/layout-package%20by%20feature-blue) ![Base](https://img.shields.io/badge/base-com.prashant.banking-blue)
 
+> [!IMPORTANT]
+> The banking app groups code **by feature**, with the usual layers inside each feature.
+
 > [!NOTE]
-> The banking app groups code **by feature**, with the usual layers inside each feature. The older practice modules use layer-first packages (see `spring-boot/course-practice/STRUCTURE.md`). That's fine: this module follows this file.
+> **Legend:** 📦 package · 🧱 layer. The older practice modules use layer-first packages (see `spring-boot/course-practice/STRUCTURE.md`). That's fine: this module follows this file.
 
 ## 📦 Packages
 ```text

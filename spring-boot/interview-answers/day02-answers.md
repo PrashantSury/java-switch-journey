@@ -2,8 +2,11 @@
 
 ![Day](https://img.shields.io/badge/Day-02-blue) ![Q1](https://img.shields.io/badge/Q1-5%2F10-orange) ![Q2](https://img.shields.io/badge/Q2-7%2F10-yellowgreen) ![Q3](https://img.shields.io/badge/Q3-5%2F10-orange)
 
-> [!TIP]
+> [!IMPORTANT]
 > Re-read before revising. Answer format to practise: **definition → difference → when to use → example**.
+
+> [!NOTE]
+> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10.
 
 ## ❓ Q1. `@PathVariable` vs `@RequestParam` vs `@RequestBody` – when would you use each?
 

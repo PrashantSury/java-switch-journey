@@ -2,8 +2,11 @@
 
 ![Phase](https://img.shields.io/badge/Phase-1%20Retail%20core-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen) ![Java](https://img.shields.io/badge/Java-21-blue) ![DB](https://img.shields.io/badge/PostgreSQL-16%20in%20Docker-blue) ![Status](https://img.shields.io/badge/status-skeleton-yellow)
 
+> [!IMPORTANT]
+> Plumbing only: no entities, services or endpoints. Every `TODO(write by hand)` is **your** practice.
+
 > [!NOTE]
-> Plumbing only: no entities, services or endpoints. Every `TODO(write by hand)` is **your** practice. Layout: [`STRUCTURE.md`](STRUCTURE.md). Setup story, challenges and interview notes: [`SETUP-JOURNAL.md`](SETUP-JOURNAL.md) 📓.
+> **Legend:** 🏦 app · 🛡️ database roles · 🗂️ layout · 📓 journal. Layout: [`STRUCTURE.md`](STRUCTURE.md). Setup story, challenges and interview notes: [`SETUP-JOURNAL.md`](SETUP-JOURNAL.md) 📓.
 
 ## 🗂️ What's here
 ```text

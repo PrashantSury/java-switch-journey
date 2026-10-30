@@ -2,8 +2,11 @@
 
 ![Date](https://img.shields.io/badge/Setup-24%20Oct%202026-blue) ![OS](https://img.shields.io/badge/OS-Windows-blue) ![Result](https://img.shields.io/badge/health-UP-brightgreen) ![Build](https://img.shields.io/badge/mvn%20verify-BUILD%20SUCCESS-brightgreen)
 
+> [!IMPORTANT]
+> What I actually did to get the banking app running locally, what broke, how I fixed it, and how to tell the story in an interview.
+
 > [!NOTE]
-> What I actually did to get the banking app running locally, what broke, how I fixed it, and how to tell the story in an interview. Quick reference for the skeleton: [`README.md`](README.md).
+> **Legend:** ✅ step done · 🐞 problem I hit · ⭐ interview talking point. Quick reference for the skeleton: [`README.md`](README.md).
 
 ## 🗺️ The big picture
 ```mermaid
