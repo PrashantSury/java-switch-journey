@@ -70,7 +70,7 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 | 🌱 Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON, +3 tests) | `spring-boot/course-practice` | ⬜ Not started · after B1 is verified |
 | 🧩 AsteroidCollision (LeetCode 735) | `src/main/java/com/prashant/dsa/stack/AsteroidCollision.java` | ⬜ Not started (8/28) · tonight |
 | 🗄️ SQL 03 Q1 (branch max with ties) | `sql/day03.sql` → `sql/day03-answers.md` | ⬜ Not started · tonight |
-| 🧹 Untrack `.postman/` and `postman/globals/` | repo root | ⬜ Not started · tonight |
+| 🧹 Untrack `.postman/` and `postman/globals/` | repo root | ✅ Completed (31 Oct, done by Lumi: a7ec8aa, f0b2c33, 637e772) |
 | 🎓 SQL learn lessons 02-05 | `sql/learn/` | ⬜ Not started |
 | 🔁 Day02RpnEvaluator cold redo | `src/main/java/com/prashant/dailytests/redo/` | 🔵 Due 31 Oct |
 | 🔁 Day03NextGreaterIndex redo · count-stack O(n) re-quiz | `src/main/java/com/prashant/dailytests/` | 🔵 Due 1 Nov |
@@ -110,7 +110,10 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 ### 🧹 Repo clean-up (~5 min), carried from Day 07
 `.gitignore` lists `.postman`, but `.postman/resources.yaml` and `postman/globals/workspace.globals.yaml` are still tracked.
 
-- [ ] Stop tracking them without deleting your local copies, and add `postman/globals/` to `.gitignore`.
+- [x] Stop tracking them and add `.postman/` and `postman/globals/` to `.gitignore`. Done by Lumi on 31 Oct (a7ec8aa, f0b2c33, 637e772).
+
+> [!WARNING]
+> **Before your next `git pull`:** copy `.postman/resources.yaml` and `postman/globals/workspace.globals.yaml` to a folder outside the repo (for example your Desktop). Git deletes files that were removed upstream when it pulls. Then run `git pull`, and copy the two files back. They are ignored now, so `git status` stays clean. If you forget, nothing is lost: Postman recreates both (the workspace link and an empty globals file).
 
 > [!CAUTION]
 > Run `git status` and read the diff before you push: no stray `main()`, no unused imports, no `.postman` files.
@@ -137,7 +140,7 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 | 🎤 Day 04 Q3 | ⬜ Pending · carried to 31 Oct morning |
 | 🧩 AsteroidCollision | ✅ Completed and verified (28/28, pushed 22:53, verified 31 Oct) |
 | 🗄️ SQL 03 Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to 31 Oct evening |
-| 🧹 Untrack `.postman/` and `postman/globals/` | ⬜ Not started · carried to 31 Oct evening |
+| 🧹 Untrack `.postman/` and `postman/globals/` | ✅ Completed by Lumi (31 Oct, f0b2c33 + 637e772) |
 | 🎓 SQL learn lesson 01 | ✅ Completed and verified (5/5, 735056a) |
 | 🎓 SQL learn lesson 02 | ✅ Completed and verified (5/5, f2e5a58) |
 
