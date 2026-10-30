@@ -5,14 +5,13 @@
 > [!IMPORTANT]
 > **This is the single Spring Boot revision file.** It has **concept notes and questions only, no answers.** You write the answer under every question, from memory, then paste the section back to Lumi for grading. Grades go to `interview-answers.md` / `spring-boot/interview-answers/`, and status stays in [PROGRESS.md](../PROGRESS.md) (the source of truth).
 
-> [!TIP]
-> **How to use (15 min/day):** read the 📖 concept notes once → close them → answer every ❓ question in the ✍️ slot **in your own words, aloud first** → tick `Revised` and write a `Score: _/5` → paste the section to Lumi. Anything you score 1-3 goes into the next 6 AM round.
-
-> [!NOTE]
-> **Last reviewed: 30 Oct 2026** against the official Spring Boot 4.x docs and the [Boot 4.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide). Stack: course-practice = Boot 4.x on Java 17+, `banking-app` = Boot 4.1.2 on Java 21. Examples use the Student API (`Student`, `StudentRequest`, `StudentDto`, `StudentController`, `StudentService`, `StudentRepository`, `StudentNotFoundException`).
-
 > [!NOTE]
 > **Legend:** ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified · 🔥 active section · ⚠️ trap · ✍️ your answer. Status in the Map is a snapshot: [PROGRESS.md](../PROGRESS.md) has the live value.
+>
+> **Last reviewed: 30 Oct 2026** against the official Spring Boot 4.x docs and the [Boot 4.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide). Stack: course-practice = Boot 4.x on Java 17+, `banking-app` = Boot 4.1.2 on Java 21. Examples use the Student API (`Student`, `StudentRequest`, `StudentDto`, `StudentController`, `StudentService`, `StudentRepository`, `StudentNotFoundException`).
+
+> [!TIP]
+> **How to use (15 min/day):** read the 📖 concept notes once → close them → answer every ❓ question in the ✍️ slot **in your own words, aloud first** → tick `Revised` and write a `Score: _/5` → paste the section to Lumi. Anything you score 1-3 goes into the next 6 AM round.
 
 ## 🎯 The answer template (use it for every ✍️ slot)
 

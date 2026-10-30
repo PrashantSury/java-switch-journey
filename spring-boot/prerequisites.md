@@ -2,20 +2,29 @@
 
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen) ![Java](https://img.shields.io/badge/Java-17-orange) ![Topics](https://img.shields.io/badge/topics-8-blue)
 
-> [!TIP]
+> [!IMPORTANT]
 > Revise this before every Spring Boot task. Stack: **Spring Boot 4.x, Java 17**. Examples use the Student API (`Student`, `StudentController`, `StudentService`, `StudentRepository`, `StudentNotFoundException`).
 
+> [!NOTE]
+> **Legend:** 📖 explanation · 💡 example · 🎤 interview questions · 📌 key points · 🔥 focus. Section numbers are the P§1-P§8 that `PROGRESS.md` tracks.
+
 ## 🎯 How to answer any Spring interview question
-1. **Definition**: what it is, in one sentence.
-2. **Difference**: how it compares with the closest alternative.
-3. **When to use**: the real situation where you'd pick it.
-4. **Example**: one line from your Student API.
+
+| Step | What to say |
+|---|---|
+| 1. **Definition** | what it is, in one sentence. |
+| 2. **Difference** | how it compares with the closest alternative. |
+| 3. **When to use** | the real situation where you'd pick it. |
+| 4. **Example** | one line from your Student API. |
 
 > [!NOTE]
 > Also mention defaults (e.g. `required = true`) and the status code or behaviour you'd see.
 
 ## 🧠 1. Core: IoC, DI, beans
-**📖 Explanation:** With IoC (Inversion of Control), the Spring container creates objects (beans) and wires them together, so your classes don't create their own dependencies. DI (Dependency Injection) is how the container supplies those dependencies.
+
+### 📖 Explanation
+
+With IoC (Inversion of Control), the Spring container creates objects (beans) and wires them together, so your classes don't create their own dependencies. DI (Dependency Injection) is how the container supplies those dependencies.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -25,13 +34,15 @@
 > - `@SpringBootApplication` = `@SpringBootConfiguration` (a `@Configuration`) + `@EnableAutoConfiguration` + `@ComponentScan` (the package of the main class and its sub-packages).
 > - Bean scopes: **singleton** (the default, one per container), **prototype** (a new instance each time it's requested), plus web scopes: request, session and application.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - Constructor vs field vs setter injection: which do you prefer and why?
 - `@Component` vs `@Bean`?
 - What does `@SpringBootApplication` contain?
 - What is the default bean scope? Is a singleton bean thread-safe?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 public StudentService(StudentRepository repo) { this.repo = repo; }
 ```
@@ -39,7 +50,10 @@ public StudentService(StudentRepository repo) { this.repo = repo; }
 - [ ] ✅ Revised
 
 ## 🔀 2. Request flow
-**📖 Explanation:** HTTP request → **DispatcherServlet** (front controller) → HandlerMapping finds the controller method → arguments are bound (path, query, body via **Jackson**) → controller → service → repository → DB → the return value is serialized to JSON by Jackson (HttpMessageConverter) → response.
+
+### 📖 Explanation
+
+HTTP request → **DispatcherServlet** (front controller) → HandlerMapping finds the controller method → arguments are bound (path, query, body via **Jackson**) → controller → service → repository → DB → the return value is serialized to JSON by Jackson (HttpMessageConverter) → response.
 
 ```mermaid
 flowchart LR
@@ -58,13 +72,15 @@ flowchart LR
 > - A plain `@Controller` treats a returned `String` as a **view name** (Thymeleaf/JSP), unless the method has `@ResponseBody`.
 > - Keep controllers thin: put logic in the service and DB access in the repository.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - Walk me through what happens when a request hits your API.
 - What is DispatcherServlet?
 - `@RestController` vs `@Controller`?
 - Who converts a Java object to JSON?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 @RestController @RequestMapping("/api/students") public class StudentController { ... }
 ```
@@ -72,7 +88,10 @@ flowchart LR
 - [ ] ✅ Revised
 
 ## 🗺️ 3. Request mapping
-**📖 Explanation:** These annotations map HTTP method + path to a handler method and bind request data to its parameters.
+
+### 📖 Explanation
+
+These annotations map HTTP method + path to a handler method and bind request data to its parameters.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -82,13 +101,15 @@ flowchart LR
 > - **Never put a query string in the mapping path.** Use `@GetMapping("/search")`, not `"/search?name="`.
 > - Use `@GetMapping`, `@PostMapping`, `@PutMapping`, `@PatchMapping` and `@DeleteMapping`.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - `@PathVariable` vs `@RequestParam` vs `@RequestBody`: when do you use each?
 - What happens if a required `@RequestParam` is missing?
 - How do you make a request param optional?
 - How does the JSON body become a Java object?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 @GetMapping("/search") List<Student> search(@RequestParam String name)
 ```
@@ -96,7 +117,10 @@ flowchart LR
 - [ ] ✅ Revised
 
 ## 🌐 4. HTTP semantics
-**📖 Explanation:** HTTP methods each have a meaning, and the status code tells the client what happened.
+
+### 📖 Explanation
+
+HTTP methods each have a meaning, and the status code tells the client what happened.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -112,13 +136,15 @@ flowchart LR
 >   - 500 Internal Server Error (unhandled)
 > - `ResponseEntity` lets you control the status, headers and body.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - Is PUT idempotent? Is POST? Explain with an example.
 - PUT vs PATCH?
 - Which status codes for create, update, delete, not-found and duplicate?
 - Why return a Location header on 201?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 return ResponseEntity.created(URI.create("/api/students/" + saved.getId())).body(saved);
 ```
@@ -126,7 +152,10 @@ return ResponseEntity.created(URI.create("/api/students/" + saved.getId())).body
 - [ ] ✅ Revised
 
 ## 🛡️ 5. Validation & error handling
-**📖 Explanation:** Bean Validation (Jakarta) checks the input, and centralized handlers turn exceptions into clean error responses.
+
+### 📖 Explanation
+
+Bean Validation (Jakarta) checks the input, and centralized handlers turn exceptions into clean error responses.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -136,13 +165,15 @@ return ResponseEntity.created(URI.create("/api/students/" + saved.getId())).body
 > - `@RestControllerAdvice` + `@ExceptionHandler(StudentNotFoundException.class)` gives a 404 in one place.
 > - **ProblemDetail** (RFC 9457) is the standard error body: `type`, `title`, `status`, `detail`, `instance`.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - How do you validate a request body?
 - `@Valid` vs `@Validated`?
 - How do you handle exceptions globally?
 - What is ProblemDetail?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 @ExceptionHandler(StudentNotFoundException.class) ProblemDetail notFound(StudentNotFoundException e) { return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, e.getMessage()); }
 ```
@@ -150,7 +181,10 @@ return ResponseEntity.created(URI.create("/api/students/" + saved.getId())).body
 - [ ] ✅ Revised
 
 ## 🗄️ 6. Spring Data JPA
-**📖 Explanation:** You declare repository interfaces and Spring generates the implementation, with Hibernate as the JPA provider.
+
+### 📖 Explanation
+
+You declare repository interfaces and Spring generates the implementation, with Hibernate as the JPA provider.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -161,13 +195,15 @@ return ResponseEntity.created(URI.create("/api/students/" + saved.getId())).body
 > - `@Transactional` on service methods: all or nothing, with rollback on unchecked exceptions by default. Use `readOnly = true` for reads.
 > - Know these terms: lazy vs eager loading, the N+1 problem, `ddl-auto`.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - `CrudRepository` vs `JpaRepository`?
 - How do derived query methods work?
 - What does `@Transactional` do? Does it roll back on checked exceptions?
 - What is the N+1 problem?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 Student s = repo.findById(id).orElseThrow(() -> new StudentNotFoundException(id));
 ```
@@ -175,7 +211,10 @@ Student s = repo.findById(id).orElseThrow(() -> new StudentNotFoundException(id)
 - [ ] ✅ Revised
 
 ## 🧪 7. Testing
-**📖 Explanation:** Slice tests check one layer quickly, and full context tests check everything wired together.
+
+### 📖 Explanation
+
+Slice tests check one layer quickly, and full context tests check everything wired together.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -184,13 +223,15 @@ Student s = repo.findById(id).orElseThrow(() -> new StudentNotFoundException(id)
 > - Test each endpoint for: happy path (200/201/204), not found (404) and invalid input (400).
 > - `@DataJpaTest` is the repository slice, using an in-memory DB.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - `@WebMvcTest` vs `@SpringBootTest`?
 - Why mock the service in controller tests?
 - How do you assert the status and JSON fields with MockMvc?
 - What is `@MockitoBean`?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 mockMvc.perform(get("/api/students/99")).andExpect(status().isNotFound());
 ```
@@ -198,7 +239,10 @@ mockMvc.perform(get("/api/students/99")).andExpect(status().isNotFound());
 - [ ] ✅ Revised
 
 ## ⚙️ 8. Configuration
-**📖 Explanation:** You configure the app from outside the code, using different values for each environment.
+
+### 📖 Explanation
+
+You configure the app from outside the code, using different values for each environment.
 
 > [!IMPORTANT]
 > **📌 Key points / defaults**
@@ -208,13 +252,15 @@ mockMvc.perform(get("/api/students/99")).andExpect(status().isNotFound());
 > - `@ConfigurationProperties(prefix = "app")` binds a typed group of values (supports validation and relaxed binding). Prefer it for groups.
 > - Precedence: command-line args > env vars > profile-specific files > `application.*`.
 
-**🎤 Interview questions**
+### 🎤 Interview questions
+
 - `properties` vs `yml`?
 - How do you use different DB settings in dev vs prod?
 - `@Value` vs `@ConfigurationProperties`?
 - How do you override a property at runtime?
 
-**💡 Example:**
+### 💡 Example
+
 ```java
 @Value("${student.max-page-size:50}") private int maxPageSize;
 ```

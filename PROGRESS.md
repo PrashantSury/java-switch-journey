@@ -2,18 +2,23 @@
 
 ![Plan](https://img.shields.io/badge/plan-12%20weeks-blue) ![Started](https://img.shields.io/badge/started-23%20Oct%202026-informational) ![Current](https://img.shields.io/badge/phase-Spring%20prereqs%20%2B%20SQL%20%2B%20Stack-yellow) ![Reconciled](https://img.shields.io/badge/reconciled-26%20Oct%202026-blue)
 
+> [!IMPORTANT]
+> The single progress tracker for the 12-week plan to switch back to a Java backend role (started 23 Oct 2026). Progress is measured by verified work, and pending work never disappears.
+
 > [!NOTE]
-> 12-week plan to switch back to a Java backend role (started 23 Oct 2026).
+> **Legend:** ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified · 🔥 active section · 🧩 DSA · 🐞 buggy round · 🗄️ SQL · 🌱 Spring · 🏦 banking.
 
 ## 🗂️ Layout (Maven project, Java 17, JUnit 5)
-- 🧩 `src/main/java/com/prashant/dsa/<topic>/` : DSA solutions, tests in `src/test/java/...`
-- 🐞 `src/main/java/com/prashant/dailytests/` : fix-the-buggy-code rounds, tests in `src/test/java/...`
-- 🗄️ `sql/` : SQL queries, one file per day
-- 🎓 `sql/learn/` : guided SQL lessons with an auto-checker (see the SQL learn track section)
-- 📋 `tasks/` : all daily task files (one file per day, `dayNN.md`, with Morning and Evening sections; earlier days are `dayNN-morning.md`)
-- 🌱 `spring-boot/` : Spring Boot and microservices notes
-- 📘 `spring-boot/spring-boot-revision-sheet.md` : the **single Spring revision workbook** (concept notes + questions, no answers; sections map to the prerequisite §1-§8 numbering in the table below, plus Milestone 1 extras). `spring-boot/prerequisites.md` stays only as the §-numbering and Revision-log reference the `tasks/` files point to
-- 🔁 `revision/` : mistake log and weekly revision notes
+| | Path | What |
+|---|---|---|
+| 🧩 | `src/main/java/com/prashant/dsa/<topic>/` | DSA solutions, tests in `src/test/java/...` |
+| 🐞 | `src/main/java/com/prashant/dailytests/` | fix-the-buggy-code rounds, tests in `src/test/java/...` |
+| 🗄️ | `sql/` | SQL queries, one file per day |
+| 🎓 | `sql/learn/` | guided SQL lessons with an auto-checker (see the SQL learn track section) |
+| 📋 | `tasks/` | all daily task files (one file per day, `dayNN.md`, with Morning and Evening sections; earlier days are `dayNN-morning.md`) |
+| 🌱 | `spring-boot/` | Spring Boot and microservices notes |
+| 📘 | `spring-boot/spring-boot-revision-sheet.md` | the **single Spring revision workbook** (concept notes + questions, no answers; sections map to the prerequisite §1-§8 numbering in the table below, plus Milestone 1 extras). `spring-boot/prerequisites.md` stays only as the §-numbering and Revision-log reference the `tasks/` files point to |
+| 🔁 | `revision/` | mistake log and weekly revision notes |
 
 > [!TIP]
 > Run all tests with `mvn test`.

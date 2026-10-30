@@ -1,31 +1,43 @@
 # 🎨 Markdown style guide
 
-![Standard](https://img.shields.io/badge/standard-revision%2Fmistake--log.md-purple) ![Applies to](https://img.shields.io/badge/applies%20to-all%20.md%20files-blue)
+![Standard](https://img.shields.io/badge/standard-revision%2Fmistake--log.md-purple) ![Applies to](https://img.shields.io/badge/applies%20to-every%20.md%20file-blue)
 
 > [!IMPORTANT]
-> The repo standard is the look of [`revision/mistake-log.md`](../revision/mistake-log.md): a compact page with an emoji title, one badge row, a purpose callout, a legend callout and then the content. Colour guides the eye, it never changes content. Routines and Lumi must produce every `.md` file in this style.
+> Every `.md` file in this repo opens exactly like [`revision/mistake-log.md`](../revision/mistake-log.md): emoji title, one badge row, an `[!IMPORTANT]` purpose (1-2 sentences), an `[!NOTE]` with a **Legend:** line, then the body. Routines and Lumi must produce this opener for every new or updated file, tasks included.
 
 > [!NOTE]
-> **Legend:** ✅ done / correct · ❌ wrong · ⚠️ gotcha · 📌 rule · 🔥 focus · ⬜🟡🟠🔴🔵 statuses (see `PROGRESS.md`).
+> **Legend:** ✅ done / correct · ❌ wrong · ⚠️ gotcha · 📌 rule · 🔥 focus · ⬜🟡🟠🔴🔵 statuses (see `PROGRESS.md`) · 🧩 DSA · 🐞 buggy round · 🗄️ SQL · 🌱 Spring.
 
-## 🧬 The mistake-log pattern (every file)
-1. **Title:** `# <emoji> Title`, one line.
-2. **Badge row** directly under the title (shields.io): the file's own facts only, e.g. `Day`, `Week`, `slot`, `Lesson`, `grade`.
-3. **`> [!IMPORTANT]`** purpose or rule of the file, 1-2 sentences (for tasks: the "Done when").
-4. **`> [!NOTE]`** legend or context, 1-2 sentences, with the status emoji used in the file.
-5. **Body:** `##` sections with one leading emoji each, short bullets, tables for anything list-like, `- [ ]` checklists for work.
-6. No `---` rules, no tables of contents on short files, no walls of text. Blank line before and after every heading, callout, table and code block.
+## 🧬 The opener (non-negotiable)
+```markdown
+# 🔁 Emoji + title
+
+![Label](https://img.shields.io/badge/label-value-blue)
+
+> [!IMPORTANT]
+> Purpose or rule of the file, 1-2 sentences (for a task file: what you do and the done criterion).
+
+> [!NOTE]
+> **Legend:** 🐞 buggy round · 🧩 DSA · ✅ done · ❌ stuck. Any short context sentence may follow after a `>` blank line.
+```
+- The first callout is always `[!IMPORTANT]`, the second always `[!NOTE]` with a `**Legend:**` line. Never open with `[!TIP]`, `[!WARNING]` or a plain intro line.
+- One badge row (shields.io) with the file's own facts: `Day`, `Week`, `slot`, `time`, `Lesson`, `grade`, `Spring Boot`, `Java`.
+- Put TIPs, WARNINGs and CAUTIONs **after** the opener, next to what they explain.
+
+## 🧱 Body rules
+- `##` sections with one leading emoji each; blank line before and after every heading, callout, table and code block.
+- Anything list-like that is tracked or compared goes in a **table** (`| Date | Problem | ... |`): layouts, file lists, "revise first" topics, backlogs, status maps. Work items are `- [ ]` **checklists**. Prose bullets are for explanations only.
+- No `---` rules; no table of contents on short files.
+- Status emoji: ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified.
 
 ## 🧰 Toolbox
 | Element | Use for | Example |
 |---|---|---|
-| `> [!NOTE]` (blue) | context, legends, background | base package, plan info |
-| `> [!TIP]` (green) | how-to, revision hints, model answers | "Run `mvn test`" |
 | `> [!IMPORTANT]` (purple) | purpose, key points, defaults, rules, done criteria | `required = true` |
+| `> [!NOTE]` (blue) | legend, context, background | base package, plan info |
+| `> [!TIP]` (green) | how-to, revision hints, model answers | "Run `mvn test`" |
 | `> [!WARNING]` (orange) | gotchas, low grades, structure changes | "Valid on String does nothing" |
 | `> [!CAUTION]` (red) | things that break code or lose work | "commit before git pull" |
-| Emoji in headings | quick scanning | 🧠 🔀 🌐 🧯 💾 🧪 🔧 🎤 🔥 📌 |
-| Status emoji | ✅ done/correct · ❌ wrong · ⚠️ gotcha · 📌 rule · 🔥 focus | |
 | shields.io badges | Day/Week, grades, confidence | `https://img.shields.io/badge/Q1-5%2F10-orange` |
 | `` ```diff `` | wrong (`-`) vs correct (`+`) | his answer vs correction |
 | `` ```java `` / `` ```sql `` / `` ```bash `` | all code | always tag the language |
@@ -37,17 +49,17 @@
 - Day / Week / Lesson / meta: `blue`; slot / time: `yellow`; spaced repetition / standard: `purple`.
 
 ## 📄 Per file type
-| File type | Layout on top of the pattern |
+| File type | On top of the opener |
 |---|---|
-| **Mistake log** (`revision/mistake-log.md`) | The reference. Keep the table exactly as is (`\| Date \| Problem \| What went wrong \| Redo on day 3 \| Redo on day 7 \|`): routines append rows. Styling only above the table. |
-| **Daily tasks** (`tasks/dayNN.md`) | Day / Week / slot / time badges, `- [ ]` checklists for acceptance criteria, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`, gotchas in `[!WARNING]`, carried backlog as a table with status emoji. |
-| **SQL learn lessons** (`sql/learn/lessonNN.md`) | Lesson / time / schema badges, the `⏱ N minutes · schema · status:` line inside a `[!NOTE]`, emoji `##` headings (🎯 learn, 💡 concept, 🧰 setup, 🧪 worked example, 📝 exercises with `### 🔹 Exercise N`, 🔎 check, 🏁 done when), "Done when" in `[!IMPORTANT]`. |
-| **Interview answers** | Grade badges at top, verbatim answer in a `diff` block with `-` lines, grade in `[!WARNING]` (<7) or `[!NOTE]`, model answer in `[!TIP]`. |
-| **Revision sheets** (`prerequisites.md`, `spring-boot-revision-sheet.md`) | Key points in `[!IMPORTANT]`, examples in `` ```java ``, a `[!NOTE]` legend for status icons. The workbook uses emoji `##` headings with the section number (`## 🧯 5. Validation and error handling`), then `### 📖 Concept notes`, `### 💡 Concept example`, `### ❓ Questions` (each followed by `> ✍️ My answer:`), `### ✅ Section check`, and `[⬆ Back to contents](#-contents)`. |
-| **READMEs / structure docs / journals** | Emoji title, badges for stack facts, `[!NOTE]` for what the folder is, tables for file lists. |
+| **Mistake log** (`revision/mistake-log.md`) | The reference. Keep the table exactly as is (`\| Date \| Problem \| What went wrong \| Redo on day 3 \| Redo on day 7 \|`): routines append rows. |
+| **Daily tasks** (`tasks/dayNN.md`) | Badges: Week, Day, slot, time (under the title; evening and end-of-day sections may add a slot badge). IMPORTANT = what the day is for and the done criterion; NOTE = the task legend plus the "backlog day" context. Then `## 🌅 Morning`, `## 🌙 Evening`, `## 🌒 End of day`, with revise-first topics in a table, work in `- [ ]` checklists, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`, gotchas in `[!WARNING]`, the carried backlog as a table. |
+| **SQL learn lessons** (`sql/learn/lessonNN.md`) | Lesson / time / schema badges; the `⏱ N minutes · schema · status:` line stays inside the NOTE; `## 🎯 What you will learn`, `💡 Concept`, `🧰 Setup`, `🧪 Worked example`, `📝 Exercises` with `### 🔹 Exercise N`, `🔎 Check your work`, `🏁 Done when`. |
+| **Interview answers** | Grade badges in the badge row; verbatim answer in a `diff` block with `-` lines; grade in `[!WARNING]` (<7) or `[!NOTE]`; model answer in `[!TIP]`. |
+| **Revision sheets** (`prerequisites.md`, workbook) | Per topic: `### 📖 Explanation` / `### 📖 Concept notes`, key points in `[!IMPORTANT]`, `### 💡 Example`, `### 🎤 Interview questions` or `### ❓ Questions` (each followed by `> ✍️ My answer:` in the workbook), `### ✅ Section check`. Workbook headings carry a section number and an emoji (`## 🧯 5. Validation and error handling`) and end with `[⬆ Back to contents](#-contents)`. |
+| **READMEs / structure docs / journals** | Badges for stack facts, layouts and file lists as tables, mermaid for flows. |
 
 ## 🔗 Anchors
-- GitHub drops the emoji and keeps the leading hyphen: `## 🧯 5. Validation` is `#-5-validation`. Prefer emoji without a variation selector (e.g. 🧯, not 🛡️) in headings that are linked to.
+- GitHub drops the emoji and keeps the leading hyphen: `## 🧯 5. Validation` is `#-5-validation`. Prefer emoji without a variation selector (🧯, not 🛡️) in headings that are linked to.
 - If you change a heading, update every `](#...)` link to it, in the same file and in other files.
 
 ## 🧪 Mermaid rules
