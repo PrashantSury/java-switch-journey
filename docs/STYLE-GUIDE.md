@@ -1,9 +1,9 @@
 # 🎨 Markdown style guide
 
-![Standard](https://img.shields.io/badge/standard-revision%2Fmistake--log.md-purple) ![Applies to](https://img.shields.io/badge/applies%20to-every%20.md%20file-blue)
+![Standard](https://img.shields.io/badge/standard-revision%2Fmistakes%2Fdsa.md-purple) ![Applies to](https://img.shields.io/badge/applies%20to-every%20.md%20file-blue)
 
 > [!IMPORTANT]
-> Every `.md` file in this repo opens exactly like [`revision/mistake-log.md`](../revision/mistake-log.md): emoji title, one badge row, an `[!IMPORTANT]` purpose (1-2 sentences), an `[!NOTE]` with a **Legend:** line, then the body. Routines and Lumi must produce this opener for every new or updated file, tasks included.
+> Every `.md` file in this repo opens exactly like [`revision/mistakes/dsa.md`](../revision/mistakes/dsa.md): emoji title, one badge row, an `[!IMPORTANT]` purpose (1-2 sentences), an `[!NOTE]` with a **Legend:** line, then the body. Routines and Lumi must produce this opener for every new or updated file, tasks included.
 
 > [!NOTE]
 > **Legend:** ✅ done / correct · ❌ wrong · ⚠️ gotcha · 📌 rule · 🔥 focus · ⬜🟡🟠🔴🔵 statuses (see `PROGRESS.md`) · 🧩 DSA · 🐞 buggy round · 🗄️ SQL · 🌱 Spring.
@@ -51,7 +51,7 @@
 ## 📄 Per file type
 | File type | On top of the opener |
 |---|---|
-| **Mistake log** (`revision/mistake-log.md`) | The reference. Keep the table exactly as is (`\| Date \| Problem \| What went wrong \| Redo on day 3 \| Redo on day 7 \|`): routines append rows. |
+| **Mistake logs** (`revision/mistakes/<section>.md`: `dsa.md`, `sql.md`, `spring.md`; [`revision/mistake-log.md`](../revision/mistake-log.md) is only the index) | One log per section, same table in each (`\| Date \| Problem \| What went wrong \| Redo on day 3 \| Redo on day 7 \|`). Routines append a row to the file of the section, only for **conceptual** mistakes. Cosmetic slips (typos, stale comments, missing braces, unused imports, stray `main()`) are fixed directly in his code and never logged. A new section gets a new file plus one line in the index. |
 | **Daily tasks** (`tasks/dayNN.md`) | Badges: Week, Day, slot, time (under the title; evening and end-of-day sections may add a slot badge). IMPORTANT = what the day is for and the done criterion; NOTE = the task legend plus the "backlog day" context. Then `## 🌅 Morning`, `## 🌙 Evening`, `## 🌒 End of day`, with revise-first topics in a table, work in `- [ ]` checklists, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`, gotchas in `[!WARNING]`, the carried backlog as a table. |
 | **SQL learn lessons** (`sql/learn/lessonNN.md`) | Lesson / time / schema badges; the `⏱ N minutes · schema · status:` line stays inside the NOTE; `## 🎯 What you will learn`, `💡 Concept`, `🧰 Setup`, `🧪 Worked example`, `📝 Exercises` with `### 🔹 Exercise N`, `🔎 Check your work`, `🏁 Done when`. |
 | **Interview answers** | Grade badges in the badge row; verbatim answer in a `diff` block with `-` lines; grade in `[!WARNING]` (<7) or `[!NOTE]`; model answer in `[!TIP]`. |

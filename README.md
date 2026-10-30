@@ -18,5 +18,5 @@
 | 🌱 | `spring-boot/` | Spring Boot notes, `course-practice` and interview answers |
 | 📘 | `spring-boot/spring-boot-revision-sheet.md` | the single Spring Boot revision workbook (questions only, you write the answers): [spring-boot/spring-boot-revision-sheet.md](spring-boot/spring-boot-revision-sheet.md) |
 | 🏦 | `banking-app/` | the banking project |
-| 🔁 | `revision/` | mistake log and revision notes |
+| 🔁 | `revision/` | per-section mistake logs (`revision/mistakes/`, index in `revision/mistake-log.md`) and revision notes |
 | 📈 | `PROGRESS.md` and `interview-answers.md` | sources of truth |
