@@ -5,6 +5,9 @@
 > [!IMPORTANT]
 > A set is only ✅ when my own answers are written and graded. Graded day files live in `spring-boot/interview-answers/` and are linked here, not copied.
 
+> [!NOTE]
+> **Legend:** ✅ graded · ⏳ pending · ⬜ no record · 🔵 ready for revision. Grades are out of 10.
+
 | Day | Topic | Status | File |
 |---|---|---|---|
 | 01 | — | ⬜ No graded record found | — |

@@ -2,8 +2,11 @@
 
 ![Layered](https://img.shields.io/badge/architecture-layered-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen)
 
+> [!IMPORTANT]
+> Layered package structure of the `course-practice` module: one package per responsibility, and every new class follows it.
+
 > [!NOTE]
-> Base package: `com.prashant.coursepractice` (only `CoursePracticeApplication` lives here).
+> **Legend:** 📦 package · 🧱 layer. Base package: `com.prashant.coursepractice` (only `CoursePracticeApplication` lives here).
 
 | Package | Responsibility | Example |
 |---|---|---|
