@@ -51,7 +51,7 @@ Your answers run in a read-only session with a 10 second timeout, so a wrong `DE
 ## Lessons
 | # | Lesson | Time | Status |
 |---|---|---|---|
-| 01 | [SELECT, WHERE, ORDER BY, LIMIT](lesson01.md) | 15 min | ⬜ Not started |
+| 01 | [SELECT, WHERE, ORDER BY, LIMIT](lesson01.md) | 15 min | ✅ Completed and verified |
 | 02 | [NULL handling and CASE](lesson02.md) | 20 min | ⬜ Not started |
 | 03 | [Aggregates, GROUP BY, HAVING](lesson03.md) | 20 min | ⬜ Not started |
 | 04 | [INNER JOIN and LEFT JOIN](lesson04.md) | 20 min | ⬜ Not started |
