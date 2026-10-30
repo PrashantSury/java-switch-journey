@@ -2,8 +2,11 @@
 
 ![Lessons](https://img.shields.io/badge/lessons-5-blue) ![Time](https://img.shields.io/badge/time-15--20%20min%20each-yellow) ![DB](https://img.shields.io/badge/DB-PostgreSQL-blue) ![Checker](https://img.shields.io/badge/checker-mvn%20test-brightgreen)
 
-Short guided lessons, 15-20 minutes each, on the banking domain (branches, customers, accounts, transactions, loans).
-No website: just files in this repo and one command that checks your answers, a bit like freeCodeCamp's "Run the tests".
+> [!IMPORTANT]
+> Short guided lessons, 15-20 minutes each, on the banking domain (branches, customers, accounts, transactions, loans). No website: just files in this repo and one command that checks your answers, a bit like freeCodeCamp's "Run the tests".
+
+> [!NOTE]
+> **Legend:** `[PASS]` correct · `[FAIL]` expected rows next to yours · `[TODO]` empty slot · ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified.
 
 > [!IMPORTANT]
 > You write every query yourself. The files you see contain **no answers**: the expected rows live only inside the

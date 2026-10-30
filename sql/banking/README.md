@@ -2,8 +2,11 @@
 
 ![Domain](https://img.shields.io/badge/domain-retail%20banking-blue) ![DB](https://img.shields.io/badge/DB-PostgreSQL-blue) ![Slot](https://img.shields.io/badge/slot-evening-yellow)
 
-> [!NOTE]
+> [!IMPORTANT]
 > All banking SQL questions use the **same schema** as [`banking-app`](../../banking-app/README.md) (`auth` and `core` schemas, created by Flyway in your local `java_switch` database). What you query in the evening becomes a Spring endpoint the next morning.
+
+> [!NOTE]
+> **Legend:** 🤖 Lumi writes · ✍️ you write · 🗄️ SQL · 📂 files.
 
 ## 📂 Files
 | File | Who writes it | What's in it |

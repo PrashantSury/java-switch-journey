@@ -2,9 +2,11 @@
 
 ![Day](https://img.shields.io/badge/Day-03-blue) ![Q1](https://img.shields.io/badge/Q1-5%2F10-orange) ![Q2](https://img.shields.io/badge/Q2-5%2F10-orange) ![Q3](https://img.shields.io/badge/Q3-7%2F10-yellowgreen) ![Total](https://img.shields.io/badge/total-17%2F30-orange)
 
-> [!TIP]
+> [!IMPORTANT]
 > Re-read before revising. Answer format to practise: **definition → difference → when to use → example**.
-> Source questions: [day03-morning.md](../../tasks/day03-morning.md) · Graded 28 Oct 2026.
+
+> [!NOTE]
+> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: [day03-morning.md](../../tasks/day03-morning.md) · Graded 28 Oct 2026.
 
 > [!WARNING]
 > **Total: 17/30.** Q1 and Q2 go to 🔵 Ready for revision. Q3 is solid, with small gaps.
