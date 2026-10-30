@@ -39,6 +39,16 @@ class StudentControllerTest {
            .andExpect(jsonPath("$.email").exists());
     }
 
+    @Test @DisplayName("POST with a taken email returns 409")
+    void createDuplicateEmail() throws Exception {
+        createStudent("First", "dup@example.com");
+
+        mvc.perform(post("/api/students")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"Second\",\"email\":\"dup@example.com\"}"))
+                .andExpect(status().isConflict());
+    }
+
     @Test @DisplayName("GET unknown id returns 404")
     void notFound() throws Exception {
         mvc.perform(get("/api/students/9999"))
@@ -97,6 +107,19 @@ class StudentControllerTest {
                         .content("{\"name\":\"After\",\"email\":\"after@example.com\"}"))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.error").value("Student not found: 99999"));
+    }
+
+    @Test @DisplayName("PUT with own unchanged email returns 200")
+    void updateKeepingOwnEmail() throws Exception {
+        long id = createStudent("Keeper", "keep@example.com");
+
+        mvc.perform(put("/api/students/" + id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"KeeperRenamed\",\"email\":\"keep@example.com\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(Math.toIntExact(id)))
+                .andExpect(jsonPath("$.name").value("KeeperRenamed"))
+                .andExpect(jsonPath("$.email").value("keep@example.com"));
     }
 
     @Test @DisplayName("DELETE existing student returns 204 with an empty body")

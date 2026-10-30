@@ -2,6 +2,7 @@ package com.prashant.coursepractice.service.impl;
 
 import com.prashant.coursepractice.dto.StudentRequest;
 import com.prashant.coursepractice.dto.StudentResponse;
+import com.prashant.coursepractice.exception.DuplicateEmailException;
 import com.prashant.coursepractice.exception.StudentNotFoundException;
 import com.prashant.coursepractice.mapper.StudentMapper;
 import com.prashant.coursepractice.model.Student;
@@ -32,6 +33,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentResponse create(StudentRequest request) {
+        if (repository.existsByEmailIgnoreCase(request.getEmail())) {
+            throw new DuplicateEmailException(request.getEmail());   // map to 409 in @RestControllerAdvice
+        }
         return StudentMapper.toResponse(repository.save(StudentMapper.toEntity(request)));
     }
 
@@ -39,6 +43,10 @@ public class StudentServiceImpl implements StudentService {
     public StudentResponse update(Long id,StudentRequest request) {
         Student st = repository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(id));
+
+        if (repository.existsByEmailIgnoreCaseAndIdNot(request.getEmail(), id)) {
+            throw new DuplicateEmailException(request.getEmail());
+        }
         st.setEmail(request.getEmail());
         st.setName(request.getName());
         return StudentMapper.toResponse(repository.save(st));

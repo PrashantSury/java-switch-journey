@@ -35,4 +35,12 @@ public class GlobalExceptionHandler {
         errors.put("error", "name parameter is missing");
         return errors;
     }
+
+    @ExceptionHandler(DuplicateEmailException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> invalid(DuplicateEmailException ex) {
+        Map<String, String> errors = new HashMap<>();
+        errors.put("error", "email is duplicate and it is conflicting");
+        return errors;
+    }
 }
