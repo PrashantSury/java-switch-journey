@@ -1,8 +1,14 @@
 # 📅 Day 08 (30 Oct): Part B1 again + Day01ArrayStack day-7 redo
 
-## 🌅 Morning: Part B1 in `spring-boot/course-practice` + cold redo
-
 ![Week](https://img.shields.io/badge/Week-2-blue) ![Day](https://img.shields.io/badge/Day-08-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~60%20min-blue)
+
+> [!IMPORTANT]
+> Part B1 again and the `Day01ArrayStack` day-7 redo, with Revise-first on workbook §5. Day 04 Q3 moves to the next free slot.
+
+> [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
+
+## 🌅 Morning: Part B1 in `spring-boot/course-practice` + cold redo
 
 > [!NOTE]
 > Backlog day, no new material. §5 Validation & error handling is still the active section and Part B1 is still 🟡 In progress (no Spring push on 29 Oct), so it stays the main task. The small item is the `Day01ArrayStack` **day-7 redo, due today** (redos come before pending Q&A). Day 04 Q3 moves to the next free slot. No new buggy round (`Day04LargestRectangle` is still unattempted and `Day01ArrayStackRedo7` is new today), no banking-app increment until §5 is verified.
@@ -11,8 +17,10 @@
 > ✅ Nice late-night work: SQL learn **lesson 01 passes 5/5** on your own queries (`LESSON 01 COMPLETE`, checked on 30 Oct) and the queries read cleanly. It's now ✅ Completed and verified in `PROGRESS.md`.
 
 ### 📚 Revise first (~10 min) in `spring-boot/spring-boot-revision-sheet.md` §5
-- 🔥 Read the **§5 Key points** box, then answer **5.5** (`@NotNull` vs `@NotEmpty` vs `@NotBlank`) and **5.8** (`@Validated` on a controller) from memory in the "My answer" slots.
-- 🔥 Re-read **§4 HTTP semantics**: 400 vs 404 vs 409.
+| Topic | What to recall |
+|---|---|
+| 🔥 | Read the **§5 Concept notes** box, then answer **5.5** (`@NotNull` vs `@NotEmpty` vs `@NotBlank`) and **5.8** (`@Validated` on a controller) from memory in the "My answer" slots. |
+| 🔥 | Re-read **§4 HTTP semantics**: 400 vs 404 vs 409. |
 
 > [!TIP]
 > Add one row per topic to the **Revision log** at the bottom of `spring-boot/prerequisites.md` with your confidence (1-5).

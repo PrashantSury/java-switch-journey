@@ -1,15 +1,23 @@
 # 📅 Day 07 (29 Oct): Day 04 Part B, first half (409 for duplicate email)
 
-## 🌅 Morning: Part B1 in `spring-boot/course-practice` + Day 04 Q3
-
 ![Week](https://img.shields.io/badge/Week-1-blue) ![Day](https://img.shields.io/badge/Day-07-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~60%20min-blue)
+
+> [!IMPORTANT]
+> Day 04 Part B, first half (B1): `@Size` message, `exists...` queries and a 409 for duplicate email, then an evening of backlog only.
+
+> [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
+
+## 🌅 Morning: Part B1 in `spring-boot/course-practice` + Day 04 Q3
 
 > [!NOTE]
 > Backlog day, no new material. §5 Validation & error handling is the active section, and Day 04 Part B is its only open task. Part B is split in two so each slot stays around 60 minutes: **B1 today** (validation message, `exists...` queries, 409 for duplicate email), **B2 next** (every handler returns `ProblemDetail`, malformed JSON, the last 3 tests). No new buggy round: Day 03 and Day 04 buggy rounds are still unattempted. No banking-app increment until §5 is verified.
 
 ### 📚 Revise first (~10 min) in `spring-boot/prerequisites.md`
-- 🔥 **5. Validation & error handling**: what `@Valid` triggers, where `MethodArgumentNotValidException` comes from, and how a `@RestControllerAdvice` handler picks the status code.
-- 🔥 **4. HTTP semantics**: 400 vs 404 vs 409. When is a request well-formed but still in conflict with the server's state?
+| Topic | What to recall |
+|---|---|
+| 🔥 **5. Validation & error handling** | what `@Valid` triggers, where `MethodArgumentNotValidException` comes from, and how a `@RestControllerAdvice` handler picks the status code. |
+| 🔥 **4. HTTP semantics** | 400 vs 404 vs 409. When is a request well-formed but still in conflict with the server's state? |
 
 > [!TIP]
 > Add one row per topic to the **Revision log** at the bottom of `prerequisites.md` with your confidence (1-5).

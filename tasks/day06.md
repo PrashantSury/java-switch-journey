@@ -1,15 +1,23 @@
 # 📅 Day 06 (28 Oct): Part A close-out + evening backlog
 
-## 🌅 Morning: close Day 03/04 Part A + Day01ArrayStack redo
-
 ![Week](https://img.shields.io/badge/Week-1-blue) ![Day](https://img.shields.io/badge/Day-06-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~60%20min-blue)
+
+> [!IMPORTANT]
+> Close Part A in `spring-boot/course-practice` (2 tests, 2 clean-ups), redo `Day01ArrayStack` cold, then clear the evening backlog (DSA + SQL).
+
+> [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
+
+## 🌅 Morning: close Day 03/04 Part A + Day01ArrayStack redo
 
 > [!NOTE]
 > Backlog day, no new material. Part A is 🔴 **Needs correction (almost there)**: two tests and two clean-ups are left. §3/§4 must be verified before §5 (Day 04 Part B) and the banking-app V2 auth migration can start. Day 03 and Day 04 buggy rounds are still unattempted, so there's no new buggy round today.
 
 ### 📚 Revise first (~10 min) in `spring-boot/prerequisites.md`
-- 🔥 **3. Request mapping**: what happens when a required `@RequestParam` is missing, and which status the client gets.
-- 🔥 **4. HTTP semantics**: what a PUT to an id that doesn't exist should return, and why.
+| Topic | What to recall |
+|---|---|
+| 🔥 **3. Request mapping** | what happens when a required `@RequestParam` is missing, and which status the client gets. |
+| 🔥 **4. HTTP semantics** | what a PUT to an id that doesn't exist should return, and why. |
 
 > [!TIP]
 > Add one row per topic to the **Revision log** at the bottom of `prerequisites.md` with your confidence (1-5).
