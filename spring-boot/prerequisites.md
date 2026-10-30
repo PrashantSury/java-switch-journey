@@ -14,8 +14,6 @@
 > [!NOTE]
 > Also mention defaults (e.g. `required = true`) and the status code or behaviour you'd see.
 
----
-
 ## 🧠 1. Core: IoC, DI, beans
 **📖 Explanation:** With IoC (Inversion of Control), the Spring container creates objects (beans) and wires them together, so your classes don't create their own dependencies. DI (Dependency Injection) is how the container supplies those dependencies.
 
@@ -222,8 +220,6 @@ mockMvc.perform(get("/api/students/99")).andExpect(status().isNotFound());
 ```
 
 - [ ] ✅ Revised
-
----
 
 ## 📊 Revision log
 

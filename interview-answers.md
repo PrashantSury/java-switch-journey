@@ -13,8 +13,6 @@
 | 04 | Request flow, DTOs, errors | ⏳ Pending | below |
 | SoP | Score of Parentheses follow-up | ⏳ Pending | below |
 
----
-
 ## 📅 Day 03 — ✅ Graded (17/30)
 Source: [day03-morning.md](tasks/day03-morning.md) · Full answers and grades: [day03-answers.md](spring-boot/interview-answers/day03-answers.md)
 

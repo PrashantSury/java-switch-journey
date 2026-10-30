@@ -11,7 +11,8 @@
 > [!NOTE]
 > **Last reviewed: 30 Oct 2026** against the official Spring Boot 4.x docs and the [Boot 4.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide). Stack: course-practice = Boot 4.x on Java 17+, `banking-app` = Boot 4.1.2 on Java 21. Examples use the Student API (`Student`, `StudentRequest`, `StudentDto`, `StudentController`, `StudentService`, `StudentRepository`, `StudentNotFoundException`).
 
----
+> [!NOTE]
+> **Legend:** ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified · 🔥 active section · ⚠️ trap · ✍️ your answer. Status in the Map is a snapshot: [PROGRESS.md](../PROGRESS.md) has the live value.
 
 ## 🎯 The answer template (use it for every ✍️ slot)
 
@@ -20,72 +21,66 @@
 > [!NOTE]
 > Template: *"X is ___. Unlike Y, it ___. I'd use it when ___. In my Student API, ___. By default ___, and the gotcha is ___."*
 
----
-
-## 🗺️ Map: workbook sections ↔ prerequisites ↔ PROGRESS.md
+## 🧭 Map: workbook sections ↔ prerequisites ↔ PROGRESS.md
 
 > [!NOTE]
 > **P§n** = section *n* of [spring-boot/prerequisites.md](prerequisites.md), the numbering [PROGRESS.md](../PROGRESS.md) tracks. **M1** = the banking-app milestone "Auth tables + login returning a JWT". Statuses below are a snapshot of PROGRESS.md (29 Oct 2026): check PROGRESS.md for the live value.
 
 | # | Workbook section | Prerequisite § | Status in PROGRESS.md |
 |---|---|---|---|
-| 1 | Core: IoC, DI, beans, lifecycle, auto-config | **P§1** | 🔵 Ready for revision |
-| 2 | Request flow | **P§2** | 🟡 In progress (Day 04 Q1 pending) |
-| 3 | Request mapping | **P§3** | 🔵 Ready for revision |
-| 4 | HTTP semantics and REST design | **P§4** | 🔵 Ready for revision |
-| 5 | Validation and error handling | **P§5** 🔥 active | 🟡 In progress (Part B1 / B2) |
-| 6 | DTO vs Entity | **P§5** (bridges P§3) | 🟡 In progress |
-| 7 | Spring Data JPA | **P§6** | ⬜ Not started |
-| 8 | Entity relationships and pagination | **P§6** | ⬜ Not started |
-| 9 | Transactions | **P§6** | ⬜ Not started |
-| 10 | Testing | **P§7** | ⬜ Not started |
-| 11 | Configuration | **P§8** | ⬜ Not started |
-| 12 | Actuator and logging | **P§8** (extension) | ⬜ Not started |
-| 13 | Spring Security basics | **M1** (beyond prerequisites) | ⬜ Not started |
-| 14 | JWT resource server and CORS | **M1** | ⬜ Not started |
-| 15 | AOP and proxies | **M1** (deepens §9, §13) | ⬜ Not started |
-| 16 | Optimistic locking (`@Version`) | **M1 → M3** | ⬜ Not started |
-| 17 | Flyway migrations | **M1** (V2+ hand-written) | ⬜ Not started |
-| 18 | Testcontainers `@ServiceConnection` | **M1** (and P§7) | ⬜ Not started |
-| 19 | Java 17 essentials | support | n/a |
-| 20 | Cache, schedule, async | support | n/a |
-| 21 | Rapid-fire (answer from memory) | all | n/a |
+| 1 | 🧠 Core: IoC, DI, beans, lifecycle, auto-config | **P§1** | 🔵 Ready for revision |
+| 2 | 🔀 Request flow | **P§2** | 🟡 In progress (Day 04 Q1 pending) |
+| 3 | 📍 Request mapping | **P§3** | 🔵 Ready for revision |
+| 4 | 🌐 HTTP semantics and REST design | **P§4** | 🔵 Ready for revision |
+| 5 | 🧯 Validation and error handling | **P§5** 🔥 active | 🟡 In progress (Part B1 / B2) |
+| 6 | 📦 DTO vs Entity | **P§5** (bridges P§3) | 🟡 In progress |
+| 7 | 💾 Spring Data JPA | **P§6** | ⬜ Not started |
+| 8 | 🔗 Entity relationships and pagination | **P§6** | ⬜ Not started |
+| 9 | 🔒 Transactions | **P§6** | ⬜ Not started |
+| 10 | 🧪 Testing | **P§7** | ⬜ Not started |
+| 11 | 🔧 Configuration | **P§8** | ⬜ Not started |
+| 12 | 📈 Actuator and logging | **P§8** (extension) | ⬜ Not started |
+| 13 | 🔐 Spring Security basics | **M1** (beyond prerequisites) | ⬜ Not started |
+| 14 | 🎫 JWT resource server and CORS | **M1** | ⬜ Not started |
+| 15 | 🎭 AOP and proxies | **M1** (deepens §9, §13) | ⬜ Not started |
+| 16 | 🔖 Optimistic locking (`@Version`) | **M1 → M3** | ⬜ Not started |
+| 17 | 🧱 Flyway migrations | **M1** (V2+ hand-written) | ⬜ Not started |
+| 18 | 🐳 Testcontainers `@ServiceConnection` | **M1** (and P§7) | ⬜ Not started |
+| 19 | ☕ Java 17 essentials | support | n/a |
+| 20 | ⏰ Cache, schedule, async | support | n/a |
+| 21 | ⚡ Rapid-fire (answer from memory) | all | n/a |
 
----
+## 📑 Contents
 
-## Contents
-
-- [Reference: what changed in Boot 4](#reference-what-changed-in-boot-4)
+- [🆕 Reference: what changed in Boot 4](#-reference-what-changed-in-boot-4)
 - **Prerequisites P§1 to P§8**
-  1. [Core: IoC, DI, beans, lifecycle, auto-config](#1-core-ioc-di-beans-lifecycle-auto-config)
-  2. [Request flow](#2-request-flow)
-  3. [Request mapping](#3-request-mapping)
-  4. [HTTP semantics and REST design](#4-http-semantics-and-rest-design)
-  5. [Validation and error handling](#5-validation-and-error-handling)
-  6. [DTO vs Entity](#6-dto-vs-entity)
-  7. [Spring Data JPA](#7-spring-data-jpa)
-  8. [Entity relationships and pagination](#8-entity-relationships-and-pagination)
-  9. [Transactions](#9-transactions)
-  10. [Testing](#10-testing)
-  11. [Configuration](#11-configuration)
-  12. [Actuator and logging](#12-actuator-and-logging)
+  1. [🧠 Core: IoC, DI, beans, lifecycle, auto-config](#-1-core-ioc-di-beans-lifecycle-auto-config)
+  2. [🔀 Request flow](#-2-request-flow)
+  3. [📍 Request mapping](#-3-request-mapping)
+  4. [🌐 HTTP semantics and REST design](#-4-http-semantics-and-rest-design)
+  5. [🧯 Validation and error handling](#-5-validation-and-error-handling)
+  6. [📦 DTO vs Entity](#-6-dto-vs-entity)
+  7. [💾 Spring Data JPA](#-7-spring-data-jpa)
+  8. [🔗 Entity relationships and pagination](#-8-entity-relationships-and-pagination)
+  9. [🔒 Transactions](#-9-transactions)
+  10. [🧪 Testing](#-10-testing)
+  11. [🔧 Configuration](#-11-configuration)
+  12. [📈 Actuator and logging](#-12-actuator-and-logging)
 - **Banking Milestone 1 extras**
-  13. [Spring Security basics](#13-spring-security-basics)
-  14. [JWT resource server and CORS](#14-jwt-resource-server-and-cors)
-  15. [AOP and proxies](#15-aop-and-proxies)
-  16. [Optimistic locking (`@Version`)](#16-optimistic-locking-version)
-  17. [Flyway migrations](#17-flyway-migrations)
-  18. [Testcontainers `@ServiceConnection`](#18-testcontainers-serviceconnection)
+  13. [🔐 Spring Security basics](#-13-spring-security-basics)
+  14. [🎫 JWT resource server and CORS](#-14-jwt-resource-server-and-cors)
+  15. [🎭 AOP and proxies](#-15-aop-and-proxies)
+  16. [🔖 Optimistic locking (`@Version`)](#-16-optimistic-locking-version)
+  17. [🧱 Flyway migrations](#-17-flyway-migrations)
+  18. [🐳 Testcontainers `@ServiceConnection`](#-18-testcontainers-serviceconnection)
 - **Support**
-  19. [Java 17 essentials](#19-java-17-essentials)
-  20. [Cache, schedule, async](#20-cache-schedule-async)
-  21. [Rapid-fire (answer from memory)](#21-rapid-fire-answer-from-memory)
-- [Score board](#score-board)
-- [Sources](#sources)
+  19. [☕ Java 17 essentials](#-19-java-17-essentials)
+  20. [⏰ Cache, schedule, async](#-20-cache-schedule-async)
+  21. [⚡ Rapid-fire (answer from memory)](#-21-rapid-fire-answer-from-memory)
+- [📊 Score board](#-score-board)
+- [📚 Sources](#-sources)
 
----
-
-## Reference: what changed in Boot 4
+## 🆕 Reference: what changed in Boot 4
 
 > [!NOTE]
 > Concept reference for sections 1, 10, 11 and 14. Read it, don't memorize the package names: you will look them up in the migration guide.
@@ -112,16 +107,12 @@
 > - Stepping stones when migrating: `spring.jackson.use-jackson2-defaults=true`, the deprecated `spring-boot-jackson2` module, and `spring-boot-starter-classic` (+ `-test-classic`). Move to **Boot 3.5** first, then 4.0.
 > - New in 4.0: auto-configuration for **HTTP Service Clients** and **API versioning**.
 
----
-
-## Prerequisites P§1 to P§8, then Banking M1 extras
+## 📂 Prerequisites P§1 to P§8, then Banking M1 extras
 
 > [!NOTE]
 > Sections 1-12 follow [prerequisites.md](prerequisites.md) in order; sections 13-18 are what Milestone 1 needs on top; 19-21 are support.
 
----
-
-## 1. Core: IoC, DI, beans, lifecycle, auto-config
+## 🧠 1. Core: IoC, DI, beans, lifecycle, auto-config
 
 > 🔗 **P§1** · 🔵 Ready for revision
 
@@ -157,46 +148,37 @@ public class StudentService {
 
 > ✍️ My answer:
 
-
 **1.2** `@Component` vs `@Bean`: when do you use each?
 
 > ✍️ My answer:
-
 
 **1.3** What does `@SpringBootApplication` contain, and what does the component scan cover?
 
 > ✍️ My answer:
 
-
 **1.4** What is the default bean scope? Is a singleton bean thread-safe? ⚠️ Trap: what makes it unsafe?
 
 > ✍️ My answer:
-
 
 **1.5** ⚠️ Trap: a prototype bean is injected into a singleton. How many instances exist and how would you get a fresh one each time?
 
 > ✍️ My answer:
 
-
 **1.6** Two beans implement the same interface. What happens at startup and how do you fix it? `@Primary` vs `@Qualifier`: which wins if both are present?
 
 > ✍️ My answer:
-
 
 **1.7** Why use `@PostConstruct` instead of the constructor? What is *not* yet in place when it runs?
 
 > ✍️ My answer:
 
-
 **1.8** How does Boot decide to configure a `DataSource`, and how do you override an auto-configured bean?
 
 > ✍️ My answer:
 
-
 **1.9** How would you find out *why* an auto-configuration did or did not apply?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -204,11 +186,9 @@ public class StudentService {
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 2. Request flow
+## 🔀 2. Request flow
 
 > 🔗 **P§2** · 🟡 In progress (Day 04 Q1 pending)
 
@@ -236,26 +216,21 @@ flowchart LR
 
 > ✍️ My answer:
 
-
 **2.2** What is `DispatcherServlet`?
 
 > ✍️ My answer:
-
 
 **2.3** `@RestController` vs `@Controller`: what happens if a plain `@Controller` returns a `String`?
 
 > ✍️ My answer:
 
-
 **2.4** Who converts a Java object to JSON, and who converts JSON to a Java object?
 
 > ✍️ My answer:
 
-
 **2.5** Filter vs interceptor: where does each run and what can each see?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -263,11 +238,9 @@ flowchart LR
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 3. Request mapping
+## 📍 3. Request mapping
 
 > 🔗 **P§3** · 🔵 Ready for revision (code verified 28 Oct)
 
@@ -294,31 +267,25 @@ List<StudentDto> search(@RequestParam String name) { return service.search(name)
 
 > ✍️ My answer:
 
-
 **3.2** What happens if a required `@RequestParam` is missing? What if a `@PathVariable` has the wrong type?
 
 > ✍️ My answer:
-
 
 **3.3** How do you make a request param optional? Name three ways.
 
 > ✍️ My answer:
 
-
 **3.4** How does the JSON body become a Java object? What must the DTO have for this to work?
 
 > ✍️ My answer:
-
 
 **3.5** Which status do you get for an unknown path, a wrong HTTP method and an unsupported content type?
 
 > ✍️ My answer:
 
-
 **3.6** ⚠️ Trap: what is wrong with `@GetMapping("/search?name=")`?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -326,11 +293,9 @@ List<StudentDto> search(@RequestParam String name) { return service.search(name)
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 4. HTTP semantics and REST design
+## 🌐 4. HTTP semantics and REST design
 
 > 🔗 **P§4** · 🔵 Ready for revision (Day 03 Q1/Q2 scored 5/10)
 
@@ -356,36 +321,29 @@ return ResponseEntity.created(URI.create("/api/students/" + saved.id())).body(sa
 
 > ✍️ My answer:
 
-
 **4.2** ⚠️ Trap (your Day 03 Q1): a client sends `DELETE /students/5` twice. Is DELETE idempotent? What does the second call return in **your** API, and does that break idempotency?
 
 > ✍️ My answer:
-
 
 **4.3** PUT vs PATCH?
 
 > ✍️ My answer:
 
-
 **4.4** Which status code for: create, update, delete, validation error, not found, duplicate email, unhandled error?
 
 > ✍️ My answer:
-
 
 **4.5** Why return a `Location` header on 201?
 
 > ✍️ My answer:
 
-
 **4.6** 401 vs 403: what is the difference?
 
 > ✍️ My answer:
 
-
 **4.7** 400 vs 404 vs 409: how do you choose for a duplicate email?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -393,11 +351,9 @@ return ResponseEntity.created(URI.create("/api/students/" + saved.id())).body(sa
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 5. Validation and error handling
+## 🧯 5. Validation and error handling
 
 > 🔗 **P§5** 🔥 active · 🟡 In progress (Day 04 Part B1 / B2)
 
@@ -419,26 +375,21 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **5.2** `@Valid` vs `@Validated`: what does each add?
 
 > ✍️ My answer:
-
 
 **5.3** How do you handle exceptions globally? Which annotations, which return types?
 
 > ✍️ My answer:
 
-
 **5.4** What is `ProblemDetail` and which standard does it follow? Which fields does it have?
 
 > ✍️ My answer:
 
-
 **5.5** `@NotNull` vs `@NotEmpty` vs `@NotBlank`?
 
 > ✍️ My answer:
-
 
 **5.6** Fill in the table (Spring 6.1+). Exception and status for each situation:
 
@@ -450,16 +401,13 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **5.7** Why is 409 better than 400 for a duplicate email, and why isn't an `existsByEmail` check alone enough to keep emails unique? (Day 04 Q3)
 
 > ✍️ My answer:
 
-
 **5.8** ⚠️ Trap: should a controller class carry `@Validated` in Spring 6.1+? Why or why not?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -467,11 +415,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 6. DTO vs Entity
+## 📦 6. DTO vs Entity
 
 > 🔗 **P§5** (bridges P§3) · 🟡 In progress
 
@@ -496,21 +442,17 @@ public record StudentDto(Long id, String name, String email) {}
 
 > ✍️ My answer:
 
-
 **6.2** What is mass assignment and how do DTOs prevent it?
 
 > ✍️ My answer:
-
 
 **6.3** Where should the entity ⇄ DTO mapping live, and where must it not live?
 
 > ✍️ My answer:
 
-
 **6.4** Why separate `StudentRequest` and `StudentDto`?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -518,11 +460,9 @@ public record StudentDto(Long id, String name, String email) {}
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 7. Spring Data JPA
+## 💾 7. Spring Data JPA
 
 > 🔗 **P§6** · ⬜ Not started
 
@@ -552,41 +492,33 @@ boolean taken = repo.existsByEmail(email);
 
 > ✍️ My answer:
 
-
 **7.2** How do derived query methods work? What happens when you misspell a property?
 
 > ✍️ My answer:
-
 
 **7.3** What is the N+1 problem? Give a concrete example and two fixes.
 
 > ✍️ My answer:
 
-
 **7.4** Lazy vs eager: what are the defaults for each association type, and what do you set for `@ManyToOne`?
 
 > ✍️ My answer:
-
 
 **7.5** What does `save()` do for a new entity and for an existing id?
 
 > ✍️ My answer:
 
-
 **7.6** What does `ddl-auto=validate` do, and why use it in prod?
 
 > ✍️ My answer:
-
 
 **7.7** What is open-in-view, why is it on by default, and what is the risk?
 
 > ✍️ My answer:
 
-
 **7.8** Why does `findById` return `Optional`, and how do you turn it into a 404?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -594,11 +526,9 @@ boolean taken = repo.existsByEmail(email);
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 8. Entity relationships and pagination
+## 🔗 8. Entity relationships and pagination
 
 > 🔗 **P§6** · ⬜ Not started
 
@@ -642,41 +572,33 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **8.2** Cascade vs `orphanRemoval`: what is the difference?
 
 > ✍️ My answer:
-
 
 **8.3** Why prefer `@ManyToOne(fetch = LAZY)` and `@Enumerated(EnumType.STRING)`?
 
 > ✍️ My answer:
 
-
 **8.4** What goes wrong when you serialize a bidirectional entity directly?
 
 > ✍️ My answer:
-
 
 **8.5** Why is Lombok `@Data` dangerous on an entity?
 
 > ✍️ My answer:
 
-
 **8.6** `Page` vs `Slice`: what does each cost and know?
 
 > ✍️ My answer:
-
 
 **8.7** Why paginate at all, and why cap the maximum page size? What is the first page index?
 
 > ✍️ My answer:
 
-
 **8.8** What is wrong with returning a `Page<StudentDto>` straight from a controller in recent Spring Data versions, and what are your options?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -684,11 +606,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 9. Transactions
+## 🔒 9. Transactions
 
 > 🔗 **P§6** · ⬜ Not started
 
@@ -720,31 +640,25 @@ public class StudentService {
 
 > ✍️ My answer:
 
-
 **9.2** Does it roll back on checked exceptions? How do you change that?
 
 > ✍️ My answer:
-
 
 **9.3** ⚠️ Trap: look at the code below. Is `bulk()` transactional? Why, and how would you fix it?
 
 > ✍️ My answer:
 
-
 **9.4** List five reasons `@Transactional` appears not to work.
 
 > ✍️ My answer:
-
 
 **9.5** `REQUIRED` vs `REQUIRES_NEW`: what is the difference and when would you use `REQUIRES_NEW` (hint: audit logs)?
 
 > ✍️ My answer:
 
-
 **9.6** What does `readOnly = true` give you?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -752,11 +666,9 @@ public class StudentService {
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 10. Testing
+## 🧪 10. Testing
 
 > 🔗 **P§7** · ⬜ Not started
 
@@ -787,36 +699,29 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 > ✍️ My answer:
 
-
 **10.2** Why mock the service in a controller test, and which annotation do you use in Boot 4?
 
 > ✍️ My answer:
-
 
 **10.3** What is `@MockitoBean` and what did it replace?
 
 > ✍️ My answer:
 
-
 **10.4** How do you assert the status and a JSON field with `MockMvc`?
 
 > ✍️ My answer:
-
 
 **10.5** ⚠️ Trap: you upgrade to Boot 4 and your `@SpringBootTest` that autowires `MockMvc` fails. What is missing?
 
 > ✍️ My answer:
 
-
 **10.6** ⚠️ Trap: your `@WebMvcTest` import no longer compiles after the upgrade. Why, and what do you add?
 
 > ✍️ My answer:
 
-
 **10.7** What is `@DataJpaTest` and why does it roll back?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -824,11 +729,9 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 11. Configuration
+## 🔧 11. Configuration
 
 > 🔗 **P§8** · ⬜ Not started
 
@@ -860,31 +763,25 @@ student:
 
 > ✍️ My answer:
 
-
 **11.2** How do you use different DB settings in dev vs prod?
 
 > ✍️ My answer:
-
 
 **11.3** `@Value` vs `@ConfigurationProperties`: when do you use each?
 
 > ✍️ My answer:
 
-
 **11.4** How do you override a property at runtime, with and without rebuilding?
 
 > ✍️ My answer:
-
 
 **11.5** Order these from highest to lowest precedence: `application.yml`, env var, `--server.port`, `application-dev.yml`.
 
 > ✍️ My answer:
 
-
 **11.6** ⚠️ Trap: your `@ConfigurationProperties` record always has default values. What did you forget?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -892,11 +789,9 @@ student:
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 12. Actuator and logging
+## 📈 12. Actuator and logging
 
 > 🔗 **P§8** (extension) · ⬜ Not started
 
@@ -914,16 +809,13 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **12.2** Which logging framework and default level does Boot use? How do you raise the level for one package?
 
 > ✍️ My answer:
 
-
 **12.3** Why use `log.info("Created {}", id)` instead of string concatenation, and what must you never log?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -931,11 +823,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 13. Spring Security basics
+## 🔐 13. Spring Security basics
 
 > 🔗 **M1** (not in prerequisites) · ⬜ Not started · waits for P§5
 
@@ -974,31 +864,25 @@ SecurityFilterChain chain(HttpSecurity http) throws Exception {
 
 > ✍️ My answer:
 
-
 **13.2** Authentication vs authorization, and 401 vs 403?
 
 > ✍️ My answer:
-
 
 **13.3** Why BCrypt (and not SHA-256 or plain text)?
 
 > ✍️ My answer:
 
-
 **13.4** Why can a stateless JWT API disable CSRF, and when must you not?
 
 > ✍️ My answer:
-
 
 **13.5** `hasRole('ADMIN')` vs `hasAuthority('ROLE_ADMIN')` vs `hasAuthority('ADMIN')`?
 
 > ✍️ My answer:
 
-
 **13.6** What does `@EnableMethodSecurity` enable, and through what mechanism does `@PreAuthorize` work? (see section 15)
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1006,11 +890,9 @@ SecurityFilterChain chain(HttpSecurity http) throws Exception {
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 14. JWT resource server and CORS
+## 🎫 14. JWT resource server and CORS
 
 > 🔗 **M1** (login returns a JWT) · ⬜ Not started
 
@@ -1039,41 +921,33 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **14.2** HS256 vs RS256: which do you use for the banking app and why does the API only hold a public key?
 
 > ✍️ My answer:
-
 
 **14.3** How does Spring turn a JWT into an authenticated user with authorities? How would you map a `roles` claim to `ROLE_*`?
 
 > ✍️ My answer:
 
-
 **14.4** What would you validate on every request (signature, `exp`, ...)? What happens on an expired token (which status)?
 
 > ✍️ My answer:
-
 
 **14.5** Why must `/auth/login` be `permitAll()` while everything else is authenticated?
 
 > ✍️ My answer:
 
-
 **14.6** What is CORS and why does the browser send a preflight request?
 
 > ✍️ My answer:
-
 
 **14.7** Why does a CORS call fail with 401 on the `OPTIONS` request when Security is configured wrongly, and how do you fix it?
 
 > ✍️ My answer:
 
-
 **14.8** ⚠️ Trap: can you set `allowedOrigins("*")` together with `allowCredentials(true)`? Why not?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1081,11 +955,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 15. AOP and proxies
+## 🎭 15. AOP and proxies
 
 > 🔗 **M1** (deepens sections 9 and 13) · ⬜ Not started
 
@@ -1105,36 +977,29 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **15.2** JDK proxy vs CGLIB: what is the difference and which does Boot use by default? What can CGLIB not proxy?
 
 > ✍️ My answer:
-
 
 **15.3** Explain aspect, advice, pointcut and join point in one sentence each.
 
 > ✍️ My answer:
 
-
 **15.4** When would you use `@Around` instead of `@Before`?
 
 > ✍️ My answer:
-
 
 **15.5** ⚠️ Trap: why does `this.otherMethod()` bypass `@Transactional`, and what are two fixes?
 
 > ✍️ My answer:
 
-
 **15.6** If both `@Transactional` and `@PreAuthorize` apply to the same service method, which should run first and how is the order set?
 
 > ✍️ My answer:
 
-
 **15.7** Which starter do you need for your own `@Aspect` in Boot 4?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1142,11 +1007,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 16. Optimistic locking (`@Version`)
+## 🔖 16. Optimistic locking (`@Version`)
 
 > 🔗 **M1 → M3** (transfers, `@Version` + `FOR UPDATE`) · ⬜ Not started
 
@@ -1166,36 +1029,29 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **16.2** How does Hibernate implement `@Version` (what SQL does it run) and what exception do you see on conflict?
 
 > ✍️ My answer:
-
 
 **16.3** Which HTTP status do you return on an optimistic-lock failure and what should the client do?
 
 > ✍️ My answer:
 
-
 **16.4** Optimistic vs pessimistic locking: when do you pick each for a bank transfer?
 
 > ✍️ My answer:
-
 
 **16.5** Why lock two accounts in a fixed order?
 
 > ✍️ My answer:
 
-
 **16.6** ⚠️ Trap: does `@Version` protect a bulk `UPDATE accounts SET balance = balance - ?` query? Why not?
 
 > ✍️ My answer:
 
-
 **16.7** What must you add in Flyway when you add `@Version` to an entity?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1203,11 +1059,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 17. Flyway migrations
+## 🧱 17. Flyway migrations
 
 > 🔗 **M1** (V2+ are hand-written; Milestone 0 ✅) · ⬜ Not started
 
@@ -1227,36 +1081,29 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **17.2** What does the `V2__create_users.sql` naming mean? What happens if the double underscore is wrong?
 
 > ✍️ My answer:
-
 
 **17.3** What does `flyway_schema_history` store and what is the checksum for?
 
 > ✍️ My answer:
 
-
 **17.4** ⚠️ Trap: you need to fix a typo in `V2__...` that is already applied on a shared database. What do you do?
 
 > ✍️ My answer:
-
 
 **17.5** Why does the banking app use two DB roles (migrator vs app)?
 
 > ✍️ My answer:
 
-
 **17.6** What is `baseline-on-migrate` for, and why is `clean` dangerous?
 
 > ✍️ My answer:
 
-
 **17.7** What do you add to the pom for Flyway + PostgreSQL in Boot 4?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1264,11 +1111,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 18. Testcontainers `@ServiceConnection`
+## 🐳 18. Testcontainers `@ServiceConnection`
 
 > 🔗 **M1** (and P§7; `BankingApplicationIT` uses it) · ⬜ Not started
 
@@ -1287,31 +1132,25 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **18.2** What does `@ServiceConnection` do and what did you need before it (`@DynamicPropertySource`)?
 
 > ✍️ My answer:
-
 
 **18.3** Static `@Container` field vs a `@Bean` in `@TestConfiguration`: which is better for a large suite and why?
 
 > ✍️ My answer:
 
-
 **18.4** Why does Flyway work in the test without any URL property?
 
 > ✍️ My answer:
-
 
 **18.5** ⚠️ Trap: your `@DataJpaTest` ignores the Postgres container and uses an in-memory DB. What did you forget?
 
 > ✍️ My answer:
 
-
 **18.6** What must be running on your machine for the Testcontainers tests to pass?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1319,11 +1158,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 19. Java 17 essentials
+## ☕ 19. Java 17 essentials
 
 > support (Java 17 is the Boot 4 baseline; banking-app is on 21)
 
@@ -1344,26 +1181,21 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **19.2** How do `HashMap` and the `equals`/`hashCode` contract work together? What breaks if you break it?
 
 > ✍️ My answer:
-
 
 **19.3** Checked vs unchecked exceptions, and how does that decide `@Transactional` rollback?
 
 > ✍️ My answer:
 
-
 **19.4** Give one example each of a text block, a switch expression and pattern matching for `instanceof`.
 
 > ✍️ My answer:
 
-
 **19.5** `Stream.toList()` vs `Collectors.toList()`: what is different?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1371,11 +1203,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 20. Cache, schedule, async
+## ⏰ 20. Cache, schedule, async
 
 > support
 
@@ -1393,21 +1223,17 @@ Score: _/5
 
 > ✍️ My answer:
 
-
 **20.2** ⚠️ Trap: why does `@Cacheable` on a method called from the same class never hit the cache?
 
 > ✍️ My answer:
-
 
 **20.3** `fixedRate` vs `fixedDelay` vs `cron`?
 
 > ✍️ My answer:
 
-
 **20.4** What can an `@Async` method return and what happens to exceptions in a `void` one?
 
 > ✍️ My answer:
-
 
 ### ✅ Section check
 
@@ -1415,11 +1241,9 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## 21. Rapid-fire (answer from memory)
+## ⚡ 21. Rapid-fire (answer from memory)
 
 > 🔗 all prerequisites + M1 · cover the notes above and fill the right-hand column, one line each.
 
@@ -1462,37 +1286,35 @@ Score: _/5
 
 Score: _/5
 
-[⬆ Back to contents](#contents)
+[⬆ Back to contents](#-contents)
 
----
-
-## Score board
+## 📊 Score board
 
 > [!NOTE]
 > Write the date and your `Score: _/5` for each section. Anything **1-3** goes into the next 6 AM round. The routine's own confidence rows still go in the Revision log of [prerequisites.md](prerequisites.md), because `tasks/*` point there. Grades from Lumi go to `interview-answers.md`.
 
 | § | Topic | Prereq | Date | Score (_/5) | Weak point → next action |
 |---|---|---|---|:---:|---|
-| 1 | Core: IoC, DI, beans, lifecycle, auto-config | P§1 |  |  |  |
-| 2 | Request flow | P§2 |  |  |  |
-| 3 | Request mapping | P§3 |  |  |  |
-| 4 | HTTP semantics and REST design | P§4 |  |  |  |
-| 5 | Validation and error handling | P§5 |  |  |  |
-| 6 | DTO vs Entity | P§5 |  |  |  |
-| 7 | Spring Data JPA | P§6 |  |  |  |
-| 8 | Entity relationships and pagination | P§6 |  |  |  |
-| 9 | Transactions | P§6 |  |  |  |
-| 10 | Testing | P§7 |  |  |  |
-| 11 | Configuration | P§8 |  |  |  |
-| 12 | Actuator and logging | P§8 |  |  |  |
-| 13 | Spring Security basics | M1 |  |  |  |
-| 14 | JWT resource server and CORS | M1 |  |  |  |
-| 15 | AOP and proxies | M1 |  |  |  |
-| 16 | Optimistic locking (`@Version`) | M1–M3 |  |  |  |
-| 17 | Flyway migrations | M1 |  |  |  |
-| 18 | Testcontainers `@ServiceConnection` | M1 |  |  |  |
-| 19 | Java 17 essentials | support |  |  |  |
-| 20 | Cache, schedule, async | support |  |  |  |
+| 1 | 🧠 Core: IoC, DI, beans, lifecycle, auto-config | P§1 |  |  |  |
+| 2 | 🔀 Request flow | P§2 |  |  |  |
+| 3 | 📍 Request mapping | P§3 |  |  |  |
+| 4 | 🌐 HTTP semantics and REST design | P§4 |  |  |  |
+| 5 | 🧯 Validation and error handling | P§5 |  |  |  |
+| 6 | 📦 DTO vs Entity | P§5 |  |  |  |
+| 7 | 💾 Spring Data JPA | P§6 |  |  |  |
+| 8 | 🔗 Entity relationships and pagination | P§6 |  |  |  |
+| 9 | 🔒 Transactions | P§6 |  |  |  |
+| 10 | 🧪 Testing | P§7 |  |  |  |
+| 11 | 🔧 Configuration | P§8 |  |  |  |
+| 12 | 📈 Actuator and logging | P§8 |  |  |  |
+| 13 | 🔐 Spring Security basics | M1 |  |  |  |
+| 14 | 🎫 JWT resource server and CORS | M1 |  |  |  |
+| 15 | 🎭 AOP and proxies | M1 |  |  |  |
+| 16 | 🔖 Optimistic locking (`@Version`) | M1–M3 |  |  |  |
+| 17 | 🧱 Flyway migrations | M1 |  |  |  |
+| 18 | 🐳 Testcontainers `@ServiceConnection` | M1 |  |  |  |
+| 19 | ☕ Java 17 essentials | support |  |  |  |
+| 20 | ⏰ Cache, schedule, async | support |  |  |  |
 | 21 | Rapid-fire | all |  |  |  |
 
 ### 🔁 5-day plan
@@ -1504,9 +1326,7 @@ Score: _/5
 - **Day 5:** sections 15-18 (M1 extras), then 21 rapid-fire.
 - Sections 19-20 whenever you have 10 spare minutes.
 
----
-
-## Sources
+## 📚 Sources
 
 - Spring Boot system requirements: https://docs.spring.io/spring-boot/system-requirements.html
 - Spring Boot 4.0 Migration Guide: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide
