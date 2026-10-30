@@ -8,7 +8,8 @@ SET search_path TO learn_02;
 -- Task: customer_id, full_name of customers with NO phone number. Sorted by customer_id.
    SELECT customer_id, full_name
    FROM customers
-   WHERE phone is null;
+   WHERE phone is null
+   Order By customer_id;
 
 -- @ex 2
 -- Task: customer_id, kyc_status of customers whose KYC is anything other than VERIFIED,
