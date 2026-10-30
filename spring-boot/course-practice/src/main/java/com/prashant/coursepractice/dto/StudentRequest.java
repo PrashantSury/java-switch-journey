@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 /** Incoming JSON for create/update. */
 public class StudentRequest {
 
-    @Size(min=2, max=50)
+    @Size(min=2, max=50, message = "name must be between {min} and {max} characters")
     @NotBlank(message = "name is required")
     private String name;
 

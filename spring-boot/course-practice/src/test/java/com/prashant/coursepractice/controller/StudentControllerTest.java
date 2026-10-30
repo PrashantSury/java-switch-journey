@@ -49,6 +49,17 @@ class StudentControllerTest {
                 .andExpect(status().isConflict());
     }
 
+    @Test @DisplayName("PUT with another student's email returns 409")
+    void updateWithAnotherStudentsEmail() throws Exception {
+        createStudent("Owner", "owner@example.com");
+        long otherId = createStudent("Other", "other@example.com");
+
+        mvc.perform(put("/api/students/" + otherId)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"Other\",\"email\":\"owner@example.com\"}"))
+                .andExpect(status().isConflict());
+    }
+
     @Test @DisplayName("GET unknown id returns 404")
     void notFound() throws Exception {
         mvc.perform(get("/api/students/9999"))

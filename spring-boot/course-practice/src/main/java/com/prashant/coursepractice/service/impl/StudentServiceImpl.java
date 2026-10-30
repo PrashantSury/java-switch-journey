@@ -34,7 +34,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentResponse create(StudentRequest request) {
         if (repository.existsByEmailIgnoreCase(request.getEmail())) {
-            throw new DuplicateEmailException(request.getEmail());   // map to 409 in @RestControllerAdvice
+            throw new DuplicateEmailException(request.getEmail());
         }
         return StudentMapper.toResponse(repository.save(StudentMapper.toEntity(request)));
     }
