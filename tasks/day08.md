@@ -92,8 +92,8 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 - 📌 Each value is an asteroid: size is the absolute value, sign is direction (positive right, negative left), all at the same speed. When two meet, the smaller explodes; equal sizes both explode. Return what's left, in original order.
 - 📌 Repo rules: `null` or any `0` throws `IllegalArgumentException`; don't modify the input; values cover the whole `int` range, including `Integer.MIN_VALUE`; aim for O(n) on up to 100,000 asteroids.
 
-- [ ] Implement `asteroidCollision(int[] asteroids)`.
-- [ ] `mvn test -Dtest=AsteroidCollisionTest` shows 28/28.
+- [x] Implement `asteroidCollision(int[] asteroids)`.
+- [x] `mvn test -Dtest=AsteroidCollisionTest` shows 28/28. (Done 22:53, verified 31 Oct.)
 
 > [!TIP]
 > Only one direction pairing can ever collide. And before comparing sizes, ask yourself what `Math.abs(Integer.MIN_VALUE)` returns.
@@ -119,12 +119,14 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 
 | Item | Path | Status |
 |---|---|---|
-| 🌱 Day 04 Part B1 | `spring-boot/course-practice` | 🟡 In progress · no push today |
+| 🌱 Day 04 Part B1 | `spring-boot/course-practice` | 🔴 Needs correction · 71a5f07 pushed 00:13 (14/14); still to do: `@Size` message and a PUT-with-another-email 409 test |
+| 🧩 `AsteroidCollision` | `src/main/java/com/prashant/dsa/stack/` | ✅ Completed and verified (28/28, 31 Oct) · Lumi removed the stray `+6` and added braces |
+| 🎓 SQL learn lesson 02 | `sql/learn/` | ✅ Completed and verified (5/5, f2e5a58) |
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo) | `src/main/java/com/prashant/dailytests/redo/` | ⬜ Not started (0/17) |
 | 🎤 Day 04 Q3 | in chat | ⬜ Pending |
 
 > [!IMPORTANT]
-> ✅ Done when `AsteroidCollisionTest` is 28/28 on your pushed code, `sql/day03-answers.md` has Q1, and `git ls-files` no longer lists the Postman files. Reply in chat when you're ready for grading.
+> ✅ Done when `AsteroidCollisionTest` is 28/28 and its Javadoc is clean on your pushed code (28/28, verified 31 Oct, cosmetic clean-up done by Lumi), `sql/day03-answers.md` has Q1, and `git ls-files` no longer lists the Postman files. Reply in chat when you're ready for grading.
 
 ## 🌃 End of day (10 PM check)
 
@@ -133,7 +135,7 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 | 🌱 Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | 🟡 In progress, no push today · carried to 31 Oct 6 AM |
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo) | ⬜ Not started (0/17) · carried to 31 Oct 6 AM |
 | 🎤 Day 04 Q3 | ⬜ Pending · carried to 31 Oct morning |
-| 🧩 AsteroidCollision | ⬜ Not started (8/28) · carried to 31 Oct evening |
+| 🧩 AsteroidCollision | ✅ Completed and verified (28/28, pushed 22:53, verified 31 Oct) |
 | 🗄️ SQL 03 Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to 31 Oct evening |
 | 🧹 Untrack `.postman/` and `postman/globals/` | ⬜ Not started · carried to 31 Oct evening |
 | 🎓 SQL learn lesson 01 | ✅ Completed and verified (5/5, 735056a) |

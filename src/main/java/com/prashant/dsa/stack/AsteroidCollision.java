@@ -15,7 +15,7 @@ import java.util.Deque;
  * left-moving asteroid on the left never meets a right-moving one on its right.
  * Return the state of the asteroids after all collisions, in their original order.
  *
- * Rules for this repo:+6
+ * Rules for this repo:
  *  - If asteroids is null, throw IllegalArgumentException.
  *  - If any value is 0, throw IllegalArgumentException.
  *  - Do not modify the input array.
@@ -54,12 +54,16 @@ public class AsteroidCollision {
                     if (top < size) {
                         stack.pop();                         // top explodes, keep fighting
                     } else {
-                        if (top == size) stack.pop();        // both explode
+                        if (top == size) {
+                            stack.pop();                     // both explode
+                        }
                         alive = false;                       // a explodes
                     }
                 }
             }
-            if (alive) stack.push(a);
+            if (alive) {
+                stack.push(a);
+            }
         }
 
         int[] result = new int[stack.size()];
