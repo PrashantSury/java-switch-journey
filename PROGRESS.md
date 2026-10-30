@@ -154,9 +154,9 @@ pie title Tracked items (30 Oct 2026)
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (31 Oct, 6 AM):** Day 04 **Part B1** in `spring-boot/course-practice` (`@Size` message, two `exists...` email queries, 409 for duplicate email, +2 tests, `StudentControllerTest` 13+) and the cold `Day01ArrayStackRedo7` (0/17), both still open from [day08.md](tasks/day08.md), unless they're pushed tonight.
+> **Next task (31 Oct, 6 AM):** Day 04 **Part B1** in `spring-boot/course-practice`, starting with a clear `message` on the `@Size` in `StudentRequest` (then the two `exists...` email queries, 409 for duplicate email, +2 tests, `StudentControllerTest` 13+), plus the cold `Day01ArrayStackRedo7` (0/17). Both carried from [day08.md](tasks/day08.md).
 >
-> **Tonight (30 Oct, evening):** 🧩 `AsteroidCollision` (LeetCode 735), still 8/28, 🗄️ `sql/day03.sql` **Q1** (fourth evening; answer in `sql/day03-answers.md`), and untracking the committed `.postman/` and `postman/globals/` files. Brief in the Evening section of [day08.md](tasks/day08.md).
+> **Evening (31 Oct):** 🧩 `AsteroidCollision` (LeetCode 735), still 8/28, 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), and untracking the committed `.postman/` and `postman/globals/` files, all carried from 30 Oct evening.
 >
 > 🔁 Revision due: cold `Day02RpnEvaluator` redo on 31 Oct, Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5) on 1 Nov.
 >
@@ -180,3 +180,4 @@ pie title Tracked items (30 Oct 2026)
 | 29 Oct 2026 | W1 D7 | ✅ `RemoveKAdjacentDuplicates` 26/26 and `Day03NextGreaterIndex` 37/37 (2d36911, bcb37f3); SQL learn track lessons 01-05 added | 10 PM check: no pushes from me after the 8 PM evening assignment. Part B1 and Day 04 Q3 (morning), `AsteroidCollision` 8/28, SQL 03 Q1 and the `.postman` clean-up (evening) all carried. No new mistakes beyond the two logged this afternoon. Next: Part B1 on 30 Oct 6 AM |
 | 30 Oct 2026 | W2 D8 | ✅ SQL learn lesson 01 5/5 (735056a); Spring revision workbook added (d12849e, 9bfb07d); morning round assigned (backlog only) | Ran the lesson 01 checker on a scratch Postgres: `LESSON 01 COMPLETE`, queries reviewed. No Spring push since c047571, so Part B1 is assigned again in [day08.md](tasks/day08.md) with the `Day01ArrayStackRedo7` day-7 redo (stub 0/17, tests verified 17/17 against a correct version). No new buggy round, no new Spring task (§5 open) |
 | 30 Oct 2026 | W2 D8 | Evening session assigned (backlog only) | Re-checked at 8 PM with `mvn test`: no pushes since the morning, `AsteroidCollisionTest` 8/28, `Day01ArrayStackRedo7Test` 0/17, `CarFleetTest` 2/37, no `sql/day03-answers.md`. `AsteroidCollision`, SQL 03 Q1 and the `.postman` clean-up assigned in the Evening section of [day08.md](tasks/day08.md). No new stub or SQL file (2 DSA not started, 5 SQL unanswered) |
+| 30 Oct 2026 | W2 D8 | 10 PM check: no new verified work | No pushes from me after the 8 PM evening assignment (only Markdown restyle commits today, presentation only). Part B1, `Day01ArrayStackRedo7` (0/17) and Day 04 Q3 carried to 31 Oct morning; `AsteroidCollision` 8/28, SQL 03 Q1 and the `.postman` clean-up carried to 31 Oct evening. No new mistakes. Next: Part B1 on 31 Oct 6 AM |

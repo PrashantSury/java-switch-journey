@@ -125,3 +125,18 @@ The full brief is unchanged from the Morning section of [day07.md](day07.md). In
 
 > [!IMPORTANT]
 > ✅ Done when `AsteroidCollisionTest` is 28/28 on your pushed code, `sql/day03-answers.md` has Q1, and `git ls-files` no longer lists the Postman files. Reply in chat when you're ready for grading.
+
+## 🌃 End of day (10 PM check)
+
+| Item | Outcome |
+|---|---|
+| 🌱 Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | 🟡 In progress, no push today · carried to 31 Oct 6 AM |
+| 🔁 `Day01ArrayStackRedo7` (day-7 redo) | ⬜ Not started (0/17) · carried to 31 Oct 6 AM |
+| 🎤 Day 04 Q3 | ⬜ Pending · carried to 31 Oct morning |
+| 🧩 AsteroidCollision | ⬜ Not started (8/28) · carried to 31 Oct evening |
+| 🗄️ SQL 03 Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to 31 Oct evening |
+| 🧹 Untrack `.postman/` and `postman/globals/` | ⬜ Not started · carried to 31 Oct evening |
+| 🎓 SQL learn lesson 01 | ✅ Completed and verified (5/5, 735056a) |
+
+> [!IMPORTANT]
+> **Next task (31 Oct, 6 AM):** Part B1, starting with a clear `message` on the `@Size` in `StudentRequest`, then the cold `Day01ArrayStackRedo7`.
