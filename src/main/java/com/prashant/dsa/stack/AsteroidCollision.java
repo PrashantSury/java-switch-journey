@@ -1,5 +1,8 @@
 package com.prashant.dsa.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Day 02 DSA (Stack): Asteroid Collision (LeetCode 735).
  *
@@ -12,7 +15,7 @@ package com.prashant.dsa.stack;
  * left-moving asteroid on the left never meets a right-moving one on its right.
  * Return the state of the asteroids after all collisions, in their original order.
  *
- * Rules for this repo:
+ * Rules for this repo:+6
  *  - If asteroids is null, throw IllegalArgumentException.
  *  - If any value is 0, throw IllegalArgumentException.
  *  - Do not modify the input array.
@@ -32,7 +35,38 @@ package com.prashant.dsa.stack;
 public class AsteroidCollision {
 
     public int[] asteroidCollision(int[] asteroids) {
-        // TODO: implement
-        return new int[0];
+        if (asteroids == null) {
+            throw new IllegalArgumentException("asteroids must not be null");
+        }
+
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int a : asteroids) {
+            if (a == 0) {
+                throw new IllegalArgumentException("asteroid value must not be 0");
+            }
+
+            boolean alive = true;
+            if (a < 0) {
+                long size = -(long) a;                       // safe for Integer.MIN_VALUE
+                while (alive && !stack.isEmpty() && stack.peek() > 0) {
+                    int top = stack.peek();
+                    if (top < size) {
+                        stack.pop();                         // top explodes, keep fighting
+                    } else {
+                        if (top == size) stack.pop();        // both explode
+                        alive = false;                       // a explodes
+                    }
+                }
+            }
+            if (alive) stack.push(a);
+        }
+
+        int[] result = new int[stack.size()];
+        int i = result.length - 1;
+        for (int x : stack) {                                // iterates top -> bottom
+            result[i--] = x;
+        }
+        return result;
     }
 }
