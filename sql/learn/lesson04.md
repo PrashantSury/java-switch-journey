@@ -2,7 +2,12 @@
 
 ![Lesson](https://img.shields.io/badge/Lesson-04-blue) ![Time](https://img.shields.io/badge/time-20%20min-yellow) ![Schema](https://img.shields.io/badge/schema-learn__04-blue) ![DB](https://img.shields.io/badge/DB-PostgreSQL-blue)
 
+> [!IMPORTANT]
+> Write 5 queries yourself on INNER JOIN and LEFT JOIN and run the checker: all 5 `[PASS]` completes the lesson.
+
 > [!NOTE]
+> **Legend:** `[PASS]` correct · `[FAIL]` expected rows next to yours · `[TODO]` empty slot · ⬜ Not started · 🟡 In progress · ✅ Completed and verified.
+>
 > ⏱ 20 minutes · schema `learn_04` · status: ⬜ Not started
 
 ## 🎯 What you will learn

@@ -2,7 +2,12 @@
 
 ![Lesson](https://img.shields.io/badge/Lesson-03-blue) ![Time](https://img.shields.io/badge/time-20%20min-yellow) ![Schema](https://img.shields.io/badge/schema-learn__03-blue) ![DB](https://img.shields.io/badge/DB-PostgreSQL-blue)
 
+> [!IMPORTANT]
+> Write 5 queries yourself on aggregates, GROUP BY, HAVING and run the checker: all 5 `[PASS]` completes the lesson.
+
 > [!NOTE]
+> **Legend:** `[PASS]` correct · `[FAIL]` expected rows next to yours · `[TODO]` empty slot · ⬜ Not started · 🟡 In progress · ✅ Completed and verified.
+>
 > ⏱ 20 minutes · schema `learn_03` · status: ⬜ Not started
 
 ## 🎯 What you will learn

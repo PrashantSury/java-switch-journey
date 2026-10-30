@@ -2,7 +2,11 @@
 
 ![Week](https://img.shields.io/badge/Week-1-blue) ![Day](https://img.shields.io/badge/Day-02-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow)
 
-Work in the `spring-boot/course-practice` module, package `com.prashant.coursepractice.student`.
+> [!IMPORTANT]
+> Finish the Student REST API (PUT, DELETE, search) with tests in the `spring-boot/course-practice` module, package `com.prashant.coursepractice.student`. Done when `mvn test` passes.
+
+> [!NOTE]
+> **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
 
 ## 🛠️ Task: finish the Student REST API
 - [ ] **1.** `PUT /api/students/{id}`: takes a `@Valid @RequestBody Student`, updates name and email of the existing student and returns it with 200. Unknown id gives 404 (reuse `StudentNotFoundException`); invalid body gives 400 with the field errors.
