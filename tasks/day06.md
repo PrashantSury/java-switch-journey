@@ -8,6 +8,9 @@
 > [!NOTE]
 > **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
 
+> [!WARNING]
+> **Status (1 Nov 2026):** this is a historical day file. Every item from it that is still open (`CarFleet`, `Day04LargestRectangle`, `Day00BuggyExample`, Part B2, the Day 04 re-answers, the redos) is carried and specified in [day09.md](day09.md) with the new templates; the statuses below use the old names (Not started, Needs correction, ...). SQL items here are retired ([archive/](../archive/README.md)).
+
 ## 🌅 Morning: close Day 03/04 Part A + Day01ArrayStack redo
 
 > [!NOTE]
@@ -92,4 +95,4 @@ The three Day 03 questions are still ⬜ Pending in `interview-answers.md`. Day 
 | 🗄️ `sql/day03.sql` Q1 | ⬜ Not started (no `sql/day03-answers.md`) · carried to Day 07 |
 
 > [!IMPORTANT]
-> ▶️ **Next task (29 Oct, 6 AM):** Day 04 Part B in `spring-boot/course-practice` (409 handler with `ProblemDetail`, `@Size` coverage, +5 tests). See [day04-morning.md](day04-morning.md).
+> ▶️ **Next task (29 Oct, 6 AM):** Day 04 Part B in `spring-boot/course-practice` (409 handler with `ProblemDetail`, `@Size` coverage, +5 tests). See the old `day04-morning.md` ([archived](../archive/tasks/day02-05-morning.md)).

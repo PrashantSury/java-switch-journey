@@ -8,6 +8,9 @@
 > [!NOTE]
 > **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
 
+> [!WARNING]
+> **Status (1 Nov 2026):** this is a historical day file. Every item from it that is still open (`CarFleet`, `Day04LargestRectangle`, `Day00BuggyExample`, Part B2, the Day 04 re-answers, the redos) is carried and specified in [day09.md](day09.md) with the new templates; the statuses below use the old names (Not started, Needs correction, ...). SQL items here are retired ([archive/](../archive/README.md)).
+
 ## 🌅 Morning: Part B1 in `spring-boot/course-practice` + Day 04 Q3
 
 > [!NOTE]

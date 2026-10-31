@@ -6,7 +6,7 @@
 > **This is the single Spring Boot revision file.** It has **concept notes and questions only, no answers.** You write the answer under every question, from memory, then paste the section back to Lumi for grading. Grades go to `interview-answers.md` / `spring-boot/interview-answers/`, and status stays in [PROGRESS.md](../PROGRESS.md) (the source of truth).
 
 > [!NOTE]
-> **Legend:** ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified · 🔥 active section · ⚠️ trap · ✍️ your answer. Status in the Map is a snapshot: [PROGRESS.md](../PROGRESS.md) has the live value.
+> **Legend:** ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (verified) · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` (the old Attempted and Ready for revision are `IN_PROGRESS`; see [docs/PROGRAM.md](../docs/PROGRAM.md)) · 🔥 active section · ⚠️ trap · ✍️ your answer. Status in the Map is a snapshot: [PROGRESS.md](../PROGRESS.md) has the live value.
 >
 > **Last reviewed: 30 Oct 2026** against the official Spring Boot 4.x docs and the [Boot 4.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide). Stack: course-practice = Boot 4.x on Java 17+, `banking-app` = Boot 4.1.2 on Java 21. Examples use the Student API (`Student`, `StudentRequest`, `StudentDto`, `StudentController`, `StudentService`, `StudentRepository`, `StudentNotFoundException`).
 
@@ -27,24 +27,24 @@
 
 | # | Workbook section | Prerequisite § | Status in PROGRESS.md |
 |---|---|---|---|
-| 1 | 🧠 Core: IoC, DI, beans, lifecycle, auto-config | **P§1** | 🔵 Ready for revision |
+| 1 | 🧠 Core: IoC, DI, beans, lifecycle, auto-config | **P§1** | 🟡 IN_PROGRESS (revision) |
 | 2 | 🔀 Request flow | **P§2** | 🟡 In progress (Day 04 Q1 pending) |
-| 3 | 📍 Request mapping | **P§3** | 🔵 Ready for revision |
-| 4 | 🌐 HTTP semantics and REST design | **P§4** | 🔵 Ready for revision |
+| 3 | 📍 Request mapping | **P§3** | 🟡 IN_PROGRESS (revision) |
+| 4 | 🌐 HTTP semantics and REST design | **P§4** | 🟡 IN_PROGRESS (revision) |
 | 5 | 🧯 Validation and error handling | **P§5** 🔥 active | 🟡 In progress (Part B1 / B2) |
 | 6 | 📦 DTO vs Entity | **P§5** (bridges P§3) | 🟡 In progress |
-| 7 | 💾 Spring Data JPA | **P§6** | ⬜ Not started |
-| 8 | 🔗 Entity relationships and pagination | **P§6** | ⬜ Not started |
-| 9 | 🔒 Transactions | **P§6** | ⬜ Not started |
-| 10 | 🧪 Testing | **P§7** | ⬜ Not started |
-| 11 | 🔧 Configuration | **P§8** | ⬜ Not started |
-| 12 | 📈 Actuator and logging | **P§8** (extension) | ⬜ Not started |
-| 13 | 🔐 Spring Security basics | **M1** (beyond prerequisites) | ⬜ Not started |
-| 14 | 🎫 JWT resource server and CORS | **M1** | ⬜ Not started |
-| 15 | 🎭 AOP and proxies | **M1** (deepens §9, §13) | ⬜ Not started |
-| 16 | 🔖 Optimistic locking (`@Version`) | **M1 → M3** | ⬜ Not started |
-| 17 | 🧱 Flyway migrations | **M1** (V2+ hand-written) | ⬜ Not started |
-| 18 | 🐳 Testcontainers `@ServiceConnection` | **M1** (and P§7) | ⬜ Not started |
+| 7 | 💾 Spring Data JPA | **P§6** | ⬜ NOT_STARTED |
+| 8 | 🔗 Entity relationships and pagination | **P§6** | ⬜ NOT_STARTED |
+| 9 | 🔒 Transactions | **P§6** | ⬜ NOT_STARTED |
+| 10 | 🧪 Testing | **P§7** | ⬜ NOT_STARTED |
+| 11 | 🔧 Configuration | **P§8** | ⬜ NOT_STARTED |
+| 12 | 📈 Actuator and logging | **P§8** (extension) | ⬜ NOT_STARTED |
+| 13 | 🔐 Spring Security basics | **M1** (beyond prerequisites) | ⬜ NOT_STARTED |
+| 14 | 🎫 JWT resource server and CORS | **M1** | ⬜ NOT_STARTED |
+| 15 | 🎭 AOP and proxies | **M1** (deepens §9, §13) | ⬜ NOT_STARTED |
+| 16 | 🔖 Optimistic locking (`@Version`) | **M1 → M3** | ⬜ NOT_STARTED |
+| 17 | 🧱 Flyway migrations | **M1** (V2+ hand-written) | ⬜ NOT_STARTED |
+| 18 | 🐳 Testcontainers `@ServiceConnection` | **M1** (and P§7) | ⬜ NOT_STARTED |
 | 19 | ☕ Java 17 essentials | support | n/a |
 | 20 | ⏰ Cache, schedule, async | support | n/a |
 | 21 | ⚡ Rapid-fire (answer from memory) | all | n/a |
@@ -113,7 +113,7 @@
 
 ## 🧠 1. Core: IoC, DI, beans, lifecycle, auto-config
 
-> 🔗 **P§1** · 🔵 Ready for revision
+> 🔗 **P§1** · 🟡 IN_PROGRESS (revision)
 
 ### 📖 Concept notes
 
@@ -241,7 +241,7 @@ Score: _/5
 
 ## 📍 3. Request mapping
 
-> 🔗 **P§3** · 🔵 Ready for revision (code verified 28 Oct)
+> 🔗 **P§3** · 🟡 IN_PROGRESS (revision) (code verified 28 Oct)
 
 ### 📖 Concept notes
 
@@ -296,7 +296,7 @@ Score: _/5
 
 ## 🌐 4. HTTP semantics and REST design
 
-> 🔗 **P§4** · 🔵 Ready for revision (Day 03 Q1/Q2 scored 5/10)
+> 🔗 **P§4** · 🟡 IN_PROGRESS (revision) (Day 03 Q1/Q2 scored 5/10)
 
 ### 📖 Concept notes
 
@@ -463,7 +463,7 @@ Score: _/5
 
 ## 💾 7. Spring Data JPA
 
-> 🔗 **P§6** · ⬜ Not started
+> 🔗 **P§6** · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -529,7 +529,7 @@ Score: _/5
 
 ## 🔗 8. Entity relationships and pagination
 
-> 🔗 **P§6** · ⬜ Not started
+> 🔗 **P§6** · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -609,7 +609,7 @@ Score: _/5
 
 ## 🔒 9. Transactions
 
-> 🔗 **P§6** · ⬜ Not started
+> 🔗 **P§6** · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -669,7 +669,7 @@ Score: _/5
 
 ## 🧪 10. Testing
 
-> 🔗 **P§7** · ⬜ Not started
+> 🔗 **P§7** · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -732,7 +732,7 @@ Score: _/5
 
 ## 🔧 11. Configuration
 
-> 🔗 **P§8** · ⬜ Not started
+> 🔗 **P§8** · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -792,7 +792,7 @@ Score: _/5
 
 ## 📈 12. Actuator and logging
 
-> 🔗 **P§8** (extension) · ⬜ Not started
+> 🔗 **P§8** (extension) · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -826,7 +826,7 @@ Score: _/5
 
 ## 🔐 13. Spring Security basics
 
-> 🔗 **M1** (not in prerequisites) · ⬜ Not started · waits for P§5
+> 🔗 **M1** (not in prerequisites) · ⬜ NOT_STARTED · waits for P§5
 
 ### 📖 Concept notes
 
@@ -893,7 +893,7 @@ Score: _/5
 
 ## 🎫 14. JWT resource server and CORS
 
-> 🔗 **M1** (login returns a JWT) · ⬜ Not started
+> 🔗 **M1** (login returns a JWT) · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -958,7 +958,7 @@ Score: _/5
 
 ## 🎭 15. AOP and proxies
 
-> 🔗 **M1** (deepens sections 9 and 13) · ⬜ Not started
+> 🔗 **M1** (deepens sections 9 and 13) · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -1010,7 +1010,7 @@ Score: _/5
 
 ## 🔖 16. Optimistic locking (`@Version`)
 
-> 🔗 **M1 → M3** (transfers, `@Version` + `FOR UPDATE`) · ⬜ Not started
+> 🔗 **M1 → M3** (transfers, `@Version` + `FOR UPDATE`) · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -1062,7 +1062,7 @@ Score: _/5
 
 ## 🧱 17. Flyway migrations
 
-> 🔗 **M1** (V2+ are hand-written; Milestone 0 ✅) · ⬜ Not started
+> 🔗 **M1** (V2+ are hand-written; Milestone 0 ✅) · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
@@ -1114,7 +1114,7 @@ Score: _/5
 
 ## 🐳 18. Testcontainers `@ServiceConnection`
 
-> 🔗 **M1** (and P§7; `BankingApplicationIT` uses it) · ⬜ Not started
+> 🔗 **M1** (and P§7; `BankingApplicationIT` uses it) · ⬜ NOT_STARTED
 
 ### 📖 Concept notes
 
