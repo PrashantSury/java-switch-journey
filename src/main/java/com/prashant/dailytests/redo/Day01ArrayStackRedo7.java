@@ -26,7 +26,6 @@ public class Day01ArrayStackRedo7 {
     private int size;
 
     public Day01ArrayStackRedo7(int initialCapacity) {
-        // TODO(Day 08 redo): write it from memory
 
         if(initialCapacity<0){
             throw new IllegalArgumentException("Illegal Capacity"+initialCapacity);
@@ -35,7 +34,6 @@ public class Day01ArrayStackRedo7 {
     }
 
     public void push(int x) {
-        // TODO
        if(size >= array.length){
            grow();
        }
@@ -48,7 +46,6 @@ public class Day01ArrayStackRedo7 {
     }
 
     public int pop() {
-        // TODO
 
         if(isEmpty()){
             throw new NoSuchElementException("Stack is Empty");
@@ -58,7 +55,6 @@ public class Day01ArrayStackRedo7 {
     }
 
     public int peek() {
-        // TODO
         if(isEmpty()){
             throw new NoSuchElementException("Stack is Empty");
         }
@@ -66,17 +62,14 @@ public class Day01ArrayStackRedo7 {
     }
 
     public int size() {
-        // TODO
         return size;
     }
 
     public boolean isEmpty() {
-        // TODO
         return size==0;
     }
 
     public int[] toArray() {
-        // TODO
         return Arrays.copyOf(array,size);
     }
 }

@@ -22,8 +22,8 @@
 | 🔥 | Read the Day 01 and Day 02 rows in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md), then close it before you start coding. |
 
 ### 🅰️ Main task (~30 min): Day02RpnEvaluator day-7 redo, cold
-- [ ] Without opening `Day02RpnEvaluator.java` or `Day02RpnEvaluatorRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day02RpnEvaluatorRedo7.java` (spec in its Javadoc).
-- [ ] Run `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` until 44/44 pass. It's 0/44 right now (the tests were checked 44/44 against a correct version).
+- [x] Without opening `Day02RpnEvaluator.java` or `Day02RpnEvaluatorRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day02RpnEvaluatorRedo7.java` (spec in its Javadoc).
+- [ ] Run `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` until 44/44 pass. It's **15/44** after your push: fix the three bugs below, then push again.
 
 > [!WARNING]
 > ⚠️ Last time this redo passed only after re-reading the original, so it stayed 🟠 Attempted. This one counts only if it's written cold.
@@ -31,9 +31,12 @@
 > [!TIP]
 > Think about which pop is the right operand, tokens that only *start* like an operator, and every arithmetic op that can overflow.
 
+> [!WARNING]
+> 🔴 **Needs correction (31 Oct review):** (1) after the operator branch the loop still falls through to `stack.push(Integer.parseInt(token))`, so `"+"` crashes with `NumberFormatException`; (2) the end check `stack.pop() != 1` pops a value and compares it with 1 instead of checking `stack.size() != 1`; (3) `null` or empty `tokens` is not rejected with `IllegalArgumentException`. Logged in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md), redo on 3 Nov.
+
 ### 🔁 Small item (~15 min): Day01ArrayStack day-7 redo, cold (carried from Day 08)
-- [ ] Without opening `Day01ArrayStack.java` or `Day01ArrayStackRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day01ArrayStackRedo7.java` (spec in its Javadoc).
-- [ ] Run `mvn test -Dtest=Day01ArrayStackRedo7Test` until 17/17 pass. It's 0/17 right now (re-checked 31 Oct, 6 AM).
+- [x] Without opening `Day01ArrayStack.java` or `Day01ArrayStackRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day01ArrayStackRedo7.java` (spec in its Javadoc).
+- [x] Run `mvn test -Dtest=Day01ArrayStackRedo7Test` until 17/17 pass. Done: 17/17 (31 Oct).
 
 > [!TIP]
 > The three Day 01 traps: when exactly is the array full, what does "empty" mean, and what does doubling a capacity of 0 give you?
@@ -41,8 +44,8 @@
 ### ✅ How it's verified
 | Item | Check | Status |
 |---|---|---|
-| `Day02RpnEvaluatorRedo7` | `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` 44/44, written cold | ⬜ Not started |
-| `Day01ArrayStackRedo7` | `mvn test -Dtest=Day01ArrayStackRedo7Test` 17/17, written cold | ⬜ Not started |
+| `Day02RpnEvaluatorRedo7` | `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` 44/44, written cold | 🔴 Needs correction (15/44, checked 31 Oct, d5c0ee9) |
+| `Day01ArrayStackRedo7` | `mvn test -Dtest=Day01ArrayStackRedo7Test` 17/17, written cold | ✅ Completed and verified (17/17, checked 31 Oct, d5c0ee9) |
 
 ## 📌 Carried backlog
 | Item | Where | Status |

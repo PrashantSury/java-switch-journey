@@ -1,6 +1,5 @@
 package com.prashant.dailytests.redo;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -23,8 +22,6 @@ import java.util.Deque;
 public class Day02RpnEvaluatorRedo7 {
 
     public static int evaluate(String[] tokens) {
-        // TODO(Day 09 redo): write it from memory, no peeking
-
          Deque<Integer> stack = new ArrayDeque<>();
 
          for (String token : tokens)  {
