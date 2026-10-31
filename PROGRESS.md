@@ -66,8 +66,8 @@ mvn test
 | Day01ArrayStackRedo | 🔁 Redo (overdue from 26 Oct) | 17/17 | af4f8e7 | ✅ Completed and verified (cold redo, 28 Oct) · next revision 30 Oct stays |
 | Day03NextGreaterIndex | 🐞 Buggy round | 37/37 | 2d36911 + bcb37f3 | ✅ Completed and verified (29 Oct, both bugs found) · stray `main()` repeated, removed in bcb37f3 |
 | Day04LargestRectangle | 🐞 Buggy round | 15/36 | — | ⬜ Not started |
-| Day01ArrayStackRedo7 | 🔁 Day-7 redo (cold) | 0/17 | — | ⬜ Not started · assigned Day 08 morning, carried to Day 09 morning (tests checked 17/17 against a correct version) |
-| Day02RpnEvaluatorRedo7 | 🔁 Day-7 redo (cold) | 0/44 | — | ⬜ Not started · assigned Day 09 morning (tests checked 44/44 against a correct version) · closes the 24 Oct day-7 and 27 Oct day-3 rows in `revision/mistakes/dsa.md` |
+| Day01ArrayStackRedo7 | 🔁 Day-7 redo (cold) | 17/17 | d5c0ee9 | ✅ Completed and verified (31 Oct, no conceptual issue; Lumi removed the stale TODO comments) · closes the 23 Oct day-7 row |
+| Day02RpnEvaluatorRedo7 | 🔁 Day-7 redo (cold) | 15/44 | d5c0ee9 | 🔴 Needs correction · the operator branch has no `continue`/`else`, the final check is `pop() != 1` instead of `size() != 1`, no empty/null-array guard · logged in `revision/mistakes/dsa.md`, redo on 3 Nov |
 
 > [!TIP]
 > Stub tests that pass by accident (e.g. empty-input cases) don't count as progress.
@@ -143,24 +143,24 @@ mvn test
 ## 📊 Status counts
 ```mermaid
 pie title Tracked items (31 Oct 2026)
-  "Completed and verified" : 12
+  "Completed and verified" : 13
   "Ready for revision" : 6
-  "Needs correction" : 0
+  "Needs correction" : 1
   "In progress" : 1
   "Attempted" : 1
-  "Not started" : 17
+  "Not started" : 15
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; nothing is in Needs correction.
+> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day02RpnEvaluatorRedo7` (15/44) is in Needs correction (31 Oct review).
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (31 Oct, morning, see [day09.md](tasks/day09.md)):** the cold `Day02RpnEvaluatorRedo7` (0/44), then the cold `Day01ArrayStackRedo7` (0/17), no peeking. Day 04 **Q3** in chat at the next free slot. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
+> **Next task (see [day09.md](tasks/day09.md)):** fix `Day02RpnEvaluatorRedo7` (15/44, 🔴 Needs correction). `Day01ArrayStackRedo7` is ✅ (17/17). Day 04 **Q3** in chat at the next free slot. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
 >
 > **Evening (31 Oct):** 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), then SQL learn lesson 03. The `.postman/` clean-up is done (see the Log).
 >
-> 🔁 Revision due: cold `Day02RpnEvaluator` redo on 31 Oct, Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5) on 1 Nov.
+> 🔁 Revision due: `Day02RpnEvaluator` redo again on 3 Nov (after the fix), Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5) on 1 Nov.
 >
 > No new DSA stub while a DSA problem is not started (`CarFleet`); no new SQL file while 5 are unanswered.
 
@@ -189,3 +189,4 @@ pie title Tracked items (31 Oct 2026)
 | 31 Oct 2026 | W2 D8 | 12:35 AM review of c344203: ✅ Day 04 Part B1 15/15 | `@Size` message added and checked (a 1-char name returns `name must be between 2 and 50 characters`); PUT with another student's email → 409 test added and passing. `course-practice` 15/15. No cosmetic issues found. Still his: `Day01ArrayStackRedo7` (0/17), Day 04 Q3, SQL 03 Q1, `.postman` untracking |
 | 31 Oct 2026 | W2 D8 | ✅ Housekeeping: `.postman/` and `postman/globals/` untracked | Done by Lumi at Prashant's request: `.gitignore` now lists `.postman/` and `postman/globals/` (a7ec8aa), and `.postman/resources.yaml` (f0b2c33) and `postman/globals/workspace.globals.yaml` (637e772) were deleted from the repo; `git ls-files` no longer lists them. His local copies are removed by his next `git pull`, so he copies them aside first (see [day08.md](tasks/day08.md)). `spring-boot/course-practice/postman/course-practice-students.postman_collection.json` stays tracked on purpose (a real collection, not workspace metadata) |
 | 31 Oct 2026 | W2 D9 | Morning round assigned (backlog only) | Re-checked with `mvn test`: `Day01ArrayStackRedo7Test` 0/17. New stub `redo/Day02RpnEvaluatorRedo7.java` for the cold day-7 RPN redo (0/44, tests checked 44/44 against a correct version). Both in [day09.md](tasks/day09.md). No new buggy round (`Day04LargestRectangle` unattempted, two redos open), no new Spring task (§5 open, B2 next) |
+| 31 Oct 2026 | W2 D9 | Review of d5c0ee9: ✅ `Day01ArrayStackRedo7` 17/17; 🔴 `Day02RpnEvaluatorRedo7` 15/44 Needs correction | Ran both suites with `mvn test`. ArrayStack: no conceptual issue. RPN: after an operator the code still runs `Integer.parseInt(token)` (27 `NumberFormatException`/"no result" failures), the end check pops and compares with `1` instead of `size() != 1`, and null/empty input is not guarded. Lumi removed the unused `java.awt.image` import and the stale `TODO` comments in both files. Logged in the DSA mistake log (redo 3 Nov) |
