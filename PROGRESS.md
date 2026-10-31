@@ -167,6 +167,63 @@ pie title Tracked items (31 Oct 2026)
 >
 > No new DSA stub while a DSA problem is not started (`CarFleet`); no new SQL file while 5 are unanswered.
 
+## 🔮 Plan projection
+> [!WARNING]
+> **Estimate, not a promise.** Built only from this file, the [redo schedule](revision/redo-schedule.md) and the `tasks/` files, at the pace of the first 9 days. It is **refreshed every Sunday by the 10 PM check** (last refresh: Sat 31 Oct 2026, W2 D9; next: Sun 1 Nov, 10 PM). Weeks count from 23 Oct: W1 = 23-29 Oct, W2 = 30 Oct-5 Nov, W12 = 8-14 Jan 2027.
+
+### 📊 Verified per week
+| Week | Dates | 🧩 DSA | 🐞 Buggy | 🗄️ SQL | 🌱 Spring | 🏦 Banking | Total | 🔁 Cold redos (separate) |
+|---|---|---|---|---|---|---|---|---|
+| W1 | 23-29 Oct | 4 | 3 | 0 | 1 | 1 | 9 | 1 |
+| W2 (2 of 7 days) | 30-31 Oct | 1 | 0 | 2 | 1 | 0 | 4 | 2 |
+| **Total** | 9 days | **5** | **3** | **2** | **2** | **1** | **13** | **3** |
+| Pace per week (total × 7 / 9) | | 3.9 | 2.3 | 1.6 | 1.6 | 0.8 | 10.1 | 2.3 |
+
+> [!NOTE]
+> **Counted from the log and verified dates.** 🧩 `ValidParentheses` 23 Oct, `MinStack` 23 Oct, `ScoreOfParentheses` 25 Oct, `RemoveKAdjacentDuplicates` 29 Oct, `AsteroidCollision` 31 Oct. 🐞 `Day01ArrayStack` 23 Oct, `Day02RpnEvaluator` 24 Oct, `Day03NextGreaterIndex` 29 Oct. 🗄️ learn lessons 01 (30 Oct) and 02 (31 Oct). 🌱 Part A (28 Oct), Part B1 (31 Oct). 🏦 milestone 0 (setup, 24 Oct). 🔁 `Day01ArrayStackRedo` (28 Oct), `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` (31 Oct). Attempted or Needs-correction items are not counted.
+
+### 🧮 What remains
+| Section | Done | Left | Detail |
+|---|---|---|---|
+| 🧩 NeetCode 150 | 2 problems (`ValidParentheses`, `MinStack`) | **148** | Tracker lists 3 patterns: Arrays & Hashing ⬜, Two Pointers · Sliding Window ⬜, Stack 🟡 (5 of 7 left: Car Fleet, Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle). `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` and `AsteroidCollision` are extras, not among the 150 |
+| 🐞 Buggy rounds | 3 | **2** | `Day04LargestRectangle` (15/36) and the `Day00BuggyExample` warm-up (4/10), both ⬜ |
+| 🗄️ SQL | 2 lessons | **8 of 10** | Learn lessons 03, 04, 05 ⬜ plus the 5 daily files (`day01`, `day01-test`, `day02`, `day03`, `day04`), all ⬜ |
+| 🌱 Spring prerequisites | 0 of 8 sections ✅ | **8** | 3 are 🔵 (§1, §3, §4), 2 are 🟡 (§2, §5), 3 are ⬜ (§6 JPA, §7 Testing, §8 Config). Part B2 ⬜ and Day 04 Q3 pending |
+| 🏦 Banking app | milestone 0 | **4 of 5** | Milestones 1-4 ⬜; milestone 1 waits for §5 (Part B2) |
+
+### 🔁 Redo load (from [redo-schedule.md](revision/redo-schedule.md))
+| Measure | Number |
+|---|---|
+| Problems on the schedule | 8 scheduled + 3 not started (join at +1 once verified) |
+| Redos scheduled 1-30 Nov (if every redo passes) | **27**, on 15 of 30 days, never more than 2 a day |
+| Next 7 days (1-7 Nov) | **13 redos**, about 5.4 h at 25 min each, which is 39% of the ~14 h a week the daily files budget (about 2 × 60 min a day) |
+| Peak day | 2 redos = 50 min of ~120 min (42%) |
+| November average | 27 × 25 min = 675 min of ~3,600 min (19%) |
+| Cost of each new DSA problem | +5 redos (about 2 h over the following 30 days) |
+
+> [!NOTE]
+> The redos cost new-problem time: the DSA and buggy pace below is multiplied by **0.81** (the November average of 19% redo time). It is lower in the first week (0.61) and rises as redos graduate.
+
+### 🎯 Estimated finish
+| Section | Pace used per week (best / slow) | Finish week (range) | Dates |
+|---|---|---|---|
+| 🧩 Stack pattern (5 left) | 5.0 / 1.3 | **W3-W6** | 6 Nov-3 Dec |
+| 🧩 Full NeetCode 150 (148 left) | 5.0 / 1.3 | **not inside the 12 weeks** · by W12 about **56 / 16** of 150 done | best case W31 (about 26 May 2027) |
+| 🐞 Buggy rounds (2 left) | 5.0 shared with DSA / 1 a week after Stack | **W3-W5** | 6-26 Nov |
+| 🗄️ SQL (8 left) | 1 lesson a day then 1 file per 2 days / 1.6 | **W4-W7** | 13 Nov-10 Dec |
+| 🌱 Spring, all 8 sections ✅ | 2.3 sections to 🔵 a week + 1 revision week / 1.15 + 1 revision week | **W5-W7** | 20 Nov-10 Dec |
+| 🏦 Banking, milestones 1-4 | no data yet · each takes 1.5 weeks / 3 weeks | **W10-W17** | 25 Dec-18 Feb |
+| ⭐ **Overall** (everything except the full NeetCode 150) | set by banking | **W10-W17** | 25 Dec-18 Feb · the 12-week target (W12, ends 14 Jan) is met only at the best end |
+
+> [!IMPORTANT]
+> **Assumptions**
+> - Pace is the 9-day average above (13 verified items). The best case uses the all-sections average, the slow case uses the slowest recent rate seen for that section (for example W2 so far has 1 DSA, 0 buggy).
+> - A redo that misses moves back to +1 day and adds load; the numbers assume every redo passes.
+> - Part B2 gets done in W3-W4 (the backlog under about 8 items), so banking milestone 1 starts W4-W5. Banking milestone length is a guess, since 0 of 4 are started.
+> - SQL daily files start after the learn lessons; Spring sections need one revision pass before they count as ✅.
+> - The NeetCode 150 count uses "150" from the tracker title and only the 2 problems that are on the tracker and ✅. It is a generous bound, because the buggy rounds and extras share the same pace.
+> - About 2 hours of study a day (morning and evening files ~60 min each), 25 min per redo, no missed days.
+
 ## 📝 Log
 | Date | Week/Day | Done | Notes |
 |------|----------|------|-------|
@@ -196,3 +253,4 @@ pie title Tracked items (31 Oct 2026)
 | 31 Oct 2026 | W2 D9 | Review of fe6827d: `Day02RpnEvaluatorRedo7` 43/44, still 🔴 Needs correction | Ran `Day02RpnEvaluatorRedo7Test` with `mvn test`: 43/44. Fall-through fixed with `else`, end check now `stack.size() != 1`, empty array now throws `IllegalArgumentException`. Only `nullArray` fails: `for (String token : tokens)` on a `null` array throws `NullPointerException`; it needs an explicit `tokens == null` check at the top. Chat quiz: he got the stack after `2 3 +` right (5); on the fall-through he first said it pushes the operator token and needed a hint that `parseInt` throws; he explained correctly that `pop()` returns the top value, so `pop() != 1` compares it with 1. No new cosmetic issues |
 | 31 Oct 2026 | W2 D9 | Review of 37f6c11: ✅ `Day02RpnEvaluatorRedo7` 44/44 Completed and verified | Ran `Day02RpnEvaluatorRedo7Test` with `mvn test`: 44/44. The null guard `tokens == null \|\| tokens.length == 0` is in, so all three conceptual bugs are fixed. Lumi re-indented the method body and spaced the two helper methods (cosmetic). Redo dates in the DSA mistake log stay (3 Nov, 7 Nov) |
 | 31 Oct 2026 | W2 D9 | 🔁 Spaced-repetition calendar added: [revision/redo-schedule.md](revision/redo-schedule.md) | 11 DSA problems and buggy rounds (8 scheduled, 3 not started). Redos at +1, +3, +7, +14, +30 days from the last verified solve, at most 2 a day, most overdue first, a miss resets to +1. Mistake-log dates kept (`RemoveKAdjacentDuplicates` 1 Nov and 5 Nov, `Day02RpnEvaluator` 3 Nov and 7 Nov). Next 7 days: 1 Nov `RemoveK` + `Rpn`, 2 Nov `ValidParentheses` + `MinStack`, 3 Nov `Rpn` + `ScoreOfParentheses`, 4 Nov `Day03NextGreaterIndex` + `AsteroidCollision`, 5 Nov `RemoveK`, 6 Nov `Day01ArrayStack` + `ValidParentheses`, 7 Nov `Rpn` + `MinStack` |
+| 31 Oct 2026 | W2 D9 | 🔮 Plan projection added (section above the Log) | 13 verified items in 9 days (DSA 5, buggy 3, SQL 2, Spring 2, banking 1; 3 cold redos on top). Remaining: NeetCode 148, buggy 2, SQL 8, Spring 8 sections, banking 4 milestones. 13 redos in the next 7 days (39% of study time). Estimated finish: Stack W3-W6, buggy W3-W5, SQL W4-W7, Spring W5-W7, banking W10-W17, overall W10-W17 (target W12). Refreshed every Sunday by the 10 PM check |
