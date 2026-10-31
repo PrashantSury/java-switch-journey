@@ -22,6 +22,10 @@ import java.util.Deque;
 public class Day02RpnEvaluatorRedo7 {
 
     public static int evaluate(String[] tokens) {
+        if (tokens == null || tokens.length == 0) {
+            throw new IllegalArgumentException("tokens must not be null or empty");
+        }
+
          Deque<Integer> stack = new ArrayDeque<>();
 
          for (String token : tokens)  {
