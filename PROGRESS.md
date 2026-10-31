@@ -42,10 +42,10 @@ mvn test
 | Section | Status |
 |---|---|
 | §1 Core: IoC, DI, beans | 🔵 Ready for revision (Day 02 answers graded 5/7/5) |
-| §2 Request flow | 🟡 In progress (Day 04 Q1 pending) |
+| §2 Request flow | 🟡 In progress (Day 04 Q1 5/10 🔴 Needs correction, re-answer by 3 Nov) |
 | §3 Request mapping | 🔵 Ready for revision (code verified 28 Oct, `course-practice` 12/12; Q3 7/10) |
 | §4 HTTP semantics | 🔵 Ready for revision (code verified 28 Oct; Day 03 Q1/Q2 scored 5/10) |
-| §5 Validation & error handling | 🟡 In progress (Part B1 ✅ 31 Oct; B2 and the workbook answers pending) |
+| §5 Validation & error handling | 🟡 In progress (Part B1 ✅ 31 Oct; Day 04 Q1-Q3 15/30 🔴 Needs correction; B2 and the workbook answers pending) |
 | §6 JPA · §7 Testing · §8 Config | ⬜ Not started |
 
 ## 🧩 DSA & 🐞 buggy rounds
@@ -140,7 +140,7 @@ mvn test
 | Day 01 | ⬜ Not started (no graded file found) |
 | Day 02 | ✅ Graded (5 / 7 / 5) · 🔵 Q1, Q3 ready for revision |
 | Day 03 | ✅ Graded 17/30 (5 / 5 / 7) · 🔵 Q1, Q2 ready for revision · [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| Day 04 | ⬜ Pending · Q3 assigned Day 07 morning ([day07.md](tasks/day07.md)), carried to the next free slot after B1 |
+| Day 04 | 🔴 Needs correction · graded 15/30 on 31 Oct (5 / 4 / 6) · re-answer Q1-Q3 by 3 Nov · [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
 | Score of Parentheses follow-up | ⬜ Pending |
 
 ## 📊 Status counts
@@ -148,18 +148,18 @@ mvn test
 pie title Tracked items (31 Oct 2026)
   "Completed and verified" : 14
   "Ready for revision" : 6
-  "Needs correction" : 0
+  "Needs correction" : 1
   "In progress" : 1
   "Attempted" : 1
-  "Not started" : 15
+  "Not started" : 14
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` are Completed and verified (31 Oct); nothing is in Needs correction.
+> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` are Completed and verified (31 Oct); the Day 04 Q&A set (15/30) is in Needs correction.
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (see [day09.md](tasks/day09.md)):** both Day 09 redos are ✅ (`Day02RpnEvaluatorRedo7` 44/44, `Day01ArrayStackRedo7` 17/17). Day 04 **Q3** in chat at the next free slot. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
+> **Next task (see [day09.md](tasks/day09.md)):** both Day 09 redos are ✅ (`Day02RpnEvaluatorRedo7` 44/44, `Day01ArrayStackRedo7` 17/17). Re-answer the Day 04 Q1-Q3 (15/30, 🔴 Needs correction) in chat by Tue 3 Nov; Q1 and Q3 redo on 3 Nov and 7 Nov. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
 >
 > **Evening (31 Oct):** 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), then SQL learn lesson 03. The `.postman/` clean-up is done (see the Log).
 >
@@ -188,7 +188,7 @@ pie title Tracked items (31 Oct 2026)
 | 🧩 NeetCode 150 | 2 problems (`ValidParentheses`, `MinStack`) | **148** | Tracker lists 3 patterns: Arrays & Hashing ⬜, Two Pointers · Sliding Window ⬜, Stack 🟡 (5 of 7 left: Car Fleet, Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle). `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` and `AsteroidCollision` are extras, not among the 150 |
 | 🐞 Buggy rounds | 3 | **2** | `Day04LargestRectangle` (15/36) and the `Day00BuggyExample` warm-up (4/10), both ⬜ |
 | 🗄️ SQL | 2 lessons | **8 of 10** | Learn lessons 03, 04, 05 ⬜ plus the 5 daily files (`day01`, `day01-test`, `day02`, `day03`, `day04`), all ⬜ |
-| 🌱 Spring prerequisites | 0 of 8 sections ✅ | **8** | 3 are 🔵 (§1, §3, §4), 2 are 🟡 (§2, §5), 3 are ⬜ (§6 JPA, §7 Testing, §8 Config). Part B2 ⬜ and Day 04 Q3 pending |
+| 🌱 Spring prerequisites | 0 of 8 sections ✅ | **8** | 3 are 🔵 (§1, §3, §4), 2 are 🟡 (§2, §5), 3 are ⬜ (§6 JPA, §7 Testing, §8 Config). Part B2 ⬜; Day 04 Q1-Q3 answered 15/30 and 🔴 Needs correction (re-answer by 3 Nov) |
 | 🏦 Banking app | milestone 0 | **4 of 5** | Milestones 1-4 ⬜; milestone 1 waits for §5 (Part B2) |
 
 ### 🔁 Redo load (from [redo-schedule.md](revision/redo-schedule.md))
@@ -255,3 +255,4 @@ pie title Tracked items (31 Oct 2026)
 | 31 Oct 2026 | W2 D9 | 🔁 Spaced-repetition calendar added: [revision/redo-schedule.md](revision/redo-schedule.md) | 11 DSA problems and buggy rounds (8 scheduled, 3 not started). Redos at +1, +3, +7, +14, +30 days from the last verified solve, at most 2 a day, most overdue first, a miss resets to +1. Mistake-log dates kept (`RemoveKAdjacentDuplicates` 1 Nov and 5 Nov, `Day02RpnEvaluator` 3 Nov and 7 Nov). Next 7 days: 1 Nov `RemoveK` + `Rpn`, 2 Nov `ValidParentheses` + `MinStack`, 3 Nov `Rpn` + `ScoreOfParentheses`, 4 Nov `Day03NextGreaterIndex` + `AsteroidCollision`, 5 Nov `RemoveK`, 6 Nov `Day01ArrayStack` + `ValidParentheses`, 7 Nov `Rpn` + `MinStack` |
 | 31 Oct 2026 | W2 D9 | 🔮 Plan projection added (section above the Log) | 13 verified items in 9 days (DSA 5, buggy 3, SQL 2, Spring 2, banking 1; 3 cold redos on top). Remaining: NeetCode 148, buggy 2, SQL 8, Spring 8 sections, banking 4 milestones. 13 redos in the next 7 days (39% of study time). Estimated finish: Stack W3-W6, buggy W3-W5, SQL W4-W7, Spring W5-W7, banking W10-W17, overall W10-W17 (target W12). Refreshed every Sunday by the 10 PM check |
 | 31 Oct 2026 | W2 D9 | 🔁 Redo schedule switched to results-based gaps (approved by Prashant): [revision/redo-schedule.md](revision/redo-schedule.md) | Clean cold pass moves up one step (1 → 3 → 7 → 14 → 30); a hint or fix repeats the gap; a conceptual miss resets to day 1; two clean passes ≥14 days apart skip to 30; max 2 redos a day. Recomputed from real history: `Day01ArrayStack` clean 17/17 → +7, due 7 Nov; `Day02RpnEvaluator` 3 conceptual misses → day 1, due 1 Nov; never-redone items are due since 24-30 Oct and queued. Next 7 days: 14 redos (42% of study time); November 30 redos on 19 days (21%). Plan projection redo load and pace refreshed (Stack W3-W6, NeetCode by W12 about 15-55 of 150) |
+| 31 Oct 2026 | W2 D9 | 🎤 Day 04 Q&A answered in chat and graded: 🔴 Needs correction, 15/30 (Q1 5/10 · Q2 4/10 · Q3 6/10) | Saved verbatim in [day04-answers.md](spring-boot/interview-answers/day04-answers.md), linked from [interview-answers.md](interview-answers.md). Q1: missed `MethodArgumentNotValidException` (named the malformed-JSON exception). Q2: vague, mass assignment half-got, missed leaking internal fields or lazy relations and schema coupling. Q3: `ProblemDetail` and 400 vs 409 right, but not the race condition (unique constraint + `DataIntegrityViolationException` → 409). Conceptual rows for Q1 and Q3 added to `revision/mistakes/spring.md` (redo 3 Nov and 7 Nov). Re-answer all three by 3 Nov |

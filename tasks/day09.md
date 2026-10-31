@@ -3,7 +3,7 @@
 ![Week](https://img.shields.io/badge/Week-2-blue) ![Day](https://img.shields.io/badge/Day-09-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~60%20min-blue)
 
 > [!IMPORTANT]
-> Redo day: the `Day01ArrayStack` day-7 redo (overdue since 30 Oct) and the cold `Day02RpnEvaluator` day-7 redo (due today). Both are written from memory, no peeking. Day 04 Q3 moves to the next free slot.
+> Redo day: the `Day01ArrayStack` day-7 redo (overdue since 30 Oct) and the cold `Day02RpnEvaluator` day-7 redo (due today). Both are written from memory, no peeking. Day 04 Q1-Q3 were answered on 31 Oct (15/30), so they are re-answered by Tue 3 Nov.
 
 > [!NOTE]
 > **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ not started · 🟡 in progress · 🟠 attempted · 🔴 needs correction · 🔵 ready for revision · ✅ done · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item.
@@ -50,7 +50,7 @@
 ## 📌 Carried backlog
 | Item | Where | Status |
 |---|---|---|
-| Day 04 **Q3** (`ProblemDetail`, 409 vs 400, why the exists check isn't enough) | [interview-answers.md](../interview-answers.md), answer in chat | ⬜ Pending, next free slot |
+| Day 04 **Q1-Q3** (JSON → DTO, DTOs vs entity, `ProblemDetail` and the race condition) | [day04-answers.md](../spring-boot/interview-answers/day04-answers.md), re-answer in chat | 🔴 Needs correction · answered 31 Oct, 15/30 (5 / 4 / 6) · re-answer by Tue 3 Nov |
 | Day 04 Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) | `spring-boot/course-practice` | ⬜ Not started, after the backlog shrinks |
 | SQL 03 **Q1** | `sql/day03.sql`, answer in `sql/day03-answers.md` | ⬜ Not started, this evening |
 | SQL learn lesson 03 | `sql/learn/lesson03.md` | ⬜ Not started, this evening |
