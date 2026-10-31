@@ -59,7 +59,7 @@ mvn test
 | ScoreOfParentheses | DSA | 37/37 | c909bb8 | ✅ Completed and verified · follow-up Qs ⬜ pending |
 | RemoveKAdjacentDuplicates | DSA (Day 01) | 26/26 | 2d36911 | ✅ Completed and verified (29 Oct) · O(n) quiz 3/5 (missed the push/pop-once reasoning), re-ask |
 | AsteroidCollision | DSA (Day 02) | 28/28 | 6ddde32 + Lumi's cosmetic clean-up | ✅ Completed and verified (31 Oct) · O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified · stray `+6` in the Javadoc and missing braces fixed by Lumi (cosmetic, not logged) |
-| CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started |
+| CarFleet | DSA (Day 04) | 2/37 | — (stub only) | ⬜ Not started · assigned Day 09 evening |
 | Day01ArrayStack | 🐞 Buggy round | 17/17 | 71ae03f | ✅ Fixed (with hints) · 🔵 redo due 26 Oct + 30 Oct |
 | Day02RpnEvaluator | 🐞 Buggy round | 44/44 | 1f1be84 | ✅ Fixed (hint on `-3`) · 🔵 redo due 27 Oct + 31 Oct |
 | Day02RpnEvaluatorRedo | 🔁 Redo (day 3) | 44/44 | bddf14c | 🟠 Attempted · passes, but done by re-reading the original, not from memory · 🔵 cold redo due 31 Oct |
@@ -99,7 +99,7 @@ mvn test
 | Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
 | SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
 | SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · assigned Day 07 evening too, no push by the 10 PM check · 🔥 assigned again Day 08 evening (fourth evening) |
+| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · assigned Day 07 evening too, no push by the 10 PM check · 🔥 assigned again Day 08 evening (fourth evening) · 31 Oct: moved after learn lesson 04 (needs GROUP BY + LEFT JOIN) |
 | SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
 
 ## 🎓 SQL learn track (`sql/learn/`)
@@ -161,7 +161,7 @@ pie title Tracked items (31 Oct 2026)
 > [!IMPORTANT]
 > **Next task (see [day09.md](tasks/day09.md)):** both Day 09 redos are ✅ (`Day02RpnEvaluatorRedo7` 44/44, `Day01ArrayStackRedo7` 17/17). Re-answer the Day 04 Q1-Q3 (15/30, 🔴 Needs correction) in chat by Tue 3 Nov; Q1 and Q3 redo on 3 Nov and 7 Nov. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
 >
-> **Evening (31 Oct):** 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), then SQL learn lesson 03. The `.postman/` clean-up is done (see the Log).
+> **Evening (31 Oct):** 🧩 `CarFleet` (2/37 → 37/37), then 🎓 SQL learn lesson 03 (checker 5/5). `sql/day03.sql` Q1 now follows lesson 04 (it needs GROUP BY and LEFT JOIN). See the Evening section of [day09.md](tasks/day09.md).
 >
 > 🔁 Revision due: `Day02RpnEvaluator` redo on 1 Nov (reset to day 1; see [redo-schedule.md](revision/redo-schedule.md)), Day 03 Q1/Q2 re-answers, and the count-stack O(n) question (scored 3/5) on 1 Nov.
 >
@@ -256,3 +256,4 @@ pie title Tracked items (31 Oct 2026)
 | 31 Oct 2026 | W2 D9 | 🔮 Plan projection added (section above the Log) | 13 verified items in 9 days (DSA 5, buggy 3, SQL 2, Spring 2, banking 1; 3 cold redos on top). Remaining: NeetCode 148, buggy 2, SQL 8, Spring 8 sections, banking 4 milestones. 13 redos in the next 7 days (39% of study time). Estimated finish: Stack W3-W6, buggy W3-W5, SQL W4-W7, Spring W5-W7, banking W10-W17, overall W10-W17 (target W12). Refreshed every Sunday by the 10 PM check |
 | 31 Oct 2026 | W2 D9 | 🔁 Redo schedule switched to results-based gaps (approved by Prashant): [revision/redo-schedule.md](revision/redo-schedule.md) | Clean cold pass moves up one step (1 → 3 → 7 → 14 → 30); a hint or fix repeats the gap; a conceptual miss resets to day 1; two clean passes ≥14 days apart skip to 30; max 2 redos a day. Recomputed from real history: `Day01ArrayStack` clean 17/17 → +7, due 7 Nov; `Day02RpnEvaluator` 3 conceptual misses → day 1, due 1 Nov; never-redone items are due since 24-30 Oct and queued. Next 7 days: 14 redos (42% of study time); November 30 redos on 19 days (21%). Plan projection redo load and pace refreshed (Stack W3-W6, NeetCode by W12 about 15-55 of 150) |
 | 31 Oct 2026 | W2 D9 | 🎤 Day 04 Q&A answered in chat and graded: 🔴 Needs correction, 15/30 (Q1 5/10 · Q2 4/10 · Q3 6/10) | Saved verbatim in [day04-answers.md](spring-boot/interview-answers/day04-answers.md), linked from [interview-answers.md](interview-answers.md). Q1: missed `MethodArgumentNotValidException` (named the malformed-JSON exception). Q2: vague, mass assignment half-got, missed leaking internal fields or lazy relations and schema coupling. Q3: `ProblemDetail` and 400 vs 409 right, but not the race condition (unique constraint + `DataIntegrityViolationException` → 409). Conceptual rows for Q1 and Q3 added to `revision/mistakes/spring.md` (redo 3 Nov and 7 Nov). Re-answer all three by 3 Nov |
+| 31 Oct 2026 | W2 D9 | Evening session assigned (backlog only) | Re-checked at 8 PM with `mvn test`: `CarFleetTest` 2/37, lesson 03 exercises empty, no `sql/day03-answers.md`. Assigned `CarFleet` and SQL learn lesson 03 in the Evening section of [day09.md](tasks/day09.md). `sql/day03.sql` Q1 moved after lesson 04 (needs GROUP BY + LEFT JOIN). No new stub or SQL file (2 DSA not started, 5 SQL unanswered) |

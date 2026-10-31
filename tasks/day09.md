@@ -57,3 +57,47 @@
 | `CarFleet` | DSA, 2/37 | ⬜ Not started |
 | `Day04LargestRectangle` | 🐞 buggy round, 15/36 | ⬜ Not started |
 | Count-stack O(n) quiz re-ask | chat | 🔵 due 1 Nov |
+
+## 🌙 Evening (~55 min): backlog only
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-~55%20min-blue)
+
+> [!NOTE]
+> Checked at 8 PM with `mvn test`: `CarFleetTest` 2/37 (both pass by accident on the stub), `sql/learn/lesson03-exercises.sql` still empty, no `sql/day03-answers.md`. With `CarFleet` and `Day04LargestRectangle` ⬜ Not started and 5 SQL files unanswered, tonight is backlog only: the oldest DSA stub and the next SQL lesson. No new stub, no new SQL file.
+
+### 🧩 DSA (~35 min): Car Fleet (LeetCode 853, NeetCode 150 Stack)
+- 📂 `src/main/java/com/prashant/dsa/stack/CarFleet.java` (tests in `CarFleetTest`, 2/37 right now)
+- 📌 Cars drive one lane towards `target` and can't pass each other; a faster car that catches a slower one joins its fleet (also exactly at the target). Return how many fleets arrive.
+- 📌 Repo rules: `null` arrays, unequal lengths, `target <= 0`, positions outside `[0, target)`, speed `<= 0` and duplicate positions all throw `IllegalArgumentException`; no cars returns 0; don't modify the input; compare arrival times **exactly** (values go up to `Integer.MAX_VALUE`); aim for O(n log n).
+
+- [ ] Implement `carFleet(int target, int[] position, int[] speed)`.
+- [ ] `mvn test -Dtest=CarFleetTest` shows 37/37.
+
+> [!TIP]
+> Think about which car you should look at first, and what "exactly equal arrival time" means when a division would round.
+
+### 🎓 SQL (~20 min): learn lesson 03, aggregates, GROUP BY, HAVING
+- 📂 Read `sql/learn/lesson03.md`, run `sql/learn/lesson03-setup.sql` in pgAdmin, write your 5 queries in `sql/learn/lesson03-exercises.sql`.
+- 📌 Covers `COUNT(*)` vs `COUNT(col)` vs `COUNT(DISTINCT col)`, how `SUM`/`AVG` treat NULLs, `WHERE` vs `HAVING`, and `ROUND`.
+
+- [ ] Write the 5 queries under the `-- @ex N` markers.
+- [ ] `mvn test -Dtest=SqlLessonCheckTest -Dlesson=03` shows 5 `[PASS]`.
+
+> [!TIP]
+> Exercise 3 has a branch where every balance is NULL. Predict what `SUM` returns there before you run it.
+
+> [!NOTE]
+> `sql/day03.sql` Q1 (branch max with ties, empty branches kept) needs both GROUP BY (lesson 03) and LEFT JOIN (lesson 04), so it now follows lesson 04 instead of being re-assigned a fifth time cold. It stays ⬜ in `PROGRESS.md`.
+
+### 📌 Still open
+
+| Item | Path | Status |
+|---|---|---|
+| 🎤 Day 04 Q1-Q3 re-answer | in chat | 🔴 Needs correction · by Tue 3 Nov |
+| 🗄️ SQL 03 Q1 | `sql/day03.sql` → `sql/day03-answers.md` | ⬜ Not started · after lesson 04 |
+| 🐞 `Day04LargestRectangle` | `src/main/java/com/prashant/dailytests/` | ⬜ Not started (15/36) |
+| 🌱 Day 04 Part B2 | `spring-boot/course-practice` | ⬜ Not started, after the backlog shrinks |
+| 🔁 Redos due Sun 1 Nov | `RemoveKAdjacentDuplicates`, `Day02RpnEvaluator` | ⬜ see [redo-schedule.md](../revision/redo-schedule.md) |
+
+> [!IMPORTANT]
+> ✅ Done when `CarFleetTest` is 37/37 and the lesson 03 checker prints `LESSON 03 COMPLETE` on your pushed code. `git pull` first, run `mvn test`, and reply in chat when you're ready for grading.
