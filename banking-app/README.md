@@ -6,7 +6,7 @@
 > Plumbing only: no entities, services or endpoints. Every `TODO(write by hand)` is **your** practice.
 
 > [!NOTE]
-> **Legend:** 🏦 app · 🛡️ database roles · 🗂️ layout · 📓 journal. Layout: [`STRUCTURE.md`](STRUCTURE.md). Setup story, challenges and interview notes: [`SETUP-JOURNAL.md`](SETUP-JOURNAL.md) 📓.
+> **Legend:** 🏦 app · 🛡️ database roles · 🗂️ layout · 📓 journal. Design, modules, API and schema: [`project-architecture.md`](project-architecture.md) 🏛️. Setup story, challenges and interview notes: [`SETUP-JOURNAL.md`](SETUP-JOURNAL.md) 📓.
 
 ## 🗂️ What's here
 ```text
@@ -21,6 +21,43 @@ banking-app/
     ├── main/resources/db/migration/V1__create_schemas.sql   auth, core, audit
     └── test/  AbstractIntegrationTest (Testcontainers) + BankingApplicationIT
 ```
+
+## 📦 Packages (feature layout)
+The banking app groups code **by feature**, with the usual layers inside each feature. The older practice module uses layer-first packages (see `spring-boot/course-practice/STRUCTURE.md`); that is fine, this module follows this section.
+
+```text
+com.prashant.banking
+├── BankingApplication.java
+├── common/        BaseEntity, ApiError, GlobalExceptionHandler
+├── config/        JpaAuditingConfig, ClockConfig, OpenApiConfig
+├── security/      SecurityConfig, AccountSecurity (ownership checks)
+├── auth/          users, roles, permissions, login (JWT)
+├── customer/      customers, KYC (maker-checker)
+├── account/       accounts, balances, beneficiaries
+├── transaction/   deposit, withdraw, transfer, idempotency
+├── admin/         staff/admin operations
+└── audit/         append-only audit log
+    each feature → controller/ service/ repository/ model/ dto/
+```
+
+```mermaid
+flowchart LR
+  C["Client + Bearer JWT"] --> F["Security filter chain"]
+  F --> CT["feature.controller"]
+  CT --> S["feature.service"]
+  S --> R["feature.repository"]
+  R --> DB[("PostgreSQL: auth / core / audit")]
+```
+
+| Rule | |
+|---|---|
+| 📌 | Controllers take and return **DTOs** (records), never entities. |
+| 📌 | `@Transactional` lives in **services**. |
+| 📌 | A feature talks to another feature through its **service**, not its repository. |
+| 📌 | Entities extend `common.BaseEntity`; money is `BigDecimal` ↔ `NUMERIC(19,4)`; times are `Instant` ↔ `TIMESTAMPTZ`. |
+
+> [!TIP]
+> Feature packages make a later split easy: e.g. `auth/` can be lifted out into its own service. The ten planned modules and how they depend on each other are in [`project-architecture.md`](project-architecture.md).
 
 ## 🛡️ Two database roles
 | Role | Used by | Can do |
@@ -79,8 +116,8 @@ mvn verify
 
 ### 7. ▶️ Run the app
 - [ ] Log shows `Successfully applied 1 migration` … `v1`.
-- [ ] http://localhost:8080/actuator/health → `{"status":"UP"}`
-- [ ] http://localhost:8080/swagger-ui.html opens.
+- [ ] http://localhost:9078/actuator/health → `{"status":"UP"}`
+- [ ] http://localhost:9078/swagger-ui.html opens.
 - [ ] Any other URL returns **401** (security works).
 
 ### 8. 🔒 Before committing anything
@@ -97,7 +134,6 @@ git status    # .env and *.pem must NOT appear
 - 🔥 Services: deposit, withdraw, transfer, idempotency (key + request hash), `@Version` and `FOR UPDATE` (lock accounts in fixed order)
 - 🔥 `/auth/login` with `JwtEncoder`, `@PreAuthorize` rules, `AccountSecurity.isOwner`, maker-checker for KYC
 - 🔥 The concurrent-withdrawal test and the migration test
-- 🔥 All SQL evening queries and the `generate_series` seed script
 
 > [!WARNING]
 > **Explain every line of `SecurityConfig`** before you build on it: why CSRF is off, what STATELESS means, how the JWT is validated, and what `@EnableMethodSecurity` enables. "The agent wrote it" won't work in an interview.

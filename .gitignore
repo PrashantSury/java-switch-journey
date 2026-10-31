@@ -1,8 +1,35 @@
+# Build output
 target/
+
+# IDE
 .idea/
 *.iml
 .vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Secrets: never commit these (config comes from environment variables)
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.pfx
+application-local.yml
+application-local.properties
+
+# Logs and crash dumps
+*.log
+hs_err_pid*
+
+# Postman workspace metadata (the course-practice collection under spring-boot/ stays tracked)
 .postman/
 postman/globals/
