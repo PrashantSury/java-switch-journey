@@ -36,11 +36,12 @@ public class Day02RpnEvaluatorRedo7 {
                  int b =  stack.pop();
                  int a = stack.pop();
                  stack.push(apply(a,b,token));
+             } else {
+                 stack.push(Integer.parseInt(token));
              }
-             stack.push(Integer.parseInt(token));
          }
 
-         if (stack.pop() != 1) {
+         if (stack.size() != 1) {
              throw new IllegalArgumentException("no result");
          }
         return  stack.pop();
