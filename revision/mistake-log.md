@@ -16,6 +16,6 @@
 | 🌱 | Spring Boot, `course-practice`, banking app | [mistakes/spring.md](mistakes/spring.md) | 1 |
 
 > [!TIP]
-> 🔁 The DSA redo calendar (+1, +3, +7, +14, +30 days, at most 2 a day) lives in [redo-schedule.md](redo-schedule.md); the redo dates in these logs are kept in it.
+> 🔁 The DSA redo calendar (gaps 1 → 3 → 7 → 14 → 30 days set by each redo's result, at most 2 a day) lives in [redo-schedule.md](redo-schedule.md). For DSA, the next-due dates there replace the day-3 and day-7 columns of [mistakes/dsa.md](mistakes/dsa.md).
 >
 > Each log uses the same table: `| Date | Problem | What went wrong | Redo on day 3 | Redo on day 7 |`. Routines append the row to the file of the section; a new section (for example Java core) gets a new file in `revision/mistakes/` and one line in the table above.
