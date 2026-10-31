@@ -1,34 +1,34 @@
 # 🎤 Interview answers — index
 
-![Answered](https://img.shields.io/badge/graded-Day%2002%20%C2%B7%20Day%2003%20%C2%B7%20Day%2004-brightgreen) ![Pending](https://img.shields.io/badge/pending-SoP-orange)
+![Answered](https://img.shields.io/badge/graded-Day%2002%20%C2%B7%20Day%2003%20%C2%B7%20Day%2004-brightgreen) ![Pending](https://img.shields.io/badge/pending-SoP%20%C2%B7%20Day%2004%20re--answer-orange)
 
 > [!IMPORTANT]
 > A set is only ✅ when my own answers are written and graded. Graded day files live in `spring-boot/interview-answers/` and are linked here, not copied.
 
 > [!NOTE]
-> **Legend:** ✅ graded · 🔴 needs correction · ⏳ pending · ⬜ no record · 🔵 ready for revision. Grades are out of 10.
+> **Legend:** ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (graded 7+ or re-answered cleanly) · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED`. Grades are out of 10. From 1 Nov 2026 the questions are senior-level (internals, trade-offs, production scenarios); see [docs/PROGRAM.md](docs/PROGRAM.md).
 
 | Day | Topic | Status | File |
 |---|---|---|---|
-| 01 | — | ⬜ No graded record found | — |
-| 02 | Core / DI / mapping | ✅ Graded: Q1 5/10 · Q2 7/10 · Q3 5/10 | [day02-answers.md](spring-boot/interview-answers/day02-answers.md) |
-| 03 | HTTP semantics, mapping | ✅ Graded: Q1 5/10 · Q2 5/10 · Q3 7/10 (17/30) · 🔵 Q1, Q2 ready for revision | [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| 04 | Request flow, DTOs, errors | 🔴 Needs correction: Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
-| SoP | Score of Parentheses follow-up | ⏳ Pending | below |
+| 01 | — | ⬜ NOT_STARTED (no graded record found) | — |
+| 02 | Core / DI / mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 7/10 ✅ · Q3 5/10; re-answer Q1, Q3 | [day02-answers.md](spring-boot/interview-answers/day02-answers.md) |
+| 03 | HTTP semantics, mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 5/10 · Q3 7/10 ✅ (17/30); re-answer Q1, Q2 | [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
+| 04 | Request flow, DTOs, errors | 🔴 REVISION_REQUIRED: Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
+| SoP | Score of Parentheses follow-up | ⬜ NOT_STARTED (answers pending) | below |
 
-## 📅 Day 03 — ✅ Graded (17/30)
-Source: [day03-morning.md](tasks/day03-morning.md) · Full answers and grades: [day03-answers.md](spring-boot/interview-answers/day03-answers.md)
+## 📅 Day 03 — 🟡 IN_PROGRESS (17/30)
+Source: the old `day03-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day03-answers.md](spring-boot/interview-answers/day03-answers.md)
 
 > [!NOTE]
-> Q1 5/10 · Q2 5/10 · Q3 7/10. Q1 and Q2 are 🔵 Ready for revision.
+> Q1 5/10 · Q2 5/10 · Q3 7/10. Q1 and Q2 are 🟡 `IN_PROGRESS` (re-answer them); Q3 is ✅ `COMPLETED`.
 
-## 📅 Day 04 — 🔴 Needs correction (15/30)
-Source: [day04-morning.md](tasks/day04-morning.md) · Full answers and grades: [day04-answers.md](spring-boot/interview-answers/day04-answers.md)
+## 📅 Day 04 — 🔴 REVISION_REQUIRED (15/30)
+Source: the old `day04-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day04-answers.md](spring-boot/interview-answers/day04-answers.md)
 
 > [!WARNING]
-> Q1 5/10 · Q2 4/10 · Q3 6/10. All three are partial, so all three are 🔴 Needs correction: re-answer them in chat by Tue 3 Nov. Q1 missed `MethodArgumentNotValidException`, Q2 was vague, Q3 missed the race condition (unique constraint + `DataIntegrityViolationException` → 409).
+> Q1 5/10 · Q2 4/10 · Q3 6/10. All three are partial, so all three are 🔴 `REVISION_REQUIRED`: re-answer them in chat by Tue 3 Nov. Q1 missed `MethodArgumentNotValidException`, Q2 was vague, Q3 missed the race condition (unique constraint + `DataIntegrityViolationException` → 409).
 
-## 🧩 Score of Parentheses follow-up — ⏳ Pending
+## 🧩 Score of Parentheses follow-up — ⬜ NOT_STARTED
 Source: `src/main/java/com/prashant/dsa/stack/ScoreOfParentheses.java` (c909bb8)
 
 **Q1.** Why push a `0` before the loop starts? What would break without it?

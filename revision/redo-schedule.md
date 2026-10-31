@@ -6,14 +6,14 @@
 > Every DSA problem and buggy round is redone cold, and **the result of each redo decides the next gap**: 1 → 3 → 7 → 14 → 30 days, at most **2 redos a day**, so the backlog never lands on one day and each pattern gets time to stick. This file is the single source for "what do I redo today?"; conceptual mistakes still go to [mistakes/dsa.md](mistakes/dsa.md).
 
 > [!NOTE]
-> **Legend:** 🧩 DSA · 🐞 buggy round · 🔁 redo · ✅ clean pass · 🟠 pass with a hint or a fix · ❌ conceptual miss · ⬜ not started · 🔵 ready for revision · 🔴 overdue · 🎓 graduated. Other logs: [mistake-log index](mistake-log.md) · [PROGRESS.md](../PROGRESS.md). Results-based gaps approved by Prashant on 31 Oct 2026.
+> **Legend:** 🧩 DSA · 🐞 buggy round · 🔁 redo · ✅ clean pass · 🔶 pass with a hint or a fix · ❌ conceptual miss · ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` (in the redo cycle) · ⏰ overdue · 🎓 graduated (= ✅ `COMPLETED`). Other logs: [mistake-log index](mistake-log.md) · [PROGRESS.md](../PROGRESS.md). Results-based gaps approved by Prashant on 31 Oct 2026.
 
 ## 📏 Rules
 | # | Rule |
 |---|---|
 | 1 | **The ladder:** 1 → 3 → 7 → 14 → 30 days. A gap is counted from the **day of the last pass** (the first solve, or the latest redo), so a late redo pushes the next date later. A newly verified solve starts at gap 1. |
 | 2 | **✅ Clean cold pass** (all tests pass, blank file, no hint, no peeking, no fix needed): move up **one step**; next due = pass date + the new gap. |
-| 3 | **🟠 Pass with a hint, or only after a fix** (passed after a review round or after re-reading the original): **repeat the same gap**. |
+| 3 | **🔶 Pass with a hint, or only after a fix** (passed after a review round or after re-reading the original): **repeat the same gap**. |
 | 4 | **❌ Conceptual miss** (a conceptual mistake, logged in [mistakes/dsa.md](mistakes/dsa.md)): **reset to day 1**, due the day after it is verified. Cosmetic slips don't reset anything. |
 | 5 | **Skip to 30:** two clean passes in a row, each at least **14 days** after the previous pass, go straight to the 30-day gap. A clean pass at the 30-day gap = graduation 🎓. |
 | 6 | **How to redo:** blank file, timed at **20-30 minutes**. Before any code, write the **pattern line** and the **time and space complexity** at the top as comments. |
@@ -22,23 +22,26 @@
 | 9 | **New problems** join at gap 1 the day they are verified and take a free slot, never a third one. |
 | 10 | **Mistake logs:** the day-3 and day-7 columns in [mistakes/dsa.md](mistakes/dsa.md) are only the first checkpoints. The next-due dates in this file replace them. |
 
+> [!NOTE]
+> **Where redos happen (from 1 Nov 2026):** in the 🌙 evening block, after the review and after any pending morning work (see [docs/PROGRAM.md](../docs/PROGRAM.md)). The cap stays at 2 a day; if pending work eats the evening, the most overdue redo goes first and the rest wait in the queue. Status words follow `PROGRAM.md`: a problem keeps ✅ `COMPLETED` for its first verified solve and shows 🟡 `IN_PROGRESS` here until it graduates.
+
 > [!TIP]
-> Redo checklist: ① blank file ② 3 comment lines: pattern, time, space ③ set a 25-minute timer ④ `mvn test -Dtest=<Problem>Test` ⑤ all green and no hint = ✅ (step up), all green after a hint or fix = 🟠 (same gap), a conceptual slip = ❌ (day 1; log it in [mistakes/dsa.md](mistakes/dsa.md)).
+> Redo checklist: ① blank file ② 3 comment lines: pattern, time, space ③ set a 25-minute timer ④ `mvn test -Dtest=<Problem>Test` ⑤ all green and no hint = ✅ (step up), all green after a hint or fix = 🔶 (same gap), a conceptual slip = ❌ (day 1; log it in [mistakes/dsa.md](mistakes/dsa.md)).
 
 ## 📋 The schedule
 | Problem | Pattern | Last verified | Last result | Current gap | Next due | Status |
 |---|---|---|---|---|---|---|
-| 🐞 `Day02RpnEvaluator` | Stack: expression evaluation | 31 Oct | ❌ 31 Oct `Day02RpnEvaluatorRedo7`: 3 conceptual misses (15/44, 43/44, then 44/44 after fixes) | +1 (reset) | **1 Nov** | 🔵 Ready for revision · on time, reset slot |
-| 🧩 `ValidParentheses` | Stack: matching brackets | 23 Oct | 🟠 23 Oct starter, understood · never redone | +1 | **1 Nov** | 🔴 Due 24 Oct, 8 days overdue |
-| 🧩 `MinStack` | Stack: auxiliary min stack (design) | 23 Oct | ✅ 23 Oct 10/10 · never redone | +1 | **2 Nov** | 🔴 Due 24 Oct, 9 days overdue |
-| 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 25 Oct | 🟠 25 Oct 37/37, written with help · never redone | +1 | **2 Nov** | 🔴 Due 26 Oct, 7 days overdue · follow-up questions pending |
-| 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 29 Oct | ❌ 29 Oct 26/26 but the O(n) quiz scored 3/5 (conceptual) · never redone | +1 (reset) | **3 Nov** | 🔴 Due 30 Oct, 4 days overdue |
-| 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 29 Oct | ✅ 29 Oct 37/37, both bugs found (only cosmetic slips) · never redone | +1 | **3 Nov** | 🔴 Due 30 Oct, 4 days overdue |
-| 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **4 Nov** | 🔴 Due 1 Nov, queued 3 days |
-| 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **7 Nov** | 🔵 Ready for revision · on time |
-| 🧩 `CarFleet` | Stack: sort by position, monotonic | not verified (2/37) | — | joins at +1 once verified | — | ⬜ Not started |
-| 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | not verified (15/36) | — | joins at +1 once verified | — | ⬜ Not started |
-| 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | not verified (4/10) | — | joins at +1 once verified | — | ⬜ Not started |
+| 🐞 `Day02RpnEvaluator` | Stack: expression evaluation | 31 Oct | ❌ 31 Oct `Day02RpnEvaluatorRedo7`: 3 conceptual misses (15/44, 43/44, then 44/44 after fixes) | +1 (reset) | **1 Nov** | 🟡 IN_PROGRESS · on time, reset slot |
+| 🧩 `ValidParentheses` | Stack: matching brackets | 23 Oct | 🔶 23 Oct starter, understood · never redone | +1 | **1 Nov** | 🟡 IN_PROGRESS · ⏰ due 24 Oct, 8 days overdue |
+| 🧩 `MinStack` | Stack: auxiliary min stack (design) | 23 Oct | ✅ 23 Oct 10/10 · never redone | +1 | **2 Nov** | 🟡 IN_PROGRESS · ⏰ due 24 Oct, 9 days overdue |
+| 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 25 Oct | 🔶 25 Oct 37/37, written with help · never redone | +1 | **2 Nov** | 🟡 IN_PROGRESS · ⏰ due 26 Oct, 7 days overdue · follow-up questions pending |
+| 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 29 Oct | ❌ 29 Oct 26/26 but the O(n) quiz scored 3/5 (conceptual) · never redone | +1 (reset) | **3 Nov** | 🟡 IN_PROGRESS · ⏰ due 30 Oct, 4 days overdue |
+| 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 29 Oct | ✅ 29 Oct 37/37, both bugs found (only cosmetic slips) · never redone | +1 | **3 Nov** | 🟡 IN_PROGRESS · ⏰ due 30 Oct, 4 days overdue |
+| 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **4 Nov** | 🟡 IN_PROGRESS · ⏰ due 1 Nov, queued 3 days |
+| 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **7 Nov** | 🟡 IN_PROGRESS · on time |
+| 🧩 `CarFleet` | Stack: sort by position, monotonic | not verified (2/37) | — | joins at +1 once verified | — | ⬜ NOT_STARTED |
+| 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | not verified (15/36) | — | joins at +1 once verified | — | ⬜ NOT_STARTED |
+| 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | not verified (4/10) | — | joins at +1 once verified | — | ⬜ NOT_STARTED |
 
 > [!NOTE]
 > **11 problems**: 8 scheduled, 3 not started. "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2 (1 Nov: 2, 2 Nov: 2, 3 Nov: 2, 4 Nov: 1, 7 Nov: 1).
@@ -55,7 +58,7 @@
 | Sat 7 Nov | `Day03NextGreaterIndex` (+3, late) | `Day01ArrayStack` (+7) | `Day03NextGreaterIndex` was due 6 Nov (1 day late); `Day01ArrayStack` +7 after its 31 Oct clean pass |
 
 > [!WARNING]
-> Everything after the first redo of each problem is a **projection that assumes every redo is a clean pass**. A 🟠 repeats the gap and a ❌ resets to day 1, and the queue rule moves the rest.
+> Everything after the first redo of each problem is a **projection that assumes every redo is a clean pass**. A 🔶 repeats the gap and a ❌ resets to day 1, and the queue rule moves the rest.
 
 ## 🔭 Projected calendar after 7 Nov
 | Date | Redo 1 | Redo 2 |
@@ -86,7 +89,7 @@
 | Problem | Events and their effect on the gap (source: [PROGRESS.md](../PROGRESS.md), [mistakes/dsa.md](mistakes/dsa.md)) |
 |---|---|
 | `Day01ArrayStack` | 23 Oct buggy round fixed with hints (start, gap 1) · 28 Oct cold redo ✅ 17/17, clean (1 → 3) · 31 Oct `Day01ArrayStackRedo7` ✅ clean 17/17 (3 → 7), next due 7 Nov |
-| `Day02RpnEvaluator` | 24 Oct buggy round fixed, hint needed for `-3` (start, gap 1) · 27 Oct `Day02RpnEvaluatorRedo` 44/44 but re-read the original (🟠, repeats gap 1) · 31 Oct `Day02RpnEvaluatorRedo7` ❌ 3 conceptual misses before it was fixed (operator fall-through, `pop() != 1` end check, missing null guard) → reset to day 1, due 1 Nov |
+| `Day02RpnEvaluator` | 24 Oct buggy round fixed, hint needed for `-3` (start, gap 1) · 27 Oct `Day02RpnEvaluatorRedo` 44/44 but re-read the original (🔶, repeats gap 1) · 31 Oct `Day02RpnEvaluatorRedo7` ❌ 3 conceptual misses before it was fixed (operator fall-through, `pop() != 1` end check, missing null guard) → reset to day 1, due 1 Nov |
 | `RemoveKAdjacentDuplicates` | 29 Oct 26/26 (start) · O(n) quiz 3/5, missed the amortised argument (❌ conceptual, day 1) · due 30 Oct, never redone |
 | `Day03NextGreaterIndex` | 29 Oct 37/37, both bugs found, stray `main()` removed (cosmetic, not logged) · gap 1, due 30 Oct, never redone |
 | `AsteroidCollision` | 30 Oct pushed 28/28, 31 Oct verified after two cosmetic fixes · gap 1, due 1 Nov |

@@ -3,13 +3,13 @@
 ![Day](https://img.shields.io/badge/Day-04-blue) ![Q1](https://img.shields.io/badge/Q1-5%2F10-orange) ![Q2](https://img.shields.io/badge/Q2-4%2F10-red) ![Q3](https://img.shields.io/badge/Q3-6%2F10-orange) ![Total](https://img.shields.io/badge/total-15%2F30-orange)
 
 > [!IMPORTANT]
-> Re-read before revising. Answer format to practise: **definition → difference → when to use → example**. All three answers are partial, so the set is 🔴 Needs correction until you re-answer Q1-Q3 in chat (by Tue 3 Nov).
+> Re-read before revising. Answer format to practise: **definition → difference → when to use → example**. All three answers are partial, so the set is 🔴 REVISION_REQUIRED until you re-answer Q1-Q3 in chat (by Tue 3 Nov).
 
 > [!NOTE]
-> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: [day04-morning.md](../../tasks/day04-morning.md) · Answered in chat and graded 31 Oct 2026. Section: §5 Validation and error handling (with §2 Request flow).
+> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: the old `day04-morning.md`, now [archived](../../archive/tasks/day02-05-morning.md) · Answered in chat and graded 31 Oct 2026. Section: §5 Validation and error handling (with §2 Request flow).
 
 > [!WARNING]
-> **Total: 15/30.** Q1, Q2 and Q3 are all 🔴 Needs correction. Q1 and Q3 are logged in [mistakes/spring.md](../../revision/mistakes/spring.md) (redo 3 Nov and 7 Nov).
+> **Total: 15/30.** Q1, Q2 and Q3 are all 🔴 REVISION_REQUIRED. Q1 and Q3 are logged in [mistakes/spring.md](../../revision/mistakes/spring.md) (redo 3 Nov and 7 Nov).
 
 ## ❓ Q1. How does a JSON body become a validated `StudentRequest`? Which component converts it, which exception is thrown when validation fails, and what happens with malformed JSON?
 
@@ -86,7 +86,7 @@
 ## 🏁 Summary
 | Q | Topic | Grade | Status |
 |---|---|---|---|
-| 1 | JSON → DTO, validation vs malformed JSON exceptions | 5/10 | 🔴 Needs correction |
-| 2 | Request/response DTOs vs the entity | 4/10 | 🔴 Needs correction |
-| 3 | `ProblemDetail`, 400 vs 409, the race condition | 6/10 | 🔴 Needs correction |
+| 1 | JSON → DTO, validation vs malformed JSON exceptions | 5/10 | 🔴 REVISION_REQUIRED |
+| 2 | Request/response DTOs vs the entity | 4/10 | 🔴 REVISION_REQUIRED |
+| 3 | `ProblemDetail`, 400 vs 409, the race condition | 6/10 | 🔴 REVISION_REQUIRED |
 | | **Total** | **15/30** | Re-answer Q1-Q3 by Tue 3 Nov |

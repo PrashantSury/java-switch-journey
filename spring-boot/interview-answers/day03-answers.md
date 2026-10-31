@@ -6,10 +6,10 @@
 > Re-read before revising. Answer format to practise: **definition → difference → when to use → example**.
 
 > [!NOTE]
-> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: [day03-morning.md](../../tasks/day03-morning.md) · Graded 28 Oct 2026.
+> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: the old `day03-morning.md`, now [archived](../../archive/tasks/day02-05-morning.md) · Graded 28 Oct 2026.
 
 > [!WARNING]
-> **Total: 17/30.** Q1 and Q2 go to 🔵 Ready for revision. Q3 is solid, with small gaps.
+> **Total: 17/30.** Q1 and Q2 go to 🟡 `IN_PROGRESS` (re-answer them). Q3 is solid, with small gaps.
 
 ## ❓ Q1. What does idempotent mean? Is DELETE idempotent, and if a client deletes the same id twice, what status should the second call return? Does that break idempotency?
 
@@ -90,7 +90,7 @@
 ## 🏁 Summary
 | Q | Topic | Grade | Status |
 |---|---|---|---|
-| 1 | Idempotency, DELETE twice | 5/10 | 🔵 Ready for revision |
-| 2 | `ResponseEntity` vs `@ResponseStatus`, `Location` | 5/10 | 🔵 Ready for revision |
-| 3 | Missing `@RequestParam`, optional, `@Valid` on `String` | 7/10 | ✅ Graded (small gaps) |
+| 1 | Idempotency, DELETE twice | 5/10 | 🟡 IN_PROGRESS |
+| 2 | `ResponseEntity` vs `@ResponseStatus`, `Location` | 5/10 | 🟡 IN_PROGRESS |
+| 3 | Missing `@RequestParam`, optional, `@Valid` on `String` | 7/10 | ✅ COMPLETED (small gaps) |
 | | **Total** | **17/30** | |
