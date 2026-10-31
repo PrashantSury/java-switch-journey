@@ -67,7 +67,7 @@ mvn test
 | Day03NextGreaterIndex | 🐞 Buggy round | 37/37 | 2d36911 + bcb37f3 | ✅ Completed and verified (29 Oct, both bugs found) · stray `main()` repeated, removed in bcb37f3 |
 | Day04LargestRectangle | 🐞 Buggy round | 15/36 | — | ⬜ Not started |
 | Day01ArrayStackRedo7 | 🔁 Day-7 redo (cold) | 17/17 | d5c0ee9 | ✅ Completed and verified (31 Oct, no conceptual issue; Lumi removed the stale TODO comments) · closes the 23 Oct day-7 row |
-| Day02RpnEvaluatorRedo7 | 🔁 Day-7 redo (cold) | 43/44 | fe6827d | 🔴 Needs correction · operator fall-through and the end check are fixed; `evaluate(null)` still throws `NullPointerException` instead of `IllegalArgumentException` (`nullArray`) · logged in `revision/mistakes/dsa.md`, redo on 3 Nov |
+| Day02RpnEvaluatorRedo7 | 🔁 Day-7 redo (cold) | 44/44 | 37f6c11 | ✅ Completed and verified (31 Oct; fixed after 3 review rounds: fall-through, end check, null guard) · logged in `revision/mistakes/dsa.md`, redo again on 3 Nov and 7 Nov |
 
 > [!TIP]
 > Stub tests that pass by accident (e.g. empty-input cases) don't count as progress.
@@ -143,20 +143,20 @@ mvn test
 ## 📊 Status counts
 ```mermaid
 pie title Tracked items (31 Oct 2026)
-  "Completed and verified" : 13
+  "Completed and verified" : 14
   "Ready for revision" : 6
-  "Needs correction" : 1
+  "Needs correction" : 0
   "In progress" : 1
   "Attempted" : 1
   "Not started" : 15
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day02RpnEvaluatorRedo7` (43/44, missing `null` guard) is in Needs correction (31 Oct review).
+> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` are Completed and verified (31 Oct); nothing is in Needs correction.
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
-> **Next task (see [day09.md](tasks/day09.md)):** add the `null` guard to `Day02RpnEvaluatorRedo7` (43/44, 🔴 Needs correction). `Day01ArrayStackRedo7` is ✅ (17/17). Day 04 **Q3** in chat at the next free slot. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
+> **Next task (see [day09.md](tasks/day09.md)):** both Day 09 redos are ✅ (`Day02RpnEvaluatorRedo7` 44/44, `Day01ArrayStackRedo7` 17/17). Day 04 **Q3** in chat at the next free slot. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
 >
 > **Evening (31 Oct):** 🗄️ `sql/day03.sql` **Q1** (answer in `sql/day03-answers.md`), then SQL learn lesson 03. The `.postman/` clean-up is done (see the Log).
 >
@@ -191,3 +191,4 @@ pie title Tracked items (31 Oct 2026)
 | 31 Oct 2026 | W2 D9 | Morning round assigned (backlog only) | Re-checked with `mvn test`: `Day01ArrayStackRedo7Test` 0/17. New stub `redo/Day02RpnEvaluatorRedo7.java` for the cold day-7 RPN redo (0/44, tests checked 44/44 against a correct version). Both in [day09.md](tasks/day09.md). No new buggy round (`Day04LargestRectangle` unattempted, two redos open), no new Spring task (§5 open, B2 next) |
 | 31 Oct 2026 | W2 D9 | Review of d5c0ee9: ✅ `Day01ArrayStackRedo7` 17/17; 🔴 `Day02RpnEvaluatorRedo7` 15/44 Needs correction | Ran both suites with `mvn test`. ArrayStack: no conceptual issue. RPN: after an operator the code still runs `Integer.parseInt(token)` (27 `NumberFormatException`/"no result" failures), the end check pops and compares with `1` instead of `size() != 1`, and null/empty input is not guarded. Lumi removed the unused `java.awt.image` import and the stale `TODO` comments in both files. Logged in the DSA mistake log (redo 3 Nov) |
 | 31 Oct 2026 | W2 D9 | Review of fe6827d: `Day02RpnEvaluatorRedo7` 43/44, still 🔴 Needs correction | Ran `Day02RpnEvaluatorRedo7Test` with `mvn test`: 43/44. Fall-through fixed with `else`, end check now `stack.size() != 1`, empty array now throws `IllegalArgumentException`. Only `nullArray` fails: `for (String token : tokens)` on a `null` array throws `NullPointerException`; it needs an explicit `tokens == null` check at the top. Chat quiz: he got the stack after `2 3 +` right (5); on the fall-through he first said it pushes the operator token and needed a hint that `parseInt` throws; he explained correctly that `pop()` returns the top value, so `pop() != 1` compares it with 1. No new cosmetic issues |
+| 31 Oct 2026 | W2 D9 | Review of 37f6c11: ✅ `Day02RpnEvaluatorRedo7` 44/44 Completed and verified | Ran `Day02RpnEvaluatorRedo7Test` with `mvn test`: 44/44. The null guard `tokens == null \|\| tokens.length == 0` is in, so all three conceptual bugs are fixed. Lumi re-indented the method body and spaced the two helper methods (cosmetic). Redo dates in the DSA mistake log stay (3 Nov, 7 Nov) |

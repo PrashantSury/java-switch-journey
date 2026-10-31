@@ -26,34 +26,34 @@ public class Day02RpnEvaluatorRedo7 {
             throw new IllegalArgumentException("tokens must not be null or empty");
         }
 
-         Deque<Integer> stack = new ArrayDeque<>();
+        Deque<Integer> stack = new ArrayDeque<>();
 
-         for (String token : tokens)  {
+        for (String token : tokens) {
+            if (token == null) {
+                throw new IllegalArgumentException("null token");
+            }
+            if (isOperator(token)) {
+                if (stack.size() < 2) {
+                    throw new IllegalArgumentException("not enough operands for " + token);
+                }
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(apply(a, b, token));
+            } else {
+                stack.push(Integer.parseInt(token));
+            }
+        }
 
-             if (token == null) {
-                 throw new IllegalArgumentException("null token");
-             }
-             if(isOperator(token)){
-                 if (stack.size() < 2) {
-                     throw new IllegalArgumentException("not enough operands for " + token);
-                 }
-                 int b =  stack.pop();
-                 int a = stack.pop();
-                 stack.push(apply(a,b,token));
-             } else {
-                 stack.push(Integer.parseInt(token));
-             }
-         }
-
-         if (stack.size() != 1) {
-             throw new IllegalArgumentException("no result");
-         }
-        return  stack.pop();
+        if (stack.size() != 1) {
+            throw new IllegalArgumentException("no result");
+        }
+        return stack.pop();
     }
 
     private static boolean isOperator(String op) {
-       return op.equals("+") || op.equals("-") || op.equals("*") || op.equals("/") ;
+        return op.equals("+") || op.equals("-") || op.equals("*") || op.equals("/");
     }
+
     public static int apply(int a, int b, String token) {
         switch (token) {
             case "+": return Math.addExact(a, b);
