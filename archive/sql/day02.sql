@@ -56,4 +56,3 @@ INSERT INTO orders (order_id, customer_id, order_date, amount, status) VALUES
 --     Show city, customer_id, name, total_spend, sorted by city, then customer_id.
 
 
-
