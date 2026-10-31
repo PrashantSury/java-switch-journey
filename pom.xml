@@ -21,13 +21,6 @@
             <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
-        <!-- SQL learn track (sql/learn): runs your lesson queries against local PostgreSQL -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.7.3</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
