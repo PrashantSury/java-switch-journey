@@ -23,7 +23,7 @@
 
 ### 🅰️ Main task (~30 min): Day02RpnEvaluator day-7 redo, cold
 - [x] Without opening `Day02RpnEvaluator.java` or `Day02RpnEvaluatorRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day02RpnEvaluatorRedo7.java` (spec in its Javadoc).
-- [ ] Run `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` until 44/44 pass. It's **15/44** after your push: fix the three bugs below, then push again.
+- [ ] Run `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` until 44/44 pass. It's **43/44** after your second push: only `nullArray` fails, see the warning below.
 
 > [!WARNING]
 > ⚠️ Last time this redo passed only after re-reading the original, so it stayed 🟠 Attempted. This one counts only if it's written cold.
@@ -32,7 +32,7 @@
 > Think about which pop is the right operand, tokens that only *start* like an operator, and every arithmetic op that can overflow.
 
 > [!WARNING]
-> 🔴 **Needs correction (31 Oct review):** (1) after the operator branch the loop still falls through to `stack.push(Integer.parseInt(token))`, so `"+"` crashes with `NumberFormatException`; (2) the end check `stack.pop() != 1` pops a value and compares it with 1 instead of checking `stack.size() != 1`; (3) `null` or empty `tokens` is not rejected with `IllegalArgumentException`. Logged in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md), redo on 3 Nov.
+> 🔴 **Needs correction (31 Oct review):** the operator fall-through (`else`) and the end check (`stack.size() != 1`) are fixed, and an empty array is rejected. One bug is left: `evaluate(null)` throws `NullPointerException` because the `for` loop runs on a `null` array; add a `tokens == null` check at the top that throws `IllegalArgumentException`, then re-run for 44/44. Logged in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md), redo on 3 Nov.
 
 ### 🔁 Small item (~15 min): Day01ArrayStack day-7 redo, cold (carried from Day 08)
 - [x] Without opening `Day01ArrayStack.java` or `Day01ArrayStackRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day01ArrayStackRedo7.java` (spec in its Javadoc).
@@ -44,7 +44,7 @@
 ### ✅ How it's verified
 | Item | Check | Status |
 |---|---|---|
-| `Day02RpnEvaluatorRedo7` | `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` 44/44, written cold | 🔴 Needs correction (15/44, checked 31 Oct, d5c0ee9) |
+| `Day02RpnEvaluatorRedo7` | `mvn test -Dtest=Day02RpnEvaluatorRedo7Test` 44/44, written cold | 🔴 Needs correction (43/44, checked 31 Oct, fe6827d) |
 | `Day01ArrayStackRedo7` | `mvn test -Dtest=Day01ArrayStackRedo7Test` 17/17, written cold | ✅ Completed and verified (17/17, checked 31 Oct, d5c0ee9) |
 
 ## 📌 Carried backlog
