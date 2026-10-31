@@ -52,18 +52,19 @@
 |---|---|---|
 | Day 04 **Q1-Q3** (JSON → DTO, DTOs vs entity, `ProblemDetail` and the race condition) | [day04-answers.md](../spring-boot/interview-answers/day04-answers.md), re-answer in chat | 🔴 Needs correction · answered 31 Oct, 15/30 (5 / 4 / 6) · re-answer by Tue 3 Nov |
 | Day 04 Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) | `spring-boot/course-practice` | ⬜ Not started, after the backlog shrinks |
-| SQL 03 **Q1** | `sql/day03.sql`, answer in `sql/day03-answers.md` | ⬜ Not started, this evening |
-| SQL learn lesson 03 | `sql/learn/lesson03.md` | ⬜ Not started, this evening |
 | `CarFleet` | DSA, 2/37 | ⬜ Not started |
 | `Day04LargestRectangle` | 🐞 buggy round, 15/36 | ⬜ Not started |
 | Count-stack O(n) quiz re-ask | chat | 🔵 due 1 Nov |
+
+> [!NOTE]
+> 🗄️ **SQL is retired (31 Oct 2026).** The SQL 03 Q1 and SQL learn lesson 03 rows were removed from this list; everything SQL now lives in [archive/](../archive/README.md) and is no longer assigned or tracked.
 
 ## 🌙 Evening (~55 min): backlog only
 
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-~55%20min-blue)
 
 > [!NOTE]
-> Checked at 8 PM with `mvn test`: `CarFleetTest` 2/37 (both pass by accident on the stub), `sql/learn/lesson03-exercises.sql` still empty, no `sql/day03-answers.md`. With `CarFleet` and `Day04LargestRectangle` ⬜ Not started and 5 SQL files unanswered, tonight is backlog only: the oldest DSA stub and the next SQL lesson. No new stub, no new SQL file.
+> Checked at 8 PM with `mvn test`: `CarFleetTest` 2/37 (both pass by accident on the stub), and the SQL exercises were still empty. With `CarFleet` and `Day04LargestRectangle` ⬜ Not started, tonight was backlog only: the oldest DSA stub. No new stub. (Later that night SQL was retired, see the note below.)
 
 ### 🧩 DSA (~35 min): Car Fleet (LeetCode 853, NeetCode 150 Stack)
 - 📂 `src/main/java/com/prashant/dsa/stack/CarFleet.java` (tests in `CarFleetTest`, 2/37 right now)
@@ -76,31 +77,21 @@
 > [!TIP]
 > Think about which car you should look at first, and what "exactly equal arrival time" means when a division would round.
 
-### 🎓 SQL (~20 min): learn lesson 03, aggregates, GROUP BY, HAVING
-- 📂 Read `sql/learn/lesson03.md`, run `sql/learn/lesson03-setup.sql` in pgAdmin, write your 5 queries in `sql/learn/lesson03-exercises.sql`.
-- 📌 Covers `COUNT(*)` vs `COUNT(col)` vs `COUNT(DISTINCT col)`, how `SUM`/`AVG` treat NULLs, `WHERE` vs `HAVING`, and `ROUND`.
-
-- [ ] Write the 5 queries under the `-- @ex N` markers.
-- [ ] `mvn test -Dtest=SqlLessonCheckTest -Dlesson=03` shows 5 `[PASS]`.
-
-> [!TIP]
-> Exercise 3 has a branch where every balance is NULL. Predict what `SUM` returns there before you run it.
-
+### 🗄️ SQL: retired
 > [!NOTE]
-> `sql/day03.sql` Q1 (branch max with ties, empty branches kept) needs both GROUP BY (lesson 03) and LEFT JOIN (lesson 04), so it now follows lesson 04 instead of being re-assigned a fifth time cold. It stays ⬜ in `PROGRESS.md`.
+> The SQL part of tonight (learn lesson 03, then `sql/day03.sql` Q1) was **cancelled on 31 Oct 2026** when SQL was retired from the plan. The files are kept in [archive/sql/](../archive/README.md). Tonight is `CarFleet` only; the freed ~20 minutes go to the backlog (Day 04 Q1-Q3 re-answers, redos).
 
 ### 📌 Still open
 
 | Item | Path | Status |
 |---|---|---|
 | 🎤 Day 04 Q1-Q3 re-answer | in chat | 🔴 Needs correction · by Tue 3 Nov |
-| 🗄️ SQL 03 Q1 | `sql/day03.sql` → `sql/day03-answers.md` | ⬜ Not started · after lesson 04 |
 | 🐞 `Day04LargestRectangle` | `src/main/java/com/prashant/dailytests/` | ⬜ Not started (15/36) |
 | 🌱 Day 04 Part B2 | `spring-boot/course-practice` | ⬜ Not started, after the backlog shrinks |
 | 🔁 Redos due Sun 1 Nov | `Day02RpnEvaluator` (+1, reset), `ValidParentheses` (+1, late) | ⬜ see [redo-schedule.md](../revision/redo-schedule.md) |
 
 > [!IMPORTANT]
-> ✅ Done when `CarFleetTest` is 37/37 and the lesson 03 checker prints `LESSON 03 COMPLETE` on your pushed code. `git pull` first, run `mvn test`, and reply in chat when you're ready for grading.
+> ✅ Done when `CarFleetTest` is 37/37 on your pushed code. `git pull` first, run `mvn test`, and reply in chat when you're ready for grading.
 
 ## 🌃 End of day (10 PM check)
 
@@ -110,8 +101,7 @@
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo, cold) | ✅ Completed and verified (17/17, d5c0ee9) · clean pass, next redo 7 Nov |
 | 🎤 Day 04 Q1-Q3 | 🔴 Needs correction (graded 15/30: 5 / 4 / 6) · re-answer by Tue 3 Nov |
 | 🧩 `CarFleet` | ⬜ Not started (2/37, no push after the 8 PM assignment) · carried |
-| 🎓 SQL learn lesson 03 | ⬜ Not started (exercises still empty) · carried |
-| 🗄️ SQL 03 Q1 | ⬜ Not started · now follows learn lesson 04 |
+| 🗄️ SQL (learn lesson 03, 03 Q1) | 🗃️ Retired 31 Oct 2026, archived in [archive/](../archive/README.md) · not carried |
 | 🐞 `Day04LargestRectangle` | ⬜ Not started (15/36) · carried |
 | 🌱 Day 04 Part B2 | ⬜ Not started · after the backlog shrinks |
 
@@ -119,4 +109,4 @@
 > No pushes from Prashant after the 8 PM evening assignment, so nothing new to test tonight. No new mistakes and no cosmetic fixes needed.
 
 > [!IMPORTANT]
-> **Next task (Sun 1 Nov, 6 AM):** the two cold redos due on 1 Nov, `Day02RpnEvaluator` (+1, reset) and `ValidParentheses` (+1, late), then re-answer Day 04 Q1-Q3 in chat by Tue 3 Nov. `CarFleet` (2/37) and SQL learn lesson 03 carry to the evening.
+> **Next task (Sun 1 Nov, 6 AM):** the two cold redos due on 1 Nov, `Day02RpnEvaluator` (+1, reset) and `ValidParentheses` (+1, late), then re-answer Day 04 Q1-Q3 in chat by Tue 3 Nov. `CarFleet` (2/37) carries to the evening. SQL is retired and no longer carried.

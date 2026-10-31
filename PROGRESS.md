@@ -1,24 +1,23 @@
 # 📈 Progress Log
 
-![Plan](https://img.shields.io/badge/plan-12%20weeks-blue) ![Started](https://img.shields.io/badge/started-23%20Oct%202026-informational) ![Current](https://img.shields.io/badge/phase-Spring%20prereqs%20%2B%20SQL%20%2B%20Stack-yellow) ![Reconciled](https://img.shields.io/badge/reconciled-26%20Oct%202026-blue)
+![Plan](https://img.shields.io/badge/plan-12%20weeks-blue) ![Started](https://img.shields.io/badge/started-23%20Oct%202026-informational) ![Current](https://img.shields.io/badge/phase-Spring%20prereqs%20%2B%20Stack-yellow) ![Reconciled](https://img.shields.io/badge/reconciled-26%20Oct%202026-blue)
 
 > [!IMPORTANT]
 > The single progress tracker for the 12-week plan to switch back to a Java backend role (started 23 Oct 2026). Progress is measured by verified work, and pending work never disappears.
 
 > [!NOTE]
-> **Legend:** ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified · 🔥 active section · 🧩 DSA · 🐞 buggy round · 🗄️ SQL · 🌱 Spring · 🏦 banking.
+> **Legend:** ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified · 🔥 active section · 🧩 DSA · 🐞 buggy round · 🌱 Spring · 🏦 banking.
 
 ## 🗂️ Layout (Maven project, Java 17, JUnit 5)
 | | Path | What |
 |---|---|---|
 | 🧩 | `src/main/java/com/prashant/dsa/<topic>/` | DSA solutions, tests in `src/test/java/...` |
 | 🐞 | `src/main/java/com/prashant/dailytests/` | fix-the-buggy-code rounds, tests in `src/test/java/...` |
-| 🗄️ | `sql/` | SQL queries, one file per day |
-| 🎓 | `sql/learn/` | guided SQL lessons with an auto-checker (see the SQL learn track section) |
 | 📋 | `tasks/` | all daily task files (one file per day, `dayNN.md`, with Morning and Evening sections; earlier days are `dayNN-morning.md`) |
 | 🌱 | `spring-boot/` | Spring Boot and microservices notes |
 | 📘 | `spring-boot/spring-boot-revision-sheet.md` | the **single Spring revision workbook** (concept notes + questions, no answers; sections map to the prerequisite §1-§8 numbering in the table below, plus Milestone 1 extras). `spring-boot/prerequisites.md` stays only as the §-numbering and Revision-log reference the `tasks/` files point to |
-| 🔁 | `revision/` | per-section mistake logs (`revision/mistakes/dsa.md`, `sql.md`, `spring.md`; `mistake-log.md` is the index) and weekly revision notes |
+| 🔁 | `revision/` | per-section mistake logs (`revision/mistakes/dsa.md`, `spring.md`; `mistake-log.md` is the index) and weekly revision notes |
+| 🗄️ | `archive/` | the retired SQL track (31 Oct 2026), kept for history: not tracked, not in `mvn test` ([archive/README.md](archive/README.md)) |
 
 > [!TIP]
 > Run all tests with `mvn test`.
@@ -31,11 +30,11 @@ mvn test
 > [!IMPORTANT]
 > - 📌 Nothing is complete unless **my own work is in the repo and verified** (tests pass / answers graded).
 > - 📌 Statuses: ⬜ Not started · 🟡 In progress · 🟠 Attempted · 🔴 Needs correction · 🔵 Ready for revision · ✅ Completed and verified
-> - 📌 Spring Boot and SQL are paired. One Spring prerequisite section at a time. Pending work never disappears.
-> - 📌 Cosmetic slips (typos, stale comments, missing braces, unused imports, stray `main()`) are fixed directly by Lumi and not logged. Only **conceptual** mistakes are highlighted and added to the per-section log in `revision/mistakes/` (`dsa.md`, `sql.md`, `spring.md`).
+> - 📌 One Spring prerequisite section at a time (SQL is retired, see the Archive section). Pending work never disappears.
+> - 📌 Cosmetic slips (typos, stale comments, missing braces, unused imports, stray `main()`) are fixed directly by Lumi and not logged. Only **conceptual** mistakes are highlighted and added to the per-section log in `revision/mistakes/` (`dsa.md`, `spring.md`).
 
 ## 🎯 Current phase
-- **Phase:** Week 1 foundations — Spring Boot prerequisites (`course-practice` Students API) + SQL (banking-flavoured) + DSA Stack. Banking app setup is done (health UP); hand-written V2 migrations have not started.
+- **Phase:** Week 1 foundations — Spring Boot prerequisites (`course-practice` Students API) + DSA Stack (SQL retired 31 Oct 2026). Banking app setup is done (health UP); hand-written V2 migrations have not started.
 - 🔥 **Active Spring section:** §5 Validation & error handling (Day 04 Part B). §3 and §4 are code-verified (Part A ✅, 28 Oct), pending revision because the Day 03 Q1/Q2 answers scored 5/10. Part B1 is ✅ (31 Oct); B2 is next.
 - ✅ **Sections completed:** none yet. The Revision log in `spring-boot/prerequisites.md` is still empty.
 
@@ -93,26 +92,9 @@ mvn test
 | 03 | Day03NextGreaterIndex | Monotonic stack | Found both bugs; repeat stray `main()`, unused `java.beans` import | Clean the file before pushing | ✅ Completed and verified | 1 Nov, 5 Nov |
 | 04 | Day04LargestRectangle | Monotonic stack | not attempted | — | ⬜ Not started | — |
 
-## 🗄️ SQL
-| Exercise | File | Answers in file? | Status |
-|---|---|---|---|
-| Day 01 practice | `sql/day01.sql` | no (examples only) | ⬜ Not started |
-| SQL 01 test | `sql/day01-test.sql` | no | ⬜ Not started |
-| SQL 02 | `sql/day02.sql` | no | ⬜ Not started |
-| SQL 03 (branch max + net flow) | `sql/day03.sql` | no | ⬜ Not started · Q1 assigned Day 05 and Day 06 evenings, still no `sql/day03-answers.md` · assigned Day 07 evening too, no push by the 10 PM check · 🔥 assigned again Day 08 evening (fourth evening) · 31 Oct: moved after learn lesson 04 (needs GROUP BY + LEFT JOIN) |
-| SQL 04 (loans + anti-join) | `sql/day04.sql` | no | ⬜ Not started |
-
-## 🎓 SQL learn track (`sql/learn/`)
+## 🗄️ Archive: SQL retired
 > [!NOTE]
-> Bite-size guided lessons (15-20 min each) on the banking domain, checked by `mvn test -Dtest=SqlLessonCheckTest -Dlesson=NN`. See [sql/learn/README.md](sql/learn/README.md). Status only becomes ✅ after the checker passes on my own queries and Lumi has reviewed them.
-
-| Lesson | Topic | Files | Checker | Status |
-|---|---|---|---|---|
-| 01 | SELECT, WHERE, ORDER BY, LIMIT | `sql/learn/lesson01.md` | 5/5 | ✅ Completed and verified (735056a, checker `LESSON 01 COMPLETE` and queries reviewed, 30 Oct) |
-| 02 | NULL handling and CASE | `sql/learn/lesson02.md` | 5/5 | ✅ Completed and verified (f2e5a58, checker `LESSON 02 COMPLETE` and queries reviewed, 31 Oct) · `ORDER BY customer_id` added to ex 1 · mistake-log redo rows stay (2 Nov, 6 Nov) |
-| 03 | Aggregates, GROUP BY, HAVING | `sql/learn/lesson03.md` | 0/5 | ⬜ Not started |
-| 04 | INNER JOIN and LEFT JOIN | `sql/learn/lesson04.md` | 0/5 | ⬜ Not started |
-| 05 | Subqueries and EXISTS | `sql/learn/lesson05.md` | 0/5 | ⬜ Not started |
+> **SQL was retired on 31 Oct 2026** (Prashant now practises only Spring Boot, DSA and buggy rounds). Everything was **archived, not deleted**: [archive/README.md](archive/README.md). It is no longer assigned, tracked, graded or counted below. It stood at learn lessons 01-02 ✅ (5/5 each), lessons 03-05 and the five daily files ⬜ Not started. The checker moved to `archive/sql/tests/` so `mvn test` no longer needs PostgreSQL. Basic JOIN/GROUP BY questions still come up in interviews, so Spring Data/JPA (§6) is where SQL gets used again.
 
 ## 🌱 Spring tasks (`spring-boot/course-practice`)
 | Task | Status | Notes |
@@ -131,9 +113,6 @@ mvn test
 | 3 | Transactions with locking and idempotency | ⬜ Not started |
 | 4 | Admin and audit | ⬜ Not started |
 
-> [!NOTE]
-> 🔗 SQL pairing: §3/§4 pair with `sql/day03.sql` (branch max + net flow, banking tables). Milestone 1 will pair with SQL on the auth tables.
-
 ## 🎤 Interview Q&A → see [interview-answers.md](interview-answers.md)
 | Set | Status |
 |---|---|
@@ -146,48 +125,47 @@ mvn test
 ## 📊 Status counts
 ```mermaid
 pie title Tracked items (31 Oct 2026)
-  "Completed and verified" : 14
+  "Completed and verified" : 12
   "Ready for revision" : 6
   "Needs correction" : 1
   "In progress" : 1
   "Attempted" : 1
-  "Not started" : 14
+  "Not started" : 6
 ```
 
 > [!NOTE]
-> Counts are adjusted from the 30 Oct tally: SQL learn lesson 02, `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` are Completed and verified (31 Oct); the Day 04 Q&A set (15/30) is in Needs correction.
+> Counts are adjusted from the 30 Oct tally: `AsteroidCollision` and Day 04 Part B1 are now Completed and verified; `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` are Completed and verified (31 Oct); the Day 04 Q&A set (15/30) is in Needs correction. On 31 Oct the SQL items were removed (2 Completed, 8 Not started) because SQL is archived.
 
 ## ▶️ Next session starts with
 > [!IMPORTANT]
 > **Next task (Sun 1 Nov, 6 AM):** the two cold redos due on 1 Nov from [redo-schedule.md](revision/redo-schedule.md): `Day02RpnEvaluator` (+1, reset after the 31 Oct misses) and `ValidParentheses` (+1, late). Then re-answer Day 04 Q1-Q3 (15/30, 🔴 Needs correction) in chat by Tue 3 Nov; Q1 and Q3 redo on 3 Nov and 7 Nov. Part B2 (`ProblemDetail` in every handler, malformed JSON 400, +3 tests) comes after the backlog is under about 8 open items.
 >
-> **Evening (1 Nov):** carried from 31 Oct, 🧩 `CarFleet` (2/37 → 37/37), then 🎓 SQL learn lesson 03 (checker 5/5). `sql/day03.sql` Q1 follows lesson 04 (it needs GROUP BY and LEFT JOIN).
+> **Evening (1 Nov):** carried from 31 Oct, 🧩 `CarFleet` (2/37 → 37/37). The ~20 minutes that SQL used are now free for the backlog (Day 04 re-answers, redos); SQL is retired.
 >
 > 🔁 Revision also due 1 Nov: Day 03 Q1/Q2 re-answers and the count-stack O(n) question (scored 3/5).
 >
-> No new DSA stub while a DSA problem is not started (`CarFleet`); no new SQL file while 5 are unanswered.
+> No new DSA stub while a DSA problem is not started (`CarFleet`).
 
 ## 🔮 Plan projection
 > [!WARNING]
 > **Estimate, not a promise.** Built only from this file, the [redo schedule](revision/redo-schedule.md) and the `tasks/` files, at the pace of the first 9 days. It is **refreshed every Sunday by the 10 PM check** (last refresh: Sat 31 Oct 2026, W2 D9; next: Sun 1 Nov, 10 PM). Weeks count from 23 Oct: W1 = 23-29 Oct, W2 = 30 Oct-5 Nov, W12 = 8-14 Jan 2027.
 
 ### 📊 Verified per week
-| Week | Dates | 🧩 DSA | 🐞 Buggy | 🗄️ SQL | 🌱 Spring | 🏦 Banking | Total | 🔁 Cold redos (separate) |
-|---|---|---|---|---|---|---|---|---|
-| W1 | 23-29 Oct | 4 | 3 | 0 | 1 | 1 | 9 | 1 |
-| W2 (2 of 7 days) | 30-31 Oct | 1 | 0 | 2 | 1 | 0 | 4 | 2 |
-| **Total** | 9 days | **5** | **3** | **2** | **2** | **1** | **13** | **3** |
-| Pace per week (total × 7 / 9) | | 3.9 | 2.3 | 1.6 | 1.6 | 0.8 | 10.1 | 2.3 |
+| Week | Dates | 🧩 DSA | 🐞 Buggy | 🌱 Spring | 🏦 Banking | Total | 🔁 Cold redos (separate) |
+|---|---|---|---|---|---|---|---|
+| W1 | 23-29 Oct | 4 | 3 | 1 | 1 | 9 | 1 |
+| W2 (2 of 7 days) | 30-31 Oct | 1 | 0 | 1 | 0 | 2 | 2 |
+| **Total** | 9 days | **5** | **3** | **2** | **1** | **11** | **3** |
+| Pace per week (total × 7 / 9) | | 3.9 | 2.3 | 1.6 | 0.8 | 8.6 | 2.3 |
 
 > [!NOTE]
-> **Counted from the log and verified dates.** 🧩 `ValidParentheses` 23 Oct, `MinStack` 23 Oct, `ScoreOfParentheses` 25 Oct, `RemoveKAdjacentDuplicates` 29 Oct, `AsteroidCollision` 31 Oct. 🐞 `Day01ArrayStack` 23 Oct, `Day02RpnEvaluator` 24 Oct, `Day03NextGreaterIndex` 29 Oct. 🗄️ learn lessons 01 (30 Oct) and 02 (31 Oct). 🌱 Part A (28 Oct), Part B1 (31 Oct). 🏦 milestone 0 (setup, 24 Oct). 🔁 `Day01ArrayStackRedo` (28 Oct), `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` (31 Oct). Attempted or Needs-correction items are not counted.
+> **Counted from the log and verified dates.** 🧩 `ValidParentheses` 23 Oct, `MinStack` 23 Oct, `ScoreOfParentheses` 25 Oct, `RemoveKAdjacentDuplicates` 29 Oct, `AsteroidCollision` 31 Oct. 🐞 `Day01ArrayStack` 23 Oct, `Day02RpnEvaluator` 24 Oct, `Day03NextGreaterIndex` 29 Oct. (The 2 SQL learn lessons, 30 and 31 Oct, are archived and no longer counted: 13 → 11 verified items.) 🌱 Part A (28 Oct), Part B1 (31 Oct). 🏦 milestone 0 (setup, 24 Oct). 🔁 `Day01ArrayStackRedo` (28 Oct), `Day01ArrayStackRedo7` and `Day02RpnEvaluatorRedo7` (31 Oct). Attempted or Needs-correction items are not counted.
 
 ### 🧮 What remains
 | Section | Done | Left | Detail |
 |---|---|---|---|
 | 🧩 NeetCode 150 | 2 problems (`ValidParentheses`, `MinStack`) | **148** | Tracker lists 3 patterns: Arrays & Hashing ⬜, Two Pointers · Sliding Window ⬜, Stack 🟡 (5 of 7 left: Car Fleet, Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle). `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` and `AsteroidCollision` are extras, not among the 150 |
 | 🐞 Buggy rounds | 3 | **2** | `Day04LargestRectangle` (15/36) and the `Day00BuggyExample` warm-up (4/10), both ⬜ |
-| 🗄️ SQL | 2 lessons | **8 of 10** | Learn lessons 03, 04, 05 ⬜ plus the 5 daily files (`day01`, `day01-test`, `day02`, `day03`, `day04`), all ⬜ |
 | 🌱 Spring prerequisites | 0 of 8 sections ✅ | **8** | 3 are 🔵 (§1, §3, §4), 2 are 🟡 (§2, §5), 3 are ⬜ (§6 JPA, §7 Testing, §8 Config). Part B2 ⬜; Day 04 Q1-Q3 answered 15/30 and 🔴 Needs correction (re-answer by 3 Nov) |
 | 🏦 Banking app | milestone 0 | **4 of 5** | Milestones 1-4 ⬜; milestone 1 waits for §5 (Part B2) |
 
@@ -210,18 +188,18 @@ pie title Tracked items (31 Oct 2026)
 | 🧩 Stack pattern (5 left) | 4.9 / 1.2 | **W3-W6** | 6 Nov-3 Dec |
 | 🧩 Full NeetCode 150 (148 left) | 4.9 / 1.2 | **not inside the 12 weeks** · by W12 about **55 / 15** of 150 done | best case W32 (about 29 May 2027) |
 | 🐞 Buggy rounds (2 left) | 4.9 shared with DSA / 1 a week after Stack | **W3-W5** | 6-26 Nov |
-| 🗄️ SQL (8 left) | 1 lesson a day then 1 file per 2 days / 1.6 | **W4-W7** | 13 Nov-10 Dec |
 | 🌱 Spring, all 8 sections ✅ | 2.3 sections to 🔵 a week + 1 revision week / 1.15 + 1 revision week | **W5-W7** | 20 Nov-10 Dec |
 | 🏦 Banking, milestones 1-4 | no data yet · each takes 1.5 weeks / 3 weeks | **W10-W17** | 25 Dec-18 Feb |
-| ⭐ **Overall** (everything except the full NeetCode 150) | set by banking | **W10-W17** | 25 Dec-18 Feb · the 12-week target (W12, ends 14 Jan) is met only at the best end |
+| ⭐ **Overall** (everything except the full NeetCode 150) | set by banking | **W10-W17** | 25 Dec-18 Feb · the 12-week target (W12, ends 14 Jan) is met only at the best end · **unchanged by dropping SQL** (see the note below) |
 
 > [!IMPORTANT]
 > **Assumptions**
-> - Pace is the 9-day average above (13 verified items). The best case uses the all-sections average, the slow case uses the slowest recent rate seen for that section (for example W2 so far has 1 DSA, 0 buggy).
+> - Pace is the 9-day average above (11 verified items once the 2 archived SQL lessons are dropped, 8.6 a week; it was 10.1 with SQL). The best case uses the all-sections average, the slow case uses the slowest recent rate seen for that section (for example W2 so far has 1 DSA, 0 buggy).
 > - A conceptual miss moves a problem back to day 1 and a hint or fix repeats its gap, both add load; the numbers assume every redo is a clean pass.
 > - Part B2 gets done in W3-W4 (the backlog under about 8 items), so banking milestone 1 starts W4-W5. Banking milestone length is a guess, since 0 of 4 are started.
-> - SQL daily files start after the learn lessons; Spring sections need one revision pass before they count as ✅.
+> - Spring sections need one revision pass before they count as ✅.
 > - The NeetCode 150 count uses "150" from the tracker title and only the 2 problems that are on the tracker and ✅. It is a generous bound, because the buggy rounds and extras share the same pace.
+> - **Why the overall finish did not move:** SQL was never the last section to finish, banking is (W10-W17), and the banking length is a per-milestone guess, not a pace calculation. The ~25 minutes a day SQL used (about 2.9 of ~14 h a week, roughly 20%) are **not counted** as extra speed. If they go fully into Spring and banking, the best end could move about 1 week earlier (to roughly 18-25 Dec) and the slow end by up to 2 (to about 4 Feb). This only becomes the plan once two weekly reviews show a higher verified pace.
 > - About 2 hours of study a day (morning and evening files ~60 min each), 25 min per redo, no missed days.
 
 ## 📝 Log
@@ -258,3 +236,4 @@ pie title Tracked items (31 Oct 2026)
 | 31 Oct 2026 | W2 D9 | 🎤 Day 04 Q&A answered in chat and graded: 🔴 Needs correction, 15/30 (Q1 5/10 · Q2 4/10 · Q3 6/10) | Saved verbatim in [day04-answers.md](spring-boot/interview-answers/day04-answers.md), linked from [interview-answers.md](interview-answers.md). Q1: missed `MethodArgumentNotValidException` (named the malformed-JSON exception). Q2: vague, mass assignment half-got, missed leaking internal fields or lazy relations and schema coupling. Q3: `ProblemDetail` and 400 vs 409 right, but not the race condition (unique constraint + `DataIntegrityViolationException` → 409). Conceptual rows for Q1 and Q3 added to `revision/mistakes/spring.md` (redo 3 Nov and 7 Nov). Re-answer all three by 3 Nov |
 | 31 Oct 2026 | W2 D9 | Evening session assigned (backlog only) | Re-checked at 8 PM with `mvn test`: `CarFleetTest` 2/37, lesson 03 exercises empty, no `sql/day03-answers.md`. Assigned `CarFleet` and SQL learn lesson 03 in the Evening section of [day09.md](tasks/day09.md). `sql/day03.sql` Q1 moved after lesson 04 (needs GROUP BY + LEFT JOIN). No new stub or SQL file (2 DSA not started, 5 SQL unanswered) |
 | 31 Oct 2026 | W2 D9 | 10 PM check: ✅ two cold day-7 redos verified today; no pushes after the 8 PM assignment | Today's verified work (`Day01ArrayStackRedo7` 17/17, `Day02RpnEvaluatorRedo7` 44/44) and the Day 04 Q&A grading (15/30, 🔴) were already recorded. No commits from me after the evening assignment, so `CarFleet` (2/37) and SQL learn lesson 03 carry to 1 Nov evening. No new mistakes. End of day added to [day09.md](tasks/day09.md). Next: `Day02RpnEvaluator` + `ValidParentheses` redos on 1 Nov 6 AM |
+| 31 Oct 2026 | W2 D9 | 🗄️ SQL retired and archived (Prashant's decision: only Spring Boot, DSA and buggy rounds) | `sql/` moved to `archive/sql/` (history kept), the SQL mistake log to `archive/sql/mistakes-sql.md`, the lesson checker to `archive/sql/tests/` (out of `src/test/java`, so `mvn test` no longer needs PostgreSQL; the test-scope PostgreSQL dependency was removed from `pom.xml`). SQL removed from tracking, next task, the Plan projection and `tasks/day09.md`. Overall projection stays **W10-W17 (25 Dec-18 Feb)** because banking, not SQL, sets it; verified pace without SQL is 8.6 items a week (11 items in 9 days), and the freed ~25 min a day is not counted until the weekly reviews show it. Routines no longer assign SQL |
