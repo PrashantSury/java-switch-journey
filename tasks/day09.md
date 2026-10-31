@@ -97,7 +97,26 @@
 | 🗄️ SQL 03 Q1 | `sql/day03.sql` → `sql/day03-answers.md` | ⬜ Not started · after lesson 04 |
 | 🐞 `Day04LargestRectangle` | `src/main/java/com/prashant/dailytests/` | ⬜ Not started (15/36) |
 | 🌱 Day 04 Part B2 | `spring-boot/course-practice` | ⬜ Not started, after the backlog shrinks |
-| 🔁 Redos due Sun 1 Nov | `RemoveKAdjacentDuplicates`, `Day02RpnEvaluator` | ⬜ see [redo-schedule.md](../revision/redo-schedule.md) |
+| 🔁 Redos due Sun 1 Nov | `Day02RpnEvaluator` (+1, reset), `ValidParentheses` (+1, late) | ⬜ see [redo-schedule.md](../revision/redo-schedule.md) |
 
 > [!IMPORTANT]
 > ✅ Done when `CarFleetTest` is 37/37 and the lesson 03 checker prints `LESSON 03 COMPLETE` on your pushed code. `git pull` first, run `mvn test`, and reply in chat when you're ready for grading.
+
+## 🌃 End of day (10 PM check)
+
+| Item | Outcome |
+|---|---|
+| 🔁 `Day02RpnEvaluatorRedo7` (day-7 redo, cold) | ✅ Completed and verified (44/44, 37f6c11) · passed after 3 conceptual fixes, so reset to day 1, redo 1 Nov |
+| 🔁 `Day01ArrayStackRedo7` (day-7 redo, cold) | ✅ Completed and verified (17/17, d5c0ee9) · clean pass, next redo 7 Nov |
+| 🎤 Day 04 Q1-Q3 | 🔴 Needs correction (graded 15/30: 5 / 4 / 6) · re-answer by Tue 3 Nov |
+| 🧩 `CarFleet` | ⬜ Not started (2/37, no push after the 8 PM assignment) · carried |
+| 🎓 SQL learn lesson 03 | ⬜ Not started (exercises still empty) · carried |
+| 🗄️ SQL 03 Q1 | ⬜ Not started · now follows learn lesson 04 |
+| 🐞 `Day04LargestRectangle` | ⬜ Not started (15/36) · carried |
+| 🌱 Day 04 Part B2 | ⬜ Not started · after the backlog shrinks |
+
+> [!NOTE]
+> No pushes from Prashant after the 8 PM evening assignment, so nothing new to test tonight. No new mistakes and no cosmetic fixes needed.
+
+> [!IMPORTANT]
+> **Next task (Sun 1 Nov, 6 AM):** the two cold redos due on 1 Nov, `Day02RpnEvaluator` (+1, reset) and `ValidParentheses` (+1, late), then re-answer Day 04 Q1-Q3 in chat by Tue 3 Nov. `CarFleet` (2/37) and SQL learn lesson 03 carry to the evening.
