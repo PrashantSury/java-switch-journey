@@ -1,5 +1,8 @@
 package com.prashant.dailytests.redo;
 
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
 /**
  * Day-7 redo of the Day 01 buggy round: write this from memory, without opening
  * Day01ArrayStack or Day01ArrayStackRedo. Run Day01ArrayStackRedo7Test until all tests pass.
@@ -19,36 +22,61 @@ package com.prashant.dailytests.redo;
  */
 public class Day01ArrayStackRedo7 {
 
+    private int[] array;
+    private int size;
+
     public Day01ArrayStackRedo7(int initialCapacity) {
         // TODO(Day 08 redo): write it from memory
+
+        if(initialCapacity<0){
+            throw new IllegalArgumentException("Illegal Capacity"+initialCapacity);
+        }
+        array = new int[initialCapacity];
     }
 
     public void push(int x) {
         // TODO
+       if(size >= array.length){
+           grow();
+       }
+       array[size++] = x;
+    }
+
+    private void grow() {
+       int newCapacity= array.length == 0 ? 1 : array.length * 2;
+        array = Arrays.copyOf(array,newCapacity);
     }
 
     public int pop() {
         // TODO
-        return 0;
+
+        if(isEmpty()){
+            throw new NoSuchElementException("Stack is Empty");
+        }
+
+        return array[--size];
     }
 
     public int peek() {
         // TODO
-        return 0;
+        if(isEmpty()){
+            throw new NoSuchElementException("Stack is Empty");
+        }
+        return array[size-1];
     }
 
     public int size() {
         // TODO
-        return 0;
+        return size;
     }
 
     public boolean isEmpty() {
         // TODO
-        return false;
+        return size==0;
     }
 
     public int[] toArray() {
         // TODO
-        return new int[0];
+        return Arrays.copyOf(array,size);
     }
 }

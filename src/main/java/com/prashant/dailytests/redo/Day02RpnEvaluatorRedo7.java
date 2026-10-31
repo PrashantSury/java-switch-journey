@@ -1,5 +1,9 @@
 package com.prashant.dailytests.redo;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Day-7 cold redo of the Day 02 buggy round: write this from memory, without
  * opening Day02RpnEvaluator or Day02RpnEvaluatorRedo. Run Day02RpnEvaluatorRedo7Test until all tests pass.
@@ -20,6 +24,48 @@ public class Day02RpnEvaluatorRedo7 {
 
     public static int evaluate(String[] tokens) {
         // TODO(Day 09 redo): write it from memory, no peeking
-        throw new UnsupportedOperationException("not written yet");
+
+         Deque<Integer> stack = new ArrayDeque<>();
+
+         for (String token : tokens)  {
+
+             if (token == null) {
+                 throw new IllegalArgumentException("null token");
+             }
+             if(isOperator(token)){
+                 if (stack.size() < 2) {
+                     throw new IllegalArgumentException("not enough operands for " + token);
+                 }
+                 int b =  stack.pop();
+                 int a = stack.pop();
+                 stack.push(apply(a,b,token));
+             }
+             stack.push(Integer.parseInt(token));
+         }
+
+         if (stack.pop() != 1) {
+             throw new IllegalArgumentException("no result");
+         }
+        return  stack.pop();
+    }
+
+    private static boolean isOperator(String op) {
+       return op.equals("+") || op.equals("-") || op.equals("*") || op.equals("/") ;
+    }
+    public static int apply(int a, int b, String token) {
+        switch (token) {
+            case "+": return Math.addExact(a, b);
+            case "-": return Math.subtractExact(a, b);
+            case "*": return Math.multiplyExact(a, b);
+            case "/":
+                if(b == 0){
+                    throw new ArithmeticException("Cannot divide by zero");
+                }
+                if (a == Integer.MIN_VALUE && b == -1) {
+                    throw new ArithmeticException("overflow");
+                }
+                return a / b;
+            default: throw new IllegalArgumentException("Operator is not listed");
+        }
     }
 }
