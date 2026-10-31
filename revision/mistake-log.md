@@ -13,7 +13,7 @@
 |---|---|---|---|
 | 🧩 | DSA and buggy rounds | [mistakes/dsa.md](mistakes/dsa.md) | 4 |
 | 🗄️ | SQL and the SQL learn track | [mistakes/sql.md](mistakes/sql.md) | 1 |
-| 🌱 | Spring Boot, `course-practice`, banking app | [mistakes/spring.md](mistakes/spring.md) | 1 |
+| 🌱 | Spring Boot, `course-practice`, banking app | [mistakes/spring.md](mistakes/spring.md) | 3 |
 
 > [!TIP]
 > 🔁 The DSA redo calendar (gaps 1 → 3 → 7 → 14 → 30 days set by each redo's result, at most 2 a day) lives in [redo-schedule.md](redo-schedule.md). For DSA, the next-due dates there replace the day-3 and day-7 columns of [mistakes/dsa.md](mistakes/dsa.md).
