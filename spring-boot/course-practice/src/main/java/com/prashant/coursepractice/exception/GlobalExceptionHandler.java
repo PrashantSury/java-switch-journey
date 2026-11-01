@@ -1,6 +1,7 @@
 package com.prashant.coursepractice.exception;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,33 +15,68 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(StudentNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String, String> notFound(StudentNotFoundException ex) {
-        return Map.of("error", ex.getMessage());
+    public ProblemDetail notFound(StudentNotFoundException ex) {
+
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
+
+        problemDetail.setTitle("Student Not Found");
+        problemDetail.setDetail(ex.getMessage());
+        problemDetail.setProperty("errorCode", "STUDENT_NOT_FOUND");
+
+        return problemDetail;
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> invalid(MethodArgumentNotValidException ex) {
+    public ProblemDetail invalid(MethodArgumentNotValidException ex) {
+
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
+
+        problemDetail.setTitle("Validation Failed");
+        problemDetail.setDetail("One or more fields have validation errors.");
+
         Map<String, String> errors = new HashMap<>();
+
         ex.getBindingResult().getFieldErrors()
-          .forEach(e -> errors.put(e.getField(), e.getDefaultMessage()));
-        return errors;
+                .forEach(error ->
+                        errors.put(error.getField(), error.getDefaultMessage())
+                );
+
+        problemDetail.setProperty("errors", errors);
+        problemDetail.setProperty("errorCode", "VALIDATION_FAILED");
+
+        return problemDetail;
     }
 
     @ExceptionHandler(MissingServletRequestParameterException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> invalid(MissingServletRequestParameterException ex) {
-        Map<String, String> errors = new HashMap<>();
-        errors.put("error", "name parameter is missing");
-        return errors;
+    public ProblemDetail missingParameter(
+            MissingServletRequestParameterException ex) {
+
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
+
+        problemDetail.setTitle("Missing Request Parameter");
+        problemDetail.setDetail(
+                "Required parameter '" + ex.getParameterName() + "' is missing."
+        );
+        problemDetail.setProperty("errorCode", "MISSING_REQUEST_PARAMETER");
+        problemDetail.setProperty("parameter", ex.getParameterName());
+
+        return problemDetail;
     }
 
     @ExceptionHandler(DuplicateEmailException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> invalid(DuplicateEmailException ex) {
-        Map<String, String> errors = new HashMap<>();
-        errors.put("error", "email is duplicate and it is conflicting");
-        return errors;
+    public ProblemDetail handleDuplicateEmail(DuplicateEmailException ex) {
+
+        ProblemDetail problemDetail = ProblemDetail.forStatus(
+                HttpStatus.CONFLICT
+        );
+
+        problemDetail.setTitle("Duplicate Email");
+        problemDetail.setDetail("Email already exists. Please use a different email address.");
+        problemDetail.setProperty("errorCode", "DUPLICATE_EMAIL");
+
+        return problemDetail;
     }
 }
