@@ -14,11 +14,11 @@
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2, Day 04 Q1-Q3 re-answers, module 1 | B2, then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due 1 Nov | [redo-schedule.md](revision/redo-schedule.md) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due 1 Nov (blank stubs ready) | [day10.md](tasks/day10.md) |
 | 🎤 **Interview Q&A** | 🔴 REVISION_REQUIRED | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6) | Day 04 re-answers, `ScoreOfParentheses` follow-ups | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
-> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Specs of every pending task: [tasks/day09.md](tasks/day09.md).
+> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Specs of every pending task: [tasks/day09.md](tasks/day09.md); today's plan: [tasks/day10.md](tasks/day10.md).
 
 ```bash
 mvn test          # root project: DSA and buggy rounds
@@ -102,6 +102,8 @@ mvn test          # root project: DSA and buggy rounds
 | Day01ArrayStackRedo7 | 🔁 redo (day 7) | 17/17 | d5c0ee9 | ✅ COMPLETED (31 Oct) | clean cold pass; Lumi removed stale TODO comments |
 | Day02RpnEvaluatorRedo | 🔁 redo (day 3) | 44/44 | bddf14c | 🟡 IN_PROGRESS | passes, but done by re-reading the original, not from memory |
 | Day02RpnEvaluatorRedo7 | 🔁 redo (day 7) | 44/44 | 37f6c11 | ✅ COMPLETED (31 Oct) | fixed after 3 review rounds (fall-through, end check, null guard); logged in `revision/mistakes/dsa.md`; reset to +1 |
+| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 0/44 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold, evening; tests verified against a correct version |
+| ValidParenthesesRedoNov01 | 🔁 redo (+1) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold, evening; new stricter suite (empty, `null`, non-brackets, 100 000 chars) |
 
 > [!IMPORTANT]
 > 🔁 Every DSA problem and buggy round is redone cold, and each result sets the next gap (clean pass 1 → 3 → 7 → 14 → 30; hint or fix repeats the gap; conceptual miss resets to day 1), at most 2 a day. A problem keeps ✅ COMPLETED for its first verified solve; the calendar and next due dates are in [redo-schedule.md](revision/redo-schedule.md).
@@ -127,7 +129,7 @@ mvn test          # root project: DSA and buggy rounds
 | 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
 | 5 | Day 04 Part B2 | 🌱 | ⬜ NOT_STARTED |
 | 6 | Banking module 1 (AuthN / AuthZ) | 🏦 | ⬜ NOT_STARTED |
-| 7 | Redos due 1 Nov: `Day02RpnEvaluator` (+1), `ValidParentheses` (+1) | 🔁 | 🟡 IN_PROGRESS |
+| 7 | Redos due 1 Nov: `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
 | 8 | Count-stack O(n) re-ask (3/5) | 🧩 | 🔴 REVISION_REQUIRED |
 | 9 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
 | 10 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
@@ -174,19 +176,20 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Next session (Sun 1 Nov, 6 AM).** Each track works its first open item, in this order.
-> - 🌱 **Spring (~50 min):** re-answer Day 04 Q1-Q3 in chat (format: definition → difference → when to use → example, plus a production angle), then start [Part B2](tasks/day09.md#-day-04-part-b2-problemdetail-in-every-error-response).
+> **Today (Sun 1 Nov), assigned in [tasks/day10.md](tasks/day10.md).** No new material: each track works its first open item.
+> - 🌱 **Spring (~50 min):** re-answer Day 04 Q1-Q3 in chat, then [Part B2](tasks/day09.md#-day-04-part-b2-problemdetail-in-every-error-response).
 > - 🧩 **DSA (~35 min):** [Car Fleet](tasks/day09.md#-car-fleet-dsa), pattern line and complexity first.
 > - 🐞 **Buggy (~15 min):** [Day04LargestRectangle](tasks/day09.md#-day04largestrectangle-buggy-round).
-> - 🌙 **Evening (1 h):** review and score each track out of 10, finish whatever is pending from the morning, then the two redos due 1 Nov (`Day02RpnEvaluator`, `ValidParentheses`) and the count-stack O(n) re-ask.
+> - 🌙 **Evening (1 h):** review and score each track out of 10, finish what is pending from the morning, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`, and the count-stack O(n) re-ask.
 >
+> **Next morning (Mon 2 Nov):** whatever of the above is still open comes first; redos due 2 Nov are `MinStack` and `ScoreOfParentheses`.
 > Banking module 1 starts when Part B2 is ✅ COMPLETED. The morning routine writes tomorrow's day file from the Pending table.
 
 ## 📊 Status counts
 ```mermaid
 pie title Tracked items (1 Nov 2026)
   "COMPLETED" : 14
-  "IN_PROGRESS" : 8
+  "IN_PROGRESS" : 10
   "REVISION_REQUIRED" : 1
   "NOT_STARTED" : 19
   "BLOCKED" : 0
@@ -196,11 +199,11 @@ pie title Tracked items (1 Nov 2026)
 |---|---|---|---|---|---|---|
 | 🧩 DSA problems | 5 | 0 | 0 | 1 | 0 | 6 |
 | 🐞 Buggy rounds | 3 | 0 | 0 | 2 | 0 | 5 |
-| 🔁 Redo files | 3 | 1 | 0 | 0 | 0 | 4 |
+| 🔁 Redo files | 3 | 3 | 0 | 0 | 0 | 6 |
 | 🌱 Spring foundation (8 sections + 3 `course-practice` tasks) | 2 | 5 | 0 | 4 | 0 | 11 |
 | 🏦 Banking (milestone 0 + 10 modules) | 1 | 0 | 0 | 10 | 0 | 11 |
 | 🎤 Q&A sets | 0 | 2 | 1 | 2 | 0 | 5 |
-| **Total** | **14** | **8** | **1** | **19** | **0** | **42** |
+| **Total** | **14** | **10** | **1** | **19** | **0** | **44** |
 
 > [!NOTE]
 > Counted from the tables on this page on 1 Nov 2026. The earlier tally (27 items, 31 Oct) did not list the ten banking modules or the redo files separately, so the totals are not comparable; the old statuses were mapped by the rule in the legend.
@@ -298,3 +301,4 @@ pie title Tracked items (1 Nov 2026)
 | 31 Oct 2026 | W2 D9 | 10 PM check: ✅ two cold day-7 redos verified today; no pushes after the 8 PM assignment | Today's verified work (`Day01ArrayStackRedo7` 17/17, `Day02RpnEvaluatorRedo7` 44/44) and the Day 04 Q&A grading (15/30, 🔴) were already recorded. No commits from me after the evening assignment, so `CarFleet` (2/37) and SQL learn lesson 03 carry to 1 Nov evening. No new mistakes. End of day added to [day09.md](tasks/day09.md). Next: `Day02RpnEvaluator` + `ValidParentheses` redos on 1 Nov 6 AM |
 | 31 Oct 2026 | W2 D9 | 🗄️ SQL retired and archived (Prashant's decision: only Spring Boot, DSA and buggy rounds) | `sql/` moved to `archive/sql/` (history kept), the SQL mistake log to `archive/sql/mistakes-sql.md`, the lesson checker to `archive/sql/tests/` (out of `src/test/java`, so `mvn test` no longer needs PostgreSQL; the test-scope PostgreSQL dependency was removed from `pom.xml`). SQL removed from tracking, next task, the Plan projection and `tasks/day09.md`. Overall projection stays **W10-W17 (25 Dec-18 Feb)** because banking, not SQL, sets it; verified pace without SQL is 8.6 items a week (11 items in 9 days), and the freed ~25 min a day is not counted until the weekly reviews show it. Routines no longer assign SQL |
 | 1 Nov 2026 | W2 D10 | 🧭 Repository restructured around the Senior Java Backend Interview Mentor program | Three tracks (Spring banking project, DSA by pattern, buggy rounds), 2 h morning + 1 h evening, statuses NOT_STARTED / IN_PROGRESS / COMPLETED / REVISION_REQUIRED / BLOCKED, [docs/PROGRAM.md](docs/PROGRAM.md) and [banking-app/project-architecture.md](banking-app/project-architecture.md) added, the four `day02-05-morning` files archived, `spring-boot/README.md` and `banking-app/STRUCTURE.md` removed (merged), `.gitignore` hardened, and the specs of every pending task rewritten with the new templates in [tasks/day09.md](tasks/day09.md) (Javadoc of `CarFleet`, `Day04LargestRectangle`, `Day00BuggyExample` updated, no code or test changed). Projection recomputed for 3 h a day: overall W10-W22 (28 Dec-23 Mar), Stack W3-W4. No SQL interview questions were found in the active files |
+| 1 Nov 2026 | W2 D10 | 🌅 Morning session assigned (carried work only) in [day10.md](tasks/day10.md) | No pushes from me since the 31 Oct evening. Every track has an open item, so no new material: 🌱 Day 04 Q1-Q3 re-answers then Part B2, 🧩 `CarFleet` (2/37), 🐞 `Day04LargestRectangle` (15/36). New blank redo stubs `redo/Day02RpnEvaluatorRedoNov01.java` (0/44) and `redo/ValidParenthesesRedoNov01.java` (0/18, new stricter suite); both test classes verified green against a correct version, redos run in the evening |
