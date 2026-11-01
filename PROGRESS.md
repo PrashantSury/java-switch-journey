@@ -11,11 +11,11 @@
 ## 🧭 Overall status
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
-| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2, Day 04 Q1-Q3 re-answers, module 1 | B2, then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
+| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 4 of 5 handlers converted), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
 | 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due 1 Nov (blank stubs ready) | [day10.md](tasks/day10.md) |
-| 🎤 **Interview Q&A** | 🔴 REVISION_REQUIRED | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6) | Day 04 re-answers, `ScoreOfParentheses` follow-ups | [interview-answers.md](interview-answers.md) |
+| 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
 > The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Specs of every pending task: [tasks/day09.md](tasks/day09.md); today's plan: [tasks/day10.md](tasks/day10.md).
@@ -59,10 +59,10 @@ mvn test          # root project: DSA and buggy rounds
 | Section | Status | Evidence |
 |---|---|---|
 | §1 Core: IoC, DI, beans | 🟡 IN_PROGRESS | Day 02 answers 5/7/5; revision pending |
-| §2 Request flow | 🟡 IN_PROGRESS | Day 04 Q1 5/10 (🔴 re-answer) |
+| §2 Request flow | 🟡 IN_PROGRESS | Day 04 Q1 5/10, re-answered 8/10 on 1 Nov ✅ |
 | §3 Request mapping | 🟡 IN_PROGRESS | code verified 28 Oct, `course-practice` 12/12; Q3 7/10; revision pending |
 | §4 HTTP semantics | 🟡 IN_PROGRESS | code verified 28 Oct; Day 03 Q1/Q2 5/10; revision pending |
-| 🔥 §5 Validation and error handling | 🟡 IN_PROGRESS | Part B1 ✅ (31 Oct, 15/15); B2 ⬜; Day 04 Q1-Q3 15/30 🔴 |
+| 🔥 §5 Validation and error handling | 🟡 IN_PROGRESS | Part B1 ✅ (31 Oct, 15/15); B2 🟡 (1 Nov: 4 handlers return `ProblemDetail`, 11/15 tests green until the old assertions are moved); Day 04 Q1-Q3 re-answered 26/30 ✅ |
 | §6 JPA · §7 Testing · §8 Config | ⬜ NOT_STARTED | taught inside the banking modules (JPA with modules 2-3, testing with every module, config with module 1); their workbook sections are answered when each is reached |
 
 | `course-practice` task | Status | Notes |
@@ -70,7 +70,7 @@ mvn test          # root project: DSA and buggy rounds
 | Day 02 endpoints | ✅ COMPLETED | rolled into Part A, verified with it |
 | Day 03 / Day 04 Part A (endpoint fixes) | ✅ COMPLETED (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571; `course-practice` 12/12; see [day06.md](tasks/day06.md) |
 | Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | ✅ COMPLETED (31 Oct) | 71a5f07 + c344203; `course-practice` 15/15 (`StudentControllerTest` 14 + context 1). Open note: no unique constraint on `email` yet (the race), a JPA topic |
-| Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON 400, +3 tests) | ⬜ NOT_STARTED | [spec](tasks/day09.md#-day-04-part-b2-problemdetail-in-every-error-response) |
+| Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON 400, +3 tests) | 🟡 IN_PROGRESS | [spec](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response). `f4cb8b9`: `notFound`, `invalid`, `missingParameter`, `handleDuplicateEmail` return `ProblemDetail`; still open: `HttpMessageNotReadableException` handler, 4 old assertions, +3 tests |
 
 ## 🧩 DSA track (NeetCode 150 by pattern)
 > [!NOTE]
@@ -114,7 +114,7 @@ mvn test          # root project: DSA and buggy rounds
 | Day 01 | ⬜ NOT_STARTED | no graded record |
 | Day 02 | 🟡 IN_PROGRESS | 5 / 7 / 5; re-answer Q1, Q3 |
 | Day 03 | 🟡 IN_PROGRESS | 17/30 (5 / 5 / 7); re-answer Q1, Q2 · [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| Day 04 | 🔴 REVISION_REQUIRED | 15/30 (5 / 4 / 6); re-answer Q1-Q3 · [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
+| Day 04 | ✅ COMPLETED (1 Nov) | first attempt 15/30 (5 / 4 / 6); re-answers 26/30 (Q1 8, Q2 9, Q3 9), graded in chat · [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
 | Score of Parentheses follow-up | ⬜ NOT_STARTED | answers pending |
 
 ## 📌 Pending
@@ -123,11 +123,10 @@ mvn test          # root project: DSA and buggy rounds
 
 | # | Item | Track | Status |
 |---|---|---|---|
-| 1 | Day 04 Q1-Q3 re-answers | 🌱 | 🔴 REVISION_REQUIRED |
 | 2 | `CarFleet` | 🧩 | ⬜ NOT_STARTED |
 | 3 | `Day04LargestRectangle` | 🐞 | ⬜ NOT_STARTED |
 | 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
-| 5 | Day 04 Part B2 | 🌱 | ⬜ NOT_STARTED |
+| 5 | Day 04 Part B2 | 🌱 | 🟡 IN_PROGRESS |
 | 6 | Banking module 1 (AuthN / AuthZ) | 🏦 | ⬜ NOT_STARTED |
 | 7 | Redos due 1 Nov: `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
 | 8 | Count-stack O(n) re-ask (3/5) | 🧩 | 🔴 REVISION_REQUIRED |
@@ -140,12 +139,12 @@ mvn test          # root project: DSA and buggy rounds
 
 | Track | Topic | Evidence | Class | Pack |
 |---|---|---|---|---|
-| 🌱 | DTO vs entity (what leaks, mass assignment) | Day 04 Q2 4/10 | 🔴 Weak | ⬜ not generated |
-| 🌱 | JSON → validated DTO: which exception at which step | Day 04 Q1 5/10 | 🔴 Weak | ⬜ not generated |
+| 🌱 | DTO vs entity (what leaks, mass assignment) | Day 04 Q2 4/10, re-answer 9/10 (1 Nov) | 🟢 Strong | ⬜ not generated |
+| 🌱 | JSON → validated DTO: which exception at which step | Day 04 Q1 5/10, re-answer 8/10 (1 Nov) | 🟢 Strong | ⬜ not generated |
 | 🌱 | HTTP semantics: idempotency, DELETE twice, PUT vs PATCH, status codes | Day 02 Q3 5/10, Day 03 Q1 5/10 | 🔴 Weak | ⬜ not generated |
 | 🌱 | `ResponseEntity` vs `@ResponseStatus`, `Location` header | Day 03 Q2 5/10 | 🔴 Weak | ⬜ not generated |
 | 🌱 | `@PathVariable` / `@RequestParam` / `@RequestBody` | Day 02 Q1 5/10 | 🔴 Weak | ⬜ not generated |
-| 🌱 | Race on unique data: check-then-save vs a DB constraint | Day 04 Q3 6/10 | 🟡 Moderate | ⬜ not generated |
+| 🌱 | Race on unique data: check-then-save vs a DB constraint | Day 04 Q3 6/10, re-answer 9/10 (1 Nov) | 🟢 Strong | ⬜ not generated |
 | 🧩 | Amortised O(n) reasoning for stack solutions | count-stack quiz 3/5 | 🔴 Weak | ⬜ not generated |
 | 🧩🐞 | RPN evaluation: operand order, `"-3"` token, end check, null guard | 3 conceptual misses on 31 Oct (day-7 redo) | 🔴 Weak | ⬜ not generated |
 | 🐞 | Array-backed stack boundaries (grow check, empty, capacity 0) | clean cold redo 28 Oct and 31 Oct | 🟢 Strong | none needed |
@@ -177,7 +176,7 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
 > **Today (Sun 1 Nov), assigned in [tasks/day10.md](tasks/day10.md).** No new material: each track works its first open item.
-> - 🌱 **Spring (~50 min):** re-answer Day 04 Q1-Q3 in chat, then [Part B2](tasks/day09.md#-day-04-part-b2-problemdetail-in-every-error-response).
+> - 🌱 **Spring (~50 min):** re-answer Day 04 Q1-Q3 in chat, then [Part B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response).
 > - 🧩 **DSA (~35 min):** [Car Fleet](tasks/day09.md#-car-fleet-dsa), pattern line and complexity first.
 > - 🐞 **Buggy (~15 min):** [Day04LargestRectangle](tasks/day09.md#-day04largestrectangle-buggy-round).
 > - 🌙 **Evening (1 h):** review and score each track out of 10, finish what is pending from the morning, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`, and the count-stack O(n) re-ask.
@@ -302,3 +301,5 @@ pie title Tracked items (1 Nov 2026)
 | 31 Oct 2026 | W2 D9 | 🗄️ SQL retired and archived (Prashant's decision: only Spring Boot, DSA and buggy rounds) | `sql/` moved to `archive/sql/` (history kept), the SQL mistake log to `archive/sql/mistakes-sql.md`, the lesson checker to `archive/sql/tests/` (out of `src/test/java`, so `mvn test` no longer needs PostgreSQL; the test-scope PostgreSQL dependency was removed from `pom.xml`). SQL removed from tracking, next task, the Plan projection and `tasks/day09.md`. Overall projection stays **W10-W17 (25 Dec-18 Feb)** because banking, not SQL, sets it; verified pace without SQL is 8.6 items a week (11 items in 9 days), and the freed ~25 min a day is not counted until the weekly reviews show it. Routines no longer assign SQL |
 | 1 Nov 2026 | W2 D10 | 🧭 Repository restructured around the Senior Java Backend Interview Mentor program | Three tracks (Spring banking project, DSA by pattern, buggy rounds), 2 h morning + 1 h evening, statuses NOT_STARTED / IN_PROGRESS / COMPLETED / REVISION_REQUIRED / BLOCKED, [docs/PROGRAM.md](docs/PROGRAM.md) and [banking-app/project-architecture.md](banking-app/project-architecture.md) added, the four `day02-05-morning` files archived, `spring-boot/README.md` and `banking-app/STRUCTURE.md` removed (merged), `.gitignore` hardened, and the specs of every pending task rewritten with the new templates in [tasks/day09.md](tasks/day09.md) (Javadoc of `CarFleet`, `Day04LargestRectangle`, `Day00BuggyExample` updated, no code or test changed). Projection recomputed for 3 h a day: overall W10-W22 (28 Dec-23 Mar), Stack W3-W4. No SQL interview questions were found in the active files |
 | 1 Nov 2026 | W2 D10 | 🌅 Morning session assigned (carried work only) in [day10.md](tasks/day10.md) | No pushes from me since the 31 Oct evening. Every track has an open item, so no new material: 🌱 Day 04 Q1-Q3 re-answers then Part B2, 🧩 `CarFleet` (2/37), 🐞 `Day04LargestRectangle` (15/36). New blank redo stubs `redo/Day02RpnEvaluatorRedoNov01.java` (0/44) and `redo/ValidParenthesesRedoNov01.java` (0/18, new stricter suite); both test classes verified green against a correct version, redos run in the evening |
+| 1 Nov 2026 | W2 D10 | ✅ Day 04 Q1-Q3 re-answers graded in chat: 26/30, COMPLETED | Q1 8/10 (flow right; add `RequestResponseBodyMethodProcessor`, Jackson causes inside `HttpMessageNotReadableException`, `@Valid` vs `@Validated`), Q2 9/10 (mass assignment named; add lazy-loading and API versioning), Q3 9/10 (race condition and DB constraint; add RFC 9457 replaced 7807, check the constraint name before mapping to 409). Was 15/30 (5 / 4 / 6) on the first attempt. Day 04 Q&A set is now ✅; the three weak Spring topics move to 🟢 Strong |
+| 1 Nov 2026 | W2 D10 | 🌱 Part B2 started: `f4cb8b9` (08:38 IST) converts 4 handlers to `ProblemDetail`; spec rewritten in [day10.md](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response) | Prashant said B2 was not clear in day10.md (it only linked to day09). Re-ran `mvn test` in `spring-boot/course-practice`: 11/15 green; the 4 failures are the old `$.error` / `$.name` assertions (`createInvalid`, `searchMissingName`, `updateNonExisting`, `deleteUnknown`), an expected contract change, not a regression. Still open: `HttpMessageNotReadableException` handler (malformed JSON gives a 400 with an empty body today), +3 tests, optional 500 handler |
