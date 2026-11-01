@@ -353,3 +353,148 @@ public ProblemDetail malformedBody(HttpMessageNotReadableException ex) {
 ```
 
 Acceptance: test 1 in section 11 is green and the response body never contains the parser's message.
+
+## 🌙 Evening (1 Nov): review, scores and tonight's work
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-not%20scored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey)
+
+> [!NOTE]
+> Checked at 8 PM on `bc6df22` with JDK 21 and Maven. Your only code push today is `f4cb8b9` (08:38 IST, `GlobalExceptionHandler`). Test results: `course-practice` **11/15** (the same 4 old assertions are red), `CarFleetTest` **2/37** (stub, passes by accident), `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**. No new conceptual mistakes, so nothing was added to the mistake logs. The one cosmetic issue (the unused `ResponseStatus` import) was left in place on purpose: you are mid-edit in that file, and it is item 3 of the B2 checklist, so a fix from me would only give you a merge conflict.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **7 / 10** 🟡 Moderate | Strong concepts (Day 04 re-answers 26/30) and four clean `ProblemDetail` handlers, but B2 is half done and the push left the suite red |
+| 🧩 DSA | **can't be scored yet** | no DSA work today: `CarFleet` is still the stub (2/37 by accident) |
+| 🐞 Buggy | **can't be scored yet** | no buggy work today: `Day04LargestRectangle` is unchanged at 15/36 |
+
+**🌱 Spring, by dimension** (the track score is the rounded average of the dimensions that applied):
+
+| Dimension | Score | Why |
+|---|---|---|
+| 🧠 Concept understanding | 8 | Q1 8 / Q2 9 / Q3 9 this morning: converter-then-validation order, mass assignment, check-then-save race and the DB constraint. Missing pieces were internals (`RequestResponseBodyMethodProcessor`, `@Valid` vs `@Validated`), not the model |
+| 🛠️ Implementation | 6 | The four handlers are correct, consistent, and the stable `errorCode` property is a lead-level touch. But the commit changed the error contract **without moving the 4 tests that pin it**, so `main` went 15/15 → 11/15; the malformed-body handler (the actual gap B2 closes) and the 3 new tests are not written; one unused import left |
+| 🧩 Problem solving | 7 | Approach A (own handlers) is the right size for this app, and `missingParameter` now uses `ex.getParameterName()` instead of a hard-coded `"name"`. Not yet shown: why not `ResponseEntityExceptionHandler` (approach B) |
+| 🎤 Interview readiness | 7 | The re-answers would hold up in a 60-90 second answer. B2 questions 3 and 6 (no parser text in `detail`, the catch-all that eats 405 and 415) are not answered yet, and those are the ones a banking interviewer pushes on |
+| 🐞 Debugging · ⏱️ Complexity | n/a | nothing failed that you had to debug; complexity does not apply to this task |
+
+> [!WARNING]
+> 📌 The one habit to fix from today: **a contract change and the tests that pin it go in the same commit.** At lead level a reviewer reads "4 red tests on `main`" as "broken build", even when the reason is a deliberate change. Write the new assertions first, watch them fail, then change the handler.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 Day 04 Q&A (JSON → DTO flow, DTO vs entity, unique-data race) | 🟢 Strong | 26/30 graded, every answer 8+; move on |
+| 🌱 §5 `ProblemDetail` error contract (Part B2) | 🟡 Moderate | 7/10; weakest dimension is implementation (red suite, malformed-body handler missing). Finish B2 tonight |
+| 🧩 `CarFleet` | ⬜ Pending | not attempted (2/37) |
+| 🐞 `Day04LargestRectangle` | ⬜ Pending | not attempted (15/36) |
+| 🔁 `Day02RpnEvaluator` and `ValidParentheses` cold redos | ⬜ Pending | stubs 0/44 and 0/18, due tonight |
+| 🧩 Amortised O(n) reasoning for stack solutions | 🔴 Weak (carried) | count-stack quiz 3/5 on 29 Oct and the re-ask is still open; pack below |
+| ⛔ Blocked | none | nothing outside your control is stopping any task |
+
+> [!NOTE]
+> No topic scored Weak **tonight**. The other 🔴 Weak rows in [PROGRESS.md](../PROGRESS.md#-weak-topics) come from older answers (HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, the binding annotations, RPN evaluation). Their packs are made when each is picked up; the RPN pack waits until **after** tonight's cold RPN redo so it does not spoil it.
+
+### 🎒 Weak-topic pack: amortised O(n) for stack solutions
+
+> [!IMPORTANT]
+> Do the count-stack **re-ask first, in chat, without opening this pack**: "Why is the count-stack `RemoveKAdjacentDuplicates` O(n) and not O(n·k), even though there is a `while`/pop inside the loop?" Then open the pack.
+
+<details>
+<summary><b>Open after the re-ask</b></summary>
+
+**1. Notes**
+
+*Why it matters.* Every monotonic-stack and count-stack solution has a loop inside a loop, and the first thing an interviewer does is point at it and say "so that's O(n²)?". A senior answer proves it isn't, in two sentences, and knows when that proof is not enough.
+
+*The variants of "how long does it take":*
+
+| Kind | Question it answers | Example |
+|---|---|---|
+| Worst case per operation | how slow can **one** call be? | one `ArrayList.add` that triggers a resize copies all n elements: O(n) |
+| Amortised | what is the **total** cost of any sequence of n calls, divided by n? | n `ArrayList.add` calls copy at most about 2n elements in total, so O(1) amortised |
+| Average case | what is the **expected** cost over random inputs? | `HashMap.get` with a good hash: O(1) expected, O(n) worst if every key collides (O(log n) after treeification) |
+
+*How the stack argument works (aggregate method).* Count operations per **element**, not per loop iteration. Each element is pushed exactly once, and it can be popped at most once, because once popped it is gone. So over the whole run there are at most n pushes and n pops, plus one comparison that *stops* each inner `while` (at most n of those). Total work ≤ 3n = O(n), no matter how the pops are spread across iterations.
+
+| Input `[5, 4, 3, 2, 6]`, pop while top < current | i=0 | i=1 | i=2 | i=3 | i=4 | Total |
+|---|---|---|---|---|---|---|
+| pushes | 1 | 1 | 1 | 1 | 1 | 5 |
+| pops | 0 | 0 | 0 | 0 | 4 | 4 |
+
+One iteration did 4 pops, but the total pops (4) can never exceed the total pushes (5). That is the whole proof.
+
+*When amortised is not enough.* An online API (one call per request) inherits the **worst case per call**: a single request may do O(n) pops. Fine for a batch job, worth saying out loud for a latency SLA.
+
+**2. Conceptual question (5 min)**
+
+Explain the difference between worst-case per operation, amortised and average-case cost using `ArrayList.add` and `HashMap.get`. Which one is `ArrayDeque.push`, and why?
+
+**3. Implementation task (15 min)**
+
+Write `StockSpanner` (LeetCode 901, not in the NeetCode 150, so it spoils nothing): `next(int price)` returns how many consecutive days, ending today, had a price ≤ today's. Example: prices `100, 80, 60, 70, 60, 75, 85` → `1, 1, 1, 2, 1, 4, 6`. Put the pattern line and the time and space complexity at the top first, then state both the worst case of **one** `next` call and the amortised cost. Write it in chat or in a scratch class; it is graded in chat.
+
+**4. Debugging task (10 min)**
+
+A teammate says this is correct and O(n). The comment is the contract.
+
+```java
+// For each index i, the distance back to the previous element that is STRICTLY greater
+// than a[i]; 0 if there is none.
+static int[] prevGreaterDistance(int[] a) {
+    int[] out = new int[a.length];
+    Deque<Integer> stack = new ArrayDeque<>(); // indices
+    for (int i = 0; i < a.length; i++) {
+        while (!stack.isEmpty() && a[stack.peek()] < a[i]) {
+            stack.pop();
+        }
+        out[i] = stack.isEmpty() ? 0 : i - stack.peek();
+        stack.push(i);
+    }
+    return out;
+}
+```
+
+Find an input where it breaks the contract, fix it with the smallest change, and then prove (or disprove) the O(n) claim.
+
+**5. Interview scenario (5 min)**
+
+In a code review on your team, a colleague blocks your PR: "`while` inside `for`, this is O(n²) on 10 million rows." Talk for 60 seconds: defend the complexity with the counting argument, and say in which situation their concern would still be valid.
+
+</details>
+
+### ⏳ Pending morning work = tonight's work (in this order)
+
+> [!IMPORTANT]
+> The rule in [PROGRAM.md](../docs/PROGRAM.md): pending morning work first, redos only after. 60 minutes will not hold everything below, so stop at the line where your time runs out and push what is green. Whatever is left is the first thing tomorrow.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 25 | Part B2 items 1-6 ([checklist in section 7](#-day-04-part-b2-problemdetail-in-every-error-response)): test `malformedJsonReturnsProblemDetail` first (red), then the handler with the log line, the 4 moved assertions, the other 2 tests | 🌱 | `mvn test` in `spring-boot/course-practice` shows **18 tests, 0 failures** |
+| 2 | 30 | `CarFleet` ([spec](day09.md#-car-fleet-dsa)): pattern line and complexity at the top before any code | 🧩 | `CarFleetTest` 37/37 on your pushed code |
+| 3 | 5 | Count-stack O(n) re-ask, in chat | 🧩 | graded 4/5 or better |
+| 4 | if time | `Day04LargestRectangle` ([spec](day09.md#-day04largestrectangle-buggy-round)) | 🐞 | 36/36, only logical fixes |
+| 5 | if time | 🔁 cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18) | 🔁 | 44/44 and 18/18, cold |
+
+> [!NOTE]
+> If the two redos don't happen tonight, nothing is lost: they stay first in the queue and take Monday's two evening slots (the reset RPN redo and the most overdue item), and `MinStack` and `ScoreOfParentheses` move back a day. The 10 PM check rewrites [redo-schedule.md](../revision/redo-schedule.md) from what you actually push.
+
+- [ ] B2 18/18 pushed
+- [ ] `CarFleet` 37/37 pushed
+- [ ] count-stack re-ask answered in chat
+- [ ] `Day04LargestRectangle` 36/36 pushed (if time)
+- [ ] the two cold redos pushed (if time)
+
+### 🎯 Tomorrow's focus (Mon 2 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | If B2 is ✅ tonight: start [banking module 1 (AuthN / AuthZ)](day09.md#-banking-module-1-authn--authz-foundation). If not: finish B2 first, contract and tests in one commit, then answer B2 interview questions 3 and 6 out loud. | Implementation was the weakest dimension (6); module 1 is blocked behind B2 by plan, not by an outside obstacle |
+| 🧩 DSA | `CarFleet` if still open. This is its fourth session, so spend the first 10 minutes only on the pattern line, a hand-sorted example and the complexity, then code. Count-stack re-ask if it was not done. | No DSA has been scored since 31 Oct; the gap is starting the problem, not solving it |
+| 🐞 Buggy | `Day04LargestRectangle`: list the 21 failing tests and group them by symptom **before** touching code, then make the smallest fix per group. | Debugging is the dimension this round scores; it has not been attempted |
+| 🔁 Redos (evening) | `Day02RpnEvaluator` and `ValidParentheses` if not done tonight, otherwise `MinStack` and `ScoreOfParentheses` | the cap of 2 a day, most overdue first |
+
+> [!TIP]
+> Reply in chat when something is pushed or when you want the re-ask, the pack answers or the B2 interview questions graded. Each answer is graded and recorded the same night.

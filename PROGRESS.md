@@ -145,9 +145,15 @@ mvn test          # root project: DSA and buggy rounds
 | 🌱 | `ResponseEntity` vs `@ResponseStatus`, `Location` header | Day 03 Q2 5/10 | 🔴 Weak | ⬜ not generated |
 | 🌱 | `@PathVariable` / `@RequestParam` / `@RequestBody` | Day 02 Q1 5/10 | 🔴 Weak | ⬜ not generated |
 | 🌱 | Race on unique data: check-then-save vs a DB constraint | Day 04 Q3 6/10, re-answer 9/10 (1 Nov) | 🟢 Strong | ⬜ not generated |
-| 🧩 | Amortised O(n) reasoning for stack solutions | count-stack quiz 3/5 | 🔴 Weak | ⬜ not generated |
+| 🧩 | Amortised O(n) reasoning for stack solutions | count-stack quiz 3/5; re-ask still open (1 Nov) | 🔴 Weak | ✅ generated 1 Nov ([day10.md evening](tasks/day10.md#-weak-topic-pack-amortised-on-for-stack-solutions)), open after the re-ask |
 | 🧩🐞 | RPN evaluation: operand order, `"-3"` token, end check, null guard | 3 conceptual misses on 31 Oct (day-7 redo) | 🔴 Weak | ⬜ not generated |
 | 🐞 | Array-backed stack boundaries (grow check, empty, capacity 0) | clean cold redo 28 Oct and 31 Oct | 🟢 Strong | none needed |
+| 🌱 | §5 `ProblemDetail` error contract (Part B2) | 1 Nov evening 7/10: four handlers clean, but the contract changed without its tests (`main` 11/15) and the malformed-body handler is missing | 🟡 Moderate (weakest: implementation 6) | none (Moderate) |
+
+### 📝 Evening scores (out of 10, rubric in [PROGRAM.md](docs/PROGRAM.md#-evening-scoring-rubric))
+| Date | 🌱 Spring | 🧩 DSA | 🐞 Buggy | Evidence |
+|---|---|---|---|---|
+| Sun 1 Nov | **7** (concept 8 · implementation 6 · problem solving 7 · interview 7) | not scored, no work | not scored, no work | Day 04 re-answers 26/30; `f4cb8b9` four `ProblemDetail` handlers, `course-practice` 11/15; `CarFleet` 2/37 and `Day04LargestRectangle` 15/36 untouched · [day10.md evening](tasks/day10.md#-evening-1-nov-review-scores-and-tonights-work) |
 
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
@@ -175,14 +181,13 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Today (Sun 1 Nov), assigned in [tasks/day10.md](tasks/day10.md).** No new material: each track works its first open item.
-> - 🌱 **Spring (~50 min):** re-answer Day 04 Q1-Q3 in chat, then [Part B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response).
-> - 🧩 **DSA (~35 min):** [Car Fleet](tasks/day09.md#-car-fleet-dsa), pattern line and complexity first.
-> - 🐞 **Buggy (~15 min):** [Day04LargestRectangle](tasks/day09.md#-day04largestrectangle-buggy-round).
-> - 🌙 **Evening (1 h):** review and score each track out of 10, finish what is pending from the morning, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`, and the count-stack O(n) re-ask.
+> **Tonight (Sun 1 Nov evening), from the review in [tasks/day10.md](tasks/day10.md#-evening-1-nov-review-scores-and-tonights-work).** Pending morning work first, redos only after:
+> 1. 🌱 Part B2 items 1-6 (malformed-body handler with a log line, 4 moved assertions, +3 tests): `course-practice` **18/18**.
+> 2. 🧩 `CarFleet` 37/37, pattern line and complexity first.
+> 3. 🧩 Count-stack O(n) re-ask in chat, then the weak-topic pack.
+> 4. 🐞 `Day04LargestRectangle` and 🔁 the cold redos `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01`, if time is left.
 >
-> **Next morning (Mon 2 Nov):** whatever of the above is still open comes first; redos due 2 Nov are `MinStack` and `ScoreOfParentheses`.
-> Banking module 1 starts when Part B2 is ✅ COMPLETED. The morning routine writes tomorrow's day file from the Pending table.
+> **Next morning (Mon 2 Nov):** whatever above is still open comes first. 🌱 Banking module 1 only once B2 is ✅ (otherwise finish B2, contract and tests in one commit). 🧩 `CarFleet` (first 10 minutes on the pattern, a hand-sorted example and complexity). 🐞 `Day04LargestRectangle`: group the 21 failing tests by symptom before any fix. 🔁 Evening redos: RPN + ValidParentheses if not done tonight, otherwise `MinStack` + `ScoreOfParentheses`.
 
 ## 📊 Status counts
 ```mermaid
@@ -303,3 +308,4 @@ pie title Tracked items (1 Nov 2026)
 | 1 Nov 2026 | W2 D10 | 🌅 Morning session assigned (carried work only) in [day10.md](tasks/day10.md) | No pushes from me since the 31 Oct evening. Every track has an open item, so no new material: 🌱 Day 04 Q1-Q3 re-answers then Part B2, 🧩 `CarFleet` (2/37), 🐞 `Day04LargestRectangle` (15/36). New blank redo stubs `redo/Day02RpnEvaluatorRedoNov01.java` (0/44) and `redo/ValidParenthesesRedoNov01.java` (0/18, new stricter suite); both test classes verified green against a correct version, redos run in the evening |
 | 1 Nov 2026 | W2 D10 | ✅ Day 04 Q1-Q3 re-answers graded in chat: 26/30, COMPLETED | Q1 8/10 (flow right; add `RequestResponseBodyMethodProcessor`, Jackson causes inside `HttpMessageNotReadableException`, `@Valid` vs `@Validated`), Q2 9/10 (mass assignment named; add lazy-loading and API versioning), Q3 9/10 (race condition and DB constraint; add RFC 9457 replaced 7807, check the constraint name before mapping to 409). Was 15/30 (5 / 4 / 6) on the first attempt. Day 04 Q&A set is now ✅; the three weak Spring topics move to 🟢 Strong |
 | 1 Nov 2026 | W2 D10 | 🌱 Part B2 started: `f4cb8b9` (08:38 IST) converts 4 handlers to `ProblemDetail`; spec rewritten in [day10.md](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response) | Prashant said B2 was not clear in day10.md (it only linked to day09). Re-ran `mvn test` in `spring-boot/course-practice`: 11/15 green; the 4 failures are the old `$.error` / `$.name` assertions (`createInvalid`, `searchMissingName`, `updateNonExisting`, `deleteUnknown`), an expected contract change, not a regression. Still open: `HttpMessageNotReadableException` handler (malformed JSON gives a 400 with an empty body today), +3 tests, optional 500 handler |
+| 1 Nov 2026 | W2 D10 | 🌙 Evening review: 🌱 Spring **7/10** (Moderate); 🧩 DSA and 🐞 buggy not scored (no work) | Ran the tests on `bc6df22` (JDK 21, Maven): `course-practice` 11/15 (same 4 old assertions), `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No new conceptual mistakes; the unused `ResponseStatus` import is left for B2 item 3 (file is mid-edit). Weak-topic pack for amortised O(n) added. Tonight: B2 items 1-6, `CarFleet`, count-stack re-ask, then `Day04LargestRectangle` and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |
