@@ -14,7 +14,7 @@
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 4 of 5 handlers converted), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due 1 Nov (blank stubs ready) | [day10.md](tasks/day10.md) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Mon 2 Nov (moved from 1 Nov, blank stubs ready) | [day10.md](tasks/day10.md) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
@@ -102,8 +102,8 @@ mvn test          # root project: DSA and buggy rounds
 | Day01ArrayStackRedo7 | 🔁 redo (day 7) | 17/17 | d5c0ee9 | ✅ COMPLETED (31 Oct) | clean cold pass; Lumi removed stale TODO comments |
 | Day02RpnEvaluatorRedo | 🔁 redo (day 3) | 44/44 | bddf14c | 🟡 IN_PROGRESS | passes, but done by re-reading the original, not from memory |
 | Day02RpnEvaluatorRedo7 | 🔁 redo (day 7) | 44/44 | 37f6c11 | ✅ COMPLETED (31 Oct) | fixed after 3 review rounds (fall-through, end check, null guard); logged in `revision/mistakes/dsa.md`; reset to +1 |
-| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 0/44 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold, evening; tests verified against a correct version |
-| ValidParenthesesRedoNov01 | 🔁 redo (+1) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold, evening; new stricter suite (empty, `null`, non-brackets, 100 000 chars) |
+| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 0/44 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1 Nov, moved to the Mon 2 Nov evening; tests verified against a correct version |
+| ValidParenthesesRedoNov01 | 🔁 redo (+1) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1 Nov, moved to the Mon 2 Nov evening; new stricter suite (empty, `null`, non-brackets, 100 000 chars) |
 
 > [!IMPORTANT]
 > 🔁 Every DSA problem and buggy round is redone cold, and each result sets the next gap (clean pass 1 → 3 → 7 → 14 → 30; hint or fix repeats the gap; conceptual miss resets to day 1), at most 2 a day. A problem keeps ✅ COMPLETED for its first verified solve; the calendar and next due dates are in [redo-schedule.md](revision/redo-schedule.md).
@@ -128,7 +128,7 @@ mvn test          # root project: DSA and buggy rounds
 | 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
 | 5 | Day 04 Part B2 | 🌱 | 🟡 IN_PROGRESS |
 | 6 | Banking module 1 (AuthN / AuthZ) | 🏦 | ⬜ NOT_STARTED |
-| 7 | Redos due 1 Nov: `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
+| 7 | Redos due Mon 2 Nov (moved from 1 Nov): `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
 | 8 | Count-stack O(n) re-ask (3/5) | 🧩 | 🔴 REVISION_REQUIRED |
 | 9 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
 | 10 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
@@ -160,16 +160,16 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Sun 1 Nov | `Day02RpnEvaluator` (+1) | `ValidParentheses` (+1, late) |
-| Mon 2 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
-| Tue 3 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
-| Wed 4 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
-| Thu 5 Nov | `ValidParentheses` (+3, late) | `MinStack` (+3) |
-| Fri 6 Nov | `ScoreOfParentheses` (+3, late) | `RemoveKAdjacentDuplicates` (+3) |
-| Sat 7 Nov | `Day03NextGreaterIndex` (+3, late) | `Day01ArrayStack` (+7) |
+| Mon 2 Nov | `Day02RpnEvaluator` (+1, late) | `ValidParentheses` (+1, late) |
+| Tue 3 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
+| Wed 4 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
+| Thu 5 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
+| Fri 6 Nov | `ValidParentheses` (+3, late) | `MinStack` (+3) |
+| Sat 7 Nov | `ScoreOfParentheses` (+3, late) | `RemoveKAdjacentDuplicates` (+3) |
+| Sun 8 Nov | `Day01ArrayStack` (+7, late) | `Day03NextGreaterIndex` (+3, late) |
 
 > [!WARNING]
-> Redos now run in the 🌙 evening, after the review and after pending morning work. In the first week they are 14 redos (about 5.8 h) against a 7 h evening budget, so there is almost no spare evening time that week; the cap of 2 a day and the "most overdue first" rule decide what waits.
+> Redos now run in the 🌙 evening, after the review and after pending morning work. The 1 Nov redos were not attempted, so the queue moved one day. In the next 7 days (2-8 Nov) they are 14 redos (about 5.8 h) against a 7 h evening budget, so there is almost no spare evening time that week; the cap of 2 a day and the "most overdue first" rule decide what waits.
 
 ## ⛔ Blockers
 | Blocker | Since | Needs |
@@ -181,13 +181,13 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Tonight (Sun 1 Nov evening), from the review in [tasks/day10.md](tasks/day10.md#-evening-1-nov-review-scores-and-tonights-work).** Pending morning work first, redos only after:
-> 1. 🌱 Part B2 items 1-6 (malformed-body handler with a log line, 4 moved assertions, +3 tests): `course-practice` **18/18**.
-> 2. 🧩 `CarFleet` 37/37, pattern line and complexity first.
-> 3. 🧩 Count-stack O(n) re-ask in chat, then the weak-topic pack.
-> 4. 🐞 `Day04LargestRectangle` and 🔁 the cold redos `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01`, if time is left.
+> **Next morning (Mon 2 Nov, 6 AM), set by the 10 PM check on 1 Nov.** Nothing was pushed after the evening review, so last night's list carries over in the same order:
+> 1. 🌱 **First task:** Part B2 items 1-6 ([checklist](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response)): `malformedJsonReturnsProblemDetail` first (red), then the `HttpMessageNotReadableException` handler, the 4 moved assertions and the other 2 tests, until `course-practice` shows **18/18**, contract and tests in one commit. Banking module 1 starts only after that.
+> 2. 🧩 `CarFleet` 37/37: the first 10 minutes only on the pattern line, a hand-sorted example and the complexity.
+> 3. 🐞 `Day04LargestRectangle`: group the 21 failing tests by symptom before any fix.
+> 4. 🧩 Count-stack O(n) re-ask in chat, then the weak-topic pack.
 >
-> **Next morning (Mon 2 Nov):** whatever above is still open comes first. 🌱 Banking module 1 only once B2 is ✅ (otherwise finish B2, contract and tests in one commit). 🧩 `CarFleet` (first 10 minutes on the pattern, a hand-sorted example and complexity). 🐞 `Day04LargestRectangle`: group the 21 failing tests by symptom before any fix. 🔁 Evening redos: RPN + ValidParentheses if not done tonight, otherwise `MinStack` + `ScoreOfParentheses`.
+> **Evening (Mon 2 Nov):** review, then pending morning work, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`. Details: [End of day in day10.md](tasks/day10.md#-end-of-day-1-nov-10-pm-check).
 
 ## 📊 Status counts
 ```mermaid
@@ -214,15 +214,18 @@ pie title Tracked items (1 Nov 2026)
 
 ## 🔮 Plan projection (3 h a day)
 > [!WARNING]
-> **Estimate, not a promise.** Built from this file, the [redo schedule](revision/redo-schedule.md) and the `tasks/` files, using the pace of the first 9 days. It is **refreshed every Sunday by the 10 PM check** (this one: Sun 1 Nov 2026, W2 D10; next: Sun 8 Nov). Weeks count from 23 Oct: W1 = 23-29 Oct, W2 = 30 Oct-5 Nov, W3 = 6-12 Nov, W12 = 8-14 Jan 2027, W22 = 19-25 Mar 2027.
+> **Estimate, not a promise.** Built from this file, the [redo schedule](revision/redo-schedule.md) and the `tasks/` files, using the pace of the first 9 days. It is **refreshed every Sunday by the 10 PM check** (this one: Sun 1 Nov 2026, 10 PM, W2 D10, from data through 1 Nov; next: Sun 8 Nov). Weeks count from 23 Oct: W1 = 23-29 Oct, W2 = 30 Oct-5 Nov, W3 = 6-12 Nov, W4 = 13-19 Nov, W5 = 20-26 Nov, W8 = 11-17 Dec, W10 = 25-31 Dec, W12 = 8-14 Jan 2027, W22 = 19-25 Mar 2027.
 
-### 📊 Verified per week (measured, 23-31 Oct, about 2 h a day)
+### 📊 Verified per week (measured, 23 Oct-1 Nov, 10 days)
 | Week | Dates | 🧩 DSA | 🐞 Buggy | 🌱 Spring | 🏦 Banking | Total | 🔁 Cold redos (separate) |
 |---|---|---|---|---|---|---|---|
 | W1 | 23-29 Oct | 4 | 3 | 1 | 1 | 9 | 1 |
-| W2 (2 of 7 days) | 30-31 Oct | 1 | 0 | 1 | 0 | 2 | 2 |
-| **Total** | 9 days | **5** | **3** | **2** | **1** | **11** | **3** |
-| Pace per week (total × 7 / 9) | | 3.9 | 2.3 | 1.6 | 0.8 | 8.6 | 2.3 |
+| W2 (3 of 7 days) | 30 Oct-1 Nov | 1 | 0 | 2 | 0 | 3 | 2 |
+| **Total** | 10 days | **5** | **3** | **3** | **1** | **12** | **3** |
+| Pace per week (total × 7 / 10) | | 3.5 | 2.1 | 2.1 | 0.7 | 8.4 | 2.1 |
+
+> [!NOTE]
+> New since the 1 Nov restructure count: the 🌱 Day 04 Q&A set (re-answers 26/30, ✅ 1 Nov). Part B2 is 🟡 (11/15) and does not count yet. 1 Nov added no DSA, buggy or redo item, so the measured pace dipped from 8.6 to 8.4 a week; the open DSA and buggy items (`CarFleet`, `Day04LargestRectangle`) have not been started in the program's first day.
 
 ### ⏱️ What 3 hours a day changes (and what it does not)
 | | Minutes a day | Per week | Compared with the measured period |
@@ -242,27 +245,28 @@ pie title Tracked items (1 Nov 2026)
 | 🧩 Stack pattern | 2 NeetCode problems ✅ (+3 extras) | **5** | Car Fleet, Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle |
 | 🧩 NeetCode 150 | 2 | **148** | `ScoreOfParentheses`, `RemoveKAdjacentDuplicates`, `AsteroidCollision` are extras, not among the 150 |
 | 🐞 Buggy rounds | 3 | **2 existing + about 4 new** | the program adds about one round per new Stack problem |
-| 🌱 Spring foundation | Part A, B1 | **about 8 Spring slots** | B2, the re-answers and the revision passes of §1-§5 (§6-§8 are taught inside the banking modules) |
+| 🌱 Spring foundation | Part A, B1, Day 04 Q&A | **about 7 Spring slots** | finishing B2, the Day 02 / Day 03 re-answers and the revision passes of §1-§5 (§6-§8 are taught inside the banking modules) |
 | 🏦 Banking | milestone 0 | **10 modules** | 0 started; the old plan had 4 milestones, the four new modules (Beneficiary, Transaction History, Notifications, Statements) are new scope |
 
 ### 🎯 Estimated finish
 | Section | Pace (best / slow, per week) | Finish week (range) | Dates |
 |---|---|---|---|
-| 🧩 Stack pattern (5 left) | 4.9 / 1.95 | **W3-W4** | 8-19 Nov |
-| 🐞 Buggy rounds (about 6) | 2.9 / 1.15 | **W4-W7** | 16 Nov-8 Dec |
-| 🧩 Full NeetCode 150 (148 left) | 4.9 / 1.95 | **not inside the 12 weeks**; by W12 about **23-54 of 150** | best case about end of May 2027 |
-| 🌱 Spring foundation (8 slots best, 16 slow) | 8.75 / 7 slots | **W3-W4** | 8-17 Nov |
-| 🏦 Banking, 10 modules (63 slots best, 126 slow) | 8.75 / 7 slots (50 min each) | **W10-W22** | 28 Dec-23 Mar |
-| ⭐ **Overall** (everything except the full NeetCode 150) | set by banking | **W10-W22** | 28 Dec 2026-23 Mar 2027 · the 12-week target (W12, 14 Jan) is met only at the best end |
+| 🧩 Stack pattern (5 left) | 4.4 / 1.75 | **W3-W5** | 10-21 Nov |
+| 🐞 Buggy rounds (about 6) | 2.6 / 1.05 | **W4-W8** | 18 Nov-11 Dec |
+| 🧩 Full NeetCode 150 (148 left) | 4.4 / 1.75 | **not inside the 12 weeks**; by W12 about **20-48 of 150** | best case about end of June 2027 |
+| 🌱 Spring foundation (7 slots best, 14 slow) | 8.75 / 7 slots | **W3-W4** | 8-15 Nov |
+| 🏦 Banking, 10 modules (63 slots best, 126 slow) | 8.75 / 7 slots (50 min each) | **W10-W22** | 29 Dec-21 Mar |
+| ⭐ **Overall** (everything except the full NeetCode 150) | set by banking | **W10-W22** | 29 Dec 2026-21 Mar 2027 · the 12-week target (W12, 14 Jan) is met only at the best end |
 
 > [!IMPORTANT]
 > **Assumptions**
-> - Pace is the measured 9-day average (11 verified items, 8.6 a week). Best = measured pace × 1.25 (spare evening time). Slow for DSA and buggy = half the measured pace (a plain rule, not data: the old slow figure, 1.2 a week, cannot be reproduced from this file). Slow for Spring and banking doubles the effort instead (126 + 16 slots at 7 slots a week), so the slowness is not counted twice.
-> - Banking effort is a guess, since 0 of 10 modules are started: the old plan's 10.5 Spring slots per milestone (1.5 weeks) and 21 slow, applied to the 4 old milestones (42 / 84 slots), plus half a milestone for each of the 4 new modules (+21 / +42): **63 / 126 slots**, plus about 8 / 16 slots of foundation. A Spring slot is one morning's 50 minutes.
+> - Pace is the measured 10-day average (12 verified items, 8.4 a week), counted from 2 Nov. Best = measured pace × 1.25 (spare evening time). Slow for DSA and buggy = half the measured pace (a plain rule, not data: the old slow figure, 1.2 a week, cannot be reproduced from this file). Slow for Spring and banking doubles the effort instead (126 + 16 slots at 7 slots a week), so the slowness is not counted twice.
+> - Banking effort is a guess, since 0 of 10 modules are started: the old plan's 10.5 Spring slots per milestone (1.5 weeks) and 21 slow, applied to the 4 old milestones (42 / 84 slots), plus half a milestone for each of the 4 new modules (+21 / +42): **63 / 126 slots**, plus about 7 / 14 slots of foundation. A Spring slot is one morning's 50 minutes.
 > - §6 JPA, §7 Testing and §8 Config are absorbed into the banking modules, so they do not add a separate block. If they are kept as separate sections the banking range moves later.
 > - Buggy rounds: 2 exist; about 1 new round per new Stack problem is assumed.
-> - Redos are separate: 14 in the first 7 days, 30 across November (about 12.5 h, 42% of the evening time, 14% of the total 3 h days), 38 until the 8 scheduled problems graduate (last on 29 Dec); each new DSA problem adds 5 redos (about 2 h over 30 days).
+> - Redos are separate: 14 in the next 7 days (2-8 Nov, about 5.8 h of the 7 h evening budget), 30 across 2-30 Nov (about 12.5 h, 42% of the evening time, 14% of the total 3 h days), 38 until the 8 scheduled problems graduate (last on 30 Dec, one day later because the 1 Nov redos moved); each new DSA problem adds 5 redos (about 2 h over 30 days).
 > - No missed days, 7 working days a week, every redo a clean pass. A conceptual miss resets a problem to day 1 and adds load.
+> - **Versus the 1 Nov morning projection (W10-W22, 28 Dec-23 Mar):** about the same; the best end moves 1 day later (one day with no Spring slot verified) and the slow end 2 days earlier (one foundation slot fewer). Stack moves from W3-W4 to W3-W5 because the measured DSA pace fell from 3.9 to 3.5 a week.
 > - **Versus the 31 Oct projection (W10-W17):** the best end is in the same week (28 Dec vs 25 Dec, both W10) and the slow end moves about 5 weeks later (23 Mar vs 18 Feb), because the banking scope grew from 4 milestones to 10 modules while the Spring slot did not get longer.
 
 ## 🗄️ Archive
@@ -309,3 +313,4 @@ pie title Tracked items (1 Nov 2026)
 | 1 Nov 2026 | W2 D10 | ✅ Day 04 Q1-Q3 re-answers graded in chat: 26/30, COMPLETED | Q1 8/10 (flow right; add `RequestResponseBodyMethodProcessor`, Jackson causes inside `HttpMessageNotReadableException`, `@Valid` vs `@Validated`), Q2 9/10 (mass assignment named; add lazy-loading and API versioning), Q3 9/10 (race condition and DB constraint; add RFC 9457 replaced 7807, check the constraint name before mapping to 409). Was 15/30 (5 / 4 / 6) on the first attempt. Day 04 Q&A set is now ✅; the three weak Spring topics move to 🟢 Strong |
 | 1 Nov 2026 | W2 D10 | 🌱 Part B2 started: `f4cb8b9` (08:38 IST) converts 4 handlers to `ProblemDetail`; spec rewritten in [day10.md](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response) | Prashant said B2 was not clear in day10.md (it only linked to day09). Re-ran `mvn test` in `spring-boot/course-practice`: 11/15 green; the 4 failures are the old `$.error` / `$.name` assertions (`createInvalid`, `searchMissingName`, `updateNonExisting`, `deleteUnknown`), an expected contract change, not a regression. Still open: `HttpMessageNotReadableException` handler (malformed JSON gives a 400 with an empty body today), +3 tests, optional 500 handler |
 | 1 Nov 2026 | W2 D10 | 🌙 Evening review: 🌱 Spring **7/10** (Moderate); 🧩 DSA and 🐞 buggy not scored (no work) | Ran the tests on `bc6df22` (JDK 21, Maven): `course-practice` 11/15 (same 4 old assertions), `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No new conceptual mistakes; the unused `ResponseStatus` import is left for B2 item 3 (file is mid-edit). Weak-topic pack for amortised O(n) added. Tonight: B2 items 1-6, `CarFleet`, count-stack re-ask, then `Day04LargestRectangle` and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |
+| 1 Nov 2026 | W2 D10 | 10 PM check: no pushes after the 8 PM evening review; 🔮 Sunday plan projection refreshed | No commits from me after `bc6df22`, so nothing new to test. B2 (11/15), `CarFleet` (2/37), `Day04LargestRectangle` (15/36) and the count-stack re-ask carry to Mon 2 Nov; the two 1 Nov cold redos were not attempted and move to the 2 Nov evening, so [redo-schedule.md](revision/redo-schedule.md) shifts one day (last graduation 30 Dec). Projection from 12 verified items in 10 days (8.4 a week): Stack W3-W5, buggy W4-W8, overall still **W10-W22 (29 Dec-21 Mar)**. No new mistakes. End of day added to [day10.md](tasks/day10.md). Next: Part B2 items 1-6 on 2 Nov 6 AM |
