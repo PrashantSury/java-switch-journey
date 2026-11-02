@@ -73,9 +73,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DuplicateEmailException.class)
     public ProblemDetail handleDuplicateEmail(DuplicateEmailException ex) {
 
-        ProblemDetail problemDetail = ProblemDetail.forStatus(
-                HttpStatus.CONFLICT
-        );
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.CONFLICT);
 
         problemDetail.setTitle("Duplicate Email");
         problemDetail.setDetail("Email already exists. Please use a different email address.");
