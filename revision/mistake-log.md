@@ -12,7 +12,7 @@
 | | Section | File | Open rows |
 |---|---|---|---|
 | 🧩 | DSA and buggy rounds | [mistakes/dsa.md](mistakes/dsa.md) | 4 |
-| 🌱 | Spring Boot, `course-practice`, banking app | [mistakes/spring.md](mistakes/spring.md) | 3 |
+| 🌱 | Spring Boot, `course-practice`, banking app | [mistakes/spring.md](mistakes/spring.md) | 4 |
 
 > [!TIP]
 > 🗄️ SQL was retired on 31 Oct 2026; its log is kept for history in [archive/sql/mistakes-sql.md](../archive/sql/mistakes-sql.md) and its redo dates are cancelled.
