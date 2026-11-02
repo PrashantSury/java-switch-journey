@@ -11,7 +11,7 @@
 ## 🧭 Overall status
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
-| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 4 of 5 handlers converted), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
+| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 18/18 green, but the catch-all 500 handler is still wrong), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
 | 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Tue 3 Nov evening (moved from 1 and 2 Nov, blank stubs ready) | [day11.md](tasks/day11.md#-due-redos-2-in-the--evening-after-the-review-and-pending-work) |
@@ -62,7 +62,7 @@ mvn test          # root project: DSA and buggy rounds
 | §2 Request flow | 🟡 IN_PROGRESS | Day 04 Q1 5/10, re-answered 8/10 on 1 Nov ✅ |
 | §3 Request mapping | 🟡 IN_PROGRESS | code verified 28 Oct, `course-practice` 12/12; Q3 7/10; revision pending |
 | §4 HTTP semantics | 🟡 IN_PROGRESS | code verified 28 Oct; Day 03 Q1/Q2 5/10; revision pending |
-| 🔥 §5 Validation and error handling | 🟡 IN_PROGRESS | Part B1 ✅ (31 Oct, 15/15); B2 🟡 (1 Nov: 4 handlers return `ProblemDetail`, 11/15 tests green until the old assertions are moved); Day 04 Q1-Q3 re-answered 26/30 ✅ |
+| 🔥 §5 Validation and error handling | 🟡 IN_PROGRESS | Part B1 ✅ (31 Oct, 15/15); B2 🟡 (2 Nov late push `0600df2` + Lumi's minor fixes `3d85c55`: `course-practice` 18/18, malformed-body handler and 3 tests in; open: the `Exception.class` catch-all turns 405, 415 and a bad id into a 500 with a wrong message); Day 04 Q1-Q3 re-answered 26/30 ✅ |
 | §6 JPA · §7 Testing · §8 Config | ⬜ NOT_STARTED | taught inside the banking modules (JPA with modules 2-3, testing with every module, config with module 1); their workbook sections are answered when each is reached |
 
 | `course-practice` task | Status | Notes |
@@ -70,7 +70,7 @@ mvn test          # root project: DSA and buggy rounds
 | Day 02 endpoints | ✅ COMPLETED | rolled into Part A, verified with it |
 | Day 03 / Day 04 Part A (endpoint fixes) | ✅ COMPLETED (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571; `course-practice` 12/12; see [day06.md](tasks/day06.md) |
 | Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | ✅ COMPLETED (31 Oct) | 71a5f07 + c344203; `course-practice` 15/15 (`StudentControllerTest` 14 + context 1). Open note: no unique constraint on `email` yet (the race), a JPA topic |
-| Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON 400, +3 tests) | 🟡 IN_PROGRESS | [spec](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response). `f4cb8b9`: `notFound`, `invalid`, `missingParameter`, `handleDuplicateEmail` return `ProblemDetail`; still open: `HttpMessageNotReadableException` handler, 4 old assertions, +3 tests |
+| Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON 400, +3 tests) | 🟡 IN_PROGRESS | [spec](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response). `f4cb8b9`: `notFound`, `invalid`, `missingParameter`, `handleDuplicateEmail` return `ProblemDetail`; `0600df2` (2 Nov, 22:35 IST) added the `HttpMessageNotReadableException` handler with a fixed `detail` and a log line, moved the 4 assertions and added 3 tests (16/18 as pushed); Lumi's minor fixes `3d85c55` make it **18/18**. Still open (conceptual, yours): the `Exception.class` catch-all returns a 500 for 405, 415 and a non-numeric id, with the wrong `detail`/`errorCode` |
 
 ## 🧩 DSA track (NeetCode 150 by pattern)
 > [!NOTE]
@@ -126,7 +126,7 @@ mvn test          # root project: DSA and buggy rounds
 | 2 | `CarFleet` | 🧩 | ⬜ NOT_STARTED |
 | 3 | `Day04LargestRectangle` | 🐞 | ⬜ NOT_STARTED |
 | 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
-| 5 | Day 04 Part B2 | 🌱 | 🟡 IN_PROGRESS |
+| 5 | Day 04 Part B2 (18/18 green; fix the catch-all handler, see [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist)) | 🌱 | 🟡 IN_PROGRESS |
 | 6 | Banking module 1 (AuthN / AuthZ) | 🏦 | ⬜ NOT_STARTED |
 | 7 | Redos due Tue 3 Nov (moved from 1 and 2 Nov): `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
 | 8 | Count-stack O(n) re-ask (3/5) | 🧩 | 🔴 REVISION_REQUIRED |
@@ -149,12 +149,14 @@ mvn test          # root project: DSA and buggy rounds
 | 🧩🐞 | RPN evaluation: operand order, `"-3"` token, end check, null guard | 3 conceptual misses on 31 Oct (day-7 redo) | 🔴 Weak | ⬜ not generated |
 | 🐞 | Array-backed stack boundaries (grow check, empty, capacity 0) | clean cold redo 28 Oct and 31 Oct | 🟢 Strong | none needed |
 | 🌱 | §5 `ProblemDetail` error contract (Part B2) | 1 Nov evening 7/10: four handlers clean, but the contract changed without its tests (`main` 11/15) and the malformed-body handler is missing | 🟡 Moderate (weakest: implementation 6) | none (Moderate) |
+| 🌱 | Catch-all `@ExceptionHandler(Exception.class)` and what it swallows (405, 415, type mismatch) | 2 Nov late push: the handler returns a 500 with a copy-pasted message and no log; Q6 of the B2 interview questions is the same gap | 🟡 Moderate (concept 6) | none (Moderate) |
 
 ### 📝 Evening scores (out of 10, rubric in [PROGRAM.md](docs/PROGRAM.md#-evening-scoring-rubric))
 | Date | 🌱 Spring | 🧩 DSA | 🐞 Buggy | Evidence |
 |---|---|---|---|---|
 | Sun 1 Nov | **7** (concept 8 · implementation 6 · problem solving 7 · interview 7) | not scored, no work | not scored, no work | Day 04 re-answers 26/30; `f4cb8b9` four `ProblemDetail` handlers, `course-practice` 11/15; `CarFleet` 2/37 and `Day04LargestRectangle` 15/36 untouched · [day10.md evening](tasks/day10.md#-evening-1-nov-review-scores-and-tonights-work) |
 | Mon 2 Nov | not scored, no work | not scored, no work | not scored, no work | no pushes from Prashant today (only the 6 AM session commit `f1dd0e5`); all suites unchanged (`course-practice` 11/15, `CarFleet` 2/37, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18) · [day11.md evening](tasks/day11.md#-evening-2-nov-review-scores-and-tonights-work) |
+| Mon 2 Nov, late push (22:35 IST) | **6** (concept 6 · implementation 6) | not scored, no work | not scored, no work | `0600df2`: B2 handler, 4 assertions moved, 3 tests; as pushed 16/18; with Lumi's minor fixes `3d85c55` 18/18; catch-all handler is a conceptual miss; `CarFleet`, `Day04LargestRectangle` and both redos untouched · [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist) |
 
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
@@ -184,7 +186,7 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 > [!IMPORTANT]
 > **Tomorrow (Tue 3 Nov), set by the 10 PM check ([day11.md end of day](tasks/day11.md#-end-of-day-2-nov-10-pm-check)).** No pushes on 2 Nov, so everything carries. In order, push after each:
 > 1. 🌅 🧩 `CarFleet` first 10-minute step (pattern line, time/space as comments, the example sorted by position by hand with each car's arrival time), pushed even if red. Nothing else until it is pushed.
-> 2. 🌱 Part B2 items 1-6 to **18/18**, contract and tests in one commit.
+> 2. 🌱 Part B2: **18/18 is green** after Lumi's minor fixes (`3d85c55`); what is left is yours: the `Exception.class` catch-all (see the hints in [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist)), then Q3 and Q6 of the B2 interview questions out loud.
 > 3. 🧩 `CarFleet` code to 37/37.
 > 4. 🐞 `Day04LargestRectangle` symptom table (21 failing tests by group), then the smallest fix per group.
 > 5. 🌙 Evening: review, the count-stack O(n) re-ask in chat, then the cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18).
@@ -318,3 +320,4 @@ pie title Tracked items (1 Nov 2026)
 | 1 Nov 2026 | W2 D10 | 10 PM check: no pushes after the 8 PM evening review; 🔮 Sunday plan projection refreshed | No commits from me after `bc6df22`, so nothing new to test. B2 (11/15), `CarFleet` (2/37), `Day04LargestRectangle` (15/36) and the count-stack re-ask carry to Mon 2 Nov; the two 1 Nov cold redos were not attempted and move to the 2 Nov evening, so [redo-schedule.md](revision/redo-schedule.md) shifts one day (last graduation 30 Dec). Projection from 12 verified items in 10 days (8.4 a week): Stack W3-W5, buggy W4-W8, overall still **W10-W22 (29 Dec-21 Mar)**. No new mistakes. End of day added to [day10.md](tasks/day10.md). Next: Part B2 items 1-6 on 2 Nov 6 AM |
 | 2 Nov 2026 | W2 D11 | 🌅 Morning session assigned (carried work only) in [day11.md](tasks/day11.md) | Re-ran on `5e49e42`: no pushes from me since `bc6df22`; `course-practice` 11/15, `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. Every track has an open item, so no new material and no new stubs: B2 items 1-6, `CarFleet`, `Day04LargestRectangle`, each with a first 10-minute step that ends in a push; the two 1 Nov redo stubs run tonight. No cosmetic fixes, no new mistakes |
 | 2 Nov 2026 | W2 D11 | 🌙 Evening review: 🌱 Spring, 🧩 DSA and 🐞 buggy all **not scored** (no work today) | Ran the tests on `f1dd0e5` (JDK 21, Maven): no pushes from me today, `course-practice` 11/15, `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No answers in chat, no cosmetic fixes, no new mistakes. Second day without a push, so tonight opens with a 10-minute `CarFleet` first step that ends in a push, then B2 items 1-6, `CarFleet` code, the count-stack re-ask, the `Day04LargestRectangle` symptom table and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |
+| 2 Nov 2026 | W2 D11 | 🌱 Late push `0600df2` (22:35 IST) reviewed: Part B2 handler and 3 tests; 🌱 Spring **6/10** (Moderate); 🧩 DSA and 🐞 buggy not scored | Ran the tests (JDK 21, Maven): `course-practice` **16/18** as pushed (2 red: a 404 test asserting 400 and a validation test sending no body), **18/18** after Lumi's minor fixes `3d85c55` (test request bodies and status as in the spec, test renamed to `notFoundIsProblemDetail`, one `ProblemDetail` layout). Conceptual, left to Prashant: `@ExceptionHandler(Exception.class)` returns 500 for a 415, a 405 and `/api/students/abc` (probed, not committed), with a copy-pasted message and no log. `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, redos 0/44 and 0/18 unchanged. Logged in [mistakes/spring.md](revision/mistakes/spring.md); [redo-schedule.md](revision/redo-schedule.md) unchanged (no DSA redo graded) |

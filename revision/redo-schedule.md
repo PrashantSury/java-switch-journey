@@ -97,3 +97,6 @@
 | `MinStack` | 23 Oct 10/10 · gap 1, due 24 Oct, never redone |
 | `ScoreOfParentheses` | 25 Oct 37/37, written with help, dry-ran line by line · gap 1, due 26 Oct, never redone |
 | `CarFleet` · `Day04LargestRectangle` · `Day00BuggyExample` | not verified (2/37, 15/36, 4/10); join the schedule at gap 1 once verified |
+
+> [!NOTE]
+> **2 Nov, 22:35 IST late push (`0600df2`):** only Part B2 was touched. No DSA or buggy redo was graded (`CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18, all re-run), so every gap, due date and the 3-9 Nov calendar above stay exactly as the 10 PM check set them.

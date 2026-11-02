@@ -158,3 +158,67 @@ mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 
 > [!IMPORTANT]
 > **First task tomorrow (Tue 3 Nov, 6 AM):** 🧩 the `CarFleet` first 10-minute step from [day09.md](day09.md#-car-fleet-dsa): the pattern line and time/space as comments at the top of `CarFleet.java`, plus the example `target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]` sorted by position by hand with each car's arrival time, **pushed even if red**. Then 🌱 Part B2 items 1-6 to 18/18 in one commit, 🧩 `CarFleet` code to 37/37, and 🐞 the `Day04LargestRectangle` symptom table. 🌙 Evening: the count-stack re-ask, then the redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`.
+
+## 🌌 Late push review (2 Nov, 22:35 IST)
+
+![Slot](https://img.shields.io/badge/slot-late%20push-yellow) ![Spring](https://img.shields.io/badge/Spring-6%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-not%20scored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey)
+
+> [!NOTE]
+> Reviewed `0600df2` ("Added Part B - Handler Methods and Test Cases", 22:35 IST) and its merge `9c60f91`, both after the 10 PM check `af18eeb`. Two files changed, both in `spring-boot/course-practice`: `GlobalExceptionHandler.java` and `StudentControllerTest.java`. Nothing else was pushed. JDK 21, Maven.
+
+### 🧪 Test results
+
+| Suite | Before (10 PM check) | As pushed (`9c60f91`) | After Lumi's minor fixes (`3d85c55`) |
+|---|---|---|---|
+| `course-practice` (Part B2) | 11/15 | **16/18** | **18/18** |
+| `CarFleetTest` | 2/37 | 2/37 | 2/37 (untouched) |
+| `Day04LargestRectangleTest` | 15/36 | 15/36 | 15/36 (untouched) |
+| `Day02RpnEvaluatorRedoNov01Test` | 0/44 | 0/44 | 0/44 (untouched) |
+| `ValidParenthesesRedoNov01Test` | 0/18 | 0/18 | 0/18 (untouched) |
+
+### 🔧 Minor fixes done by Lumi (`3d85c55`, "Lumi: minor fixes on 0600df2")
+
+Line numbers refer to the files as they are in `3d85c55`.
+
+| # | Where | What was wrong | Fix |
+|---|---|---|---|
+| 1 | `StudentControllerTest.java:175` | test named `notFoundIdProblemDetail`; the spec asks for `notFoundIsProblemDetail` | renamed |
+| 2 | `StudentControllerTest.java:177-178` | the 404 test asserted `isBadRequest()` (and `$.status` 404 in the same test), plus a stray `.param("name", ...)` and a `Content-Type` on a GET | `isNotFound()`, request reduced to `GET /api/students/99999` |
+| 3 | `StudentControllerTest.java:181` | `$.detail` expected `Student Not Found` (that is the title); real detail is `Student not found: 99999` | expected value corrected |
+| 4 | `StudentControllerTest.java:189-195` | `validationErrorsAreListed` posted **no body** (`.param("", "")` with `application/problem+json`), so it hit the malformed-body handler (red: title `Malformed Request`); the expected texts `Student 'name' not found` were not what the handler produces | request body `{"name":"A","email":"not-an-email"}` as `application/json` as in the spec; `$.errors.name` and `$.errors.email` now `exists()` as in the spec |
+| 5 | `StudentControllerTest.java:165-166` | `malformedJsonReturnsProblemDetail` posted no body with `application/problem+json`; it was green only because a missing body throws the same exception | request is now the spec's `{"name":` as `application/json` |
+| 6 | `StudentControllerTest.java:162, 174, 186` | `@DisplayName` text copy-pasted ("... 400 with matches"), missing blank lines between tests | display names say what the test proves, blank lines added |
+| 7 | `StudentControllerTest.java:199` | `createStudent` indented by 8 spaces | re-indented |
+| 8 | `GlobalExceptionHandler.java:76-77` | `handleDuplicateEmail` built the `ProblemDetail` in a second layout (spec item 3) | same layout as the other handlers |
+
+Already right in your push, no change needed: the unused `ResponseStatus` import is gone, the malformed-body handler returns the fixed `detail` and `MALFORMED_REQUEST`, the 4 old assertions moved to `$.errors.*` and `$.detail`, the three test names match the spec.
+
+### 🧠 Conceptual mistakes (not touched, yours to fix)
+
+**1. The `Exception.class` catch-all (`GlobalExceptionHandler.java:103-115`).** Symptom: ask the running app for something that is not a 500 and you get a 500. I probed three requests on your pushed code (a scratch test, not committed): `POST /api/students` with `text/plain`, `PATCH /api/students`, and `GET /api/students/abc`. All three came back **500**. The body also says "Required json body is bad or empty." with `errorCode` `BAD_JSON_OR_EMPTY_JSON`, which is the message of a different failure, and nothing is logged. No test fails, so the green suite does not show it; the failing-test names would be the ones you write for it.
+
+Guiding questions:
+- Which resolver runs first when an `@ExceptionHandler(Exception.class)` exists, yours or `DefaultHandlerExceptionResolver`? Re-read section 5 gotcha in [the B2 spec](day10.md#-day-04-part-b2-problemdetail-in-every-error-response).
+- What should a client of a banking API read after a genuine bug: the real cause, or a fixed generic sentence? Where does the real cause go then, and at which log level?
+- Is the catch-all required today? Item 7 was optional. If you keep it, what keeps 405 and 415 as they are, and how will you prove it with a test?
+
+**2. Test intent (conceptual in effect, fixed above as a minor).** Two of the three new tests did not send the request they claim to test, and one passed only because both situations throw the same exception. Question to answer in your own words: for `malformedJsonReturnsProblemDetail`, which assertion would still pass if the handler leaked the parser message? (The spec's sixth assertion on `Unexpected`, `JsonParseException` and `com.fasterxml` is not in your test yet.)
+
+**3. Logging detail (hint only).** `log.warn(ex.getMessage())` keeps the text but loses the exception and its cause chain. Which `warn` overload keeps both, and why is it not a format-string risk to pass a message that contains `{}`?
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **6/10** (🟡 Moderate) | 🧠 concept **6**: the exception-per-step model is right (new handler for `HttpMessageNotReadableException`, fixed text to the client, cause to the log), but the catch-all swallows 405 and 415 and the rule from the spec's section 5 was missed. 🛠️ implementation **6**: 16/18 as pushed; two tests did not exercise the request they were named for and one asserted the wrong status; code itself is clean (import removed, log field, `errorCode` on every handler). Problem solving, debugging and interview dimensions did not apply: no answers given and no failing run was worked through |
+| 🧩 DSA | **not scored** | no DSA work: `CarFleet` still 2/37; no chat answer to the count-stack re-ask |
+| 🐞 Buggy | **not scored** | no buggy work: `Day04LargestRectangle` still 15/36; redos still 0/44 and 0/18 |
+
+### 🔁 Status after this review
+| Item | Status |
+|---|---|
+| 🌱 Day 04 Part B2 | 🟡 IN_PROGRESS: `course-practice` **18/18** green, but not ✅ until the catch-all is fixed or removed and the handler is read again |
+| 🧩 `CarFleet`, 🐞 `Day04LargestRectangle`, count-stack re-ask, both redos | unchanged, carried to Tue 3 Nov as set by the 10 PM check |
+
+> [!IMPORTANT]
+> **Next step for you (Spring, ~15 min):** answer the three questions under conceptual mistake 1, fix or remove the catch-all, add one test that proves a 415 or 405 keeps its status, and push. Then Q3 and Q6 of the B2 interview questions out loud, and banking module 1 can start. Everything else stays as in the 10 PM check: `CarFleet` first step first.
