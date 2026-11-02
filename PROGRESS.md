@@ -14,7 +14,7 @@
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 4 of 5 handlers converted), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Mon 2 Nov evening (moved from 1 Nov, blank stubs ready) | [day11.md](tasks/day11.md#-due-redos-2-in-the--evening-after-the-review-and-pending-work) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Tue 3 Nov evening (moved from 1 and 2 Nov, blank stubs ready) | [day11.md](tasks/day11.md#-due-redos-2-in-the--evening-after-the-review-and-pending-work) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
@@ -102,8 +102,8 @@ mvn test          # root project: DSA and buggy rounds
 | Day01ArrayStackRedo7 | 🔁 redo (day 7) | 17/17 | d5c0ee9 | ✅ COMPLETED (31 Oct) | clean cold pass; Lumi removed stale TODO comments |
 | Day02RpnEvaluatorRedo | 🔁 redo (day 3) | 44/44 | bddf14c | 🟡 IN_PROGRESS | passes, but done by re-reading the original, not from memory |
 | Day02RpnEvaluatorRedo7 | 🔁 redo (day 7) | 44/44 | 37f6c11 | ✅ COMPLETED (31 Oct) | fixed after 3 review rounds (fall-through, end check, null guard); logged in `revision/mistakes/dsa.md`; reset to +1 |
-| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 0/44 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1 Nov, moved to the Mon 2 Nov evening; tests verified against a correct version |
-| ValidParenthesesRedoNov01 | 🔁 redo (+1) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1 Nov, moved to the Mon 2 Nov evening; new stricter suite (empty, `null`, non-brackets, 100 000 chars) |
+| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 0/44 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1 or 2 Nov, moved to the Tue 3 Nov evening; tests verified against a correct version |
+| ValidParenthesesRedoNov01 | 🔁 redo (+1) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1 or 2 Nov, moved to the Tue 3 Nov evening; new stricter suite (empty, `null`, non-brackets, 100 000 chars) |
 
 > [!IMPORTANT]
 > 🔁 Every DSA problem and buggy round is redone cold, and each result sets the next gap (clean pass 1 → 3 → 7 → 14 → 30; hint or fix repeats the gap; conceptual miss resets to day 1), at most 2 a day. A problem keeps ✅ COMPLETED for its first verified solve; the calendar and next due dates are in [redo-schedule.md](revision/redo-schedule.md).
@@ -128,7 +128,7 @@ mvn test          # root project: DSA and buggy rounds
 | 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
 | 5 | Day 04 Part B2 | 🌱 | 🟡 IN_PROGRESS |
 | 6 | Banking module 1 (AuthN / AuthZ) | 🏦 | ⬜ NOT_STARTED |
-| 7 | Redos due Mon 2 Nov (moved from 1 Nov): `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
+| 7 | Redos due Tue 3 Nov (moved from 1 and 2 Nov): `Day02RpnEvaluatorRedoNov01` (0/44), `ValidParenthesesRedoNov01` (0/18) | 🔁 | 🟡 IN_PROGRESS |
 | 8 | Count-stack O(n) re-ask (3/5) | 🧩 | 🔴 REVISION_REQUIRED |
 | 9 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
 | 10 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
@@ -161,16 +161,16 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Mon 2 Nov | `Day02RpnEvaluator` (+1, late) | `ValidParentheses` (+1, late) |
-| Tue 3 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
-| Wed 4 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
-| Thu 5 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
-| Fri 6 Nov | `ValidParentheses` (+3, late) | `MinStack` (+3) |
-| Sat 7 Nov | `ScoreOfParentheses` (+3, late) | `RemoveKAdjacentDuplicates` (+3) |
-| Sun 8 Nov | `Day01ArrayStack` (+7, late) | `Day03NextGreaterIndex` (+3, late) |
+| Tue 3 Nov | `Day02RpnEvaluator` (+1, late) | `ValidParentheses` (+1, late) |
+| Wed 4 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
+| Thu 5 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
+| Fri 6 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
+| Sat 7 Nov | `ValidParentheses` (+3, late) | `MinStack` (+3) |
+| Sun 8 Nov | `Day01ArrayStack` (+7, late) | `ScoreOfParentheses` (+3, late) |
+| Mon 9 Nov | `RemoveKAdjacentDuplicates` (+3, late) | `Day03NextGreaterIndex` (+3, late) |
 
 > [!WARNING]
-> Redos now run in the 🌙 evening, after the review and after pending morning work. The 1 Nov redos were not attempted, so the queue moved one day. In the next 7 days (2-8 Nov) they are 14 redos (about 5.8 h) against a 7 h evening budget, so there is almost no spare evening time that week; the cap of 2 a day and the "most overdue first" rule decide what waits.
+> Redos now run in the 🌙 evening, after the review and after pending morning work. The 1 Nov and 2 Nov redos were not attempted, so the queue has moved two days in total (last graduation now Thu 31 Dec). In the next 7 days (3-9 Nov) they are 14 redos (about 5.8 h) against a 7 h evening budget, so there is almost no spare evening time that week; the cap of 2 a day and the "most overdue first" rule decide what waits.
 
 ## ⛔ Blockers
 | Blocker | Since | Needs |
@@ -182,14 +182,14 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Tonight (Mon 2 Nov), set by the 8 PM evening review ([day11.md evening](tasks/day11.md#-evening-2-nov-review-scores-and-tonights-work)).** No pushes today, so nothing could be scored. In order, push after each:
-> 1. 🧩 `CarFleet` first 10-minute step (pattern line, complexity, hand-sorted example), pushed even if red.
+> **Tomorrow (Tue 3 Nov), set by the 10 PM check ([day11.md end of day](tasks/day11.md#-end-of-day-2-nov-10-pm-check)).** No pushes on 2 Nov, so everything carries. In order, push after each:
+> 1. 🌅 🧩 `CarFleet` first 10-minute step (pattern line, time/space as comments, the example sorted by position by hand with each car's arrival time), pushed even if red. Nothing else until it is pushed.
 > 2. 🌱 Part B2 items 1-6 to **18/18**, contract and tests in one commit.
-> 3. 🧩 `CarFleet` code to 37/37, then the count-stack O(n) re-ask in chat.
-> 4. 🐞 `Day04LargestRectangle` symptom table (21 failing tests by group).
-> 5. 🔁 If time: cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18).
+> 3. 🧩 `CarFleet` code to 37/37.
+> 4. 🐞 `Day04LargestRectangle` symptom table (21 failing tests by group), then the smallest fix per group.
+> 5. 🌙 Evening: review, the count-stack O(n) re-ask in chat, then the cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18).
 >
-> **Tomorrow (Tue 3 Nov):** finish whatever of B2, `CarFleet` and `Day04LargestRectangle` is still open before any new material; banking module 1 starts only after B2 is ✅. Evening redos: the two above if they slip, otherwise `MinStack` and `ScoreOfParentheses`.
+> Banking module 1 starts only after B2 is ✅. If the two redos slip again, `MinStack` and `ScoreOfParentheses` stay next in line (4 Nov).
 
 ## 📊 Status counts
 ```mermaid
