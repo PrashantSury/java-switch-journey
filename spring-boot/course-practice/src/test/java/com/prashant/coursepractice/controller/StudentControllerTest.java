@@ -35,8 +35,8 @@ class StudentControllerTest {
         mvc.perform(post("/api/students").contentType(MediaType.APPLICATION_JSON)
                 .content("{\"name\":\"\",\"email\":\"not-an-email\"}"))
            .andExpect(status().isBadRequest())
-           .andExpect(jsonPath("$.name").exists())
-           .andExpect(jsonPath("$.email").exists());
+           .andExpect(jsonPath("$.errors.name").exists())
+           .andExpect(jsonPath("$.errors.email").exists());
     }
 
     @Test @DisplayName("POST with a taken email returns 409")
@@ -95,7 +95,7 @@ class StudentControllerTest {
     void searchMissingName() throws Exception {
         mvc.perform(get("/api/students/search"))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.error").value("name parameter is missing"));
+                .andExpect(jsonPath("$.detail").value("Required parameter 'name' is missing."));
     }
 
     @Test @DisplayName("PUT existing student returns 200")
@@ -117,7 +117,7 @@ class StudentControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"name\":\"After\",\"email\":\"after@example.com\"}"))
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.error").value("Student not found: 99999"));
+                .andExpect(jsonPath("$.detail").value("Student not found: 99999"));
     }
 
     @Test @DisplayName("PUT with own unchanged email returns 200")
@@ -146,7 +146,7 @@ class StudentControllerTest {
     void deleteUnknown() throws Exception {
         mvc.perform(delete("/api/students/99999"))
            .andExpect(status().isNotFound())
-           .andExpect(jsonPath("$.error").value("Student not found: 99999"));
+           .andExpect(jsonPath("$.detail").value("Student not found: 99999"));
     }
 
     @Test @DisplayName("GET search by name returns 200 with matches")
@@ -158,8 +158,44 @@ class StudentControllerTest {
            .andExpect(jsonPath("$[0].name").value("SearchableZeta"))
            .andExpect(jsonPath("$[0].email").value("zeta@example.com"));
     }
+    @Test @DisplayName("POST malformed json 400 with matches")
+    void malformedJsonReturnsProblemDetail() throws Exception {
 
-    private long createStudent(String name, String email) throws Exception {
+        mvc.perform(post("/api/students").contentType("application/problem+json").param("", ""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.status").value(400))
+                .andExpect(jsonPath("$.title").value("Malformed Request"))
+                .andExpect(jsonPath("$.detail").value("Request body is missing or not valid JSON."))
+                .andExpect(jsonPath("$.errorCode").value("MALFORMED_REQUEST"));
+    }
+    @Test @DisplayName("GET not found ID ProblemDetail")
+    void notFoundIdProblemDetail() throws Exception {
+
+        mvc.perform(get("/api/students/99999").contentType("application/problem+json").param("name", "SearchableZeta"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.title").value("Student Not Found"))
+                .andExpect(jsonPath("$.detail").value("Student Not Found"))
+                .andExpect(jsonPath("$.errorCode").value("STUDENT_NOT_FOUND"))
+                .andExpect(jsonPath("$.instance").value("/api/students/99999"));
+    }
+
+    @Test @DisplayName("POST validation error 400 with matches")
+    void validationErrorsAreListed() throws Exception {
+
+
+        mvc.perform(post("/api/students").contentType("application/problem+json").param("", ""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.status").value(400))
+                .andExpect(jsonPath("$.title").value("Validation Failed"))
+                .andExpect(jsonPath("$.errors.name").value("Student 'name' not found"))
+                .andExpect(jsonPath("$.errors.email").value("Student 'email' not found"))
+                .andExpect(jsonPath("$.errorCode").value("VALIDATION_FAILED"));
+
+    }
+
+
+        private long createStudent(String name, String email) throws Exception {
         MvcResult result = mvc.perform(post("/api/students")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"name\":\"" + name + "\",\"email\":\"" + email + "\"}"))
