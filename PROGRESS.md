@@ -154,6 +154,7 @@ mvn test          # root project: DSA and buggy rounds
 | Date | 🌱 Spring | 🧩 DSA | 🐞 Buggy | Evidence |
 |---|---|---|---|---|
 | Sun 1 Nov | **7** (concept 8 · implementation 6 · problem solving 7 · interview 7) | not scored, no work | not scored, no work | Day 04 re-answers 26/30; `f4cb8b9` four `ProblemDetail` handlers, `course-practice` 11/15; `CarFleet` 2/37 and `Day04LargestRectangle` 15/36 untouched · [day10.md evening](tasks/day10.md#-evening-1-nov-review-scores-and-tonights-work) |
+| Mon 2 Nov | not scored, no work | not scored, no work | not scored, no work | no pushes from Prashant today (only the 6 AM session commit `f1dd0e5`); all suites unchanged (`course-practice` 11/15, `CarFleet` 2/37, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18) · [day11.md evening](tasks/day11.md#-evening-2-nov-review-scores-and-tonights-work) |
 
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
@@ -181,13 +182,14 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Today (Mon 2 Nov), set by the 6 AM morning session ([day11.md](tasks/day11.md)).** No pushes since `bc6df22`, so the same items carry, each with a first 10-minute step that ends in a push:
-> 1. 🌱 **First task:** Part B2 items 1-6 ([checklist](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response)): `malformedJsonReturnsProblemDetail` first (red), then the `HttpMessageNotReadableException` handler, the 4 moved assertions and the other 2 tests, until `course-practice` shows **18/18**, contract and tests in one commit. Banking module 1 starts only after that.
-> 2. 🧩 `CarFleet` 37/37 (fifth session): pattern line, the hand-sorted example and the complexity pushed in the first 10 minutes.
-> 3. 🐞 `Day04LargestRectangle` 36/36: the 21 failing tests grouped by symptom before any fix.
-> 4. 🧩 Count-stack O(n) re-ask in chat (evening), then the weak-topic pack.
+> **Tonight (Mon 2 Nov), set by the 8 PM evening review ([day11.md evening](tasks/day11.md#-evening-2-nov-review-scores-and-tonights-work)).** No pushes today, so nothing could be scored. In order, push after each:
+> 1. 🧩 `CarFleet` first 10-minute step (pattern line, complexity, hand-sorted example), pushed even if red.
+> 2. 🌱 Part B2 items 1-6 to **18/18**, contract and tests in one commit.
+> 3. 🧩 `CarFleet` code to 37/37, then the count-stack O(n) re-ask in chat.
+> 4. 🐞 `Day04LargestRectangle` symptom table (21 failing tests by group).
+> 5. 🔁 If time: cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18).
 >
-> **Evening (Mon 2 Nov):** review, then pending morning work, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`. Tomorrow's redos (if these pass): `MinStack` and `ScoreOfParentheses`.
+> **Tomorrow (Tue 3 Nov):** finish whatever of B2, `CarFleet` and `Day04LargestRectangle` is still open before any new material; banking module 1 starts only after B2 is ✅. Evening redos: the two above if they slip, otherwise `MinStack` and `ScoreOfParentheses`.
 
 ## 📊 Status counts
 ```mermaid
@@ -315,3 +317,4 @@ pie title Tracked items (1 Nov 2026)
 | 1 Nov 2026 | W2 D10 | 🌙 Evening review: 🌱 Spring **7/10** (Moderate); 🧩 DSA and 🐞 buggy not scored (no work) | Ran the tests on `bc6df22` (JDK 21, Maven): `course-practice` 11/15 (same 4 old assertions), `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No new conceptual mistakes; the unused `ResponseStatus` import is left for B2 item 3 (file is mid-edit). Weak-topic pack for amortised O(n) added. Tonight: B2 items 1-6, `CarFleet`, count-stack re-ask, then `Day04LargestRectangle` and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |
 | 1 Nov 2026 | W2 D10 | 10 PM check: no pushes after the 8 PM evening review; 🔮 Sunday plan projection refreshed | No commits from me after `bc6df22`, so nothing new to test. B2 (11/15), `CarFleet` (2/37), `Day04LargestRectangle` (15/36) and the count-stack re-ask carry to Mon 2 Nov; the two 1 Nov cold redos were not attempted and move to the 2 Nov evening, so [redo-schedule.md](revision/redo-schedule.md) shifts one day (last graduation 30 Dec). Projection from 12 verified items in 10 days (8.4 a week): Stack W3-W5, buggy W4-W8, overall still **W10-W22 (29 Dec-21 Mar)**. No new mistakes. End of day added to [day10.md](tasks/day10.md). Next: Part B2 items 1-6 on 2 Nov 6 AM |
 | 2 Nov 2026 | W2 D11 | 🌅 Morning session assigned (carried work only) in [day11.md](tasks/day11.md) | Re-ran on `5e49e42`: no pushes from me since `bc6df22`; `course-practice` 11/15, `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. Every track has an open item, so no new material and no new stubs: B2 items 1-6, `CarFleet`, `Day04LargestRectangle`, each with a first 10-minute step that ends in a push; the two 1 Nov redo stubs run tonight. No cosmetic fixes, no new mistakes |
+| 2 Nov 2026 | W2 D11 | 🌙 Evening review: 🌱 Spring, 🧩 DSA and 🐞 buggy all **not scored** (no work today) | Ran the tests on `f1dd0e5` (JDK 21, Maven): no pushes from me today, `course-practice` 11/15, `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No answers in chat, no cosmetic fixes, no new mistakes. Second day without a push, so tonight opens with a 10-minute `CarFleet` first step that ends in a push, then B2 items 1-6, `CarFleet` code, the count-stack re-ask, the `Day04LargestRectangle` symptom table and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |

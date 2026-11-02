@@ -72,3 +72,71 @@ git pull
 (cd spring-boot/course-practice && mvn test)
 mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 ```
+
+## 🌙 Evening (2 Nov): review, scores and tonight's work
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-not%20scored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-not%20scored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey)
+
+> [!NOTE]
+> Checked at 8 PM on `f1dd0e5` with JDK 21 and Maven. There are **no pushes from you today**; the only commit is the 6 AM morning session. The last code push is still `f4cb8b9` (1 Nov, 08:38 IST). Test results are unchanged from the morning: `course-practice` **11/15**, `CarFleetTest` **2/37**, `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**. No answers were given in chat today. Nothing to grade, so no cosmetic fixes and no new entries in the mistake logs.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **can't be scored yet** | no Spring work today: Part B2 is where `f4cb8b9` left it (11/15, malformed-body handler and 3 tests missing). Yesterday's 7/10 stands as the last score |
+| 🧩 DSA | **can't be scored yet** | no DSA work today: `CarFleet` is still the stub (2/37 by accident) |
+| 🐞 Buggy | **can't be scored yet** | no buggy work today: `Day04LargestRectangle` is unchanged at 15/36 |
+
+> [!WARNING]
+> 📌 **The honest read.** This is the second day in a row without a push, and `CarFleet` is now in its sixth session, `Day04LargestRectangle` in its fifth. At lead level the skill gap here is small; the gap is **starting**. That is why tonight's list opens with a 10-minute item whose only goal is a red-but-honest push. One pushed comment block tonight is worth more to the score than a perfect plan for tomorrow.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 §5 `ProblemDetail` error contract (Part B2) | 🟡 Moderate (carried) | last scored 7/10 on 1 Nov; no new evidence. Finish items 1-6 |
+| 🧩 `CarFleet` | ⬜ Pending | not attempted (2/37) |
+| 🐞 `Day04LargestRectangle` | ⬜ Pending | not attempted (15/36) |
+| 🔁 `Day02RpnEvaluator` and `ValidParentheses` cold redos | ⬜ Pending | stubs 0/44 and 0/18, due tonight |
+| 🧩 Amortised O(n) reasoning for stack solutions | 🔴 Weak (carried) | count-stack quiz 3/5 on 29 Oct, re-ask still open. The pack is already in [day10.md](day10.md#-weak-topic-pack-amortised-on-for-stack-solutions); nothing new is generated tonight |
+| ⛔ Blocked | none | nothing outside your control is stopping any task |
+
+> [!NOTE]
+> No topic scored Weak **tonight**, because nothing was graded. The other 🔴 Weak rows in [PROGRESS.md](../PROGRESS.md#-weak-topics) come from older answers; their packs are made when each is picked up.
+
+### ⏳ Pending morning work = tonight's work (in this order)
+
+> [!IMPORTANT]
+> Pending morning work first, redos only after. Stop where your 60 minutes end and push what you have, even if it is red. The 10 PM check counts a pushed first step as progress.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 10 | `CarFleet` first step: the pattern line, time/space as comments, and the example `target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]` sorted by position by hand with each car's arrival time. **Push it.** | 🧩 | one commit on `main`, suite may still be red |
+| 2 | 25 | Part B2 items 1-6 ([checklist in section 7](day10.md#-day-04-part-b2-problemdetail-in-every-error-response)): `malformedJsonReturnsProblemDetail` first (red), then the handler with the log line, the 4 moved assertions and the other 2 tests, in one commit | 🌱 | `course-practice` **18 tests, 0 failures** |
+| 3 | 15 | `CarFleet` code, from the hand-sorted example | 🧩 | `CarFleetTest` 37/37 on your pushed code |
+| 4 | 5 | Count-stack O(n) re-ask, in chat | 🧩 | graded 4/5 or better |
+| 5 | 5 | `Day04LargestRectangle` first step: the 21 failing tests grouped by symptom as a comment block, no code change | 🐞 | one commit on `main` |
+| 6 | if time | 🔁 cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18) | 🔁 | 44/44 and 18/18, cold |
+
+> [!NOTE]
+> If the redos slip again, the 10 PM check moves the queue one more day (`MinStack` and `ScoreOfParentheses` behind them). [redo-schedule.md](../revision/redo-schedule.md) is unchanged tonight because no redo was graded.
+
+- [ ] `CarFleet` first step pushed
+- [ ] B2 18/18 pushed
+- [ ] `CarFleet` 37/37 pushed
+- [ ] count-stack re-ask answered in chat
+- [ ] `Day04LargestRectangle` symptom table pushed
+- [ ] the two cold redos pushed (if time)
+
+### 🎯 Tomorrow's focus (Tue 3 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | Finish B2 if still open (contract and tests in one commit), then answer B2 interview questions 3 and 6 out loud. Banking module 1 starts only when B2 is ✅ | last measured weakness was implementation (6/10); module 1 waits behind B2 by plan |
+| 🧩 DSA | `CarFleet` to 37/37. If tonight's first step is pushed, go straight to code; if not, the morning opens with that 10-minute step and nothing else until it is pushed | no DSA scored since 31 Oct; the block is starting, not solving |
+| 🐞 Buggy | `Day04LargestRectangle`: symptom table first, then the smallest fix per group | debugging is what this round scores, and it has not been attempted |
+| 🔁 Redos (evening) | `Day02RpnEvaluator` and `ValidParentheses` if not done tonight, otherwise `MinStack` and `ScoreOfParentheses` | cap of 2 a day, most overdue first |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want the re-ask or the B2 interview questions graded. Each answer is graded and recorded the same night.
