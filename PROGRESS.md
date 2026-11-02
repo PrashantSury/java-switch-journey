@@ -14,11 +14,11 @@
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 4 of 5 handlers converted), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Mon 2 Nov (moved from 1 Nov, blank stubs ready) | [day10.md](tasks/day10.md) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Mon 2 Nov evening (moved from 1 Nov, blank stubs ready) | [day11.md](tasks/day11.md#-due-redos-2-in-the--evening-after-the-review-and-pending-work) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
-> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Specs of every pending task: [tasks/day09.md](tasks/day09.md); today's plan: [tasks/day10.md](tasks/day10.md).
+> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Specs of every pending task: [tasks/day09.md](tasks/day09.md) and Part B2 in [tasks/day10.md](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response); today's plan: [tasks/day11.md](tasks/day11.md).
 
 ```bash
 mvn test          # root project: DSA and buggy rounds
@@ -181,13 +181,13 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Next morning (Mon 2 Nov, 6 AM), set by the 10 PM check on 1 Nov.** Nothing was pushed after the evening review, so last night's list carries over in the same order:
+> **Today (Mon 2 Nov), set by the 6 AM morning session ([day11.md](tasks/day11.md)).** No pushes since `bc6df22`, so the same items carry, each with a first 10-minute step that ends in a push:
 > 1. 🌱 **First task:** Part B2 items 1-6 ([checklist](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response)): `malformedJsonReturnsProblemDetail` first (red), then the `HttpMessageNotReadableException` handler, the 4 moved assertions and the other 2 tests, until `course-practice` shows **18/18**, contract and tests in one commit. Banking module 1 starts only after that.
-> 2. 🧩 `CarFleet` 37/37: the first 10 minutes only on the pattern line, a hand-sorted example and the complexity.
-> 3. 🐞 `Day04LargestRectangle`: group the 21 failing tests by symptom before any fix.
-> 4. 🧩 Count-stack O(n) re-ask in chat, then the weak-topic pack.
+> 2. 🧩 `CarFleet` 37/37 (fifth session): pattern line, the hand-sorted example and the complexity pushed in the first 10 minutes.
+> 3. 🐞 `Day04LargestRectangle` 36/36: the 21 failing tests grouped by symptom before any fix.
+> 4. 🧩 Count-stack O(n) re-ask in chat (evening), then the weak-topic pack.
 >
-> **Evening (Mon 2 Nov):** review, then pending morning work, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`. Details: [End of day in day10.md](tasks/day10.md#-end-of-day-1-nov-10-pm-check).
+> **Evening (Mon 2 Nov):** review, then pending morning work, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`. Tomorrow's redos (if these pass): `MinStack` and `ScoreOfParentheses`.
 
 ## 📊 Status counts
 ```mermaid
@@ -314,3 +314,4 @@ pie title Tracked items (1 Nov 2026)
 | 1 Nov 2026 | W2 D10 | 🌱 Part B2 started: `f4cb8b9` (08:38 IST) converts 4 handlers to `ProblemDetail`; spec rewritten in [day10.md](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response) | Prashant said B2 was not clear in day10.md (it only linked to day09). Re-ran `mvn test` in `spring-boot/course-practice`: 11/15 green; the 4 failures are the old `$.error` / `$.name` assertions (`createInvalid`, `searchMissingName`, `updateNonExisting`, `deleteUnknown`), an expected contract change, not a regression. Still open: `HttpMessageNotReadableException` handler (malformed JSON gives a 400 with an empty body today), +3 tests, optional 500 handler |
 | 1 Nov 2026 | W2 D10 | 🌙 Evening review: 🌱 Spring **7/10** (Moderate); 🧩 DSA and 🐞 buggy not scored (no work) | Ran the tests on `bc6df22` (JDK 21, Maven): `course-practice` 11/15 (same 4 old assertions), `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No new conceptual mistakes; the unused `ResponseStatus` import is left for B2 item 3 (file is mid-edit). Weak-topic pack for amortised O(n) added. Tonight: B2 items 1-6, `CarFleet`, count-stack re-ask, then `Day04LargestRectangle` and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |
 | 1 Nov 2026 | W2 D10 | 10 PM check: no pushes after the 8 PM evening review; 🔮 Sunday plan projection refreshed | No commits from me after `bc6df22`, so nothing new to test. B2 (11/15), `CarFleet` (2/37), `Day04LargestRectangle` (15/36) and the count-stack re-ask carry to Mon 2 Nov; the two 1 Nov cold redos were not attempted and move to the 2 Nov evening, so [redo-schedule.md](revision/redo-schedule.md) shifts one day (last graduation 30 Dec). Projection from 12 verified items in 10 days (8.4 a week): Stack W3-W5, buggy W4-W8, overall still **W10-W22 (29 Dec-21 Mar)**. No new mistakes. End of day added to [day10.md](tasks/day10.md). Next: Part B2 items 1-6 on 2 Nov 6 AM |
+| 2 Nov 2026 | W2 D11 | 🌅 Morning session assigned (carried work only) in [day11.md](tasks/day11.md) | Re-ran on `5e49e42`: no pushes from me since `bc6df22`; `course-practice` 11/15, `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. Every track has an open item, so no new material and no new stubs: B2 items 1-6, `CarFleet`, `Day04LargestRectangle`, each with a first 10-minute step that ends in a push; the two 1 Nov redo stubs run tonight. No cosmetic fixes, no new mistakes |
