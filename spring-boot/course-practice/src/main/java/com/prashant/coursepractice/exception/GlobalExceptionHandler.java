@@ -19,6 +19,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
+    // ---- Domain exceptions (thrown by the service layer) ----
+
+    /**
+     * {@link StudentNotFoundException} -> 404 Not Found (errorCode STUDENT_NOT_FOUND).
+     * Thrown by StudentService for an unknown id.
+     * Controller: GET /{id}, PUT /{id}, DELETE /{id}.
+     * Tests: StudentControllerTest.GetStudentById, UpdateStudent, DeleteStudent.
+     */
     @ExceptionHandler(StudentNotFoundException.class)
     public ProblemDetail notFound(StudentNotFoundException ex) {
 
@@ -32,6 +40,34 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problemDetail;
     }
 
+    /**
+     * {@link DuplicateEmailException} -> 409 Conflict (errorCode DUPLICATE_EMAIL).
+     * Thrown by StudentService when the email belongs to another student.
+     * Controller: POST /api/students (create) and PUT /{id} (update).
+     * Tests: StudentControllerTest.CreateStudent#createDuplicateEmail,
+     * UpdateStudent#updateWithAnotherStudentsEmail.
+     */
+    @ExceptionHandler(DuplicateEmailException.class)
+    public ProblemDetail handleDuplicateEmail(DuplicateEmailException ex) {
+
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.CONFLICT);
+
+        problemDetail.setTitle("Duplicate Email");
+        problemDetail.setDetail("Email already exists. Please use a different email address.");
+        problemDetail.setProperty("errorCode", "DUPLICATE_EMAIL");
+
+        return problemDetail;
+    }
+
+    // ---- Bad client requests (400) ----
+
+    /**
+     * {@link MethodArgumentNotValidException} -> 400 Bad Request (errorCode VALIDATION_FAILED).
+     * Raised by {@code @Valid @RequestBody} when a field breaks a bean-validation rule.
+     * Controller: POST /api/students (create) and PUT /{id} (update).
+     * Tests: StudentControllerTest.CreateStudent#createInvalid, #validationErrorsAreListed.
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ProblemDetail invalid(MethodArgumentNotValidException ex) {
 
@@ -54,6 +90,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problemDetail;
     }
 
+    /**
+     * {@link MissingServletRequestParameterException} -> 400 Bad Request
+     * (errorCode MISSING_REQUEST_PARAMETER).
+     * Raised when the required {@code name} query parameter is absent.
+     * Controller: GET /api/students/search.
+     * Tests: StudentControllerTest.SearchStudents#searchMissingName.
+     */
     @ExceptionHandler(MissingServletRequestParameterException.class)
     public ProblemDetail missingParameter(
             MissingServletRequestParameterException ex) {
@@ -71,19 +114,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problemDetail;
     }
 
-    @ExceptionHandler(DuplicateEmailException.class)
-    public ProblemDetail handleDuplicateEmail(DuplicateEmailException ex) {
-
-        ProblemDetail problemDetail =
-                ProblemDetail.forStatus(HttpStatus.CONFLICT);
-
-        problemDetail.setTitle("Duplicate Email");
-        problemDetail.setDetail("Email already exists. Please use a different email address.");
-        problemDetail.setProperty("errorCode", "DUPLICATE_EMAIL");
-
-        return problemDetail;
-    }
-
+    /**
+     * {@link HttpMessageNotReadableException} -> 400 Bad Request (errorCode MALFORMED_REQUEST).
+     * Raised when the request body is missing or is not valid JSON.
+     * Controller: POST /api/students (create) and PUT /{id} (update).
+     * Tests: StudentControllerTest.CreateStudent#malformedJsonReturnsProblemDetail.
+     */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ProblemDetail badJsonOrEmptyJson(
             HttpMessageNotReadableException ex) {
@@ -101,6 +137,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problemDetail;
     }
 
+    // ---- Safety net (must stay last) ----
+
+    /**
+     * Catch-all for any exception no handler above matches -> 500 Internal Server Error
+     * (errorCode INTERNAL_ERROR). Keep this LAST; it is the safety net, not the normal path.
+     * Controller: any endpoint.
+     * Tests: StudentControllerTest.CreateStudent#unsupportedMediaTypeReturns415 (the case
+     * that exposed this handler turning client errors into 500).
+     */
     @ExceptionHandler(Exception.class)
     public ProblemDetail handleException(Exception ex) {
 
