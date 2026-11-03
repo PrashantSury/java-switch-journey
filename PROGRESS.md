@@ -12,7 +12,7 @@
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 18/18 green, but the catch-all 500 handler is still wrong), module 1 | [B2](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response), then [module 1](tasks/day09.md#-banking-module-1-authn--authz-foundation) |
-| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 5 problems ✅ (2 of the 7 NeetCode Stack problems) | `CarFleet` | [Car Fleet](tasks/day09.md#-car-fleet-dsa) |
+| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅ (3 of the 7 NeetCode Stack problems); `CarFleet` ✅ 3 Nov (37/37, with hints) | the 3 comment lines on `CarFleet`, count-stack re-ask; next new Stack problem only when the open items clear | [Midday push review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
 | 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Tue 3 Nov evening (moved from 1 and 2 Nov, blank stubs ready) | [day11.md](tasks/day11.md#-due-redos-2-in-the--evening-after-the-review-and-pending-work) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
@@ -79,7 +79,7 @@ mvn test          # root project: DSA and buggy rounds
 | Pattern | Status | Detail |
 |---|---|---|
 | Arrays & Hashing · Two Pointers · Sliding Window | ⬜ NOT_STARTED | skipped for now; the program started at Stack |
-| 🔥 **Stack** (current) | 🟡 IN_PROGRESS | Valid Parentheses ✅ · Min Stack ✅ · Car Fleet ⬜ · Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle ⬜ not yet assigned as DSA problems |
+| 🔥 **Stack** (current) | 🟡 IN_PROGRESS | Valid Parentheses ✅ · Min Stack ✅ · Car Fleet ✅ (3 Nov, with hints) · Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle ⬜ not yet assigned as DSA problems |
 
 | Problem | Tests | My commit | Status | Notes |
 |---|---|---|---|---|
@@ -88,7 +88,7 @@ mvn test          # root project: DSA and buggy rounds
 | ScoreOfParentheses | 37/37 | c909bb8 | ✅ COMPLETED | follow-up questions ⬜ NOT_STARTED (answers pending) |
 | RemoveKAdjacentDuplicates (Day 01) | 26/26 | 2d36911 | ✅ COMPLETED (29 Oct) | O(n) quiz 3/5 (missed the push/pop-once reasoning) → re-ask 🔴 |
 | AsteroidCollision (Day 02) | 28/28 | 6ddde32 + Lumi's cosmetic clean-up | ✅ COMPLETED (31 Oct) | O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified |
-| CarFleet (Day 04) | 2/37 (pass by accident) | none, stub only | ⬜ NOT_STARTED | [spec](tasks/day09.md#-car-fleet-dsa) |
+| CarFleet (Day 04) | 37/37 | 91cb817 + Lumi's minor fixes | ✅ COMPLETED (3 Nov, with hints) | sort by position descending, cross-multiplied `long` comparison, `Deque<long[]>`; hint-assisted (pairing, exact comparison). Still owed: pattern line and time/space comments at the top · [review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
 
 ## 🐞 Buggy problems (on the current pattern: Stack)
 | Round or redo | Type | Tests | My commit | Status | Notes |
@@ -123,7 +123,7 @@ mvn test          # root project: DSA and buggy rounds
 
 | # | Item | Track | Status |
 |---|---|---|---|
-| 2 | `CarFleet` | 🧩 | ⬜ NOT_STARTED |
+| 2 | `CarFleet` pattern line + time/space comments (code ✅ 37/37, 3 Nov) | 🧩 | 🟡 IN_PROGRESS |
 | 3 | `Day04LargestRectangle` | 🐞 | ⬜ NOT_STARTED |
 | 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
 | 5 | Day 04 Part B2 (18/18 green; fix the catch-all handler, see [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist)) | 🌱 | 🟡 IN_PROGRESS |
@@ -157,6 +157,7 @@ mvn test          # root project: DSA and buggy rounds
 | Sun 1 Nov | **7** (concept 8 · implementation 6 · problem solving 7 · interview 7) | not scored, no work | not scored, no work | Day 04 re-answers 26/30; `f4cb8b9` four `ProblemDetail` handlers, `course-practice` 11/15; `CarFleet` 2/37 and `Day04LargestRectangle` 15/36 untouched · [day10.md evening](tasks/day10.md#-evening-1-nov-review-scores-and-tonights-work) |
 | Mon 2 Nov | not scored, no work | not scored, no work | not scored, no work | no pushes from Prashant today (only the 6 AM session commit `f1dd0e5`); all suites unchanged (`course-practice` 11/15, `CarFleet` 2/37, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18) · [day11.md evening](tasks/day11.md#-evening-2-nov-review-scores-and-tonights-work) |
 | Mon 2 Nov, late push (22:35 IST) | **6** (concept 6 · implementation 6) | not scored, no work | not scored, no work | `0600df2`: B2 handler, 4 assertions moved, 3 tests; as pushed 16/18; with Lumi's minor fixes `3d85c55` 18/18; catch-all handler is a conceptual miss; `CarFleet`, `Day04LargestRectangle` and both redos untouched · [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist) |
+| Tue 3 Nov, midday push (17:37 IST) | not scored, no work | **7** (concept 8 · implementation 8 · problem solving 6) | not scored, no work | `91cb817`: `CarFleet` 2/37 → **37/37** (clean `long` cross-multiply, sorted copy, input untouched); needed several hints for the pairing and the exact comparison; complexity not stated yet (skipped); `course-practice` 18/18, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18 unchanged · [day12.md midday push review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
 
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
@@ -185,9 +186,9 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
 > **Today (Tue 3 Nov), set by the 6 AM session ([day12.md](tasks/day12.md)).** Only Part B2 moved on 2 Nov (late push `0600df2`), so DSA and buggy carry. In order, push after each:
-> 1. 🌅 🧩 `CarFleet` first 10-minute step (pattern line, time/space as comments, the example sorted by position by hand with each car's arrival time), pushed even if red. Nothing else until it is pushed.
+> 1. 🌅 🧩 `CarFleet` first step: done in chat, code pushed (see 3 below).
 > 2. 🌱 Part B2: **18/18 is green** after Lumi's minor fixes (`3d85c55`); what is left is yours: the `Exception.class` catch-all (see the hints in [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist)), then Q3 and Q6 of the B2 interview questions out loud.
-> 3. 🧩 `CarFleet` code to 37/37.
+> 3. 🧩 `CarFleet` code: ✅ 37/37 (`91cb817`, 3 Nov). Owed: the pattern line and time/space as 3 comment lines at the top of `CarFleet.java`.
 > 4. 🐞 `Day04LargestRectangle` symptom table (21 failing tests by group), then the smallest fix per group.
 > 5. 🌙 Evening: review, the count-stack O(n) re-ask in chat, then the cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18).
 >
@@ -246,8 +247,8 @@ pie title Tracked items (1 Nov 2026)
 ### 🧮 What remains
 | Section | Done | Left | Detail |
 |---|---|---|---|
-| 🧩 Stack pattern | 2 NeetCode problems ✅ (+3 extras) | **5** | Car Fleet, Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle |
-| 🧩 NeetCode 150 | 2 | **148** | `ScoreOfParentheses`, `RemoveKAdjacentDuplicates`, `AsteroidCollision` are extras, not among the 150 |
+| 🧩 Stack pattern | 3 NeetCode problems ✅ (+3 extras) | **4** | Evaluate RPN, Generate Parentheses, Daily Temperatures, Largest Rectangle |
+| 🧩 NeetCode 150 | 3 | **147** | `ScoreOfParentheses`, `RemoveKAdjacentDuplicates`, `AsteroidCollision` are extras, not among the 150 |
 | 🐞 Buggy rounds | 3 | **2 existing + about 4 new** | the program adds about one round per new Stack problem |
 | 🌱 Spring foundation | Part A, B1, Day 04 Q&A | **about 7 Spring slots** | finishing B2, the Day 02 / Day 03 re-answers and the revision passes of §1-§5 (§6-§8 are taught inside the banking modules) |
 | 🏦 Banking | milestone 0 | **10 modules** | 0 started; the old plan had 4 milestones, the four new modules (Beneficiary, Transaction History, Notifications, Statements) are new scope |
@@ -322,3 +323,4 @@ pie title Tracked items (1 Nov 2026)
 | 2 Nov 2026 | W2 D11 | 🌙 Evening review: 🌱 Spring, 🧩 DSA and 🐞 buggy all **not scored** (no work today) | Ran the tests on `f1dd0e5` (JDK 21, Maven): no pushes from me today, `course-practice` 11/15, `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. No answers in chat, no cosmetic fixes, no new mistakes. Second day without a push, so tonight opens with a 10-minute `CarFleet` first step that ends in a push, then B2 items 1-6, `CarFleet` code, the count-stack re-ask, the `Day04LargestRectangle` symptom table and the 2 redos if time. No redo graded, so [redo-schedule.md](revision/redo-schedule.md) is unchanged |
 | 2 Nov 2026 | W2 D11 | 🌱 Late push `0600df2` (22:35 IST) reviewed: Part B2 handler and 3 tests; 🌱 Spring **6/10** (Moderate); 🧩 DSA and 🐞 buggy not scored | Ran the tests (JDK 21, Maven): `course-practice` **16/18** as pushed (2 red: a 404 test asserting 400 and a validation test sending no body), **18/18** after Lumi's minor fixes `3d85c55` (test request bodies and status as in the spec, test renamed to `notFoundIsProblemDetail`, one `ProblemDetail` layout). Conceptual, left to Prashant: `@ExceptionHandler(Exception.class)` returns 500 for a 415, a 405 and `/api/students/abc` (probed, not committed), with a copy-pasted message and no log. `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, redos 0/44 and 0/18 unchanged. Logged in [mistakes/spring.md](revision/mistakes/spring.md); [redo-schedule.md](revision/redo-schedule.md) unchanged (no DSA redo graded) |
 | 3 Nov 2026 | W2 D12 | 🌅 Morning session assigned (carried work only) in [day12.md](tasks/day12.md) | Re-ran on `a302cd8`: `course-practice` 18/18 (after Lumi's `3d85c55`), `CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18. Every track has an open item, so no new material and no new stubs: `CarFleet` first 10-minute step pushed first, then the B2 catch-all handler + one 415/405 test + Q3/Q6 out loud, `CarFleet` to 37/37, `Day04LargestRectangle` symptom table; the two 1 Nov redo stubs run tonight. No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged |
+| 3 Nov 2026 | W2 D12 | 🧩 Midday push `91cb817` (17:37 IST) reviewed: `CarFleet` **37/37** ✅ (with hints); 🧩 DSA **7/10** (Moderate) | Ran the tests on `91cb817`: `CarFleetTest` 2/37 → 37/37, `course-practice` 18/18, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18 (all unchanged). Lumi's minor fixes (stale TODO, spacing, null-check message), no conceptual issue in the code; one chat-stage conceptual slip (integer division for the arrival time) logged in [mistakes/dsa.md](revision/mistakes/dsa.md). `CarFleet` joins [redo-schedule.md](revision/redo-schedule.md) as hint-assisted (+1, queued Tue 10 Nov). Open: the 3 comment lines on `CarFleet`, B2 catch-all, `Day04LargestRectangle` |

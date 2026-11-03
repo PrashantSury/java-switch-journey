@@ -75,3 +75,59 @@ git pull
 (cd spring-boot/course-practice && mvn test)
 mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 ```
+
+## 🕔 Midday push review (3 Nov, 17:37 IST)
+
+![Slot](https://img.shields.io/badge/slot-midday%20push-yellow) ![Spring](https://img.shields.io/badge/Spring-not%20scored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-7%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey)
+
+> [!NOTE]
+> Reviewed `91cb817` ("CarFleet Java", 17:37 IST), after the 6 AM session commit `bc4c245`. One file changed: `src/main/java/com/prashant/dsa/stack/CarFleet.java`. JDK 21, Maven. Earlier today, in chat, you answered the 3 `CarFleet` knowledge checks 3/3 and built the algorithm with hints: sort by position descending, compare each car's time with the slowest fleet ahead, and compare times exactly by cross-multiplying with `long`. Several hints were needed (the pairing and the exact comparison), so this counts as a **pass with a hint** for the redo ladder.
+
+### 🧪 Test results
+| Suite | Before | After | Note |
+|---|---|---|---|
+| `CarFleetTest` | 2/37 | **37/37** ✅ | all validation rules, input not modified, 100 000 cars, exact ties |
+| `course-practice` (`mvn test`) | 18/18 | 18/18 | untouched; catch-all handler still open |
+| `Day04LargestRectangleTest` | 15/36 | 15/36 | untouched (15 failures + 6 errors reported, same as before) |
+| `Day02RpnEvaluatorRedoNov01Test` | 0/44 | 0/44 | blank stub |
+| `ValidParenthesesRedoNov01Test` | 0/18 | 0/18 | blank stub |
+
+### 🔧 Minor fixes done by Lumi (commit "Lumi: minor fixes on 91cb817")
+| File:line | Fix |
+|---|---|
+| `CarFleet.java:86` | removed the stale `// TODO: implement` |
+| `CarFleet.java:86-87` | `if(position == null ||  speed == null ){` → `if (position == null || speed == null) {` (spacing, double space) |
+| `CarFleet.java:87` | exception message `"Illegal argument passed"` → `"position and speed must not be null"` (the other guards already say what is wrong) |
+
+No logic was changed; `CarFleetTest` is still 37/37 after the fixes.
+
+### 🧠 Conceptual issues
+> [!NOTE]
+> None in the pushed code: the stack holds `long[]{dist, speed}` and the check `dist * aheadSpeed > aheadDist * speed` uses `long`, which cannot overflow here (both factors are below 2^31, so the product is below 2^62). Two things to do yourself:
+
+1. **Missing deliverable (not code):** the "Done when" of this task asks for the **pattern line and time/space complexity at the top** of `CarFleet.java`. They are not there yet. Write the three comment lines yourself, and be ready to defend the O(n log n) and the O(n) space in 60 seconds. *Hint:* which step dominates, and what does the stack hold in the worst case?
+2. **Follow-up for tonight's interview angle:** the code only ever reads the top of the stack. *Hint:* what single pair of values would replace the stack, and why is the result the same? Say it in chat; no need to code it unless you want to.
+
+Logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): in chat you first wrote `long time = (target - pos) / spd;` (integer division drops the fraction), the same root cause as Q3.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **not scored** | no new Spring work; B2 still 18/18 with the catch-all open |
+| 🧩 DSA | **7/10** (🟡 Moderate) | 🧠 concept **8**: 3/3 on the knowledge checks, the merge rule and "meeting at the target is one fleet" are right. 🛠️ implementation **8**: 37/37 on your own pushed code, clean, exact `long` comparison, input copied not sorted in place; two cosmetic slips only, and the complexity comments are missing. 🧩 problem solving **6**: the table and pseudocode were right but took about an hour and several hints (pairing the arrays, the exact comparison). ⏱️ complexity not scored: not stated yet. Debugging and interview dimensions did not apply |
+| 🐞 Buggy | **not scored** | `Day04LargestRectangle` untouched |
+
+> [!NOTE]
+> Midday score, provisional. The evening review re-scores DSA if the comment lines and the O(1) follow-up land by then.
+
+### 🔁 Status after this review
+| Item | Status |
+|---|---|
+| 🧩 `CarFleet` | ✅ COMPLETED (3 Nov, 37/37, with hints); joins the redo ladder at +1 as 🔶 (hint-assisted); owed: 3 comment lines |
+| 🌱 Day 04 Part B2 | 🟡 IN_PROGRESS, unchanged: catch-all, one 415/405 test, Q3 and Q6 |
+| 🐞 `Day04LargestRectangle` | ⬜ NOT_STARTED, 15/36, symptom table still to write |
+| 🔁 Redos | `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01` still blank |
+
+> [!IMPORTANT]
+> **Next step for you:** (1) push the 3 comment lines on `CarFleet`; (2) Part B2: the catch-all and one test, then Q3 and Q6 in chat; (3) `Day04LargestRectangle` symptom table; (4) tonight: the count-stack O(n) re-ask, then the two cold redos. `CarFleet` itself is not redone until its slot on Tue 10 Nov.
+

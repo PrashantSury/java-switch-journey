@@ -39,12 +39,12 @@
 | 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 29 Oct | ✅ 29 Oct 37/37, both bugs found (only cosmetic slips) · never redone | +1 | **5 Nov** | 🟡 IN_PROGRESS · ⏰ due 30 Oct, 6 days overdue |
 | 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **6 Nov** | 🟡 IN_PROGRESS · ⏰ due 1 Nov, queued 5 days |
 | 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **8 Nov** | 🟡 IN_PROGRESS · due 7 Nov, waits 1 day (7 Nov holds two older items) |
-| 🧩 `CarFleet` | Stack: sort by position, monotonic | not verified (2/37) | — | joins at +1 once verified | — | ⬜ NOT_STARTED |
+| 🧩 `CarFleet` | Stack: sort by position, monotonic | 3 Nov | 🔶 3 Nov 37/37 (`91cb817`), built with hints (pairing, exact cross-multiply); first solve, never redone | +1 | **4 Nov** (queued **10 Nov**) | 🟡 IN_PROGRESS · due 4 Nov, waits behind older items (cap 2 a day) |
 | 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | not verified (15/36) | — | joins at +1 once verified | — | ⬜ NOT_STARTED |
 | 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | not verified (4/10) | — | joins at +1 once verified | — | ⬜ NOT_STARTED |
 
 > [!NOTE]
-> **11 problems**: 8 scheduled, 3 not started. "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2 (3 Nov: 2, 4 Nov: 2, 5 Nov: 2, 6 Nov: 1, 8 Nov: 1). Updated by the 10 PM check on 2 Nov: the two redos were not attempted again, so the whole queue moved one more day.
+> **11 problems**: 9 scheduled, 2 not started. "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2 (3 Nov: 2, 4 Nov: 2, 5 Nov: 2, 6 Nov: 2, 8 Nov: 1, 10 Nov: 2). Updated by the 10 PM check on 2 Nov: the two redos were not attempted again, so the whole queue moved one more day.
 
 ## 🗓️ Next 7 days
 | Date | Redo 1 | Redo 2 | Why |
@@ -63,7 +63,7 @@
 ## 🔭 Projected calendar after 9 Nov
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Tue 10 Nov | `AsteroidCollision` (+3, late) | free |
+| Tue 10 Nov | `AsteroidCollision` (+3, late) | `CarFleet` (+1, late, hint-assisted 3 Nov) |
 | Fri 13 Nov | `Day02RpnEvaluator` (+7) | free |
 | Sat 14 Nov | `ValidParentheses` (+7) | `MinStack` (+7) |
 | Sun 15 Nov | `ScoreOfParentheses` (+7) | free |
@@ -96,7 +96,11 @@
 | `ValidParentheses` | 23 Oct starter solution understood · gap 1, due 24 Oct, never redone |
 | `MinStack` | 23 Oct 10/10 · gap 1, due 24 Oct, never redone |
 | `ScoreOfParentheses` | 25 Oct 37/37, written with help, dry-ran line by line · gap 1, due 26 Oct, never redone |
-| `CarFleet` · `Day04LargestRectangle` · `Day00BuggyExample` | not verified (2/37, 15/36, 4/10); join the schedule at gap 1 once verified |
+| `CarFleet` | 3 Nov 37/37 (`91cb817`), hint-assisted (🔶) · gap 1, due 4 Nov, queued to 10 Nov |
+| `Day04LargestRectangle` · `Day00BuggyExample` | not verified (15/36, 4/10); join the schedule at gap 1 once verified |
 
 > [!NOTE]
 > **2 Nov, 22:35 IST late push (`0600df2`):** only Part B2 was touched. No DSA or buggy redo was graded (`CarFleetTest` 2/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18, all re-run), so every gap, due date and the 3-9 Nov calendar above stay exactly as the 10 PM check set them.
+
+> [!NOTE]
+> **3 Nov, 17:37 IST push (`91cb817`):** `CarFleet` verified 37/37 with hints, so it joins at gap 1 as 🔶 (due 4 Nov). Both 4 Nov and 5 Nov already hold 2 older redos and 6 Nov, 7 Nov, 8 Nov and 9 Nov are full or hold more overdue items, so it takes the free slot on Tue 10 Nov. The cap of 2 a day is kept. Nothing else moved: the two 3 Nov redos are still due tonight.
