@@ -196,6 +196,15 @@ class StudentControllerTest {
                 .andExpect(jsonPath("$.errorCode").value("VALIDATION_FAILED"));
     }
 
+    @Test @DisplayName("POST with text/plain returns 415, not 500")
+    void unsupportedMediaTypeReturns415() throws Exception {
+        mvc.perform(post("/api/students")
+                        .contentType(MediaType.TEXT_PLAIN)
+                        .content("{\"name\":\"Prashant\",\"email\":\"p@example.com\"}"))
+                .andExpect(status().isUnsupportedMediaType())
+                .andExpect(jsonPath("$.status").value(415));
+    }
+
     private long createStudent(String name, String email) throws Exception {
         MvcResult result = mvc.perform(post("/api/students")
                 .contentType(MediaType.APPLICATION_JSON)

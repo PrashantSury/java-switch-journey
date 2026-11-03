@@ -9,12 +9,13 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
@@ -103,14 +104,15 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ProblemDetail handleException(Exception ex) {
 
+        log.error("Unhandled", ex);
         ProblemDetail problemDetail =
                 ProblemDetail.forStatus(HttpStatus.INTERNAL_SERVER_ERROR);
 
         problemDetail.setTitle("Internal Server Error");
         problemDetail.setDetail(
-                "Required json body is bad or empty."
+                "Unexpected error"
         );
-        problemDetail.setProperty("errorCode", "BAD_JSON_OR_EMPTY_JSON");
+        problemDetail.setProperty("errorCode", "INTERNAL_ERROR");
         return problemDetail;
     }
 }
