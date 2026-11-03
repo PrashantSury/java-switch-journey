@@ -1,5 +1,9 @@
 package com.prashant.dsa.stack;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
 /**
  * Car Fleet (LeetCode 853, NeetCode 150, Stack), with extra rules.
  * Full spec, hints and the knowledge check: tasks/day09.md, "Car Fleet".
@@ -80,6 +84,52 @@ public class CarFleet {
 
     public int carFleet(int target, int[] position, int[] speed) {
         // TODO: implement
-        return 0;
+        if(position == null ||  speed == null ){
+            throw new IllegalArgumentException("Illegal argument passed");
+        }
+        if (position.length != speed.length) {
+            throw new IllegalArgumentException("position and speed must have the same length");
+        }
+
+        if (target <= 0) {
+            throw new IllegalArgumentException("target must be positive");
+        }
+
+        int n = position.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int[][] cars = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            if (position[i] < 0 || position[i] >= target) {
+                throw new IllegalArgumentException("position must satisfy 0 <= position < target");
+            }
+            if (speed[i] <= 0) {
+                throw new IllegalArgumentException("speed must be positive");
+            }
+            cars[i][0] = position[i];
+            cars[i][1] = speed[i];
+        }
+        Arrays.sort(cars, (a, b) -> Integer.compare(b[0], a[0]));
+
+        for (int i = 1; i < n; i++) {
+            if (cars[i][0] == cars[i - 1][0]) {
+                throw new IllegalArgumentException("two cars share the same starting position");
+            }
+        }
+
+        Deque<long[]> stack = new ArrayDeque<>();
+        for (int[] car : cars) {
+            long dist = (long) target - car[0];
+            long spd = car[1];
+
+            if (stack.isEmpty()
+                    || dist * stack.peek()[1] > stack.peek()[0] * spd) {
+                stack.push(new long[]{dist, spd});
+            }
+            // else: merges into the fleet ahead
+        }
+        return stack.size();
     }
 }
