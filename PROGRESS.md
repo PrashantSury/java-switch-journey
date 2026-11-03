@@ -158,6 +158,7 @@ mvn test          # root project: DSA and buggy rounds
 | Mon 2 Nov | not scored, no work | not scored, no work | not scored, no work | no pushes from Prashant today (only the 6 AM session commit `f1dd0e5`); all suites unchanged (`course-practice` 11/15, `CarFleet` 2/37, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18) · [day11.md evening](tasks/day11.md#-evening-2-nov-review-scores-and-tonights-work) |
 | Mon 2 Nov, late push (22:35 IST) | **6** (concept 6 · implementation 6) | not scored, no work | not scored, no work | `0600df2`: B2 handler, 4 assertions moved, 3 tests; as pushed 16/18; with Lumi's minor fixes `3d85c55` 18/18; catch-all handler is a conceptual miss; `CarFleet`, `Day04LargestRectangle` and both redos untouched · [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist) |
 | Tue 3 Nov, midday push (17:37 IST) | not scored, no work | **7** (concept 8 · implementation 8 · problem solving 6) | not scored, no work | `91cb817`: `CarFleet` 2/37 → **37/37** (clean `long` cross-multiply, sorted copy, input untouched); needed several hints for the pairing and the exact comparison; complexity not stated yet (skipped); `course-practice` 18/18, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18 unchanged · [day12.md midday push review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
+| Tue 3 Nov, evening review (8 PM) | not scored, no work | **7** (unchanged, no new evidence since `91cb817`) | not scored, no work | `CarFleet` 37/37 re-verified; `course-practice` 18/18 (catch-all open), `Day04LargestRectangle` 15/36, redos 0/44 and 0/18; no pushes after 17:37 IST; owed: 3 comment lines, catch-all fix, symptom table · [day12.md evening](tasks/day12.md#-evening-3-nov-review-scores-and-tonights-work) |
 
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
@@ -190,7 +191,7 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 > 2. 🌱 Part B2: **18/18 is green** after Lumi's minor fixes (`3d85c55`); what is left is yours: the `Exception.class` catch-all (see the hints in [day11.md late push review](tasks/day11.md#-late-push-review-2-nov-2235-ist)), then Q3 and Q6 of the B2 interview questions out loud.
 > 3. 🧩 `CarFleet` code: ✅ 37/37 (`91cb817`, 3 Nov). Owed: the pattern line and time/space as 3 comment lines at the top of `CarFleet.java`.
 > 4. 🐞 `Day04LargestRectangle` symptom table (21 failing tests by group), then the smallest fix per group.
-> 5. 🌙 Evening: review, the count-stack O(n) re-ask in chat, then the cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18).
+> 5. 🌙 Evening (set by the 8 PM review, [day12.md](tasks/day12.md#-evening-3-nov-review-scores-and-tonights-work)): `CarFleet` comment lines and the single-pair follow-up, the count-stack O(n) re-ask, the catch-all fix with one 415/405 test, Q3 and Q6, the `Day04LargestRectangle` symptom table, then the cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18) if time.
 >
 > Banking module 1 starts only after B2 is ✅. If the two redos slip again, `MinStack` and `ScoreOfParentheses` stay next in line (4 Nov).
 

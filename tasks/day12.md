@@ -131,3 +131,73 @@ Logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): in chat you first wrot
 > [!IMPORTANT]
 > **Next step for you:** (1) push the 3 comment lines on `CarFleet`; (2) Part B2: the catch-all and one test, then Q3 and Q6 in chat; (3) `Day04LargestRectangle` symptom table; (4) tonight: the count-stack O(n) re-ask, then the two cold redos. `CarFleet` itself is not redone until its slot on Tue 10 Nov.
 
+
+## 🌙 Evening (3 Nov): review, scores and tonight's work
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-not%20scored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-7%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey)
+
+> [!NOTE]
+> Checked at 8 PM on `e20b0b6` with JDK 21 and Maven. Your only code push today is `91cb817` (`CarFleet`, 17:37 IST), already reviewed at midday; nothing was pushed since. Re-run tonight: `CarFleetTest` **37/37**, `course-practice` **18/18**, `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**. No new cosmetic fixes and no new entries in the mistake logs tonight.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **can't be scored yet** | no Spring work today: Part B2 is still 18/18 with the `Exception.class` catch-all open. The last score stays 6/10 (2 Nov late push) |
+| 🧩 DSA | **7/10** (🟡 Moderate, unchanged from midday) | no new evidence since `91cb817`. Concept 8 and implementation 8 are real (37/37, exact `long` cross-multiply, input untouched); problem solving 6 because the pairing and the exact comparison needed several hints and the session took about an hour; complexity still not stated in the file, so it is not scored. The three comment lines would lift it |
+| 🐞 Buggy | **can't be scored yet** | `Day04LargestRectangle` is untouched at 15/36 |
+
+> [!WARNING]
+> 📌 **The honest read.** One solid push today after two empty days: that is the right direction, and `CarFleet` at 37/37 is real. What decides the next score is not a harder problem. It is the **small deliverables that close an item**: three comment lines, one catch-all fix, one symptom table. Each is under 15 minutes and none is pushed yet.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🧩 `CarFleet` (sort pairs, monotonic stack, exact comparison) | 🟡 Moderate | 37/37, but built with hints; owed: pattern line and time/space. Targeted revision = the redo on the ladder (queued 10 Nov) |
+| 🌱 Catch-all `@ExceptionHandler(Exception.class)` | 🟡 Moderate (carried) | conceptual miss of 2 Nov, still open; the three guiding questions are in [day11.md](day11.md#-late-push-review-2-nov-2235-ist) |
+| 🧩 Amortised O(n) for stack solutions | 🔴 Weak (carried) | count-stack re-ask still open. Pack already exists in [day10.md](day10.md#-weak-topic-pack-amortised-on-for-stack-solutions); nothing new is generated tonight |
+| 🧩🐞 RPN evaluation | 🔴 Weak (carried) | blank redo stub 0/44; the cold redo tonight is the targeted repetition |
+| 🐞 `Day04LargestRectangle` | ⬜ Pending | not started (15/36) |
+| ⛔ Blocked | none | nothing outside your control is stopping any task |
+
+> [!NOTE]
+> No topic turned Weak **tonight**, so no new revision pack is added. The two carried Weak topics already have a pack or a redo.
+
+### ⏳ Pending morning work = tonight's work (in this order)
+
+> [!IMPORTANT]
+> Pending morning work first, redos only after. Stop where your 60 minutes end and push what you have, even if it is red. The 10 PM check counts a pushed step as progress.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 5 | `CarFleet`: the pattern line, time and space as 3 comment lines at the top of `CarFleet.java`. *Hint:* which step dominates, and what does the stack hold in the worst case? **Push it** | 🧩 | one commit; `CarFleetTest` still 37/37 |
+| 2 | 5 | `CarFleet` follow-up, in chat: the code only reads the top of the stack. Which single pair of values would replace it, and why is the answer the same? | 🧩 | answered in chat, graded |
+| 3 | 5 | Count-stack O(n) re-ask, in chat: why is `RemoveKAdjacentDuplicates` O(n) when a run can be popped many times? | 🧩 | graded 4/5 or better |
+| 4 | 25 | Part B2: answer the three guiding questions of the catch-all (chat or comment), then fix or remove it; add one 415 or 405 test and the sixth assertion on `malformedJsonReturnsProblemDetail` | 🌱 | `course-practice` **19 or more tests, 0 failures**, pushed |
+| 5 | 5 | Q3 and Q6 of the B2 interview questions, out loud in chat | 🌱 | graded |
+| 6 | 10 | `Day04LargestRectangle` symptom table (the 21 failing tests grouped by symptom) as a comment block, no code change | 🐞 | one commit on `main` |
+| 7 | if time | 🔁 cold redo `Day02RpnEvaluatorRedoNov01` (0/44) first, then `ValidParenthesesRedoNov01` (0/18) | 🔁 | 44/44 and 18/18, cold |
+
+> [!NOTE]
+> Items 1-6 are about 55 minutes, so the redos will most likely slip again; if they do, the 10 PM check moves the queue one more day. [redo-schedule.md](../revision/redo-schedule.md) is unchanged tonight because no redo was graded (`CarFleet` already joined the ladder at midday).
+
+- [ ] `CarFleet` comment lines pushed
+- [ ] `CarFleet` single-pair follow-up answered
+- [ ] count-stack re-ask answered
+- [ ] B2 catch-all fixed, 19+ tests pushed
+- [ ] Q3 and Q6 answered
+- [ ] `Day04LargestRectangle` symptom table pushed
+- [ ] the two cold redos (if time)
+
+### 🎯 Tomorrow's focus (Wed 4 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | If B2 is ✅ tonight: start banking module 1 with the first step only (the Flyway V2 table and the password-hashing decision, before code). If not: the catch-all, then the test, in that order | the last measured weakness is the catch-all concept (6), not volume; module 1 waits behind B2 by plan |
+| 🧩 DSA | No new Stack problem until the `CarFleet` comments and the count-stack re-ask are done. Then the next Stack problem with a **15-minute rule**: write the brute force, its cost and the invariant of the stack before any code, and ask for a hint at 15 minutes | problem solving (6) was the lowest dimension: the pairing and the exact comparison took an hour of hints |
+| 🐞 Buggy | `Day04LargestRectangle`: symptom table first, then the smallest fix per group (aim to move 15/36 clearly upward) | debugging is what this round scores and has not been attempted for six sessions |
+| 🔁 Redos (evening) | the RPN and `ValidParentheses` redos if not done tonight, otherwise `MinStack` and `ScoreOfParentheses` | cap of 2 a day, most overdue first; `CarFleet` waits for 10 Nov |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
