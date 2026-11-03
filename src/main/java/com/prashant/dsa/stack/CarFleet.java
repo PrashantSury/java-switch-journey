@@ -83,9 +83,8 @@ import java.util.Deque;
 public class CarFleet {
 
     public int carFleet(int target, int[] position, int[] speed) {
-        // TODO: implement
-        if(position == null ||  speed == null ){
-            throw new IllegalArgumentException("Illegal argument passed");
+        if (position == null || speed == null) {
+            throw new IllegalArgumentException("position and speed must not be null");
         }
         if (position.length != speed.length) {
             throw new IllegalArgumentException("position and speed must have the same length");
