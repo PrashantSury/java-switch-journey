@@ -14,7 +14,7 @@
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 19/19 green; the catch-all still turns `/abc` and an unknown path into a 500, closed by Drill 1), module 1 (step 1 assigned 4 Nov) | [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min), then [module 1 step 1](tasks/day13.md#-banking-module-1-step-1-the-v2-auth-migration-and-its-test-about-40-min) |
 | 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅ (3 of the 7 NeetCode Stack problems); `CarFleet` ✅ 3 Nov (37/37, with hints) | the 3 comment lines on `CarFleet`, count-stack re-ask; next new Stack problem only when the open items clear | [Day 13 DSA](tasks/day13.md#-dsa) |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Wed 4 Nov (moved from 1, 2 and 3 Nov; RPN in the morning DSA slot, `ValidParentheses` in the evening; blank stubs ready) | [day13.md](tasks/day13.md#-3--cold-redo-day02rpnevaluatorredonov01-25-min) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Thu 5 Nov (moved from 1 to 4 Nov; blank stubs ready) | [day13.md](tasks/day13.md#-3--cold-redo-day02rpnevaluatorredonov01-25-min) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
@@ -167,16 +167,16 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Wed 4 Nov | `Day02RpnEvaluator` (+1, late) | `ValidParentheses` (+1, late) |
-| Thu 5 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
-| Fri 6 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
-| Sat 7 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
-| Sun 8 Nov | `Day01ArrayStack` (+7, late) | `ValidParentheses` (+3, late) |
-| Mon 9 Nov | `MinStack` (+3, late) | `ScoreOfParentheses` (+3, late) |
-| Tue 10 Nov | `RemoveKAdjacentDuplicates` (+3, late) | `Day03NextGreaterIndex` (+3, late) |
+| Thu 5 Nov | `Day02RpnEvaluator` (+1, late) | `ValidParentheses` (+1, late) |
+| Fri 6 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
+| Sat 7 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
+| Sun 8 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
+| Mon 9 Nov | `Day01ArrayStack` (+7, late) | `ValidParentheses` (+3, late) |
+| Tue 10 Nov | `MinStack` (+3, late) | `ScoreOfParentheses` (+3, late) |
+| Wed 11 Nov | `RemoveKAdjacentDuplicates` (+3, late) | `Day03NextGreaterIndex` (+3, late) |
 
 > [!WARNING]
-> Redos now run in the 🌙 evening, after the review and after pending morning work. The 1, 2 and 3 Nov redos were not attempted, so the queue has moved three days in total (last graduation now Mon 4 Jan, with `CarFleet` queued to Wed 11 Nov). In the next 7 days (4-10 Nov) they are 14 redos (about 5.8 h) against a 7 h evening budget, so there is almost no spare evening time that week; the cap of 2 a day and the "most overdue first" rule decide what waits. On 4 Nov the RPN redo moved into the morning DSA slot because it slipped from the evening four times; the dates in the schedule are unchanged.
+> Redos now run in the 🌙 evening, after the review and after pending morning work (the RPN redo may move into the morning DSA slot). The 1 to 4 Nov redos were not attempted, so the queue has moved four days in total (last graduation now Tue 5 Jan, with `CarFleet` queued to Thu 12 Nov). In the next 7 days (5-11 Nov) they are 14 redos (about 5.8 h) against a 7 h evening budget, so there is almost no spare evening time that week; the cap of 2 a day and the "most overdue first" rule decide what waits.
 
 ## ⛔ Blockers
 | Blocker | Since | Needs |
@@ -188,14 +188,15 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Tonight (Wed 4 Nov, 8 PM), [day13.md evening](tasks/day13.md#-evening-4-nov-review-scores-and-tonights-work).** Nothing was pushed in the morning slot, so tonight is the morning's first items. In order, push after each:
-> 1. 🧩 `CarFleet`: pattern, time and space as 3 comment lines at the top of `CarFleet.java`; `CarFleetTest` stays 37/37.
-> 2. 🌱 [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min) (20 min): fill the table, add only the two missing handlers, write the 3 tests; `course-practice` 22 tests, 0 failures. This closes Part B2.
-> 3. 🧩 In chat: the count-stack O(n) re-ask and the `CarFleet` single-pair follow-up.
-> 4. 🐞 `Day04LargestRectangle`: symptom table and a blank hand trace on `[2, 1, 2]` as a comment block, no code change.
-> 5. 🔁 If time: cold `ValidParenthesesRedoNov01` (0/18).
+> **Tomorrow (Thu 5 Nov, 6 AM), set by the 10 PM check ([day13.md end of day](tasks/day13.md#-end-of-day-4-nov-10-pm-check)).** No pushes after the 8 PM review, so everything carries. In order, push after each:
+> 1. 🧩 `CarFleet`: the pattern line, time and space as 3 comment lines at the top of `CarFleet.java` (5 minutes, *hint:* which step dominates, and what does the stack hold in the worst case?), **pushed first**; `CarFleetTest` stays 37/37.
+> 2. 🌱 [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min) (15 to 20 min): fill the table, add only the two missing handlers, write the 3 tests; `course-practice` 22 tests, 0 failures. This closes Part B2. Drill 2 (`@Valid` and 400) comes after it, never before.
+> 3. 🐞 `Day04LargestRectangle`: symptom table and a blank hand trace on `[2, 1, 2]` as a comment block, no code change.
+> 4. 💬 In chat: the count-stack O(n) re-ask and the `CarFleet` single-pair follow-up.
+> 5. 🌅 If time: [module 1 step 1](tasks/day13.md#-banking-module-1-step-1-the-v2-auth-migration-and-its-test-about-40-min) and the cold `Day02RpnEvaluatorRedoNov01` (use the RPN pack if it fails).
+> 6. 🌙 Evening: review, then the cold redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`; if they slip again, `MinStack` and `ScoreOfParentheses` stay next in line (6 Nov).
 >
-> **Tomorrow (Thu 5 Nov, 6 AM):** Drill 2 (`@Valid` and 400, 15 min), then [module 1 step 1](tasks/day13.md#-banking-module-1-step-1-the-v2-auth-migration-and-its-test-about-40-min), the cold `Day02RpnEvaluatorRedoNov01` (use the RPN pack if it fails) and the `Day04LargestRectangle` fixes. Drill 3 follows on Fri 6 Nov. Ask for a hint after 15 minutes on any step.
+> Ask for a hint after 15 minutes on any step; a red push counts.
 
 ## 📊 Status counts
 ```mermaid
@@ -330,3 +331,4 @@ pie title Tracked items (1 Nov 2026)
 | 3 Nov 2026 | W2 D12 | 10 PM check: no pushes after the 8 PM evening review; redo queue moved one more day | No commits from me after the evening review (`28516c6` is the review itself; the only code push today is `91cb817`) and no answers in chat, so nothing new to test. `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18) were not attempted again, so [redo-schedule.md](revision/redo-schedule.md) shifts one more day (4 Nov starts with those two, `CarFleet` queued to 11 Nov, last graduation Mon 4 Jan). Open and carried: the 3 `CarFleet` comment lines and single-pair follow-up, the count-stack re-ask, the B2 catch-all fix with one 415/405 test, Q3 and Q6, the `Day04LargestRectangle` symptom table. No new mistakes, no cosmetic fixes. End of day added to [day12.md](tasks/day12.md) |
 | 4 Nov 2026 | W2 D13 | 🌅 Morning session assigned in [day13.md](tasks/day13.md): Drill 1 (closes B2), banking module 1 step 1, carried DSA and buggy items | Re-ran on `80d98f1` (JDK 21, Maven): `course-practice` **19/19** after your `ff79dbf` (22:39 IST) and Lumi's tidy-ups `5918263`, `80d98f1` (pushed after the 10 PM check, so first reviewed here); probed on the pushed code: 405 (`PATCH`) and 415 are right, `GET /api/students/abc` and `GET /api/nothing` still answer 500 `Unexpected error`, so B2 stays 🟡 until Drill 1. `CarFleetTest` 37/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18 (unchanged). New stubs: `SpringDefaultsDrillTest` (3 red tests, `course-practice`) and `banking-app/.../auth/AuthSchemaIT` (2 red tests, compiles; Docker is not on the box, so it was not run there); no V2 file committed on purpose (Flyway checksums it). No cosmetic fixes, no new mistakes (the catch-all row of 2 Nov covers it), [redo-schedule.md](revision/redo-schedule.md) unchanged |
 | 4 Nov 2026 | W2 D13 | 🌙 Evening review (8 PM): no commit from me today besides the 6 AM session; 🌱 Spring **6/10** scored on the 3 Nov late push `ff79dbf`; 🧩 DSA and 🐞 buggy not scored (no work) | No new commits after `4d1db80`, so nothing new to run: `course-practice` 19/19, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18 (unchanged from 6 AM). Morning items all open (CarFleet comment lines, Drill 1, module 1 step 1, count-stack re-ask, RPN redo, symptom table). Tonight: comment lines, Drill 1, re-ask and single-pair follow-up, symptom table, `ValidParentheses` redo if time; module 1 step 1 and the RPN redo move to 5 Nov. RPN weak-topic pack added to [day13.md](tasks/day13.md). No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged |
+| 4 Nov 2026 | W2 D13 | 10 PM check: no pushes after the 8 PM evening review; redo queue moved one more day | No commits from me after the evening review (`210d691` is the review itself; the only other commit today is the 6 AM session `4d1db80`) and no answers in chat, so nothing new to test: `course-practice` 19/19, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18 stand from 6 AM. Both redos were not attempted again, so [redo-schedule.md](revision/redo-schedule.md) shifts one more day (5 Nov starts with those two, `CarFleet` queued to 12 Nov, last graduation Tue 5 Jan). Open and carried: the 3 `CarFleet` comment lines and single-pair follow-up, Drill 1, module 1 step 1, the count-stack re-ask, the RPN redo, the `Day04LargestRectangle` symptom table, Q3 and Q6. No new mistakes, no cosmetic fixes. End of day added to [day13.md](tasks/day13.md) |
