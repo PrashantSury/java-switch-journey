@@ -252,3 +252,86 @@ Answer in 3-4 lines: `RemoveKAdjacentDuplicates` keeps a stack of (character, co
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
+
+---
+
+## 🌙 Evening (4 Nov): review, scores and tonight's work
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-6%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-not%20scored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey)
+
+> [!NOTE]
+> Checked at 8 PM on `4d1db80` (the 6 AM session commit). There is **no commit from you today and no answer in the repo**, so there was nothing new to run: the suites are exactly as measured at 6 AM (`course-practice` **19/19**, `CarFleetTest` **37/37**, `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**; the two new stubs `SpringDefaultsDrillTest` and `AuthSchemaIT` are red by design). No cosmetic fixes and no new entries in the mistake logs tonight.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **6/10** (🟡 Moderate; scored on the 3 Nov late push `ff79dbf`, nothing new today) | concept 6: the catch-all now logs the cause and returns a fixed message, but `/abc` and an unknown path still answer 500, which is the same habit as before: adding a handler without first asking what Spring already answers. Implementation 7: clean `ProblemDetail`, 415 test added, `course-practice` 19/19 (the explicit 405 and 415 handlers and the reordering were Lumi's tidy-ups, so they do not count for you). Problem solving 6, interview readiness 6 (Q3 and Q6 are still unanswered). Drill 1 is the thing that would lift it |
+| 🧩 DSA | **can't be scored yet** | no DSA work today: the three `CarFleet` comment lines, the count-stack re-ask and the RPN redo are all still open. The last score stays 7/10 (3 Nov) |
+| 🐞 Buggy | **can't be scored yet** | `Day04LargestRectangle` is untouched at 15/36 (seventh session) |
+
+> [!WARNING]
+> 📌 **The honest read.** Today's morning slot produced no push. The three deliverables that open the day were each under 15 minutes (3 comment lines, Drill 1, a symptom table), so the problem is starting, not difficulty. Tonight is the same small steps, in the same order, with a push after each one. Ask for a hint at 15 minutes; a red push counts.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 Catch-all `@ExceptionHandler(Exception.class)` and Spring defaults | 🟡 Moderate (carried) | `/abc` and unknown path still 500; Drill 1 is the targeted practice and closes B2 |
+| 🌱 Banking module 1 (AuthN / AuthZ) | ⬜ Pending | step 1 not started; no V2 file on purpose until you write it |
+| 🧩 `CarFleet` | 🟡 Moderate (carried) | 37/37 with hints; owed: the 3 comment lines and the single-pair follow-up |
+| 🧩 Amortised O(n) for stack solutions | 🔴 Weak (carried) | count-stack re-ask still open; pack already in [day10.md](day10.md#-weak-topic-pack-amortised-on-for-stack-solutions) |
+| 🧩🐞 RPN evaluation | 🔴 Weak (carried) | three conceptual misses on 31 Oct, blank redo stub 0/44 not attempted for the fifth session; pack added below |
+| 🌱 HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, `@PathVariable` / `@RequestParam` / `@RequestBody` | 🔴 Weak (carried) | Day 02 and Day 03 re-answers pending; their packs are generated when the re-answers are picked up (the spare-evening backlog) |
+| 🐞 `Day04LargestRectangle` | ⬜ Pending | not started (15/36) |
+| ⛔ Blocked | none | nothing outside your control is stopping any task |
+
+### 🛠️ Weak-topic pack: RPN evaluation (new tonight)
+
+**Revision notes (read for 3 minutes, then close them).**
+- Pop order matters: the **second** value popped is the **left** operand. For `a b -` that gives `a - b`, not `b - a`; the same for `/`.
+- A token is an operator only if it is exactly `+ - * /`. `"-3"` is a number whose first character is `-`, so check the whole token, never `charAt(0)`.
+- Every operator branch must end (`break`, `continue` or `else if`). A fall-through makes the next branch run too, which was the 31 Oct miss.
+- End check: a valid expression leaves **exactly one** value on the stack (size 1), not a value equal to 1. Anything else is invalid input.
+- Null or empty input and a token that is neither a number nor an operator are guarded before the loop and before each pop.
+
+| Kind | Task |
+|---|---|
+| 🧠 Conceptual question | For the tokens `["4","13","5","/","+"]`, write the stack after every token and say, in one sentence, why `13 5 /` is `13 / 5` and not `5 / 13`. |
+| 🛠️ Implementation exercise | Write 3 to 5 lines of plain-English pseudocode for the loop (token kind, then pop, pop, apply, push) before any Java. Then code `evalRPN(String[] tokens)` in a blank file with no copy from the original. |
+| 🐞 Debugging exercise | This body returns 1 for `["2","3","-"]` instead of -1. Name the wrong line and say what swaps: `int a = stack.pop(); int b = stack.pop(); stack.push(a - b);` |
+| 🎤 Interview scenario | "A calculator service receives user-supplied RPN strings. What can go wrong, what do you return for each, and what is the time and space cost?" Answer in four sentences: invalid token, too few operands, leftover operands, divide by zero; O(n) time because each token is handled once and each value is pushed and popped at most once; O(n) space. |
+
+### ⏳ Pending morning work = tonight's work (in this order)
+
+> [!IMPORTANT]
+> Pending morning work first, redos only after. Stop where your 60 minutes end and push what you have, even if it is red. The 10 PM check counts a pushed step as progress.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 5 | `CarFleet`: the pattern line, time and space as 3 comment lines at the top of `CarFleet.java`, one sentence of reason for each cost. *Hint:* which step dominates, and what does the stack hold in the worst case? **Push it** | 🧩 | one commit; `CarFleetTest` still 37/37 |
+| 2 | 20 | 🌱 [Drill 1](#-drill-1-spring-defaults-vs-the-catch-all-about-15-min): fill the 4-row table, add only the two missing handlers, write the 3 tests in `SpringDefaultsDrillTest`. **Push it** | 🌱 | `course-practice` **22 tests, 0 failures**; closes B2 |
+| 3 | 10 | In chat: the count-stack O(n) re-ask (why is `RemoveKAdjacentDuplicates` O(n) when a run can be popped many times?) and the `CarFleet` single-pair follow-up | 🧩 | graded 4/5 or better |
+| 4 | 15 | `Day04LargestRectangle` symptom table (the 21 failing tests grouped by symptom) and a blank hand trace on `[2, 1, 2]`, as a comment block, no code change. **Push it** | 🐞 | one commit on `main` |
+| 5 | if time | 🔁 cold redo `ValidParenthesesRedoNov01` (0/18), pattern note and complexity first | 🔁 | 18/18, cold |
+
+> [!NOTE]
+> Items 1-4 are about 50 minutes, so the redos will most likely slip a fifth time; the 10 PM check then moves the queue one more day. [redo-schedule.md](../revision/redo-schedule.md) is unchanged tonight because no redo was graded. **Moved to tomorrow:** banking module 1 step 1 (40 min), the cold RPN redo (25 min), Q3 and Q6 of the B2 questions.
+
+- [ ] `CarFleet` comment lines pushed
+- [ ] Drill 1 pushed, 22 tests green
+- [ ] count-stack re-ask and `CarFleet` single-pair follow-up answered
+- [ ] `Day04LargestRectangle` symptom table pushed
+- [ ] `ValidParenthesesRedoNov01` (if time)
+
+### 🎯 Tomorrow's focus (Thu 5 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | Drill 2 (`@Valid` and 400, 15 min) first, then banking module 1 step 1 (the five design decisions as comments, then the hand-written V2 migration and `AuthSchemaIT`). If Drill 1 is still open, it comes before Drill 2 | the lowest dimension was concept (6): asking what Spring already handles before adding a handler; module 1 waits behind B2 by plan |
+| 🧩 DSA | The cold `Day02RpnEvaluatorRedoNov01` redo (25 min, 3 comment lines first; use the pack above if it fails). No new Stack problem until the `CarFleet` comments and the count-stack re-ask are closed | RPN is Weak and has slipped five times; the evening slot keeps losing to pending work |
+| 🐞 Buggy | `Day04LargestRectangle`: smallest fix per symptom group, aim to move 15/36 clearly upward | debugging is what this round scores and it has not been attempted for seven sessions |
+| 🔁 Redos (evening) | `MinStack` and `ScoreOfParentheses` if `ValidParentheses` was done tonight; otherwise `ValidParentheses` first | cap of 2 a day, most overdue first |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
