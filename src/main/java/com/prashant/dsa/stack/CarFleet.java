@@ -82,6 +82,10 @@ import java.util.Deque;
  */
 public class CarFleet {
 
+    // pattern - stack
+    // time - O(nlogn)
+    // space - O(n)
+
     public int carFleet(int target, int[] position, int[] speed) {
         if (position == null || speed == null) {
             throw new IllegalArgumentException("position and speed must not be null");

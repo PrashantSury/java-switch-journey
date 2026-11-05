@@ -7,7 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Drill 1 (Day 13): what Spring already answers, and what the catch-all must not swallow.
@@ -21,30 +26,41 @@ class SpringDefaultsDrillTest {
     @Autowired
     private MockMvc mvc;
 
+
     @Test
     @DisplayName("GET /api/students/abc returns 400 ProblemDetail (a non-numeric id), not 500")
     void nonNumericIdReturns400() throws Exception {
-        // TODO(write by hand)
         // when:  GET /api/students/abc
         // then:  status 400; $.status 400; $.errorCode exists; body does not contain "MethodArgumentTypeMismatchException"
-        fail("TODO: write this test");
+        mvc.perform(get("/api/students/abc"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.status").value(400))
+                .andExpect(jsonPath("$.title").value("Invalid Parameter"))
+                .andExpect(jsonPath("$.detail").value("Parameter 'id' has an invalid value"))
+                .andExpect(jsonPath("$.errorCode").value("INVALID_PARAMETER"))
+                .andExpect(jsonPath("$.instance").value("/api/students/abc"));
     }
 
     @Test
     @DisplayName("GET /api/nothing returns 404 ProblemDetail (no handler for the path), not 500")
     void unknownPathReturns404() throws Exception {
-        // TODO(write by hand)
         // when:  GET /api/nothing
         // then:  status 404; $.status 404; $.errorCode exists
-        fail("TODO: write this test");
+        mvc.perform(get("/api/nothing"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.errorCode").exists());
     }
 
     @Test
     @DisplayName("PATCH /api/students/1 returns 405 ProblemDetail and keeps the Allow header")
     void wrongVerbKeepsAllowHeader() throws Exception {
-        // TODO(write by hand)
         // when:  PATCH /api/students/1
         // then:  status 405; header "Allow" is present and lists GET, PUT and DELETE; $.errorCode is METHOD_NOT_ALLOWED
-        fail("TODO: write this test");
+        mvc.perform(patch("/api/students/1"))
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(header().string("Allow", allOf(
+                        containsString("GET"), containsString("PUT"), containsString("DELETE"))))
+                .andExpect(jsonPath("$.errorCode").value("METHOD_NOT_ALLOWED"));
     }
 }

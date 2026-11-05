@@ -12,6 +12,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -98,6 +100,23 @@ public class GlobalExceptionHandler {
 
         return problemDetail;
     }
+    /** 400 INVALID_PARAMETER: Parameter 'id' has an invalid value like for Long added nonnumeric value as abc  */
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ProblemDetail typeMismatch(MethodArgumentTypeMismatchException ex) {
+
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
+
+        problemDetail.setTitle("Invalid Parameter");
+        problemDetail.setDetail(
+                "Parameter '" + ex.getName() + "' has an invalid value"
+        );
+        problemDetail.setProperty("errorCode", "INVALID_PARAMETER");
+        problemDetail.setProperty("parameter", ex.getName());
+
+        return problemDetail;
+    }
 
     // ===================== 404 Not Found =====================
 
@@ -111,6 +130,19 @@ public class GlobalExceptionHandler {
         problemDetail.setTitle("Student Not Found");
         problemDetail.setDetail(ex.getMessage());
         problemDetail.setProperty("errorCode", "STUDENT_NOT_FOUND");
+
+        return problemDetail;
+    }
+    /** 404 NO_RESOURCE_FOUND for instance like /api/nothing **/
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ProblemDetail noResource(NoResourceFoundException ex) {
+
+        ProblemDetail problemDetail =
+                ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
+
+        problemDetail.setTitle("Resource Not Found");
+        problemDetail.setDetail("No endpoint exists for this path.");
+        problemDetail.setProperty("errorCode", "RESOURCE_NOT_FOUND");
 
         return problemDetail;
     }
