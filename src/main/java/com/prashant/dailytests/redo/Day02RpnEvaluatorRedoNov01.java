@@ -1,5 +1,8 @@
 package com.prashant.dailytests.redo;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Cold redo of the Day 02 buggy round (gap +1 after the 31 Oct reset). Write it from
  * memory, in 20-30 minutes, without opening Day02RpnEvaluator, Day02RpnEvaluatorRedo
@@ -22,12 +25,57 @@ package com.prashant.dailytests.redo;
  */
 public class Day02RpnEvaluatorRedoNov01 {
 
-    // Pattern:
-    // Time:
-    // Space:
+    // Pattern: Stack
+    // Time: O(n)
+    // Space: O(n)
 
     public static int evaluate(String[] tokens) {
-        // TODO: write from memory
-        throw new UnsupportedOperationException("TODO");
+        if (tokens == null || tokens.length == 0) {
+            throw new IllegalArgumentException("tokens must not be null or empty");
+        }
+
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (String token : tokens) {
+            if (token == null) {
+                throw new IllegalArgumentException("null token");
+            }
+            if (isOperator(token)) {
+                if (stack.size() < 2) {
+                    throw new IllegalArgumentException("not enough operands for " + token);
+                }
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(apply(a, b, token));
+            } else {
+                stack.push(Integer.parseInt(token));
+            }
+        }
+
+        if (stack.size() != 1) {
+            throw new IllegalArgumentException("no result");
+        }
+        return stack.pop();
+    }
+
+    private static boolean isOperator(String op) {
+        return op.equals("+") || op.equals("-") || op.equals("*") || op.equals("/");
+    }
+
+    public static int apply(int a, int b, String token) {
+        switch (token) {
+            case "+": return Math.addExact(a, b);
+            case "-": return Math.subtractExact(a, b);
+            case "*": return Math.multiplyExact(a, b);
+            case "/":
+                if(b == 0){
+                    throw new ArithmeticException("Cannot divide by zero");
+                }
+                if (a == Integer.MIN_VALUE && b == -1) {
+                    throw new ArithmeticException("overflow");
+                }
+                return a / b;
+            default: throw new IllegalArgumentException("Operator is not listed");
+        }
     }
 }
