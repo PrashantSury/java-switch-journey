@@ -9,7 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.hamcrest.Matchers.not;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -26,7 +26,6 @@ class SpringDefaultsDrillTest {
     @Autowired
     private MockMvc mvc;
 
-
     @Test
     @DisplayName("GET /api/students/abc returns 400 ProblemDetail (a non-numeric id), not 500")
     void nonNumericIdReturns400() throws Exception {
@@ -38,7 +37,8 @@ class SpringDefaultsDrillTest {
                 .andExpect(jsonPath("$.title").value("Invalid Parameter"))
                 .andExpect(jsonPath("$.detail").value("Parameter 'id' has an invalid value"))
                 .andExpect(jsonPath("$.errorCode").value("INVALID_PARAMETER"))
-                .andExpect(jsonPath("$.instance").value("/api/students/abc"));
+                .andExpect(jsonPath("$.instance").value("/api/students/abc"))
+                .andExpect(content().string(not(containsString("MethodArgumentTypeMismatchException"))));
     }
 
     @Test

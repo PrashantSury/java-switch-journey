@@ -26,7 +26,9 @@ import java.util.Map;
  *  400  MethodArgumentNotValidException            VALIDATION_FAILED
  *  400  HttpMessageNotReadableException            MALFORMED_REQUEST
  *  400  MissingServletRequestParameterException    MISSING_REQUEST_PARAMETER
+ *  400  MethodArgumentTypeMismatchException        INVALID_PARAMETER
  *  404  StudentNotFoundException                   STUDENT_NOT_FOUND
+ *  404  NoResourceFoundException                   RESOURCE_NOT_FOUND
  *  405  HttpRequestMethodNotSupportedException     METHOD_NOT_ALLOWED
  *  409  DuplicateEmailException                    DUPLICATE_EMAIL
  *  415  HttpMediaTypeNotSupportedException         UNSUPPORTED_MEDIA_TYPE
@@ -100,8 +102,8 @@ public class GlobalExceptionHandler {
 
         return problemDetail;
     }
-    /** 400 INVALID_PARAMETER: Parameter 'id' has an invalid value like for Long added nonnumeric value as abc  */
 
+    /** 400 INVALID_PARAMETER: a path/query value cannot be converted, e.g. GET /api/students/abc for a Long id. */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ProblemDetail typeMismatch(MethodArgumentTypeMismatchException ex) {
 
@@ -133,7 +135,8 @@ public class GlobalExceptionHandler {
 
         return problemDetail;
     }
-    /** 404 NO_RESOURCE_FOUND for instance like /api/nothing **/
+
+    /** 404 RESOURCE_NOT_FOUND: no endpoint mapped for the path, e.g. GET /api/nothing. */
     @ExceptionHandler(NoResourceFoundException.class)
     public ProblemDetail noResource(NoResourceFoundException ex) {
 
