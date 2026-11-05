@@ -101,7 +101,7 @@ public class Day04LargestRectangle {
             throw new IllegalArgumentException("heights must not be null");
         }
         for (int h : heights) {
-            if (h <= 0) {
+            if (h < 0) {
                 throw new IllegalArgumentException("invalid height: " + h);
             }
         }
@@ -115,8 +115,8 @@ public class Day04LargestRectangle {
             int current = (i == n) ? 0 : heights[i];
             while (!stack.isEmpty() && heights[stack.peek()] >= current) {
                 int height = heights[stack.pop()];
-                int width = stack.isEmpty() ? i - 1 : i - stack.peek() - 1;
-                int area = height * width;
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+                long area = (long) height * width;
                 best = Math.max(best, area);
             }
             stack.push(i);
