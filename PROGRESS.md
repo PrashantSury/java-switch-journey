@@ -11,10 +11,10 @@
 ## 🧭 Overall status
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
-| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A and B1 ✅; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Part B2 (🟡 19/19 green; the catch-all still turns `/abc` and an unknown path into a 500, closed by Drill 1), module 1 (step 1 assigned 4 Nov) | [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min), then [module 1 step 1](tasks/day13.md#-banking-module-1-step-1-the-v2-auth-migration-and-its-test-about-40-min) |
-| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅ (3 of the 7 NeetCode Stack problems); `CarFleet` ✅ 3 Nov (37/37, with hints) | the 3 comment lines on `CarFleet`, count-stack re-ask; next new Stack problem only when the open items clear | [Day 13 DSA](tasks/day13.md#-dsa) |
-| 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 3 rounds ✅ | `Day04LargestRectangle`, `Day00BuggyExample` | [Largest Rectangle](tasks/day09.md#-day04largestrectangle-buggy-round) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 3 cold redos ✅ | 8 problems on the ladder, 2 redos due Thu 5 Nov (moved from 1 to 4 Nov; blank stubs ready) | [day13.md](tasks/day13.md#-3--cold-redo-day02rpnevaluatorredonov01-25-min) |
+| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 are **parked** (the Spring slot moves to `spring-boot-labs` from Fri 6 Nov) | the 6 AM session on 6 Nov sets the first `spring-boot-labs` chapter; parked items wait in [Pending](#-pending) |
+| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅ (3 of the 7 NeetCode Stack problems); `CarFleet` ✅ 3 Nov (37/37, with hints); count-stack re-ask ✅ closed 5 Nov; cold `Day02RpnEvaluatorRedoNov01` ✅ 44/44 (`800ad4f`) | `CarFleet`: reasons next to the 3 comment lines and the single-pair follow-up; then the next new Stack problem is allowed | [day14.md evening](tasks/day14.md#-evening-5-nov-review-scores-and-tonights-work) |
+| 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 4 rounds ✅ (`Day04LargestRectangle` 36/36, `d8306e2`, 5 Nov) | the `Day04LargestRectangle` symptom table and `[2, 1, 2]` hand trace (skipped); `Day00BuggyExample` | [Day00BuggyExample](tasks/day09.md#-day00buggyexample-buggy-warm-up) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 4 cold redos ✅ (`Day02RpnEvaluatorRedoNov01` clean 44/44 on 5 Nov, +1 to +3) | 9 problems on the ladder; `ValidParenthesesRedoNov01` due tonight; `MinStack` and `ScoreOfParentheses` due Fri 6 Nov | [redo-schedule.md](revision/redo-schedule.md) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups, Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
@@ -62,7 +62,7 @@ mvn test          # root project: DSA and buggy rounds
 | §2 Request flow | 🟡 IN_PROGRESS | Day 04 Q1 5/10, re-answered 8/10 on 1 Nov ✅ |
 | §3 Request mapping | 🟡 IN_PROGRESS | code verified 28 Oct, `course-practice` 12/12; Q3 7/10; revision pending |
 | §4 HTTP semantics | 🟡 IN_PROGRESS | code verified 28 Oct; Day 03 Q1/Q2 5/10; revision pending |
-| 🔥 §5 Validation and error handling | 🟡 IN_PROGRESS | Part B1 ✅ (31 Oct, 15/15); B2 🟡 (2 Nov late push `0600df2` + Lumi's minor fixes `3d85c55`; 3 Nov late push `ff79dbf` + Lumi's tidy-ups `5918263`, `80d98f1`: `course-practice` **19/19**, catch-all now logs and returns a generic 500, explicit 405 and 415 handlers keep their headers; open: `GET /api/students/abc` and an unknown path still answer 500, closed by [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min)); Day 04 Q1-Q3 re-answered 26/30 ✅ |
+| 🔥 §5 Validation and error handling | ✅ COMPLETED (5 Nov) | Part B1 ✅ (31 Oct, 15/15); **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`)**: `course-practice` **23/23** (`StudentControllerTest` 19 + `SpringDefaultsDrillTest` 3 + context 1); `/abc` → 400 `INVALID_PARAMETER`, unknown path → 404 `RESOURCE_NOT_FOUND`, 405 keeps `Allow`; Day 04 Q1-Q3 re-answered 26/30 ✅. Q3 and Q6 of the B2 questions are still unanswered (interview side, in Pending) |
 | §6 JPA · §7 Testing · §8 Config | ⬜ NOT_STARTED | taught inside the banking modules (JPA with modules 2-3, testing with every module, config with module 1); their workbook sections are answered when each is reached |
 
 | `course-practice` task | Status | Notes |
@@ -70,7 +70,7 @@ mvn test          # root project: DSA and buggy rounds
 | Day 02 endpoints | ✅ COMPLETED | rolled into Part A, verified with it |
 | Day 03 / Day 04 Part A (endpoint fixes) | ✅ COMPLETED (28 Oct) | 11dfcc8 → 27b70d6 → bddf14c → af4f8e7 → 6e3d6be → c047571; `course-practice` 12/12; see [day06.md](tasks/day06.md) |
 | Day 04 Part B1 (`@Size` message, `exists...` queries, 409, +2 tests) | ✅ COMPLETED (31 Oct) | 71a5f07 + c344203; `course-practice` 15/15 (`StudentControllerTest` 14 + context 1). Open note: no unique constraint on `email` yet (the race), a JPA topic |
-| Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON 400, +3 tests) | 🟡 IN_PROGRESS | [spec](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response). `f4cb8b9`: four handlers return `ProblemDetail`; `0600df2` (2 Nov): malformed-JSON handler and 3 tests; `ff79dbf` (3 Nov, 22:39 IST): catch-all logs the cause and answers a fixed `Unexpected error` / `INTERNAL_ERROR`, 415 test added; `5918263` + `80d98f1` (Lumi, at your request): explicit 405 and 415 handlers (headers kept), controller, tests and handler reordered by status. **19/19 on `80d98f1`.** Still open (probed 4 Nov): the catch-all still turns a non-numeric id and an unknown path into a 500 (Spring's own answers are 400 and 404). Closes with [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min) (22 tests) |
+| Day 04 Part B2 (`ProblemDetail` everywhere, malformed JSON 400, +3 tests) | ✅ COMPLETED (5 Nov) | [spec](tasks/day10.md#-day-04-part-b2-problemdetail-in-every-error-response). `f4cb8b9` → `0600df2` → `ff79dbf` (+ Lumi's tidy-ups) → **`1c9c6aa` (5 Nov, 15:53 IST, Drill 1)**: `MethodArgumentTypeMismatchException` → 400 `INVALID_PARAMETER`, `NoResourceFoundException` → 404 `RESOURCE_NOT_FOUND`, catch-all left last and untouched, 3 drill tests written by hand; Lumi's minor fixes `7b7c725` (stale comments, one extra assertion). **23/23.** Open note: the 404 test only asserts that `errorCode` exists, not its value |
 
 ## 🧩 DSA track (NeetCode 150 by pattern)
 > [!NOTE]
@@ -86,9 +86,9 @@ mvn test          # root project: DSA and buggy rounds
 | ValidParentheses | 2/2 | starter | ✅ COMPLETED | on the redo ladder |
 | MinStack | 10/10 | 156a339 | ✅ COMPLETED | on the redo ladder |
 | ScoreOfParentheses | 37/37 | c909bb8 | ✅ COMPLETED | follow-up questions ⬜ NOT_STARTED (answers pending) |
-| RemoveKAdjacentDuplicates (Day 01) | 26/26 | 2d36911 | ✅ COMPLETED (29 Oct) | O(n) quiz 3/5 (missed the push/pop-once reasoning) → re-ask 🔴 |
+| RemoveKAdjacentDuplicates (Day 01) | 26/26 | 2d36911 | ✅ COMPLETED (29 Oct) | O(n) quiz 3/5 (missed the push/pop-once reasoning) → re-ask ✅ answered 5 Nov (each character pushed at most once, popped at most once, so at most 2n steps); problem itself still due its +1 redo on 7 Nov |
 | AsteroidCollision (Day 02) | 28/28 | 6ddde32 + Lumi's cosmetic clean-up | ✅ COMPLETED (31 Oct) | O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified |
-| CarFleet (Day 04) | 37/37 | 91cb817 + Lumi's minor fixes | ✅ COMPLETED (3 Nov, with hints) | sort by position descending, cross-multiplied `long` comparison, `Deque<long[]>`; hint-assisted (pairing, exact comparison). Still owed: pattern line and time/space comments at the top · [review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
+| CarFleet (Day 04) | 37/37 | 91cb817 + Lumi's minor fixes; comment lines in `1c9c6aa` | ✅ COMPLETED (3 Nov, with hints) | sort by position descending, cross-multiplied `long` comparison, `Deque<long[]>`; hint-assisted (pairing, exact comparison). The 3 comment lines are in (`stack`, `O(nlogn)`, `O(n)`, all correct) but have **no reason sentence** next to each cost; single-pair follow-up still owed · [review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
 
 ## 🐞 Buggy problems (on the current pattern: Stack)
 | Round or redo | Type | Tests | My commit | Status | Notes |
@@ -96,13 +96,13 @@ mvn test          # root project: DSA and buggy rounds
 | Day01ArrayStack | 🐞 buggy | 17/17 | 71ae03f | ✅ COMPLETED | fixed with hints; on the redo ladder |
 | Day02RpnEvaluator | 🐞 buggy | 44/44 | 1f1be84 | ✅ COMPLETED | fixed with a hint on `-3`; on the redo ladder (reset to +1) |
 | Day03NextGreaterIndex | 🐞 buggy | 37/37 | 2d36911 + bcb37f3 | ✅ COMPLETED (29 Oct) | both bugs found; stray `main()` repeated and removed |
-| Day04LargestRectangle | 🐞 buggy | 15/36 | none | ⬜ NOT_STARTED | [spec](tasks/day09.md#-day04largestrectangle-buggy-round) |
+| Day04LargestRectangle | 🐞 buggy | 36/36 | d8306e2 | ✅ COMPLETED (5 Nov) | three exact, minimal changes took 15/36 to 36/36 in one push; the symptom table and the `[2, 1, 2]` hand trace were skipped, so the written localisation (debugging) is unverified; joins the redo ladder at +1 · [spec](tasks/day09.md#-day04largestrectangle-buggy-round) |
 | Day00BuggyExample (warm-up) | 🐞 buggy | 4/10 | none | ⬜ NOT_STARTED | [spec](tasks/day09.md#-day00buggyexample-buggy-warm-up) |
 | Day01ArrayStackRedo | 🔁 redo (day 3) | 17/17 | af4f8e7 | ✅ COMPLETED (cold, 28 Oct) | |
 | Day01ArrayStackRedo7 | 🔁 redo (day 7) | 17/17 | d5c0ee9 | ✅ COMPLETED (31 Oct) | clean cold pass; Lumi removed stale TODO comments |
 | Day02RpnEvaluatorRedo | 🔁 redo (day 3) | 44/44 | bddf14c | 🟡 IN_PROGRESS | passes, but done by re-reading the original, not from memory |
 | Day02RpnEvaluatorRedo7 | 🔁 redo (day 7) | 44/44 | 37f6c11 | ✅ COMPLETED (31 Oct) | fixed after 3 review rounds (fall-through, end check, null guard); logged in `revision/mistakes/dsa.md`; reset to +1 |
-| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 0/44 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1, 2 or 3 Nov, moved to the Wed 4 Nov evening; tests verified against a correct version |
+| Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 44/44 | 800ad4f | ✅ COMPLETED (cold, 5 Nov) | clean cold pass, no hint: 3 comment lines, exact-match operators, `size() < 2` guard before the pops, `a` below `b`, `size() != 1` end check, null guards, `Math.*Exact`; none of the 31 Oct slips came back; moves +1 → +3 (due Sun 8 Nov) |
 | ValidParenthesesRedoNov01 | 🔁 redo (+1) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 1 Nov) | cold; not attempted 1, 2 or 3 Nov, moved to the Wed 4 Nov evening; new stricter suite (empty, `null`, non-brackets, 100 000 chars) |
 
 > [!IMPORTANT]
@@ -119,19 +119,20 @@ mvn test          # root project: DSA and buggy rounds
 
 ## 📌 Pending
 > [!NOTE]
-> Everything not ✅ COMPLETED, in the order to work it. Pending work never disappears until it is verified. Full specs: [tasks/day09.md](tasks/day09.md).
+> Everything not ✅ COMPLETED, in the order to work it. Pending work never disappears until it is verified. Full specs: [tasks/day09.md](tasks/day09.md). Updated by the 5 Nov evening review.
 
 | # | Item | Track | Status |
 |---|---|---|---|
-| 2 | `CarFleet` pattern line + time/space comments (code ✅ 37/37, 3 Nov) | 🧩 | 🟡 IN_PROGRESS |
-| 3 | `Day04LargestRectangle` | 🐞 | ⬜ NOT_STARTED |
-| 4 | `Day00BuggyExample` | 🐞 | ⬜ NOT_STARTED |
-| 5 | Day 04 Part B2 (19/19 green; finish with [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min): `/abc` → 400, unknown path → 404, 405 keeps `Allow`) | 🌱 | 🟡 IN_PROGRESS |
-| 6 | Banking module 1 (AuthN / AuthZ), [step 1](tasks/day13.md#-banking-module-1-step-1-the-v2-auth-migration-and-its-test-about-40-min): V2 migration + `AuthSchemaIT` (assigned 4 Nov) | 🏦 | ⬜ NOT_STARTED (no work in the repo yet) |
-| 7 | Redos due Wed 4 Nov (moved from 1, 2 and 3 Nov): `Day02RpnEvaluatorRedoNov01` (0/44, in the 4 Nov morning DSA slot), `ValidParenthesesRedoNov01` (0/18, evening) | 🔁 | 🟡 IN_PROGRESS |
-| 8 | Count-stack O(n) re-ask (3/5) | 🧩 | 🔴 REVISION_REQUIRED |
-| 9 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
-| 10 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
+| 1 | Tonight: `Day04LargestRectangle` symptom table (21 failing tests in 3 groups) and a blank hand trace on `[2, 1, 2]`, as a comment block, no code change | 🐞 | 🟡 IN_PROGRESS (code ✅ 36/36; write-up skipped) |
+| 2 | Tonight: `ValidParenthesesRedoNov01` (0/18, cold, pattern note and complexity first) | 🔁 | 🟡 IN_PROGRESS (due 5 Nov) |
+| 3 | `CarFleet`: one reason sentence next to each of the 3 comment lines, then the single-pair follow-up in chat | 🧩 | 🟡 IN_PROGRESS |
+| 4 | Q3 and Q6 of the B2 interview questions, and the one-sentence "why the catch-all hid Spring's own answers" | 🌱 | ⬜ NOT_STARTED |
+| 5 | Banking module 1 step 1 (V2 auth migration + `AuthSchemaIT`), Drill 2 (`@Valid` and 400), Drill 3 (MockMvc happy path and error test): **parked** while the Spring slot moves to `spring-boot-labs` (6 Nov); nothing is deleted | 🏦🌱 | ⬜ NOT_STARTED (parked) |
+| 6 | `Day00BuggyExample` warm-up (4/10) | 🐞 | ⬜ NOT_STARTED (next buggy item, tomorrow morning) |
+| 7 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
+| 8 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
+| 9 | Redos queued: `MinStack`, `ScoreOfParentheses` (6 Nov), `RemoveKAdjacentDuplicates`, `Day03NextGreaterIndex` (7 Nov) | 🔁 | 🟡 IN_PROGRESS |
+
 
 ## 🎯 Weak topics
 > [!NOTE]
@@ -145,11 +146,11 @@ mvn test          # root project: DSA and buggy rounds
 | 🌱 | `ResponseEntity` vs `@ResponseStatus`, `Location` header | Day 03 Q2 5/10 | 🔴 Weak | ⬜ not generated |
 | 🌱 | `@PathVariable` / `@RequestParam` / `@RequestBody` | Day 02 Q1 5/10 | 🔴 Weak | ⬜ not generated |
 | 🌱 | Race on unique data: check-then-save vs a DB constraint | Day 04 Q3 6/10, re-answer 9/10 (1 Nov) | 🟢 Strong | ⬜ not generated |
-| 🧩 | Amortised O(n) reasoning for stack solutions | count-stack quiz 3/5; re-ask still open (1 Nov) | 🔴 Weak | ✅ generated 1 Nov ([day10.md evening](tasks/day10.md#-weak-topic-pack-amortised-on-for-stack-solutions)), open after the re-ask |
-| 🧩🐞 | RPN evaluation: operand order, `"-3"` token, end check, null guard | 3 conceptual misses on 31 Oct (day-7 redo); cold redo not attempted 1-4 Nov | 🔴 Weak | ✅ generated 4 Nov ([day13.md evening](tasks/day13.md#️-weak-topic-pack-rpn-evaluation-new-tonight)) |
+| 🧩 | Amortised O(n) reasoning for stack solutions | count-stack quiz 3/5 (29 Oct); re-ask answered 5 Nov: pushed at most once, popped at most once, at most 2n steps; but the `CarFleet` comment lines carry no reason sentence | 🟡 Moderate (was 🔴 Weak; the habit "say where each cost comes from" is not automatic yet) | ✅ generated 1 Nov ([day10.md evening](tasks/day10.md#-weak-topic-pack-amortised-on-for-stack-solutions)); re-use it if it slips again |
+| 🧩🐞 | RPN evaluation: operand order, `"-3"` token, end check, null guard | 3 conceptual misses on 31 Oct (day-7 redo); **5 Nov cold redo 44/44, no hint, none of the 3 misses repeated** (`800ad4f`) | 🟡 Moderate (was 🔴 Weak; Strong after a second clean pass at +3 on 8 Nov) | ✅ generated 4 Nov ([day13.md evening](tasks/day13.md#️-weak-topic-pack-rpn-evaluation-new-tonight)), kept for the +3 redo |
 | 🐞 | Array-backed stack boundaries (grow check, empty, capacity 0) | clean cold redo 28 Oct and 31 Oct | 🟢 Strong | none needed |
 | 🌱 | §5 `ProblemDetail` error contract (Part B2) | 1 Nov evening 7/10: four handlers clean, but the contract changed without its tests (`main` 11/15) and the malformed-body handler is missing | 🟡 Moderate (weakest: implementation 6) | none (Moderate) |
-| 🌱 | Catch-all `@ExceptionHandler(Exception.class)` and what it swallows (405, 415, type mismatch, unknown path) | 2 Nov late push: 500 for 405, 415 and a bad id, copy-pasted message, no log. 3 Nov late push `ff79dbf`: log added, generic message, 415 and 405 now correct; `/abc` and an unknown path still 500 (4 Nov probe); no work on 4 Nov, Drill 1 still open | 🟡 Moderate (concept 6, improving) | none (Moderate); [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min) is the targeted practice |
+| 🌱 | Catch-all `@ExceptionHandler(Exception.class)` and what it swallows (405, 415, type mismatch, unknown path) | 2 Nov: 500 for 405, 415 and a bad id; 3 Nov: 405/415 fixed; **5 Nov Drill 1 (`1c9c6aa`): added only the two missing handlers (type mismatch → 400, no resource → 404), catch-all untouched and last, 23/23** | 🟡 Moderate (concept 7, closed; Strong needs the one-sentence "why it hid Spring's answers" and Q6) | none (Moderate) |
 
 ### 📝 Evening scores (out of 10, rubric in [PROGRAM.md](docs/PROGRAM.md#-evening-scoring-rubric))
 | Date | 🌱 Spring | 🧩 DSA | 🐞 Buggy | Evidence |
@@ -161,13 +162,14 @@ mvn test          # root project: DSA and buggy rounds
 | Tue 3 Nov, evening review (8 PM) | not scored, no work | **7** (unchanged, no new evidence since `91cb817`) | not scored, no work | `CarFleet` 37/37 re-verified; `course-practice` 18/18 (catch-all open), `Day04LargestRectangle` 15/36, redos 0/44 and 0/18; no pushes after 17:37 IST; owed: 3 comment lines, catch-all fix, symptom table · [day12.md evening](tasks/day12.md#-evening-3-nov-review-scores-and-tonights-work) |
 | Tue 3 Nov, late push (22:39 IST) | **6** (concept 6 · implementation 7 · problem solving 6 · interview 6), scored in the 4 Nov evening review | not scored, no work | not scored, no work | `ff79dbf` + Lumi's tidy-ups `5918263`, `80d98f1` (23:08 and 23:15 IST), pushed after the 10 PM check: `course-practice` **19/19**; catch-all fixed for 405/415, still 500 for `/abc` and an unknown path; reviewed in [day13.md](tasks/day13.md#-morning) |
 | Wed 4 Nov, evening review (8 PM) | not scored again (no new Spring work; last score 6) | not scored, no work (last 7) | not scored, no work | no commit from Prashant today (only the 6 AM session commit `4d1db80`); suites unchanged: `course-practice` 19/19, `CarFleet` 37/37, `Day04LargestRectangle` 15/36, redos 0/44 and 0/18; Drill 1, module 1 step 1, the `CarFleet` comment lines and the RPN redo all open · [day13.md evening](tasks/day13.md#-evening-4-nov-review-scores-and-tonights-work) |
+| Thu 5 Nov, evening review (8 PM) | **7** (concept 7 · implementation 7 · problem solving 7 · interview 6) | **8** (concept 8 · implementation 9 · problem solving 7 · complexity 7 · interview 7) | **7** (concept 7 · implementation 9 · debugging 7 · interview 6) | `1c9c6aa` + `7b7c725` Drill 1, `course-practice` **23/23**; `800ad4f` cold RPN **44/44** no hint; count-stack re-ask closed; `d8306e2` `Day04LargestRectangle` **36/36**; `CarFleetTest` 37/37 re-run; `ValidParenthesesRedoNov01Test` 0/18 (not attempted yet) · [day14.md evening](tasks/day14.md#-evening-5-nov-review-scores-and-tonights-work) |
 
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Thu 5 Nov | `Day02RpnEvaluator` (+1, late) | `ValidParentheses` (+1, late) |
+| Thu 5 Nov | `Day02RpnEvaluator` (+1, late) ✅ clean 44/44 → +3, due Sun 8 Nov | `ValidParentheses` (+1, late), tonight |
 | Fri 6 Nov | `MinStack` (+1, late) | `ScoreOfParentheses` (+1, late) |
 | Sat 7 Nov | `RemoveKAdjacentDuplicates` (+1, late) | `Day03NextGreaterIndex` (+1, late) |
 | Sun 8 Nov | `AsteroidCollision` (+1, late) | `Day02RpnEvaluator` (+3) |
@@ -188,16 +190,14 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Today (Thu 5 Nov, 6 AM), assigned in [day14.md](tasks/day14.md).** No pushes since `80d98f1`, so everything carries and nothing new is added. In order, push after each:
-> 1. 🧩 `CarFleet`: the pattern line, time and space as 3 comment lines at the top of `CarFleet.java` (5 minutes, *hint:* which step dominates, and what does the stack hold in the worst case?), **pushed first**; `CarFleetTest` stays 37/37.
-> 2. 🌱 [Drill 1](tasks/day13.md#-drill-1-spring-defaults-vs-the-catch-all-about-15-min) (15 to 20 min): fill the table, add only the two missing handlers, write the 3 tests; `course-practice` 22 tests, 0 failures. This closes Part B2. Drill 2 (`@Valid` and 400) comes after it, never before.
-> 3. 💬 In chat: the count-stack O(n) re-ask (3 or 4 lines).
-> 4. 🔁🧩 The cold `Day02RpnEvaluatorRedoNov01` redo (25 minutes, 3 comment lines and pseudocode first; the RPN pack if it fails).
-> 5. 🐞 `Day04LargestRectangle`: symptom table and a blank hand trace on `[2, 1, 2]` as a comment block, no code change.
-> 6. 🏦 [Module 1 step 1](tasks/day13.md#-banking-module-1-step-1-the-v2-auth-migration-and-its-test-about-40-min): the five decisions, then the hand-written V2 migration and `AuthSchemaIT`.
-> 7. 🌙 Evening: review, the `CarFleet` single-pair follow-up and Q3/Q6 in chat, then the cold `ValidParenthesesRedoNov01` redo; `MinStack` and `ScoreOfParentheses` stay next in line (6 Nov).
+> **Tonight (Thu 5 Nov, 8 PM), [day14.md evening](tasks/day14.md#-evening-5-nov-review-scores-and-tonights-work).** The morning list is done except the write-up and module 1. In order, about 60 minutes:
+> 1. 🐞 `Day04LargestRectangle` symptom table and a blank hand trace on `[2, 1, 2]` as a comment block, no code change (15 min). Push.
+> 2. 🔁 Cold `ValidParenthesesRedoNov01` (0/18), 3 comment lines first, 20 min. Push.
+> 3. 🧩 `CarFleet`: a reason sentence beside each comment line, then the single-pair follow-up in chat (10 min).
+> 4. 🌱 If time: Q3 of the B2 questions in chat.
 >
-> Ask for a hint after 15 minutes on any step; a red push counts.
+> **Tomorrow (Fri 6 Nov, 6 AM):** 🌱 first `spring-boot-labs` chapter (the Spring slot moves there; module 1 step 1 and Drills 2 and 3 wait in Pending). 🧩 the next new Stack problem is allowed now (suggested: Daily Temperatures; 3-5 lines of plain-English pseudocode first and one sentence for where each cost comes from). 🐞 `Day00BuggyExample`. 🔁 `MinStack` and `ScoreOfParentheses` in the evening. Ask for a hint after 15 minutes on any step.
+
 
 ## 📊 Status counts
 ```mermaid
@@ -334,3 +334,5 @@ pie title Tracked items (1 Nov 2026)
 | 4 Nov 2026 | W2 D13 | 🌙 Evening review (8 PM): no commit from me today besides the 6 AM session; 🌱 Spring **6/10** scored on the 3 Nov late push `ff79dbf`; 🧩 DSA and 🐞 buggy not scored (no work) | No new commits after `4d1db80`, so nothing new to run: `course-practice` 19/19, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18 (unchanged from 6 AM). Morning items all open (CarFleet comment lines, Drill 1, module 1 step 1, count-stack re-ask, RPN redo, symptom table). Tonight: comment lines, Drill 1, re-ask and single-pair follow-up, symptom table, `ValidParentheses` redo if time; module 1 step 1 and the RPN redo move to 5 Nov. RPN weak-topic pack added to [day13.md](tasks/day13.md). No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged |
 | 4 Nov 2026 | W2 D13 | 10 PM check: no pushes after the 8 PM evening review; redo queue moved one more day | No commits from me after the evening review (`210d691` is the review itself; the only other commit today is the 6 AM session `4d1db80`) and no answers in chat, so nothing new to test: `course-practice` 19/19, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18 stand from 6 AM. Both redos were not attempted again, so [redo-schedule.md](revision/redo-schedule.md) shifts one more day (5 Nov starts with those two, `CarFleet` queued to 12 Nov, last graduation Tue 5 Jan). Open and carried: the 3 `CarFleet` comment lines and single-pair follow-up, Drill 1, module 1 step 1, the count-stack re-ask, the RPN redo, the `Day04LargestRectangle` symptom table, Q3 and Q6. No new mistakes, no cosmetic fixes. End of day added to [day13.md](tasks/day13.md) |
 | 5 Nov 2026 | W2 D14 | 🌅 Morning session assigned (carried work only) in [day14.md](tasks/day14.md) | No commits from me since `75ecfde` and none from Prashant since `80d98f1` (3 Nov, 23:15 IST), so nothing new to run: `course-practice` 19/19 (`SpringDefaultsDrillTest` 3 red stubs), `CarFleetTest` 37/37, `Day04LargestRectangleTest` 15/36, `Day02RpnEvaluatorRedoNov01Test` 0/44, `ValidParenthesesRedoNov01Test` 0/18, `AuthSchemaIT` 2 red stubs. Every track has an open item, so no new material and no new stubs; the seven open items of [day13.md](tasks/day13.md) are re-ordered into six short steps (comment lines, Drill 1, re-ask, RPN redo, symptom table, module 1 step 1), the quick certain wins first. Redo due today: `Day02RpnEvaluatorRedoNov01` (morning), `ValidParenthesesRedoNov01` (evening). No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged |
+
+| 5 Nov 2026 | W2 D14 | 🌙 Evening review (8 PM): 🌱 Spring **7/10**, 🧩 DSA **8/10**, 🐞 Buggy **7/10**; B2 ✅, RPN redo ✅ (+1 → +3), `Day04LargestRectangle` ✅, count-stack re-ask closed | Ran on `d8306e2` (JDK 21, Maven): `course-practice` **23/23**, `CarFleetTest` 37/37, `Day02RpnEvaluatorRedoNov01Test` **44/44**, `Day04LargestRectangleTest` **36/36** (21 failing on `0a9a400`: 6 zero-height errors, 10 wrong widths, 5 `int` overflow), `ValidParenthesesRedoNov01Test` 0/18 (not attempted yet). Morning pushes: `1c9c6aa` (Drill 1 + `CarFleet` comment lines), `7b7c725` (Lumi's minor fixes), `800ad4f` (RPN), `d8306e2` (`LargestRectangle`). Skipped: symptom table, hand trace, module 1 step 1 (parked). No new conceptual mistakes; [redo-schedule.md](revision/redo-schedule.md) updated (RPN +3, `LargestRectangle` joins at +1) and [mistakes/dsa.md](revision/mistakes/dsa.md) redo cells marked |

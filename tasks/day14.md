@@ -113,3 +113,88 @@ Step 1 only: [day13.md, module 1 step 1](day13.md#-banking-module-1-step-1-the-v
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
+
+---
+
+## 🌙 Evening (5 Nov): review, scores and tonight's work
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-8%2F10-brightgreen) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-yellow)
+
+> [!NOTE]
+> Checked at 8 PM on `d8306e2` (JDK 21, Maven). Four pushes today: `1c9c6aa` (Drill 1 and the `CarFleet` comment lines, 15:53), `800ad4f` (cold RPN redo, 16:20), `d8306e2` (`Day04LargestRectangle`, 18:43) and Lumi's minor fixes `7b7c725` (stale comments, one extra assertion, not logged). Suites: `course-practice` **23/23**, `Day02RpnEvaluatorRedoNov01Test` **44/44**, `Day04LargestRectangleTest` **36/36**, `CarFleetTest` **37/37**, `ValidParenthesesRedoNov01Test` 0/18 (not attempted yet). **No new conceptual mistake**, so nothing is added to the logs; the redo cells of the RPN and count-stack rows in [mistakes/dsa.md](../revision/mistakes/dsa.md) are marked ✅.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **7/10** (🟡 Moderate) | concept 7: the lesson of the last three days landed: you added **only** the two handlers that were missing (type mismatch → 400, no resource → 404), left the catch-all untouched and last, and `405` still keeps its `Allow` header. Implementation 7: 23/23 on your own code, clean `ProblemDetail`s with `errorCode`, but the 404 test only checks that `errorCode` exists, not its value, and the one-sentence "why the catch-all hid Spring's answers" is not in the repo. Problem solving 7: the right exceptions named. Interview readiness 6: Q3 and Q6 of the B2 questions are still unanswered |
+| 🧩 DSA | **8/10** (🟢 Strong for the track, 🟡 for RPN until a second clean pass) | concept 8: the count-stack re-ask is right (each character is pushed at most once and popped at most once, so at most 2n steps). Implementation 9: the cold RPN redo is **44/44 on the first push, no hint**, and none of the three 31 Oct slips came back (pop order, whole-token operator check, `size()` end check, null guards, `Math.*Exact`). Problem solving 7: no new problem today. Complexity 7: the numbers are right (`stack`, `O(nlogn)`, `O(n)` on `CarFleet`), but the comment lines still carry **no reason sentence** next to each cost, which was half of the task. Interview readiness 7 |
+| 🐞 Buggy | **7/10** (🟡 Moderate) | `Day04LargestRectangle` went from 15/36 to **36/36 in one push with three small, exact changes**, which is real debugging skill: concept 7, implementation 9. Debugging 7, not higher, because the symptom table and the `[2, 1, 2]` hand trace were skipped, so there is no written proof that you localised each cause from the failing tests (and I cannot see from the repo or chat whether you used a hint; if you did, tell me and I will lower it by one). Interview readiness 6: you have not yet said out loud why the empty-stack case behaves differently from the non-empty one |
+
+> [!TIP]
+> One note on commit hygiene: `d8306e2` is titled "cold rpn for nov1 pushed", the same text as `800ad4f`. Name a commit after what it changed (`Fix Day04LargestRectangle: zero heights, empty-stack width, long area`); an interviewer reading your history does read this.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 Catch-all handler and Spring defaults (Part B2) | 🟡 Moderate, **closed** (B2 ✅ COMPLETED, 5 Nov) | only the missing handlers added; Strong needs the one-sentence "why it hid Spring's answers" and Q6 |
+| 🧩🐞 RPN evaluation | 🟡 Moderate (was 🔴 Weak) | clean cold 44/44, no hint; a second clean pass on Sun 8 Nov (+3) makes it 🟢 Strong. Pack from 4 Nov stays on file |
+| 🧩 Amortised O(n) for stack solutions | 🟡 Moderate (was 🔴 Weak) | re-ask correct; but the `CarFleet` comments have no "where the cost comes from" sentence yet |
+| 🧩 `CarFleet` | 🟡 Moderate (carried) | 37/37 with hints; comment lines in, reasons and the single-pair follow-up owed |
+| 🐞 `Day04LargestRectangle` | ✅ code verified, 🟡 write-up pending | 36/36; symptom table and hand trace owed; joins the redo ladder at +1 (queued 13 Nov) |
+| 🏦 Banking module 1 (AuthN / AuthZ) and Drills 2 and 3 | ⬜ Pending, **parked** | the Spring slot moves to `spring-boot-labs` on Fri 6 Nov; nothing is deleted |
+| 🌱 HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, `@PathVariable` / `@RequestParam` / `@RequestBody` | 🔴 Weak (carried, no work today) | Day 02 and Day 03 re-answers still pending; their packs are generated when those re-answers are picked up (spare evenings), as agreed on 1 Nov |
+| ⛔ Blocked | none | nothing outside your control is stopping any task |
+
+No topic became newly Weak today, so no new weak-topic pack is generated.
+
+### 🐞 Debugging write-up for `Day04LargestRectangle` (the part that was skipped)
+
+On the **original** code (`0a9a400`) these 21 tests fail. Group them by what the wrong answers share (error type, size of the gap, which input shapes), then match each group to the one change in `d8306e2` that fixed it.
+
+| Test | Expected | Actual on `0a9a400` |
+|---|---|---|
+| `single` / `singleOne` / `singleMax` | 5 / 1 / 2147483647 | 0 / 0 / 0 |
+| `twoEqual` · `allEqual` · `lowWide` | 4 · 9 · 3 | 2 · 6 · 2 |
+| `decreasing` · `leftEdge` · `wholeRange` | 9 · 10 · 16 | 6 · 5 · 12 |
+| `largeFlat` | 200000 | 199999 |
+| `twoMax` · `billionTimesThree` · `manyMax` | 4294967294 · 3000000000 · 214748364700000 | 2147483647 · 2000000000 · 2147483647 |
+| `largeIncreasing` · `largeDecreasing` | 10000100000 each | 2147427742 · 2147387388 |
+| `singleZero` · `allZeros` · `zeroSplits` · `zeroEdges` · `zeroTie` · `randomCrossCheck` | 0 or the area | `IllegalArgumentException: invalid height: 0` |
+
+- [ ] Table 1: your groups (a name for each group, the tests in it, one sentence on what their wrong answers share).
+- [ ] Table 2: a blank hand trace on `[2, 1, 2]` (expected **3**) on the **fixed** code: `i`, `current`, stack before, what is popped, `height`, `width`, `area`, `best`. Say in one sentence why the width is `i` when the stack is empty and `i - stack.peek() - 1` otherwise.
+- [ ] Put both as a comment block at the top of `Day04LargestRectangle.java`. No code change. Push with a real commit message.
+
+### ⏳ Pending morning work = tonight's work (in this order, 60 min)
+
+> [!IMPORTANT]
+> The morning list is done except the write-up and module 1 step 1. Module 1 step 1 (40 min) does not fit tonight and is **parked** (see the classification above), so tonight is short and finishable. Push after each step; a red push counts.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 15 | `Day04LargestRectangle` symptom table and `[2, 1, 2]` hand trace (above) | 🐞 | one commit on `main`, no code change |
+| 2 | 20 | 🔁 cold `ValidParenthesesRedoNov01` (0/18): blank file, 3 comment lines, 3-5 lines of plain-English pseudocode (open bracket, close bracket, end check) before any Java. The suite is strict: empty, `null`, non-bracket characters, 100 000 characters | 🧩 | 18/18, cold, pushed |
+| 3 | 10 | `CarFleet`: one reason sentence next to each of the 3 comment lines (hint: which step is `O(nlogn)`, and what is the stack's worst-case size?), then the single-pair follow-up in chat | 🧩 | pushed; `CarFleetTest` still 37/37 |
+| 4 | 10 | In chat: Q3 of the B2 questions, and one sentence on why the catch-all hid Spring's own 400 and 404 | 🌱 | graded 7+ |
+
+> [!NOTE]
+> Redo cap: the RPN redo counts as today's first, so `ValidParenthesesRedoNov01` is the second and last. [redo-schedule.md](../revision/redo-schedule.md) is updated: RPN +1 → +3 (due Sun 8 Nov), `Day04LargestRectangle` joins at +1 (queued Fri 13 Nov), `ValidParentheses` stays due tonight. If tonight's redo is a clean 18/18 it moves to +3 (the Mon 9 Nov slot already holds it).
+
+- [ ] `Day04LargestRectangle` write-up pushed
+- [ ] `ValidParenthesesRedoNov01` pushed (cold)
+- [ ] `CarFleet` reasons pushed and single-pair follow-up answered
+- [ ] Q3 and the catch-all sentence answered
+
+### 🎯 Tomorrow's focus (Fri 6 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | First chapter of `spring-boot-labs` (the Spring slot moves there on 6 Nov). Bring one habit from Drill 1: before adding anything, ask what Spring already does, then add only what is missing. Banking module 1 step 1, Drills 2 and 3 and Q6 wait in Pending | the lowest Spring dimension today was interview readiness (6): Q3 and Q6 still unanswered; the new repo is a fresh start, so the habit matters more than the content |
+| 🧩 DSA | The next new Stack problem is allowed now (suggested: Daily Temperatures, a monotonic stack that reuses what `Day03NextGreaterIndex` and `Day04LargestRectangle` practised). 3-5 lines of plain-English pseudocode before any Java, and for every cost one sentence saying where it comes from | RPN and the re-ask are closed and clean, so the blocker on new Stack work is gone; the weakest DSA dimension today was complexity (7): right numbers, no reasons |
+| 🐞 Buggy | `Day00BuggyExample` warm-up (4/10): read the failing tests and group them by symptom **before** touching the code, then fix each group with the smallest change | debugging was the lowest buggy dimension (7): the fixes were exact, but no written localisation |
+| 🔁 Redos (evening) | `MinStack` and `ScoreOfParentheses` (+1, both more than 10 days overdue) | cap of 2 a day, most overdue first |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
