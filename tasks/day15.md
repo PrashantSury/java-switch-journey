@@ -167,6 +167,70 @@ Spec: [day09.md](day09.md#-day00buggyexample-buggy-warm-up). Stub: `Day00BuggyEx
 - [ ] Before any Java on each: 3 comment lines (pattern, time, space) + 3-5 lines of plain-English pseudocode.
 - [ ] Cold: do not open `dsa/stack/ValidParentheses` or `dsa/stack/MinStack`. Push at the end of each, even if red.
 
+## 🌙 Evening (6 Nov): catch-up review (routine missed 8 PM)
+
+![Slot](https://img.shields.io/badge/slot-catch--up-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-6%2F10-orange) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-yellow)
+
+> [!NOTE]
+> Catch-up review after the 8 PM evening routine did not run (last recorded run 5 Nov; cause unknown — not investigated). Checked at ~8:30 PM IST on tip `ec608e3` (JDK 21, Maven). User pushes today: `c0f5d64` (08:42, Day00 + ValidParen redo body) and `ec608e3` (09:03, null guard on **original** `ValidParentheses.java`). Lumi comment-only PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) (`f902f34`, CarFleet reasons) is still **open / not merged**. No commits today on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). Suites re-run below. **No new conceptual mistake** logged (wrong-file null guard is process, not a new rule miss).
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | Labs Chapter 1 (Maven / `pom.xml`) had **no push** and no graded interview answer. B2 Q3 / Q6 and the catch-all sentence stay unanswered. Banking module 1 / Drills 2–3 remain parked. No Spring dimension applied today, so no invented number |
+| 🧩 DSA | **6/10** (🟡 Moderate) | concept 7: ValidParen stack matching is right; null→IAE is in the redo Javadoc but the guard was added to the original class (`ec608e3`), so the redo is still 17/18. Implementation 6: `ValidParenthesesRedoNov01` **17/18**; `DailyTemperatures` still stub **0/18**; `CarFleetTest` **37/37**. Problem solving 5: new Stack problem not started. Complexity 8: CarFleet time (sort O(n log n) + walk O(n), accepted 5 Nov) and space (pairs + ≤n fleets → O(n), accepted 6 Nov chat, "storing not processing") are closed in chat; main still has bare comments until PR #1 merges. Interview readiness 6: single-pair CarFleet follow-up still owed |
+| 🐞 Buggy | **7/10** (🟡 Moderate) | concept 7 / implementation 9: `Day00BuggyExample` **10/10** on `c0f5d64` (null/empty → IAE, `Integer.MIN_VALUE` seed, loop from 0). Debugging 6: no written symptom groups for Day00, and the carried `Day04LargestRectangle` symptom table + `[2,1,2]` hand trace are still missing. Interview readiness 6: empty-stack width sentence for LargestRectangle still owed |
+
+> [!WARNING]
+> `ValidParenthesesRedoNov01` is a **post-feedback** attempt (17/18), **not** a cold clean pass. Do **not** step the redo ladder. Finish the null→IAE guard **in the redo file**, then re-run; even 18/18 after feedback stays 🔶 (same +1 gap).
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 `spring-boot-labs` Chapter 1 (Maven / pom) | ⬜ Pending | no push, no graded Q |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🧩 `CarFleet` reasons | 🟡 Moderate → chat closed; written pending merge | time + space accepted in chat; PR #1 holds refined comments on a branch |
+| 🧩 `DailyTemperatures` | ⬜ Pending | stub only (0/18) |
+| 🔁 `ValidParentheses` redo | 🟡 Moderate / 🔶 incomplete | 17/18; wrong file patched; **not** cold-clean |
+| 🔁 `MinStack` redo | ⬜ Pending | stub 0/10, not attempted |
+| 🐞 `Day00BuggyExample` | ✅ code verified, 🟡 write-up absent | 10/10; joins redo ladder at +1 |
+| 🐞 `Day04LargestRectangle` write-up | 🟡 Pending (carried) | code 36/36; tables still owed |
+| 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
+| ⛔ Blocked | none | — |
+
+No topic is newly 🔴 Weak, so no weak-topic pack tonight.
+
+### ⏳ Tonight's catch-up work (finishable; push after each)
+
+> [!IMPORTANT]
+> Cap **2 redos**. `ValidParentheses` must be finished in the **redo** class first; then `MinStack` if time. Morning leftovers that still fit: LargestRectangle write-up (15 min). Labs Ch 1 and Daily Temperatures are tomorrow's main slots unless you have a longer evening.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 10 | `ValidParenthesesRedoNov01`: null → `IllegalArgumentException` **in the redo file** (do not touch `dsa/stack/ValidParentheses` for this) | 🔁 | `ValidParenthesesRedoNov01Test` **18/18**; still 🔶 (post-feedback) |
+| 2 | 25 | Cold `MinStackRedoNov01` (blank approach: 3 comments + pseudocode, no peeking at `dsa/stack/MinStack`) | 🔁 | push even if red; target 10/10 |
+| 3 | 15 | `Day04LargestRectangle` symptom table + `[2,1,2]` hand trace (comment block only) | 🐞 | one commit, no code change |
+| 4 | if time | Single-pair CarFleet follow-up in chat; B2 Q3 + catch-all sentence | 🧩🌱 | graded 7+ |
+
+- [ ] `ValidParenthesesRedoNov01` 18/18 (post-feedback)
+- [ ] `MinStackRedoNov01` pushed
+- [ ] LargestRectangle write-up pushed
+- [ ] (optional) single-pair / Q3 answers in chat
+
+### 🎯 Tomorrow's focus (Sat 7 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | `spring-boot-labs` Chapter 1 end-to-end (6 pom tasks + interview Q written); habit: ask what the parent already gives, then add only what is missing | unscored today; Ch 1 is the whole Spring slot |
+| 🧩 DSA | `DailyTemperatures`: 3–5 lines of plain-English pseudocode, then monotonic stack of **indices**, reason sentences on pattern/time/space | new Stack work was 0/18; weakest DSA dimension was problem solving (5) |
+| 🐞 Buggy | Finish LargestRectangle write-up if not done tonight; no new buggy round until that lands | debugging evidence keeps trailing the green suites |
+| 🔁 Redos (evening) | If ValidParen still not 18/18, it stays first; else `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` as queued | cap 2; most overdue first · [redo-schedule.md](../revision/redo-schedule.md) |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
+
 ## 📦 Carried backlog (not for this morning unless listed above)
 
 | Item | Track | Status | When |
