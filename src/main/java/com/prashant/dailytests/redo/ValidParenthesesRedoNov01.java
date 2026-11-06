@@ -1,5 +1,8 @@
 package com.prashant.dailytests.redo;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Cold redo of LeetCode 20, Valid Parentheses (gap +1, first redo since 23 Oct).
  * Write it from memory, in 20-30 minutes, without opening dsa/stack/ValidParentheses.
@@ -20,12 +23,18 @@ package com.prashant.dailytests.redo;
  */
 public class ValidParenthesesRedoNov01 {
 
-    // Pattern:
-    // Time:
-    // Space:
+    // Pattern: Stack
+    // Time: O(n)
+    // Space: O(n)
 
     public static boolean isValid(String s) {
-        // TODO: write from memory
-        throw new UnsupportedOperationException("TODO");
+        Deque<Character> stack = new ArrayDeque<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') stack.push(')');
+            else if (c == '{') stack.push('}');
+            else if (c == '[') stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c) return false;
+        }
+        return stack.isEmpty();
     }
 }

@@ -59,8 +59,11 @@ public class Day00BuggyExample {
      * Throws IllegalArgumentException if nums is null or empty.
      */
     public int max(int[] nums) {
-        int max = 0;
-        for (int i = 1; i < nums.length; i++) {
+        int max = Integer.MIN_VALUE;
+        if(nums == null || nums.length == 0){
+            throw new IllegalArgumentException("Empty or null array");
+        }
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] > max) max = nums[i];
         }
         return max;

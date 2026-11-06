@@ -26,7 +26,6 @@ public class Day01ArrayStackRedo {
     private int size ;
 
     public Day01ArrayStackRedo(int initialCapacity) {
-        // TODO(Day 06 redo): write it from memory
         if (initialCapacity < 0){
             throw new IllegalArgumentException("Capacity can not be less than zero " + initialCapacity);
         }
