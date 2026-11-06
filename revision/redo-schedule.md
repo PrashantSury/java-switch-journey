@@ -46,7 +46,7 @@
 | 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **11 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
 
 > [!NOTE]
-> **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the 6 Nov catch-up evening review: ValidParen 17/18 🔶 (not cold-clean), MinStack not attempted → queue rebuilt from **7 Nov**. The calendar below assumes every redo is a clean pass except where marked 🔶.
+> **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the 6 Nov catch-up evening review; **10 PM check confirmed no further attempt** after `46876f6`. ValidParen 17/18 🔶 (not cold-clean), MinStack not attempted → queue still from **7 Nov**. The calendar below assumes every redo is a clean pass except where marked 🔶.
 
 ## 🗓️ Next 7 days
 | Date | Redo 1 | Redo 2 | Why |

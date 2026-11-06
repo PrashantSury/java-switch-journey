@@ -243,3 +243,24 @@ No topic is newly 🔴 Weak, so no weak-topic pack tonight.
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
+
+## 🌒 End of day (6 Nov, 10 PM check)
+
+![slot](https://img.shields.io/badge/slot-10%20PM%20check-yellow)
+
+| Item | Outcome |
+|---|---|
+| 🔁 `ValidParenthesesRedoNov01` null→IAE in the redo file | 🟡 IN_PROGRESS (**17/18**, post-feedback 🔶; guard still on the original class only) · stays due **7 Nov** |
+| 🔁 `MinStackRedoNov01` | ⬜ NOT_STARTED (stub **0/10**, not attempted after the catch-up review) · due **7 Nov** |
+| 🐞 `Day04LargestRectangle` symptom table and `[2, 1, 2]` hand trace | 🟡 IN_PROGRESS (code ✅ 36/36, write-up not pushed) · carried |
+| 🌱 `spring-boot-labs` Chapter 1 | ⬜ NOT_STARTED (no push all day) · first morning slot Sat 7 Nov |
+| 🧩 `DailyTemperatures` | ⬜ NOT_STARTED (stub **0/18**) · carried |
+| 🧩 `CarFleet` single-pair follow-up; written reasons await PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) merge | 🟡 IN_PROGRESS · carried |
+| 🌱 B2 Q3 / Q6 and the catch-all sentence | ⬜ NOT_STARTED · carried |
+
+> [!NOTE]
+> No commits from Prashant after the catch-up evening review (`46876f6` is the review itself; the last student code push today is `ec608e3` at 09:03 IST) and no answers in chat after that review, so there was nothing new to test and no redo to grade. Suites stand from the evening: `Day00BuggyExampleTest` 10/10, `ValidParenthesesRedoNov01Test` 17/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10, `Day04LargestRectangleTest` 36/36. No labs push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is unchanged from the evening rebuild (cap of 2 from **7 Nov**: `ValidParentheses` then `MinStack`).
+
+> [!TIP]
+> **Tomorrow's first task (Sat 7 Nov, 6 AM):** open [`spring-boot-labs` Chapter 1](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) and do the Maven / `pom.xml` tasks end-to-end, keeping the Drill 1 habit (ask what the parent already gives, then add only what is missing). If you want a 15-minute win first, push the `Day04LargestRectangle` symptom table and `[2, 1, 2]` hand trace (comment block only). Then `DailyTemperatures`: 3–5 lines of plain-English pseudocode, then a monotonic stack of **indices**. 🌙 Evening: finish `ValidParenthesesRedoNov01` null→IAE in the **redo** file (still 🔶 even at 18/18), then cold `MinStackRedoNov01`. Ask for a hint after 15 minutes on any step.
+
