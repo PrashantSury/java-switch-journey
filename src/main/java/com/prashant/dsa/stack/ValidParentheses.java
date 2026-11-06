@@ -9,6 +9,9 @@ import java.util.Deque;
  */
 public class ValidParentheses {
     public boolean isValid(String s) {
+        if(s == null){
+            throw new IllegalArgumentException("String is null");
+        }
         Deque<Character> stack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
             if (c == '(') stack.push(')');
