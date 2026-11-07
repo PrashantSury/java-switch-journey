@@ -34,30 +34,30 @@
 | Problem | Pattern | Last verified | Last result | Current gap | Next due | Status |
 |---|---|---|---|---|---|---|
 | 🐞 `Day02RpnEvaluator` | Stack: expression evaluation | 5 Nov | ✅ 5 Nov `Day02RpnEvaluatorRedoNov01` (`800ad4f`): cold, **44/44, no hint**, none of the 3 conceptual misses of 31 Oct repeated (was ❌ 31 Oct, 3 conceptual misses) | +3 | **10 Nov** (due 8 Nov, queued 2 days) | 🟡 IN_PROGRESS · clean pass moved +1 → +3; the redo was 4 days late (due 1 Nov) |
-| 🧩 `ValidParentheses` | Stack: matching brackets | 6 Nov (partial) | 🔶 6 Nov `ValidParenthesesRedoNov01` **17/18** (`c0f5d64`): algorithm ok; null→IAE missing in redo (guard put on original `ValidParentheses` in `ec608e3`) — **post-feedback, not cold-clean** | +1 (same gap) | **7 Nov** | 🟡 IN_PROGRESS · ⏰ still overdue · do not step ladder until a later clean cold pass |
-| 🧩 `MinStack` | Stack: auxiliary min stack (design) | 23 Oct | ✅ 23 Oct 10/10 · never redone (stub 0/10 not attempted 6 Nov) | +1 | **7 Nov** | 🟡 IN_PROGRESS · ⏰ due 24 Oct · moved one day with ValidParen |
-| 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 25 Oct | 🔶 25 Oct 37/37, written with help · never redone | +1 | **7 Nov** | 🟡 IN_PROGRESS · ⏰ due 26 Oct, 12 days overdue · follow-up questions pending |
-| 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 29 Oct | ❌ 29 Oct 26/26 but the O(n) quiz scored 3/5 (conceptual) · never redone | +1 (reset) | **7 Nov** | 🟡 IN_PROGRESS · ⏰ due 30 Oct, 8 days overdue |
-| 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 29 Oct | ✅ 29 Oct 37/37, both bugs found (only cosmetic slips) · never redone | +1 | **8 Nov** | 🟡 IN_PROGRESS · ⏰ due 30 Oct, 9 days overdue · queued 1 day |
-| 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **8 Nov** | 🟡 IN_PROGRESS · ⏰ due 1 Nov, queued 7 days |
-| 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **10 Nov** | 🟡 IN_PROGRESS · due 7 Nov, waits 3 days (6 Nov to 9 Nov hold older items) |
-| 🧩 `CarFleet` | Stack: sort by position, monotonic | 3 Nov | 🔶 3 Nov 37/37 (`91cb817`), built with hints (pairing, exact cross-multiply); first solve, never redone | +1 | **4 Nov** (queued **9 Nov**) | 🟡 IN_PROGRESS · due 4 Nov, waits behind older items (cap 2 a day) |
-| 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | 5 Nov | ✅ 5 Nov `d8306e2`: 15/36 → **36/36** in one push, three minimal changes; symptom table and hand trace not written yet | +1 | **9 Nov** (due 6 Nov, queued behind older items) | 🟡 IN_PROGRESS · joins the ladder · queued 3 days |
-| 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **11 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
+| 🧩 `ValidParentheses` | Stack: matching brackets | 7 Nov | 🔶 7 Nov `ValidParenthesesRedoNov01` **18/18** (`3019054` / tip `f61c7d3`): null→IAE added **in the redo** after feedback — **still not cold-clean**; prior 6 Nov was 17/18 with guard on the wrong file | +1 (same gap) | **8 Nov** | 🟡 IN_PROGRESS · post-feedback fix · do **not** advance ladder until a later clean cold pass |
+| 🧩 `MinStack` | Stack: auxiliary min stack (design) | 23 Oct | ✅ 23 Oct 10/10 · never redone (stub 0/10 not attempted 6 Nov or 7 Nov) | +1 | **8 Nov** | 🟡 IN_PROGRESS · ⏰ due 24 Oct · moved again with ValidParen |
+| 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 25 Oct | 🔶 25 Oct 37/37, written with help · never redone | +1 | **9 Nov** (due 26 Oct, queued) | 🟡 IN_PROGRESS · ⏰ due 26 Oct · waits behind ValidParen + MinStack · follow-up questions pending |
+| 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 29 Oct | ❌ 29 Oct 26/26 but the O(n) quiz scored 3/5 (conceptual) · never redone | +1 (reset) | **9 Nov** (due 30 Oct, queued) | 🟡 IN_PROGRESS · ⏰ due 30 Oct · waits behind ValidParen + MinStack |
+| 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 29 Oct | ✅ 29 Oct 37/37, both bugs found (only cosmetic slips) · never redone | +1 | **10 Nov** | 🟡 IN_PROGRESS · ⏰ due 30 Oct · queued behind ValidParen/MinStack/ScoreOf/RemoveK |
+| 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **10 Nov** | 🟡 IN_PROGRESS · ⏰ due 1 Nov · queued with Day03 |
+| 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **12 Nov** | 🟡 IN_PROGRESS · due 7 Nov · waits behind older items |
+| 🧩 `CarFleet` | Stack: sort by position, monotonic | 3 Nov | 🔶 3 Nov 37/37 (`91cb817`), built with hints (pairing, exact cross-multiply); first solve, never redone | +1 | **4 Nov** (queued **11 Nov**) | 🟡 IN_PROGRESS · due 4 Nov, waits behind older items (cap 2 a day) |
+| 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | 5 Nov | ✅ 5 Nov `d8306e2`: 15/36 → **36/36** in one push, three minimal changes; symptom table + `[2,1,2]` trace **graded in chat 7 Nov (supported)**; empty-stack width geometric why still soft | +1 | **11 Nov** (due 6 Nov, queued behind older items) | 🟡 IN_PROGRESS · joins the ladder · write-up graded supported |
+| 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **12 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
 
 > [!NOTE]
-> **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the 6 Nov catch-up evening review; **10 PM check confirmed no further attempt** after `46876f6`. ValidParen 17/18 🔶 (not cold-clean), MinStack not attempted → queue still from **7 Nov**. The calendar below assumes every redo is a clean pass except where marked 🔶.
+> **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the **7 Nov evening review**. ValidParen **18/18** 🔶 post-feedback (`3019054`, same +1 → due **8 Nov**); MinStack not attempted → moves to **8 Nov**. The calendar below assumes every redo is a clean pass except where marked 🔶.
 
 ## 🗓️ Next 7 days
 | Date | Redo 1 | Redo 2 | Why |
 |---|---|---|---|
-| Sat 7 Nov | `ValidParentheses` (+1, late, finish null in redo) | `MinStack` (+1, late) | Both still most overdue; ValidParen is 🔶 post-feedback |
-| Sun 8 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) | Due 26 Oct and 30 Oct |
-| Mon 9 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) | Due 30 Oct and 1 Nov |
-| Tue 10 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) | Due 4 Nov and 6 Nov |
-| Wed 11 Nov | `Day00BuggyExample` (+1, new 6 Nov) | `Day01ArrayStack` (+7, late) | Day00 queued; Day01 due 7 Nov |
-| Thu 12 Nov | `Day02RpnEvaluator` (+3, late) | free | Due 8 Nov / 10 Nov queue |
-| Fri 13 Nov | `ScoreOfParentheses` (+3) | `RemoveKAdjacentDuplicates` (+3) | Projection if 8 Nov clean |
+| Sun 8 Nov | `ValidParentheses` (+1, 🔶 re-queue) | `MinStack` (+1, late) | ValidParen same gap after 7 Nov post-feedback 18/18; MinStack still never redone |
+| Mon 9 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) | Due 26 Oct and 30 Oct |
+| Tue 10 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) | Due 30 Oct and 1 Nov |
+| Wed 11 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) | Due 4 Nov and 6 Nov |
+| Thu 12 Nov | `Day00BuggyExample` (+1, new 6 Nov) | `Day01ArrayStack` (+7, late) | Day00 queued; Day01 due 7 Nov |
+| Fri 13 Nov | `Day02RpnEvaluator` (+3, late) | free | Due 8 Nov / 10 Nov queue |
+| Sat 14 Nov | `ScoreOfParentheses` (+3) | `RemoveKAdjacentDuplicates` (+3) | Projection if 9 Nov clean |
 
 > [!WARNING]
 > Everything after the first redo of each problem is a **projection that assumes every redo is a clean pass**. A 🔶 repeats the gap and a ❌ resets to day 1, and the queue rule moves the rest.
@@ -65,8 +65,8 @@
 ## 🔭 Projected calendar after 12 Nov
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Fri 13 Nov | `Day03NextGreaterIndex` (+3) | `AsteroidCollision` (+3) |
-| Sat 14 Nov | `CarFleet` (+3) | `Day04LargestRectangle` (+3) |
+| Sat 14 Nov | `Day03NextGreaterIndex` (+3) | `AsteroidCollision` (+3) |
+| Sun 15 Nov | `CarFleet` (+3) | `Day04LargestRectangle` (+3) |
 | Tue 17 Nov | `Day02RpnEvaluator` (+7) | free |
 | Wed 18 Nov | `ValidParentheses` (+7) | `MinStack` (+7) |
 | Thu 19 Nov | `ScoreOfParentheses` (+7) | `RemoveKAdjacentDuplicates` (+7) |
@@ -96,11 +96,11 @@
 | `RemoveKAdjacentDuplicates` | 29 Oct 26/26 (start) · O(n) quiz 3/5, missed the amortised argument (❌ conceptual, day 1) · due 30 Oct, never redone |
 | `Day03NextGreaterIndex` | 29 Oct 37/37, both bugs found, stray `main()` removed (cosmetic, not logged) · gap 1, due 30 Oct, never redone |
 | `AsteroidCollision` | 30 Oct pushed 28/28, 31 Oct verified after two cosmetic fixes · gap 1, due 1 Nov, queued to 8 Nov |
-| `ValidParentheses` | 23 Oct starter solution understood · gap 1, due 24 Oct · 5 Nov evening not attempted → 6 Nov · **6 Nov `ValidParenthesesRedoNov01` 17/18 🔶** (`c0f5d64`; null guard added to original in `ec608e3`, not the redo) → same +1, due 7 Nov |
-| `MinStack` | 23 Oct 10/10 · gap 1, due 24 Oct, never redone |
+| `ValidParentheses` | 23 Oct starter solution understood · gap 1, due 24 Oct · 5 Nov evening not attempted → 6 Nov · 6 Nov `ValidParenthesesRedoNov01` 17/18 🔶 (`c0f5d64`; null guard on original in `ec608e3`) → same +1, due 7 Nov · **7 Nov `ValidParenthesesRedoNov01` 18/18 🔶** (`3019054`, null→IAE in the redo after feedback) → same +1, due 8 Nov |
+| `MinStack` | 23 Oct 10/10 · gap 1, due 24 Oct, never redone · stub 0/10 not attempted 6–7 Nov → due 8 Nov |
 | `ScoreOfParentheses` | 25 Oct 37/37, written with help, dry-ran line by line · gap 1, due 26 Oct, never redone |
 | `CarFleet` | 3 Nov 37/37 (`91cb817`), hint-assisted (🔶) · gap 1, due 4 Nov, queued to 9 Nov |
-| `Day04LargestRectangle` | 5 Nov 36/36 (`d8306e2`, from 15/36), first verified solve, joins at +1 (due 6 Nov, queued 9 Nov by the cap) · symptom table and hand trace still owed |
+| `Day04LargestRectangle` | 5 Nov 36/36 (`d8306e2`, from 15/36), first verified solve, joins at +1 (due 6 Nov, queued 11 Nov by the cap) · symptom table + `[2,1,2]` graded in chat 7 Nov (supported); empty-stack width geometric why still soft |
 | `Day00BuggyExample` | **6 Nov `c0f5d64` 10/10** verified · joins at +1 (due 7 Nov, queued 11 Nov by the cap) · no written symptom groups |
 
 > [!NOTE]
@@ -127,3 +127,6 @@
 
 > [!NOTE]
 > **7 Nov, 6 AM morning session:** no student push overnight after `03a1373`. Queue unchanged: tonight still `ValidParentheses` (finish null in redo, stays 🔶) then `MinStack`. No new redo stubs; existing blank / partial files kept. Spec: [day16.md](../tasks/day16.md).
+
+> [!NOTE]
+> **7 Nov, evening review (~8:00 PM IST):** tip `f61c7d3`. `ValidParenthesesRedoNov01` **18/18** after feedback (`3019054`, null→IAE in the redo) — **not** cold-clean, ladder stays at +1, next due **8 Nov**. `MinStackRedoNov01` not attempted (0/10) → moves to **8 Nov**. Queue rebuilt from Sun 8 Nov with the cap of 2. LargestRectangle write-up graded in chat (supported). No new conceptual mistake logged.

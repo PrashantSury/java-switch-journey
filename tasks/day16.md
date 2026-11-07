@@ -29,9 +29,9 @@
 
 The code is ✅ 36/36 (`d8306e2`). The localisation write-up was skipped on 5 Nov and again on 6 Nov. Spec and the failing-test table: [day14.md evening](day14.md#-debugging-write-up-for-day04largestrectangle-the-part-that-was-skipped). Full buggy rules: [day09.md](day09.md#-day04largestrectangle-buggy-round).
 
-- [ ] Comment block at the top of `src/main/java/com/prashant/dailytests/Day04LargestRectangle.java`: **Table 1** (failing tests grouped by what the wrong answers share) and **Table 2** (blank hand trace on `[2, 1, 2]`, expected **3**: `i`, `current`, stack before, popped, `height`, `width`, `area`, `best`).
-- [ ] One sentence: why width is `i` when the stack is empty and `i - stack.peek() - 1` otherwise.
-- [ ] **No code change.** Push with a real commit message (not a copy of an older one).
+- [x] Symptom table + `[2, 1, 2]` hand trace **graded in chat** (7 Nov, **supported** — not cold-clean; sentinel rows corrected after feedback; max **3** accepted). Do not reassign as missing.
+- [ ] One sentence: why width is `i` when the stack is empty and `i - stack.peek() - 1` otherwise (**geometric** left/right bound + ASCII — still soft after tonight's review).
+- [x] **No code change** required for the write-up (code already ✅ 36/36).
 
 > [!CAUTION]
 > Do not open a new buggy round today. This write-up is the open buggy-track item; new material waits until it is ✅.
@@ -152,12 +152,79 @@ Brute force is O(n²) time. State the optimised time and space **after** your at
 | 🧩 `ValidParentheses` | `src/main/java/com/prashant/dailytests/redo/ValidParenthesesRedoNov01.java` | `ValidParenthesesRedoNov01Test` **17/18** 🔶 | +1 (post-feedback; finish null→IAE **in the redo**) | 20-30 min |
 | 🧩 `MinStack` | `src/main/java/com/prashant/dailytests/redo/MinStackRedoNov01.java` | `MinStackRedoNov01Test` **0/10** | +1 (never redone since 23 Oct) | 20-30 min, cold |
 
-- [ ] **ValidParen first:** add `null` → `IllegalArgumentException` **in the redo file** (do not touch `dsa/stack/ValidParentheses` for this). Even 18/18 after feedback stays 🔶 (same +1 gap).
-- [ ] **MinStack second:** blank approach — 3 comment lines + 3-5 lines of plain-English pseudocode; do **not** open `dsa/stack/MinStack`. Push at the end of each, even if red.
+- [x] **ValidParen first:** null → `IllegalArgumentException` **in the redo file** (`3019054`); `ValidParenthesesRedoNov01Test` **18/18**. Still 🔶 (post-feedback, same +1 gap).
+- [ ] **MinStack second:** blank approach — 3 comment lines + 3-5 lines of plain-English pseudocode; do **not** open `dsa/stack/MinStack`. Push at the end, even if red.
 - [ ] Before any Java on MinStack: pattern / time / space with one sentence each on where the cost comes from.
 
 > [!WARNING]
 > Cap **2**. `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **8 Nov** ([redo-schedule.md](../revision/redo-schedule.md)). Do not start a third redo tonight.
+
+
+## 🌙 Evening (7 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-6%2F10-orange) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-yellowgreen)
+
+> [!NOTE]
+> Evening review at ~8:00 PM IST on tip `f61c7d3` (JDK 21, Maven). Student code today: `3019054` (14:11 IST) null→IAE **in** `ValidParenthesesRedoNov01.java`, merged `f61c7d3`. Weekly review `98cc269` (~2:07 PM IST) already on `main` — not redone here. Chat: `Day04LargestRectangle` symptom table + `[2,1,2]` hand trace graded (**supported**, not cold-clean); table diagnosis correct; sentinel rows corrected after feedback; max **3** accepted; empty-stack width still needs a geometric why + ASCII. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) (still stub / no `my-solutions`). `MinStackRedoNov01` and `DailyTemperatures` untouched. **No new conceptual mistake** logged.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | Labs Chapter 1 still **no student push** and no graded interview Q. B2 Q3 / Q6 / catch-all sentence unanswered. Banking module 1 / Drills 2–3 parked. No Spring dimension applied today |
+| 🧩 DSA | **6/10** (🟡 Moderate) | concept 7: ValidParen stack matching was already right; null→IAE landed in the **redo** file (`3019054`). Implementation 8: `ValidParenthesesRedoNov01Test` **18/18**. Problem solving 4: `DailyTemperatures` still stub **0/18**; cold `MinStackRedoNov01` **0/10** not attempted. Complexity / interview: no new DailyTemps or MinStack evidence; `CarFleetTest` **37/37** re-verified. Post-feedback ValidParen stays 🔶 (same +1) |
+| 🐞 Buggy | **7/10** (🟡 Moderate) | concept 7 / debugging 7: LargestRectangle write-up **graded in chat** (supported) — table groups correct after sentinel feedback, `[2,1,2]` max 3 accepted. Empty-stack width rationale still thin (needs geometric left/right bound + ASCII). Implementation 9 unchanged (`Day04LargestRectangleTest` **36/36**, `Day00BuggyExampleTest` **10/10`). Interview readiness 6: width-why sentence not yet interview-solid |
+
+> [!WARNING]
+> `ValidParenthesesRedoNov01` is **18/18 after feedback**, **not** a cold clean pass. Ladder stays at **+1** (next due **8 Nov**). Do **not** advance. Do **not** reassign the LargestRectangle table/trace as missing — it was graded tonight (supported).
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 `spring-boot-labs` Chapter 1 (Maven / pom) | ⬜ Pending | no push, no graded Q |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | Day 02–03 scores; packs still ⬜ not generated — labs Ch 1 stays the Spring slot |
+| 🧩 `DailyTemperatures` | ⬜ Pending | stub only (0/18) |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | chat reasons closed; written merge pending |
+| 🔁 `ValidParentheses` redo | 🟡 Moderate / 🔶 complete for this attempt | **18/18** post-feedback; same +1 |
+| 🔁 `MinStack` redo | ⬜ Pending | stub 0/10, not attempted tonight |
+| 🐞 `Day04LargestRectangle` write-up | 🟡 Moderate (supported ✅ graded) | table + `[2,1,2]` done in chat; empty-stack width geometric why still soft |
+| 🐞 `Day00BuggyExample` write-up | 🟡 Pending | code 10/10; no symptom groups |
+| 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
+| ⛔ Blocked | none | — |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring 🔴 Weak rows stay in [PROGRESS.md](../PROGRESS.md); do not insert them ahead of labs Ch 1.
+
+### ⏳ Tonight's evening-slot work (finishable; push after each)
+
+> [!IMPORTANT]
+> Cap **2 redos**. ValidParen is done for tonight. **MinStack** is still due. Morning leftovers that still fit take the rest of the hour after MinStack.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 25 | Cold `MinStackRedoNov01` (3 comments + pseudocode first; do **not** open `dsa/stack/MinStack`) | 🔁 | push even if red; target 10/10 |
+| 2 | 20 | `DailyTemperatures`: 3–5 lines plain-English pseudocode, then code (even if red) | 🧩 | push; aim 18/18 |
+| 3 | if time | `spring-boot-labs` Chapter 1 first tasks on `my-solutions` (parent before coordinates) | 🌱 | push even if checks red |
+| 4 | if time | Empty-stack width in one geometric sentence + tiny ASCII for `[2,1,2]` (chat) | 🐞 | graded 7+ |
+| 5 | if time | Single-pair CarFleet follow-up; B2 Q3 + catch-all sentence | 🧩🌱 | graded 7+ |
+
+- [ ] `MinStackRedoNov01` pushed
+- [ ] `DailyTemperatures` pushed (even if red)
+- [ ] (optional) labs Ch 1 first push on `my-solutions`
+- [ ] (optional) empty-stack width sentence + single-pair / Q3 in chat
+
+### 🎯 Tomorrow's focus (Sun 8 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | `spring-boot-labs` Chapter 1 end-to-end (6 pom tasks + interview Q written); habit: ask what the parent already gives, then add only what is missing | unscored two nights; Ch 1 is the whole Spring slot |
+| 🧩 DSA | Finish `DailyTemperatures` if not green tonight: monotonic stack of **indices**, reason sentences on pattern/time/space (push≤1 + pop≤1 → ≤2n) | problem solving was 4; stub still blocks the next Stack problem |
+| 🐞 Buggy | No new buggy round. Optional: empty-stack width geometric sentence if not graded tonight; Day00 symptom groups stay backlog | write-up for LargestRect is graded (supported); debugging depth still the soft edge |
+| 🔁 Redos (evening) | Cap 2 from [redo-schedule.md](../revision/redo-schedule.md): **`ValidParentheses` (+1, 🔶 re-queue)** then **`MinStack` (+1)** if MinStack still open; else `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` | ValidParen stays same gap; MinStack still never redone |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
 
 ## 📦 Carried backlog (not for this morning unless listed above)
 
@@ -167,7 +234,7 @@ Brute force is O(n²) time. State the optimised time and space **after** your at
 | Banking module 1 step 1, Drills 2 and 3 | 🏦🌱 | ⬜ NOT_STARTED (**parked**) | after labs Foundations settle |
 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED | after CarFleet follow-up |
 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS | spare evenings |
-| Redos queued: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (8 Nov) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../revision/redo-schedule.md) |
+| Redos queued: `ValidParentheses` (+1 🔶) + `MinStack` (+1) (**8 Nov**); then `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../revision/redo-schedule.md) |
 | `Day00BuggyExample` redo (+1) | 🔁 | 🟡 IN_PROGRESS | queued **11 Nov** |
 
 > [!TIP]
