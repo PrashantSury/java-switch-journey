@@ -168,6 +168,72 @@ mvn test          # root project: DSA and buggy rounds
 | Thu 5 Nov, evening review (8 PM) | **7** (concept 7 · implementation 7 · problem solving 7 · interview 6) | **8** (concept 8 · implementation 9 · problem solving 7 · complexity 7 · interview 7) | **7** (concept 7 · implementation 9 · debugging 7 · interview 6) | `1c9c6aa` + `7b7c725` Drill 1, `course-practice` **23/23**; `800ad4f` cold RPN **44/44** no hint; count-stack re-ask closed; `d8306e2` `Day04LargestRectangle` **36/36**; `CarFleetTest` 37/37 re-run; `ValidParenthesesRedoNov01Test` 0/18 (not attempted yet) · [day14.md evening](tasks/day14.md#-evening-5-nov-review-scores-and-tonights-work) |
 | Fri 6 Nov, catch-up evening review (~8:30 PM) | **unscored** (⬜ no labs push) | **6** (concept 7 · implementation 6 · problem solving 5 · complexity 8 · interview 6) | **7** (concept 7 · implementation 9 · debugging 6 · interview 6) | Tip `ec608e3`: `Day00BuggyExampleTest` **10/10**, `ValidParenthesesRedoNov01Test` **17/18**, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10, `Day04LargestRectangleTest` 36/36; labs Ch 1 ⬜; PR #1 open · [day15.md evening](tasks/day15.md#-evening-6-nov-catch-up-review-routine-missed-8-pm) |
 
+## 📅 Weekly reviews
+
+### 📆 Weekly review · 1–7 Nov 2026
+
+![Week](https://img.shields.io/badge/window-1%E2%80%937%20Nov%202026-blue) ![As of](https://img.shields.io/badge/as%20of-7%20Nov%202026%2014%3A07%20IST-yellow) ![Tracks](https://img.shields.io/badge/tracks-Spring%20%C2%B7%20DSA%20%C2%B7%20Buggy-blue) ![SQL](https://img.shields.io/badge/SQL-retired-lightgrey)
+
+> [!IMPORTANT]
+> First dated weekly performance review under [docs/PROGRAM.md](docs/PROGRAM.md). Window **Sun 1 Nov 00:00 IST → Sat 7 Nov ~14:07 IST**. Sources only: commits, this file, [redo-schedule.md](revision/redo-schedule.md), [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md), and evening sections in `tasks/day10.md`–`day16.md`. No live chat answers in this run — graded chat already recorded in those files is used. SQL stays retired and out of scope.
+
+> [!NOTE]
+> **Legend:** ✅ verified this week · 🔶 redo needed hint/fix · ❌ missed / not attempted · ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` · tip = mentor/session commit · student = Prashant's code. **Last week** for comparison = **Sun 25 Oct – Sat 31 Oct** (prior calendar week). Thin spots are named, not filled.
+
+#### 📊 Verified items this week vs last week
+
+| Track | Last week (25–31 Oct) | This week (1–7 Nov, through ~14:07 IST) | Evening-score trend (scored nights only) |
+|---|---|---|---|
+| 🌱 Spring Boot | **2** verified: Part A ✅ (28 Oct), Part B1 ✅ (31 Oct). Day 04 Q&A first attempt 15/30 🔴 | **2** verified: Day 04 Q1–Q3 re-answers ✅ 26/30 (1 Nov); Part B2 ✅ closed by Drill 1 (`1c9c6aa` + Lumi `7b7c725`, `course-practice` **23/23**, 5 Nov). **labs Ch 1** ⬜ (no student push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs); only mentor roadmap stubs 4 Nov on `main`; no `my-solutions` branch) | **7** (1 Nov) → **6** (2 Nov late) → **6** (3 Nov late, scored 4 Nov) → **7** (5 Nov) → **unscored** (6 Nov, no labs work). Unscored nights: 2 Nov day, 3 Nov evening, 4 Nov |
+| 🧩 DSA (Stack) | **3** verified: `ScoreOfParentheses` ✅ (25 Oct), `RemoveKAdjacentDuplicates` ✅ (29 Oct), `AsteroidCollision` ✅ (31 Oct) | **1** verified: `CarFleet` ✅ **37/37** (`91cb817`, 3 Nov, hint-assisted). Count-stack re-ask ✅ in chat (5 Nov). CarFleet time/space reasons ✅ in chat (5–6 Nov; PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) still open). **`DailyTemperatures`** still stub **0/18** (assigned 6 Nov, untouched on `ec608e3`) | unscored 1–2 Nov → **7** (3 Nov midday + evening) → unscored 4 Nov → **8** (5 Nov) → **6** (6 Nov). Dip on 6 Nov: ValidParen redo 🔶 + DailyTemps not started |
+| 🐞 Buggy | **1** verified: `Day03NextGreaterIndex` ✅ (29 Oct). (Warm-up `Day00` and `Day04LargestRectangle` still open at week end) | **2** verified: `Day04LargestRectangle` ✅ **36/36** (`d8306e2`, 5 Nov); `Day00BuggyExample` ✅ **10/10** (`c0f5d64`, 6 Nov). Both missing written symptom / hand-trace localisation | unscored most nights → **7** (5 Nov) → **7** (6 Nov). Stable Moderate; debugging dimension held down by skipped write-ups |
+| 🔁 Cold redos (separate) | `Day01ArrayStackRedo7` ✅ clean 17/17; `Day02RpnEvaluatorRedo7` ✅ after 3 review rounds (conceptual misses logged) | `Day02RpnEvaluatorRedoNov01` ✅ clean **44/44** no hint (`800ad4f`, 5 Nov) → +1→+3. `ValidParenthesesRedoNov01` 🔶 **17/18** (`c0f5d64`; null guard landed on original in `ec608e3`, not the redo) → same +1. `MinStackRedoNov01` ❌ **0/10** not attempted | Ladder: 1 clean step-up, 1 same-gap 🔶, 1 miss. Queue rebuilt from **7 Nov**: ValidParen then MinStack |
+
+> [!NOTE]
+> Tip commits this window include morning/evening/10 PM session reviews (`93f5dee`…`3584330`). Last **student** code on tip as of this review: **`ec608e3`** (6 Nov 09:03 IST). Re-verified just now: `Day00` 10/10, ValidParen redo 17/18, `ValidParentheses` 2/2, `CarFleet` 37/37, `Day04LargestRectangle` 36/36, RPN redo 44/44, `DailyTemperatures` 0/18, `MinStackRedo` 0/10, `course-practice` green.
+
+#### 🔁 Redo results
+
+| Result | Problems | Evidence |
+|---|---|---|
+| ✅ Clean cold | `Day02RpnEvaluator` (+1 → +3) | 5 Nov, `800ad4f`, 44/44, none of the 31 Oct slips repeated |
+| 🔶 Needed fix / not cold-clean | `ValidParentheses` (stays +1) | 6 Nov, 17/18; post-feedback null→IAE still missing **in the redo file** |
+| ❌ Missed / not attempted | `MinStack` (+1, never redone since 23 Oct) | stub 0/10 through 7 Nov 14:07 IST |
+| Keep resetting / slipping | Redo **queue** (not one problem's gap) | 1–4 Nov: both due redos not attempted → queue moved day-by-day; ValidParen then deferred 5→6→7 Nov. Problems that remain overdue behind the cap: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates`, `Day03NextGreaterIndex`, `AsteroidCollision`, `CarFleet`, `Day04LargestRectangle`, `Day00BuggyExample` (see [redo-schedule.md](revision/redo-schedule.md)) |
+
+#### 🧠 Recurring conceptual themes (showed up more than once)
+
+| Theme | Where it showed (≥2 times) | Status now |
+|---|---|---|
+| Catch-all / Spring defaults: add a handler without asking what Spring already answers | 2 Nov `0600df2` (500 for 405/415/type mismatch); 3 Nov `ff79dbf` (405/415 fixed, `/abc` + unknown path still 500); closed 5 Nov Drill 1 by adding **only** the two missing handlers | 🟡 Moderate — code ✅ 23/23; one-sentence "why it hid Spring's answers" and B2 Q3/Q6 still unanswered |
+| Null / empty input guards on stack code | 31 Oct RPN day-7 (null/empty); 6 Nov ValidParen redo (null→IAE missing in redo; guard put on the wrong file) | Still active on the redo ladder |
+| Complexity "why" (amortised / where the cost comes from) | 29 Oct count-stack quiz 3/5; 3 Nov CarFleet needed hints for pairing + exact compare; reasons accepted in chat 5–6 Nov | 🟡 Moderate, improving; written reason sentences await PR #1 merge |
+| Skipping written localisation after a green buggy fix | 5 Nov `Day04LargestRectangle` (symptom table + `[2,1,2]` trace skipped); 6 Nov `Day00BuggyExample` (no symptom groups) | Both write-ups still carried into Day 16 |
+
+#### 🐢 Where he's lagging
+
+| Item | Status | Evidence |
+|---|---|---|
+| `spring-boot-labs` Chapter 1 | ⬜ `NOT_STARTED` | Assigned Fri 6 Nov; re-assigned Day 16; **no student push**; labs suite still stub **1/19** per day16 tip |
+| `DailyTemperatures` | 🟡 `IN_PROGRESS` (not started) | Stub **0/18** since assigned 6 Nov; blocks the next Stack problem |
+| `Day04LargestRectangle` write-up | 🟡 carried | Code ✅ 36/36; symptom table + hand trace absent across day14–day16 |
+| `ValidParenthesesRedoNov01` | 🟡 🔶 (same +1 gap) | 17/18; wrong-file patch `ec608e3` |
+| `MinStackRedoNov01` | 🟡 not attempted | 0/10; due 7 Nov evening |
+| Banking modules 1–10 | ⬜ (module 1 parked) | 0 of 10 started; Drills 2–3 parked behind labs |
+| Days with no student code push | — | **Wed 4 Nov** (only tip morning `4d1db80`); **Sat 7 Nov** through 14:07 IST (only tip morning `3584330`). Mon 2 Nov had no daytime push (late 22:35 IST only) |
+| vs Plan projection | Stack finish aimed **W3–W5**; W3 started 6 Nov with DailyTemps still 0/18 and labs Ch 1 ⬜ | New Stack throughput this week = 1 (`CarFleet`); foundation Spring closed B2 but the new labs slot has not started — Spring **slot time** is the clear bottleneck for W3 |
+
+> [!NOTE]
+> ⛔ Blockers table is still empty. Nothing outside the tasks is blocking; the lag is unfinished carried work and the redo queue, not an external blocker. No item is marked 🔴 `REVISION_REQUIRED` in the track tables this week (ValidParen redo is 🟡 with an 🔶 ladder result, not a graded REVISION_REQUIRED row).
+
+#### 🛠️ Two or three concrete improvements for next week
+
+| # | Improvement | Tied evidence | Suggested time-split |
+|---|---|---|---|
+| 1 | **Close the three carried openers before any new material:** LargestRectangle write-up → labs Ch 1 → DailyTemperatures (pseudocode first), each ending in a push even if red | Same three items open on day14, day15 and day16 tips; DailyTemps 0/18; labs 1/19 stub | Keep unfinished-first morning order; protect the **50 min Spring** slot — on 6 Nov that slot produced **no labs commit** while Day00 (buggy buffer) and a partial redo did land |
+| 2 | **Evening redos: edit the redo file, cold, cap 2.** Finish ValidParen null→IAE **in `ValidParenthesesRedoNov01`**, then blank-file MinStack. Do not patch the original class to green a redo suite | `ec608e3` fixed `ValidParentheses.java` while redo stayed 17/18; MinStack 0/10 unused; queue already slipped 1–4 Nov | If morning leftovers eat the evening, still run **one** most-overdue redo (ValidParen) before stopping — better one clean ladder step than two misses |
+| 3 | **Keep the Drill 1 habit in writing:** before adding a Spring handler / pom tag, one sentence on what the framework or parent already gives; for every buggy ✅, a symptom table before the next round | Catch-all theme (2–5 Nov); two green buggy rounds with no localisation (5–6 Nov) | ~5 min at the start of Spring and buggy slots — cheaper than another day of catch-all / carried write-ups |
+
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
 
@@ -346,3 +412,4 @@ pie title Tracked items (1 Nov 2026)
 | 6 Nov 2026 | W3 D15 | 🌙 Catch-up evening review (~8:30 PM): 🌱 Spring **unscored**; 🧩 DSA **6/10**; 🐞 Buggy **7/10**; Day00 ✅ 10/10; ValidParen redo 17/18 🔶 (wrong file); labs Ch 1 ⬜; PR #1 open | Tip `ec608e3` (JDK 21): `Day00BuggyExampleTest` 10/10, `ValidParenthesesRedoNov01Test` 17/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `DailyTemperaturesTest` 0/18 stub, `MinStackRedoNov01Test` 0/10 stub, `Day04LargestRectangleTest` 36/36. Chat: CarFleet space O(n) accepted. No labs push. No new conceptual mistake. [redo-schedule.md](revision/redo-schedule.md) rebuilt from 7 Nov (`ValidParentheses` + `MinStack`); `Day00` joins at +1. · [day15.md evening](tasks/day15.md#-evening-6-nov-catch-up-review-routine-missed-8-pm) |
 | 6 Nov 2026 | W3 D15 | 10 PM check: no pushes after the catch-up evening review; queue unchanged from 7 Nov |
 | 7 Nov 2026 | W3 D16 | 🌅 Morning session assigned in [day16.md](tasks/day16.md): labs Ch 1, Daily Temperatures, LargestRectangle write-up (no new material) | Re-checked on `03a1373` / last student code `ec608e3`: suites unchanged (`Day00` 10/10, ValidParen redo 17/18 🔶, `MinStackRedo` 0/10, `DailyTemperatures` 0/18, `CarFleet` 37/37, `Day04LargestRectangle` 36/36). Labs Ch 1 still 1/19 stub. Every track has an open item, so no new stubs and no new buggy round. Evening redos unchanged: `ValidParenthesesRedoNov01` then `MinStackRedoNov01`. No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged (already rebuilt from 7 Nov) | No commits from me after `46876f6` (the review itself; the last student code push today is `ec608e3`) and no answers in chat after that review, so nothing new to test: suites stand from the evening (`Day00` 10/10, ValidParen redo 17/18 🔶, `MinStackRedo` 0/10, `DailyTemperatures` 0/18, `CarFleet` 37/37, `Day04LargestRectangle` 36/36). No ladder step changed; [redo-schedule.md](revision/redo-schedule.md) stays rebuilt from Sat 7 Nov (`ValidParentheses` then `MinStack`). Open and carried: labs Ch 1, Daily Temperatures, LargestRectangle write-up, CarFleet single-pair / PR #1 merge, B2 Q3/Q6. No new mistakes, no cosmetic fixes. End of day added to [day15.md](tasks/day15.md). Next: labs Ch 1 on 7 Nov 6 AM |
+| 7 Nov 2026 | W3 D16 | 📅 Weekly review 1–7 Nov 2026 added (this section) | Window through ~14:07 IST. Verified this week: Spring 2 (Day 04 re-answers, B2/Drill 1), DSA 1 (`CarFleet`), buggy 2 (`Day04LargestRectangle`, `Day00`); redos: RPN ✅, ValidParen 🔶 17/18, MinStack ❌. labs Ch 1 and DailyTemperatures still open. No schedule or task changes. |
