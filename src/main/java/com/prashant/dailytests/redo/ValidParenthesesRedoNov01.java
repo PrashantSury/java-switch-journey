@@ -28,6 +28,9 @@ public class ValidParenthesesRedoNov01 {
     // Space: O(n)
 
     public static boolean isValid(String s) {
+        if(s == null){
+            throw new IllegalArgumentException("String is null");
+        }
         Deque<Character> stack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
             if (c == '(') stack.push(')');
