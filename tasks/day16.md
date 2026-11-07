@@ -226,6 +226,26 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring �
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
 
+## 🌒 End of day (7 Nov, 10 PM check)
+
+![slot](https://img.shields.io/badge/slot-10%20PM%20check-yellow)
+
+| Item | Outcome |
+|---|---|
+| 🔁 `ValidParenthesesRedoNov01` | 🟡 IN_PROGRESS (**18/18** after feedback, 🔶, `3019054`) · same +1 gap, due again **8 Nov** |
+| 🔁 `MinStackRedoNov01` | ⬜ NOT_STARTED (stub **0/10**, not attempted tonight) · due **8 Nov** |
+| 🐞 `Day04LargestRectangle` write-up | 🟡 IN_PROGRESS (table + `[2, 1, 2]` trace graded in chat, supported) · empty-stack width geometric sentence still open |
+| 🌱 `spring-boot-labs` Chapter 1 | ⬜ NOT_STARTED (no push, no `my-solutions` branch) · first morning slot Sun 8 Nov |
+| 🧩 `DailyTemperatures` | ⬜ NOT_STARTED (stub **0/18**) · carried |
+| 🧩 `CarFleet` single-pair follow-up; written reasons await PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) merge | 🟡 IN_PROGRESS · carried |
+| 🌱 B2 Q3 / Q6 and the catch-all sentence | ⬜ NOT_STARTED · carried |
+
+> [!NOTE]
+> No commits from Prashant after the evening review (`71728e0` is the review itself; the last student code today is `3019054` at 14:11 IST) and no answers in chat after that review, so there was nothing new to test and no redo to grade. Suites stand from the evening: `ValidParenthesesRedoNov01Test` 18/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 36/36, `Day00BuggyExampleTest` 10/10, `Day02RpnEvaluatorRedoNov01Test` 44/44, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is unchanged from the evening rebuild (cap of 2 on **8 Nov**: `ValidParentheses` then `MinStack`).
+
+> [!TIP]
+> **Tomorrow's first task (Sun 8 Nov, 6 AM):** `git pull` both repos, create a `my-solutions` branch in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) and do Chapter 1 Tasks 1-3 in `lab/pom.xml` (parent `4.1.2` **before** your own `groupId`, then coordinates, then `java.version=21`), running the checks after each and pushing even if red. Then Tasks 4-6 and the interview question, then `DailyTemperatures` (3-5 lines of plain-English pseudocode first). 🌙 Evening: cold `ValidParenthesesRedoNov01`, then cold `MinStackRedoNov01`. Ask for a hint after 15 minutes on any step.
+
 ## 📦 Carried backlog (not for this morning unless listed above)
 
 | Item | Track | Status | When |
