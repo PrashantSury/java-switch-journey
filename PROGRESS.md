@@ -11,14 +11,14 @@
 ## 🧭 Overall status
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
-| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started; Spring slot in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 **parked**; **labs Chapter 1 still ⬜** (no Nov 6 push) | [day15.md End of day](tasks/day15.md#-end-of-day-6-nov-10-pm-check) · labs Ch 1 (Sat 7 Nov 6 AM) |
-| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅; `CarFleet` ✅ 37/37; count-stack re-ask ✅; RPN redo ✅ 44/44; CarFleet time/space reasons ✅ in chat (5–6 Nov); Lumi CarFleet comment PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open | single-pair CarFleet follow-up; **Daily Temperatures** still stub 0/18; ValidParen redo 17/18 (post-feedback) | [day15.md](tasks/day15.md) |
-| 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 5 rounds with code ✅ (`Day00BuggyExample` **10/10**, `c0f5d64`, 6 Nov; `Day04LargestRectangle` 36/36) | `Day04LargestRectangle` symptom table + `[2, 1, 2]` hand trace (carried) | [day15.md](tasks/day15.md) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 4 cold redos ✅; `Day00BuggyExample` joins at +1 | `ValidParenthesesRedoNov01` 17/18 🔶 (not cold-clean) + `MinStackRedoNov01` 0/10 → both due **7 Nov** | [redo-schedule.md](revision/redo-schedule.md) · [day15.md](tasks/day15.md) |
+| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started; Spring slot in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 **parked**; **labs Chapter 1 still ⬜** (no push since assigned) | [day16.md](tasks/day16.md) · labs Ch 1 |
+| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅; `CarFleet` ✅ 37/37; count-stack re-ask ✅; RPN redo ✅ 44/44; CarFleet time/space reasons ✅ in chat (5–6 Nov); Lumi CarFleet comment PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open | single-pair CarFleet follow-up; **Daily Temperatures** still stub 0/18; ValidParen redo 17/18 (post-feedback) | [day16.md](tasks/day16.md) |
+| 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 5 rounds with code ✅ (`Day00BuggyExample` **10/10**, `c0f5d64`, 6 Nov; `Day04LargestRectangle` 36/36) | `Day04LargestRectangle` symptom table + `[2, 1, 2]` hand trace (carried; no new buggy until this lands) | [day16.md](tasks/day16.md) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 4 cold redos ✅; `Day00BuggyExample` joins at +1 | `ValidParenthesesRedoNov01` 17/18 🔶 + `MinStackRedoNov01` 0/10 → both due **tonight (7 Nov)** | [redo-schedule.md](revision/redo-schedule.md) · [day16.md](tasks/day16.md) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups; labs Ch 1 Qs; B2 Q3/Q6; Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
-> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Today's plan: [tasks/day15.md](tasks/day15.md). Spring slot: [`spring-boot-labs` Chapter 1](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom). Carried specs: LargestRectangle write-up in [day14.md](tasks/day14.md); `Day00BuggyExample` in [day09.md](tasks/day09.md).
+> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Today's plan: [tasks/day16.md](tasks/day16.md). Spring slot: [`spring-boot-labs` Chapter 1](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom). Carried specs: LargestRectangle write-up in [day14.md](tasks/day14.md); Daily Temperatures in [day16.md](tasks/day16.md) (same as Day 15).
 
 ```bash
 mvn test          # root project: DSA and buggy rounds
@@ -89,7 +89,7 @@ mvn test          # root project: DSA and buggy rounds
 | RemoveKAdjacentDuplicates (Day 01) | 26/26 | 2d36911 | ✅ COMPLETED (29 Oct) | O(n) quiz 3/5 (missed the push/pop-once reasoning) → re-ask ✅ answered 5 Nov (each character pushed at most once, popped at most once, so at most 2n steps); problem itself still due its +1 redo on 7 Nov |
 | AsteroidCollision (Day 02) | 28/28 | 6ddde32 + Lumi's cosmetic clean-up | ✅ COMPLETED (31 Oct) | O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified |
 | CarFleet (Day 04) | 37/37 | 91cb817 + Lumi's minor fixes; comment lines in `1c9c6aa` | ✅ COMPLETED (3 Nov, with hints) | sort by position descending, cross-multiplied `long` comparison, `Deque<long[]>`; hint-assisted (pairing, exact comparison). The 3 comment lines are in; **time and space reasons accepted in chat** (5–6 Nov); Lumi refined comments on PR #1 (open, not on `main`); single-pair follow-up still owed · [review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
-| DailyTemperatures (Day 15) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov; **not started**) | monotonic stack of indices; stub untouched on `ec608e3`; 3-5 lines of plain-English pseudocode first · [day15.md](tasks/day15.md) |
+| DailyTemperatures (Day 15) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov; **still not started**) | monotonic stack of indices; stub untouched on `ec608e3`; re-assigned Day 16; 3-5 lines of plain-English pseudocode first · [day16.md](tasks/day16.md) |
 
 ## 🐞 Buggy problems (on the current pattern: Stack)
 | Round or redo | Type | Tests | My commit | Status | Notes |
@@ -121,21 +121,20 @@ mvn test          # root project: DSA and buggy rounds
 
 ## 📌 Pending
 > [!NOTE]
-> Everything not ✅ COMPLETED, in the order to work it. Pending work never disappears until it is verified. Full specs: [tasks/day09.md](tasks/day09.md). Updated by the 6 Nov catch-up evening review.
+> Everything not ✅ COMPLETED, in the order to work it. Pending work never disappears until it is verified. Full specs: [tasks/day09.md](tasks/day09.md). Re-ordered by the 7 Nov 6 AM morning session ([day16.md](tasks/day16.md)).
 
 | # | Item | Track | Status |
 |---|---|---|---|
 | 1 | Morning: `Day04LargestRectangle` symptom table + `[2, 1, 2]` hand trace (comment block, no code change) | 🐞 | 🟡 IN_PROGRESS (code ✅ 36/36; write-up skipped) |
-| 2 | Morning: `spring-boot-labs` Chapter 1 (Maven / pom, 6 tasks + interview Q) | 🌱 | ⬜ NOT_STARTED (assigned Day 15) |
-| 3 | Morning: `CarFleet` reasons beside the 3 comment lines + single-pair follow-up in chat | 🧩 | 🟡 IN_PROGRESS |
-| 4 | `DailyTemperatures` (0/18 stub) | 🧩 | 🟡 IN_PROGRESS (not started) |
-| 5 | `Day04LargestRectangle` symptom table + `[2,1,2]` hand trace (carried) | 🐞 | 🟡 IN_PROGRESS |
-| 6 | `ValidParenthesesRedoNov01` (17/18, finish null guard in redo) + `MinStackRedoNov01` (0/10) | 🔁 | 🟡 IN_PROGRESS (due **7 Nov**) |
-| 7 | Q3 and Q6 of the B2 interview questions, and the one-sentence "why the catch-all hid Spring's own answers" | 🌱 | ⬜ NOT_STARTED |
-| 8 | Banking module 1 step 1, Drills 2 and 3: **parked** (Spring slot is `spring-boot-labs`); nothing is deleted | 🏦🌱 | ⬜ NOT_STARTED (parked) |
-| 9 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
-| 10 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
-| 11 | Redos queued after tonight: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (7 Nov) | 🔁 | 🟡 IN_PROGRESS |
+| 2 | Morning: `spring-boot-labs` Chapter 1 (Maven / pom, 6 tasks + interview Q) | 🌱 | ⬜ NOT_STARTED (re-assigned Day 16) |
+| 3 | Morning: `DailyTemperatures` (0/18 stub) | 🧩 | 🟡 IN_PROGRESS (not started; finish before any new Stack problem) |
+| 4 | `CarFleet` single-pair follow-up in chat; written reasons await PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) merge | 🧩 | 🟡 IN_PROGRESS |
+| 5 | Evening: `ValidParenthesesRedoNov01` (17/18, finish null guard in redo) + `MinStackRedoNov01` (0/10) | 🔁 | 🟡 IN_PROGRESS (due **7 Nov**) |
+| 6 | Q3 and Q6 of the B2 interview questions, and the one-sentence "why the catch-all hid Spring's own answers" | 🌱 | ⬜ NOT_STARTED |
+| 7 | Banking module 1 step 1, Drills 2 and 3: **parked** (Spring slot is `spring-boot-labs`); nothing is deleted | 🏦🌱 | ⬜ NOT_STARTED (parked) |
+| 8 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
+| 9 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
+| 10 | Redos queued after tonight: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**8 Nov**) | 🔁 | 🟡 IN_PROGRESS |
 
 
 ## 🎯 Weak topics
@@ -196,14 +195,13 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Tonight / tomorrow (catch-up after missed 8 PM), [day15.md evening](tasks/day15.md#-evening-6-nov-catch-up-review-routine-missed-8-pm).** Finish ValidParen null in the redo, then MinStack; write-up if time. Tomorrow morning: labs Ch 1, then Daily Temperatures. Was:
+> **This morning (Sat 7 Nov 6 AM), [day16.md](tasks/day16.md).** Every track still has unfinished work, so no new material:
 > 1. 🐞 `Day04LargestRectangle` symptom table + `[2, 1, 2]` hand trace (15 min). Push.
 > 2. 🌱 `spring-boot-labs` Chapter 1 (Maven / pom, ~50 min). Push on `my-solutions`.
-> 3. 🧩 `CarFleet` reason sentences + single-pair follow-up (10 min). Push.
-> 4. 🧩 `DailyTemperatures` stub to 18/18 (35 min; pseudocode first). Push.
-> 5. 🐞 If time: `Day00BuggyExample` (4/10 → 10/10).
+> 3. 🧩 `DailyTemperatures` stub to 18/18 (35 min; 3–5 lines of plain-English pseudocode first). Push.
+> 4. 🧩 If time: `CarFleet` single-pair follow-up in chat.
 >
-> **Tonight:** review and score; then cold redos `ValidParenthesesRedoNov01` and `MinStackRedoNov01` (cap 2). Ask for a hint after 15 minutes on any step.
+> **Tonight:** review and score; then finish `ValidParenthesesRedoNov01` null→IAE **in the redo** (still 🔶), then cold `MinStackRedoNov01` (cap 2). Ask for a hint after 15 minutes on any step.
 
 
 ## 📊 Status counts
@@ -346,4 +344,5 @@ pie title Tracked items (1 Nov 2026)
 | 5 Nov 2026 | W2 D14 | 10 PM check: no pushes after the 8 PM evening review; queue rebuilt from 6 Nov | No commits from me after `56ff10f` (the review itself; the last code push today is `d8306e2`) and no answers in chat, so nothing new to test: `course-practice` 23/23, `Day04LargestRectangleTest` 36/36, `Day02RpnEvaluatorRedoNov01Test` 44/44 stand from the evening, `ValidParenthesesRedoNov01Test` 0/18 not attempted, so no ladder step changed and [redo-schedule.md](revision/redo-schedule.md) is rebuilt from Fri 6 Nov (`ValidParentheses` and `MinStack` first; last graduation Mon 4 Jan). Open and carried: the `Day04LargestRectangle` symptom table and `[2, 1, 2]` trace, the `CarFleet` reasons and single-pair follow-up, Q3 and the catch-all sentence; module 1 step 1 and Drills 2 and 3 stay parked for `spring-boot-labs`. No new mistakes, no cosmetic fixes. End of day added to [day14.md](tasks/day14.md) |
 | 6 Nov 2026 | W3 D15 | 🌅 Morning session assigned in [day15.md](tasks/day15.md): labs Ch 1, Daily Temperatures, carried write-ups | No commits from Prashant after `d8306e2` (5 Nov); suites unchanged (`course-practice` 23/23, `CarFleet` 37/37, `Day04LargestRectangle` 36/36, RPN redo 44/44, `ValidParenthesesRedoNov01` 0/18). New stubs: `DailyTemperatures` + `DailyTemperaturesTest` (0/18, verified 18/18 against a correct version), `MinStackRedoNov01` + `MinStackRedoNov01Test` (0/10, verified 10/10). Spring slot moves to `spring-boot-labs` Chapter 1 (READY, stub 1/19). Pending write-ups and `CarFleet` reasons come first. Evening redos: `ValidParenthesesRedoNov01` + `MinStackRedoNov01`. No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged (already rebuilt from 6 Nov) |
 | 6 Nov 2026 | W3 D15 | 🌙 Catch-up evening review (~8:30 PM): 🌱 Spring **unscored**; 🧩 DSA **6/10**; 🐞 Buggy **7/10**; Day00 ✅ 10/10; ValidParen redo 17/18 🔶 (wrong file); labs Ch 1 ⬜; PR #1 open | Tip `ec608e3` (JDK 21): `Day00BuggyExampleTest` 10/10, `ValidParenthesesRedoNov01Test` 17/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `DailyTemperaturesTest` 0/18 stub, `MinStackRedoNov01Test` 0/10 stub, `Day04LargestRectangleTest` 36/36. Chat: CarFleet space O(n) accepted. No labs push. No new conceptual mistake. [redo-schedule.md](revision/redo-schedule.md) rebuilt from 7 Nov (`ValidParentheses` + `MinStack`); `Day00` joins at +1. · [day15.md evening](tasks/day15.md#-evening-6-nov-catch-up-review-routine-missed-8-pm) |
-| 6 Nov 2026 | W3 D15 | 10 PM check: no pushes after the catch-up evening review; queue unchanged from 7 Nov | No commits from me after `46876f6` (the review itself; the last student code push today is `ec608e3`) and no answers in chat after that review, so nothing new to test: suites stand from the evening (`Day00` 10/10, ValidParen redo 17/18 🔶, `MinStackRedo` 0/10, `DailyTemperatures` 0/18, `CarFleet` 37/37, `Day04LargestRectangle` 36/36). No ladder step changed; [redo-schedule.md](revision/redo-schedule.md) stays rebuilt from Sat 7 Nov (`ValidParentheses` then `MinStack`). Open and carried: labs Ch 1, Daily Temperatures, LargestRectangle write-up, CarFleet single-pair / PR #1 merge, B2 Q3/Q6. No new mistakes, no cosmetic fixes. End of day added to [day15.md](tasks/day15.md). Next: labs Ch 1 on 7 Nov 6 AM |
+| 6 Nov 2026 | W3 D15 | 10 PM check: no pushes after the catch-up evening review; queue unchanged from 7 Nov |
+| 7 Nov 2026 | W3 D16 | 🌅 Morning session assigned in [day16.md](tasks/day16.md): labs Ch 1, Daily Temperatures, LargestRectangle write-up (no new material) | Re-checked on `03a1373` / last student code `ec608e3`: suites unchanged (`Day00` 10/10, ValidParen redo 17/18 🔶, `MinStackRedo` 0/10, `DailyTemperatures` 0/18, `CarFleet` 37/37, `Day04LargestRectangle` 36/36). Labs Ch 1 still 1/19 stub. Every track has an open item, so no new stubs and no new buggy round. Evening redos unchanged: `ValidParenthesesRedoNov01` then `MinStackRedoNov01`. No cosmetic fixes, no new mistakes, [redo-schedule.md](revision/redo-schedule.md) unchanged (already rebuilt from 7 Nov) | No commits from me after `46876f6` (the review itself; the last student code push today is `ec608e3`) and no answers in chat after that review, so nothing new to test: suites stand from the evening (`Day00` 10/10, ValidParen redo 17/18 🔶, `MinStackRedo` 0/10, `DailyTemperatures` 0/18, `CarFleet` 37/37, `Day04LargestRectangle` 36/36). No ladder step changed; [redo-schedule.md](revision/redo-schedule.md) stays rebuilt from Sat 7 Nov (`ValidParentheses` then `MinStack`). Open and carried: labs Ch 1, Daily Temperatures, LargestRectangle write-up, CarFleet single-pair / PR #1 merge, B2 Q3/Q6. No new mistakes, no cosmetic fixes. End of day added to [day15.md](tasks/day15.md). Next: labs Ch 1 on 7 Nov 6 AM |

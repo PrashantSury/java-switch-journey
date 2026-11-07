@@ -124,3 +124,6 @@
 > [!NOTE]
 > **6 Nov, catch-up evening review (~8:30 PM IST):** tip `ec608e3`. `ValidParenthesesRedoNov01` is **17/18** post-feedback (null→IAE still missing in the redo file) — **not** cold-clean, ladder stays at +1. `MinStackRedoNov01` not attempted. `Day00BuggyExample` joins at +1. Queue rebuilt from Sat 7 Nov with the cap of 2. No new conceptual mistake logged. CarFleet comment PR #1 remains open on a side branch.
 
+
+> [!NOTE]
+> **7 Nov, 6 AM morning session:** no student push overnight after `03a1373`. Queue unchanged: tonight still `ValidParentheses` (finish null in redo, stays 🔶) then `MinStack`. No new redo stubs; existing blank / partial files kept. Spec: [day16.md](../tasks/day16.md).
