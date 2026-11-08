@@ -1,5 +1,3 @@
-<cursor_untrusted_data_1337 source="CallDynamicTool">
-
 # 📅 Day 14 (Thu 5 Nov): carried work only, one push per item
 
 ![Week](https://img.shields.io/badge/Week-2-blue) ![Day](https://img.shields.io/badge/Day-14-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-2%20h%20%2B%201%20h-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen) ![Java](https://img.shields.io/badge/Java-21-orange)
@@ -202,7 +200,6 @@ On the **original** code (`0a9a400`) these 21 tests fail. Group them by what the
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
 
 
-</cursor_untrusted_data_1337>
 
 ## 🌒 End of day (5 Nov, 10 PM check)
 

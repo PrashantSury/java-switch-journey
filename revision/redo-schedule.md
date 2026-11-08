@@ -1,5 +1,3 @@
-<cursor_untrusted_data_1337 source="CallDynamicTool">
-
 # 🔁 DSA redo schedule
 
 ![Spaced repetition](https://img.shields.io/badge/redo-results--based%201%20%E2%86%92%203%20%E2%86%92%207%20%E2%86%92%2014%20%E2%86%92%2030-purple) ![Problems](https://img.shields.io/badge/problems-11-blue) ![Cap](https://img.shields.io/badge/cap-2%20redos%20per%20day-yellow) ![Start](https://img.shields.io/badge/start-1%20Nov%202026-blue)
@@ -34,7 +32,7 @@
 | Problem | Pattern | Last verified | Last result | Current gap | Next due | Status |
 |---|---|---|---|---|---|---|
 | 🐞 `Day02RpnEvaluator` | Stack: expression evaluation | 5 Nov | ✅ 5 Nov `Day02RpnEvaluatorRedoNov01` (`800ad4f`): cold, **44/44, no hint**, none of the 3 conceptual misses of 31 Oct repeated (was ❌ 31 Oct, 3 conceptual misses) | +3 | **10 Nov** (due 8 Nov, queued 2 days) | 🟡 IN_PROGRESS · clean pass moved +1 → +3; the redo was 4 days late (due 1 Nov) |
-| 🧩 `ValidParentheses` | Stack: matching brackets | 7 Nov | 🔶 7 Nov `ValidParenthesesRedoNov01` **18/18** (`3019054` / tip `f61c7d3`): null→IAE added **in the redo** after feedback — **still not cold-clean**; prior 6 Nov was 17/18 with guard on the wrong file | +1 (same gap) | **8 Nov** | 🟡 IN_PROGRESS · post-feedback fix · do **not** advance ladder until a later clean cold pass |
+| 🧩 `ValidParentheses` | Stack: matching brackets | 7 Nov | 🔶 7 Nov `ValidParenthesesRedoNov01` **18/18** (`3019054` / tip `f61c7d3`): null→IAE added **in the redo** after feedback — **still not cold-clean**; prior 6 Nov was 17/18 with guard on the wrong file | +1 (same gap) | **8 Nov** | 🟡 IN_PROGRESS · post-feedback fix · do **not** advance ladder until a later clean cold pass · 8 Nov cold redo on new blank `ValidParenthesesRedoNov08` (0/18) |
 | 🧩 `MinStack` | Stack: auxiliary min stack (design) | 23 Oct | ✅ 23 Oct 10/10 · never redone (stub 0/10 not attempted 6 Nov or 7 Nov) | +1 | **8 Nov** | 🟡 IN_PROGRESS · ⏰ due 24 Oct · moved again with ValidParen |
 | 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 25 Oct | 🔶 25 Oct 37/37, written with help · never redone | +1 | **9 Nov** (due 26 Oct, queued) | 🟡 IN_PROGRESS · ⏰ due 26 Oct · waits behind ValidParen + MinStack · follow-up questions pending |
 | 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 29 Oct | ❌ 29 Oct 26/26 but the O(n) quiz scored 3/5 (conceptual) · never redone | +1 (reset) | **9 Nov** (due 30 Oct, queued) | 🟡 IN_PROGRESS · ⏰ due 30 Oct · waits behind ValidParen + MinStack |
@@ -51,7 +49,7 @@
 ## 🗓️ Next 7 days
 | Date | Redo 1 | Redo 2 | Why |
 |---|---|---|---|
-| Sun 8 Nov | `ValidParentheses` (+1, 🔶 re-queue) | `MinStack` (+1, late) | ValidParen same gap after 7 Nov post-feedback 18/18; MinStack still never redone |
+| Sun 8 Nov | `ValidParentheses` (+1, 🔶 re-queue; blank `ValidParenthesesRedoNov08`) | `MinStack` (+1, late) | ValidParen same gap after 7 Nov post-feedback 18/18; MinStack still never redone |
 | Mon 9 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) | Due 26 Oct and 30 Oct |
 | Tue 10 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) | Due 30 Oct and 1 Nov |
 | Wed 11 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) | Due 4 Nov and 6 Nov |
@@ -116,7 +114,6 @@
 > **4 Nov, 10 PM check:** no commits after the 8 PM evening review (`210d691` is the review itself, and the only commit today before it is the 6 AM session `4d1db80`) and no answers in chat, so nothing new to test and no redo to grade. `Day02RpnEvaluatorRedoNov01` (0/44, planned for the morning DSA slot) and `ValidParenthesesRedoNov01` (0/18) were not attempted a fourth time, so the whole queue moves one more day: 5 Nov starts with those two, `CarFleet` is queued to Thu 12 Nov, and the last graduation is Tue 5 Jan. No ladder step changed.
 
 
-</cursor_untrusted_data_1337>
 
 > [!NOTE]
 > **5 Nov, 10 PM check:** no commits after the 8 PM evening review (`56ff10f` is the review itself; the last code push today is `d8306e2`) and no answers in chat, so nothing new to test. `ValidParenthesesRedoNov01` (0/18) was not attempted tonight, so no ladder step changed; the queue was rebuilt from 6 Nov with the cap of 2 and the most overdue first (6 Nov starts with `ValidParentheses` and `MinStack`).
@@ -130,3 +127,6 @@
 
 > [!NOTE]
 > **7 Nov, evening review (~8:00 PM IST):** tip `f61c7d3`. `ValidParenthesesRedoNov01` **18/18** after feedback (`3019054`, null→IAE in the redo) — **not** cold-clean, ladder stays at +1, next due **8 Nov**. `MinStackRedoNov01` not attempted (0/10) → moves to **8 Nov**. Queue rebuilt from Sun 8 Nov with the cap of 2. LargestRectangle write-up graded in chat (supported). No new conceptual mistake logged.
+
+> [!NOTE]
+> **8 Nov, 6 AM morning session:** no student push after `795b269` (last student code `3019054`). Queue unchanged: tonight `ValidParentheses` then `MinStack`. New blank stub `redo/ValidParenthesesRedoNov08.java` + `ValidParenthesesRedoNov08Test` (18 tests, verified against a local correct version that is not pushed; 0/18 on the stub), because `ValidParenthesesRedoNov01` already holds the 7 Nov answer and cannot be redone cold. `MinStackRedoNov01` stays the MinStack file (untouched, 0/10). Removed two stray wrapper lines left at the top and bottom of this file by an earlier push (cosmetic). Spec: [day17.md](../tasks/day17.md).

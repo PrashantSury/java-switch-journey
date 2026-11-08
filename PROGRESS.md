@@ -11,14 +11,14 @@
 ## 🧭 Overall status
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
-| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started; Spring slot in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 **parked**; **labs Chapter 1 still ⬜** (no push since assigned) | [day16.md](tasks/day16.md) · labs Ch 1 |
-| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅; `CarFleet` ✅ 37/37; count-stack re-ask ✅; RPN redo ✅ 44/44; CarFleet time/space reasons ✅ in chat (5–6 Nov); Lumi CarFleet comment PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open | single-pair CarFleet follow-up; **Daily Temperatures** still stub 0/18; ValidParen redo **18/18** 🔶 (post-feedback, same +1) | [day16.md](tasks/day16.md) |
-| 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 5 rounds with code ✅ (`Day00BuggyExample` **10/10**, `c0f5d64`, 6 Nov; `Day04LargestRectangle` 36/36); LargestRect write-up **graded in chat 7 Nov (supported)** | empty-stack width geometric why still soft; Day00 symptom groups absent; no new buggy until those settle | [day16.md](tasks/day16.md) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 4 cold redos ✅; `Day00BuggyExample` joins at +1 | `ValidParenthesesRedoNov01` **18/18** 🔶 (same +1 → **8 Nov**) + `MinStackRedoNov01` 0/10 (not attempted → **8 Nov**) | [redo-schedule.md](revision/redo-schedule.md) · [day16.md](tasks/day16.md) |
+| 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started; Spring slot in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 **parked**; **labs Chapter 1 still ⬜** (no push since assigned; checks 1/19 on 8 Nov) | [day17.md](tasks/day17.md) · labs Ch 1 |
+| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅; `CarFleet` ✅ 37/37; count-stack re-ask ✅; RPN redo ✅ 44/44; CarFleet time/space reasons ✅ in chat (5–6 Nov); Lumi CarFleet comment PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open | single-pair CarFleet follow-up; **Daily Temperatures** still stub 0/18; ValidParen redo **18/18** 🔶 (post-feedback, same +1) | [day17.md](tasks/day17.md) |
+| 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 5 rounds with code ✅ (`Day00BuggyExample` **10/10**, `c0f5d64`, 6 Nov; `Day04LargestRectangle` 36/36); LargestRect write-up **graded in chat 7 Nov (supported)** | empty-stack width geometric why still soft; Day00 symptom groups absent; no new buggy until those settle | [day17.md](tasks/day17.md) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 4 cold redos ✅; `Day00BuggyExample` joins at +1 | 8 Nov: cold `ValidParenthesesRedoNov08` (new blank, 0/18) + `MinStackRedoNov01` 0/10 | [redo-schedule.md](revision/redo-schedule.md) · [day17.md](tasks/day17.md) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups; labs Ch 1 Qs; B2 Q3/Q6; Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
-> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Today's plan: [tasks/day16.md](tasks/day16.md) (End of day added at the 7 Nov 10 PM check; next: labs Ch 1 on 8 Nov 6 AM). Spring slot: [`spring-boot-labs` Chapter 1](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom). LargestRectangle write-up graded in chat 7 Nov (supported); Daily Temperatures still in [day16.md](tasks/day16.md). Last student code: `3019054` / tip `f61c7d3`.
+> The day is 2 h morning (all new work: Spring about 50 min, DSA about 35, buggy about 15) plus 1 h evening (review and score each track out of 10, finish pending work, then redos). Details: [docs/PROGRAM.md](docs/PROGRAM.md). Today's plan: [tasks/day17.md](tasks/day17.md) (8 Nov morning: labs Ch 1 → Daily Temperatures → LargestRect width sentence; evening redos ValidParen (blank Nov08) + MinStack). Spring slot: [`spring-boot-labs` Chapter 1](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom). LargestRectangle write-up graded in chat 7 Nov (supported); Daily Temperatures carried in [day17.md](tasks/day17.md). Last student code: `3019054` (7 Nov 14:11 IST) / tip before this session `795b269`.
 
 ```bash
 mvn test          # root project: DSA and buggy rounds
@@ -89,7 +89,7 @@ mvn test          # root project: DSA and buggy rounds
 | RemoveKAdjacentDuplicates (Day 01) | 26/26 | 2d36911 | ✅ COMPLETED (29 Oct) | O(n) quiz 3/5 (missed the push/pop-once reasoning) → re-ask ✅ answered 5 Nov (each character pushed at most once, popped at most once, so at most 2n steps); problem itself still due its +1 redo on 7 Nov |
 | AsteroidCollision (Day 02) | 28/28 | 6ddde32 + Lumi's cosmetic clean-up | ✅ COMPLETED (31 Oct) | O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified |
 | CarFleet (Day 04) | 37/37 | 91cb817 + Lumi's minor fixes; comment lines in `1c9c6aa` | ✅ COMPLETED (3 Nov, with hints) | sort by position descending, cross-multiplied `long` comparison, `Deque<long[]>`; hint-assisted (pairing, exact comparison). The 3 comment lines are in; **time and space reasons accepted in chat** (5–6 Nov); Lumi refined comments on PR #1 (open, not on `main`); single-pair follow-up still owed · [review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
-| DailyTemperatures (Day 15) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov; **still not started** as of 7 Nov evening) | monotonic stack of indices; stub untouched on tip `f61c7d3`; 3-5 lines of plain-English pseudocode first · [day16.md](tasks/day16.md) |
+| DailyTemperatures (Day 15) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov; **still not started** as of 8 Nov 6 AM) | monotonic stack of indices; stub untouched on tip `795b269`; 3-5 lines of plain-English pseudocode first · [day17.md](tasks/day17.md) |
 
 ## 🐞 Buggy problems (on the current pattern: Stack)
 | Round or redo | Type | Tests | My commit | Status | Notes |
@@ -105,7 +105,8 @@ mvn test          # root project: DSA and buggy rounds
 | Day02RpnEvaluatorRedo7 | 🔁 redo (day 7) | 44/44 | 37f6c11 | ✅ COMPLETED (31 Oct) | fixed after 3 review rounds (fall-through, end check, null guard); logged in `revision/mistakes/dsa.md`; reset to +1 |
 | Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 44/44 | 800ad4f | ✅ COMPLETED (cold, 5 Nov) | clean cold pass, no hint: 3 comment lines, exact-match operators, `size() < 2` guard before the pops, `a` below `b`, `size() != 1` end check, null guards, `Math.*Exact`; none of the 31 Oct slips came back; moves +1 → +3 (due Sun 8 Nov) |
 | ValidParenthesesRedoNov01 | 🔁 redo (+1) | **18/18** | c0f5d64 (body) · **3019054** null→IAE **in the redo** (tip `f61c7d3`) | 🟡 IN_PROGRESS 🔶 | 7 Nov post-feedback **18/18**; **not** cold-clean — same +1 gap, next due **8 Nov** |
-| MinStackRedoNov01 | 🔁 redo (+1) | 0/10 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov) | not attempted 6–7 Nov; moved to **8 Nov** · [day16.md](tasks/day16.md) |
+| MinStackRedoNov01 | 🔁 redo (+1) | 0/10 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov) | not attempted 6–7 Nov; due **8 Nov** evening (same file) · [day17.md](tasks/day17.md) |
+| ValidParenthesesRedoNov08 | 🔁 redo (+1, repeated) | 0/18 | blank stub (8 Nov morning session) | ⬜ NOT_STARTED | cold redo on a blank file, because `ValidParenthesesRedoNov01` already holds the 7 Nov answer; due **8 Nov** evening · [day17.md](tasks/day17.md) |
 
 > [!IMPORTANT]
 > 🔁 Every DSA problem and buggy round is redone cold, and each result sets the next gap (clean pass 1 → 3 → 7 → 14 → 30; hint or fix repeats the gap; conceptual miss resets to day 1), at most 2 a day. A problem keeps ✅ COMPLETED for its first verified solve; the calendar and next due dates are in [redo-schedule.md](revision/redo-schedule.md).
@@ -121,20 +122,20 @@ mvn test          # root project: DSA and buggy rounds
 
 ## 📌 Pending
 > [!NOTE]
-> Everything not ✅ COMPLETED, in the order to work it. Pending work never disappears until it is verified. Full specs: [tasks/day09.md](tasks/day09.md). Re-ordered by the 7 Nov 6 AM morning session ([day16.md](tasks/day16.md)).
+> Everything not ✅ COMPLETED, in the order to work it. Pending work never disappears until it is verified. Full specs: [tasks/day09.md](tasks/day09.md). Re-ordered by the 8 Nov 6 AM morning session ([day17.md](tasks/day17.md)).
 
 | # | Item | Track | Status |
 |---|---|---|---|
-| 1 | Evening/tonight: cold `MinStackRedoNov01` (0/10) | 🔁 | 🟡 IN_PROGRESS (due **8 Nov**; not attempted 7 Nov) |
+| 1 | `spring-boot-labs` Chapter 1 (Maven / pom, 6 tasks + interview Q) on `my-solutions` | 🌱 | ⬜ NOT_STARTED (checks 1/19 on `main`; no branch yet) |
 | 2 | `DailyTemperatures` (0/18 stub) | 🧩 | 🟡 IN_PROGRESS (not started; finish before any new Stack problem) |
-| 3 | `spring-boot-labs` Chapter 1 (Maven / pom, 6 tasks + interview Q) | 🌱 | ⬜ NOT_STARTED (still no student push after Day 16) |
-| 4 | Optional: empty-stack width geometric sentence + ASCII for LargestRect `[2,1,2]` | 🐞 | 🟡 IN_PROGRESS (table/trace graded supported 7 Nov; width-why soft) |
+| 3 | Empty-stack width geometric sentence + ASCII for LargestRect `[2,1,2]` | 🐞 | 🟡 IN_PROGRESS (table/trace graded supported 7 Nov; width-why soft) |
+| 4 | Evening: cold `ValidParenthesesRedoNov08` (blank, 0/18) then cold `MinStackRedoNov01` (0/10) | 🔁 | 🟡 IN_PROGRESS (both due **8 Nov**) |
 | 5 | `CarFleet` single-pair follow-up in chat; written reasons await PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) merge | 🧩 | 🟡 IN_PROGRESS |
 | 6 | Q3 and Q6 of the B2 interview questions, and the one-sentence "why the catch-all hid Spring's own answers" | 🌱 | ⬜ NOT_STARTED |
 | 7 | Banking module 1 step 1, Drills 2 and 3: **parked** (Spring slot is `spring-boot-labs`); nothing is deleted | 🏦🌱 | ⬜ NOT_STARTED (parked) |
 | 8 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
 | 9 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
-| 10 | Redos queued: `ValidParentheses` (+1 🔶) + `MinStack` (+1) (**8 Nov**); then `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**9 Nov**) | 🔁 | 🟡 IN_PROGRESS |
+| 10 | Redos queued after tonight: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**9 Nov**); `Day03NextGreaterIndex`, `AsteroidCollision` (**10 Nov**) | 🔁 | 🟡 IN_PROGRESS |
 
 
 ## 🎯 Weak topics
@@ -417,3 +418,4 @@ pie title Tracked items (1 Nov 2026)
 | 7 Nov 2026 | W3 D16 | 📅 Weekly review 1–7 Nov 2026 added (this section) | Window through ~14:07 IST. Verified this week: Spring 2 (Day 04 re-answers, B2/Drill 1), DSA 1 (`CarFleet`), buggy 2 (`Day04LargestRectangle`, `Day00`); redos: RPN ✅, ValidParen 🔶 17/18, MinStack ❌. labs Ch 1 and DailyTemperatures still open. No schedule or task changes. |
 | 7 Nov 2026 | W3 D16 | 🌙 Evening review (~8:00 PM): 🌱 Spring **unscored**; 🧩 DSA **6/10**; 🐞 Buggy **7/10**; ValidParen redo ✅ 18/18 🔶 (same +1); LargestRect write-up graded in chat (supported); MinStack ❌ 0/10; labs Ch 1 ⬜; DailyTemps 0/18 | Ran on `f61c7d3` (JDK 21): ValidParen redo **18/18**, `ValidParentheses` 2/2, `CarFleet` 37/37, `Day04LargestRectangle` 36/36, `Day00` 10/10, RPN redo 44/44, `DailyTemperatures` 0/18, `MinStackRedo` 0/10. Student fix `3019054`. No labs push. No new conceptual mistake. [redo-schedule.md](revision/redo-schedule.md) rebuilt from **8 Nov**. · [day16.md evening](tasks/day16.md#-evening-7-nov-review-scores-tonight-and-tomorrow) |
 | 7 Nov 2026 | W3 D16 | 10 PM check: no pushes after the 8 PM evening review; redo queue unchanged from 8 Nov | No commits from me after `71728e0` (the review itself; the last student code today is `3019054`) and no answers in chat after that review, so nothing new to test: suites stand from the evening (ValidParen redo 18/18 🔶, `MinStackRedo` 0/10, `DailyTemperatures` 0/18, `CarFleet` 37/37, `Day04LargestRectangle` 36/36, `Day00` 10/10, RPN redo 44/44). No labs push on `spring-boot-labs`. No ladder step changed; [redo-schedule.md](revision/redo-schedule.md) stays rebuilt from Sun 8 Nov (`ValidParentheses` then `MinStack`). Housekeeping: the 6 Nov 10 PM row got its detail cell back (it had slipped into the 7 Nov morning row) and a blank line that split this table was removed. No new mistakes, no cosmetic fixes. End of day added to [day16.md](tasks/day16.md). Next: labs Ch 1 on 8 Nov 6 AM |
+| 8 Nov 2026 | W3 D17 | 🌅 Morning session assigned in [day17.md](tasks/day17.md): labs Ch 1, Daily Temperatures, LargestRectangle width sentence (no new material) | No commits from Prashant after `3019054` (tip `795b269`). Re-ran (JDK 21): `ValidParenthesesRedoNov01` 18/18, `ValidParentheses` 2/2, `CarFleet` 37/37, `Day04LargestRectangle` 36/36, `Day00` 10/10, `DailyTemperatures` 0/18, `MinStackRedoNov01` 0/10; labs `Chapter01CheckTest` 1/19, no `my-solutions` branch. New blank redo stub `redo/ValidParenthesesRedoNov08.java` + test (18, verified against a local correct version not pushed) for tonight's cold ValidParen redo; `MinStackRedoNov01` reused. Housekeeping: removed stray wrapper lines from `revision/redo-schedule.md` and `tasks/day14.md`. |
