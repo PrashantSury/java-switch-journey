@@ -130,3 +130,6 @@
 
 > [!NOTE]
 > **8 Nov, 6 AM morning session:** no student push after `795b269` (last student code `3019054`). Queue unchanged: tonight `ValidParentheses` then `MinStack`. New blank stub `redo/ValidParenthesesRedoNov08.java` + `ValidParenthesesRedoNov08Test` (18 tests, verified against a local correct version that is not pushed; 0/18 on the stub), because `ValidParenthesesRedoNov01` already holds the 7 Nov answer and cannot be redone cold. `MinStackRedoNov01` stays the MinStack file (untouched, 0/10). Removed two stray wrapper lines left at the top and bottom of this file by an earlier push (cosmetic). Spec: [day17.md](../tasks/day17.md).
+
+> [!NOTE]
+> **8 Nov, evening review (~7:58 PM IST):** tip `73a1fd7`. No student push after the morning session (`1af6500` / `73a1fd7`). `ValidParenthesesRedoNov08` still **0/18** (blank stub, not attempted). `MinStackRedoNov01` still **0/10** (not attempted). No ladder step changed; both remain due **tonight (8 Nov)**. Queue unchanged. No new conceptual mistake logged. Spec: [day17.md](../tasks/day17.md).

@@ -95,6 +95,73 @@ The code is ✅ 36/36 (`d8306e2`) and the symptom table + `[2, 1, 2]` trace were
 > [!WARNING]
 > Why a new ValidParen file: the old `ValidParenthesesRedoNov01` already holds your 7 Nov answer, so redoing it there is not cold. Cap **2**: `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **9 Nov** ([redo-schedule.md](../revision/redo-schedule.md)).
 
+## 🌙 Evening (8 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Evening review at ~7:58 PM IST on tip `73a1fd7` (JDK 21, Maven). No student commits after the 6 AM session (`1af6500` + `73a1fd7`). Last student code is still `3019054` (7 Nov 14:11 IST). No answers in this chat today to grade. Re-ran: `ValidParenthesesRedoNov01Test` **18/18**, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 36/36, `Day00BuggyExampleTest` 10/10, `Day02RpnEvaluatorRedoNov01Test` 44/44, `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) (still `main` `507aaa3`, no `my-solutions` branch; `Chapter01CheckTest` last verified **1/19** this morning). **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) is unchanged (both 8 Nov redos remain due tonight).
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | No student work today: no `my-solutions` push, no graded Chapter 1 interview Q, B2 Q3 / Q6 / catch-all sentence still unanswered. Banking module 1 / Drills 2–3 parked. Last scored Spring night was 5 Nov (7/10); 6–7 Nov were also unscored. Do not invent a number |
+| 🧩 DSA | **unscored** (⬜ Pending) | No Daily Temperatures attempt (`DailyTemperaturesTest` still **0/18** stub). No chat answers. Cold `ValidParenthesesRedoNov08` still **0/18** and `MinStackRedoNov01` still **0/10**. Last scored DSA night was 7 Nov (6/10, on the post-feedback ValidParen 18/18). Suites that were already green were re-verified only (`ValidParenthesesRedoNov01Test` 18/18, `CarFleetTest` 37/37). Do not reuse yesterday's 6 as today's score |
+| 🐞 Buggy | **unscored** (⬜ Pending) | No new buggy code and no empty-stack width sentence / ASCII in chat. `Day04LargestRectangleTest` **36/36** and `Day00BuggyExampleTest` **10/10** stand from earlier days. Last scored buggy night was 7 Nov (7/10, on the supported write-up). Width-why remains the open item |
+
+> [!WARNING]
+> Nothing from today can be marked ✅ `COMPLETED`. A track with no work is left unscored, not given yesterday's number again.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 `spring-boot-labs` Chapter 1 (Maven / pom) | ⬜ Pending | third assigned morning, still no push and no graded Q |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | Day 02–03 scores; packs still ⬜ not generated — labs Ch 1 stays the Spring slot |
+| 🧩 `DailyTemperatures` | ⬜ Pending | stub only (0/18); third morning unused |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | chat reasons closed; written merge pending |
+| 🔁 `ValidParentheses` redo (`ValidParenthesesRedoNov08`) | ⬜ Pending | blank stub 0/18, not attempted as of this review; still due tonight |
+| 🔁 `MinStack` redo | ⬜ Pending | stub 0/10, not attempted 6–8 Nov; still due tonight |
+| 🐞 `Day04LargestRectangle` empty-stack width | 🟡 Moderate / ⬜ Pending sentence | table + `[2,1,2]` graded 7 Nov (supported); geometric why + ASCII still open |
+| 🐞 `Day00BuggyExample` write-up | 🟡 Pending | code 10/10; no symptom groups |
+| 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
+| ⛔ Blocked | none | — |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring 🔴 Weak rows stay in [PROGRESS.md](../PROGRESS.md); do not insert them ahead of labs Ch 1.
+
+### ⏳ Tonight's evening-slot work (finishable; push after each)
+
+> [!IMPORTANT]
+> The evening slot is the unfinished morning list, in that order. If the hour is running out, still land the most overdue redo (`ValidParenthesesRedoNov08`) before stopping — better one ladder step than two misses. Cap **2** redos.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 25 | `spring-boot-labs` Chapter 1 Tasks 1-3 on `my-solutions` (parent `4.1.2` before your own `groupId`, then coordinates, then `java.version=21`) | 🌱 | push even if checks red |
+| 2 | 20 | `DailyTemperatures`: 3–5 lines plain-English pseudocode, then code (even if red) | 🧩 | push; aim 18/18 |
+| 3 | 10 | Empty-stack width in one geometric sentence + 3-line ASCII for `[2,1,2]` (chat) | 🐞 | graded 7+ |
+| 4 | if time | Cold `ValidParenthesesRedoNov08` (blank file; 3 comment lines first; do **not** open `ValidParenthesesRedoNov01` or `dsa/stack/ValidParentheses`) | 🔁 | push even if red; target 18/18 |
+| 5 | if time | Cold `MinStackRedoNov01` (3 comments + pseudocode; do **not** open `dsa/stack/MinStack`) | 🔁 | push even if red; target 10/10 |
+
+- [ ] labs Ch 1 Tasks 1-3 pushed on `my-solutions`
+- [ ] `DailyTemperatures` pushed (even if red)
+- [ ] Empty-stack width sentence + ASCII in chat
+- [ ] (if time) `ValidParenthesesRedoNov08` pushed
+- [ ] (if time) `MinStackRedoNov01` pushed
+
+### 🎯 Tomorrow's focus (Mon 9 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | `spring-boot-labs` Chapter 1 end-to-end (Tasks 1-6 + interview Q written); habit: ask what the parent already gives, then add only what is missing | unscored three nights (6–8 Nov); Ch 1 is still the whole Spring slot and still ⬜ |
+| 🧩 DSA | Finish `DailyTemperatures` if not green tonight: monotonic stack of **indices**, reason sentences on pattern/time/space (push≤1 + pop≤1 → ≤2n) | stub still 0/18 after three assigned mornings; it blocks the next Stack problem |
+| 🐞 Buggy | No new buggy round. Empty-stack width geometric sentence + ASCII if not graded tonight; Day00 symptom groups stay backlog | write-up table/trace already graded (supported); width-why is the remaining debugging-depth item |
+| 🔁 Redos (evening) | If tonight's two are still open: **`ValidParenthesesRedoNov08`** then **`MinStackRedoNov01`**. If both land tonight: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` as queued for 9 Nov | no redo was graded at this review; cap 2; most overdue first |
+
+> [!TIP]
+> Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
+
 ## 📦 Carried backlog (not for this morning unless listed above)
 
 | Item | Track | Status | When |
