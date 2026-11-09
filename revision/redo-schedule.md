@@ -132,3 +132,6 @@
 
 > [!NOTE]
 > **8 Nov, 10 PM check:** no student commits after the evening review (`b0ac31f` is the review itself; last student code still `3019054`) and no answers in chat. `ValidParenthesesRedoNov08` (0/18) and `MinStackRedoNov01` (0/10) were not attempted, so no ladder step changed and the queue was rebuilt from **Mon 9 Nov** with the cap of 2 and the most overdue first; the projected calendar moved one day (last graduation Tue 5 Jan). Housekeeping: removed extra blank lines between the notes. No new conceptual mistake.
+
+> [!NOTE]
+> **9 Nov, 6 AM morning session:** no student push after `e480448` (last student code `3019054`). Queue unchanged: tonight `ValidParenthesesRedoNov08` (0/18) then `MinStackRedoNov01` (0/10), both existing blank stubs, so no new redo files. Spec: [day18.md](../tasks/day18.md).
