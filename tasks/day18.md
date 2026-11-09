@@ -92,3 +92,70 @@ No new redo stubs today: both files already exist and are still blank. `ScoreOfP
 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED | after CarFleet follow-up |
 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS | spare evenings |
 | `Day00BuggyExample` symptom groups | 🐞 | 🟡 IN_PROGRESS | backlog |
+
+## 🌙 Evening (9 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Evening review at ~8:00 PM IST on tip `8634131` (JDK 21.0.13, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test`: **514 run, 46 red**, and the 46 are exactly the three untouched stubs: `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. Everything else is green (ValidParen redo Nov01 18/18, `ValidParentheses` 2/2, `CarFleet` 37/37, `Day04LargestRectangle` 36/36, `Day00` 10/10, RPN redo 44/44). [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3`, no `my-solutions` branch. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) rows are unchanged; both redos are still due tonight.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | No labs push, no Chapter 1 interview answer. Fourth assigned morning (6–9 Nov) with Chapter 1 still at 1/19. Last scored Spring night: 5 Nov (7/10). No number without work |
+| 🧩 DSA | **unscored** (⬜ Pending) | `DailyTemperatures` still the 0/18 stub; no chat answers. Last scored DSA night: 7 Nov (6/10). Re-verified green suites are old work and don't earn a score today |
+| 🐞 Buggy | **unscored** (⬜ Pending) | No empty-stack width sentence or ASCII. `Day04LargestRectangle` 36/36 and `Day00` 10/10 stand from earlier days. Last scored buggy night: 7 Nov (7/10) |
+
+> [!WARNING]
+> Second day in a row with no student work (8 and 9 Nov). Nothing from today can be ✅ `COMPLETED`, and no track is scored on yesterday's number. The pattern to watch as a lead: the plan is not the problem, starting is. Tomorrow's bar is cut to the smallest possible first push.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 `spring-boot-labs` Chapter 1 (Maven / pom) | ⬜ Pending | fourth morning, no push, no graded Q |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | Day 02–03 scores; packs stay ⬜ until labs Ch 1 lands, so they don't jump the queue |
+| 🧩 `DailyTemperatures` | ⬜ Pending | stub 0/18; blocks the next Stack problem |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | chat reasons closed; written merge pending |
+| 🔁 `ValidParentheses` redo (`ValidParenthesesRedoNov08`) | ⬜ Pending | 0/18, still due tonight |
+| 🔁 `MinStack` redo | ⬜ Pending | 0/10, never redone since 23 Oct; still due tonight |
+| 🐞 `Day04LargestRectangle` empty-stack width | 🟡 Moderate / ⬜ Pending sentence | table + trace graded 7 Nov; geometric why still open |
+| 🐞 `Day00BuggyExample` write-up | 🟡 Pending | code 10/10; no symptom groups |
+| 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
+| ⛔ Blocked | none | nothing outside his control is stopping the work |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
+
+### ⏳ Tonight's evening-slot work (finishable; push after each)
+
+> [!IMPORTANT]
+> One push tonight beats a perfect plan. If you only have 20 minutes, do item 1 and stop. Cap **2** redos.
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 15 | `spring-boot-labs` Chapter 1 **Task 1 only** (parent `spring-boot-starter-parent`) on a new `my-solutions` branch | 🌱 | branch pushed, even if red |
+| 2 | 20 | `DailyTemperatures`: brute force in 2 English lines + 3–5 lines of stack pseudocode as comments; Java if time | 🧩 | pushed, even if red |
+| 3 | 10 | Empty-stack width sentence + 3-line ASCII for `[2,1,2]` (chat) | 🐞 | graded 7+ |
+| 4 | if time | Cold `ValidParenthesesRedoNov08` (blank; 3 comment lines first; don't open the Nov01 file or `dsa/stack/ValidParentheses`) | 🔁 | pushed; target 18/18 |
+| 5 | if time | Cold `MinStackRedoNov01` (3 comments + pseudocode; don't open `dsa/stack/MinStack`) | 🔁 | pushed; target 10/10 |
+
+- [ ] labs Ch 1 Task 1 pushed on `my-solutions`
+- [ ] `DailyTemperatures` pseudocode pushed
+- [ ] Width sentence + ASCII in chat
+- [ ] (if time) `ValidParenthesesRedoNov08` pushed
+- [ ] (if time) `MinStackRedoNov01` pushed
+
+### 🎯 Tomorrow's focus (Tue 10 Nov), from tonight's assessment
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | Chapter 1 with a **first-15-minutes rule**: Task 1 pushed before 6:20 AM, then Tasks 2-6 and the interview Q. Habit: ask what the parent already gives, add only what's missing | four mornings unused; the blocker is starting, so the first step must be tiny and timed |
+| 🧩 DSA | `DailyTemperatures` to 18/18: monotonic stack of **indices**, comment reasons (each index pushed once, popped at most once, so at most 2n steps) | stub 0/18; it blocks the next Stack problem |
+| 🐞 Buggy | No new round. Width sentence + ASCII if not graded tonight | the last open debugging-depth item |
+| 🔁 Redos (evening) | If tonight's two are still open: `ValidParenthesesRedoNov08` then `MinStackRedoNov01` again (the 10 PM check moves the queue). If both land tonight: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` | no redo graded at this review; cap 2, most overdue first |
+
+> [!TIP]
+> Reply in chat when something is pushed or when you want an answer graded. Each answer is graded and recorded the same night.

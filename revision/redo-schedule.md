@@ -44,7 +44,7 @@
 | 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **13 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
 
 > [!NOTE]
-> **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the **7 Nov evening review**. ValidParen **18/18** 🔶 post-feedback (`3019054`, same +1 → due **8 Nov**); MinStack not attempted → moves to **8 Nov**. The **8 Nov 10 PM check** found neither 8 Nov redo attempted, so the queue moves one day: **Mon 9 Nov** evening is `ValidParentheses` then `MinStack`. The calendar below assumes every redo is a clean pass except where marked 🔶.
+> **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the **7 Nov evening review**. ValidParen **18/18** 🔶 post-feedback (`3019054`, same +1 → due **8 Nov**); MinStack not attempted → moves to **8 Nov**. The **8 Nov 10 PM check** found neither 8 Nov redo attempted, so the queue moves one day: **Mon 9 Nov** evening is `ValidParentheses` then `MinStack`. **9 Nov evening review (~8 PM):** neither redo attempted yet (`ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10); no row changed, both still due tonight. The calendar below assumes every redo is a clean pass except where marked 🔶.
 
 ## 🗓️ Next 7 days
 | Date | Redo 1 | Redo 2 | Why |
