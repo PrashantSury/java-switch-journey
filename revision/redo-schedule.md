@@ -137,3 +137,5 @@
 > **9 Nov, 6 AM morning session:** no student push after `e480448` (last student code `3019054`). Queue unchanged: tonight `ValidParenthesesRedoNov08` (0/18) then `MinStackRedoNov01` (0/10), both existing blank stubs, so no new redo files. Spec: [day18.md](../tasks/day18.md).
 
 > **10 Nov, 6 AM morning session:** no student push after `23af947` (last student code `3019054`). Queue unchanged: tonight `ValidParenthesesRedoNov08` (0/18) then `MinStackRedoNov01` (0/10), both existing blank stubs, so no new redo files. Spec: [day19.md](../tasks/day19.md).
+
+> **10 Nov, evening review (~8 PM):** no student push after `dc71902` (last student code `3019054`). Neither redo attempted yet (`ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10); no row changed, both still due tonight.
