@@ -158,3 +158,22 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
 
 > [!TIP]
 > Reply in chat when something is pushed or when you want an answer graded. Each answer is graded and recorded the same night.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-0-lightgrey)
+
+> [!NOTE]
+> 10 PM check on tip `d311827` (the evening review itself). No student commits after the 8 PM review and none all day; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat to grade, so nothing new to test and every suite stands as re-run at the evening review. No new conceptual mistake and no cosmetic fix needed.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| `spring-boot-labs` Chapter 1 Task 1 | 🌱 | no push (still `main` `507aaa3`, no `my-solutions`) | ⬜ NOT_STARTED |
+| `DailyTemperatures` | 🧩 | not attempted, 0/18 | 🟡 IN_PROGRESS (stub) |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | not answered | 🟡 IN_PROGRESS |
+| `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | not answered; PR still open | 🟡 IN_PROGRESS |
+| 🔁 `ValidParenthesesRedoNov08` | 🔁 | not attempted, 0/18 → moves to **Wed 11 Nov** | ⬜ NOT_STARTED |
+| 🔁 `MinStackRedoNov01` | 🔁 | not attempted, 0/10 → moves to **Wed 11 Nov** | 🟡 IN_PROGRESS (stub) |
+
+> [!IMPORTANT]
+> **First task tomorrow (Wed 11 Nov, 6 AM):** `git pull` both repos, then `spring-boot-labs` Chapter 1 **Task 1 only** (parent `spring-boot-starter-parent`) on a new `my-solutions` branch, and **push it before 6:20 AM, even if red**. That is the only must-do; Tasks 2-6, `DailyTemperatures` (pseudocode first) and the width sentence follow if there is time. Evening redos: `ValidParenthesesRedoNov08` then `MinStackRedoNov01` ([redo-schedule.md](../revision/redo-schedule.md), moved to 11 Nov).
