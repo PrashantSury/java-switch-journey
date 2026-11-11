@@ -141,3 +141,5 @@
 > **10 Nov, evening review (~8 PM):** no student push after `dc71902` (last student code `3019054`). Neither redo attempted yet (`ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10); no row changed, both still due tonight.
 
 > **10 Nov, 10 PM check:** no student commits after the evening review (`d311827` is the review itself; last student code still `3019054`) and no answers in chat. `ValidParenthesesRedoNov08` (0/18) and `MinStackRedoNov01` (0/10) were not attempted, so no ladder step changed and the whole queue moved one day: **Wed 11 Nov** starts with those two, `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` move to Thu 12 Nov, last graduation Thu 7 Jan. No new conceptual mistake.
+
+> **11 Nov, evening review (~8 PM):** no student push after `fae7a26` (last student code `3019054`). Neither redo attempted yet (`ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10); no row changed, both still due tonight. From Thu 12 Nov the plan runs one-slot days (one item, labs first), so no redo is scheduled on those days; the 10 PM check moves the queue, ValidParen Nov08 first.
