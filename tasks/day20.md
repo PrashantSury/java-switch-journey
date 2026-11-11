@@ -174,3 +174,22 @@ Everything else on today's page (Tasks 2–6, `DailyTemperatures` pseudocode, wi
 
 > [!TIP]
 > Reply in chat when something is pushed, when you want an answer graded, or with the pace that fits this week. Each answer is graded and recorded the same night.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-0-lightgrey)
+
+> [!NOTE]
+> 10 PM check on tip `18c09e3` (the evening review itself). No student commits after the 8 PM review and none all day; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat to grade, so nothing new to test and every suite stands as re-run at the evening review. No new conceptual mistake and no cosmetic fix needed.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| `spring-boot-labs` Chapter 1 Task 1 (coordinates) | 🌱 | no push (still `main` `507aaa3`, no `my-solutions`) | ⬜ NOT_STARTED |
+| `DailyTemperatures` | 🧩 | not attempted, 0/18 | 🟡 IN_PROGRESS (stub) |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | not answered | 🟡 IN_PROGRESS |
+| `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | not answered; PR still open | 🟡 IN_PROGRESS |
+| 🔁 `ValidParenthesesRedoNov08` | 🔁 | not attempted, 0/18 → on hold, earliest **Sat 14 Nov** | ⬜ NOT_STARTED |
+| 🔁 `MinStackRedoNov01` | 🔁 | not attempted, 0/10 → on hold, earliest **Sat 14 Nov** | 🟡 IN_PROGRESS (stub) |
+
+> [!IMPORTANT]
+> **First task tomorrow (Thu 12 Nov, one-slot day):** `git pull` both repos, then `spring-boot-labs` Chapter 1 **Task 1** (the coordinates: `com.ledgerly : ledgerly-core : 0.1.0-SNAPSHOT`, the three lines directly under `<project>`) on a new `my-solutions` branch, and **push it even if red**. That is the only item for the 45-minute block; Task 2 (the parent) only if time is left. DSA, buggy and redos rest until pushes restart ([redo-schedule.md](../revision/redo-schedule.md)).
