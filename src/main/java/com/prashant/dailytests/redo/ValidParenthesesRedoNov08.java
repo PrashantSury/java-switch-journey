@@ -1,5 +1,8 @@
 package com.prashant.dailytests.redo;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Cold redo of LeetCode 20, Valid Parentheses (gap +1, repeated: the 7 Nov pass in
  * ValidParenthesesRedoNov01 was 18/18 only after feedback, so it is not a clean pass).
@@ -22,12 +25,22 @@ package com.prashant.dailytests.redo;
  */
 public class ValidParenthesesRedoNov08 {
 
-    // Pattern:
-    // Time:
-    // Space:
+
+    // Pattern: Stack
+    // Time: O(n)
+    // Space: O(n)
 
     public static boolean isValid(String s) {
-        // TODO: write from memory
-        throw new UnsupportedOperationException("TODO");
+        if(s == null){
+            throw new IllegalArgumentException("String is null");
+        }
+        Deque<Character> stack = new ArrayDeque<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') stack.push(')');
+            else if (c == '{') stack.push('}');
+            else if (c == '[') stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c) return false;
+        }
+        return stack.isEmpty();
     }
 }

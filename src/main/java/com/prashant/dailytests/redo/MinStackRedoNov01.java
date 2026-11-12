@@ -1,5 +1,8 @@
 package com.prashant.dailytests.redo;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Cold redo of LeetCode 155, Min Stack (gap +1, first redo since 23 Oct).
  * Write it from memory, in 20-30 minutes, without opening dsa/stack/MinStack.
@@ -17,27 +20,42 @@ package com.prashant.dailytests.redo;
  */
 public class MinStackRedoNov01 {
 
-    // Pattern:
-    // Time:
-    // Space:
+// Pattern: Auxiliary (parallel) stack that stores the running minimum at each depth, so getMin never has to scan.
+// Time: O(1) per operation, because push, pop, top and getMin each do a constant number of deque calls (push/pop/peek) and one Math.min.
+// Space: O(n) total, because there are two stacks and each holds at most one entry per pushed element, so 2n entries, which is still O(n).
 
-    public MinStackRedoNov01() {
-        // TODO: write from memory
-    }
+    private final Deque<Integer> main = new ArrayDeque<>();
+    private final Deque<Integer> mins = new ArrayDeque<>();
 
     public void push(int x) {
-        throw new UnsupportedOperationException("TODO");
+        main.push(x);
+        if (mins.isEmpty()) {
+            mins.push(x);
+        } else {
+            mins.push(Math.min(x, mins.peek()));
+        }
     }
 
     public void pop() {
-        throw new UnsupportedOperationException("TODO");
+        if (main.isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+
+        main.pop();
+        mins.pop();
     }
 
     public int top() {
-        throw new UnsupportedOperationException("TODO");
+        if (main.isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return main.peek();
     }
 
     public int getMin() {
-        throw new UnsupportedOperationException("TODO");
+        if (mins.isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return mins.peek();
     }
 }

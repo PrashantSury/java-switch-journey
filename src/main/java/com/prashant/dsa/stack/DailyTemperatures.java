@@ -1,5 +1,8 @@
 package com.prashant.dsa.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Daily Temperatures (LeetCode 739, NeetCode 150, Stack / monotonic stack).
  * Full spec, hints and the knowledge check: tasks/day15.md, "Daily Temperatures".
@@ -40,15 +43,30 @@ package com.prashant.dsa.stack;
  */
 public class DailyTemperatures {
 
-    // Pattern:
-    // Time:
-    // Space:
+// Pattern: Monotonic (decreasing) stack of indices, the "next greater element" pattern.
+// Time: O(n), because each index is pushed once and popped at most once, so the inner while loop does O(n) total work across the whole pass.
+// Space: O(n), because the stack can hold up to n indices (strictly decreasing input) plus the O(n) answer array.
 
     /**
      * For each day, how many days until a strictly warmer temperature (0 if none).
      */
     public int[] dailyTemperatures(int[] temperatures) {
-        // TODO: implement
-        throw new UnsupportedOperationException("TODO");
+
+        if (temperatures == null) {
+            throw new IllegalArgumentException("temperatures must not be null");
+        }
+
+        int n = temperatures.length;
+        int[] answer = new int[n];
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int j = stack.pop();
+                answer[j] = i - j;
+            }
+            stack.push(i);
+        }
+        return answer;
     }
 }
