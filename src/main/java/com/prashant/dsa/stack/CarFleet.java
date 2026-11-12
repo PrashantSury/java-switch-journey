@@ -82,9 +82,9 @@ import java.util.Deque;
  */
 public class CarFleet {
 
-    // pattern - stack
-    // time - O(nlogn)
-    // space - O(n)
+    // pattern - stack: sort cars by position desc; stack holds fleets still leading (rear merges if it cannot arrive earlier)
+    // time - O(n log n): Arrays.sort dominates; then one O(n) pass (each car considered once; push at most once)
+    // space - O(n): cars[n][2] position-speed pairs (2n) + stack of ≤ n fleet entries → O(n)
 
     public int carFleet(int target, int[] position, int[] speed) {
         if (position == null || speed == null) {
