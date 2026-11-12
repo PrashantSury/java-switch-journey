@@ -58,3 +58,55 @@ git add -A && git commit -m "Ch1 task 1" && git push -u origin my-solutions
 
 > [!NOTE]
 > 🧭 Pace: one 45-minute block, one item, until two days with a push; then the lighter plan returns. Reply in chat with a different shape (other time, shorter block, a pause for a few days) and the plan follows that instead.
+
+## 🌙 Evening (12 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-15%20min%20max-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Evening review at ~8:00 PM IST on tip `3df22ff` (JDK 21.0.13, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test` re-run: **514 run, 46 red**, exactly the three untouched stubs (`DailyTemperaturesTest` 0/18, `ValidParenthesesRedoNov08Test` 0/18, `MinStackRedoNov01Test` 0/10); everything else green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3` (no commit since 6 Nov), no `my-solutions` branch, so today's single item (Task 1, the coordinates) did not land. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) rows are unchanged (queue still on hold).
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | No labs push, no Chapter 1 answer. Seventh assigned morning (6–12 Nov) with Chapter 1 at 1/19. Last scored Spring night: 5 Nov (7/10). No number without work |
+| 🧩 DSA | **unscored** (⬜ resting) | Track rested by plan; `DailyTemperatures` still the 0/18 stub. Last scored DSA night: 7 Nov (6/10) |
+| 🐞 Buggy | **unscored** (⬜ resting) | Track rested by plan; empty-stack width sentence still open. Last scored buggy night: 7 Nov (7/10) |
+
+> [!WARNING]
+> Fifth day in a row with no student work (8–12 Nov), including the first one-slot day. This isn't a knowledge problem: the last graded work (5–7 Nov) scored 6–7/10. It's a start-up problem, so tomorrow's block gets smaller again (15 minutes, three lines). If a pause of a few days, a different time, or an evening-only slot fits better right now, say so in chat and the plan follows that.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 `spring-boot-labs` Chapter 1 (Maven / pom) | ⬜ Pending | seventh morning, no push, no graded Q |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | Day 02–03 scores; packs stay parked until labs Ch 1 lands |
+| 🧩 `DailyTemperatures` | ⬜ Pending | stub 0/18; resting |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | written merge pending |
+| 🔁 `ValidParenthesesRedoNov08` / `MinStackRedoNov01` | ⬜ Pending (on hold) | 0/18 and 0/10; resume on first normal-plan day |
+| 🐞 `Day04LargestRectangle` empty-stack width | 🟡 Moderate / ⬜ Pending sentence | geometric why still open |
+| 🐞 `Day00BuggyExample` write-up | 🟡 Pending | code 10/10; no symptom groups |
+| 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
+| ⛔ Blocked | none | nothing outside his control is stopping the work |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
+
+### ⏳ Tonight's evening-slot work (finishable; push after it)
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 15 | `spring-boot-labs` Chapter 1 **Task 1**: in `chapters/01-maven-and-the-pom/lab/pom.xml`, the three lines under `<project>` → `com.ledgerly` · `ledgerly-core` · `0.1.0-SNAPSHOT`, on a new `my-solutions` branch | 🌱 | branch pushed (even if red), `task1a-c` green |
+
+Nothing else tonight. If it's already late, skip it and do it tomorrow morning.
+
+### 🎯 Tomorrow's focus (Fri 13 Nov): one-slot day, smaller block
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | **15 minutes**: labs Ch 1 **Task 1** only (the three coordinate lines), pushed on `my-solutions` even if red. Task 2 (parent) only if he wants to keep going | 45 minutes didn't start today; the goal is one push, not a chapter |
+| 🧩 DSA | resting · `DailyTemperatures` returns after pushes restart, starting with 3–5 lines of plain-English pseudocode | one item per day until two days with a push |
+| 🐞 Buggy | resting · LargestRect empty-stack width sentence returns with DSA | same |
+| 🔁 Redos | on hold · resume with `ValidParenthesesRedoNov08` then `MinStackRedoNov01` on the first normal-plan day (two push days first, so **Sun 15 Nov at the earliest**) | no redo on one-slot days |
