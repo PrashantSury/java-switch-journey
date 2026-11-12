@@ -230,3 +230,23 @@ Today, 12 Nov, is the **first push day**, with two pushes (labs and this). The n
 | 2 | optional | The Chapter 1 interview question or the LargestRect empty-stack width sentence, in chat | graded in chat |
 
 Optional, no push needed: add the 3-5 pseudocode lines to `DailyTemperatures` as comments. If Fri 13 has a push, the normal plan and the redo queue return **Sat 14 Nov**.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-2-brightgreen)
+
+> [!NOTE]
+> 10 PM check on tip `09ee49e` (the 9:01 PM late push review). Both student pushes after the 8 PM review (labs `5c366dc`, 8:04 PM IST; this repo `d6ca103`, 9:01 PM IST) were already tested and graded in the two late push reviews above. No further student commits and no new answers in chat after that, so the suites stand: `mvn test` **514 run, 0 red**; labs `Chapter01CheckTest` **18/19**. No new conceptual mistake and no cosmetic fix needed.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| `spring-boot-labs` Chapter 1 (Tasks 1-6) | 🌱 | 18/19 on `main` `5c366dc`; only `task1c` (version `0.1.0-SNAPSHOT`) red; Spring 7/10 | 🟡 IN_PROGRESS |
+| Chapter 1 interview question | 🌱 | not answered | ⬜ NOT_STARTED |
+| `DailyTemperatures` | 🧩 | 18/18, DSA 8/10; brute-force + pseudocode comments not written | ✅ COMPLETED |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | not answered | 🟡 IN_PROGRESS |
+| `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | not answered; PR still open | 🟡 IN_PROGRESS |
+| 🔁 `ValidParenthesesRedoNov08` | 🔁 | 18/18 clean cold → +3, queued Thu 19 Nov | ✅ COMPLETED (this rung) |
+| 🔁 `MinStackRedoNov01` | 🔁 | 10/10 clean cold → +3, queued Thu 19 Nov | ✅ COMPLETED (this rung) |
+
+> [!IMPORTANT]
+> **First task tomorrow (Fri 13 Nov, one slot, 15-30 min):** `git pull` both repos, then in `spring-boot-labs` (ideally `git switch -c my-solutions` first) change the project version in `chapters/01-maven-and-the-pom/lab/pom.xml` to `0.1.0-SNAPSHOT`, run `mvn -pl chapters/01-maven-and-the-pom test` and push. ✅ Done when `Chapter01CheckTest` is **19/19**. Then, optional: the Chapter 1 interview question in chat. A push on Fri 13 makes two push days, and the normal plan and redo queue return Sat 14 Nov ([redo-schedule.md](../revision/redo-schedule.md)).
