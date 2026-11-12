@@ -110,3 +110,60 @@ Nothing else tonight. If it's already late, skip it and do it tomorrow morning.
 | 🧩 DSA | resting · `DailyTemperatures` returns after pushes restart, starting with 3–5 lines of plain-English pseudocode | one item per day until two days with a push |
 | 🐞 Buggy | resting · LargestRect empty-stack width sentence returns with DSA | same |
 | 🔁 Redos | on hold · resume with `ValidParenthesesRedoNov08` then `MinStackRedoNov01` on the first normal-plan day (two push days first, so **Sun 15 Nov at the earliest**) | no redo on one-slot days |
+
+## 🌌 Late push review (12 Nov, 8:04 PM IST): first `spring-boot-labs` push
+
+![Slot](https://img.shields.io/badge/slot-late%20push-yellow) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-not%20scored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey) ![Labs](https://img.shields.io/badge/Ch%201-18%2F19-yellowgreen)
+
+> [!NOTE]
+> Reviewed [`5c366dc`](https://github.com/PrashantSury/spring-boot-labs/commit/5c366dcec685e1be1dd869579033ee1bedf390b6) ("completed chapter1", Prashant Suryawanshi, **8:04 PM IST**), pushed to `main` just after the 8 PM review above (`7d3265c`, 7:55 PM IST). Previous labs tip `507aaa3`. Fresh clone, JDK 21.0.13, Maven 3.9.6. **One file changed:** `chapters/01-maven-and-the-pom/lab/pom.xml` (+32 / −3). No checks, harness or README touched. Nothing changed in this repo, so `mvn test` here stands at 514 run / 46 red (the three resting stubs).
+
+### 🧪 Test results (`mvn -pl chapters/01-maven-and-the-pom test`)
+
+**19 run, 1 failure, 0 errors, 0 skipped → 18/19** (was 1/19 on `507aaa3`).
+
+| Task | Checks | Result | What the pom has now |
+|---|---|---|---|
+| 1 Coordinates | `task1a_groupId`, `task1b_artifactId`, `task1c_version` | 🟡 **2/3** | `com.ledgerly` ✅ · `ledgerly-core` ✅ · version still the scaffold's `0.0.1-SNAPSHOT` ❌ (check: *expected 0.1.0-SNAPSHOT*) |
+| 2 Parent | `task2a`-`task2e` | ✅ 5/5 | `spring-boot-starter-parent` `4.1.2` (matches the root pom), empty `<relativePath/>`, placed before the project's own `groupId` |
+| 3 Java 21 | `task3_javaVersion` | ✅ 1/1 | the existing `java.version` edited to `21`, no second `<properties>` |
+| 4 Web starter | `task4a`-`task4d` | ✅ 4/4 | `spring-boot-starter-webmvc`, no version, no scope |
+| 5 Scopes | `task5a`, `task5b` | ✅ 2/2 | `spring-boot-starter-webmvc-test` `test`; `h2` `runtime`; no versions |
+| 6 Profile | `task6a`-`task6d` | ✅ 4/4 | `<profiles>` last in `<project>`, `uat` sets `spring-boot.run.profiles` inside the profile |
+
+Real Maven agrees: `help:evaluate maven.compiler.release` prints **21** (inherited from the parent), and `dependency:tree` is `BUILD SUCCESS` with webmvc `4.1.2:compile`, webmvc-test `4.1.2:test`, h2 `2.4.240:runtime`. The root line reads `com.ledgerly:ledgerly-core:jar:0.0.1-SNAPSHOT`, the one difference from the README's finished tree.
+
+### 🔍 What's right and what's left
+
+✅ **Right, and these are the ideas the chapter is about:** parent first, three-number version taken from the root pom, empty `relativePath`, **no versions on any dependency** (the parent picks them), the right scope on each jar, and the profile in the right place. Those are the conceptual parts of Chapter 1, and every one is green.
+
+🟡 **Left (cosmetic, not conceptual):**
+1. **`task1c`**: the third coordinate line still has the scaffold's version. You changed two of the three lines and the third one got missed. The red message names the expected value.
+2. `<groupId> com.h2database</groupId>` has a leading space. Maven trims it, so it resolves and the check passes, but tidy it while you're in there. The new blocks also use 4-space indents while the file uses 2. That's cosmetic.
+
+Guiding question (for `task1c`): *a teammate depends on `ledgerly-core` at `0.1.0-SNAPSHOT`; which of your three lines decides whether Maven can find this build?*
+
+🎤 **Interview item (task 4): not answered yet.** No written or chat answer. The question is in the README: who picks the starter's version when you don't write one, what happens to all your starters when Spring Boot is upgraded, and the difference between `runtime` and `provided`.
+
+🧭 Process note: the plan said a `my-solutions` branch, and this went to `main`. It isn't scored, and the work counts the same. From the next push on, `git switch -c my-solutions` keeps `main` as the clean stub, so the chapters can be reset or diffed later.
+
+### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **7/10** (concept 8 · implementation 8 · debugging 6) | 18/19 on his own push, and every conceptual task (parent, no versions, scopes, profile) is green. The one red check is a leftover default whose failure message names the fix, so it was pushed without a final check run. Interview not attempted, so that dimension is skipped (not zero). Last scored Spring night: 5 Nov (7/10) |
+| 🧩 DSA | **unscored** (⬜ resting) | No work; `DailyTemperatures` still the 0/18 stub |
+| 🐞 Buggy | **unscored** (⬜ resting) | LargestRect empty-stack width sentence still unanswered |
+
+🧪 **Classification:** labs Chapter 1 → 🟡 **Moderate** (weakest: debugging, i.e. reading the red check before pushing). **No new weak topic**, because the miss isn't conceptual. The HTTP semantics / `ResponseEntity` / `@PathVariable` pack (🔴, carried) **stays parked**. Chapter 1 has effectively landed, but packs return with the normal plan, not on one-slot days.
+
+### 🎯 Tomorrow (Fri 13 Nov): still one slot, 15-30 minutes
+
+Today is the **first day with a push**. The rule is two push days before the normal plan returns, so tomorrow is still one slot:
+
+| # | Minutes | Item | Done when |
+|---|---|---|---|
+| 1 | 5 | Fix `task1c` (and the h2 space), run the chapter checks, push. Ideally on a new `my-solutions` branch | `Chapter01CheckTest` **19/19** pushed |
+| 2 | 10-20 | Chapter 1 interview question in chat: 2-3 sentences on who picks the version and what an upgrade changes, plus `runtime` vs `provided` | answer graded in chat |
+
+If Fri 13 also has a push, that's two push days (12 and 13 Nov). The lighter plan and the redo queue (`ValidParenthesesRedoNov08`, then `MinStackRedoNov01`) can then return **Sat 14 Nov**, earlier than the "Sun 15 Nov at the earliest" noted above, which assumed no push today. [redo-schedule.md](../revision/redo-schedule.md) is unchanged, because no redo was graded.
