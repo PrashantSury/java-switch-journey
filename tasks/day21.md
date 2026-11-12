@@ -250,3 +250,51 @@ Optional, no push needed: add the 3-5 pseudocode lines to `DailyTemperatures` as
 
 > [!IMPORTANT]
 > **First task tomorrow (Fri 13 Nov, one slot, 15-30 min):** `git pull` both repos, then in `spring-boot-labs` (ideally `git switch -c my-solutions` first) change the project version in `chapters/01-maven-and-the-pom/lab/pom.xml` to `0.1.0-SNAPSHOT`, run `mvn -pl chapters/01-maven-and-the-pom test` and push. ✅ Done when `Chapter01CheckTest` is **19/19**. Then, optional: the Chapter 1 interview question in chat. A push on Fri 13 makes two push days, and the normal plan and redo queue return Sat 14 Nov ([redo-schedule.md](../revision/redo-schedule.md)).
+
+## 🌠 Late labs re-check (12 Nov, 10:26 PM IST): Chapter 1 fix
+
+![Slot](https://img.shields.io/badge/slot-late%20push-yellow) ![Spring](https://img.shields.io/badge/Spring-8%2F10-brightgreen) ![Labs](https://img.shields.io/badge/Ch%201-19%2F19-brightgreen)
+
+> [!NOTE]
+> Reviewed [`4384b9c`](https://github.com/PrashantSury/spring-boot-labs/commit/4384b9c2b53020ea4e507d481eef61d85f3b7677) ("completed chapter1- small changes", Prashant Suryawanshi, **10:26 PM IST**, on `main`, parent `5c366dc`), pushed after the 10 PM check above. Fresh clone, JDK 21.0.13, Maven 3.9.6. **One file changed:** `chapters/01-maven-and-the-pom/lab/pom.xml` (+2 / −2). The project's own version went from `0.0.1-SNAPSHOT` to `0.1.0-SNAPSHOT` (the `task1c` miss), and the leading space came out of h2's `groupId`. Nothing else changed. This repo has no new student code after `d6ca103`, so `mvn test` stands at 514 run / 0 red.
+
+### 🧪 Test results (`mvn -pl chapters/01-maven-and-the-pom test`)
+
+**19 run, 0 failures, 0 errors, 0 skipped → 19/19** (was 18/19 on `5c366dc`, 1/19 on `507aaa3`).
+
+| Task | Checks | `5c366dc` | `4384b9c` |
+|---|---|---|---|
+| 1 Coordinates | `task1a`-`task1c` | 2/3 (`task1c` ❌) | ✅ **3/3** |
+| 2 Parent | `task2a`-`task2e` | 5/5 | ✅ 5/5 |
+| 3 Java 21 | `task3_javaVersion` | 1/1 | ✅ 1/1 |
+| 4 Web starter | `task4a`-`task4d` | 4/4 | ✅ 4/4 |
+| 5 Scopes | `task5a`, `task5b` | 2/2 | ✅ 2/2 |
+| 6 Profile | `task6a`-`task6d` | 4/4 | ✅ 4/4 |
+
+`dependency:tree` on the lab pom: root `com.ledgerly:ledgerly-core:jar:0.1.0-SNAPSHOT`, `BUILD SUCCESS`, the same as the README's finished tree.
+
+### 🔍 What changed in the grade
+
+The fix is exactly the smallest change: one version line plus the h2 tidy-up, and nothing else touched. It came from the 8:04 PM feedback, not from his own final test run, so it counts as a clean correction rather than a first-try 19/19. The 4-space vs 2-space indent in the new blocks is still there. That's cosmetic and not checked.
+
+### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **8/10** (concept 8 · implementation 9 · debugging 7), up from 7 | 19/19 on his own code; the red check was read and fixed with a two-line change the same evening. Debugging stays below implementation because the fix followed feedback. Interview still not attempted, so that dimension is skipped |
+| 🧩 DSA · 🐞 Buggy · 🔁 Redos | unchanged | As graded in the [9:01 PM review](#-late-push-review-12-nov-901-pm-ist-dailytemperatures--both-redos): DSA 8/10, both redos clean cold → +3 |
+
+🧪 **Classification:** labs Chapter 1 tasks → 🟢 **Strong** (8, nothing marked revision-required). The chapter stays 🟡 open only for the **interview question (task 4), still unanswered**. No new weak topic. The HTTP / `ResponseEntity` / `@PathVariable` pack stays parked, since that material is Chapter 2 onward and comes back with the normal plan.
+
+🧭 Still on `main` with no `my-solutions` branch. That's fine and not scored. When Chapter 2 starts, `git switch -c my-solutions` first keeps `main` as the clean stub.
+
+### 🎯 Tomorrow (Fri 13 Nov): still one slot, 15-30 minutes (replaces the `task1c` item above)
+
+`task1c` is done, so Friday's item moves on. 12 Nov is still **one** push day, however many pushes it had, so Friday stays one slot:
+
+| # | Minutes | Item | Done when |
+|---|---|---|---|
+| 1 | 10-15 | 🎤 **Chapter 1 interview question, in chat:** in your own words, 2-3 sentences on who picks the version of `spring-boot-starter-webmvc` when you don't write one and what happens to all your starters when Spring Boot is upgraded, plus the difference between `runtime` and `provided` | answered and graded in chat; Chapter 1 ✅ |
+| — | optional, 15 | Only if you want to keep going: `git switch -c my-solutions`, then [Chapter 2](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/02-first-spring-boot-app) **Task 1** (`GET /status` → `200`, `Ledgerly is open`), run its checks, push | Chapter 2 `task1` green |
+
+A push on Fri 13 makes two push days, so the normal plan and the redo queue (`ScoreOfParentheses` + `RemoveKAdjacentDuplicates`) return **Sat 14 Nov**. A chat answer alone isn't a push. [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
