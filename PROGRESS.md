@@ -12,9 +12,9 @@
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started; Spring slot in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 **parked**; **labs Chapter 1 🟡 18/19** (`5c366dc` on `main`, 12 Nov 8:04 PM IST; only `task1c` version red; interview Q not answered) | [day21.md late push](tasks/day21.md#-late-push-review-12-nov-804-pm-ist-first-spring-boot-labs-push) · Fri 13 Nov: one slot, fix `task1c` → 19/19, then the Ch 1 interview Q in chat |
-| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅; `CarFleet` ✅ 37/37; count-stack re-ask ✅; RPN redo ✅ 44/44; CarFleet time/space reasons ✅ in chat (5–6 Nov); Lumi CarFleet comment PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open | single-pair CarFleet follow-up; **Daily Temperatures** still stub 0/18; ValidParen redo **18/18** 🔶 (post-feedback, same +1) | [day20.md](tasks/day20.md) (optional today: pseudocode comments only) |
+| 🧩 **DSA, Stack pattern** | 🟡 IN_PROGRESS | 6 problems ✅; `CarFleet` ✅ 37/37; count-stack re-ask ✅; RPN redo ✅ 44/44; CarFleet time/space reasons ✅ in chat (5–6 Nov); Lumi CarFleet comment PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open | single-pair CarFleet follow-up; **Daily Temperatures ✅ 18/18** (`d6ca103`, 12 Nov 9:01 PM IST, DSA 8/10; pseudocode/brute-force comments still not written) | [day21.md late push 2](tasks/day21.md#-late-push-review-12-nov-901-pm-ist-dailytemperatures--both-redos) · next Stack problem waits for the normal plan |
 | 🐞 **Buggy rounds** | 🟡 IN_PROGRESS | 5 rounds with code ✅ (`Day00BuggyExample` **10/10**, `c0f5d64`, 6 Nov; `Day04LargestRectangle` 36/36); LargestRect write-up **graded in chat 7 Nov (supported)** | empty-stack width geometric why still soft; Day00 symptom groups absent; no new buggy until those settle | [day20.md](tasks/day20.md) (optional) |
-| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 4 cold redos ✅; `Day00BuggyExample` joins at +1 | 10 Nov 10 PM check: `ValidParenthesesRedoNov08` 0/18 and `MinStackRedoNov01` 0/10 not attempted again → both move to **Wed 11 Nov**; queue moved one day (last graduation Thu 7 Jan); 11 Nov: still 0/18 and 0/10, not attempted → **queue on hold** during one-slot days, resumes Sat 14 Nov at the earliest (last graduation Sun 10 Jan at the earliest) | [redo-schedule.md](revision/redo-schedule.md) · [day20.md](tasks/day20.md) |
+| 🔁 **Spaced repetition** | 🟡 IN_PROGRESS | 6 cold redos ✅ (12 Nov: `ValidParenthesesRedoNov08` **18/18** and `MinStackRedoNov01` **10/10**, both clean → +3); `Day00BuggyExample` joins at +1 | queue on hold on one-slot days; resumes Sat 14 Nov at the earliest with `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`; ValidParen + MinStack queued Thu 19 Nov; `DailyTemperatures` joins at +1, queued Wed 18 Nov (last graduation Wed 13 Jan at the earliest) | [redo-schedule.md](revision/redo-schedule.md) · [day21.md](tasks/day21.md) |
 | 🎤 **Interview Q&A** | 🟡 IN_PROGRESS | Day 02-04 graded (5/7/5, 5/5/7, 5/4/6); Day 04 re-answers 8/9/9 (26/30) ✅ | `ScoreOfParentheses` follow-ups; labs Ch 1 Qs; B2 Q3/Q6; Day 02 and Day 03 re-answers | [interview-answers.md](interview-answers.md) |
 
 > [!TIP]
@@ -79,7 +79,7 @@ mvn test          # root project: DSA and buggy rounds
 | Pattern | Status | Detail |
 |---|---|---|
 | Arrays & Hashing · Two Pointers · Sliding Window | ⬜ NOT_STARTED | skipped for now; the program started at Stack |
-| 🔥 **Stack** (current) | 🟡 IN_PROGRESS | Valid Parentheses ✅ · Min Stack ✅ · Car Fleet ✅ (3 Nov, with hints) · **Daily Temperatures** 🟡 stub assigned (Day 15, 0/18) · Evaluate RPN, Generate Parentheses, Largest Rectangle ⬜ not yet assigned as DSA problems |
+| 🔥 **Stack** (current) | 🟡 IN_PROGRESS | Valid Parentheses ✅ · Min Stack ✅ · Car Fleet ✅ (3 Nov, with hints) · **Daily Temperatures** ✅ (12 Nov, 18/18) · Evaluate RPN, Generate Parentheses, Largest Rectangle ⬜ not yet assigned as DSA problems |
 
 | Problem | Tests | My commit | Status | Notes |
 |---|---|---|---|---|
@@ -89,7 +89,7 @@ mvn test          # root project: DSA and buggy rounds
 | RemoveKAdjacentDuplicates (Day 01) | 26/26 | 2d36911 | ✅ COMPLETED (29 Oct) | O(n) quiz 3/5 (missed the push/pop-once reasoning) → re-ask ✅ answered 5 Nov (each character pushed at most once, popped at most once, so at most 2n steps); problem itself still due its +1 redo on 7 Nov |
 | AsteroidCollision (Day 02) | 28/28 | 6ddde32 + Lumi's cosmetic clean-up | ✅ COMPLETED (31 Oct) | O(n) stack, `long` for `Integer.MIN_VALUE`, input not modified |
 | CarFleet (Day 04) | 37/37 | 91cb817 + Lumi's minor fixes; comment lines in `1c9c6aa` | ✅ COMPLETED (3 Nov, with hints) | sort by position descending, cross-multiplied `long` comparison, `Deque<long[]>`; hint-assisted (pairing, exact comparison). The 3 comment lines are in; **time and space reasons accepted in chat** (5–6 Nov); Lumi refined comments on PR #1 (open, not on `main`); single-pair follow-up still owed · [review](tasks/day12.md#-midday-push-review-3-nov-1737-ist) |
-| DailyTemperatures (Day 15) | 0/18 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov; **still not started** as of 11 Nov morning) | monotonic stack of indices; stub untouched on tip `9e7058c`; 3-5 lines of plain-English pseudocode first · [day20.md](tasks/day20.md) |
+| DailyTemperatures (Day 15) | **18/18** | d6ca103 | ✅ COMPLETED (12 Nov, 9:01 PM IST) | decreasing stack of indices, `answer[j] = i - j`, null → IAE; time line gives the amortised reason (each index pushed once, popped at most once); brute force / re-scan question / 3-5 pseudocode lines **not written** (optional comment-only follow-up); joins the redo ladder at +1 (due 13 Nov, queued Wed 18 Nov) · [review](tasks/day21.md#-late-push-review-12-nov-901-pm-ist-dailytemperatures--both-redos) |
 
 ## 🐞 Buggy problems (on the current pattern: Stack)
 | Round or redo | Type | Tests | My commit | Status | Notes |
@@ -105,8 +105,8 @@ mvn test          # root project: DSA and buggy rounds
 | Day02RpnEvaluatorRedo7 | 🔁 redo (day 7) | 44/44 | 37f6c11 | ✅ COMPLETED (31 Oct) | fixed after 3 review rounds (fall-through, end check, null guard); logged in `revision/mistakes/dsa.md`; reset to +1 |
 | Day02RpnEvaluatorRedoNov01 | 🔁 redo (+1) | 44/44 | 800ad4f | ✅ COMPLETED (cold, 5 Nov) | clean cold pass, no hint: 3 comment lines, exact-match operators, `size() < 2` guard before the pops, `a` below `b`, `size() != 1` end check, null guards, `Math.*Exact`; none of the 31 Oct slips came back; moves +1 → +3 (due Sun 8 Nov) |
 | ValidParenthesesRedoNov01 | 🔁 redo (+1) | **18/18** | c0f5d64 (body) · **3019054** null→IAE **in the redo** (tip `f61c7d3`) | 🟡 IN_PROGRESS 🔶 | 7 Nov post-feedback **18/18**; **not** cold-clean — same +1 gap; the cold retry is `ValidParenthesesRedoNov08` |
-| MinStackRedoNov01 | 🔁 redo (+1) | 0/10 | stub only | 🟡 IN_PROGRESS (assigned 6 Nov) | not attempted 6–10 Nov; due **Wed 11 Nov** evening (same file) · [day20.md](tasks/day20.md) |
-| ValidParenthesesRedoNov08 | 🔁 redo (+1, repeated) | 0/18 | blank stub (8 Nov morning session) | ⬜ NOT_STARTED | cold redo on a blank file, because `ValidParenthesesRedoNov01` already holds the 7 Nov answer; not attempted 8–10 Nov; due **Wed 11 Nov** evening · [day20.md](tasks/day20.md) |
+| MinStackRedoNov01 | 🔁 redo (+1) | **10/10** | d6ca103 | ✅ COMPLETED (cold, 12 Nov) | clean cold pass: parallel min stack, duplicates and `MIN_VALUE` safe, `IllegalStateException` on empty, O(1) with reasons; moves +1 → +3 (due Sun 15 Nov, queued Thu 19 Nov) |
+| ValidParenthesesRedoNov08 | 🔁 redo (+1, repeated) | **18/18** | d6ca103 | ✅ COMPLETED (cold, 12 Nov) | clean cold pass on the blank file: null → IAE first try (7 Nov miss not repeated); complexity lines lack the one-sentence reasons (cosmetic); moves +1 → +3 (due Sun 15 Nov, queued Thu 19 Nov) |
 
 > [!IMPORTANT]
 > 🔁 Every DSA problem and buggy round is redone cold, and each result sets the next gap (clean pass 1 → 3 → 7 → 14 → 30; hint or fix repeats the gap; conceptual miss resets to day 1), at most 2 a day. A problem keeps ✅ COMPLETED for its first verified solve; the calendar and next due dates are in [redo-schedule.md](revision/redo-schedule.md).
@@ -127,15 +127,15 @@ mvn test          # root project: DSA and buggy rounds
 | # | Item | Track | Status |
 |---|---|---|---|
 | 1 | `spring-boot-labs` Chapter 1 (Maven / pom, 6 tasks + interview Q) | 🌱 | 🟡 IN_PROGRESS (**18/19** on `main` `5c366dc`, 12 Nov 8:04 PM IST; Tasks 2-6 ✅, Task 1 2/3: `task1c` version still `0.0.1-SNAPSHOT`; interview Q not answered; no `my-solutions` branch) |
-| 2 | `DailyTemperatures` (0/18 stub) | 🧩 | 🟡 IN_PROGRESS (not started; finish before any new Stack problem) |
+| 2 | `DailyTemperatures` pseudocode comments (brute force, re-scan question, 3-5 lines) | 🧩 | 🟡 IN_PROGRESS (code ✅ 18/18 `d6ca103`; comment-only follow-up, optional) |
 | 3 | Empty-stack width geometric sentence + ASCII for LargestRect `[2,1,2]` | 🐞 | 🟡 IN_PROGRESS (table/trace graded supported 7 Nov; width-why soft) |
-| 4 | Evening: cold `ValidParenthesesRedoNov08` (blank, 0/18) then cold `MinStackRedoNov01` (0/10) | 🔁 | 🟡 IN_PROGRESS (missed 8-11 Nov; on hold during one-slot days, earliest **Sat 14 Nov**) |
+| 4 | ~~Cold `ValidParenthesesRedoNov08` then `MinStackRedoNov01`~~ | 🔁 | ✅ COMPLETED (12 Nov `d6ca103`: 18/18 and 10/10, both clean → +3) |
 | 5 | `CarFleet` single-pair follow-up in chat; written reasons await PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) merge | 🧩 | 🟡 IN_PROGRESS |
 | 6 | Q3 and Q6 of the B2 interview questions, and the one-sentence "why the catch-all hid Spring's own answers" | 🌱 | ⬜ NOT_STARTED |
 | 7 | Banking module 1 step 1, Drills 2 and 3: **parked** (Spring slot is `spring-boot-labs`); nothing is deleted | 🏦🌱 | ⬜ NOT_STARTED (parked) |
 | 8 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED |
 | 9 | Day 02 and Day 03 re-answers (Q1, Q3 / Q1, Q2) | 🌱 | 🟡 IN_PROGRESS |
-| 10 | Redos queued after 11 Nov: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**15 Nov** earliest); `Day03NextGreaterIndex`, `AsteroidCollision` (**16 Nov** earliest) | 🔁 | 🟡 IN_PROGRESS |
+| 10 | Redos queued: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**Sat 14 Nov** earliest); `Day03NextGreaterIndex`, `AsteroidCollision` (**Sun 15 Nov**) | 🔁 | 🟡 IN_PROGRESS |
 
 ## 🎯 Weak topics
 > [!NOTE]
@@ -175,6 +175,7 @@ mvn test          # root project: DSA and buggy rounds
 | Wed 11 Nov, evening review (~8:00 PM) | **unscored** (⬜ no labs push) | **unscored** (⬜ no work today) | **unscored** (⬜ no work today) | Tip `fae7a26`: no student commits or chat answers after the 6 AM session; last student code `3019054`. Full `mvn test` 514 run, 46 red = exactly the three stubs; all else green. Labs still `507aaa3`, no `my-solutions`. Fourth straight day with no work, including the lighter day; one-slot days start 12 Nov · [day20.md evening](tasks/day20.md#-evening-11-nov-review-scores-tonight-and-tomorrow) |
 | Thu 12 Nov, evening review (~8:00 PM) | **unscored** (⬜ no labs push) | **unscored** (⬜ resting) | **unscored** (⬜ resting) | Tip `3df22ff`: no student commits or chat answers after the 6 AM session; last student code `3019054`. Full `mvn test` 514 run, 46 red = exactly the three stubs. Labs still `507aaa3`, no `my-solutions`. Fifth straight day with no work; Fri 13 Nov block shrinks to 15 min · [day21.md evening](tasks/day21.md#-evening-12-nov-review-scores-tonight-and-tomorrow) |
 | Thu 12 Nov, late push (8:04 PM IST) | **7** (concept 8 · implementation 8 · debugging 6) | **unscored** (⬜ resting) | **unscored** (⬜ resting) | labs `5c366dc` on `main` (one file, `lab/pom.xml`): `Chapter01CheckTest` **18/19** (was 1/19); Tasks 2-6 all green; only `task1c` red (version left at `0.0.1-SNAPSHOT`); h2 `groupId` has a leading space (Maven trims it); `dependency:tree` BUILD SUCCESS, `maven.compiler.release` 21; interview Q not answered · [day21.md late push](tasks/day21.md#-late-push-review-12-nov-804-pm-ist-first-spring-boot-labs-push) |
+| Thu 12 Nov, late push 2 (9:01 PM IST) | unchanged (7, labs not touched) | **8** (concept 8 · implementation 10 · problem solving 6 · complexity 9) | **unscored** (⬜ width sentence still open) | `d6ca103` on `main`: `DailyTemperaturesTest` **18/18**, `ValidParenthesesRedoNov08Test` **18/18**, `MinStackRedoNov01Test` **10/10**; full `mvn test` **514 run, 0 red**; both redos clean cold → +3; pseudocode/brute-force comments not written · [day21.md late push 2](tasks/day21.md#-late-push-review-12-nov-901-pm-ist-dailytemperatures--both-redos) |
 
 ## 📅 Weekly reviews
 
@@ -254,15 +255,17 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 | Mon 9 Nov | `ValidParentheses` (+1, blank `ValidParenthesesRedoNov08`) ❌ not attempted | `MinStack` (+1, late) ❌ not attempted → both **10 Nov** |
 | Tue 10 Nov | `ValidParentheses` (+1, blank `ValidParenthesesRedoNov08`) ❌ not attempted | `MinStack` (+1, late) ❌ not attempted → both **11 Nov** |
 | Wed 11 Nov | `ValidParentheses` (+1, blank `ValidParenthesesRedoNov08`) ❌ not attempted | `MinStack` (+1, late) ❌ not attempted → on hold |
-| Thu 12 Nov | on hold (one-slot day) | on hold |
+| Thu 12 Nov | `ValidParentheses` (+1) ✅ **clean cold 18/18** (`ValidParenthesesRedoNov08`, `d6ca103`) → +3 | `MinStack` (+1, late) ✅ **clean cold 10/10** (`d6ca103`) → +3 |
 | Fri 13 Nov | on hold (one-slot day) | on hold |
-| Sat 14 Nov | `ValidParentheses` (+1, earliest resume) | `MinStack` (+1, late) |
-| Sun 15 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) |
-| Mon 16 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) |
-| Tue 17 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) |
+| Sat 14 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) |
+| Sun 15 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) |
+| Mon 16 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) |
+| Tue 17 Nov | `Day00BuggyExample` (+1, late) | `Day01ArrayStack` (+7, late) |
+| Wed 18 Nov | `Day02RpnEvaluator` (+3, late) | `DailyTemperatures` (+1, new 12 Nov) |
+| Thu 19 Nov | `ValidParentheses` (+3, late) | `MinStack` (+3, late) |
 
 > [!WARNING]
-> Redos run in the 🌙 evening, after the review and after pending morning work. The 8-11 Nov pairs were not attempted, and one-slot days (from Thu 12 Nov) carry no redo, so the queue is on hold and resumes on the first normal-plan day, Sat 14 Nov at the earliest (last graduation Sun 10 Jan at the earliest, `CarFleet` queued to Tue 17 Nov). The cap of 2 a day and the "most overdue first" rule still decide what waits.
+> Redos run in the 🌙 evening, after the review and after pending morning work. The 8-11 Nov pairs were not attempted; on 12 Nov (a one-slot day) Prashant did both on his own, clean (`d6ca103`). One-slot days don't schedule redos, so the queue resumes on the first normal-plan day, Sat 14 Nov at the earliest (last graduation Wed 13 Jan at the earliest, full ladder simulated in [redo-schedule.md](revision/redo-schedule.md)). `DailyTemperatures` joins at +1 (rule 9), queued Wed 18 Nov. The cap of 2 a day and the "most overdue first" rule still decide what waits.
 
 ## ⛔ Blockers
 | Blocker | Since | Needs |
@@ -274,11 +277,11 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Fri 13 Nov, still one slot, 15-30 minutes ([day21.md late push](tasks/day21.md#-late-push-review-12-nov-804-pm-ist-first-spring-boot-labs-push)).** 12 Nov is the first day with a push (labs `5c366dc`, 18/19, Spring 7/10):
+> **Fri 13 Nov, still one slot, 15-30 minutes ([day21.md late push](tasks/day21.md#-late-push-review-12-nov-804-pm-ist-first-spring-boot-labs-push), [late push 2](tasks/day21.md#-late-push-review-12-nov-901-pm-ist-dailytemperatures--both-redos)).** 12 Nov is the first day with a push (labs `5c366dc`, 18/19, Spring 7/10; then `d6ca103`: `DailyTemperatures` 18/18, DSA 8/10, both redos clean):
 > 1. 🌱 Fix the one red check in `spring-boot-labs` Chapter 1 (`task1c`, the project's own version line; also drop the leading space in h2's `groupId`), re-run `mvn -pl chapters/01-maven-and-the-pom test` → **19/19**, push (on a new `my-solutions` branch if possible).
-> 2. 🎤 Chapter 1 interview question in chat: who picks the starter's version and what an upgrade changes; `runtime` vs `provided`.
+> 2. Optional, in chat: the 🎤 Chapter 1 interview question (who picks the starter's version and what an upgrade changes; `runtime` vs `provided`) **or** the 🐞 LargestRect empty-stack width sentence.
 >
-> DSA, buggy and redos still rest. If 13 Nov also has a push (the second push day), the lighter plan and the redo queue (`ValidParenthesesRedoNov08`, then `MinStackRedoNov01`) return **Sat 14 Nov**. The HTTP-semantics weak pack stays parked until the normal plan is back. Ask for a hint after 15 minutes on any step.
+> DSA, buggy and redos still rest. If 13 Nov also has a push (the second push day), the normal plan and the redo queue (`ScoreOfParentheses` + `RemoveKAdjacentDuplicates`) return **Sat 14 Nov**. The HTTP-semantics weak pack stays parked until the normal plan is back. Ask for a hint after 15 minutes on any step.
 
 ## 📊 Status counts
 ```mermaid
@@ -426,3 +429,4 @@ pie title Tracked items (1 Nov 2026)
 | 11 Nov 2026 | W3 D20 | 10 PM check: no pushes after the 8 PM evening review; redo queue on hold during one-slot days | No commits from Prashant after `757732e` / `18c09e3` (the review itself; last student code `3019054`, 7 Nov) and no answers in chat, so nothing new to test: suites stand from the evening (`DailyTemperatures` 0/18, `ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10, all else green). Labs still `main` `507aaa3`, no `my-solutions`. No ladder step changed; [redo-schedule.md](revision/redo-schedule.md) puts the queue on hold during one-slot days (resumes Sat 14 Nov at the earliest with ValidParen + MinStack; last graduation Sun 10 Jan at the earliest). No new mistakes, no cosmetic fixes. End of day added to [day20.md](tasks/day20.md#-end-of-day). Next: labs Ch 1 Task 1 on Thu 12 Nov (one-slot day) |
 | 12 Nov 2026 | W3 D21 | 🌅 Morning session assigned in [day21.md](tasks/day21.md): first one-slot day, one item (labs Ch 1 Task 1 = coordinates; Task 2 only if time); no new material on any track | No commits from Prashant after `0979813` (11 Nov 10 PM check; last student code `3019054`, 7 Nov) on either repo; labs still only `main` `507aaa3`. Only docs changed since the 11 Nov re-run, so suites stand (514 run / 46 red = the three untouched stubs; `Chapter01CheckTest` 1/19). DSA, buggy and redos resting; redo queue on hold until Sat 14 Nov at the earliest |
 | 12 Nov 2026 | W3 D21 | 🌌 Late push review: first `spring-boot-labs` push `5c366dc` (8:04 PM IST, on `main`); 🌱 Spring **7/10**; DSA and buggy unscored (resting) | `Chapter01CheckTest` **18/19** (was 1/19) on JDK 21: Tasks 2-6 green, `task1c` red (version still `0.0.1-SNAPSHOT`); interview Q not answered; no new weak topic (miss is cosmetic); no redo graded, redo-schedule unchanged. First push day of two; Fri 13 Nov: fix `task1c` → 19/19 + interview Q in chat |
+| 12 Nov 2026 | W3 D21 | 🌃 Late push review 2: `d6ca103` (9:01 PM IST, `main`): 🧩 DSA **8/10**; both redos ✅ clean cold → +3; buggy unscored | `DailyTemperaturesTest` **18/18**, `ValidParenthesesRedoNov08Test` **18/18**, `MinStackRedoNov01Test` **10/10** on JDK 21; full `mvn test` **514 run, 0 red** (was 46 red, the three stubs). Pseudocode/brute-force comments not written (process, not conceptual); ValidParen complexity lines lack reasons (cosmetic). No new weak topic, no student file edited. Redo queue rebuilt (resumes Sat 14 Nov with ScoreOf + RemoveK; DailyTemperatures joins at +1 → 18 Nov; ValidParen + MinStack 19 Nov; last graduation Wed 13 Jan at the earliest). Fri 13 Nov still one slot: labs `task1c` → 19/19 |

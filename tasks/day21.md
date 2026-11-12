@@ -167,3 +167,66 @@ Today is the **first day with a push**. The rule is two push days before the nor
 | 2 | 10-20 | Chapter 1 interview question in chat: 2-3 sentences on who picks the version and what an upgrade changes, plus `runtime` vs `provided` | answer graded in chat |
 
 If Fri 13 also has a push, that's two push days (12 and 13 Nov). The lighter plan and the redo queue (`ValidParenthesesRedoNov08`, then `MinStackRedoNov01`) can then return **Sat 14 Nov**, earlier than the "Sun 15 Nov at the earliest" noted above, which assumed no push today. [redo-schedule.md](../revision/redo-schedule.md) is unchanged, because no redo was graded.
+
+## 🌃 Late push review (12 Nov, 9:01 PM IST): DailyTemperatures + both redos
+
+![Slot](https://img.shields.io/badge/slot-late%20push-yellow) ![DSA](https://img.shields.io/badge/DSA-8%2F10-brightgreen) ![Buggy](https://img.shields.io/badge/Buggy-not%20scored-lightgrey) ![Redos](https://img.shields.io/badge/redos-2%20clean%20%E2%9C%85-brightgreen) ![Suite](https://img.shields.io/badge/mvn%20test-514%2F514-brightgreen)
+
+> [!NOTE]
+> Reviewed [`d6ca103`](https://github.com/PrashantSury/java-switch-journey/commit/d6ca1035bc388807de2787b4c5018897b986536f) ("DailyTemperatures, MinStackRedoNov01, ValidParenthesesRedoNov08 completed", Prashant Suryawanshi, **9:01 PM IST**), pushed to `main` of **this repo** (not labs) after the labs review `1fa4e69`. Fresh clone, JDK 21.0.13, Maven 3.9.6. **Three files changed** (+69 / −20), all student solution files: `dsa/stack/DailyTemperatures.java`, `dailytests/redo/MinStackRedoNov01.java`, `dailytests/redo/ValidParenthesesRedoNov08.java`. No tests, specs or records touched. Labs not touched, so labs stays at 18/19 (`5c366dc`). Student files were read and tested only, not edited.
+
+### 🧪 Test results
+
+| Test class | Before (`1fa4e69`) | Now (`d6ca103`) |
+|---|---|---|
+| `DailyTemperaturesTest` | 0/18 | ✅ **18/18** |
+| `ValidParenthesesRedoNov08Test` | 0/18 | ✅ **18/18** |
+| `MinStackRedoNov01Test` | 0/10 | ✅ **10/10** |
+| Full `mvn test` | 514 run, 46 red | **514 run, 0 failures, 0 errors, 0 skipped**, BUILD SUCCESS |
+
+The 46 red tests were exactly these three stubs, and all of them are green now. Everything else stays green (for example `MinStackTest` 10/10, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37).
+
+### 🔍 What's right and what's left
+
+**🧩 `DailyTemperatures` (18/18).**
+✅ Decreasing stack of **indices**. Each new day pops every colder day still waiting and writes `i - j` as the answer. Days that stay on the stack keep the default 0. There's a null → `IllegalArgumentException` guard, a new array is returned and the input isn't changed. The 100 000-element O(n) test passes.
+✅ The pattern line names "next greater element". The **time line gives the amortised reason** ("each index is pushed once and popped at most once, so the inner while loop does O(n) total work"), and the space line names the worst case (strictly decreasing input). That's exactly the "why" that was missing before (count-stack quiz, 29 Oct).
+🟡 **Missing process step (not conceptual):** the plan asked for the brute force, the re-scan question and **3-5 lines of plain-English pseudocode** as comments before the Java. None of these is in the file. The code went straight in.
+Guiding question: *in the brute force, day `i` scans forward for a warmer day. What does the stack remember, so that no day is ever scanned twice?*
+
+**🔁 `ValidParenthesesRedoNov08` (18/18, cold).** ✅ Blank file, closer-push design (push the expected closer, pop and compare), early `false` on a stray closer or an empty stack, `stack.isEmpty()` at the end, and **the null → `IllegalArgumentException` guard is there on the first try**: the 7 Nov miss didn't come back. Non-bracket characters fall into the closer branch and return `false`, as the spec requires.
+🟡 Cosmetic: the three comment lines say `Stack / O(n) / O(n)` without the one-sentence "where the cost comes from" that the file header asks for.
+Guiding question: *which input makes the stack hold the most characters, and how many is that?*
+
+**🔁 `MinStackRedoNov01` (10/10, cold, first redo since 23 Oct).** ✅ Parallel min stack (each level stores `min(x, previous min)`), so duplicate minimums and `Integer.MIN_VALUE` survive pops. All four operations are O(1), and `pop`, `top` and `getMin` throw `IllegalStateException` on an empty stack. The pattern, time and space lines each have a clear reason (2n entries is still O(n)). Nothing to fix.
+
+### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🧩 DSA | **8/10** (concept 8 · implementation 10 · problem solving 6 · complexity 9) | `DailyTemperatures` 18/18 on his own first push: clean monotonic stack of indices, null guard, amortised time reason written down. Problem solving is 6 because the brute force, re-scan question and pseudocode were skipped. Interview not attempted, so that dimension is skipped. Last DSA score: 6/10 (7 Nov) |
+| 🐞 Buggy | **unscored** (⬜ resting) | LargestRect empty-stack width sentence + `[2,1,2]` sketch still unanswered |
+| 🌱 Spring | unchanged (7/10 from the 8:04 PM labs push above) | not re-graded; this commit didn't touch labs |
+
+🧪 **Classification:** Daily Temperatures → 🟢 **Strong** (8). **No new weak topic.** The pseudocode gap is a habit, not a concept. "Amortised O(n) reasoning" got fresh evidence for Strong-level work (written reason correct, unprompted), but stays 🟡 until a quiz confirms it. The HTTP / `ResponseEntity` / `@PathVariable` pack (🔴) **stays parked**.
+
+### 🔁 Redo outcomes (rules in [redo-schedule.md](../revision/redo-schedule.md#-rules))
+
+| Problem | Result | Ladder | Next due |
+|---|---|---|---|
+| `ValidParentheses` | ✅ **clean cold pass** (blank `Nov08` file, 18/18 on the first push, no hint and no post-push fix tonight) | **+1 → +3** (rule 2) | due **Sun 15 Nov**, queued **Thu 19 Nov** behind more overdue items (cap 2 a day) |
+| `MinStack` | ✅ **clean cold pass** (blank stub, 10/10 on the first push) | **+1 → +3** | due **Sun 15 Nov**, queued **Thu 19 Nov** |
+| `DailyTemperatures` (new) | first verified solve, 18/18 | joins at **+1** (rule 9) | due Fri 13 Nov, queued **Wed 18 Nov** |
+
+The redo queue stays on hold on one-slot days. It now starts with `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` on **Sat 14 Nov** (if Fri 13 also has a push). See the rebuilt calendar in [redo-schedule.md](../revision/redo-schedule.md).
+
+### 🎯 Still open, and tomorrow (Fri 13 Nov): still one slot
+
+Today, 12 Nov, is the **first push day**, with two pushes (labs and this). The normal plan returns after a second push day, so Fri 13 Nov stays **one slot, 15-30 minutes**:
+
+| # | Minutes | Item | Done when |
+|---|---|---|---|
+| 1 | 5-10 | Labs `task1c`: the version line (and the h2 space), re-run the chapter checks, push (ideally on `my-solutions`) | `Chapter01CheckTest` **19/19** |
+| 2 | optional | The Chapter 1 interview question or the LargestRect empty-stack width sentence, in chat | graded in chat |
+
+Optional, no push needed: add the 3-5 pseudocode lines to `DailyTemperatures` as comments. If Fri 13 has a push, the normal plan and the redo queue return **Sat 14 Nov**.
