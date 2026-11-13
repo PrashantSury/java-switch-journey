@@ -126,3 +126,22 @@ Either item counts as the second push day. If it's already late, item 1 alone is
 | 🔁 Redos | Normal plan only: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` (both +1, late). On a one-slot day they move to the first normal day | no redos on one-slot days |
 
 Saturday also has the 2 PM weekly review.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-0-lightgrey)
+
+> [!NOTE]
+> 10 PM check on tip `ae4a930` (the 8 PM evening review). No student commits after it: this repo's last student commit is still `d6ca103` (12 Nov, 9:01 PM IST) and `spring-boot-labs` `main` is still `4384b9c` (12 Nov, 10:26 PM IST), with no `my-solutions` branch. No Chapter 1 interview answer in chat. Nothing to re-test, so the suites stand: `mvn test` **514 run, 0 red**; labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub). No new conceptual mistake, no cosmetic fix needed, and [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| `spring-boot-labs` Chapter 1 (Tasks 1-6) | 🌱 | 19/19 on `main` `4384b9c` (verified 12 Nov) | 🟡 IN_PROGRESS (interview Q open) |
+| Chapter 1 interview question | 🌱 | not answered | ⬜ NOT_STARTED |
+| Chapter 2 Task 1 (optional) | 🌱 | not started; 0/19 | ⬜ NOT_STARTED |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | resting (one-slot day) | 🟡 IN_PROGRESS |
+| `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | resting (one-slot day); PR still open | 🟡 IN_PROGRESS |
+| 🔁 `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | not due on a one-slot day; wait for the first normal day | ⬜ NOT_STARTED |
+
+> [!IMPORTANT]
+> **First task tomorrow (Sat 14 Nov, one slot, 15 min):** answer the 🎤 **Chapter 1 interview question in chat** (the three parts in the Morning section above: where the starter's version comes from, what a `spring-boot-starter-parent` bump changes and the one risk to check, `runtime` vs `provided` with a Ledgerly example each). ✅ Done when it's graded in chat, which closes Chapter 1. Optional: Chapter 2 **Task 1** on `my-solutions`, pushed. Today had no push, so the second push day is still needed before the normal plan and redo queue return. Saturday also has the 2 PM weekly review.
