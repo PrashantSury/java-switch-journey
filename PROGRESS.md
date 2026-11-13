@@ -177,6 +177,7 @@ mvn test          # root project: DSA and buggy rounds
 | Thu 12 Nov, late push (8:04 PM IST) | **7** (concept 8 · implementation 8 · debugging 6) | **unscored** (⬜ resting) | **unscored** (⬜ resting) | labs `5c366dc` on `main` (one file, `lab/pom.xml`): `Chapter01CheckTest` **18/19** (was 1/19); Tasks 2-6 all green; only `task1c` red (version left at `0.0.1-SNAPSHOT`); h2 `groupId` has a leading space (Maven trims it); `dependency:tree` BUILD SUCCESS, `maven.compiler.release` 21; interview Q not answered · [day21.md late push](tasks/day21.md#-late-push-review-12-nov-804-pm-ist-first-spring-boot-labs-push) |
 | Thu 12 Nov, late push 2 (9:01 PM IST) | unchanged (7, labs not touched) | **8** (concept 8 · implementation 10 · problem solving 6 · complexity 9) | **unscored** (⬜ width sentence still open) | `d6ca103` on `main`: `DailyTemperaturesTest` **18/18**, `ValidParenthesesRedoNov08Test` **18/18**, `MinStackRedoNov01Test` **10/10**; full `mvn test` **514 run, 0 red**; both redos clean cold → +3; pseudocode/brute-force comments not written · [day21.md late push 2](tasks/day21.md#-late-push-review-12-nov-901-pm-ist-dailytemperatures--both-redos) |
 | Thu 12 Nov, labs re-check (10:26 PM IST) | **8** (concept 8 · implementation 9 · debugging 7), up from 7 | unchanged (8) | unchanged | labs `4384b9c` (`lab/pom.xml` +2/−2: version → `0.1.0-SNAPSHOT`, h2 `groupId` space removed): `Chapter01CheckTest` **19/19**, 0 errors, 0 skipped; `dependency:tree` root `ledgerly-core:0.1.0-SNAPSHOT`; fix followed feedback; interview Q still open · [day21.md late re-check](tasks/day21.md#-late-labs-re-check-12-nov-1026-pm-ist-chapter-1-fix) |
+| Fri 13 Nov, evening review (~8:00 PM) | **unscored** (⬜ no work today; last 8) | **unscored** (⬜ resting; last 8) | **unscored** (⬜ resting) | Tip `f46e9f5`: no student commits in either repo, no chat answers; labs Ch1 19/19, Ch2 0/19 re-run on JDK 21 · [day22.md evening](tasks/day22.md#-evening-13-nov-review-scores-tonight-and-tomorrow) |
 
 ## 📅 Weekly reviews
 
@@ -258,7 +259,7 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 | Wed 11 Nov | `ValidParentheses` (+1, blank `ValidParenthesesRedoNov08`) ❌ not attempted | `MinStack` (+1, late) ❌ not attempted → on hold |
 | Thu 12 Nov | `ValidParentheses` (+1) ✅ **clean cold 18/18** (`ValidParenthesesRedoNov08`, `d6ca103`) → +3 | `MinStack` (+1, late) ✅ **clean cold 10/10** (`d6ca103`) → +3 |
 | Fri 13 Nov | on hold (one-slot day) | on hold |
-| Sat 14 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) |
+| Sat 14 Nov | `ScoreOfParentheses` (+1, late) — only if 13 Nov gets a push, else first normal day | `RemoveKAdjacentDuplicates` (+1, late) — same |
 | Sun 15 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) |
 | Mon 16 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) |
 | Tue 17 Nov | `Day00BuggyExample` (+1, late) | `Day01ArrayStack` (+7, late) |
@@ -278,11 +279,9 @@ Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md).
 
 ## ▶️ Next recommended tasks
 > [!IMPORTANT]
-> **Fri 13 Nov, still one slot, 15-30 minutes ([day22.md](tasks/day22.md)).** 12 Nov is the first day with a push (labs `5c366dc` + fix `4384b9c` → Chapter 1 tasks **19/19**, Spring 8/10; `d6ca103` → `DailyTemperatures` 18/18, DSA 8/10, both redos clean):
-> 1. 🎤 The Chapter 1 interview question in chat: who picks the version of `spring-boot-starter-webmvc` when none is written, what an upgrade changes for all the starters, and `runtime` vs `provided`. Closes Chapter 1.
-> 2. Optional: `git switch -c my-solutions`, then Chapter 2 **Task 1** (`GET /status` → `200`, `Ledgerly is open`), checks, push. Other optional chat item: the 🐞 LargestRect empty-stack width sentence.
+> **Tonight, Fri 13 Nov (from the [evening review](tasks/day22.md#-evening-13-nov-review-scores-tonight-and-tomorrow)):** no work landed today. Pending: 🎤 Chapter 1 interview question in chat (closes Chapter 1); optional Chapter 2 **Task 1** on `my-solutions`, pushed.
 >
-> If 13 Nov has a push (the second push day), the normal plan and the redo queue (`ScoreOfParentheses` + `RemoveKAdjacentDuplicates`) return **Sat 14 Nov**. The HTTP-semantics weak pack stays parked until the normal plan is back (Chapter 2 onward). Ask for a hint after 15 minutes on any step.
+> **Sat 14 Nov:** if either lands tonight (the second push day), the normal plan returns: Spring Chapter 2 onward, next Stack problem (pseudocode first), LargestRect width sentence, redos `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`. If not, one slot again: the interview question only. 2 PM weekly review either way. Ask for a hint after 15 minutes on any step.
 
 ## 📊 Status counts
 ```mermaid
@@ -434,3 +433,4 @@ pie title Tracked items (1 Nov 2026)
 | 12 Nov 2026 | W3 D21 | 10 PM check: no pushes after the two late push reviews; both were already graded | No commits from Prashant after `d6ca103` (tip `09ee49e`, the 9:01 PM review) and no new answers in chat. Suites stand: `mvn test` 514 run / 0 red; labs `Chapter01CheckTest` 18/19. Redo ladder unchanged since the late review; no new mistakes, no cosmetic fixes. End of day added to [day21.md](tasks/day21.md#-end-of-day). Next: Fri 13 Nov one slot, labs `task1c` version → 19/19 |
 | 12 Nov 2026 | W3 D21 | 🌠 Late labs re-check: `4384b9c` (10:26 PM IST, `main`) fixes `task1c`; 🌱 Spring **8/10** (up from 7) | `Chapter01CheckTest` **19/19** on JDK 21 (0 failures, 0 errors, 0 skipped); diff `lab/pom.xml` +2/−2 (version `0.1.0-SNAPSHOT`, h2 `groupId` space); Ch 1 interview Q still open; no new weak topic; redo-schedule unchanged. Fri 13 Nov: Ch 1 interview Q in chat (optional Ch 2 Task 1) |
 | 13 Nov 2026 | W3 D22 | 🌅 Morning session assigned in [day22.md](tasks/day22.md): still one slot (second push day needed); must-do = Chapter 1 interview question in chat; optional Chapter 2 Task 1 on `my-solutions` | No student commits after `4384b9c` / `d6ca103`. Re-run on JDK 21: labs `Chapter01CheckTest` 19/19, `Chapter02CheckTest` 0/19 (stub). DSA, buggy and redos resting; normal plan + redo queue (`ScoreOfParentheses`, `RemoveKAdjacentDuplicates`) return Sat 14 Nov if today has a push. |
+| 13 Nov 2026 | W3 D22 | 🌙 Evening review: all three tracks unscored (no work today); second push day not reached yet | No student commits after `4384b9c` (labs) / `d6ca103` (this repo); Chapter 1 interview Q unanswered; re-run `Chapter01CheckTest` 19/19, `Chapter02CheckTest` 0/19. No new mistakes or weak topics; redo rows unchanged. Tonight: interview Q in chat (optional Ch 2 Task 1 push). Sat 14 Nov: normal plan if either lands tonight, otherwise one slot (interview Q only) · [day22.md evening](tasks/day22.md#-evening-13-nov-review-scores-tonight-and-tomorrow) |

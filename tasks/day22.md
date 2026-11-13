@@ -72,3 +72,57 @@ git add -A && git commit -m "Ch2 task 1" && git push -u origin my-solutions
 
 - [ ] Chapter 1 interview question answered in chat
 - [ ] (optional) Chapter 2 Task 1 pushed on `my-solutions`
+
+## 🌙 Evening (13 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-15--30%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Evening review at ~8:00 PM IST on tip `f46e9f5` (the 6 AM session; JDK 21, Maven). No student commits today in either repo: this repo's last student code is `d6ca103` (12 Nov, 9:01 PM IST); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) still has only `main` at `4384b9c` (12 Nov, 10:26 PM IST), no `my-solutions` branch. No Chapter 1 interview answer in chat yet. Re-run tonight: `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (untouched stub). Root suite unchanged since the 12 Nov run (**514 run, 0 red**). **No new conceptual mistake** logged; no redo graded, so redo rows only move by date.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | No new work today: interview Q unanswered, Ch 2 Task 1 not started. Last score stays **8/10** (12 Nov late re-check, Chapter 1 tasks 19/19) |
+| 🧩 DSA | **unscored** (⬜ resting) | Rested by plan. Last score **8/10** (12 Nov, `DailyTemperatures` 18/18) |
+| 🐞 Buggy | **unscored** (⬜ resting) | Rested by plan; LargestRect empty-stack width sentence still open. Last score 7/10 (7 Nov) |
+
+> [!TIP]
+> Yesterday was a real comeback: three pushes, 19/19 + 18/18 + both redos clean. One quiet day after that isn't a slide. The rule only needs a second push day; the smallest one is the interview answer typed into chat (about 10 minutes, no IDE).
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 labs Chapter 1 tasks (Maven / pom) | ✅ Strong (tasks) | 19/19 verified on `4384b9c` |
+| 🌱 labs Chapter 1 interview Q (BOM / parent versions, upgrade risk, `runtime` vs `provided`) | ⬜ Pending | not answered; Chapter 1 stays 🟡 until graded |
+| 🌱 labs Chapter 2 Task 1 (`GET /status`, 405 for free) | ⬜ Pending (optional) | not started; 0/19 |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | pack stays parked until Chapter 2 with the normal plan; no new pack tonight |
+| 🧩 `DailyTemperatures` | ✅ Strong (code) · 🟡 process | 18/18; pseudocode/brute-force comments still not written |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | written merge pending |
+| 🐞 `Day04LargestRectangle` empty-stack width | 🟡 Moderate / ⬜ Pending sentence | geometric why still open |
+| ⛔ Blocked | none | nothing outside his control is stopping the work |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
+
+### ⏳ Tonight's evening-slot work (pending from this morning)
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 10-15 | 🎤 **Chapter 1 interview question in chat** (the three parts in the Morning section above) | 🌱 | answered here and graded → Chapter 1 ✅ |
+| 2 | 15 (optional) | `git switch -c my-solutions` in `spring-boot-labs`, Chapter 2 **Task 1**, push. Remember: `task1c` (405) needs no code | 🌱 | `task1a-c` green on the pushed branch |
+
+Either item counts as the second push day. If it's already late, item 1 alone is plenty.
+
+### 🎯 Tomorrow's focus (Sat 14 Nov)
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | If item 1 or 2 lands tonight: normal plan, Chapter 2 onward (HTTP-semantics weak pack comes back with it). If not: one slot again, the **interview Q only** (closes Chapter 1) | Chapter 1 code is strong; only the explain-it part is open, and that's the interview-readiness gap |
+| 🧩 DSA | Normal plan only: next Stack problem, starting with 3–5 lines of plain-English pseudocode before any Java | 12 Nov skipped pseudocode and brute-force comments; that's the habit to fix, not the stack logic |
+| 🐞 Buggy | Normal plan only: LargestRect empty-stack width sentence + 3-line ASCII for `[2,1,2]` first, no new round until it lands | geometric why still soft since 7 Nov |
+| 🔁 Redos | Normal plan only: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` (both +1, late). On a one-slot day they move to the first normal day | no redos on one-slot days |
+
+Saturday also has the 2 PM weekly review.

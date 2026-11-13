@@ -52,7 +52,7 @@
 |---|---|---|---|
 | Thu 12 Nov | ✅ `ValidParentheses` (+1) clean cold 18/18 → +3 | ✅ `MinStack` (+1, late) clean cold 10/10 → +3 | Done by Prashant on a one-slot day (`d6ca103`, 9:01 PM IST) |
 | Fri 13 Nov | on hold (one-slot day) | on hold | One slot: labs `task1c` |
-| Sat 14 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) | Earliest resume (needs a push on 13 Nov too); due 26 Oct and 30 Oct |
+| Sat 14 Nov | `ScoreOfParentheses` (+1, late) | `RemoveKAdjacentDuplicates` (+1, late) | Earliest resume: only if 13 Nov gets a push (none by the 8 PM review); otherwise both move to the first normal-plan day; due 26 Oct and 30 Oct |
 | Sun 15 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) | Due 30 Oct and 1 Nov |
 | Mon 16 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) | Due 4 Nov and 6 Nov |
 | Tue 17 Nov | `Day00BuggyExample` (+1, late) | `Day01ArrayStack` (+7, late) | Both due 7 Nov |
