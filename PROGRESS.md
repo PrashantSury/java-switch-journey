@@ -245,6 +245,74 @@ mvn test          # root project: DSA and buggy rounds
 | 2 | **Evening redos: edit the redo file, cold, cap 2.** Finish ValidParen null→IAE **in `ValidParenthesesRedoNov01`**, then blank-file MinStack. Do not patch the original class to green a redo suite | `ec608e3` fixed `ValidParentheses.java` while redo stayed 17/18; MinStack 0/10 unused; queue already slipped 1–4 Nov | If morning leftovers eat the evening, still run **one** most-overdue redo (ValidParen) before stopping — better one clean ladder step than two misses |
 | 3 | **Keep the Drill 1 habit in writing:** before adding a Spring handler / pom tag, one sentence on what the framework or parent already gives; for every buggy ✅, a symptom table before the next round | Catch-all theme (2–5 Nov); two green buggy rounds with no localisation (5–6 Nov) | ~5 min at the start of Spring and buggy slots — cheaper than another day of catch-all / carried write-ups |
 
+### 📆 Weekly review · 8–14 Nov 2026
+
+![Week](https://img.shields.io/badge/window-8%E2%80%9314%20Nov%202026-blue) ![As of](https://img.shields.io/badge/as%20of-14%20Nov%202026%2014%3A10%20IST-yellow) ![Tracks](https://img.shields.io/badge/tracks-Spring%20%C2%B7%20DSA%20%C2%B7%20Buggy-blue) ![SQL](https://img.shields.io/badge/SQL-retired-lightgrey)
+
+> [!IMPORTANT]
+> Second dated weekly performance review under [docs/PROGRAM.md](docs/PROGRAM.md). Window **Sun 8 Nov 00:00 IST → Sat 14 Nov ~14:10 IST**. Sources only: commits in this repo and in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs), this file, [redo-schedule.md](revision/redo-schedule.md), [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md), and the Morning, Evening and End of day sections of `tasks/day17.md`–`day23.md`. Graded chat already recorded in those files is used; nothing is invented. SQL stays retired and out of scope. **Data is thin this week:** all student work landed on one evening (Thu 12 Nov), so trends rest on one or two scored nights per track.
+
+> [!NOTE]
+> **Legend:** ✅ verified this week · 🔶 redo needed hint/fix · ❌ missed / not attempted · ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` · tip = mentor/session commit · student = Prashant's code. **Last week** = the [1–7 Nov review](#-weekly-review--17-nov-2026). Commits in the window: this repo **25** (1 student: `d6ca103`; 24 session records: 6 AM sessions, 8 PM evening reviews, 10 PM checks and the 12 Nov grading notes), `spring-boot-labs` **2** (both student: `5c366dc`, `4384b9c`, on `main`; no `my-solutions` branch). Between the two windows: `3019054` (7 Nov 2:11 PM IST, after last week's 2:07 PM cut-off) took the ValidParen redo to 18/18 🔶 post-feedback; it was graded in the 7 Nov evening and is counted in neither week.
+
+#### 📊 Verified items this week vs last week
+
+| Track | Last week (1–7 Nov) | This week (8–14 Nov, through ~14:10 IST) | Evening-score trend (scored nights only) |
+|---|---|---|---|
+| 🌱 Spring Boot | **2** verified: Day 04 re-answers 26/30; Part B2 ✅ via Drill 1 (`course-practice` 23/23) | **1** verified: labs **Chapter 1 tasks ✅ 19/19** (`5c366dc` 12 Nov 8:04 PM IST 18/19 → `4384b9c` 10:26 PM IST 19/19). Chapter 1 stays 🟡 only for the **interview question (task 4), unanswered** since 12 Nov. Chapter 2 0/19 (stub, not started) | last week 7 → 6 → 6 → 7 → unscored · this week **unscored** 8–12 Nov evenings (no labs push) → **7** (12 Nov 8:04 PM, debugging 6) → **8** (12 Nov 10:26 PM, debugging 7) → unscored 13 Nov. Best Spring score so far, from one evening |
+| 🧩 DSA (Stack) | **1** verified: `CarFleet` 37/37 (hint-assisted) | **1** verified: **`DailyTemperatures` ✅ 18/18** (`d6ca103`, 12 Nov 9:01 PM IST, first push, amortised O(n) reason written unprompted). Brute force, re-scan question and 3–5 lines of pseudocode **skipped** | last week 7 → 8 → 6 → 6 · this week unscored 8–11 Nov (no work), 12 Nov evening (resting) → **8** (12 Nov late, problem solving 6) → unscored 13 Nov (resting) |
+| 🐞 Buggy | **2** verified: `Day04LargestRectangle` 36/36; `Day00BuggyExample` 10/10 | **0**. No buggy commit or chat answer. Open item: LargestRect empty-stack width sentence + `[2,1,2]` ASCII (carried since 7 Nov); `Day00` symptom groups still absent | last week 7 → 7 · this week **unscored every night** (8–13 Nov); last score 7 (7 Nov). Data thin |
+| 🔁 Cold redos (separate) | 1 clean (RPN 44/44), 1 🔶 (ValidParen 17/18), 1 ❌ (MinStack) | **2 clean**: `ValidParenthesesRedoNov08` **18/18** (null→IAE first try) and `MinStackRedoNov01` **10/10**, both cold on a one-slot day (`d6ca103`) → +1 → +3 | Ladder: 2 clean step-ups, 0 🔶, but **4 evenings missed** first (8–11 Nov) |
+| **Total** | **5** verified + 1 clean redo | **2** verified + 2 clean redos | full `mvn test` **514 run, 0 red** after `d6ca103` (was 46 red = three stubs, 9–12 Nov) |
+
+> [!NOTE]
+> Re-checked at this review: no student commit in either repo after `4384b9c` (labs, 12 Nov 10:26 PM IST) and `d6ca103` (this repo, 12 Nov 9:01 PM IST); tip `364396b` (14 Nov 6:17 AM IST session record). Suites stand as recorded on 13–14 Nov: `mvn test` 514/0 red, labs `Chapter01CheckTest` 19/19, `Chapter02CheckTest` 0/19. No Chapter 1 interview answer is recorded in the repo.
+
+#### 🔁 Redo results
+
+| Result | Problems | Evidence |
+|---|---|---|
+| ✅ Clean cold | `ValidParentheses` (+1 → +3), `MinStack` (+1 → +3; first redo since 23 Oct) | 12 Nov `d6ca103`: 18/18 and 10/10 on blank files, no hint, no post-push fix; the 7 Nov null-guard miss did not come back. Both queued Thu 19 Nov |
+| 🔶 Needed fix | none this week | (7 Nov `3019054` 🔶 sits between the windows, see note above) |
+| ❌ Missed / not attempted | the same pair, **4 evenings in a row** (8, 9, 10, 11 Nov) = 8 missed redo slots | queue moved one day at each 10 PM check (day17–day20 end of day); on hold on one-slot days from 12 Nov |
+| Keep slipping (overdue, never redone) | `ScoreOfParentheses` (due 26 Oct), `RemoveKAdjacentDuplicates` (30 Oct), `Day03NextGreaterIndex` (30 Oct), `AsteroidCollision` (1 Nov), `CarFleet` (4 Nov), `Day04LargestRectangle` (6 Nov), `Day00BuggyExample` (7 Nov), `Day01ArrayStack` (+7, 7 Nov), `Day02RpnEvaluator` (+3, 8 Nov) | **9 of 12** ladder items are overdue. `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` were first in line on 14 Nov but wait for the normal plan. No problem reset to day 1 this week (no ❌ conceptual slip) |
+
+#### 🧠 Recurring themes (showed up more than once)
+
+> [!NOTE]
+> No new row in [mistakes/dsa.md](revision/mistakes/dsa.md) (last 3 Nov) or [mistakes/spring.md](revision/mistakes/spring.md) (last 2 Nov) this week, and every miss graded this week was called a process gap, not a conceptual one. So there is **no new conceptual theme**; the two below are process habits that repeat across weeks.
+
+| Theme | Where it showed (≥2 times) | Status now |
+|---|---|---|
+| Pushing before a final self-check; the fix comes after feedback | 12 Nov `5c366dc` 18/19 with the red `task1c` message naming the fix → `4384b9c` after feedback (debugging 6 → 7); 7 Nov `3019054` ValidParen 🔶 post-feedback; 6 Nov null guard put on the wrong file (`ec608e3`); 2 Nov B2 contract changed without its tests | 🟡 active; the two cold redos on 12 Nov were green on the first push, so it is not every time |
+| Skipping the written thinking step (pseudocode, brute force, complexity reasons, write-ups) | 12 Nov `DailyTemperatures`: brute force + pseudocode skipped (problem solving 6); 12 Nov ValidParen redo: complexity lines without reasons (cosmetic); 3 Nov `CarFleet` complexity skipped; 5–6 Nov buggy symptom table / `Day00` groups skipped | 🟡 active; LargestRect width sentence and `Day00` groups still carried |
+| Complexity "why" (improving, not a slip this week) | 29 Oct count-stack quiz 3/5 → 5 Nov re-ask ✅ → 12 Nov `DailyTemperatures` and `MinStack` reasons written unprompted | 🟢 trending to Strong; stays 🟡 in Weak topics until a quiz confirms |
+
+#### 🐢 Where he's lagging
+
+| Item | Status | Evidence |
+|---|---|---|
+| Days with no student activity | — | **5 of 6 full days** (Sun 8, Mon 9, Tue 10, Wed 11, Fri 13 Nov) had no student commit in either repo and no graded chat answer; Sat 14 Nov also none through ~14:10 IST. Thu 12 Nov had all of the week's work (3 commits between 8:04 and 10:26 PM IST). Last week: 1 full day (Wed 4 Nov) + Sat 7 Nov morning |
+| 🔴 `REVISION_REQUIRED` / ⛔ `BLOCKED` | none new | No track-table item is 🔴; Blockers table empty. The three 🔴 Weak Spring topics (HTTP semantics, `ResponseEntity`, `@PathVariable`) are still un-packed, parked until Chapter 2 |
+| labs Chapter 1 interview question | 🟡 carried 3 days | asked 12 Nov; must-do on 13 and 14 Nov; unanswered |
+| labs Chapter 2 | ⬜ `NOT_STARTED` | `Chapter02CheckTest` 0/19; optional on 13–14 Nov; `my-solutions` branch never created |
+| `Day04LargestRectangle` width sentence + `[2,1,2]` ASCII | 🟡 carried since 7 Nov | buggy track has no other open work, so the whole track is idle behind it |
+| `DailyTemperatures` pseudocode / brute-force comments | 🟡 carried | asked 9–12 Nov; code went in without them |
+| Older carried backlog | 🟡 / ⬜ | `CarFleet` single-pair follow-up + PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) open; B2 Q3/Q6; `ScoreOfParentheses` follow-ups; Day 02/03 re-answers; banking module 1 + Drills 2–3 parked |
+| Plan mode | one-slot days since Thu 12 Nov | the normal plan needs a second push day; none on 13 Nov or 14 Nov so far |
+| vs Plan projection (8 Nov refresh) | 🔻 behind on Spring and buggy, slow end on Stack | **labs** (sets the overall W8–W15): projection assumes 1–2 Spring slots a chapter, about 3.5–8.75 chapters a week; actual **1 chapter's tasks in 7 days**, 40 left → at this pace the W15 end is not reachable. **Stack** (4 left on 8 Nov, W4–W6 at 1.25–3.1 a week): 1 done, 3 left, on the slow end. **Buggy** (W5–W7 at 1.05–2.6 a week): 0 this week, behind |
+
+#### 🛠️ Two or three concrete improvements for next week
+
+| # | Improvement | Tied evidence | Suggested time-split |
+|---|---|---|---|
+| 1 | **One small push every day, even red.** The one active evening produced 3 commits and 4 green suites (19/19, 18/18, 18/18, 10/10); the gap is how many days start, not ability. Smallest unit: the next labs task on `my-solutions`, pushed | 5 of 6 full days with no student commit; 8 redo slots missed 8–11 Nov; one-slot mode since 12 Nov | On a busy day, the 15-min one-slot block is the floor, not zero |
+| 2 | **Run the check and read the red line before pushing.** `mvn -pl chapters/NN-… test` (or `-Dtest=…`) until green; aim for the first push green, like both cold redos were | `5c366dc` 18/19 whose failure named the fix; 7 Nov ValidParen 🔶 post-feedback; debugging is the lowest Spring dimension (6 → 7) | ~2 min at the end of each slot |
+| 3 | **Write first, then code; close the one-sentence items.** 3–5 lines of pseudocode + the brute force before Java on the next Stack problem; answer the Chapter 1 interview question and the LargestRect width sentence in chat before new material | `DailyTemperatures` problem solving 6 (steps skipped); interview Q open 3 days; width sentence open 7 days; buggy track idle all week | First 5 min of the DSA slot; chat answers fit the evening |
+
+> [!TIP]
+> **Time-split suggestion (not a schedule change):** `spring-boot-labs` is the bottleneck: it sets the overall finish and moved 1 chapter this week against a 3.5+ chapter-a-week assumption, while buggy has only a write-up open. For next week, about **Spring 60 / DSA 30 / buggy 10** minutes of the morning, with buggy's 10 minutes spent on the width sentence until a new round is assigned, and the evening hour kept for review + the two most overdue redos. Revisit at the next weekly review.
+
 ## 🔁 Revision schedule
 Full calendar and rules: [revision/redo-schedule.md](revision/redo-schedule.md). Conceptual mistakes: [mistakes/dsa.md](revision/mistakes/dsa.md), [mistakes/spring.md](revision/mistakes/spring.md) (no single mistakes file).
 
@@ -436,3 +504,4 @@ pie title Tracked items (1 Nov 2026)
 | 13 Nov 2026 | W3 D22 | 🌙 Evening review: all three tracks unscored (no work today); second push day not reached yet | No student commits after `4384b9c` (labs) / `d6ca103` (this repo); Chapter 1 interview Q unanswered; re-run `Chapter01CheckTest` 19/19, `Chapter02CheckTest` 0/19. No new mistakes or weak topics; redo rows unchanged. Tonight: interview Q in chat (optional Ch 2 Task 1 push). Sat 14 Nov: normal plan if either lands tonight, otherwise one slot (interview Q only) · [day22.md evening](tasks/day22.md#-evening-13-nov-review-scores-tonight-and-tomorrow) |
 | 13 Nov 2026 | W3 D22 | 🌒 10 PM check: no student activity after the evening review (`ae4a930`); second push day still not reached | No commits after `d6ca103` (this repo) / `4384b9c` (labs, `main`, no `my-solutions`); no interview answer in chat. Suites stand: `mvn test` 514/0 red, `Chapter01CheckTest` 19/19, `Chapter02CheckTest` 0/19. No new mistakes; redo-schedule unchanged. First task Sat 14 Nov: Chapter 1 interview Q in chat (one slot) · [day22.md end of day](tasks/day22.md#-end-of-day) |
 | 14 Nov 2026 | W3 D23 | 🌅 Morning session assigned in [day23.md](tasks/day23.md): still one slot (second push day not reached on 13 Nov); must-do = Chapter 1 interview question in chat; optional Chapter 2 Task 1 on `my-solutions` | No student commits after `d6ca103` / `4384b9c` (tip `001655c`); no code change, so `mvn test` 514/0 red, `Chapter01CheckTest` 19/19, `Chapter02CheckTest` 0/19 stand. DSA, buggy and redos resting; redo-schedule unchanged. |
+| 14 Nov 2026 | W3 D23 | 📅 Weekly review 8–14 Nov 2026 added ([Weekly reviews](#-weekly-review--814-nov-2026)) | Window through ~14:10 IST. Verified this week: Spring 1 (labs Ch 1 tasks 19/19; interview Q open), DSA 1 (`DailyTemperatures` 18/18), buggy 0; redos: ValidParen ✅ and MinStack ✅ clean (+3) after 4 missed evenings; 5 of 6 full days with no student commit; labs behind the plan projection. No schedule or task changes. |
