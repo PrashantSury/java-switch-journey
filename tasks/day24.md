@@ -104,3 +104,76 @@ runtime        ❌        ✅        ✅   (needed only when the app runs)
 
 > [!IMPORTANT]
 > This is the **second push day** (the first was 12 Nov). The normal 2-hour plan returns **Mon 16 Nov**, and the evening starts with redos `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`. Next labs item: Chapter 2 **Task 2** (`GET /accounts`).
+
+## 🌙 Evening (15 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-8%2F10-blue) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Evening review at ~8:00 PM IST on tip `fd7b9eb`. No student commits after the morning: this repo's last student code is still `d6ca103` (12 Nov); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) `my-solutions` is `1ded3b3` (8:35 AM IST), `main` `4384b9c`. **Re-verified tonight** on `1ded3b3` (JDK 21, Maven): `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19** (task1a/b/c green, 16 red = Tasks 2-6 not started). No new chat answers after the 8:15 AM interview. **No new conceptual mistake** (the scopes mix-up is already in the weak-topic table as 🟡 Moderate). No redo graded today (one-slot day), so [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot (whole day) | **8/10** (concept 7 · implementation 10 · problem solving 8 · debugging n/a · interview readiness 7) | Code side was a 9: Task 1 exact on the first push, and the 405 left to Spring without being told. Explain-it side was a 7: BOM and upgrade risk only with hints, and the `runtime`/`provided` classpaths reversed before the corrected grid. A lead has to *say* where versions and jars come from, not just get the build green, so the day lands at 8 |
+| 🧩 DSA | **unscored** (⬜ resting by plan) | No DSA work today. Last score **8/10** (12 Nov, `DailyTemperatures` 18/18) |
+| 🐞 Buggy | **unscored** (⬜ resting by plan) | No buggy work today; LargestRect empty-stack width sentence still open. Last score 7/10 (7 Nov) |
+
+> [!TIP]
+> Good Sunday: both must-dos landed before 9 AM and the second push day is done. The 405 move is the habit we've been after since Drill 1. Now do the same thing in words: one line on where something comes from before you explain it.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 labs Chapter 1 (Maven / pom) | ✅ Strong (tasks) · closed | 19/19 re-verified; interview 7/10 |
+| 🌱 Maven dependency scopes (`runtime` vs `provided` grid) | 🟡 Moderate | reversed first, right after the grid; one-line recall at the start of tomorrow's Spring slot |
+| 🌱 labs Chapter 2 Task 1 (`GET /status`, 405 from Spring) | ✅ Strong | 3/3 green, no extra handler |
+| 🌱 labs Chapter 2 Tasks 2-6 | ⬜ Pending | not started (next: Task 2 `GET /accounts`) |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | pack returns with Chapter 2 Tasks 2-3 on the normal plan; no new pack tonight |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🧩 `DailyTemperatures` | ✅ Strong (code) · 🟡 process | pseudocode/brute-force comments still not written |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | written merge pending |
+| 🐞 `Day04LargestRectangle` empty-stack width | 🟡 Moderate / ⬜ Pending sentence | geometric why still open |
+| ⛔ Blocked | none | nothing outside his control is stopping the work |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
+
+### ⏳ Tonight's evening-slot work
+
+Both morning items are ✅ done, so nothing from this morning is pending. No new material tonight. Optional, if you have 10-15 minutes:
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 5 | Say the scopes grid back in chat from memory: `compile` / `provided` / `runtime` / `test` × compile classpath / test classpath / packaged jar | 🌱 | grid right first try → scopes move to ✅ Strong |
+| 2 | 10 (optional) | 🐞 LargestRect: one sentence on why the width is `i` when the stack is empty, plus a 3-line ASCII for `[2,1,2]` | 🐞 | sentence names the "everything to the left is taller" reason |
+
+### 🎯 Tomorrow's focus (Mon 16 Nov, normal 2-hour plan returns)
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | Chapter 2 **Task 2** (`GET /accounts`). Before coding, write one line: *what does Spring already give a `List` return (status, JSON)?* Start with a 1-minute scopes-grid recall if item 1 wasn't done tonight | code habit is now good; the gap is explaining defaults and sources out loud. Task 2-3 also bring back the HTTP-semantics weak pack |
+| 🧩 DSA | Next Stack problem, with 3–5 lines of plain-English pseudocode and a brute-force comment **before** any Java | 12 Nov skipped both; that's the habit to fix, not the stack logic |
+| 🐞 Buggy | LargestRect empty-stack width sentence + ASCII first (if not done tonight); no new round until it lands | geometric why soft since 7 Nov |
+| 🔁 Redos (evening) | `ScoreOfParentheses` (+1, late) + `RemoveKAdjacentDuplicates` (+1, late), cold | most overdue in the queue (ScoreOfParentheses since 26 Oct) |
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-1-brightgreen)
+
+> [!NOTE]
+> 10 PM check on tip `fd7b9eb`. No student commits after the 8 PM evening review: this repo's last student code is still `d6ca103` (12 Nov) and `spring-boot-labs` `my-solutions` is still `1ded3b3` (8:35 AM IST). No new answers in chat after the 8:15 AM interview. Nothing new to re-test, so the suites stand: labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19**. No new conceptual mistake and no cosmetic fix. Housekeeping: the near-term rows in [redo-schedule.md](../revision/redo-schedule.md) were rebuilt so they match the resume date (Mon 16 Nov), and the Sunday plan projection in [PROGRESS.md](../PROGRESS.md#-plan-projection-3-h-a-day) was refreshed.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| Chapter 1 interview question | 🌱 | answered in chat, **7/10** | ✅ COMPLETED (Chapter 1 closed) |
+| Chapter 2 Task 1 (`GET /status`) | 🌱 | `1ded3b3`, 3/3 green, **9/10** | ✅ COMPLETED |
+| Chapter 2 Tasks 2-6 | 🌱 | not started (`task2a_list` 404) | ⬜ NOT_STARTED |
+| Scopes grid recall (optional tonight) | 🌱 | not answered | 🟡 IN_PROGRESS (moves to tomorrow's first minute) |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | not done (optional) | 🟡 IN_PROGRESS |
+| `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | resting; PR still open | 🟡 IN_PROGRESS |
+| 🔁 `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | not due on a one-slot day | ⬜ NOT_STARTED (Mon 16 Nov evening) |
+
+> [!IMPORTANT]
+> **First task tomorrow (Mon 16 Nov, normal 2-hour plan):** 1 minute, say the Maven scopes grid from memory (`compile` / `provided` / `runtime` / `test` × compile classpath / test classpath / packaged jar). Then labs Chapter 2 **Task 2** (`GET /accounts`) on `my-solutions`: before any code, write one line on what Spring already gives a `List` return (status, JSON), then push. ✅ Done when `task2a` is green. Evening redos: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`, cold. Ask for a hint after 15 minutes on any step.
