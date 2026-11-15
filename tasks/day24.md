@@ -60,7 +60,7 @@ Same as [day23.md](day23.md#-2-chapter-2-task-1-optional-15-min): `GET /status` 
 | 6 | HTTP semantics / `ResponseEntity` / `@PathVariable` weak pack (🔴) | 🌱 | parked until Chapter 2 with the normal plan |
 
 - [x] Chapter 1 interview question answered in chat
-- [ ] (optional) Chapter 2 Task 1 pushed on `my-solutions`
+- [x] (optional) Chapter 2 Task 1 pushed on `my-solutions`
 
 ## 🎤 Chapter 1 interview grade (~8:07-8:15 AM IST)
 
@@ -85,3 +85,22 @@ runtime        ❌        ✅        ✅   (needed only when the app runs)
 
 > [!IMPORTANT]
 > **Interview 7/10.** All three parts were reached, but part 3 needed a correction and parts 1 and 2 needed hints. Weak-topic note: **Maven dependency scopes (the classpath grid)** — revisit briefly, no pack (🟡 Moderate, not 🔴 Weak). Next push: Chapter 2 **Task 1** on `my-solutions` (`GET /status` → 200, `Ledgerly is open`; `POST /status` → 405 is already handled by Spring).
+
+## 🌱 Chapter 2 Task 1 grade (`1ded3b3`, 8:35 AM IST)
+
+![Score](https://img.shields.io/badge/Task%201-9%2F10-brightgreen) ![Ch2](https://img.shields.io/badge/Ch2-3%2F19-yellow) ![Push day](https://img.shields.io/badge/push%20day-2%20of%202-brightgreen)
+
+> [!NOTE]
+> Graded on tip `1075608`. Student push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) `my-solutions` `1ded3b3` (15 Nov, 8:35 AM IST, "completed chapter2- task 1"). Only file changed: `AccountController.java` — `@GetMapping("/status")` returns `"Ledgerly is open"`. Verified: `Chapter01CheckTest` **19/19**; `Chapter02CheckTest` **3/19** (`task1a`, `task1b`, `task1c` all green). `POST /status` → 405 from Spring's default, with **no** extra handler. Tasks 2-6 not started; first fail is `task2a_list` (`GET /accounts` → 404).
+
+### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot (Task 1) | **9/10** (concept 9 · implementation 10 · debugging n/a) | The mapped `GET` is exact (200, plain text `Ledgerly is open`), and `task1c` was left to Spring — the first unprompted "check Spring defaults first" win, after the Drill 1 catch-all habit. No debugging dimension: the three Task 1 checks were green on this push |
+
+> [!TIP]
+> This is the habit we wanted on 405: check what Spring already does before writing a handler. Hold onto that for Task 2 onward.
+
+> [!IMPORTANT]
+> This is the **second push day** (the first was 12 Nov). The normal 2-hour plan returns **Mon 16 Nov**, and the evening starts with redos `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`. Next labs item: Chapter 2 **Task 2** (`GET /accounts`).
