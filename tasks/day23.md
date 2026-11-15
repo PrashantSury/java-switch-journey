@@ -63,3 +63,74 @@ Saturday also has the **2 PM weekly review**.
 
 - [ ] Chapter 1 interview question answered in chat
 - [ ] (optional) Chapter 2 Task 1 pushed on `my-solutions`
+
+## 🌙 Evening (14 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-15%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Evening review at ~8:00 PM IST on tip `7325500` (the 2:11 PM IST weekly review). No student commits today in either repo: this repo's last student code is `d6ca103` (12 Nov, 9:01 PM IST); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) still has only `main` at `4384b9c` (12 Nov, 10:26 PM IST), no `my-solutions` branch. No Chapter 1 interview answer in chat yet. No code change, so the suites stand: `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub), root `mvn test` **514 run, 0 red**. **No new conceptual mistake** logged; no redo graded, so redo rows only move by date. The [weekly review 8–14 Nov](../PROGRESS.md#-weekly-review--814-nov-2026) already landed at 2:10 PM IST.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring Boot | **unscored** (⬜ Pending) | No new work today: interview Q unanswered, Ch 2 Task 1 not started. Last score stays **8/10** (12 Nov late re-check, Chapter 1 tasks 19/19) |
+| 🧩 DSA | **unscored** (⬜ resting) | Rested by plan. Last score **8/10** (12 Nov, `DailyTemperatures` 18/18) |
+| 🐞 Buggy | **unscored** (⬜ resting) | Rested by plan; LargestRect empty-stack width sentence still open. Last score 7/10 (7 Nov) |
+
+> [!TIP]
+> One quiet Saturday after Thursday's comeback. The must-do is still the interview question in chat (about 10 minutes, no IDE). It closes Chapter 1 but is not a push day; a push (for example Chapter 2 Task 1) is still what brings the normal plan back.
+
+### 🧪 Topic classification
+
+| Topic | Class | Reason |
+|---|---|---|
+| 🌱 labs Chapter 1 tasks (Maven / pom) | ✅ Strong (tasks) | 19/19 verified on `4384b9c` |
+| 🌱 labs Chapter 1 interview Q (BOM / parent versions, upgrade risk, `runtime` vs `provided`) | ⬜ Pending | not answered; Chapter 1 stays 🟡 until graded |
+| 🌱 labs Chapter 2 Task 1 (`GET /status`, 405 for free) | ⬜ Pending (optional) | not started; 0/19 |
+| 🌱 B2 Q3 / Q6 / catch-all sentence | ⬜ Pending (carried) | unanswered |
+| 🌱 HTTP semantics / `ResponseEntity` / `@PathVariable` set | 🔴 Weak (carried) | pack stays parked until Chapter 2 with the normal plan; no new pack tonight |
+| 🧩 `DailyTemperatures` | ✅ Strong (code) · 🟡 process | 18/18; pseudocode/brute-force comments still not written |
+| 🧩 `CarFleet` single-pair / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🟡 Moderate | written merge pending |
+| 🐞 `Day04LargestRectangle` empty-stack width | 🟡 Moderate / ⬜ Pending sentence | geometric why still open |
+| ⛔ Blocked | none | nothing outside his control is stopping the work |
+
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
+
+### ⏳ Tonight's evening-slot work (pending from this morning)
+
+| # | Minutes | Item | Track | Done when |
+|---|---|---|---|---|
+| 1 | 10-15 | 🎤 **Chapter 1 interview question in chat** (the three parts in the Morning section above) | 🌱 | answered here and graded → Chapter 1 ✅ |
+| 2 | 15 (optional) | `git switch -c my-solutions` in `spring-boot-labs`, Chapter 2 **Task 1**, push. Remember: `task1c` (405) needs no code | 🌱 | `task1a-c` green on the pushed branch |
+
+Item 1 closes Chapter 1 but does not count as the second push day. Item 2 would.
+
+### 🎯 Tomorrow's focus (Sun 15 Nov)
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | If item 2 lands tonight: that is the second push day, and the normal plan starts Mon 16 Nov (HTTP-semantics weak pack comes back with it). If not: one slot again, the **interview Q only** (closes Chapter 1) | Chapter 1 code is strong; only the explain-it part is open |
+| 🧩 DSA | Normal plan only: next Stack problem, starting with 3–5 lines of plain-English pseudocode before any Java | 12 Nov skipped pseudocode and brute-force comments; that's the habit to fix, not the stack logic |
+| 🐞 Buggy | Normal plan only: LargestRect empty-stack width sentence + 3-line ASCII for `[2,1,2]` first, no new round until it lands | geometric why still soft since 7 Nov |
+| 🔁 Redos | Normal plan only: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` (both +1, late). On a one-slot day they move to the first normal day | no redos on one-slot days |
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-0-lightgrey)
+
+> [!NOTE]
+> 10 PM check on tip `7325500` (the 2:11 PM IST weekly review). No student commits after it: this repo's last student commit is still `d6ca103` (12 Nov, 9:01 PM IST) and `spring-boot-labs` `main` is still `4384b9c` (12 Nov, 10:26 PM IST), with no `my-solutions` branch. No Chapter 1 interview answer in chat. Nothing to re-test, so the suites stand: `mvn test` **514 run, 0 red**; labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub). No new conceptual mistake, no cosmetic fix needed, and [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| `spring-boot-labs` Chapter 1 (Tasks 1-6) | 🌱 | 19/19 on `main` `4384b9c` (verified 12 Nov) | 🟡 IN_PROGRESS (interview Q open) |
+| Chapter 1 interview question | 🌱 | not answered | ⬜ NOT_STARTED |
+| Chapter 2 Task 1 (optional) | 🌱 | not started; 0/19 | ⬜ NOT_STARTED |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | resting (one-slot day) | 🟡 IN_PROGRESS |
+| `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | resting (one-slot day); PR still open | 🟡 IN_PROGRESS |
+| 🔁 `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | not due on a one-slot day; wait for the first normal day | ⬜ NOT_STARTED |
+
+> [!IMPORTANT]
+> **First task tomorrow (Sun 15 Nov, one slot, 15 min):** answer the 🎤 **Chapter 1 interview question in chat** (the three parts in the Morning section above: where the starter's version comes from, what a `spring-boot-starter-parent` bump changes and the one risk to check, `runtime` vs `provided` with a Ledgerly example each). ✅ Done when it's graded in chat, which closes Chapter 1. Optional: Chapter 2 **Task 1** on `my-solutions`, pushed. Today had no push, so the second push day is still needed before the normal plan and redo queue return. A chat answer closes Chapter 1 but does not count as a push.
