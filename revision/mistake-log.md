@@ -11,7 +11,7 @@
 ## 📚 The logs
 | | Section | File | Open rows |
 |---|---|---|---|
-| 🧩 | DSA and buggy rounds | [mistakes/dsa.md](mistakes/dsa.md) | 5 |
+| 🧩 | DSA and buggy rounds | [mistakes/dsa.md](mistakes/dsa.md) | 6 |
 | 🌱 | Spring Boot, `course-practice`, banking app | [mistakes/spring.md](mistakes/spring.md) | 4 |
 
 > [!TIP]

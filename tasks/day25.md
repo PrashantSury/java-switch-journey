@@ -3,7 +3,7 @@
 ![Week](https://img.shields.io/badge/Week-4-blue) ![Day](https://img.shields.io/badge/Day-25-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-2%20h-green) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen) ![Java](https://img.shields.io/badge/Java-21-orange)
 
 > [!IMPORTANT]
-> Both push days are done (12 Nov and 15 Nov), so the **normal plan returns**: Spring about 50 min, DSA about 35, buggy about 15, then the **evening redos** (cap 2). One item per track. Progress decides, not the calendar: Spring stays on Chapter 2, DSA moves to the next Stack problem only because every earlier one is ✅, and Buggy finishes its open sentence before any new round.
+> Both push days are done (12 Nov and 15 Nov), so the **normal plan returns**: Spring about 50 min, DSA about 35, buggy about 15, then the **evening redos** (cap 2). One item per track. Progress decides, not the calendar: Spring stays on Chapter 2, DSA moves to the next Stack problem only because every earlier one is ✅, and the 15-min buggy slot is the missing `DailyTemperatures` comments (`Day04LargestRectangle` width sentence closed 15 Nov night).
 
 > [!NOTE]
 > **Legend:** 🌅 morning · 🌱 Spring · 🧩 DSA · 🐞 buggy · 🔁 redo · ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (verified). Run `git pull` on **both** repos first. In `spring-boot-labs` stay on `my-solutions`.
@@ -19,7 +19,7 @@
 | 0-3 | 🌱 | `git pull` both repos. Say the **scopes grid** from memory in chat (1 min) | grid right first try → scopes ✅ Strong |
 | 3-55 | 🌱 | **Chapter 2 Task 2 and Task 3** (`GET /accounts`, `GET /accounts/{number}/masked`) | `task2a`, `task2b`, `task3a`, `task3b` green on pushed `my-solutions` → Chapter 2 **7/19** |
 | 55-90 | 🧩 | **Generate Parentheses** (new Stack problem) | pseudocode first, then `GenerateParenthesesTest` **17/17** pushed |
-| 90-105 | 🐞 | **`Day04LargestRectangle` empty-stack width**: one sentence + 3-line ASCII (chat) | graded 7+ → a new buggy round may start |
+| 90-105 | 🐞 | **`DailyTemperatures` comments**: add brute-force + 3-5 lines of pseudocode on the existing file | comment-only push |
 | 105-120 | — | Push, buffer, hint requests | nothing left unpushed |
 | Evening (cap 2) | 🔁 | `ScoreOfParentheses` then `RemoveKAdjacentDuplicates`, cold, 20-30 min each | see the redo table below |
 
@@ -151,15 +151,23 @@ Brute force: state it yourself in the comment. For your final version, state tim
 - [ ] Pattern / time / space comment lines with reason sentences.
 - [ ] `mvn test -Dtest=GenerateParenthesesTest` → **17/17**. Push.
 
-### 🐞 3. Buggy: `Day04LargestRectangle` empty-stack width (15 min, in chat)
+### 🐞 3. Buggy slot: `DailyTemperatures` comments (15 min)
 
-No new buggy round: this one is still open (see [day20.md](day20.md#-day04largestrectangle-empty-stack-width-optional-chat)). Code is ✅ 36/36; the geometry sentence is the gap.
+> [!NOTE]
+> `Day04LargestRectangle` empty-stack width is ✅ **closed** (15 Nov night, ~10:00-10:27 PM IST). Sentence **8/10** after a correction; buggy score stays **7**. Height must come from the popped bar, not the current one ([mistakes/dsa.md](../revision/mistakes/dsa.md)). No new buggy round today.
 
-- [ ] One sentence: when you pop a bar, which index is its **left** limit and which its **right** limit, and therefore why is the width `i` when the stack is empty and `i - stack.peek() - 1` otherwise?
-- [ ] A 3-line ASCII of `[2, 1, 2]` marking the left and right limits for the bar of height `1`.
+The 15 minutes go to a pending comment-only follow-up. `DailyTemperatures` code is already ✅ 18/18 (`d6ca103`). Open the existing file and, **above the Java**, add:
 
-> [!CAUTION]
-> Graded 7+ → the next Stack buggy round is assigned. Below 7 → one more short round on this sentence. Optional if time is left: write the three symptom groups for `Day00BuggyExample` (still absent).
+- a short brute-force comment (what a re-scan / naive pass would do)
+- 3-5 lines of plain-English pseudocode
+
+📂 `src/main/java/com/prashant/dsa/stack/DailyTemperatures.java`
+
+- [x] LargestRect sentence + ASCII (closed 15 Nov night)
+- [ ] Brute-force + 3-5 pseudocode lines added; push (comments only is enough)
+
+> [!TIP]
+> This is the same write-first habit as Generate Parentheses this morning. Optional if time is left: the three symptom groups for `Day00BuggyExample` (still absent).
 
 ### 🔁 Evening redos (cap 2, most overdue first, 20-30 min each, cold)
 
@@ -181,10 +189,11 @@ No new buggy round: this one is still open (see [day20.md](day20.md#-day04larges
 | 3 | Banking module 1 step 1, Drills 2 and 3 (parked; Spring slot is `spring-boot-labs`) | 🏦🌱 | ⬜ NOT_STARTED (parked) |
 | 4 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED (comes with the redo) |
 | 5 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS |
-| 6 | `DailyTemperatures` pseudocode / brute-force comments | 🧩 | 🟡 IN_PROGRESS (this morning's DSA item is the place to show the habit) |
+| 6 | ~~`DailyTemperatures` pseudocode / brute-force comments~~ | 🧩🐞 | 🟡 IN_PROGRESS — moved to this morning's 15-min buggy slot above |
 | 7 | Chapter 2 Tasks 4-6 (Task 6 carries the Chapter 2 interview question) | 🌱 | ⬜ NOT_STARTED (after Tasks 2-3) |
 
 - [ ] Scopes grid recalled in chat
 - [ ] Chapter 2 Tasks 2 and 3 pushed on `my-solutions`
 - [ ] `GenerateParentheses` pseudocode + code pushed
-- [ ] LargestRect sentence + ASCII answered in chat
+- [x] LargestRect sentence + ASCII (closed 15 Nov night)
+- [ ] `DailyTemperatures` brute-force + pseudocode comments pushed

@@ -163,17 +163,49 @@ Both morning items are ✅ done, so nothing from this morning is pending. No new
 ![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-1-brightgreen)
 
 > [!NOTE]
-> 10 PM check on tip `fd7b9eb`. No student commits after the 8 PM evening review: this repo's last student code is still `d6ca103` (12 Nov) and `spring-boot-labs` `my-solutions` is still `1ded3b3` (8:35 AM IST). No new answers in chat after the 8:15 AM interview. Nothing new to re-test, so the suites stand: labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19**. No new conceptual mistake and no cosmetic fix. Housekeeping: the near-term rows in [redo-schedule.md](../revision/redo-schedule.md) were rebuilt so they match the resume date (Mon 16 Nov), and the Sunday plan projection in [PROGRESS.md](../PROGRESS.md#-plan-projection-3-h-a-day) was refreshed.
+> 10 PM check on tip `fd7b9eb`. No student commits after the 8 PM evening review: this repo's last student code is still `d6ca103` (12 Nov) and `spring-boot-labs` `my-solutions` is still `1ded3b3` (8:35 AM IST). At the moment of this check there were no new student commits after the 8 PM review, and the suites still stand: labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19**. Two chat answers then landed ~10:00-10:27 PM IST (scopes grid + LargestRect); they are recorded in the late-chat section below. Housekeeping: the near-term rows in [redo-schedule.md](../revision/redo-schedule.md) were rebuilt so they match the resume date (Mon 16 Nov), and the Sunday plan projection in [PROGRESS.md](../PROGRESS.md#-plan-projection-3-h-a-day) was refreshed.
 
 | Item | Track | Outcome | Status |
 |---|---|---|---|
 | Chapter 1 interview question | 🌱 | answered in chat, **7/10** | ✅ COMPLETED (Chapter 1 closed) |
 | Chapter 2 Task 1 (`GET /status`) | 🌱 | `1ded3b3`, 3/3 green, **9/10** | ✅ COMPLETED |
 | Chapter 2 Tasks 2-6 | 🌱 | not started (`task2a_list` 404) | ⬜ NOT_STARTED |
-| Scopes grid recall (optional tonight) | 🌱 | not answered | 🟡 IN_PROGRESS (moves to tomorrow's first minute) |
-| LargestRectangle empty-stack width sentence + ASCII | 🐞 | not done (optional) | 🟡 IN_PROGRESS |
+| Scopes grid recall (optional tonight) | 🌱 | asked what was expected; the full grid was given, **not graded as recall** | 🟡 IN_PROGRESS (recall retry is Mon 16 Nov's 1-minute warm-up) |
+| LargestRectangle empty-stack width sentence + ASCII | 🐞 | answered ~10:00-10:27 PM IST, sentence **8/10** after a correction | ✅ COMPLETED (item closed; buggy score stays 7) |
 | `CarFleet` single-pair follow-up / PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) | 🧩 | resting; PR still open | 🟡 IN_PROGRESS |
 | 🔁 `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | not due on a one-slot day | ⬜ NOT_STARTED (Mon 16 Nov evening) |
 
 > [!IMPORTANT]
-> **First task tomorrow (Mon 16 Nov, normal 2-hour plan):** 1 minute, say the Maven scopes grid from memory (`compile` / `provided` / `runtime` / `test` × compile classpath / test classpath / packaged jar). Then labs Chapter 2 **Task 2** (`GET /accounts`) on `my-solutions`: before any code, write one line on what Spring already gives a `List` return (status, JSON), then push. ✅ Done when `task2a` is green. Evening redos: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`, cold. Ask for a hint after 15 minutes on any step.
+> **First task tomorrow (Mon 16 Nov, normal 2-hour plan):** 1 minute, say the Maven scopes grid from memory (`compile` / `provided` / `runtime` / `test` × compile classpath / test classpath / packaged jar) — last night was a teach, not a recall grade. Then labs Chapter 2 **Task 2** (`GET /accounts`) on `my-solutions`: before any code, write one line on what Spring already gives a `List` return (status, JSON), then push. ✅ Done when `task2a` is green. The 15-min buggy slot is now the missing `DailyTemperatures` comments (LargestRect width closed tonight). Evening redos: `ScoreOfParentheses` + `RemoveKAdjacentDuplicates`, cold. Ask for a hint after 15 minutes on any step.
+
+## 🌙 Late chat (~10:00-10:27 PM IST): scopes grid + LargestRect
+
+![Slot](https://img.shields.io/badge/slot-10%3A00--10%3A27%20PM-yellow) ![Scopes](https://img.shields.io/badge/scopes-taught%2C%20not%20graded-lightgrey) ![LargestRect](https://img.shields.io/badge/LargestRect-8%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy%20stays-7%2F10-blue)
+
+> [!NOTE]
+> Two optional chat answers after the 10 PM check, still on 15 Nov. No new student commit. Tip at the check was `fd7b9eb` / later records `c54a877`.
+
+### 1. Scopes grid — taught, not graded as recall
+
+He asked what was expected. The full grid was given:
+
+```
+           compile cp   test cp   packaged jar
+compile        ✅          ✅          ✅
+provided       ✅          ✅          ❌   (server already has it, e.g. Tomcat)
+runtime        ❌          ✅          ✅   (needed only when the app runs, e.g. H2)
+test           ❌          ✅          ❌   (JUnit, never shipped)
+```
+
+This was a teach, not a first-try recall, so scopes stay 🟡 Moderate. The **recall retry** is the 1-minute warm-up at the start of [day25.md](day25.md).
+
+### 2. `Day04LargestRectangle` empty-stack width — closed
+
+| Attempt | What he said | Result |
+|---|---|---|
+| First sentence | "stack is empty means no element is greater than the current element so the width is `i`" | ❌ wrong direction: empty means no bar to the left is **smaller** than the popped bar |
+| `[2,1,2]` trace | Pop flow was right, but height came from the **current** bar, not the popped one: i=1 h=1 a=1 (should be h=2 a=2); i=3 first pop a=0 (should be w=1, h=2, a=2); final pop w=2 (should be w=`i`=3, h=1, a=3); best 2 (should be 3) | 🟡 steps right, two values off. Graded **5/10** on this pass |
+| After the correction | "when stack is empty then width is the current `i` means no elements smaller than popped one" | ✅ correct |
+
+> [!IMPORTANT]
+> Sentence **8/10** after the correction. The write-up item is ✅ **closed**. Buggy score stays **7/10** (the first trace used the current bar's height). Lesson, logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): **height always comes from the popped bar**, not the current one. No new buggy round today; Monday's 15-min buggy slot is the missing `DailyTemperatures` comments instead.
