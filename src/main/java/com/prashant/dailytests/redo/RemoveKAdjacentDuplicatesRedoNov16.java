@@ -1,7 +1,5 @@
 package com.prashant.dailytests.redo;
 
-import com.prashant.dsa.stack.RemoveKAdjacentDuplicates;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 
