@@ -192,7 +192,7 @@ The 15 minutes go to a pending comment-only follow-up. `DailyTemperatures` code 
 | 6 | ~~`DailyTemperatures` pseudocode / brute-force comments~~ | 🧩🐞 | 🟡 IN_PROGRESS — moved to this morning's 15-min buggy slot above |
 | 7 | Chapter 2 Tasks 4-6 (Task 6 carries the Chapter 2 interview question) | 🌱 | ⬜ NOT_STARTED (after Tasks 2-3) |
 
-- [ ] Scopes grid recalled in chat
+- [x] Scopes grid recalled in chat (~9:05 PM IST, 10/10)
 - [x] Chapter 2 Tasks 2 and 3 pushed on `my-solutions` (`8f48e9b`, **7/19**, graded 8/10 below)
 - [ ] `GenerateParentheses` pseudocode + code pushed
 - [x] LargestRect sentence + ASCII (closed 15 Nov night)
@@ -334,3 +334,22 @@ No new material tonight. The two redos for today are done (🔶, re-queued Sun 2
 | 🧩 DSA | `GenerateParentheses` to 17/17 if not done tonight, pseudocode first; nothing new until it is ✅ | progress decides: still 🟡 |
 | 🐞 Buggy | `DailyTemperatures` comments if not done tonight; no new round until it lands | open since 12 Nov |
 | 🔁 Redos (evening) | `Day03NextGreaterIndex` (+1, late) + `AsteroidCollision` (+1, late), **cold on blank files**. Don't open `dailytests/Day03...` or `dsa/stack/AsteroidCollision`; write pattern, time + reason, space + reason, pseudocode, then code | from [redo-schedule.md](../revision/redo-schedule.md); after today's copies, a cold honest attempt (even red) is the priority |
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-2-brightgreen) ![Scopes](https://img.shields.io/badge/scopes%20grid-10%2F10-brightgreen)
+
+> [!NOTE]
+> 10 PM check on tip `cab0978`. No student commits after the 8 PM evening review: `spring-boot-labs` `my-solutions` is still `8f48e9b` / `828c168` (merge) and this repo's last student code is `d94f802`, so no suite changed and no tests needed re-running (labs `Chapter02CheckTest` **7/19**, `GenerateParenthesesTest` 0/17). One chat answer landed ~9:05 PM IST: the Maven scopes grid from memory, all 12 cells right (**10/10**, yesterday's `provided`/`runtime` swap fixed). The follow-up MCQ (a WAR on an external Tomcat with the servlet API left at `compile`) was answered C; the answer is B, duplicate servlet-api copies can clash. Logged in [mistakes/spring.md](../revision/mistakes/spring.md). Redo ladder unchanged.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| Chapter 2 Tasks 2-3 | 🌱 | `8f48e9b`, 7/19, **8/10** | ✅ COMPLETED |
+| Scopes grid recall | 🌱 | chat ~9:05 PM IST, 12/12 cells, **10/10**; WAR MCQ ❌ (C, answer B) | ✅ COMPLETED (grid); WAR `provided` case logged |
+| Chapter 2 Task 4 (`/accounts/above`) | 🌱 | wrong premature mapping still in place (task4a-d 404) | ⬜ NOT_STARTED |
+| `GenerateParentheses` | 🧩 | untouched, 0/17 | 🟡 IN_PROGRESS |
+| `DailyTemperatures` comments | 🐞 | not pushed | 🟡 IN_PROGRESS |
+| 🔁 `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | 37/37 and 26/26 but copied, 2/10 each | 🟡 IN_PROGRESS (re-queued Sun 22 Nov, blank files) |
+
+> [!IMPORTANT]
+> **First task tomorrow (Tue 17 Nov, 6 AM):** `git pull` both repos, then labs Chapter 2 **Task 4** on `my-solutions`. Before any code write one line: "the path is ___, the param is ___ as ___". Then change `@GetMapping("/accounts/above?balance=N")` to a path-only mapping with `@RequestParam int balance`. ✅ Done when `task4a`-`task4d` are green on the pushed branch (Chapter 2 **11/19**). Next: `GenerateParentheses` with 3-5 lines of pseudocode first (DSA slot), then the `DailyTemperatures` comments (buggy slot). Evening redos: `Day03NextGreaterIndex` + `AsteroidCollision`, cold on blank files. Ask for a hint after 15 minutes on any step.
