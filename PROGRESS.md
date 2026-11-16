@@ -9,6 +9,10 @@
 > **Legend:** ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (verified) · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` · 🔥 active · 🧩 DSA · 🐞 buggy · 🏦 banking · 🌱 Spring · 🔁 redo. Old names map: Completed and verified → COMPLETED; Needs correction → REVISION_REQUIRED; Attempted / In progress / Ready for revision → IN_PROGRESS; Not started → NOT_STARTED. The Log at the bottom keeps the words it was written with.
 
 ## 🧭 Overall status
+
+> [!IMPORTANT]
+> **New DSA/buggy pace from Tue 17 Nov 2026 (agreed 16 Nov, 10:37 PM IST).** One new NeetCode problem every weekday (5 a week; an unfinished problem carries over with stronger hints, never open more than 2 days). Buggy rounds on Tuesday and Friday, on that week's pattern. No new DSA on weekends (carry-overs, redos, review). Redos are cold only: a blank file, no peeking; a redo copied from the original does not pass. Target: about 45–50 DSA problems verified by mid-January 2027 (7 verified as of 16 Nov). Reason: the measured pace of about 2 DSA and 1.5 buggy a week would reach only 12–25 of the NeetCode 150 by mid-January.
+
 | Track | Status | Verified so far | Open now | Next |
 |---|---|---|---|---|
 | 🏦 **Spring Boot banking** | 🟡 IN_PROGRESS | foundation: `course-practice` Part A, B1 and **B2 ✅ (5 Nov, `1c9c6aa` + Lumi `7b7c725`, 23/23)**; Day 04 Q1-Q3 re-answers ✅ (26/30); banking setup (milestone 0) ✅; **0 of 10 modules** started; Spring slot in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) | Q3 and Q6 of the B2 questions; module 1 step 1 and Drills 2 and 3 **parked**; **labs Chapter 1 tasks ✅ 19/19** (`4384b9c` on `main`, 12 Nov 10:26 PM IST; fix after `5c366dc` 18/19); **Ch 1 ✅ closed** (tasks 19/19 + interview **7/10**); **Ch 2 Task 1 ✅ 3/19** on `my-solutions` `1ded3b3` (15 Nov 8:35 AM IST, Spring **9/10**) | [day25.md](tasks/day25.md) · assigned Mon 16 Nov: Ch 2 **Tasks 2 and 3** (`GET /accounts`, `/accounts/{number}/masked`) |
