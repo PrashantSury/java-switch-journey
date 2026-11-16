@@ -1,6 +1,7 @@
 package com.prashant.dsa.stack;
 
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Generate Parentheses (LeetCode 22, NeetCode 150, Stack).
@@ -39,7 +40,47 @@ import java.util.List;
  */
 public class GenerateParentheses {
 
+    // Pseudocode:
+    // 1. Start with an empty string and two counters: open = 0, close = 0.
+    // 2. If open < n, we may add '(' and continue.
+    // 3. If close < open, we may add ')' and continue.
+    // 4. When the string has length 2n, save it.
+    // Brute force: build all 2^(2n) strings of '(' and ')', then keep only the balanced ones.
+    //
+    // Pattern: backtracking with two counters; the recursion call stack is the stack.
+    // Time:    O(C(n) * n), because only valid prefixes are expanded, and each of the
+    //          C(n) results costs O(n) to copy into the list.
+    // Space:   O(n), because recursion depth and the builder never exceed 2n (output not counted).
+
     public List<String> generateParenthesis(int n) {
-        throw new UnsupportedOperationException("TODO");
+        if (n < 1) {
+            throw new IllegalArgumentException("n must be >= 1");
+        }
+        List<String> result = new ArrayList<>();
+        backtrack(n, 0, 0, new StringBuilder(), result);
+        return result;
+    }
+
+    private void backtrack(int n, int open, int close,
+                           StringBuilder current, List<String> result) {
+        if (current.length() == 2 * n) {
+            result.add(current.toString());
+            return;
+        }
+        if (open < n) {                          // still have '(' left to place
+            current.append('(');
+            backtrack(n, open + 1, close, current, result);
+            current.deleteCharAt(current.length() - 1);   // undo
+        }
+        if (close < open) {                      // a ')' has an unmatched '(' to close
+            current.append(')');
+            backtrack(n, open, close + 1, current, result);
+            current.deleteCharAt(current.length() - 1);   // undo
+        }
+    }
+
+    public static void main(String[] args) {
+        GenerateParentheses gp = new GenerateParentheses();
+        gp.generateParenthesis(2);
     }
 }
