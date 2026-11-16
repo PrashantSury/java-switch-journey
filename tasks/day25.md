@@ -178,7 +178,7 @@ The 15 minutes go to a pending comment-only follow-up. `DailyTemperatures` code 
 
 - [ ] Cold: do **not** open `dsa/stack/ScoreOfParentheses` or `dsa/stack/RemoveKAdjacentDuplicates`.
 - [ ] Each starts with a **pattern line + time and space comments** (one sentence each saying where the cost comes from), then 3-5 lines of pseudocode, then code. 25-minute timer.
-- [ ] Push at the end of each, even if red.
+- [x] Push at the end of each, even if red. (`d94f802`, 4:29 PM IST; but see the afternoon check: not cold)
 
 ### 📦 Carried backlog (not for today)
 
@@ -193,7 +193,35 @@ The 15 minutes go to a pending comment-only follow-up. `DailyTemperatures` code 
 | 7 | Chapter 2 Tasks 4-6 (Task 6 carries the Chapter 2 interview question) | 🌱 | ⬜ NOT_STARTED (after Tasks 2-3) |
 
 - [ ] Scopes grid recalled in chat
-- [ ] Chapter 2 Tasks 2 and 3 pushed on `my-solutions`
+- [x] Chapter 2 Tasks 2 and 3 pushed on `my-solutions` (`8f48e9b`, **7/19**, graded 8/10 below)
 - [ ] `GenerateParentheses` pseudocode + code pushed
 - [x] LargestRect sentence + ASCII (closed 15 Nov night)
 - [ ] `DailyTemperatures` brute-force + pseudocode comments pushed
+
+## 🕓 Afternoon check (16 Nov, ~4:35 PM IST): `8f48e9b` + `d94f802`
+
+> [!IMPORTANT]
+> Two pushes landed: labs `my-solutions` `8f48e9b` "completed chapter2- task 2 & 3" (4:30 PM IST, 1 file) and this repo `d94f802` "RemoveKAdjacentDuplicatesRedoNov16, ScoreOfParenthesesRedoNov16 completed" (4:29 PM IST, 2 files). Both verified on fresh clones. `GenerateParentheses.java` and `DailyTemperatures.java` were **not** touched (still 0/17 and comments missing).
+
+| Item | Tests | Grade | Why |
+|---|---|---|---|
+| 🌱 Ch 2 Task 2 `GET /accounts` + Task 3 `GET /accounts/{number}/masked` | `Chapter02CheckTest` **7/19** (was 3/19): task1a-c, task2a, task2b, task3a, task3b ✅ | **8/10** | Target hit. No extra handlers, Spring writes the JSON and the 200; `{number}` stays a String so `0000123456` keeps its zeros. Minus 2: a premature, wrong Task 4 mapping and small formatting slips |
+| 🔁 `ScoreOfParenthesesRedoNov16` | **37/37** | **2/10** (🔶, not cold) | The method body is character-for-character the original `dsa/stack/ScoreOfParentheses` (same comments, e.g. `// Base score for the current level`). Complexity lines have no "why"; no pseudocode |
+| 🔁 `RemoveKAdjacentDuplicatesRedoNov16` | **26/26** | **2/10** (🔶, not cold) | Method body + `Pair` class identical to the original, and the file even imports `com.prashant.dsa.stack.RemoveKAdjacentDuplicates` (unused). The O(n) "why" (the 29 Oct conceptual miss) is still not written; no pseudocode |
+
+### 🌱 Code feedback, `AccountController.java`
+- ✅ `@GetMapping("/accounts")` + `return ACCOUNTS;`: right. `List.of` is immutable, so returning it directly is safe.
+- ✅ `@GetMapping("/accounts/{number}/masked")` + `@PathVariable("number") String number`: right. The explicit `"number"` is optional here (Boot compiles with `-parameters`), harmless.
+- 🟡 `lastFour` helper: fine and defensive (`length() <= 4` returns the whole string). Nothing in the tests needed it; a one-liner `"******" + number.substring(number.length() - 4)` was enough. Also add a blank line between `masked` and the helper.
+- 🔴 Task 4: `@GetMapping("/accounts/above?balance=N")`. A query string is **not** part of a path pattern: Spring matches only the path `/accounts/above`, and in a pattern `?` means "any one character". So this mapping never matches `/accounts/above?balance=10000` (task4a-d still 404). For Task 4: `@GetMapping("/accounts/above")` + `@RequestParam int balance`. Don't add a mapping before the task is done.
+- 🟡 Style: `@GetMapping ("/accounts")` has a stray space; `return ACCOUNTS;` is indented 5 spaces.
+- No 404 handling needed: the README asks only to mask the path value, not to look the account up.
+
+### 🔁 Redo grading and next dates
+Both pass every test, but neither was cold: the code is the original solution copied in. Rule 3 in [redo-schedule.md](../revision/redo-schedule.md): passed after re-reading the original = 🔶, **repeat the same gap (+1)**. Counted from today, due Tue 17 Nov; the cap of 2 (17-21 Nov are already full with older items) queues them on **Sun 22 Nov** as `RemoveKAdjacentDuplicatesRedoNov22` then `ScoreOfParenthesesRedoNov22`, blank files. Before any code: pattern line, time **and the reason**, space **and the reason**, then 3-5 pseudocode lines. For RemoveK the reason sentence is the point: each character is pushed once and popped at most once, so the total work is O(n) even with the inner removals.
+
+### ⏳ Still open today
+- [ ] Scopes grid from memory in chat (warm-up, not done)
+- [ ] `GenerateParentheses` pseudocode + code → 17/17 (0/17)
+- [ ] `DailyTemperatures` brute-force + pseudocode comments
+
