@@ -81,6 +81,6 @@ public class GenerateParentheses {
 
     public static void main(String[] args) {
         GenerateParentheses gp = new GenerateParentheses();
-        gp.generateParenthesis(2);
+        System.out.println(gp.generateParenthesis(3));   // the 5 strings for n = 3
     }
 }
