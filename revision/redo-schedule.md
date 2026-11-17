@@ -1,6 +1,6 @@
 # 🔁 DSA redo schedule
 
-![Spaced repetition](https://img.shields.io/badge/redo-results--based%201%20%E2%86%92%203%20%E2%86%92%207%20%E2%86%92%2014%20%E2%86%92%2030-purple) ![Problems](https://img.shields.io/badge/problems-12-blue) ![Cap](https://img.shields.io/badge/cap-2%20redos%20per%20day-yellow) ![Start](https://img.shields.io/badge/start-1%20Nov%202026-blue)
+![Spaced repetition](https://img.shields.io/badge/redo-results--based%201%20%E2%86%92%203%20%E2%86%92%207%20%E2%86%92%2014%20%E2%86%92%2030-purple) ![Problems](https://img.shields.io/badge/problems-13-blue) ![Cap](https://img.shields.io/badge/cap-2%20redos%20per%20day-yellow) ![Start](https://img.shields.io/badge/start-1%20Nov%202026-blue)
 
 > [!IMPORTANT]
 > Every DSA problem and buggy round is redone cold, and **the result of each redo decides the next gap**: 1 → 3 → 7 → 14 → 30 days, at most **2 redos a day**, so the backlog never lands on one day and each pattern gets time to stick. This file is the single source for "what do I redo today?"; conceptual mistakes still go to [mistakes/dsa.md](mistakes/dsa.md).
@@ -43,6 +43,7 @@
 | 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | 5 Nov | ✅ 5 Nov `d8306e2`: 15/36 → **36/36** in one push, three minimal changes; symptom table + `[2,1,2]` trace **graded in chat 7 Nov (supported)**; empty-stack width geometric why still soft | +1 | **Wed 18 Nov** (due 6 Nov, queued behind older items) | 🟡 IN_PROGRESS · joins the ladder · write-up graded supported |
 | 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **Thu 19 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
 | 🧩 `DailyTemperatures` | Monotonic stack: next warmer day (indices) | 12 Nov | ✅ 12 Nov `d6ca103` **18/18**, first verified solve; amortised time reason written; pseudocode / brute-force comments not written | +1 | **Fri 13 Nov** (queued **Fri 20 Nov**) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
+| 🧩 `GenerateParentheses` | Backtracking with two counters (call stack as the stack) | 17 Nov | ✅ 17 Nov `221069b` **17/17**, first verified solve, 9/10: pseudocode + brute force first, reasons on time/space | +1 | **Wed 18 Nov** (queued **Fri 27 Nov**, first free slot, rule 9) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
 
 > [!NOTE]
 > **12 problems** (`DailyTemperatures` joined 12 Nov at +1), all scheduled. Earlier: **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the **7 Nov evening review**. ValidParen **18/18** 🔶 post-feedback (`3019054`, same +1 → due **8 Nov**); MinStack not attempted → moves to **8 Nov**. The **8 Nov 10 PM check** found neither 8 Nov redo attempted, so the queue moves one day: **Mon 9 Nov** evening is `ValidParentheses` then `MinStack`. **9 Nov evening review (~8 PM):** neither redo attempted yet (`ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10); no row changed, both still due tonight. **9 Nov 10 PM check:** neither attempted, so the queue moves one more day: **Tue 10 Nov** evening is `ValidParentheses` then `MinStack`. **10 Nov evening review:** neither attempted yet, no row changed. **10 Nov 10 PM check:** neither attempted, so the queue moves one more day: **Wed 11 Nov** evening is `ValidParentheses` then `MinStack`. The calendar below assumes every redo is a clean pass except where marked 🔶.
@@ -55,7 +56,7 @@
 | Sat 14 Nov | on hold (one-slot day) | on hold | One slot: Chapter 1 interview Q; no push landed |
 | Sun 15 Nov | on hold (one-slot day) | on hold | One slot: interview + Ch 2 Task 1 (second push day); queue resumes Mon 16 Nov |
 | Mon 16 Nov | 🔶 `ScoreOfParentheses` (+1) 37/37, not cold → repeat +1 | 🔶 `RemoveKAdjacentDuplicates` (+1) 26/26, not cold → repeat +1 | `d94f802`, 4:29 PM IST: bodies copied from the originals |
-| Tue 17 Nov | `Day03NextGreaterIndex` (+1, late) | `AsteroidCollision` (+1, late) | Due 30 Oct and 1 Nov |
+| Tue 17 Nov | `Day03NextGreaterIndex` (+1, late) · blank `redo/Day03NextGreaterIndexRedoNov17` (0/37) | `AsteroidCollision` (+1, late) · blank `redo/AsteroidCollisionRedoNov17` (0/28) | Due 30 Oct and 1 Nov |
 | Wed 18 Nov | `CarFleet` (+1, late) | `Day04LargestRectangle` (+1, late) | Due 4 Nov and 6 Nov |
 | Thu 19 Nov | `Day01ArrayStack` (+7, late) | `Day00BuggyExample` (+1, late) | Both due 7 Nov |
 | Fri 20 Nov | `Day02RpnEvaluator` (+3, late) | `DailyTemperatures` (+1, late) | Due 8 Nov and 13 Nov |
@@ -72,7 +73,7 @@
 | Tue 24 Nov | `CarFleet` (+3, late) | `Day04LargestRectangle` (+3, late) |
 | Wed 25 Nov | `Day00BuggyExample` (+3, late) | `DailyTemperatures` (+3, late) |
 | Thu 26 Nov | `RemoveKAdjacentDuplicates` (+3, late) | `ScoreOfParentheses` (+3, late) |
-| Fri 27 Nov | `Day02RpnEvaluator` (+7) | free |
+| Fri 27 Nov | `Day02RpnEvaluator` (+7) | `GenerateParentheses` (+1, late; joined 17 Nov) |
 | Sat 28 Nov | `ValidParentheses` (+7) | `MinStack` (+7) |
 | Mon 30 Nov | `Day03NextGreaterIndex` (+7) | `AsteroidCollision` (+7) |
 | Tue 1 Dec | `CarFleet` (+7) | `Day04LargestRectangle` (+7) |
@@ -96,6 +97,8 @@
 | Sun 17 Jan | `ScoreOfParentheses` (+30) 🎓 | free |
 > [!NOTE]
 > This calendar was rebuilt on **15 Nov (10 PM check)** with the same rule: 2 a day, the most overdue first (ties: a logged conceptual mistake first), each next gap counted from the pass date, every pass assumed clean. Total until everyone graduates: **55 redos from 16 Nov, 27 of them in November** (16-30 Nov), last graduation **Fri 15 Jan 2027**. The near-term rows moved because 14 and 15 Nov were one-slot days with no redos. **16 Nov update:** both 16 Nov redos were 🔶 (not cold), so they repeat +1 (22 Nov) and their later steps move: 26 Nov, 3/4 Dec, 17/18 Dec; **55 redos remain from 17 Nov**, last graduation **Sun 17 Jan 2027**.
+
+> **Tue 17 Nov, Day 26 morning:** `GenerateParentheses` ✅ (`221069b`, 17/17, graded 9/10) joins at +1, due Wed 18 Nov; 17-26 Nov already hold two older items each, so it takes the first free slot, **Fri 27 Nov** (rule 9: a free slot, never a third). Its later steps (+3, +7...) are added when that redo is graded. Tonight's blank stubs created, tests copied from the originals and verified against a reference on the box (37/37, 28/28; reference not pushed), red on the stubs: `Day03NextGreaterIndexRedoNov17`, `AsteroidCollisionRedoNov17`. No ladder step changed. Spec: [day26.md](../tasks/day26.md#-evening-redos-cap-2-most-overdue-first-2030-min-each-cold).
 
 ## 🧾 History behind each row
 | Problem | Events and their effect on the gap (source: [PROGRESS.md](../PROGRESS.md), [mistakes/dsa.md](mistakes/dsa.md)) |

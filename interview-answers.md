@@ -1,6 +1,6 @@
 # 🎤 Interview answers — index
 
-![Answered](https://img.shields.io/badge/graded-Day%2002%20%C2%B7%20Day%2003%20%C2%B7%20Day%2004-brightgreen) ![Pending](https://img.shields.io/badge/pending-SoP%20%C2%B7%20labs%20Ch1%20%C2%B7%20B2%20Q3%2FQ6-orange)
+![Answered](https://img.shields.io/badge/graded-Day%2002%20%C2%B7%20Day%2003%20%C2%B7%20Day%2004-brightgreen) ![Pending](https://img.shields.io/badge/pending-SoP%20%C2%B7%20labs%20Ch2%20%C2%B7%20B2%20Q3%2FQ6-orange)
 
 > [!IMPORTANT]
 > A set is only ✅ when my own answers are written and graded. Graded day files live in `spring-boot/interview-answers/` and are linked here, not copied.
@@ -13,9 +13,10 @@
 | 01 | — | ⬜ NOT_STARTED (no graded record found) | — |
 | 02 | Core / DI / mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 7/10 ✅ · Q3 5/10; re-answer Q1, Q3 | [day02-answers.md](spring-boot/interview-answers/day02-answers.md) |
 | 03 | HTTP semantics, mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 5/10 · Q3 7/10 ✅ (17/30); re-answer Q1, Q2 | [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| 04 | Request flow, DTOs, errors | 🔴 REVISION_REQUIRED: Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
+| 04 | Request flow, DTOs, errors | ✅ COMPLETED via re-answers (1 Nov: 8/10 · 9/10 · 9/10, 26/30); first answers Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
 | SoP | Score of Parentheses follow-up | ⬜ NOT_STARTED (answers pending) | below |
-| labs Ch1 | Maven / parent / scopes (`spring-boot-labs`) | ⬜ NOT_STARTED (assigned Day 15) | below |
+| labs Ch1 | Maven / parent / scopes (`spring-boot-labs`) | ✅ COMPLETED (15 Nov, chat interview **7/10**; scopes grid recall 10/10 on 16 Nov) | below · [day24.md](tasks/day24.md#-chapter-1-interview-grade-807-815-am-ist) |
+| labs Ch2 | Query params, request binding, `@SpringBootApplication` (`spring-boot-labs`) | ⬜ NOT_STARTED (assigned Day 26) | below |
 
 ## 📅 Day 03 — 🟡 IN_PROGRESS (17/30)
 Source: the old `day03-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day03-answers.md](spring-boot/interview-answers/day03-answers.md)
@@ -41,11 +42,26 @@ Source: `src/main/java/com/prashant/dsa/stack/ScoreOfParentheses.java` (c909bb8)
 **Q3.** There's an O(1)-space solution that counts depth and adds `1 << depth` at each `()`. How does it work, and what's its overflow risk here?
 > _Answer:_
 
-## 🌱 spring-boot-labs Chapter 1 — ⬜ NOT_STARTED
+## 🌱 spring-boot-labs Chapter 1 — ✅ COMPLETED (7/10, graded in chat 15 Nov)
 Source: [chapters/01-maven-and-the-pom/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/01-maven-and-the-pom/README.md) · assigned [tasks/day15.md](tasks/day15.md)
 
 **Q1.** Who picks the version of `spring-boot-starter-webmvc` when you don't write one, and what happens to all your starters when you upgrade Spring Boot?
 > _Answer:_
 
 **Q2.** What is the difference between Maven scopes `runtime` and `provided`?
+> _Answer:_
+
+## 🌱 spring-boot-labs Chapter 2 — ⬜ NOT_STARTED
+Source: [chapters/02-first-spring-boot-app/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/02-first-spring-boot-app/README.md) · assigned [tasks/day26.md](tasks/day26.md#-1-chapter-2-task-4-carried-over-and-task-5-50-min)
+
+**Q1.** A client calls `GET /accounts/above?balance=10000` and gets 404, but `/accounts` works. Walk through how `RequestMappingHandlerMapping` matches the request and why `@GetMapping("/accounts/above?balance=N")` never matches.
+> _Answer:_
+
+**Q2.** `@RequestParam(required = false) int page` and the client leaves `page` out: what does Spring do, which status does the client see, and why does the same line with `boolean` not fail? Give two correct fixes and their trade-offs.
+> _Answer:_
+
+**Q3.** A filter endpoint like `/accounts/above` grows to 6 optional filters. When would you bind them into one object (a record) instead of six `@RequestParam`s, and how does validation change?
+> _Answer:_
+
+**Q4 (Task 6, from the chapter).** What does `@SpringBootApplication` switch on? Name the three annotations inside it and what each does. What happens if the controller class is in a package above the application class?
 > _Answer:_
