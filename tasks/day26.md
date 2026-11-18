@@ -392,3 +392,37 @@ When a bracket opens, push the context you are leaving (the repeat count and the
 - `GenerateParentheses.main` now prints the n = 3 result (it built the list and threw it away); cosmetic, not logged.
 - [interview-answers.md](../interview-answers.md): labs Chapter 1 marked ✅ (graded 7/10 in chat on 15 Nov, it still said NOT_STARTED); Day 04 row shows the 1 Nov re-answers (26/30); labs Chapter 2 questions added as pending.
 - [redo-schedule.md](../revision/redo-schedule.md): `GenerateParentheses` row added (+1, queued in the first free slot, Fri 27 Nov); Tue 17 Nov stubs created.
+
+## 🌙 Evening (17 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-6%2F10-orange) ![DSA](https://img.shields.io/badge/DSA-8%2F10-yellowgreen) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Recorded on the morning of Wed 18 Nov: the 8 PM review and the 10 PM check ran on 17 Nov, but their records did not reach the repo (tip stayed `920dd50`). Scores and evidence below are the ones given last night, re-verified on fresh clones at 6 AM on 18 Nov.
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring | **6/10** | labs `my-solutions` `393608c` (7:43 PM IST): Chapter 2 **12/19**. Task 4 exact (path-only `@GetMapping("/accounts/above")` + `@RequestParam int balance`, `>`), which fixes the 16 Nov path-pattern mistake. Task 5 used `Math.min(amount / 100, 10)` for a **minimum** fee, so `task5a`-`task5c` were red although the commit said "completed" → logged in [mistakes/spring.md](../revision/mistakes/spring.md) |
+| 🧩 DSA | **8/10** | `GenerateParentheses` 17/17 (`221069b`, 9/10 at 6 AM); `ContainsDuplicate` untouched (0/17) |
+| 🐞 Buggy | unscored | `Day05DecodeString` untouched (12/25); `DailyTemperatures` comments not pushed |
+| 🔁 Redos | not attempted | `Day03NextGreaterIndexRedoNov17` 0/37, `AsteroidCollisionRedoNov17` 0/28 |
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellowgreen) ![Ch2](https://img.shields.io/badge/Chapter%202-15%2F19-yellowgreen)
+
+> [!NOTE]
+> 10 PM check: labs `my-solutions` `00bd2eb` (9:33 PM IST) fixed Task 5 (`Math.max(amount / 100, 10)` and `@RequestParam(defaultValue = "false") boolean express`) → `Chapter02CheckTest` **15/19** on a fresh clone, only Task 6 red. Spring for the day **7/10** (up from 6). No commits in this repo after `221069b`. Neither redo attempted, so the queue moved one day (Wed 18 Nov: Day03 + Asteroid, same blank stubs).
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| Chapter 2 Task 4 | 🌱 | `393608c`, task4a-d green | ✅ COMPLETED |
+| Chapter 2 Task 5 | 🌱 | `00bd2eb`, task5a-d green after the `Math.max` fix | ✅ COMPLETED (with a fix) |
+| Chapter 2 Task 6 + interview question | 🌱 | not started (task6a-d red) | ⬜ NOT_STARTED |
+| `ContainsDuplicate` | 🧩 | untouched, 0/17 | 🟡 IN_PROGRESS (day 1 of 2) |
+| `Day05DecodeString` | 🐞 | untouched, 12/25 | 🟡 IN_PROGRESS |
+| `DailyTemperatures` comments | 🧩 | not pushed | 🟡 IN_PROGRESS |
+| 🔁 `Day03NextGreaterIndex`, `AsteroidCollision` | 🔁 | not attempted | 🟡 IN_PROGRESS (moved to Wed 18 Nov) |
+
+> [!IMPORTANT]
+> **First task Wed 18 Nov:** labs Chapter 2 **Task 6** + its interview question, then `ContainsDuplicate` (carried over, stronger hints). Spec: [day27.md](day27.md).
