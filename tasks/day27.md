@@ -257,3 +257,23 @@ You still write every `TODO` line yourself. The sort-a-copy variant is a valid s
 
 > [!IMPORTANT]
 > Small wins beat a perfect plan: one push tonight (even a red Task 6 or a red Contains Duplicate) keeps Thursday light. Stuck 15 minutes on anything? Ask for a hint here.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![Ch2](https://img.shields.io/badge/Chapter%202-15%2F19-yellowgreen)
+
+> [!NOTE]
+> 10 PM check: **no student commits after the 8 PM review** (labs `my-solutions` still `00bd2eb`, 17 Nov 9:33 PM IST; this repo's student code still `221069b`; tip `0981cd6` is the evening-review commit), so the evening re-run stands: `Chapter02CheckTest` **15/19**, `ContainsDuplicateTest` 0/17, `Day05DecodeStringTest` 12/25, redos 0/37 + 0/28. All three tracks stay **unscored** (last Spring 7, DSA 8, Buggy 7). One chat exchange: at **8:20 PM IST** Prashant said he looked for Task 6 yesterday but could not find it. Answer given: Task 6 goes in `chapters/02-first-spring-boot-app/src/main/java/ledgerly/LedgerlyApplication.java` (not `AccountController.java`; the README says "You edit two files"), one annotation on the class, then the interview question. That is a **findability problem, not a concept gap**, so nothing goes to the mistakes file. Lumi also offered to reword the labs README Task 5 tip ("take the minimum of 10", which probably led to the 17 Nov `Math.min` slip). That edit waits for Prashant's OK, and the labs repo was not touched. Neither redo was attempted, so the queue moved one day.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| Chapter 2 Task 6 + interview question | 🌱 | not started (task6a-d red). He was stuck on **where** the code goes (17-18 Nov), not on the concept; the location was answered in chat at 8:20 PM IST, so it is unblocked. It was not logged as ⛔ BLOCKED because nothing outside the task needed fixing | ⬜ NOT_STARTED (unblocked; first task Thu 19 Nov) |
+| `ContainsDuplicate` | 🧩 | untouched, 0/17. The 2-day carry-over limit is reached | 🟡 IN_PROGRESS (Thu 19 Nov: closed together in chat with a strong-hint walkthrough, ~10 min, then pushed → 17/17; counts as solved with hints) |
+| `Day05DecodeString` | 🐞 | untouched, 12/25 | 🟡 IN_PROGRESS (Thu 19 Nov is day 3, so it closes with hints in chat; must be ✅ before Friday's round) |
+| `DailyTemperatures` comments | 🧩 | not pushed | 🟡 IN_PROGRESS (Thu buggy minutes, 5 min) |
+| B2 Q3 + Q6 + the catch-all sentence | 🌱 | not reached | ⬜ NOT_STARTED |
+| 🔁 `Day03NextGreaterIndex`, `AsteroidCollision` | 🔁 | not attempted (second evening in a row). Missed is not failed, so no gap changed | 🟡 IN_PROGRESS (moved to Thu 19 Nov, same blank `...RedoNov17` stubs) |
+| Labs README Task 5 tip wording | 🌱 | Lumi offered a clearer wording in chat | waiting for Prashant's OK; `spring-boot-labs` not edited |
+
+> [!IMPORTANT]
+> **First task Thu 19 Nov:** labs Chapter 2 **Task 6** in `chapters/02-first-spring-boot-app/src/main/java/ledgerly/LedgerlyApplication.java` (on `my-solutions`; first the one line "Spring Boot already ___, so I only add ___") → push → `Chapter02CheckTest` **19/19**, then the Task 6 interview question answered in chat. Next: close **`ContainsDuplicate`** with a strong-hint walkthrough in chat (~10 min, then push → 17/17) **before** Valid Anagram. Chapter 3 starts only after Ch 2 is 19/19 and the interview question is answered. Buggy minutes: `DailyTemperatures` comments, then `Day05DecodeString` with hints. Evening redos: `Day03NextGreaterIndexRedoNov17` + `AsteroidCollisionRedoNov17` (cold). CarFleet + LargestRect move to Fri 20 Nov ([redo-schedule.md](../revision/redo-schedule.md)). **Pending items: 10** ([PROGRESS.md](../PROGRESS.md#-pending)).
