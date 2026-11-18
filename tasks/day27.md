@@ -208,3 +208,52 @@ You still write every `TODO` line yourself. The sort-a-copy variant is a valid s
 - [redo-schedule.md](../revision/redo-schedule.md): the 17 Nov pair was not attempted, so every queued date moved one day; the whole calendar was re-simulated (60 redos left, last graduation Tue 19 Jan 2027). The 17 Nov blank stubs are reused today (no duplicates). The Sun 22 Nov pair is now Mon 23 Nov.
 - PROGRESS: the "Today's plan" pointer (still pointing at day20) now points here; Chapter 2 rows, Pending and Next recommended refreshed.
 - No cosmetic fixes needed: no new student code since last night.
+
+## 🌙 Evening (18 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
+
+> [!NOTE]
+> Checked at ~8 PM IST on fresh clones (JDK 21, Maven). **No student commits today** in either repo (this repo's tip is the 6 AM `0861fb2`; labs `my-solutions` is still `00bd2eb` from 17 Nov 9:33 PM IST) and **no answers in chat today**. Re-run results are unchanged from the morning, so no track can be scored tonight. Last scores stand: Spring **7**, DSA **8**, Buggy **7** (last scored 7 Nov). No new conceptual mistake was logged, and nothing cosmetic needed fixing.
+
+| Track | Score | Evidence (re-run tonight) |
+|---|---|---|
+| 🌱 Spring | **can't be scored yet** | `Chapter02CheckTest` **15/19**; `task6a`-`task6d` still red (Task 6 untouched); Task 6 interview question not answered |
+| 🧩 DSA | **can't be scored yet** | `ContainsDuplicateTest` **0/17** (stub untouched, day 2 of 2) |
+| 🐞 Buggy | **can't be scored yet** | `Day05DecodeStringTest` **12/25** as shipped; `DailyTemperatures` comments not pushed |
+| 🔁 Redos | not attempted yet (tonight's slot) | `Day03NextGreaterIndexRedoNov17` 0/37, `AsteroidCollisionRedoNov17` 0/28 |
+
+### 🗂️ Topic classification tonight
+
+| Topic | Class | Why |
+|---|---|---|
+| Ch 2 Task 6: the application class (`@SpringBootApplication` = configuration + auto-configuration + component scan) | ⏳ Pending | not started; the red tests point straight at the task, so it is not blocked |
+| Contains Duplicate (HashSet, early exit) | ⏳ Pending | day 2 of 2 of the carry-over; closes with hints in chat on Thursday if still red tonight |
+| `Day05DecodeString` (two stacks, saved text goes in front) | ⏳ Pending | open since Tue 17 Nov; the 17 Nov chat walkthrough ("save at `[`, glue in front at `]`") is the hint |
+| `DailyTemperatures` pseudocode + brute-force comments | ⏳ Pending | open since 12 Nov |
+| Day03 + Asteroid cold redos | ⏳ Pending | tonight's slot; if nothing lands by the 10 PM check, the queue moves one day again |
+| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | no new evidence; the short packs from 16 Nov still apply: [pack 2](day25.md#-weak-topic-pack-2-http-semantics-carried-short), [pack 3](day25.md#-weak-topic-pack-3-responseentity-vs-responsestatus-location-carried-short) |
+| Everything else in PROGRESS "Weak topics" | unchanged | no new graded evidence today |
+| ⛔ Blocked | none | nothing outside the tasks is in the way |
+
+> [!TIP]
+> The two 🔴 Weak packs were written on 16 Nov and haven't been attempted yet, so no new pack tonight. Each still has notes, one concept question, one implementation exercise, one debugging exercise and one interview scenario. Writing new ones before those are done would only add to the pile.
+
+### 🌙 Tonight (the rest of the evening slot, in this order)
+
+1. 🌱 **Ch 2 Task 6** (~20 min). First write one line: "Spring Boot already ___, so I only add ___". Then make the change and push to `my-solutions` → **19/19**.
+2. 🧩 **Contains Duplicate** (~25 min). Write the pseudocode + brute-force comment, then code. Push it even if red. It's the last day of the carry-over.
+3. 🔁 If time is left, **one** cold redo: `Day03NextGreaterIndexRedoNov17` (blank file, 25-minute timer, no peeking). Asteroid can wait for the 10 PM check.
+4. `DailyTemperatures` comments and `Day05DecodeString` move to Thursday's buggy minutes (below).
+
+### 🔮 Tomorrow's focus (Thu 19 Nov), based on tonight
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | **Finish Chapter 2 before anything new.** If Task 6 is still red, it comes first again with a stronger hint (the class is missing the one annotation that turns on auto-configuration and component scanning). Then the Task 6 interview question in chat. Chapter 3 starts only once Ch 2 is 19/19 and the interview question is answered. | Task 6 is the last red item and its interview question is ungraded. Starting Chapter 3 on top of it would repeat the pile-up from 8-11 Nov. |
+| 🧩 DSA | If Contains Duplicate is still red, we close it together in chat first (~10 min; it counts as solved with hints). Then **Valid Anagram** (Arrays & Hashing 2 of 9) starts on time, pseudocode first. | The 2-day carry-over limit is reached. Valid Anagram uses the same idea (a frequency map / set), so closing Contains Duplicate first makes it easier. |
+| 🐞 Buggy | `DailyTemperatures` comments (5 min), then close `Day05DecodeString` (day 3, so it comes with hints in chat). Friday's buggy round only after it's ✅. | Two buggy items are open, and there has been no buggy score since 7 Nov. |
+| 🔁 Redos | Whatever doesn't land tonight from Day03 + Asteroid goes first (cap 2). | The redo ladder hasn't moved since 12 Nov. |
+
+> [!IMPORTANT]
+> Small wins beat a perfect plan: one push tonight (even a red Task 6 or a red Contains Duplicate) keeps Thursday light. Stuck 15 minutes on anything? Ask for a hint here.
