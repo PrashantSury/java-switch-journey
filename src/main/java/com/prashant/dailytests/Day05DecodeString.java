@@ -41,10 +41,11 @@ public class Day05DecodeString {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (Character.isDigit(c)) {
-                k = c - '0';
+            if (c >= '0' && c <= '9') {
+                k = (int) Math.min(k * 10L + (c - '0'), MAX_OUTPUT + 1L);
             } else if (c == '[') {
                 counts.push(k);
+                k = 0;
                 outers.push(current);
                 current = new StringBuilder();
             } else if (c == ']') {
@@ -56,7 +57,8 @@ public class Day05DecodeString {
                 if ((long) current.length() * times + outer.length() > MAX_OUTPUT) {
                     throw new IllegalArgumentException("decoded text longer than " + MAX_OUTPUT);
                 }
-                current = new StringBuilder(current.toString().repeat(times)).append(outer);
+                outer.append(current.toString().repeat(times));
+                current = outer;
             } else {
                 current.append(c);
             }
@@ -68,7 +70,7 @@ public class Day05DecodeString {
     }
 
     public static void main(String[] args) {
-        System.out.println(decode("3[a]2[bc]"));   // expected: aaabcbc
+        System.out.println(decode("a0[bc]d"));   // expected: ad
         System.out.println(decode("3[a2[c]]"));    // expected: accaccacc
     }
 }

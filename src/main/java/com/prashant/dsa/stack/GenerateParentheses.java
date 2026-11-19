@@ -78,9 +78,4 @@ public class GenerateParentheses {
             current.deleteCharAt(current.length() - 1);   // undo
         }
     }
-
-    public static void main(String[] args) {
-        GenerateParentheses gp = new GenerateParentheses();
-        System.out.println(gp.generateParenthesis(3));   // the 5 strings for n = 3
-    }
 }
