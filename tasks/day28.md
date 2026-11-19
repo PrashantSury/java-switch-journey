@@ -336,3 +336,82 @@ This morning's real failures (13 of 25), grouped by **symptom** (what you see, n
 | Trackers | `PROGRESS.md`: today's plan pointer, overall status, DSA table (Valid Anagram row), pending, next recommended, log row |
 | Checked, unchanged | `interview-answers.md` already lists Ch 2 Q4 (Task 6) as pending; redo calendar unchanged (no redo graded since 12 Nov); no secrets; `target/` ignored |
 | Flagged, not touched | PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) (Lumi CarFleet comments) open 13 days; labs repo not edited |
+
+
+## 🌙 Evening (19 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-6%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-6%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-green) ![Ch2](https://img.shields.io/badge/Chapter%202-19%2F19-brightgreen)
+
+> [!NOTE]
+> Checked at ~8 PM IST on fresh clones (JDK 21, Maven). Today's student commits: labs `my-solutions` `b4a3717` (11:59 AM IST); this repo `c61da8e` (1:10 PM), `eeb8bb9` (1:50 PM), `2c0c2fb` (4:49 PM), `97dbc9f` (5:55 PM), `b207444` (6:04 PM). Whole suite: **719 run, 28 red, and all 28 are the untouched `AsteroidCollisionRedoNov17` stub**. Chat today: two "check my push" requests (graded at ~5 PM and ~6 PM IST). The Task 6 interview question and the knowledge checks were **not answered**. One conceptual mistake logged ([mistakes/dsa.md](../revision/mistakes/dsa.md), Valid Anagram). Cosmetic, not logged: an unused `import java.util.Arrays` in `ValidAnagram.java` (delete it next time you touch the file).
+
+A big closing day: four items that had been open for 2-7 days are now green. The scores are moderate because most of it landed with day-3 hints, and the "explain it" half is still missing on every track.
+
+| Track | Score | Evidence (re-run tonight) |
+|---|---|---|
+| 🌱 Spring | **6/10** (concept 5 · implementation 8 · problem solving 6 · interview: not answered) | `Chapter02CheckTest` **19/19**, so Chapter 2's code is complete. But Task 6 was one annotation, done on day 3 with a visible skeleton after the file location was given in chat. The part that proves senior understanding (the three annotations inside `@SpringBootApplication`, the package-above-the-app trap, `--debug`) hasn't been answered yet. |
+| 🧩 DSA | **6/10** (concept 6 · implementation 8 · problem solving 5 · complexity 5 · interview 5) | `ContainsDuplicate` **17/17** with the skeleton (🔶); it uses `contains` + `add` (two lookups) where `add`'s return value answers in one. `ValidAnagram`'s first push compared **character sums**. That passed the 17 shipped tests but is wrong (`ac` vs `bb` both sum to 196). It was fixed after review to a clean `int[26]` count → **18/18**. Complexity lines have no "because" (third time this week), the brute-force 10^6 cost isn't stated, and the knowledge checks are unanswered. |
+| 🐞 Buggy | **7/10** (concept 8 · implementation 9 · debugging 6 · interview 5) | `Day05DecodeString` **25/25**: three minimal, correct fixes (multi-digit `k`, reset `k` after `[`, saved text goes in front at `]`), plus a `long` clamp so a huge count can't overflow. That last one is a senior instinct. Debugging is 6 because the symptom-group comment and the one-line-per-fix notes were skipped, and `DailyTemperatures` comments (open since 12 Nov) still aren't pushed. |
+| 🔁 Redos | `Day03NextGreaterIndex` ✅ **clean cold 37/37** → +3 | Written from scratch on the blank stub (own names and messages, not a copy of the original): decreasing stack of indices, null → IAE. Cosmetic gaps: pattern line just says "stack", and there's no pseudocode or complexity reason. `AsteroidCollision` 0/28, not attempted yet. |
+
+### 🗂️ Topic classification tonight
+
+| Topic | Class | Why |
+|---|---|---|
+| Monotonic stack: next greater (Day03 redo) | 🟢 Strong | clean cold redo, first try, 37/37 |
+| Two-stack decoding (`Day05DecodeString`) | 🟡 Moderate | all three bugs fixed minimally, but with day-3 hint questions and no written symptom groups |
+| Hash-set membership (`ContainsDuplicate`) | 🟡 Moderate | correct and fast, but closed with the skeleton; the `add`-returns-false idiom wasn't used |
+| Complexity with a "because" | 🟡 Moderate (recurring) | three files today with bare `O(n)` / `O(1)` |
+| **Frequency counting: counts, not sums (`ValidAnagram`)** | 🔴 **Weak** | conceptual miss (a lossy fingerprint); fixed only after review → pack below |
+| `@SpringBootApplication` (configuration + auto-configuration + component scan) | ⏳ Pending | code green; the explanation is the interview question still owed |
+| `DailyTemperatures` comments; B2 Q3/Q6; Valid Anagram + Contains Duplicate knowledge checks | ⏳ Pending | not done |
+| `AsteroidCollision` cold redo | ⏳ Pending | tonight's slot |
+| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs still unattempted ([pack 2](day25.md#-weak-topic-pack-2-http-semantics-carried-short), [pack 3](day25.md#-weak-topic-pack-3-responseentity-vs-responsestatus-location-carried-short)) |
+| ⛔ Blocked | none | nothing outside the tasks is in the way |
+
+### 🔴 Weak-topic pack: frequency counting (counts, not sums)
+
+**Why it matters (one line).** Group Anagrams, Top K Frequent and every sliding-window problem next week compare two "fingerprints" of data. If the fingerprint throws information away, two different inputs look equal and you get silent wrong answers that the tests may not catch.
+
+**Revision notes.**
+- A **sum** (or XOR, or length) squeezes many letters into one number. Different letters can land on the same number: `"ac"` = 97 + 99 = 196 = 98 + 98 = `"bb"`. Equal sums can only rule anagrams **out**, never **in**.
+- A **count per letter** keeps exactly what "same letters, same number of times" needs. `int[26]`: +1 for `s`, −1 for `t`, then **every** slot must be 0. Checking that the total is 0 is the same bug again.
+- Length check first: different lengths means `false`, with no counting needed.
+- `int[26]` only works for `'a'-'z'`. For any Unicode text, use `HashMap<Integer, Integer>` over `codePoints()`.
+
+| s | t | sum s | sum t | sum says | counts say |
+|---|---|---|---|---|---|
+| `ac` | `bb` | 196 | 196 | anagram ❌ | a:+1 b:−2 c:+1 → **false** ✅ |
+| `rat` | `tar` | 327 | 327 | anagram | all 0 → **true** ✅ |
+
+1. **Conceptual question.** XOR every character of `s` and `t` together; if the result is 0, are they anagrams? Give a two-letter counterexample and say in one sentence what XOR loses.
+2. **Implementation exercise (10 min).** In a scratch class, write `isAnagramUnicode(String s, String t)` using `s.codePoints()` and one `HashMap<Integer, Integer>` (+1 / −1, remove a key when it hits 0, answer `map.isEmpty()`). Check it with `"café"` / `"éfac"` and `"a😀"` / `"😀a"`. Pseudocode first.
+3. **Debugging exercise.** This passes `anagram`/`nagaram`. Find an input it gets wrong, say why, and fix it in one line:
+   ```java
+   int[] c = new int[26];
+   for (int i = 0; i < s.length(); i++) { c[s.charAt(i) - 'a']++; c[t.charAt(i) - 'a']--; }
+   int total = 0;
+   for (int x : c) total += x;
+   return total == 0;          // (length check done above)
+   ```
+4. **Interview scenario.** The fraud team wants every new beneficiary nickname checked in real time against 5 million existing ones: "is it an anagram of any of them?" What key do you store (sorted letters or a 26-count signature), how big is the index, and where does normalisation (case, accents, spaces) belong: in this method or before it, and why?
+
+### 🌙 Tonight (rest of the evening slot, in this order)
+
+1. 🌱 **Task 6 interview answer in chat** (~10 min, 3 sentences + the `--debug` add-on) and knowledge checks 1-3 from the morning section. This closes Chapter 2.
+2. 🔁 **`AsteroidCollisionRedoNov17` cold** (25-minute timer, blank file, no peeking). Start with the pattern line + time/space **with a "because"**, then 3-5 lines of pseudocode. Push even if red.
+3. 🐞 **`DailyTemperatures` comments** (5 min, comment-only push): brute-force line + 3-5 lines of pseudocode.
+4. 🧩 **Valid Anagram knowledge checks 1-3** in chat (A/B/C/D, 2 min).
+5. If time is left: B2 Q3 + Q6. Otherwise they move to the weekend.
+
+### 🔮 Tomorrow's focus (Fri 20 Nov), based on tonight
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | If the Task 6 answer isn't in by then, it's the first 10 minutes. Then **Chapter 3**, starting with the one line "Spring Boot already ___, so I only add ___". | Chapter 2's code is done, but the concept is still ungraded. A senior answer to "what does the main class switch on" matters more in interviews than the annotation itself. |
+| 🧩 DSA | 10-minute warm-up: the pack's **debugging exercise** (sum vs every-slot). Then the new problem **Two Sum** (Arrays & Hashing 3 of 9: a `HashMap` from value to index). Every complexity line gets a "because". | Valid Anagram exposed the lossy-fingerprint gap, and Two Sum is the next "remember what you've seen" step. The missing complexity reasons are the habit to fix this week. |
+| 🐞 Buggy | Friday's **Arrays & Hashing buggy round** (unlocked now that DecodeString is ✅). The symptom-group comment comes **before** any code change, and each fix gets a one-line comment naming its test. | Today's fixes were correct, but the debugging write-up was skipped, and that write-up is what an interviewer listens for. |
+| 🔁 Redos | `CarFleet` + `Day04LargestRectangle` (cap 2). If Asteroid misses tonight, the 10 PM check re-queues it first. | queue per [redo-schedule.md](../revision/redo-schedule.md); Day03 moved to +3 |
+
+> [!TIP]
+> Today proved you can close things fast once you start: four green files in one afternoon. Tonight's most valuable 10 minutes is the Task 6 answer, because explaining it is what turns a green test into interview points.
