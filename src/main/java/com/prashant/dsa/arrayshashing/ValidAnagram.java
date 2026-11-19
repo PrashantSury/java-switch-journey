@@ -41,8 +41,9 @@ import java.util.Arrays;
 public class ValidAnagram {
 
 /*     Pseudocode:
-     1. check length of each string and if the length is equal then proceed else return false
-     2. find the sum of each character in the string and if it is equal then return true
+     1. Add freq of each character of a string 1 in the freq array
+     2. if the freq of character from a string 2 matched then remove it to previous state
+     3. if the freq array contains only 0 in it then it is anagram
 
      Brute force: compare each character in string 1 with each character in another string2 for containment
 
@@ -59,14 +60,18 @@ public class ValidAnagram {
         if(s.length() != t.length()) {
             return false;
         }
-        int sumS = 0; int sumT = 0;
+        int[] freq = new int[26];
         for( int i = 0; i < s.length(); i++ ) {
-            sumS+= s.charAt(i);
+           freq[s.charAt(i) - 'a']++;
         }
         for( int i = 0; i < t.length(); i++ ) {
-            sumT+= t.charAt(i);
+            freq[t.charAt(i) - 'a']--;
         }
-        return sumS == sumT;
+
+        for(int i:freq){
+            if(i!=0) return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
