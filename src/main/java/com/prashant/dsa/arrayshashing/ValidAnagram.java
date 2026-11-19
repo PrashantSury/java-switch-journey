@@ -1,7 +1,5 @@
 package com.prashant.dsa.arrayshashing;
 
-import java.util.Arrays;
-
 /**
  * Valid Anagram (LeetCode 242, NeetCode 150, Arrays & Hashing, problem 2 of 9).
  * Full spec, hints and knowledge checks: tasks/day28.md, "Valid Anagram".

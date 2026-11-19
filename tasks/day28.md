@@ -415,3 +415,23 @@ A big closing day: four items that had been open for 2-7 days are now green. The
 
 > [!TIP]
 > Today proved you can close things fast once you start: four green files in one afternoon. Tonight's most valuable 10 minutes is the Task 6 answer, because explaining it is what turns a green test into interview points.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-6%2F10-orange) ![DSA](https://img.shields.io/badge/DSA-6%2F10-orange) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-yellowgreen) ![Ch2](https://img.shields.io/badge/Chapter%202-19%2F19-brightgreen) ![Pending](https://img.shields.io/badge/pending-8-blue)
+
+> [!NOTE]
+> 10 PM check: **no student commits after the 8 PM review** in either repo (labs `my-solutions` still `b4a3717`, 19 Nov 11:59 AM IST; this repo's student code still `b207444`, 6:04 PM IST; tip `4242f4b` is the evening-review commit). No answers in chat after the review, so the evening scores stand (Spring 6, DSA 6, Buggy 7) and the suite result stands (719 run, 28 red = the untouched `AsteroidCollisionRedoNov17` stub). Housekeeping: Lumi removed the unused `import java.util.Arrays` from `ValidAnagram.java` (cosmetic, not logged); `ValidAnagramTest` re-run **18/18**. Asteroid was not attempted for the third evening, so the redo queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)).
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| Chapter 2 Task 6 interview question + knowledge checks 1-3 | 🌱 | not answered tonight (code is 19/19) | 🟡 IN_PROGRESS (first 10 minutes Fri 20 Nov, in chat; then Chapter 3) |
+| 🔁 `AsteroidCollisionRedoNov17` cold | 🔁 | not attempted (17, 18 and 19 Nov). Missed is not failed, so no gap changed | 🟡 IN_PROGRESS (Fri 20 Nov evening, slot 1, with `CarFleet`) |
+| `DailyTemperatures` comments | 🧩🐞 | not pushed | 🟡 IN_PROGRESS (Fri 20 Nov buggy minutes, 5 min) |
+| Valid Anagram + Contains Duplicate knowledge checks | 🧩 | not answered | ⬜ NOT_STARTED (Fri 20 Nov, 2 min in chat, before Two Sum) |
+| 🔴 Frequency-counting weak pack | 🧩 | not started | ⬜ NOT_STARTED (Fri 20 Nov warm-up: the debugging exercise, 10 min) |
+| B2 Q3 + Q6 + the catch-all sentence | 🌱 | not reached | ⬜ NOT_STARTED (weekend) |
+| Unused `import java.util.Arrays` in `ValidAnagram.java` | 🧩 | removed by Lumi (cosmetic) | ✅ fixed, 18/18 re-run |
+
+> [!IMPORTANT]
+> **First task Fri 20 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Task 6 interview answer in chat**: the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, plus the `--debug` add-on, and knowledge checks 1-3 from the morning section. That closes Chapter 2. Next: labs **Chapter 3**, starting with the line "Spring Boot already ___, so I only add ___". 🧩 10-minute frequency-counting debugging exercise and the Valid Anagram knowledge checks, then **Two Sum** (Arrays & Hashing 3 of 9) with a "because" on every complexity line. 🐞 `DailyTemperatures` comments, then Friday's Arrays & Hashing buggy round, symptom groups before any fix. 🔁 Evening: `AsteroidCollisionRedoNov17` + `CarFleet`, cold. **Pending items: 8** ([PROGRESS.md](../PROGRESS.md#-pending)).
