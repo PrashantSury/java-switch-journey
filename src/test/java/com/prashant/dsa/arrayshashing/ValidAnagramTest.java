@@ -37,6 +37,12 @@ class ValidAnagramTest {
         assertFalse(sol.isAnagram("car", "rat"));
     }
 
+    @Test @DisplayName("normal: equal character sums but different letters (ac / bb, abd / bbc) is not")
+    void equalSumsDifferentLetters() {
+        assertFalse(sol.isAnagram("ac", "bb"));
+        assertFalse(sol.isAnagram("abd", "bbc"));
+    }
+
     // ---------- edge ----------
 
     @Test @DisplayName("edge: two empty strings are anagrams")
