@@ -1,5 +1,9 @@
 package com.prashant.dailytests.redo;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
 /**
  * Cold redo of the Day 03 buggy round, next greater INDEX (gap +1, first redo; the
  * round was fixed 29 Oct, 37/37). This time there is no buggy code to fix: write the
@@ -23,12 +27,29 @@ package com.prashant.dailytests.redo;
  */
 public class Day03NextGreaterIndexRedoNov17 {
 
-    // Pattern:
-    // Time:
-    // Space:
+    // Pattern: stack
+    // Time: O(n)
+    // Space: O(n)
 
     public static int[] nextGreaterIndex(int[] nums) {
-        // TODO: write from memory
-        throw new UnsupportedOperationException("TODO");
+        if (nums == null) {
+            throw new IllegalArgumentException("array is null");
+        }
+
+        int[] res = new int[nums.length];
+        Arrays.fill(res, -1);
+
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.isEmpty() && nums[stack.peek()] < nums[i]) {
+                res[stack.pop()] = i;
+            }
+            stack.push(i);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        nextGreaterIndex(new int[]{2, 1, 3, 4});
     }
 }
