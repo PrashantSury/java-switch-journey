@@ -1,5 +1,7 @@
 package com.prashant.dsa.arrayshashing;
 
+import java.util.Arrays;
+
 /**
  * Valid Anagram (LeetCode 242, NeetCode 150, Arrays & Hashing, problem 2 of 9).
  * Full spec, hints and knowledge checks: tasks/day28.md, "Valid Anagram".
@@ -38,19 +40,33 @@ package com.prashant.dsa.arrayshashing;
  */
 public class ValidAnagram {
 
-    // Pseudocode:
-    // 1.
-    // 2.
-    // 3.
-    // Brute force:
-    //
-    // Pattern:
-    // Time:
-    // Space:
+/*     Pseudocode:
+     1. check length of each string and if the length is equal then proceed else return false
+     2. find the sum of each character in the string and if it is equal then return true
+
+     Brute force: compare each character in string 1 with each character in another string2 for containment
+
+     Pattern: convert string to character array
+     Time: O(n)
+     Space: O(1)
+ */
 
     public boolean isAnagram(String s, String t) {
-        // TODO(write by hand)
-        throw new UnsupportedOperationException("TODO: Valid Anagram");
+
+        if(s == null || t == null ) {
+            throw new IllegalArgumentException("either of the strings can not be null");
+        }
+        if(s.length() != t.length()) {
+            return false;
+        }
+        int sumS = 0; int sumT = 0;
+        for( int i = 0; i < s.length(); i++ ) {
+            sumS+= s.charAt(i);
+        }
+        for( int i = 0; i < t.length(); i++ ) {
+            sumT+= t.charAt(i);
+        }
+        return sumS == sumT;
     }
 
     public static void main(String[] args) {

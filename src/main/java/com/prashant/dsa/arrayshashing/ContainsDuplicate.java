@@ -1,5 +1,8 @@
 package com.prashant.dsa.arrayshashing;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Contains Duplicate (LeetCode 217, NeetCode 150, Arrays & Hashing, problem 1 of 9).
  * Full spec, approach table and knowledge check: tasks/day26.md, "Contains Duplicate".
@@ -39,19 +42,30 @@ package com.prashant.dsa.arrayshashing;
  */
 public class ContainsDuplicate {
 
-    // Pseudocode:
-    // 1.
-    // 2.
-    // 3.
-    // Brute force:
-    //
-    // Pattern:
-    // Time:
-    // Space:
+    /* Pseudocode:
+     1. create set for unique elements
+     2. loop on the elements in the array
+     3. contains the current element already in the set then return true
+     Brute force: compare each element in the array with every other element if it is equal then return true else false
 
+     Pattern: unique element in the array
+     Time: O(n)
+     Space: O(n) as we are using set to store the unique elements and if all the elements on the array are unique then the length of array and set are equal
+*/
     public boolean containsDuplicate(int[] nums) {
-        // TODO(write by hand)
-        throw new UnsupportedOperationException("TODO: Contains Duplicate");
+
+        if (nums == null ) {
+            throw new IllegalArgumentException("null array");
+        }
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
     }
 
     public static void main(String[] args) {
