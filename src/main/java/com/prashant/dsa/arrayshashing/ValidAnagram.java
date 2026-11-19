@@ -47,7 +47,7 @@ public class ValidAnagram {
 
      Brute force: compare each character in string 1 with each character in another string2 for containment
 
-     Pattern: convert string to character array
+     Pattern: frequency counting
      Time: O(n)
      Space: O(1)
  */
