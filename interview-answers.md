@@ -51,7 +51,7 @@ Source: [chapters/01-maven-and-the-pom/README.md](https://github.com/PrashantSur
 **Q2.** What is the difference between Maven scopes `runtime` and `provided`?
 > _Answer:_
 
-## 🌱 spring-boot-labs Chapter 2 — ⬜ NOT_STARTED
+## 🌱 spring-boot-labs Chapter 2 — 🟡 IN_PROGRESS (code 19/19 at `b4a3717`; Q4 owed in chat)
 Source: [chapters/02-first-spring-boot-app/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/02-first-spring-boot-app/README.md) · assigned [tasks/day26.md](tasks/day26.md#-1-chapter-2-task-4-carried-over-and-task-5-50-min)
 
 **Q1.** A client calls `GET /accounts/above?balance=10000` and gets 404, but `/accounts` works. Walk through how `RequestMappingHandlerMapping` matches the request and why `@GetMapping("/accounts/above?balance=N")` never matches.
@@ -64,4 +64,16 @@ Source: [chapters/02-first-spring-boot-app/README.md](https://github.com/Prashan
 > _Answer:_
 
 **Q4 (Task 6, from the chapter).** What does `@SpringBootApplication` switch on? Name the three annotations inside it and what each does. What happens if the controller class is in a package above the application class?
+> _Answer:_
+
+## 🌱 spring-boot-labs Chapter 3 — ⬜ NOT_STARTED
+Source: [chapters/03-beans-and-the-application-context/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/03-beans-and-the-application-context/README.md) · assigned [tasks/day29.md](tasks/day29.md#-1-spring-close-chapter-2-then-chapter-3-tasks-1-2-60-min)
+
+**Q1 (Task 6, from the chapter).** Spring beans are singletons by default. What does that mean, is it the same as the singleton pattern, does it make a bean thread-safe, and what is the difference between `@Component` and `@Bean`? (Written answer goes in the chapter's `interview-answer.md`; graded in chat.)
+> _Answer:_
+
+**Q2 (senior).** A singleton `TransferService` keeps a `private BigDecimal runningTotal` field that each request updates. Under load, totals drift. Explain why, and give two fixes with their trade-offs.
+> _Answer:_
+
+**Q3 (senior).** A singleton bean gets a prototype `Receipt` injected through its constructor. Does every transfer get a new receipt? If not, name two ways to get a fresh one per call.
 > _Answer:_
