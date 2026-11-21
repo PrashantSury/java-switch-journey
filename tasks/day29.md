@@ -358,3 +358,109 @@ Looking up **before** storing is what stops an element pairing with itself. `[3,
 | Trackers | `interview-answers.md`: Chapter 2 heading now 🟡 IN_PROGRESS (was ⬜ NOT_STARTED, but its code is 19/19); Chapter 3 Q1-Q3 added as pending. `revision/redo-schedule.md`: today's row names the CarFleet stub. `PROGRESS.md`: plan pointer, status, pending, next recommended, log |
 | Checked, unchanged | No secrets; `target/` ignored; labs repo not edited (Chapter 3 stubs and tests already exist there) |
 | Flagged, not touched | PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) (Lumi CarFleet comments) open 14 days |
+
+
+## 🌙 Evening (20 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-7%2F10-green) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![Ch3](https://img.shields.io/badge/Chapter03CheckTest-15%2F15-brightgreen)
+
+> [!NOTE]
+> Checked at ~8 PM IST on fresh clones (JDK 21, Maven 3.9.6). Today's student commits: **labs `my-solutions` `e619f82` "chapter3 completed" (1:04 PM IST)** only. This repo: no student commits (only the three 6 AM session commits, tip `a9ec0d4`), so `TwoSum` (0/19), `Day06FirstUniqueCode` (6/20), the `DailyTemperatures` comments and both redo stubs (Asteroid 0/28, CarFleet 0/37) are untouched. Chat today: a Maven question at 12:16 PM IST (running `-Dtest=Chapter03CheckTest` from the repo root; answered) and a job-listing gap check (no roadmap change, as you asked). The Chapter 2 Task 6 interview answer, the Ch 3 knowledge checks and the DSA warm-up were **not answered in chat**. One conceptual mistake logged ([mistakes/spring.md](../revision/mistakes/spring.md), singleton thread-safety). Cosmetic, not logged (labs repo left as is): `@Component("feeCalculator")` and `@Bean(name="bankClock")` repeat the default names, `@Component` is indented, `@Scope (scopeName="prototype")` has a stray space (`@Scope("prototype")` is the usual form), and `interview-answer.md` has no newline at the end.
+
+You went further than the plan in Spring: all six Chapter 3 tasks green on the first push, with no hint. DSA and buggy had no work today, so they can't be scored, and the "explain it" half is still the gap.
+
+| Track | Score | Evidence (re-run tonight) |
+|---|---|---|
+| 🌱 Spring | **7/10** (concept 6 · implementation 9 · problem solving 7 · interview 5) | `Chapter03CheckTest` **15/15** on `e619f82` (planned: Tasks 1-2, 4/15). `@Component` on `FeeCalculator`; `@Bean` `Clock.system(ZoneId.of("Asia/Kolkata"))`; two named `InterestPolicy` beans with `@Primary` on savings (task5b: only one primary); `Receipt` prototype while the others stay singleton. Clean, minimal, nothing added that Spring already does. Points off: the written interview answer (Task 6) is 3 sentences (4-8 asked) and its thread-safety fix is wrong (**5/10**, below); Chapter 3 was started before the Chapter 2 Task 6 answer it was gated on, which is now owed for a third day. |
+| 🧩 DSA | **can't be scored yet** (no work today; last 6) | `TwoSumTest` 0/19, untouched; warm-up (debugging exercise + Valid Anagram checks) not answered. |
+| 🐞 Buggy | **can't be scored yet** (no work today; last 7) | `Day06FirstUniqueCodeTest` 6/20 as shipped; `DailyTemperatures` comments (open since 12 Nov) not pushed. |
+| 🔁 Redos | none graded | `AsteroidCollisionRedoNov17` 0/28 and `CarFleetRedoNov20` 0/37 still blank; tonight's slot is still open. No ladder row changed. |
+
+**Chapter 3 interview answer, graded 5/10.** (1) "One per application context, not the GoF pattern" ✅ exact. (2) "Not thread-safe" ✅, but "make deep copies of the mutable fields" ❌: the race is on the shared field itself, and copying doesn't stop two threads writing it. (3) Right rule (yours → `@Component`, JDK class → `@Bean`), but it misses *why*: scanning finds `@Component`; `@Bean` is for classes you don't own **or** that need code to build.
+
+### 🗂️ Topic classification tonight
+
+| Topic | Class | Why |
+|---|---|---|
+| Registering beans: `@Component`, `@Bean`, names, `@Primary`, prototype scope (code) | 🟢 Strong | all 15 checks green on the first push, no hint, minimal code |
+| `@Component` vs `@Bean` (explaining the choice) | 🟡 Moderate | right rule, missing the "needs code to build" reason |
+| **Singleton beans and shared mutable state (thread-safety)** | 🔴 **Weak** | conceptual miss in the written answer → pack below, logged in [mistakes/spring.md](../revision/mistakes/spring.md) |
+| `@SpringBootApplication` (configuration + auto-configuration + component scan) | ⏳ Pending | code green since 19 Nov; the explanation (Ch 2 Task 6 answer) still not given |
+| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov pack: today's debugging exercise not attempted ([day28.md pack](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) |
+| `TwoSum`, `Day06FirstUniqueCode`, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not started |
+| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs still unattempted |
+| ⛔ Blocked | none | the 12:16 PM Maven error was the command, not a blocker; nothing is in the way |
+
+### 🔴 Weak-topic pack: singleton beans and shared mutable state
+
+**Why it matters (one line).** Every Ledgerly service is a singleton shared by all request threads; one field that a request writes is a real money bug (drifting totals, one customer's data in another's response), and "is a singleton bean thread-safe?" is asked in nearly every senior Spring round.
+
+**Revision notes.**
+- Singleton = **one object, many threads at once**. Method parameters and local variables live on each thread's own stack, so they are safe. **Fields** live on the shared object, so a field that requests write is a race.
+- "Deep copy" protects you from someone *else* changing an object you hold. It does nothing when two threads update the **same field** (`total = total + x` is read, add, write: two threads can read the same old value and one update is lost).
+- Fixes, best first: (1) **stateless**: no request data in fields; keep it in locals, the request DTO or the database. (2) **immutable** fields (`final`, set in the constructor, never changed). (3) a **thread-safe type** (`AtomicLong`, `LongAdder`, `ConcurrentHashMap`) or a lock (`synchronized`) around the whole read-modify-write. (4) a **narrower scope** (`request` / `prototype`) when the state really belongs to one call.
+- For money totals that must survive restarts and many instances, none of the in-memory fixes is enough: the database (an atomic `UPDATE ... SET total = total + ?` or a lock on the row) is the source of truth.
+
+| Field in a singleton | Shared? | Safe? | Fix |
+|---|---|---|---|
+| `private final Clock clock` (constructor) | yes | ✅ never written after startup | none |
+| `private BigDecimal runningTotal` updated per request | yes | ❌ lost updates | local variable / DB, or `AtomicReference` / lock |
+| `private Map<String, Account> cache = new HashMap<>()` written by requests | yes | ❌ corrupt map under concurrent writes | `ConcurrentHashMap` (and `computeIfAbsent`) |
+| `int fee` local inside `feeFor(amount)` | no (per thread) | ✅ | none |
+
+1. **Conceptual question.** A singleton `TransferService` has `private int transfersToday;` and does `transfersToday++` in `transfer()`. Two requests run it at the same moment, starting from 41. List the three steps inside `++` and show how the result can be 42 instead of 43. Would `volatile` fix it? Why or why not?
+2. **Implementation exercise (10 min).** In a scratch class, write `DailyCounter` (a singleton-style object) with `increment()` and `get()` three ways: plain `int`, `synchronized` methods, `AtomicInteger`. Start 8 threads that each call `increment()` 100 000 times (an `ExecutorService` + `CountDownLatch` or `invokeAll`), print the three totals, and say in one sentence why the plain one is below 800 000. Pseudocode first.
+3. **Debugging exercise.** Under load, customers sometimes see another customer's account number in their receipt. Find the bug and give the one-line fix:
+   ```java
+   @Service
+   public class ReceiptService {
+     private String currentAccount;              // set per request
+     public String receiptFor(String account, int amount) {
+       this.currentAccount = account;
+       int fee = Math.max(amount / 100, 10);
+       return "Receipt for " + currentAccount + ", fee " + fee;
+     }
+   }
+   ```
+4. **Interview scenario.** Ledgerly runs 3 instances behind a load balancer. A singleton `LimitService` keeps a `ConcurrentHashMap<String, Long>` of each customer's spend today and blocks transfers over ₹1 00 000. Is it thread-safe? Is it *correct*? What goes wrong across the 3 instances and after a restart, and where should the daily total really live (DB row with an atomic update, or Redis `INCRBY`)? Give the trade-off in two sentences.
+
+### 🌙 Tonight (rest of the evening slot, in this order)
+
+1. 🌱 **Chapter 2 Task 6 interview answer in chat** (~10 min: the three annotations inside `@SpringBootApplication`, a controller in a package above the app class, how to see why an auto-configuration did or didn't apply). Add the Ch 3 knowledge checks 1-3 (letters only). This closes Chapter 2, owed since 19 Nov.
+2. 🧩 **Two Sum, start it** (~25 min): 3-5 lines of pseudocode + the brute-force comment (how many pairs for n = 1 000 000), then the map version if time. **Push even if red.** If it's not green tonight, it carries to Monday with guiding questions (weekends have no new problem).
+3. 🐞 **`DailyTemperatures` comments** (5 min, comment-only push). Open since 12 Nov.
+4. 🔁 **`AsteroidCollisionRedoNov17` cold** if time is left (25-minute timer, blank file, pattern line + time/space **with a "because"** first). Push even if red. CarFleet and `Day06FirstUniqueCode` wait: if they miss tonight, the 10 PM check re-queues them.
+
+### 🔮 Tomorrow's focus (Sat 21 Nov), based on tonight
+
+| Track | Focus | Why (from tonight's assessment) |
+|---|---|---|
+| 🌱 Spring | **No Chapter 4 yet.** Re-answer the Ch 3 interview question in chat (part 2: what actually makes a singleton safe), then the two senior follow-ups (Q2 `runningTotal` drift, Q3 prototype inside a singleton) and the pack's conceptual question. Ch 2 Task 6 answer first if it's still owed. Due mistake-log redo: Ch 2 Task 5 floor vs cap (`Math.max` vs `Math.min`, day 3 was 20 Nov). | The code is strong (15/15, no hint), so more code isn't the gap; explaining thread-safety and the main class is. Two interview answers are open, and Chapter 4 (`@Qualifier`, injection) builds on both. |
+| 🧩 DSA | Weekend: no new problem. **Two Sum carry-over** (day 2 of 2, stronger hints: the level-1 questions, then the one-pass skeleton) if not green tonight; then the frequency-counting debugging exercise and Valid Anagram checks (10 min). Every complexity line gets a "because". | Two Sum is untouched, and the counting weak topic has had no practice since 19 Nov. Nothing stays open more than 2 days. |
+| 🐞 Buggy | **`Day06FirstUniqueCode` carry-over** with stronger hints (symptom groups named for you, you write the fix + one-line comment per test), plus the `DailyTemperatures` comments if still missing. | The Friday round didn't start; the written symptom groups are still the debugging habit to build. |
+| 🔁 Redos | Most overdue first, cold: **Asteroid** (due 1 Nov) and **CarFleet** (due 4 Nov) if they miss tonight; otherwise LargestRect + Day01 as queued. The 10 PM check sets the final pair. | per [redo-schedule.md](../revision/redo-schedule.md); missed is not failed, so no gap changes |
+| 📆 Review | Weekly performance review at ~2 PM IST. | Sat routine |
+
+> [!TIP]
+> Today showed you can clear a whole chapter in one sitting when you start early. Tonight, spend the first 10 minutes talking, not coding: the Chapter 2 answer is three sentences, and it's the only thing between you and two closed chapters.
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellowgreen) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![Ch3](https://img.shields.io/badge/Chapter%203-15%2F15-brightgreen) ![Pending](https://img.shields.io/badge/pending-11-blue)
+
+> [!NOTE]
+> 10 PM check: **no student commits after the 8 PM review** in either repo (labs `my-solutions` still `e619f82`, 20 Nov 1:04 PM IST; this repo has no student commits today, tip `a9ec0d4` is the morning session). No answers in chat after the review, so the evening scores stand (Spring 7, DSA and Buggy unscored) and nothing new needed a test run (`TwoSum` 0/19, `Day06FirstUniqueCode` 6/20, Asteroid 0/28, CarFleet 0/37 as at 8 PM). The evening-review notes above were not pushed at 8 PM (the approval expired), so they go in with tonight's commits. Asteroid and CarFleet were not attempted, so the redo queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)). No new conceptual mistake, no cosmetic fix needed.
+
+| Item | Track | Outcome | Status |
+|---|---|---|---|
+| Chapter 2 Task 6 interview question + Ch 3 knowledge checks 1-3 | 🌱 | not answered tonight (code is 19/19) | 🟡 IN_PROGRESS (first 10 minutes Sat 21 Nov, in chat) |
+| Ch 3 interview re-answer + senior Q2/Q3 | 🌱 | not started (written answer 5/10) | 🔴 REVISION_REQUIRED (Sat 21 Nov, after the Ch 2 answer) |
+| `TwoSum` (Arrays & Hashing 3 of 9) | 🧩 | not started, 0/19 | ⬜ NOT_STARTED (Sat 21 Nov, day 2 of 2, stronger hints) |
+| Frequency-counting weak pack + Valid Anagram checks | 🧩 | not started | ⬜ NOT_STARTED (Sat 21 Nov, 10 min after Two Sum) |
+| `Day06FirstUniqueCode` Friday buggy round | 🐞 | not started, 6/20 | ⬜ NOT_STARTED (Sat 21 Nov, stronger hints, symptom groups first) |
+| `DailyTemperatures` comments | 🧩🐞 | not pushed | 🟡 IN_PROGRESS (Sat 21 Nov, 5 min) |
+| 🔁 `AsteroidCollisionRedoNov17` cold | 🔁 | not attempted (17-20 Nov). Missed is not failed, so no gap changed | 🟡 IN_PROGRESS (Sat 21 Nov, slot 1) |
+| 🔁 `CarFleetRedoNov20` cold | 🔁 | not attempted | 🟡 IN_PROGRESS (Sat 21 Nov, slot 2) |
+
+> [!IMPORTANT]
+> **First task Sat 21 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Chapter 2 Task 6 interview answer in chat** (~10 min): the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, and how to see why an auto-configuration did or didn't apply (`--debug`), plus Ch 3 knowledge checks 1-3, letters only. That closes Chapter 2. Next: the **Ch 3 interview re-answer** (what really makes a singleton safe) + senior Q2/Q3; no Chapter 4 yet. 🧩 **Two Sum** carry-over with stronger hints, then the frequency-counting exercise + Valid Anagram checks. 🐞 `Day06FirstUniqueCode` with stronger hints + `DailyTemperatures` comments. 🔁 `AsteroidCollisionRedoNov17` + `CarFleetRedoNov20`, cold. 📆 Weekly review ~2 PM IST. **Pending items: 11** ([PROGRESS.md](../PROGRESS.md#-pending)).
