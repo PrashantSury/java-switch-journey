@@ -41,18 +41,18 @@ public class Day06FirstUniqueCode {
         int[] count = new int[26];
         for (int i = 0; i < codes.length(); i++) {
             char c = codes.charAt(i);
-            if (c < 'a' && c > 'z') {
+            if (c < 'a' || c > 'z') {
                 throw new IllegalArgumentException("invalid code '" + c + "' at index " + i);
             }
         }
 
-        for (int i = 1; i < codes.length(); i++) {
+        for (int i = 0; i < codes.length(); i++) {
             count[codes.charAt(i) - 'a']++;
         }
 
         for (int letter = 0; letter < 26; letter++) {
-            if (count[letter] == 1) {
-                return codes.indexOf((char) ('a' + letter));
+            if (count[codes.charAt(letter) - 'a'] == 1) {
+                return letter;
             }
         }
         return -1;
