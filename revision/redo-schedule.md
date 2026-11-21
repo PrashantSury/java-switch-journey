@@ -31,21 +31,21 @@
 ## 📋 The schedule
 | Problem | Pattern | Last verified | Last result | Current gap | Next due | Status |
 |---|---|---|---|---|---|---|
-| 🐞 `Day02RpnEvaluator` | Stack: expression evaluation | 5 Nov | ✅ 5 Nov `Day02RpnEvaluatorRedoNov01` (`800ad4f`): cold, **44/44, no hint**, none of the 3 conceptual misses of 31 Oct repeated (was ❌ 31 Oct, 3 conceptual misses) | +3 | **Sun 22 Nov** (due 8 Nov, queued) | 🟡 IN_PROGRESS · clean pass moved +1 → +3; the redo was 4 days late (due 1 Nov) |
-| 🧩 `ValidParentheses` | Stack: matching brackets | 12 Nov | ✅ 12 Nov `ValidParenthesesRedoNov08` **18/18** (`d6ca103`): cold on the blank file, null→IAE first try, no hint, no post-push fix (was 🔶 7 Nov post-feedback); complexity lines lack the one-sentence reasons (cosmetic) | +3 | **Sun 15 Nov** (queued **Mon 23 Nov** by the cap) | 🟡 IN_PROGRESS · clean pass moved +1 → +3 |
-| 🧩 `MinStack` | Stack: auxiliary min stack (design) | 12 Nov | ✅ 12 Nov `MinStackRedoNov01` **10/10** (`d6ca103`): cold, parallel min stack, duplicates / `MIN_VALUE` safe, IllegalStateException on empty, pattern/time/space with reasons | +3 | **Sun 15 Nov** (queued **Tue 24 Nov** by the cap) | 🟡 IN_PROGRESS · first redo since 23 Oct, clean → +1 → +3 |
-| 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 16 Nov | 🔶 16 Nov `ScoreOfParenthesesRedoNov16` **37/37** (`d94f802`) but **not cold**: body identical to the original; no complexity reasons, no pseudocode (was 🔶 25 Oct, written with help) | +1 (repeat) | **Tue 17 Nov** (queued **Wed 25 Nov** by the cap) | 🟡 IN_PROGRESS · blank stub `redo/ScoreOfParenthesesRedoNov23` to be created · follow-up questions pending |
-| 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 16 Nov | 🔶 16 Nov `RemoveKAdjacentDuplicatesRedoNov16` **26/26** (`d94f802`) but **not cold**: body + `Pair` identical to the original, imports the original class; the O(n) reason (29 Oct ❌) still unwritten | +1 (repeat) | **Tue 17 Nov** (queued **Tue 24 Nov** by the cap) | 🟡 IN_PROGRESS · blank stub `redo/RemoveKAdjacentDuplicatesRedoNov23` to be created · goes first on 24 Nov (logged conceptual mistake) |
-| 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 19 Nov | ✅ 19 Nov `Day03NextGreaterIndexRedoNov17` **37/37** (`2c0c2fb`, 4:49 PM IST): cold on the blank stub, decreasing stack of indices, null → IAE, `Arrays.fill(-1)`; written from scratch (own names and messages, not a copy). Cosmetic gaps: pattern line says only "stack" (should be monotonic stack), time/space without reasons, no pseudocode | +3 | **Sun 22 Nov** (queued **Thu 26 Nov** by the cap) | 🟡 IN_PROGRESS · clean pass moved +1 → +3 (20 days late) |
-| 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **Fri 20 Nov** (due 1 Nov; not attempted 17, 18 or 19 Nov; still 0/28 at the 19 Nov 10 PM check) | 🟡 IN_PROGRESS · ⏰ due 1 Nov · blank stub `redo/AsteroidCollisionRedoNov17` (0/28) reused |
-| 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **Sat 21 Nov** (due 7 Nov, queued) | 🟡 IN_PROGRESS · due 7 Nov · waits behind older items |
-| 🧩 `CarFleet` | Stack: sort by position, monotonic | 3 Nov | 🔶 3 Nov 37/37 (`91cb817`), built with hints (pairing, exact cross-multiply); first solve, never redone | +1 | **4 Nov** (queued **Fri 20 Nov**) | 🟡 IN_PROGRESS · due 4 Nov · blank stub `redo/CarFleetRedoNov20` (0/37) created 20 Nov |
-| 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | 5 Nov | ✅ 5 Nov `d8306e2`: 15/36 → **36/36** in one push, three minimal changes; symptom table + `[2,1,2]` trace **graded in chat 7 Nov (supported)**; empty-stack width geometric why still soft | +1 | **Sat 21 Nov** (due 6 Nov, queued behind older items) | 🟡 IN_PROGRESS · joins the ladder · write-up graded supported |
-| 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **Sun 22 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
-| 🧩 `DailyTemperatures` | Monotonic stack: next warmer day (indices) | 12 Nov | ✅ 12 Nov `d6ca103` **18/18**, first verified solve; amortised time reason written; pseudocode / brute-force comments not written | +1 | **Fri 13 Nov** (queued **Mon 23 Nov**) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
-| 🧩 `GenerateParentheses` | Backtracking with two counters (call stack as the stack) | 17 Nov | ✅ 17 Nov `221069b` **17/17**, first verified solve, 9/10: pseudocode + brute force first, reasons on time/space | +1 | **Wed 18 Nov** (queued **Wed 25 Nov**, most-overdue order) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
-| 🧩 `ContainsDuplicate` | Arrays & Hashing: hash-set membership | 19 Nov | 🔶 19 Nov `eeb8bb9` **17/17**, first verified solve, closed on day 3 with the visible skeleton (solved with hints); `contains` + `add` instead of using `add`'s return value; time line without a reason | +1 | **Fri 20 Nov** (queued **Wed 2 Dec**, first free slot, rule 9) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
-| 🧩 `ValidAnagram` | Arrays & Hashing: frequency counting (`int[26]`) | 19 Nov | ❌ 19 Nov first push compared character **sums** (conceptual, logged in [mistakes/dsa.md](mistakes/dsa.md)); fixed after review in `97dbc9f` → **18/18** with the `ac`/`bb` collision test (`a4bd5b6`) | +1 (day 1) | **Fri 20 Nov** (queued **Wed 2 Dec**, first free slot after the 19 Nov 10 PM shift; slot 1, ahead of ContainsDuplicate because of the logged mistake) | 🟡 IN_PROGRESS · joins the ladder at day 1 |
+| 🐞 `Day02RpnEvaluator` | Stack: expression evaluation | 5 Nov | ✅ 5 Nov `Day02RpnEvaluatorRedoNov01` (`800ad4f`): cold, **44/44, no hint**, none of the 3 conceptual misses of 31 Oct repeated (was ❌ 31 Oct, 3 conceptual misses) | +3 | **Tue 24 Nov** (due 8 Nov, queued) | 🟡 IN_PROGRESS · clean pass moved +1 → +3; the redo was 4 days late (due 1 Nov) |
+| 🧩 `ValidParentheses` | Stack: matching brackets | 12 Nov | ✅ 12 Nov `ValidParenthesesRedoNov08` **18/18** (`d6ca103`): cold on the blank file, null→IAE first try, no hint, no post-push fix (was 🔶 7 Nov post-feedback); complexity lines lack the one-sentence reasons (cosmetic) | +3 | **Sun 15 Nov** (queued **Wed 25 Nov** by the cap) | 🟡 IN_PROGRESS · clean pass moved +1 → +3 |
+| 🧩 `MinStack` | Stack: auxiliary min stack (design) | 12 Nov | ✅ 12 Nov `MinStackRedoNov01` **10/10** (`d6ca103`): cold, parallel min stack, duplicates / `MIN_VALUE` safe, IllegalStateException on empty, pattern/time/space with reasons | +3 | **Sun 15 Nov** (queued **Thu 26 Nov** by the cap) | 🟡 IN_PROGRESS · first redo since 23 Oct, clean → +1 → +3 |
+| 🧩 `ScoreOfParentheses` | Stack: nesting depth / running score | 16 Nov | 🔶 16 Nov `ScoreOfParenthesesRedoNov16` **37/37** (`d94f802`) but **not cold**: body identical to the original; no complexity reasons, no pseudocode (was 🔶 25 Oct, written with help) | +1 (repeat) | **Tue 17 Nov** (queued **Fri 27 Nov** by the cap) | 🟡 IN_PROGRESS · blank stub `redo/ScoreOfParenthesesRedoNov23` to be created · follow-up questions pending |
+| 🧩 `RemoveKAdjacentDuplicates` | Stack: count stack (run-length) | 16 Nov | 🔶 16 Nov `RemoveKAdjacentDuplicatesRedoNov16` **26/26** (`d94f802`) but **not cold**: body + `Pair` identical to the original, imports the original class; the O(n) reason (29 Oct ❌) still unwritten | +1 (repeat) | **Tue 17 Nov** (queued **Thu 26 Nov** by the cap) | 🟡 IN_PROGRESS · blank stub `redo/RemoveKAdjacentDuplicatesRedoNov23` to be created · goes first on 26 Nov (logged conceptual mistake) |
+| 🐞 `Day03NextGreaterIndex` | Monotonic stack: next greater | 19 Nov | ✅ 19 Nov `Day03NextGreaterIndexRedoNov17` **37/37** (`2c0c2fb`, 4:49 PM IST): cold on the blank stub, decreasing stack of indices, null → IAE, `Arrays.fill(-1)`; written from scratch (own names and messages, not a copy). Cosmetic gaps: pattern line says only "stack" (should be monotonic stack), time/space without reasons, no pseudocode | +3 | **Sun 22 Nov** (queued **Sat 28 Nov** by the cap) | 🟡 IN_PROGRESS · clean pass moved +1 → +3 (20 days late) |
+| 🧩 `AsteroidCollision` | Stack: collision simulation | 31 Oct | ✅ 31 Oct 28/28, no conceptual issue · never redone | +1 | **Sun 22 Nov** (due 1 Nov; not attempted 17-21 Nov, 5 evenings; still 0/28 at the 21 Nov 10 PM check) | 🟡 IN_PROGRESS · ⏰ due 1 Nov · blank stub `redo/AsteroidCollisionRedoNov17` (0/28) reused |
+| 🐞 `Day01ArrayStack` | Design: array-backed stack | 31 Oct | ✅ 31 Oct `Day01ArrayStackRedo7` clean cold 17/17 → moved up 3 → 7 | +7 | **Mon 23 Nov** (due 7 Nov, queued) | 🟡 IN_PROGRESS · due 7 Nov · waits behind older items |
+| 🧩 `CarFleet` | Stack: sort by position, monotonic | 3 Nov | 🔶 3 Nov 37/37 (`91cb817`), built with hints (pairing, exact cross-multiply); first solve, never redone | +1 | **4 Nov** (queued **Sun 22 Nov**; not attempted 20-21 Nov) | 🟡 IN_PROGRESS · due 4 Nov · blank stub `redo/CarFleetRedoNov20` (0/37) created 20 Nov |
+| 🐞 `Day04LargestRectangle` | Monotonic stack: largest rectangle | 5 Nov | ✅ 5 Nov `d8306e2`: 15/36 → **36/36** in one push, three minimal changes; symptom table + `[2,1,2]` trace **graded in chat 7 Nov (supported)**; empty-stack width geometric why still soft | +1 | **Mon 23 Nov** (due 6 Nov, queued behind older items) | 🟡 IN_PROGRESS · joins the ladder · write-up graded supported |
+| 🐞 `Day00BuggyExample` | Array scan: max with edge cases (warm-up) | 6 Nov | ✅ 6 Nov `c0f5d64`: **10/10** (null/empty IAE, MIN_VALUE seed, loop from 0); no written symptom groups | +1 | **7 Nov** (queued **Tue 24 Nov**) | 🟡 IN_PROGRESS · joins the ladder · queued behind older redos |
+| 🧩 `DailyTemperatures` | Monotonic stack: next warmer day (indices) | 12 Nov | ✅ 12 Nov `d6ca103` **18/18**, first verified solve; amortised time reason written; pseudocode / brute-force comments not written | +1 | **Fri 13 Nov** (queued **Wed 25 Nov**) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
+| 🧩 `GenerateParentheses` | Backtracking with two counters (call stack as the stack) | 17 Nov | ✅ 17 Nov `221069b` **17/17**, first verified solve, 9/10: pseudocode + brute force first, reasons on time/space | +1 | **Wed 18 Nov** (queued **Fri 27 Nov**, most-overdue order) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
+| 🧩 `ContainsDuplicate` | Arrays & Hashing: hash-set membership | 19 Nov | 🔶 19 Nov `eeb8bb9` **17/17**, first verified solve, closed on day 3 with the visible skeleton (solved with hints); `contains` + `add` instead of using `add`'s return value; time line without a reason | +1 | **Fri 20 Nov** (queued **Fri 4 Dec**, first free slot, rule 9) | 🟡 IN_PROGRESS · joins the ladder (rule 9) |
+| 🧩 `ValidAnagram` | Arrays & Hashing: frequency counting (`int[26]`) | 19 Nov | ❌ 19 Nov first push compared character **sums** (conceptual, logged in [mistakes/dsa.md](mistakes/dsa.md)); fixed after review in `97dbc9f` → **18/18** with the `ac`/`bb` collision test (`a4bd5b6`) | +1 (day 1) | **Fri 20 Nov** (queued **Fri 4 Dec**, first free slot after the 21 Nov 10 PM shift; slot 1, ahead of ContainsDuplicate because of the logged mistake) | 🟡 IN_PROGRESS · joins the ladder at day 1 |
 
 > [!NOTE]
 > **12 problems** (`DailyTemperatures` joined 12 Nov at +1), all scheduled. Earlier: **11 problems**, all scheduled (`Day00BuggyExample` joined 6 Nov at +1). "Next due" is the day the redo is queued; when the cap pushes it, the Status says how many days it waited. No day holds more than 2. Updated by the **7 Nov evening review**. ValidParen **18/18** 🔶 post-feedback (`3019054`, same +1 → due **8 Nov**); MinStack not attempted → moves to **8 Nov**. The **8 Nov 10 PM check** found neither 8 Nov redo attempted, so the queue moves one day: **Mon 9 Nov** evening is `ValidParentheses` then `MinStack`. **9 Nov evening review (~8 PM):** neither redo attempted yet (`ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10); no row changed, both still due tonight. **9 Nov 10 PM check:** neither attempted, so the queue moves one more day: **Tue 10 Nov** evening is `ValidParentheses` then `MinStack`. **10 Nov evening review:** neither attempted yet, no row changed. **10 Nov 10 PM check:** neither attempted, so the queue moves one more day: **Wed 11 Nov** evening is `ValidParentheses` then `MinStack`. The calendar below assumes every redo is a clean pass except where marked 🔶.
@@ -64,52 +64,54 @@
 | Tue 17 Nov | ❌ `Day03NextGreaterIndex` not attempted → Wed 18 Nov | ❌ `AsteroidCollision` not attempted → Wed 18 Nov | Evening went to Ch 2 Task 5 fix (`00bd2eb`); queue moved one day at the 10 PM check |
 | Wed 18 Nov | ❌ `Day03NextGreaterIndex` not attempted → Thu 19 Nov | ❌ `AsteroidCollision` not attempted → Thu 19 Nov | No student commits on 18 Nov; queue moved one day at the 10 PM check (missed, not failed: no gap changed) |
 | **Thu 19 Nov** | ✅ `Day03NextGreaterIndex` (+1, late) clean cold **37/37** (`2c0c2fb`) → +3 | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Fri 20 Nov | 10 PM check: no student commits after the review; missed, not failed, so no gap changed and the queue moved one slot |
-| **Fri 20 Nov** | `AsteroidCollision` (+1, late) · same blank `redo/AsteroidCollisionRedoNov17` (0/28) | `CarFleet` (+1, late) · new blank `redo/CarFleetRedoNov20` (0/37) | Due 1 Nov and 4 Nov; Asteroid moved here at the 19 Nov 10 PM check (missed, not failed) |
-| Sat 21 Nov | `Day04LargestRectangle` (+1, late) | `Day01ArrayStack` (+7, late) | Due 6 Nov and 7 Nov |
-| Sun 22 Nov | `Day00BuggyExample` (+1, late) | `Day02RpnEvaluator` (+3, late) | Due 7 Nov and 8 Nov |
-| Mon 23 Nov | `DailyTemperatures` (+1, late) | `ValidParentheses` (+3, late) | Due 13 Nov and 15 Nov |
-| Tue 24 Nov | `MinStack` (+3, late) | `RemoveKAdjacentDuplicates` (+1 repeat, late) | Due 15 Nov and 17 Nov (RemoveK ahead of ScoreOf: logged conceptual mistake); stub keeps the planned `...RedoNov23` name |
-| Wed 25 Nov | `ScoreOfParentheses` (+1 repeat, late) | `GenerateParentheses` (+1, late) | Due 17 Nov and 18 Nov; stub keeps the planned `...RedoNov23` name |
-| Thu 26 Nov | `Day03NextGreaterIndex` (+3, late) | `AsteroidCollision` (+3, late) | Due 22 Nov and 23 Nov (if Friday's Asteroid pass is clean) |
+| **Fri 20 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Sat 21 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Sat 21 Nov | 10 PM check: no student commits after the review; missed, not failed, so no gap changed and the queue moved one slot |
+| **Sat 21 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Sun 22 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Sun 22 Nov | 10 PM check: the only student commit was `41abb48` (`Day06`); missed, not failed, so no gap changed and the queue moved one slot |
+| **Sun 22 Nov** | `AsteroidCollision` (+1, late) · same blank `redo/AsteroidCollisionRedoNov17` (0/28) | `CarFleet` (+1, late) · same blank `redo/CarFleetRedoNov20` (0/37) | Due 1 Nov and 4 Nov; both moved here at the 21 Nov 10 PM check (missed, not failed) |
+| Mon 23 Nov | `Day04LargestRectangle` (+1, late) | `Day01ArrayStack` (+7, late) | Due 6 Nov and 7 Nov |
+| Tue 24 Nov | `Day00BuggyExample` (+1, late) | `Day02RpnEvaluator` (+3, late) | Due 7 Nov and 8 Nov |
+| Wed 25 Nov | `DailyTemperatures` (+1, late) | `ValidParentheses` (+3, late) | Due 13 Nov and 15 Nov |
+| Thu 26 Nov | `MinStack` (+3, late) | `RemoveKAdjacentDuplicates` (+1 repeat, late) | Due 15 Nov and 17 Nov (RemoveK ahead of ScoreOf: logged conceptual mistake); stub keeps the planned `...RedoNov23` name |
+| Fri 27 Nov | `ScoreOfParentheses` (+1 repeat, late) | `GenerateParentheses` (+1, late) | Due 17 Nov and 18 Nov; stub keeps the planned `...RedoNov23` name |
+| Sat 28 Nov | `Day03NextGreaterIndex` (+3, late) | `AsteroidCollision` (+3, late) | Due 22 Nov and 25 Nov (if Sunday's Asteroid pass is clean) |
 
 > [!WARNING]
 > Everything after the first redo of each problem is a **projection that assumes every redo is a clean pass**. A 🔶 repeats the gap and a ❌ resets to day 1, and the queue rule moves the rest.
 
-## 🔭 Projected calendar after 26 Nov
+## 🔭 Projected calendar after 28 Nov
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Fri 27 Nov | `CarFleet` (+3, late) | `Day04LargestRectangle` (+3, late) |
-| Sat 28 Nov | `Day00BuggyExample` (+3, late) | `DailyTemperatures` (+3, late) |
-| Sun 29 Nov | `RemoveKAdjacentDuplicates` (+3, late) | `ScoreOfParentheses` (+3, late) |
-| Mon 30 Nov | `GenerateParentheses` (+3, late) | `Day02RpnEvaluator` (+7, late) |
-| Tue 1 Dec | `ValidParentheses` (+7, late) | `MinStack` (+7) |
-| Wed 2 Dec | `ValidAnagram` (+1, late) | `ContainsDuplicate` (+1, late) |
-| Thu 3 Dec | `AsteroidCollision` (+7) | `Day03NextGreaterIndex` (+7) |
-| Fri 4 Dec | `CarFleet` (+7) | `Day04LargestRectangle` (+7) |
-| Sat 5 Dec | `ValidAnagram` (+3) | `Day01ArrayStack` (+14) |
-| Sun 6 Dec | `Day00BuggyExample` (+7, late) | `DailyTemperatures` (+7, late) |
-| Mon 7 Dec | `ContainsDuplicate` (+3, late) | `RemoveKAdjacentDuplicates` (+7, late) |
-| Tue 8 Dec | `ScoreOfParentheses` (+7, late) | `GenerateParentheses` (+7, late) |
-| Sat 12 Dec | `ValidAnagram` (+7) | free |
-| Mon 14 Dec | `Day02RpnEvaluator` (+14) | `ContainsDuplicate` (+7) |
-| Tue 15 Dec | `ValidParentheses` (+14) | `MinStack` (+14) |
-| Thu 17 Dec | `AsteroidCollision` (+14) | `Day03NextGreaterIndex` (+14) |
-| Fri 18 Dec | `CarFleet` (+14) | `Day04LargestRectangle` (+14) |
-| Sun 20 Dec | `Day00BuggyExample` (+14) | `DailyTemperatures` (+14) |
-| Mon 21 Dec | `RemoveKAdjacentDuplicates` (+14) | free |
-| Tue 22 Dec | `ScoreOfParentheses` (+14) | `GenerateParentheses` (+14) |
-| Sat 26 Dec | `ValidAnagram` (+14) | free |
-| Mon 28 Dec | `ContainsDuplicate` (+14) | free |
-| Mon 4 Jan | `Day01ArrayStack` (+30) 🎓 | free |
-| Wed 13 Jan | `Day02RpnEvaluator` (+30) 🎓 | free |
-| Thu 14 Jan | `ValidParentheses` (+30) 🎓 | `MinStack` (+30) 🎓 |
-| Sat 16 Jan | `AsteroidCollision` (+30) 🎓 | `Day03NextGreaterIndex` (+30) 🎓 |
-| Sun 17 Jan | `CarFleet` (+30) 🎓 | `Day04LargestRectangle` (+30) 🎓 |
-| Tue 19 Jan | `Day00BuggyExample` (+30) 🎓 | `DailyTemperatures` (+30) 🎓 |
-| Wed 20 Jan | `RemoveKAdjacentDuplicates` (+30) 🎓 | free |
-| Thu 21 Jan | `ScoreOfParentheses` (+30) 🎓 | `GenerateParentheses` (+30) 🎓 |
-| Mon 25 Jan | `ValidAnagram` (+30) 🎓 | free |
-| Wed 27 Jan | `ContainsDuplicate` (+30) 🎓 | free |
+| Sun 29 Nov | `CarFleet` (+3, late) | `Day04LargestRectangle` (+3, late) |
+| Mon 30 Nov | `Day00BuggyExample` (+3, late) | `DailyTemperatures` (+3, late) |
+| Tue 1 Dec | `RemoveKAdjacentDuplicates` (+3, late) | `ScoreOfParentheses` (+3, late) |
+| Wed 2 Dec | `GenerateParentheses` (+3, late) | `Day02RpnEvaluator` (+7, late) |
+| Thu 3 Dec | `ValidParentheses` (+7, late) | `MinStack` (+7) |
+| Fri 4 Dec | `ValidAnagram` (+1, late) | `ContainsDuplicate` (+1, late) |
+| Sat 5 Dec | `AsteroidCollision` (+7) | `Day03NextGreaterIndex` (+7) |
+| Sun 6 Dec | `CarFleet` (+7) | `Day04LargestRectangle` (+7) |
+| Mon 7 Dec | `ValidAnagram` (+3) | `Day01ArrayStack` (+14) |
+| Tue 8 Dec | `Day00BuggyExample` (+7, late) | `DailyTemperatures` (+7, late) |
+| Wed 9 Dec | `ContainsDuplicate` (+3, late) | `RemoveKAdjacentDuplicates` (+7, late) |
+| Thu 10 Dec | `ScoreOfParentheses` (+7, late) | `GenerateParentheses` (+7, late) |
+| Mon 14 Dec | `ValidAnagram` (+7) | free |
+| Wed 16 Dec | `Day02RpnEvaluator` (+14) | `ContainsDuplicate` (+7) |
+| Thu 17 Dec | `ValidParentheses` (+14) | `MinStack` (+14) |
+| Sat 19 Dec | `AsteroidCollision` (+14) | `Day03NextGreaterIndex` (+14) |
+| Sun 20 Dec | `CarFleet` (+14) | `Day04LargestRectangle` (+14) |
+| Tue 22 Dec | `Day00BuggyExample` (+14) | `DailyTemperatures` (+14) |
+| Wed 23 Dec | `RemoveKAdjacentDuplicates` (+14) | free |
+| Thu 24 Dec | `ScoreOfParentheses` (+14) | `GenerateParentheses` (+14) |
+| Mon 28 Dec | `ValidAnagram` (+14) | free |
+| Wed 30 Dec | `ContainsDuplicate` (+14) | free |
+| Wed 6 Jan | `Day01ArrayStack` (+30) 🎓 | free |
+| Fri 15 Jan | `Day02RpnEvaluator` (+30) 🎓 | free |
+| Sat 16 Jan | `ValidParentheses` (+30) 🎓 | `MinStack` (+30) 🎓 |
+| Mon 18 Jan | `AsteroidCollision` (+30) 🎓 | `Day03NextGreaterIndex` (+30) 🎓 |
+| Tue 19 Jan | `CarFleet` (+30) 🎓 | `Day04LargestRectangle` (+30) 🎓 |
+| Thu 21 Jan | `Day00BuggyExample` (+30) 🎓 | `DailyTemperatures` (+30) 🎓 |
+| Fri 22 Jan | `RemoveKAdjacentDuplicates` (+30) 🎓 | free |
+| Sat 23 Jan | `ScoreOfParentheses` (+30) 🎓 | `GenerateParentheses` (+30) 🎓 |
+| Wed 27 Jan | `ValidAnagram` (+30) 🎓 | free |
+| Fri 29 Jan | `ContainsDuplicate` (+30) 🎓 | free |
 
 > [!NOTE]
 > This calendar was rebuilt on **15 Nov (10 PM check)** with the same rule: 2 a day, the most overdue first (ties: a logged conceptual mistake first), each next gap counted from the pass date, every pass assumed clean. Total until everyone graduates: **55 redos from 16 Nov, 27 of them in November** (16-30 Nov), last graduation **Fri 15 Jan 2027**. The near-term rows moved because 14 and 15 Nov were one-slot days with no redos. **16 Nov update:** both 16 Nov redos were 🔶 (not cold), so they repeat +1 (22 Nov) and their later steps move: 26 Nov, 3/4 Dec, 17/18 Dec; **55 redos remain from 17 Nov**, last graduation **Sun 17 Jan 2027**. **18 Nov (Day 27 morning) rebuild:** the 17 Nov pair was not attempted, so every queued date moved one day and the whole calendar was re-simulated with the same rules (2 a day, most overdue first, gaps from the pass date, every pass assumed clean); `GenerateParentheses` now takes its place by due date (Tue 24 Nov) instead of the old 27 Nov free slot. **60 redos remain from 18 Nov**, last graduation **Tue 19 Jan 2027**. **18 Nov 10 PM check rebuild:** the 18 Nov pair was missed again (not failed, so no gap changed); every queued date moved one more day and the calendar was re-simulated with the same rules. **60 redos remain from 19 Nov**, last graduation **Wed 20 Jan 2027**. New problems (`ContainsDuplicate` onwards) join at +1 when verified and push later rows.
@@ -202,3 +204,9 @@
 > **Thu 19 Nov, 10 PM check:** no student commits after the evening review, so `AsteroidCollisionRedoNov17` (0/28) was not attempted for the third evening. Missed is not failed: no ladder step changed. As the 8 PM note said, Asteroid goes first on **Fri 20 Nov** (with CarFleet) and every later slot moves one place (LargestRect + Day01 Sat 21, Day00 + RPN Sun 22, DailyTemperatures + ValidParen Mon 23, MinStack + RemoveK Tue 24, ScoreOf + GenerateParentheses Wed 25, Day03 + Asteroid (+3) Thu 26). ValidAnagram and ContainsDuplicate now share **Wed 2 Dec**. The projected calendar was recomputed with the same rules (2 a day, most overdue first, ties: a logged mistake first, new problems in free slots, every pass assumed clean): **69 redos from 20 Nov, 22 of them in November**, last graduation **Wed 27 Jan 2027** (ContainsDuplicate; the older 13 problems all graduate by Thu 21 Jan). Spec: [day28.md end of day](../tasks/day28.md#-end-of-day).
 
 > **Fri 20 Nov, Day 29 morning:** no redo graded since the 10 PM check, so no ladder row changed. Tonight's pair stays `AsteroidCollisionRedoNov17` (same blank stub, re-run 0/28) + `CarFleet` on a new blank stub `redo/CarFleetRedoNov20` with the original 37 tests (verified 37/37 against the 3 Nov solution, stub 0/37). Spec: [day29.md](../tasks/day29.md#-evening-redos-cap-2-most-overdue-first-cold).
+
+> **Fri 20 Nov, 10 PM check:** no student commits after the evening review, so neither `AsteroidCollisionRedoNov17` (0/28) nor `CarFleetRedoNov20` (0/37) was attempted. Missed is not failed: no ladder step changed. Both go first on **Sat 21 Nov** (weekends are for redos), and every later slot moves one place (LargestRect + Day01 Sun 22, Day00 + RPN Mon 23, DailyTemperatures + ValidParen Tue 24, MinStack + RemoveK Wed 25, ScoreOf + GenerateParentheses Thu 26, Day03 + Asteroid (+3) Fri 27). ValidAnagram and ContainsDuplicate now share **Thu 3 Dec**. Every pass date moved by the same day, so the projected calendar moved one day with the same rules: **69 redos from 21 Nov, 20 of them in November**, last graduation **Thu 28 Jan 2027** (ContainsDuplicate). Spec: [day29.md end of day](../tasks/day29.md#-end-of-day).
+
+> **Sat 21 Nov, evening review (~8:05 PM IST):** no student commits today, so `AsteroidCollisionRedoNov17` (0/28) and `CarFleetRedoNov20` (0/37) are still blank. Nothing graded, no ladder row changed; both stay due tonight. If they are missed, the 10 PM check moves the queue one slot (missed is not failed).
+
+> **Sat 21 Nov, 10 PM check:** the only student commit after the evening review is `41abb48` (9:21 PM IST, `Day06FirstUniqueCode`, 16/20, a buggy round, not a redo). `AsteroidCollisionRedoNov17` (0/28) and `CarFleetRedoNov20` (0/37) were not attempted again (Asteroid: 17-21 Nov). Missed is not failed: no ladder step changed. Both go first on **Sun 22 Nov** (weekends are for redos), and every later slot moves one place (LargestRect + Day01 Mon 23, Day00 + RPN Tue 24, DailyTemperatures + ValidParen Wed 25, MinStack + RemoveK Thu 26, ScoreOf + GenerateParentheses Fri 27, Day03 + Asteroid (+3) Sat 28). ValidAnagram and ContainsDuplicate now share **Fri 4 Dec**. Every pass date moved by the same day, so the projected calendar moved one day with the same rules (2 a day, most overdue first, ties: a logged mistake first, new problems in free slots, every pass assumed clean): **69 redos from 22 Nov, 18 of them in November**, last graduation **Fri 29 Jan 2027** (ContainsDuplicate). `Day06FirstUniqueCode` and `TwoSum` join the ladder only when verified. Spec: [day30.md end of day](../tasks/day30.md#-end-of-day).
