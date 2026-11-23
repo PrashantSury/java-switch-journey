@@ -1,5 +1,7 @@
 package com.prashant.dsa.arrayshashing;
 
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Two Sum (LeetCode 1, NeetCode 150, Arrays &amp; Hashing, problem 3 of 9).
  * Full spec, hints and knowledge checks: tasks/day29.md, "Two Sum".
@@ -42,17 +44,38 @@ package com.prashant.dsa.arrayshashing;
  */
 public class TwoSum {
 
-    // Pseudocode:
-    //
-    // Brute force (and its cost for n = 1 000 000, because ...):
-    //
-    // Pattern:
-    // Time:  O(?) because
-    // Space: O(?) because
+/**
+ 1. Create an empty map of value -> index.
+ 2. For each index i, compute complement = target - nums[i] (as long, to avoid overflow).
+ 3. If the complement is in the map, return [map.get(complement), i].
+ 4. Otherwise, store nums[i] -> i in the map and continue.
+ 5. If the loop ends with no pair found, throw IllegalArgumentException.
+
+ Brute force: check every pair (i, j), about n^2/2 = 5 * 10^11 checks for
+ n = 1 000 000, because every element is compared with every later element.
+
+ Pattern: Hash map (remember what you've seen so the partner is found in O(1)).
+ Time:  O(n) because each element is visited once and map get/put are O(1) on average.
+ Space: O(n) because in the worst case every element ends up in the map.
+ */
 
     public int[] twoSum(int[] nums, int target) {
-        // TODO: write by hand
-        throw new UnsupportedOperationException("TODO: Two Sum");
+        if (nums == null) {
+            throw new IllegalArgumentException("nums must not be null");
+        }
+
+        Map<Integer, Integer> seen = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            long complement = (long) target - nums[i];
+            if (complement >= Integer.MIN_VALUE && complement <= Integer.MAX_VALUE) {
+                Integer j = seen.get((int) complement);
+                if (j != null) {
+                    return new int[]{j, i};     // j < i, so ascending order
+                }
+            }
+            seen.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("no two elements add up to " + target);
     }
 
     public static void main(String[] args) {
