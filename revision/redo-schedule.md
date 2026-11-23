@@ -66,52 +66,53 @@
 | **Thu 19 Nov** | ✅ `Day03NextGreaterIndex` (+1, late) clean cold **37/37** (`2c0c2fb`) → +3 | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Fri 20 Nov | 10 PM check: no student commits after the review; missed, not failed, so no gap changed and the queue moved one slot |
 | **Fri 20 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Sat 21 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Sat 21 Nov | 10 PM check: no student commits after the review; missed, not failed, so no gap changed and the queue moved one slot |
 | **Sat 21 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Sun 22 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Sun 22 Nov | 10 PM check: the only student commit was `41abb48` (`Day06`); missed, not failed, so no gap changed and the queue moved one slot |
-| **Sun 22 Nov** | `AsteroidCollision` (+1, late) · same blank `redo/AsteroidCollisionRedoNov17` (0/28) | `CarFleet` (+1, late) · same blank `redo/CarFleetRedoNov20` (0/37) | Due 1 Nov and 4 Nov; both moved here at the 21 Nov 10 PM check (missed, not failed) |
-| Mon 23 Nov | `Day04LargestRectangle` (+1, late) | `Day01ArrayStack` (+7, late) | Due 6 Nov and 7 Nov |
-| Tue 24 Nov | `Day00BuggyExample` (+1, late) | `Day02RpnEvaluator` (+3, late) | Due 7 Nov and 8 Nov |
-| Wed 25 Nov | `DailyTemperatures` (+1, late) | `ValidParentheses` (+3, late) | Due 13 Nov and 15 Nov |
-| Thu 26 Nov | `MinStack` (+3, late) | `RemoveKAdjacentDuplicates` (+1 repeat, late) | Due 15 Nov and 17 Nov (RemoveK ahead of ScoreOf: logged conceptual mistake); stub keeps the planned `...RedoNov23` name |
-| Fri 27 Nov | `ScoreOfParentheses` (+1 repeat, late) | `GenerateParentheses` (+1, late) | Due 17 Nov and 18 Nov; stub keeps the planned `...RedoNov23` name |
-| Sat 28 Nov | `Day03NextGreaterIndex` (+3, late) | `AsteroidCollision` (+3, late) | Due 22 Nov and 25 Nov (if Sunday's Asteroid pass is clean) |
+| **Sun 22 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Mon 23 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Mon 23 Nov | 10 PM check: no student commits today; missed, not failed, so no gap changed and the queue moved one slot |
+| Mon 23 Nov | `AsteroidCollision` (+1, late) · same blank `redo/AsteroidCollisionRedoNov17` (0/28) | `CarFleet` (+1, late) · same blank `redo/CarFleetRedoNov20` (0/37) | Due 1 Nov and 4 Nov; both moved here at the 22 Nov 10 PM check (missed, not failed) |
+| Tue 24 Nov | `Day04LargestRectangle` (+1, late) | `Day01ArrayStack` (+7, late) | Due 6 Nov and 7 Nov |
+| Wed 25 Nov | `Day00BuggyExample` (+1, late) | `Day02RpnEvaluator` (+3, late) | Due 7 Nov and 8 Nov |
+| Thu 26 Nov | `DailyTemperatures` (+1, late) | `ValidParentheses` (+3, late) | Due 13 Nov and 15 Nov |
+| Fri 27 Nov | `MinStack` (+3, late) | `RemoveKAdjacentDuplicates` (+1 repeat, late) | Due 15 Nov and 17 Nov (RemoveK ahead of ScoreOf: logged conceptual mistake); stub keeps the planned `...RedoNov23` name |
+| Sat 28 Nov | `ScoreOfParentheses` (+1 repeat, late) | `GenerateParentheses` (+1, late) | Due 17 Nov and 18 Nov; stub keeps the planned `...RedoNov23` name |
+| Sun 29 Nov | `Day03NextGreaterIndex` (+3, late) | `AsteroidCollision` (+3, late) | Due 22 Nov and 26 Nov (if Monday's Asteroid pass is clean) |
 
 > [!WARNING]
 > Everything after the first redo of each problem is a **projection that assumes every redo is a clean pass**. A 🔶 repeats the gap and a ❌ resets to day 1, and the queue rule moves the rest.
 
-## 🔭 Projected calendar after 28 Nov
+## 🔭 Projected calendar after 29 Nov
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Sun 29 Nov | `CarFleet` (+3, late) | `Day04LargestRectangle` (+3, late) |
-| Mon 30 Nov | `Day00BuggyExample` (+3, late) | `DailyTemperatures` (+3, late) |
-| Tue 1 Dec | `RemoveKAdjacentDuplicates` (+3, late) | `ScoreOfParentheses` (+3, late) |
-| Wed 2 Dec | `GenerateParentheses` (+3, late) | `Day02RpnEvaluator` (+7, late) |
-| Thu 3 Dec | `ValidParentheses` (+7, late) | `MinStack` (+7) |
-| Fri 4 Dec | `ValidAnagram` (+1, late) | `ContainsDuplicate` (+1, late) |
-| Sat 5 Dec | `AsteroidCollision` (+7) | `Day03NextGreaterIndex` (+7) |
-| Sun 6 Dec | `CarFleet` (+7) | `Day04LargestRectangle` (+7) |
-| Mon 7 Dec | `ValidAnagram` (+3) | `Day01ArrayStack` (+14) |
-| Tue 8 Dec | `Day00BuggyExample` (+7, late) | `DailyTemperatures` (+7, late) |
-| Wed 9 Dec | `ContainsDuplicate` (+3, late) | `RemoveKAdjacentDuplicates` (+7, late) |
-| Thu 10 Dec | `ScoreOfParentheses` (+7, late) | `GenerateParentheses` (+7, late) |
-| Mon 14 Dec | `ValidAnagram` (+7) | free |
-| Wed 16 Dec | `Day02RpnEvaluator` (+14) | `ContainsDuplicate` (+7) |
-| Thu 17 Dec | `ValidParentheses` (+14) | `MinStack` (+14) |
-| Sat 19 Dec | `AsteroidCollision` (+14) | `Day03NextGreaterIndex` (+14) |
-| Sun 20 Dec | `CarFleet` (+14) | `Day04LargestRectangle` (+14) |
-| Tue 22 Dec | `Day00BuggyExample` (+14) | `DailyTemperatures` (+14) |
-| Wed 23 Dec | `RemoveKAdjacentDuplicates` (+14) | free |
-| Thu 24 Dec | `ScoreOfParentheses` (+14) | `GenerateParentheses` (+14) |
-| Mon 28 Dec | `ValidAnagram` (+14) | free |
-| Wed 30 Dec | `ContainsDuplicate` (+14) | free |
-| Wed 6 Jan | `Day01ArrayStack` (+30) 🎓 | free |
-| Fri 15 Jan | `Day02RpnEvaluator` (+30) 🎓 | free |
-| Sat 16 Jan | `ValidParentheses` (+30) 🎓 | `MinStack` (+30) 🎓 |
-| Mon 18 Jan | `AsteroidCollision` (+30) 🎓 | `Day03NextGreaterIndex` (+30) 🎓 |
-| Tue 19 Jan | `CarFleet` (+30) 🎓 | `Day04LargestRectangle` (+30) 🎓 |
-| Thu 21 Jan | `Day00BuggyExample` (+30) 🎓 | `DailyTemperatures` (+30) 🎓 |
-| Fri 22 Jan | `RemoveKAdjacentDuplicates` (+30) 🎓 | free |
-| Sat 23 Jan | `ScoreOfParentheses` (+30) 🎓 | `GenerateParentheses` (+30) 🎓 |
-| Wed 27 Jan | `ValidAnagram` (+30) 🎓 | free |
-| Fri 29 Jan | `ContainsDuplicate` (+30) 🎓 | free |
+| Mon 30 Nov | `CarFleet` (+3, late) | `Day04LargestRectangle` (+3, late) |
+| Tue 1 Dec | `Day00BuggyExample` (+3, late) | `DailyTemperatures` (+3, late) |
+| Wed 2 Dec | `RemoveKAdjacentDuplicates` (+3, late) | `ScoreOfParentheses` (+3, late) |
+| Thu 3 Dec | `GenerateParentheses` (+3, late) | `Day02RpnEvaluator` (+7, late) |
+| Fri 4 Dec | `ValidParentheses` (+7, late) | `MinStack` (+7) |
+| Sat 5 Dec | `ValidAnagram` (+1, late) | `ContainsDuplicate` (+1, late) |
+| Sun 6 Dec | `AsteroidCollision` (+7) | `Day03NextGreaterIndex` (+7) |
+| Mon 7 Dec | `CarFleet` (+7) | `Day04LargestRectangle` (+7) |
+| Tue 8 Dec | `ValidAnagram` (+3) | `Day01ArrayStack` (+14) |
+| Wed 9 Dec | `Day00BuggyExample` (+7, late) | `DailyTemperatures` (+7, late) |
+| Thu 10 Dec | `ContainsDuplicate` (+3, late) | `RemoveKAdjacentDuplicates` (+7, late) |
+| Fri 11 Dec | `ScoreOfParentheses` (+7, late) | `GenerateParentheses` (+7, late) |
+| Tue 15 Dec | `ValidAnagram` (+7) | free |
+| Thu 17 Dec | `Day02RpnEvaluator` (+14) | `ContainsDuplicate` (+7) |
+| Fri 18 Dec | `ValidParentheses` (+14) | `MinStack` (+14) |
+| Sun 20 Dec | `AsteroidCollision` (+14) | `Day03NextGreaterIndex` (+14) |
+| Mon 21 Dec | `CarFleet` (+14) | `Day04LargestRectangle` (+14) |
+| Wed 23 Dec | `Day00BuggyExample` (+14) | `DailyTemperatures` (+14) |
+| Thu 24 Dec | `RemoveKAdjacentDuplicates` (+14) | free |
+| Fri 25 Dec | `ScoreOfParentheses` (+14) | `GenerateParentheses` (+14) |
+| Tue 29 Dec | `ValidAnagram` (+14) | free |
+| Thu 31 Dec | `ContainsDuplicate` (+14) | free |
+| Thu 7 Jan | `Day01ArrayStack` (+30) 🎓 | free |
+| Sat 16 Jan | `Day02RpnEvaluator` (+30) 🎓 | free |
+| Sun 17 Jan | `ValidParentheses` (+30) 🎓 | `MinStack` (+30) 🎓 |
+| Tue 19 Jan | `AsteroidCollision` (+30) 🎓 | `Day03NextGreaterIndex` (+30) 🎓 |
+| Wed 20 Jan | `CarFleet` (+30) 🎓 | `Day04LargestRectangle` (+30) 🎓 |
+| Fri 22 Jan | `Day00BuggyExample` (+30) 🎓 | `DailyTemperatures` (+30) 🎓 |
+| Sat 23 Jan | `RemoveKAdjacentDuplicates` (+30) 🎓 | free |
+| Sun 24 Jan | `ScoreOfParentheses` (+30) 🎓 | `GenerateParentheses` (+30) 🎓 |
+| Thu 28 Jan | `ValidAnagram` (+30) 🎓 | free |
+| Sat 30 Jan | `ContainsDuplicate` (+30) 🎓 | free |
 
 > [!NOTE]
 > This calendar was rebuilt on **15 Nov (10 PM check)** with the same rule: 2 a day, the most overdue first (ties: a logged conceptual mistake first), each next gap counted from the pass date, every pass assumed clean. Total until everyone graduates: **55 redos from 16 Nov, 27 of them in November** (16-30 Nov), last graduation **Fri 15 Jan 2027**. The near-term rows moved because 14 and 15 Nov were one-slot days with no redos. **16 Nov update:** both 16 Nov redos were 🔶 (not cold), so they repeat +1 (22 Nov) and their later steps move: 26 Nov, 3/4 Dec, 17/18 Dec; **55 redos remain from 17 Nov**, last graduation **Sun 17 Jan 2027**. **18 Nov (Day 27 morning) rebuild:** the 17 Nov pair was not attempted, so every queued date moved one day and the whole calendar was re-simulated with the same rules (2 a day, most overdue first, gaps from the pass date, every pass assumed clean); `GenerateParentheses` now takes its place by due date (Tue 24 Nov) instead of the old 27 Nov free slot. **60 redos remain from 18 Nov**, last graduation **Tue 19 Jan 2027**. **18 Nov 10 PM check rebuild:** the 18 Nov pair was missed again (not failed, so no gap changed); every queued date moved one more day and the calendar was re-simulated with the same rules. **60 redos remain from 19 Nov**, last graduation **Wed 20 Jan 2027**. New problems (`ContainsDuplicate` onwards) join at +1 when verified and push later rows.
@@ -210,3 +211,5 @@
 > **Sat 21 Nov, evening review (~8:05 PM IST):** no student commits today, so `AsteroidCollisionRedoNov17` (0/28) and `CarFleetRedoNov20` (0/37) are still blank. Nothing graded, no ladder row changed; both stay due tonight. If they are missed, the 10 PM check moves the queue one slot (missed is not failed).
 
 > **Sat 21 Nov, 10 PM check:** the only student commit after the evening review is `41abb48` (9:21 PM IST, `Day06FirstUniqueCode`, 16/20, a buggy round, not a redo). `AsteroidCollisionRedoNov17` (0/28) and `CarFleetRedoNov20` (0/37) were not attempted again (Asteroid: 17-21 Nov). Missed is not failed: no ladder step changed. Both go first on **Sun 22 Nov** (weekends are for redos), and every later slot moves one place (LargestRect + Day01 Mon 23, Day00 + RPN Tue 24, DailyTemperatures + ValidParen Wed 25, MinStack + RemoveK Thu 26, ScoreOf + GenerateParentheses Fri 27, Day03 + Asteroid (+3) Sat 28). ValidAnagram and ContainsDuplicate now share **Fri 4 Dec**. Every pass date moved by the same day, so the projected calendar moved one day with the same rules (2 a day, most overdue first, ties: a logged mistake first, new problems in free slots, every pass assumed clean): **69 redos from 22 Nov, 18 of them in November**, last graduation **Fri 29 Jan 2027** (ContainsDuplicate). `Day06FirstUniqueCode` and `TwoSum` join the ladder only when verified. Spec: [day30.md end of day](../tasks/day30.md#-end-of-day).
+
+> **Sun 22 Nov, 10 PM check:** no student commits today and no chat answers, so `AsteroidCollisionRedoNov17` (0/28, missed 17-22 Nov) and `CarFleetRedoNov20` (0/37, missed 20-22 Nov) were not attempted. Missed is not failed: no ladder step changed. Both go first on **Mon 23 Nov**, and every later slot moves one place (LargestRect + Day01 Tue 24, Day00 + RPN Wed 25, DailyTemperatures + ValidParen Thu 26, MinStack + RemoveK Fri 27, ScoreOf + GenerateParentheses Sat 28, Day03 + Asteroid (+3) Sun 29). The projected calendar moved one day with the same rules (ValidAnagram + ContainsDuplicate now **Sat 5 Dec**): **69 redos from 23 Nov, 16 of them in November**, last graduation **Sat 30 Jan 2027** (ContainsDuplicate). Spec: [day31.md end of day](../tasks/day31.md#-end-of-day).
