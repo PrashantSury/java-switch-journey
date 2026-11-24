@@ -275,13 +275,46 @@ Row 2 is out because `lower('teller01') = lower('Teller01')`. In `JdbcTemplate` 
 
 | Track | Score /10 | Evidence |
 |---|---|---|
-| 🧩 DSA | | |
-| 🏦 Banking | | |
-| 🐞 Buggy | | |
+| 🧩 DSA | — (unscored) | No student code today: `GroupAnagramsTest` 0/22 (stub as shipped), last score 6 (23 Nov) |
+| 🏦 Banking | — (unscored) | No V2 migration yet; `AuthSchemaIT` stubs still `fail("TODO")`; Task 1.1 ⬜ |
+| 🐞 Buggy | — (unscored) | `Day06FirstUniqueCodeTest` 16/20, unchanged since `41abb48` (21 Nov); last score 5 |
 
 | Tonight (in order) | Tomorrow |
 |---|---|
-| | |
+| 1. 🐞 `Day06` last loop → 20/20, push even red (15 min, the minimum) | Wed 25 Nov: frequency-counting pack first (below), then today's open items carry over: Group Anagrams (day 2, stronger hints), Banking Task 1.1, `Day06` if still red |
+| 2. 🏦 Task 1.1: the 5 V2 decisions as comment lines (10 min) | 🔁 Wed redos per [redo-schedule.md](../revision/redo-schedule.md): `Day04LargestRectangle` + `Day01ArrayStack`, or Asteroid + CarFleet again if tonight's are missed (10 PM check shifts) |
+| 3. 🧩 Group Anagrams → 22/22, only if time | No new DSA problem or buggy round while Group Anagrams and `Day06` are open |
+| 4. 🔁 `AsteroidCollisionRedoNov17` cold (0/28), then `CarFleetRedoNov20` (0/37); cap 2 | |
+
+<details><summary>📋 Review details (24 Nov, ~8 PM IST)</summary>
+
+- **Today's commits:** 16 on `main` (`dec0a75` … `b45774e`), all repo restructuring by Lumi under Prashant's account; no student code. Last student code: `3a620f4` (TwoSum, 23 Nov 6:11 PM IST). No chat answers (Q1-Q11 open).
+- **Fresh clone, JDK 21.0.13:** `mvn test` ✅ **728 run, 0 failures, 0 errors** (green). `mvn test -Popen` ❌ 107 run / 91 red = `GroupAnagrams` 22 · `AsteroidCollisionRedoNov17` 28 · `CarFleetRedoNov20` 37 · `Day06FirstUniqueCode` 4 (16/20). Nothing passed, so `open-stubs.txt` and PROBLEMS.md unchanged.
+- **Banking:** Docker not available on the review machine → `mvn -f banking-app/pom.xml verify -DskipITs` ✅ BUILD SUCCESS (0 unit tests); **integration tests not run**. No student code to review.
+- **Topics:** 🟢 Strong: Stack (13 done). 🟡 Moderate: Arrays & Hashing basics (ContainsDuplicate, TwoSum with hints); interview explanation (5/10 on 23 Nov). 🔴 Weak: frequency counting / index vs position (ValidAnagram sums, Day06 last loop). ⬜ Pending: Group Anagrams, Banking Module 1 (Task 1.1). ⛔ Blocked: none.
+- **Redos:** neither due redo attempted yet; no ladder row changed (the 10 PM check shifts if still missed). No new conceptual mistake logged.
+
+</details>
+
+<details><summary>🔴 Weak pack: frequency counting (one slot, ~35 min)</summary>
+
+**Note.** A frequency table answers "how many of each?": `int[26]` indexed by `c - 'a'`, or `Map<K,Integer>`. Two indices never mix: the **letter index** (0-25) reads `count[]`; the **string position** (0 to `s.length() - 1`) reads `s.charAt()`. Sums of codes lose information (`"ac"` and `"bb"` both sum to 196).
+
+1. **Conceptual (5 min):** why does `"ab"` vs `"ba"` give the same `int[26]` but `"ac"` vs `"bb"` give the same sum? Which one is a valid anagram key?
+2. **Implementation (15 min, on paper or a scratch file):** `firstRepeated(String s)` → position of the first char seen twice, or -1. Two passes, `int[26]`.
+3. **Debugging (10 min):** find the bug, no hint:
+   ```java
+   static int firstUnique(String s) {
+       int[] count = new int[26];
+       for (char c : s.toCharArray()) count[c - 'a']++;
+       for (int i = 0; i < 26; i++)
+           if (count[s.charAt(i) - 'a'] == 1) return i;
+       return -1;
+   }
+   ```
+4. **Interview (5 min):** `int[26]` vs `HashMap<Character,Integer>`: when does each win, and what changes for Unicode input?
+
+</details>
 
 ## 🌒 End of day (filled by the 10 PM check)
 

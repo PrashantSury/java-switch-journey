@@ -72,7 +72,7 @@
 | **Sat 21 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Sun 22 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Sun 22 Nov | 10 PM check: the only student commit was `41abb48` (`Day06`); missed, not failed, so no gap changed and the queue moved one slot |
 | **Sun 22 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Mon 23 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Mon 23 Nov | 10 PM check: no student commits today; missed, not failed, so no gap changed and the queue moved one slot |
 | **Mon 23 Nov** | ❌ `AsteroidCollision` (+1, late) not attempted (0/28) → Tue 24 Nov | ❌ `CarFleet` (+1, late) not attempted (0/37) → Tue 24 Nov | Only student commit: `3a620f4` (Two Sum, 6:11 PM IST); no 10 PM check on record, so the shift was made at the 24 Nov morning session (missed, not failed: no gap changed) |
-| Tue 24 Nov | `AsteroidCollision` (+1, late) · same blank `redo/AsteroidCollisionRedoNov17` (morning) | `CarFleet` (+1, late) · same blank `redo/CarFleetRedoNov20` (evening) | Due 1 Nov and 4 Nov |
+| Tue 24 Nov | `AsteroidCollision` (+1, late) · same blank `redo/AsteroidCollisionRedoNov17` (morning) | `CarFleet` (+1, late) · same blank `redo/CarFleetRedoNov20` (evening) | Due 1 Nov and 4 Nov; evening review: neither attempted yet (0/28, 0/37), no row changed |
 | Wed 25 Nov | `Day04LargestRectangle` (+1, late) | `Day01ArrayStack` (+7, late) | Due 6 Nov and 7 Nov |
 | Thu 26 Nov | `Day00BuggyExample` (+1, late) | `Day02RpnEvaluator` (+3, late) | Due 7 Nov and 8 Nov |
 | Fri 27 Nov | `DailyTemperatures` (+1, late) | `ValidParentheses` (+3, late) | Due 13 Nov and 15 Nov |

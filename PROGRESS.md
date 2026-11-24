@@ -1,10 +1,10 @@
 # 📈 Progress
 
-Last updated: Tue 24 Nov 2026 (Day 33)
+Last updated: Tue 24 Nov 2026 (Day 33, evening review)
 
 ## 🧩 DSA
 
-**Verified: 10 of 45–50** by mid-Jan 2027 · details per problem in [PROBLEMS.md](PROBLEMS.md)
+**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 24 Nov evening: `mvn test` 728/728 green) · details per problem in [PROBLEMS.md](PROBLEMS.md)
 
 | Problem | Pattern | Status | Tests | Solved | Notes |
 |---|---|---|---|---|---|
@@ -95,7 +95,7 @@ Next due (cold, max 2 a day) · full calendar: [redo-schedule.md](revision/redo-
 | Sat 21 Nov | — | 5 | — |
 | Sun 22 Nov | — | — | — |
 | Mon 23 Nov | 6 | — | — |
-| Tue 24 Nov | | | |
+| Tue 24 Nov | — | — | — |
 
 ## 📦 History
 
