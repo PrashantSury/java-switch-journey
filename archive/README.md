@@ -1,6 +1,6 @@
 # 🗄️ Archive
 
-![Archived](https://img.shields.io/badge/status-archived-lightgrey) ![Section](https://img.shields.io/badge/section-SQL%20%C2%B7%20old%20tasks%20%C2%B7%20progress%20history%20%C2%B7%20banking%20%C2%B7%20spring--boot-blue)
+![Archived](https://img.shields.io/badge/status-archived-lightgrey) ![Section](https://img.shields.io/badge/section-SQL%20%C2%B7%20old%20tasks%20%C2%B7%20progress%20history%20%C2%B7%20spring--boot-blue)
 
 > [!IMPORTANT]
 > SQL was **retired from the prep plan on 31 Oct 2026**. Prashant now practises only Spring Boot, DSA and buggy-code problems. Nothing here was deleted: it is kept for history and for a quick brush-up before interviews. No routine assigns, tracks or grades anything in this folder, and it is not part of `mvn test`.
@@ -19,8 +19,7 @@
 | 📋 | [`tasks/day02-05-morning.md`](tasks/day02-05-morning.md) | the four old split-style daily files `tasks/day02-morning.md` to `day05-morning.md` (archived 1 Nov 2026, verbatim) |
 | 📋 | [`tasks/day06.md`](tasks/day06.md) to [`tasks/day28.md`](tasks/day28.md) | day plans for Days 6-28 (31 Oct - 19 Nov 2026), moved out of `tasks/` on 24 Nov 2026, verbatim except for re-pointed relative links |
 | 📈 | [`progress-2026-11.md`](progress-2026-11.md) | PROGRESS.md history moved out on 24 Nov 2026: evening scores and log rows up to 21 Nov, weekly reviews 1-14 Nov (original rows, original order) |
-| 🏦 | [`banking-app/`](banking-app/README.md) | 🅿️ the Spring Boot banking project, **parked** (banking module 1 not started); moved here from the repo root on 24 Nov 2026, files intact. Build: `mvn -f archive/banking-app/pom.xml test`. To resume, `git mv archive/banking-app banking-app` |
-| 🌱 | [`spring-boot/`](spring-boot/) | `course-practice` (foundation, 23 tests), the revision workbook, `prerequisites.md` and graded `interview-answers/`; moved here on 24 Nov 2026. Active Spring work: [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs) |
+| 🌱 | [`spring-boot/`](spring-boot) | `course-practice` (foundation, 23 tests), the revision workbook, `prerequisites.md` and graded `interview-answers/`; moved here on 24 Nov 2026. Active Spring work: [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs) |
 
 ## 📊 Where SQL stood when it was retired
 | Item | Status |

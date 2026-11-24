@@ -51,7 +51,7 @@ mvn test          # root project: DSA and buggy rounds
 | 🧭 | `docs/PROGRAM.md`, `docs/STYLE-GUIDE.md` | operating model; markdown and spec style |
 | 🧩 | `src/main/java/com/prashant/dsa/<pattern>/` | DSA solutions, tests in `src/test/java/...` |
 | 🐞 | `src/main/java/com/prashant/dailytests/` and `.../redo/` | buggy rounds and redos, tests in `src/test/java/...` |
-| 🏦 | `archive/banking-app/` (🅿️ parked, moved 24 Nov) | the banking project ([design](archive/banking-app/project-architecture.md)) |
+| 🏦 | `banking-app/` (standalone project, back at the root 24 Nov) | the banking project ([design](banking-app/project-architecture.md)) |
 | 🌱 | `archive/spring-boot/` (moved 24 Nov) | `course-practice` (foundation ✅ B2), revision workbook, graded answers — **active Spring slot from 6 Nov:** [`PrashantSury/spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) |
 | 📋 | `tasks/` | one file per day, `dayNN.md`; last 5 days only, older in [`archive/tasks/`](archive/tasks) |
 | 🔁 | `revision/` | `redo-schedule.md`, `mistakes/dsa.md`, `mistakes/spring.md`, index `mistake-log.md` |
@@ -60,7 +60,7 @@ mvn test          # root project: DSA and buggy rounds
 ## 🏦 Spring Boot track
 ### 🧱 Banking modules (the project)
 > [!NOTE]
-> Order follows the concepts each module introduces ([project-architecture.md](archive/banking-app/project-architecture.md)). A module is ✅ COMPLETED only after its tests pass and the review has read the code. Milestone 0 (setup: Docker Postgres 5433, Flyway V1, health UP) is ✅ COMPLETED (24 Oct).
+> Order follows the concepts each module introduces ([project-architecture.md](banking-app/project-architecture.md)). A module is ✅ COMPLETED only after its tests pass and the review has read the code. Milestone 0 (setup: Docker Postgres 5433, Flyway V1, health UP) is ✅ COMPLETED (24 Oct).
 
 | # | Module | Concepts introduced | Status |
 |---|---|---|---|

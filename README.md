@@ -14,7 +14,7 @@ Senior Java backend interview prep: **DSA** (NeetCode by pattern), **buggy round
 
 | Open this | For |
 |---|---|
-| [`tasks/dayNN.md`](tasks/) | **today's plan** (last 5 days; older in [`archive/tasks/`](archive/tasks/)) |
+| [`tasks/dayNN.md`](tasks) | **today's plan** (last 5 days; older in [`archive/tasks/`](archive/tasks)) |
 | [`PROBLEMS.md`](PROBLEMS.md) | every problem + pattern cheat sheets |
 | [`PROGRESS.md`](PROGRESS.md) | "Now" summary at the top, full status below |
 | [`interview-answers.md`](interview-answers.md) | graded interview answers |
@@ -22,4 +22,4 @@ Senior Java backend interview prep: **DSA** (NeetCode by pattern), **buggy round
 | `src/main/java/com/prashant/dailytests/` (+ `redo/`) | buggy rounds and redos |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | naming and stub rules (short) |
 
-Coach-maintained, no need to open: `revision/` (redo calendar, mistake logs), `docs/` (program, style guide, [day template](docs/DAY-TEMPLATE.md)), `open-stubs.txt`, `archive/` (SQL, old days, progress history, parked [banking-app](archive/banking-app/README.md), old `spring-boot/`).
+Coach-maintained, no need to open: `revision/` (redo calendar, mistake logs), `docs/` (program, style guide, [day template](docs/DAY-TEMPLATE.md)), `open-stubs.txt`, `archive/` (SQL, old days, progress history, parked [banking-app](banking-app/README.md), old `spring-boot/`).

@@ -14,7 +14,7 @@ Prashant is a 5.2-year Java Tech Lead (HSBC) preparing for senior Java backend i
 ## 🛤️ The three tracks
 | | Track | What | Where the work lives |
 |---|---|---|---|
-| 🏦 | **Spring Boot retail banking** | One project, built module by module. Concepts are introduced progressively, each when a module needs it. Modules: Customer, Account, Beneficiary, Fund Transfers, Transactions, Transaction History, AuthN/AuthZ, Notifications, Statements/Reports, Audit/Compliance | `banking-app/` (design: [project-architecture.md](../archive/banking-app/project-architecture.md)); `spring-boot/course-practice` is only finished, not extended |
+| 🏦 | **Spring Boot retail banking** | One project, built module by module. Concepts are introduced progressively, each when a module needs it. Modules: Customer, Account, Beneficiary, Fund Transfers, Transactions, Transaction History, AuthN/AuthZ, Notifications, Statements/Reports, Audit/Compliance | `banking-app/` (design: [project-architecture.md](../banking-app/project-architecture.md)); `spring-boot/course-practice` is only finished, not extended |
 | 🧩 | **DSA, NeetCode 150 by pattern** | One pattern at a time, in NeetCode order. Currently **Stack** | `src/main/java/com/prashant/dsa/<pattern>/` |
 | 🐞 | **Buggy problems** | Fix-the-buggy-code rounds on the **current DSA pattern**, the interview format where code must pass given tests | `src/main/java/com/prashant/dailytests/` |
 
@@ -91,4 +91,4 @@ Specs for Spring, DSA and buggy tasks follow the templates and the tone in [STYL
 | Graded interview answers | [interview-answers.md](../interview-answers.md) |
 | What to redo today | [revision/redo-schedule.md](../revision/redo-schedule.md) |
 | Conceptual mistakes | [revision/mistakes/](../revision/mistake-log.md) |
-| Banking design | [banking-app/project-architecture.md](../archive/banking-app/project-architecture.md) |
+| Banking design | [banking-app/project-architecture.md](../banking-app/project-architecture.md) |

@@ -628,7 +628,7 @@ public class GlobalExceptionHandler {
 ![Module](https://img.shields.io/badge/module-1%20of%2010-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen) ![Status](https://img.shields.io/badge/status-NOT__STARTED-lightgrey) ![Time](https://img.shields.io/badge/slot-~50%20min%20per%20day-yellow)
 
 > [!IMPORTANT]
-> 📂 `banking-app/` · design context: [project-architecture.md](../banking-app/project-architecture.md). This module starts only when Part B2 is ✅ COMPLETED. ✅ Done when a user can log in and get a JWT, a protected endpoint returns 401 without a token, 403 without the permission and 200 with it, and the tests that prove it pass with `mvn verify` in `banking-app`. It will take several mornings; the checklist below is the unit of progress.
+> 📂 `banking-app/` · design context: [project-architecture.md](../../banking-app/project-architecture.md). This module starts only when Part B2 is ✅ COMPLETED. ✅ Done when a user can log in and get a JWT, a protected endpoint returns 401 without a token, 403 without the permission and 200 with it, and the tests that prove it pass with `mvn verify` in `banking-app`. It will take several mornings; the checklist below is the unit of progress.
 
 #### 1️⃣ What are we building
 The security foundation for every other banking module: a hand-written **V2 Flyway migration** for users, roles and permissions; a `POST /auth/login` that checks a password and issues a signed **JWT** carrying the user's permissions; and method-level authorization (`@PreAuthorize`) that reads those permissions. Today the app can only **verify** a token with the RSA public key; nothing can create one and there are no users.
