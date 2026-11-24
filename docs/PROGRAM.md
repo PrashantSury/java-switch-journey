@@ -30,7 +30,7 @@ This repo is **DSA (NeetCode by pattern) and buggy rounds only**, with cold redo
 | 🟡 `IN_PROGRESS` | work exists, or passing but still in its redo cycle |
 | ✅ `COMPLETED` | **verified**: tests pass on the pushed code and the reviewer checked it (never "passes by accident") |
 | 🔴 `REVISION_REQUIRED` | reviewed, conceptual gap found; redo it |
-| ⛔ `BLOCKED` | waiting on something outside the task (listed in PROGRESS Blockers) |
+| ⛔ `BLOCKED` | waiting on something outside the task (listed under Open now in PROGRESS) |
 
 A problem keeps ✅ for its first verified solve; its redo state lives in [redo-schedule.md](../revision/redo-schedule.md). Conceptual mistakes (never cosmetic slips) go to [revision/mistakes/dsa.md](../revision/mistakes/dsa.md).
 
@@ -50,14 +50,25 @@ Each track that had work gets one score out of 10 = rounded average of the dimen
 | Class | Rule | Then |
 |---|---|---|
 | 🟢 Strong | 8-10, nothing 🔴 | normal redo ladder |
-| 🟡 Moderate | 6-7 | weakest dimension noted in PROGRESS |
+| 🟡 Moderate | 6-7 | weakest dimension under Weak spots in PROGRESS |
 | 🔴 Weak | 0-5, or the same dimension missed twice | weak-topic pack first next morning |
 
 **Weak-topic pack** (one slot): short note (1 page) · 1 conceptual question (5 min) · 1 implementation task (15 min) · 1 debugging snippet, bug never hinted (10 min) · 1 interview scenario (5 min).
+
+## 📈 How PROGRESS.md is updated
+
+One page, about 80 lines, no paragraphs. Sections: 🧩 DSA · 🐞 Buggy · 🌱 Spring (paused) · 🔁 Redos · 📈 Scores · 📦 History.
+
+- **Per-track tables:** a new problem or round gets one row when it is handed out; edit that row (Status, Tests, Solved/Score, a short Note) when it is verified. Update the DSA count line, Open now (1-3 bullets) and Weak spots (max 3).
+- **Scores:** one row per day in `📈 Scores (last 7 days)` (Date · DSA · Buggy), `—` when unscored, never an invented number. Keep 7 rows: add today, drop the oldest (it is already in the archive log).
+- **Redos:** only the next 3-5 due rows; the full calendar stays in [redo-schedule.md](../revision/redo-schedule.md).
+- **Evidence and logs:** the full evening / 10 PM score row (with dimensions and commits) and the log row go to the month's archive file, `archive/progress-YYYY-MM.md`, under its score and log tables.
+- **Weekly review:** written in the archive file; PROGRESS gets one line under 📦 History linking to it.
+- **Spring:** paused; not updated daily.
 
 ## 📏 Specs and files
 
 - Day files follow [DAY-TEMPLATE.md](DAY-TEMPLATE.md); spec details in [STYLE-GUIDE.md](STYLE-GUIDE.md).
 - DSA specs keep the optimised algorithm and dry run in a `🔒 Open only after your attempt` block. Buggy specs give behaviour and tests, never the faulty lines.
 - Today: `tasks/dayNN.md` (last 5 days; older in `archive/tasks/`) · redo calendar: [redo-schedule.md](../revision/redo-schedule.md) · problems: [PROBLEMS.md](../PROBLEMS.md).
-- History kept as is: older Spring rows in PROGRESS and `archive/`, [interview-answers.md](../interview-answers.md), [revision/mistakes/spring.md](../revision/mistakes/spring.md), `archive/spring-boot/`.
+- History kept as is: [archive/progress-2026-11.md](../archive/progress-2026-11.md) (old detailed PROGRESS), [interview-answers.md](../interview-answers.md), [revision/mistakes/spring.md](../revision/mistakes/spring.md), `archive/spring-boot/`.

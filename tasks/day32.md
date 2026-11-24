@@ -230,7 +230,7 @@ Then answer in one line each: (1) What does `letter` stand for in this loop: a l
 | 5 | B2 Q3/Q6, `ScoreOfParentheses` follow-ups, Day 02/03 re-answers | 🎤 | ⬜ |
 | 6 | Banking module 1 | 🏦 | parked |
 
-**Pending items: 10** (full list in [PROGRESS.md](../PROGRESS.md#-pending)).
+**Pending items: 10** (full list in [progress archive](../archive/progress-2026-11.md#-pending)).
 
 ### 📊 Monday DSA count
 
@@ -240,5 +240,75 @@ Then answer in one line each: (1) What does `letter` stand for in this loop: a l
 
 > [!NOTE]
 > At the measured pace (about 2.3 a week) the goal lands around March 2027. Closing Two Sum today and then one new problem each weekday is what keeps 45-50 reachable.
+
+
+## 🌙 Evening (23 Nov): review, scores, tonight and tomorrow
+
+![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-6%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![Redos](https://img.shields.io/badge/redos-none%20graded-lightgrey) ![DSA%20count](https://img.shields.io/badge/DSA%20verified-10%20of%2045--50-informational)
+
+> [!NOTE]
+> Checked at ~8:00 PM IST on a fresh clone (JDK 21, Maven 3.9.6). **One student commit today:** `3a620f4` (6:11 PM IST, `TwoSum.java`). Labs `my-solutions` is still `e619f82` (20 Nov). No answers in chat yet to the questions sent this afternoon. `TwoSumTest` **19/19** ✅. Full suite: **795 run / 69 red** (was 88), exactly the three open files: `Day06FirstUniqueCode` 16/20, `AsteroidCollisionRedoNov17` 0/28, `CarFleetRedoNov20` 0/37. No cosmetic fixes needed, no new conceptual mistake to log.
+
+| Track | Score | Evidence |
+|---|---|---|
+| 🌱 Spring | **can't be scored yet** (no work today; last 7, 21 Nov) | Ch 3 re-answer, Q2/Q3, floor-vs-cap line and the 3 checks are not answered in chat; labs untouched |
+| 🧩 DSA | **6/10** (concept 7 · implementation 7 · problem solving 4 · complexity 8 · interview 5; debugging n/a) | `3a620f4` Two Sum **19/19**: one-pass value → index map, check-before-store (no `[0,0]` self-pair), `long` complement with a range guard, null and no-pair → IAE, input untouched. **Best part:** pseudocode first, brute-force cost for 10⁶ written, and both Time/Space lines carry a *because*, so the recurring "big-O without the why" gap did not show up. **Why not higher:** it closed on day 4 with the near-full skeleton, and the body matches it line for line, so problem solving is mostly the hint's. The four guiding questions weren't answered in a comment and the 3 Two Sum checks are still open. |
+| 🐞 Buggy | **can't be scored yet** (no work today; last 5, 21 Nov) | `Day06FirstUniqueCodeTest` still 16/20 (`41abb48`); the last-loop questions are unanswered |
+| 🔁 Redos | none graded | Asteroid 0/28 and CarFleet 0/37 still blank (the 10 PM check moves the queue; missed is not failed) |
+
+### 🗂️ Topic classification tonight
+
+| Topic | Class | Why |
+|---|---|---|
+| One-pass hash map: complement lookup, value → index (Two Sum) | 🟡 Moderate (new) | 19/19 and correct reasoning, but only with a near-full skeleton; prove it on the +1 cold redo |
+| Complexity with a "because" | 🟡 Moderate (improving) | both lines had reasons on the first push; keep doing it |
+| Registering beans in code; `@SpringBootApplication` | 🟢 Strong (unchanged) | Ch 3 15/15, Ch 2 ✅ |
+| `@Component` vs `@Bean` (the why) | 🟡 Moderate (unchanged) | right rule, missing "needs code to build it" |
+| Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; re-answer still owed → [day29.md pack](day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
+| Frequency counting: counts, and the second pass walks string positions | 🔴 Weak (unchanged) | Valid Anagram 19 Nov, `Day06` 21 Nov; still 16/20 → [day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
+| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs not attempted → [day25.md evening](../archive/tasks/day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
+| `Day06` last loop, Ch 3 re-answer, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not done today |
+| ⛔ Blocked | none | nothing in the way but time on task |
+
+> [!NOTE]
+> No new 🔴 Weak topic tonight, so no new pack. The three 🔴 packs above already have revision notes, a conceptual question, an implementation, a debugging exercise and an interview scenario each.
+
+### 🌙 Tonight (rest of the evening slot, in this order)
+
+1. 🐞 **`Day06` last loop** (~15 min): trace `"aabb"` on paper, answer the three one-liners, change only the last loop + symptom-group comment + one `// fix:` per change → push → 20/20.
+2. 🌱 **Ch 3 re-answer, Part 2** in chat (~10 min): where the field lives vs a local, and two real fixes. Q2/Q3 if time.
+3. 🧩 **Two Sum checks 1-3** in chat (letters only, 2 min).
+4. 🔁 `CarFleetRedoNov20` cold (25-min timer) only if time is left. Push even if red.
+
+### 🔮 Tomorrow's focus (Tue 24 Nov), based on tonight
+
+Today broke a three-day streak with a real green push. Tomorrow keeps it small and finishes what is open before anything new piles up.
+
+| Track | Focus | Why |
+|---|---|---|
+| 🌱 Spring | Ch 3 re-answer (Part 2 + Part 3) + Q2/Q3 in chat, first thing (~20 min). Chapter 4 still waits for a graded ≥ 7 | 🔴 singleton/shared state is the only open Spring concept gap, owed since 20 Nov |
+| 🧩 DSA | **Group Anagrams** (A&H 4 of 9) opens, since Two Sum is verified. Normal hint level: pattern line + pseudocode first, brute-force cost, Time/Space with a because (keep today's habit) | the pace rule: the day after Two Sum is green; it also reuses the frequency-count idea from the 🔴 pack |
+| 🐞 Buggy | Tuesday round **only after `Day06` is 20/20**. If `Day06` is still 16/20 in the morning, the buggy slot is `Day06` again | never stack a new buggy round on an open one; same 🔴 frequency-counting gap |
+| 🔁 Redos | `AsteroidCollisionRedoNov17` cold first (overdue since 1 Nov), then `CarFleetRedoNov20` (cap 2). `TwoSum` joins the ladder at +1 in the first free slot | most overdue first; Two Sum's cold redo is what proves it without the skeleton |
+
+## 🌒 End of day
+
+![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-6%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![TwoSum](https://img.shields.io/badge/Two%20Sum-19%2F19-brightgreen) ![Day06](https://img.shields.io/badge/Day06-16%2F20-orange) ![Pending](https://img.shields.io/badge/pending-9-blue)
+
+> [!NOTE]
+> 10 PM check (~10 PM IST). No student commits after the 8 PM review: the newest commit in this repo is still **`3a620f4`** (6:11 PM IST, `TwoSum.java`, already graded 19/19 at the review), labs `my-solutions` is still `e619f82` (20 Nov), and there are no answers in chat. Nothing new to re-test, so the suite stands at **795 run / 69 red** (`Day06` 16/20, Asteroid redo 0/28, CarFleet redo 0/37). The 8 PM records had not reached `main` (push approval expired), so they go in with this commit. No cosmetic fix needed in your code, no new conceptual mistake.
+
+| Track | Item | Result | Status |
+|---|---|---|---|
+| 🧩 | `TwoSum` (Arrays & Hashing 3 of 9, `3a620f4`) | **19/19**, graded at the review (DSA 6/10) | ✅ COMPLETED · checks 1-3 owed in chat · joins the redo ladder at +1, queued **Sun 13 Dec** |
+| 🌱 | Ch 3 re-answer (Part 2 + Part 3) + senior Q2/Q3 + floor-vs-cap line | not answered | 🔴 REVISION_REQUIRED (**Tue 24 Nov, first task**) |
+| 🐞 | `Day06FirstUniqueCode` last loop | not pushed, still 16/20 (`41abb48`) | 🔴 REVISION_REQUIRED (Tuesday buggy slot until 20/20) |
+| 🧩 | Group Anagrams (Arrays & Hashing 4 of 9) | opens Tue 24 Nov | ⬜ NOT_STARTED |
+| 🧩🐞 | `DailyTemperatures` comments | not pushed | 🟡 IN_PROGRESS (open since 12 Nov) |
+| 🔁 | `AsteroidCollisionRedoNov17` cold | not attempted (17-23 Nov). Missed is not failed, no gap changed | 🟡 IN_PROGRESS (**Tue 24 Nov, slot 1**) |
+| 🔁 | `CarFleetRedoNov20` cold | not attempted (20-23 Nov) | 🟡 IN_PROGRESS (**Tue 24 Nov, slot 2**) |
+
+> [!IMPORTANT]
+> **First task Tue 24 Nov:** `git pull` both repos (this repo has tonight's records on top of `3a620f4`). Then the **Spring Ch 3 interview re-answer** in chat (~20 min): Part 2, why a singleton bean's field races (the field lives on the **heap**, shared by every request thread; locals live on **each thread's own stack**) plus **two real fixes** (keep the bean stateless, or a thread-safe type or lock for the read-modify-write such as `AtomicLong`); Part 3, the *why* for `@Component` vs `@Bean`; then senior Q2/Q3. Chapter 4 waits for a graded 7 or more. Next: 🧩 **Group Anagrams** opens (pattern line, pseudocode, Time/Space with a because) → 🐞 `Day06` last loop → 20/20 before any Tuesday round → 🔁 `AsteroidCollisionRedoNov17` then `CarFleetRedoNov20`, cold. **Pending items: 9** ([progress archive](../archive/progress-2026-11.md#-pending)).
 
 </details>

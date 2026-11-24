@@ -16,7 +16,7 @@ DSA practice repo: **NeetCode problems by pattern**, **buggy rounds** and **cold
 |---|---|
 | [`tasks/dayNN.md`](tasks/) | **today's plan** (last 5 days; older in [`archive/tasks/`](archive/tasks/)) |
 | [`PROBLEMS.md`](PROBLEMS.md) | every problem + pattern cheat sheets |
-| [`PROGRESS.md`](PROGRESS.md) | "Now" summary at the top, full status below |
+| [`PROGRESS.md`](PROGRESS.md) | one page: DSA, buggy, Spring (paused), redos, last 7 days of scores |
 | `src/main/java/com/prashant/dsa/<pattern>/` | DSA solutions |
 | `src/main/java/com/prashant/dailytests/` (+ `redo/`) | buggy rounds and redos |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | naming and stub rules (short) |

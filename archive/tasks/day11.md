@@ -103,7 +103,7 @@ mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 | ⛔ Blocked | none | nothing outside your control is stopping any task |
 
 > [!NOTE]
-> No topic scored Weak **tonight**, because nothing was graded. The other 🔴 Weak rows in [PROGRESS.md](../../PROGRESS.md#-weak-topics) come from older answers; their packs are made when each is picked up.
+> No topic scored Weak **tonight**, because nothing was graded. The other 🔴 Weak rows in [PROGRESS.md](../progress-2026-11.md#-weak-topics) come from older answers; their packs are made when each is picked up.
 
 ### ⏳ Pending morning work = tonight's work (in this order)
 

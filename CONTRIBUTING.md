@@ -18,6 +18,12 @@
 - Stateful problems (MinStack, Day01ArrayStack): copy the adapter from `MinStackTest` / `Day01ArrayStackTest`.
 - First redo of a problem without a contract: turn `<Problem>Test` into `<Problem>Contract` (public abstract, one `protected abstract` hook), then subclass it twice. The test count must not change.
 
+**PROGRESS.md (one page)**
+- Edit the problem/round row in the DSA or Buggy table; keep Open now ≤ 3 and Weak spots ≤ 3.
+- Daily score → one row in `📈 Scores (last 7 days)`, `—` if unscored; drop the oldest row.
+- Detailed score rows, log rows and weekly reviews → `archive/progress-YYYY-MM.md`; one History link line in PROGRESS.
+- Rules: [PROGRAM.md](docs/PROGRAM.md#-how-progressmd-is-updated).
+
 **Day files** follow [docs/DAY-TEMPLATE.md](docs/DAY-TEMPLATE.md).
 
 **Never:** rename old solution files, copy test files, force-push, or use `--no-verify`.

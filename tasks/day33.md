@@ -314,6 +314,6 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 - CarFleet single-pair follow-up · 🧩 · 🟡
 - B2 Q3/Q6, `ScoreOfParentheses` follow-ups, Day 02/03 re-answers, Two Sum `put` question · 🎤 · ⬜
 - Banking module 1 · 🏦 · parked
-- **Pending items: 10** (Two Sum closed, Group Anagrams opened; full list in [PROGRESS.md](../PROGRESS.md#-pending)).
+- **Pending items: 10** (Two Sum closed, Group Anagrams opened; full list in [progress archive](../archive/progress-2026-11.md#-pending)).
 
 </details>

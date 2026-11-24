@@ -117,7 +117,7 @@ Six days in a row with little or no landed work means the plan is too big right 
 | 🔁 | `CarFleetRedoNov20` cold | not attempted (20-22 Nov) | 🟡 IN_PROGRESS (**Mon 23 Nov, slot 2**) |
 
 > [!NOTE]
-> Redo queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)): Asteroid + CarFleet Mon 23 Nov, every later slot one day later, last graduation **Sat 30 Jan 2027**. Sunday plan projection refreshed in [PROGRESS.md](../PROGRESS.md#-plan-projection-3-h-a-day): overall finish moved from W10-W15 to **W11-W16**. No new mistakes, so nothing logged.
+> Redo queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)): Asteroid + CarFleet Mon 23 Nov, every later slot one day later, last graduation **Sat 30 Jan 2027**. Sunday plan projection refreshed in [progress archive](../archive/progress-2026-11.md#-plan-projection-3-h-a-day): overall finish moved from W10-W15 to **W11-W16**. No new mistakes, so nothing logged.
 
 > [!IMPORTANT]
 > **First task Mon 23 Nov:** `git pull` this repo (tonight's records are on top of `c85379f`). Then the **Spring Ch 3 interview re-answer** in chat (~20 min): part 2, where a singleton bean's field lives (the **heap**, shared by every request thread) compared with a local variable (each thread's **own stack**), plus **two real fixes**; part 3, the *why* for `@Component` vs `@Bean`; then senior Q2. Chapter 4 opens only once this is graded 7 or more.

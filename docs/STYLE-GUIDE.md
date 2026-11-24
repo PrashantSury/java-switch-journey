@@ -7,8 +7,8 @@ Scope: this repo's DSA, buggy-round and record files. Spring specs are written i
 | File | Format |
 |---|---|
 | **Day files** `tasks/dayNN.md` | **Exactly [DAY-TEMPLATE.md](DAY-TEMPLATE.md)**: header line + Focus/Done-when line, `✅ Today` table, `🔎 Since yesterday`, one `## N. 🧩/🐞 <item>` per item with 3-6 bullets (goal, file, run `mvn test -Dtest=X`, done when, hint rule), `❓ Questions` (table + full text in `<details>`), `🔁 Redos` table, `📌 Pending` bullets, `🌙 Evening` and `🌒 End of day` tables, coach notes in the last `<details>`. No badges, no callout opener, **no paragraphs outside `<details>`**. Past days are not rewritten. |
-| **Files Prashant reads** (`README.md`, `CONTRIBUTING.md`, `PROBLEMS.md`, the `🟢 Now` block of `PROGRESS.md`) | plain, short: tables and bullets, no essays, no badges |
-| **Coach files** (`revision/`, `docs/`, the rest of `PROGRESS.md`) | opener: emoji title, optional badge row, `> [!IMPORTANT]` purpose (1-2 sentences), `> [!NOTE]` with a **Legend:** line; then the body |
+| **Files Prashant reads** (`README.md`, `CONTRIBUTING.md`, `PROBLEMS.md`, `PROGRESS.md`) | plain, short: tables and bullets, no essays, no badges |
+| **Coach files** (`revision/`, `docs/`, `archive/progress-*.md`) | opener: emoji title, optional badge row, `> [!IMPORTANT]` purpose (1-2 sentences), `> [!NOTE]` with a **Legend:** line; then the body |
 | **Mistake log** `revision/mistakes/dsa.md` | one table `\| Date \| Problem \| What went wrong \| Redo on day 3 \| Redo on day 7 \|`; a row only for **conceptual** mistakes; cosmetic slips are fixed in place, never logged |
 
 ## 🧱 Body rules

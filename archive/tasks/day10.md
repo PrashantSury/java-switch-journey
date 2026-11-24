@@ -395,7 +395,7 @@ Acceptance: test 1 in section 11 is green and the response body never contains t
 | ⛔ Blocked | none | nothing outside your control is stopping any task |
 
 > [!NOTE]
-> No topic scored Weak **tonight**. The other 🔴 Weak rows in [PROGRESS.md](../../PROGRESS.md#-weak-topics) come from older answers (HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, the binding annotations, RPN evaluation). Their packs are made when each is picked up; the RPN pack waits until **after** tonight's cold RPN redo so it does not spoil it.
+> No topic scored Weak **tonight**. The other 🔴 Weak rows in [PROGRESS.md](../progress-2026-11.md#-weak-topics) come from older answers (HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, the binding annotations, RPN evaluation). Their packs are made when each is picked up; the RPN pack waits until **after** tonight's cold RPN redo so it does not spoil it.
 
 ### 🎒 Weak-topic pack: amortised O(n) for stack solutions
 
@@ -513,7 +513,7 @@ In a code review on your team, a colleague blocks your PR: "`while` inside `for`
 | 🔁 `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01` | 🟡 IN_PROGRESS (0/44, 0/18, not attempted) · moved to Mon 2 Nov evening, the rest of the queue shifts one day |
 
 > [!NOTE]
-> No commits from Prashant after the 8 PM evening review (last one `bc6df22`, 08:43 IST), so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rewritten for the two missed redos, and the Sunday plan projection in [PROGRESS.md](../../PROGRESS.md#-plan-projection-3-h-a-day) is refreshed.
+> No commits from Prashant after the 8 PM evening review (last one `bc6df22`, 08:43 IST), so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rewritten for the two missed redos, and the Sunday plan projection in [PROGRESS.md](../progress-2026-11.md#-plan-projection-3-h-a-day) is refreshed.
 
 > [!IMPORTANT]
 > **First task tomorrow (Mon 2 Nov, 6 AM):** 🌱 finish Day 04 Part B2 items 1-6 from [section 7](#-day-04-part-b2-problemdetail-in-every-error-response): write `malformedJsonReturnsProblemDetail` first (red), then the `HttpMessageNotReadableException` handler, move the 4 old assertions and add the other 2 tests, until `mvn test` in `spring-boot/course-practice` shows **18 tests, 0 failures**, all in one commit. Then 🧩 `CarFleet` (pattern line, a hand-sorted example and complexity first) and 🐞 `Day04LargestRectangle` (group the 21 failing tests by symptom first). 🌙 Evening redos: `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`.
