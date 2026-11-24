@@ -13,6 +13,7 @@
 |---|---|---|
 | 🧭 | [`docs/PROGRAM.md`](docs/PROGRAM.md), [`docs/STYLE-GUIDE.md`](docs/STYLE-GUIDE.md) | the operating model (tracks, time split, statuses, scoring) and the markdown/spec style |
 | 📈 | [`PROGRESS.md`](PROGRESS.md), [`interview-answers.md`](interview-answers.md) | sources of truth: status of every track, graded interview answers |
+| 🗂️ | [`PROBLEMS.md`](PROBLEMS.md) | problem tracker (pattern, difficulty, tests, hints, redos) + a cheat sheet per pattern |
 | 📋 | `tasks/` | one file per day, `dayNN.md`, with the specs of pending tasks |
 | 🧩 🐞 | `src/` (root `pom.xml`) | DSA solutions in `dsa/<pattern>/`, buggy rounds in `dailytests/` and `dailytests/redo/`, tests in `src/test/java` |
 | 🏦 | [`banking-app/`](banking-app/README.md) | the Spring Boot banking project; design in [`project-architecture.md`](banking-app/project-architecture.md) |
