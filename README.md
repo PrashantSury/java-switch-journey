@@ -13,6 +13,7 @@
 |---|---|---|
 | 🧭 | [`docs/PROGRAM.md`](docs/PROGRAM.md), [`docs/STYLE-GUIDE.md`](docs/STYLE-GUIDE.md) | the operating model (tracks, time split, statuses, scoring) and the markdown/spec style |
 | 📈 | [`PROGRESS.md`](PROGRESS.md), [`interview-answers.md`](interview-answers.md) | sources of truth: status of every track, graded interview answers |
+| 🧾 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | naming (`<Problem>RedoMmmDD`, `BuggyNN<Problem>`), how to hand out a stub and register a redo's tests |
 | 🗂️ | [`PROBLEMS.md`](PROBLEMS.md) | problem tracker (pattern, difficulty, tests, hints, redos) + a cheat sheet per pattern |
 | 📋 | `tasks/` | one file per day, `dayNN.md`, with the specs of pending tasks |
 | 🧩 🐞 | `src/` (root `pom.xml`) | DSA solutions in `dsa/<pattern>/`, buggy rounds in `dailytests/` and `dailytests/redo/`, tests in `src/test/java` |
