@@ -1,0 +1,12 @@
+# Open stubs: test classes for work that is assigned but not finished yet.
+# Plain `mvn test` SKIPS everything listed here, so the default suite stays green.
+# `mvn test -Popen` runs ONLY the classes listed here.
+#
+# One pattern per line, path under src/test/java, e.g. **/GroupAnagramsTest.java
+# Add a line when a new stub (problem, buggy round or redo) is handed out.
+# Remove the line as soon as that class passes all of its tests.
+# Lines starting with # are comments.
+**/dsa/arrayshashing/GroupAnagramsTest.java
+**/dailytests/Day06FirstUniqueCodeTest.java
+**/dailytests/redo/CarFleetRedoNov20Test.java
+**/dailytests/redo/AsteroidCollisionRedoNov17Test.java

@@ -12,7 +12,21 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Default: skip the open stubs. The `open` profile flips this to run only them. -->
+        <surefire.openStubs.excludes>${project.basedir}/open-stubs.txt</surefire.openStubs.excludes>
+        <surefire.openStubs.includes></surefire.openStubs.includes>
     </properties>
+
+    <profiles>
+        <profile>
+            <!-- mvn test -Popen : run ONLY the classes listed in open-stubs.txt -->
+            <id>open</id>
+            <properties>
+                <surefire.openStubs.excludes></surefire.openStubs.excludes>
+                <surefire.openStubs.includes>${project.basedir}/open-stubs.txt</surefire.openStubs.includes>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -29,6 +43,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
+                <configuration>
+                    <!-- Default run skips the open stubs listed in open-stubs.txt (see README "How to run"). -->
+                    <excludesFile>${surefire.openStubs.excludes}</excludesFile>
+                    <includesFile>${surefire.openStubs.includes}</includesFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>
