@@ -69,9 +69,9 @@ Saturday also has the **2 PM weekly review**.
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-15%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~8:00 PM IST on tip `7325500` (the 2:11 PM IST weekly review). No student commits today in either repo: this repo's last student code is `d6ca103` (12 Nov, 9:01 PM IST); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) still has only `main` at `4384b9c` (12 Nov, 10:26 PM IST), no `my-solutions` branch. No Chapter 1 interview answer in chat yet. No code change, so the suites stand: `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub), root `mvn test` **514 run, 0 red**. **No new conceptual mistake** logged; no redo graded, so redo rows only move by date. The [weekly review 8–14 Nov](../PROGRESS.md#-weekly-review--814-nov-2026) already landed at 2:10 PM IST.
+> Evening review at ~8:00 PM IST on tip `7325500` (the 2:11 PM IST weekly review). No student commits today in either repo: this repo's last student code is `d6ca103` (12 Nov, 9:01 PM IST); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) still has only `main` at `4384b9c` (12 Nov, 10:26 PM IST), no `my-solutions` branch. No Chapter 1 interview answer in chat yet. No code change, so the suites stand: `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub), root `mvn test` **514 run, 0 red**. **No new conceptual mistake** logged; no redo graded, so redo rows only move by date. The [weekly review 8–14 Nov](../progress-2026-11.md#-weekly-review--814-nov-2026) already landed at 2:10 PM IST.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -121,7 +121,7 @@ Item 1 closes Chapter 1 but does not count as the second push day. Item 2 would.
 ![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-0-lightgrey)
 
 > [!NOTE]
-> 10 PM check on tip `7325500` (the 2:11 PM IST weekly review). No student commits after it: this repo's last student commit is still `d6ca103` (12 Nov, 9:01 PM IST) and `spring-boot-labs` `main` is still `4384b9c` (12 Nov, 10:26 PM IST), with no `my-solutions` branch. No Chapter 1 interview answer in chat. Nothing to re-test, so the suites stand: `mvn test` **514 run, 0 red**; labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub). No new conceptual mistake, no cosmetic fix needed, and [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
+> 10 PM check on tip `7325500` (the 2:11 PM IST weekly review). No student commits after it: this repo's last student commit is still `d6ca103` (12 Nov, 9:01 PM IST) and `spring-boot-labs` `main` is still `4384b9c` (12 Nov, 10:26 PM IST), with no `my-solutions` branch. No Chapter 1 interview answer in chat. Nothing to re-test, so the suites stand: `mvn test` **514 run, 0 red**; labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **0/19** (stub). No new conceptual mistake, no cosmetic fix needed, and [redo-schedule.md](../../revision/redo-schedule.md) is unchanged.
 
 | Item | Track | Outcome | Status |
 |---|---|---|---|

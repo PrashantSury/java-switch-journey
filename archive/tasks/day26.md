@@ -151,7 +151,7 @@ None.
 | `task4d_badBalance` | a non-number is 400 and you wrote no code for it |
 | `task5a_onePercent` · `task5b_minimum` · `task5c_express` · `task5d_optionalAndRequired` | 1%, minimum 10, doubling, `express` optional and `amount` required |
 
-#### 1️⃣2️⃣ Interview questions (copied to [interview-answers.md](../interview-answers.md) as ⬜ pending)
+#### 1️⃣2️⃣ Interview questions (copied to [interview-answers.md](../../interview-answers.md) as ⬜ pending)
 
 1. A client calls `GET /accounts/above?balance=10000` and gets 404, but `/accounts` works. Walk through how `RequestMappingHandlerMapping` matches the request and why `@GetMapping("/accounts/above?balance=N")` never matches.
 2. `@RequestParam(required = false) int page` and the client leaves `page` out: what does Spring do, which status does the client see, and why does the same line with `boolean` not fail? Give two correct fixes and their trade-offs.
@@ -390,8 +390,8 @@ When a bracket opens, push the context you are leaving (the repeat count and the
 
 ### 🧹 Housekeeping (Lumi, this morning)
 - `GenerateParentheses.main` now prints the n = 3 result (it built the list and threw it away); cosmetic, not logged.
-- [interview-answers.md](../interview-answers.md): labs Chapter 1 marked ✅ (graded 7/10 in chat on 15 Nov, it still said NOT_STARTED); Day 04 row shows the 1 Nov re-answers (26/30); labs Chapter 2 questions added as pending.
-- [redo-schedule.md](../revision/redo-schedule.md): `GenerateParentheses` row added (+1, queued in the first free slot, Fri 27 Nov); Tue 17 Nov stubs created.
+- [interview-answers.md](../../interview-answers.md): labs Chapter 1 marked ✅ (graded 7/10 in chat on 15 Nov, it still said NOT_STARTED); Day 04 row shows the 1 Nov re-answers (26/30); labs Chapter 2 questions added as pending.
+- [redo-schedule.md](../../revision/redo-schedule.md): `GenerateParentheses` row added (+1, queued in the first free slot, Fri 27 Nov); Tue 17 Nov stubs created.
 
 ## 🌙 Evening (17 Nov): review, scores, tonight and tomorrow
 
@@ -402,7 +402,7 @@ When a bracket opens, push the context you are leaving (the repeat count and the
 
 | Track | Score | Evidence |
 |---|---|---|
-| 🌱 Spring | **6/10** | labs `my-solutions` `393608c` (7:43 PM IST): Chapter 2 **12/19**. Task 4 exact (path-only `@GetMapping("/accounts/above")` + `@RequestParam int balance`, `>`), which fixes the 16 Nov path-pattern mistake. Task 5 used `Math.min(amount / 100, 10)` for a **minimum** fee, so `task5a`-`task5c` were red although the commit said "completed" → logged in [mistakes/spring.md](../revision/mistakes/spring.md) |
+| 🌱 Spring | **6/10** | labs `my-solutions` `393608c` (7:43 PM IST): Chapter 2 **12/19**. Task 4 exact (path-only `@GetMapping("/accounts/above")` + `@RequestParam int balance`, `>`), which fixes the 16 Nov path-pattern mistake. Task 5 used `Math.min(amount / 100, 10)` for a **minimum** fee, so `task5a`-`task5c` were red although the commit said "completed" → logged in [mistakes/spring.md](../../revision/mistakes/spring.md) |
 | 🧩 DSA | **8/10** | `GenerateParentheses` 17/17 (`221069b`, 9/10 at 6 AM); `ContainsDuplicate` untouched (0/17) |
 | 🐞 Buggy | unscored | `Day05DecodeString` untouched (12/25); `DailyTemperatures` comments not pushed |
 | 🔁 Redos | not attempted | `Day03NextGreaterIndexRedoNov17` 0/37, `AsteroidCollisionRedoNov17` 0/28 |

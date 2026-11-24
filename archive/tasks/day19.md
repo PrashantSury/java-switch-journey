@@ -78,7 +78,7 @@ Code is ✅ 36/36 (`d8306e2`); symptom table + `[2, 1, 2]` trace were graded in 
 
 - [ ] Each redo starts with a pattern note + time/space comment lines, before code. Do **not** open `ValidParenthesesRedoNov01`, `dsa/stack/ValidParentheses` or `dsa/stack/MinStack`. Push at the end, even if red.
 
-No new redo stubs: both files already exist and are still blank. `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **11 Nov** ([redo-schedule.md](../revision/redo-schedule.md)).
+No new redo stubs: both files already exist and are still blank. `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **11 Nov** ([redo-schedule.md](../../revision/redo-schedule.md)).
 
 ## 📦 Carried backlog (not for this morning)
 
@@ -96,9 +96,9 @@ No new redo stubs: both files already exist and are still blank. `ScoreOfParenth
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~8:00 PM IST on tip `dc71902` (JDK 21, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test`: **514 run, 46 red**, and the 46 are exactly the three untouched stubs: `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. Everything else is green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3`, no `my-solutions` branch. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) rows are unchanged; both redos are still due tonight.
+> Evening review at ~8:00 PM IST on tip `dc71902` (JDK 21, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test`: **514 run, 46 red**, and the 46 are exactly the three untouched stubs: `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. Everything else is green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3`, no `my-solutions` branch. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../../revision/redo-schedule.md) rows are unchanged; both redos are still due tonight.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -176,4 +176,4 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack.
 | 🔁 `MinStackRedoNov01` | 🔁 | not attempted, 0/10 → moves to **Wed 11 Nov** | 🟡 IN_PROGRESS (stub) |
 
 > [!IMPORTANT]
-> **First task tomorrow (Wed 11 Nov, 6 AM):** `git pull` both repos, then `spring-boot-labs` Chapter 1 **Task 1 only** (parent `spring-boot-starter-parent`) on a new `my-solutions` branch, and **push it before 6:20 AM, even if red**. That is the only must-do; Tasks 2-6, `DailyTemperatures` (pseudocode first) and the width sentence follow if there is time. Evening redos: `ValidParenthesesRedoNov08` then `MinStackRedoNov01` ([redo-schedule.md](../revision/redo-schedule.md), moved to 11 Nov).
+> **First task tomorrow (Wed 11 Nov, 6 AM):** `git pull` both repos, then `spring-boot-labs` Chapter 1 **Task 1 only** (parent `spring-boot-starter-parent`) on a new `my-solutions` branch, and **push it before 6:20 AM, even if red**. That is the only must-do; Tasks 2-6, `DailyTemperatures` (pseudocode first) and the width sentence follow if there is time. Evening redos: `ValidParenthesesRedoNov08` then `MinStackRedoNov01` ([redo-schedule.md](../../revision/redo-schedule.md), moved to 11 Nov).

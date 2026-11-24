@@ -87,7 +87,7 @@ Specs for Spring, DSA and buggy tasks follow the templates and the tone in [STYL
 | Need | File |
 |---|---|
 | What is done, pending, weak, blocked, next | [PROGRESS.md](../PROGRESS.md) |
-| Today's work and the specs of pending tasks | `tasks/dayNN.md` (one file per day) |
+| Today's work and the specs of pending tasks | `tasks/dayNN.md` (one file per day; the last 5 days stay in `tasks/`, older ones move to `archive/tasks/`) |
 | Graded interview answers | [interview-answers.md](../interview-answers.md) |
 | What to redo today | [revision/redo-schedule.md](../revision/redo-schedule.md) |
 | Conceptual mistakes | [revision/mistakes/](../revision/mistake-log.md) |

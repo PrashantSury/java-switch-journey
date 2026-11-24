@@ -20,7 +20,7 @@
 | 0-35 | 🌱 | **Ch 3 interview re-answer** in chat: part 2 (why a singleton bean isn't thread-safe by default: where fields live vs where locals live, plus two real fixes), part 3 (the *why* behind `@Component` vs `@Bean`); senior **Q2** (`TransferService` `runningTotal` drift, one fix that survives 3 instances and a restart) and **Q3** (a prototype `Receipt` inside a singleton); floor-vs-cap line; Ch 3 knowledge checks 1-3 (letters only). Questions in [day30.md §1](day30.md#-1-spring-close-chapter-2s-interview-re-answer-chapter-3-35-min-no-new-chapter) | graded in chat |
 | 35-55 | 🐞 | **`Day06FirstUniqueCode`** guided: trace `"aab"` by hand (answer 2); what should the last loop's index stand for, and what is its upper bound? Rewrite only the last loop; symptom-group comment + one comment per fix | 20/20 pushed |
 | 55-85 | 🧩 | **Two Sum** guided: (1) what completes the pair? (2) what should an O(1) lookup remember? (3) check before store or store before check? (`[3,2,4]`, target 6) (4) int overflow when target is `MIN_VALUE`? Then pseudocode + three "because" lines, fill the skeleton blanks, retype from a blank method | 19/19 pushed |
-| 85-90 | 🧩 | Frequency-counting weak-pack exercise + Valid Anagram checks ([day28.md pack](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | answered |
+| 85-90 | 🧩 | Frequency-counting weak-pack exercise + Valid Anagram checks ([day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | answered |
 | 90-115 | 🔁 | **`AsteroidCollisionRedoNov17`** cold, 25 min (moved to the morning after 5 skipped evenings) | 28/28 pushed (push even if red) |
 | 115-120 | 🧩 | `DailyTemperatures` comments | pushed |
 | Evening | 🔁 | **`CarFleetRedoNov20`** cold | 37/37 pushed |
@@ -54,8 +54,8 @@ Nothing landed today, so no track can be scored honestly. I won't invent a numbe
 | `@SpringBootApplication` (Ch 2) | 🟢 Strong enough to move on | Ch 2 ✅ 21 Nov (19/19 + answer 7/10) |
 | `@Component` vs `@Bean` (the why) | 🟡 Moderate (unchanged) | right rule, missing "needs code to build it" |
 | Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; re-answer and pack not attempted → [day29.md pack](day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
-| Frequency counting: counts, and the second pass walks string positions | 🔴 Weak (unchanged) | missed 19 Nov (Valid Anagram) and 21 Nov (`Day06`); pack not attempted → [day28.md pack](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
-| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs not attempted → [day25.md evening](day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
+| Frequency counting: counts, and the second pass walks string positions | 🔴 Weak (unchanged) | missed 19 Nov (Valid Anagram) and 21 Nov (`Day06`); pack not attempted → [day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
+| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs not attempted → [day25.md evening](../archive/tasks/day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
 | `TwoSum`, `Day06` last loop, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not started today |
 | ⛔ Blocked | none | no tool or spec in the way; the gap is time on task |
 

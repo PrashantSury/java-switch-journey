@@ -38,7 +38,7 @@ The code is ✅ 36/36 (`d8306e2`). The localisation was skipped. Spec and the fa
 ## 2️⃣ 🌱 spring-boot-labs Chapter 1: Maven and the pom.xml (~50 min)
 
 > [!IMPORTANT]
-> Repo: `https://github.com/PrashantSury/spring-boot-labs` · chapter: [`chapters/01-maven-and-the-pom/`](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) · edit **one file**: `lab/pom.xml`. ✅ Done when `mvn -pl chapters/01-maven-and-the-pom test` is green (19/19) and the interview question is answered out loud (then written under [interview-answers.md](../interview-answers.md)).
+> Repo: `https://github.com/PrashantSury/spring-boot-labs` · chapter: [`chapters/01-maven-and-the-pom/`](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) · edit **one file**: `lab/pom.xml`. ✅ Done when `mvn -pl chapters/01-maven-and-the-pom test` is green (19/19) and the interview question is answered out loud (then written under [interview-answers.md](../../interview-answers.md)).
 
 | Step | What | Minutes |
 |---|---|---|
@@ -174,7 +174,7 @@ Spec: [day09.md](day09.md#-day00buggyexample-buggy-warm-up). Stub: `Day00BuggyEx
 > [!NOTE]
 > Catch-up review after the 8 PM evening routine did not run (last recorded run 5 Nov; cause unknown — not investigated). Checked at ~8:30 PM IST on tip `ec608e3` (JDK 21, Maven). User pushes today: `c0f5d64` (08:42, Day00 + ValidParen redo body) and `ec608e3` (09:03, null guard on **original** `ValidParentheses.java`). Lumi comment-only PR [#1](https://github.com/PrashantSury/java-switch-journey/pull/1) (`f902f34`, CarFleet reasons) is still **open / not merged**. No commits today on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). Suites re-run below. **No new conceptual mistake** logged (wrong-file null guard is process, not a new rule miss).
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -226,7 +226,7 @@ No topic is newly 🔴 Weak, so no weak-topic pack tonight.
 | 🌱 Spring | `spring-boot-labs` Chapter 1 end-to-end (6 pom tasks + interview Q written); habit: ask what the parent already gives, then add only what is missing | unscored today; Ch 1 is the whole Spring slot |
 | 🧩 DSA | `DailyTemperatures`: 3–5 lines of plain-English pseudocode, then monotonic stack of **indices**, reason sentences on pattern/time/space | new Stack work was 0/18; weakest DSA dimension was problem solving (5) |
 | 🐞 Buggy | Finish LargestRectangle write-up if not done tonight; no new buggy round until that lands | debugging evidence keeps trailing the green suites |
-| 🔁 Redos (evening) | If ValidParen still not 18/18, it stays first; else `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` as queued | cap 2; most overdue first · [redo-schedule.md](../revision/redo-schedule.md) |
+| 🔁 Redos (evening) | If ValidParen still not 18/18, it stays first; else `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` as queued | cap 2; most overdue first · [redo-schedule.md](../../revision/redo-schedule.md) |
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
@@ -239,7 +239,7 @@ No topic is newly 🔴 Weak, so no weak-topic pack tonight.
 | Banking module 1 step 1, Drills 2 and 3 | 🏦🌱 | ⬜ NOT_STARTED (**parked**) | after labs Foundations settle |
 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED | after CarFleet follow-up |
 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS | spare evenings |
-| Redos queued: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (7 Nov) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../revision/redo-schedule.md) |
+| Redos queued: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (7 Nov) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../../revision/redo-schedule.md) |
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
@@ -259,7 +259,7 @@ No topic is newly 🔴 Weak, so no weak-topic pack tonight.
 | 🌱 B2 Q3 / Q6 and the catch-all sentence | ⬜ NOT_STARTED · carried |
 
 > [!NOTE]
-> No commits from Prashant after the catch-up evening review (`46876f6` is the review itself; the last student code push today is `ec608e3` at 09:03 IST) and no answers in chat after that review, so there was nothing new to test and no redo to grade. Suites stand from the evening: `Day00BuggyExampleTest` 10/10, `ValidParenthesesRedoNov01Test` 17/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10, `Day04LargestRectangleTest` 36/36. No labs push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is unchanged from the evening rebuild (cap of 2 from **7 Nov**: `ValidParentheses` then `MinStack`).
+> No commits from Prashant after the catch-up evening review (`46876f6` is the review itself; the last student code push today is `ec608e3` at 09:03 IST) and no answers in chat after that review, so there was nothing new to test and no redo to grade. Suites stand from the evening: `Day00BuggyExampleTest` 10/10, `ValidParenthesesRedoNov01Test` 17/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10, `Day04LargestRectangleTest` 36/36. No labs push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is unchanged from the evening rebuild (cap of 2 from **7 Nov**: `ValidParentheses` then `MinStack`).
 
 > [!TIP]
 > **Tomorrow's first task (Sat 7 Nov, 6 AM):** open [`spring-boot-labs` Chapter 1](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) and do the Maven / `pom.xml` tasks end-to-end, keeping the Drill 1 habit (ask what the parent already gives, then add only what is missing). If you want a 15-minute win first, push the `Day04LargestRectangle` symptom table and `[2, 1, 2]` hand trace (comment block only). Then `DailyTemperatures`: 3–5 lines of plain-English pseudocode, then a monotonic stack of **indices**. 🌙 Evening: finish `ValidParenthesesRedoNov01` null→IAE in the **redo** file (still 🔶 even at 18/18), then cold `MinStackRedoNov01`. Ask for a hint after 15 minutes on any step.

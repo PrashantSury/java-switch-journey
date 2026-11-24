@@ -94,7 +94,7 @@ Code is ✅ 36/36 (`d8306e2`); symptom table and `[2, 1, 2]` trace graded suppor
 - [ ] Each redo starts with a pattern line + time and space comment lines, before any code. Do **not** open `ValidParenthesesRedoNov01`, `dsa/stack/ValidParentheses` or `dsa/stack/MinStack`. Push at the end, even if red.
 - [ ] If the evening has room for only one, do `ValidParenthesesRedoNov08` (most overdue, 🔶 re-queue).
 
-No new redo stubs: both files exist and are still blank. If neither is done tonight, the 10 PM check moves them again and `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` slide from Thu 12 Nov ([redo-schedule.md](../revision/redo-schedule.md)).
+No new redo stubs: both files exist and are still blank. If neither is done tonight, the 10 PM check moves them again and `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` slide from Thu 12 Nov ([redo-schedule.md](../../revision/redo-schedule.md)).
 
 ## 📦 Carried backlog (not for this morning)
 
@@ -116,9 +116,9 @@ No new redo stubs: both files exist and are still blank. If neither is done toni
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-45%20min%20max-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~8:00 PM IST on tip `fae7a26` (JDK 21.0.13, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test`: **514 run, 46 red**, and the 46 are exactly the three untouched stubs: `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. Everything else is green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3`, no `my-solutions` branch, so the one must-do (Task 1, the coordinates) did not land. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) rows are unchanged; both redos are still due tonight.
+> Evening review at ~8:00 PM IST on tip `fae7a26` (JDK 21.0.13, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test`: **514 run, 46 red**, and the 46 are exactly the three untouched stubs: `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. Everything else is green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3`, no `my-solutions` branch, so the one must-do (Task 1, the coordinates) did not land. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../../revision/redo-schedule.md) rows are unchanged; both redos are still due tonight.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -192,4 +192,4 @@ Everything else on today's page (Tasks 2–6, `DailyTemperatures` pseudocode, wi
 | 🔁 `MinStackRedoNov01` | 🔁 | not attempted, 0/10 → on hold, earliest **Sat 14 Nov** | 🟡 IN_PROGRESS (stub) |
 
 > [!IMPORTANT]
-> **First task tomorrow (Thu 12 Nov, one-slot day):** `git pull` both repos, then `spring-boot-labs` Chapter 1 **Task 1** (the coordinates: `com.ledgerly : ledgerly-core : 0.1.0-SNAPSHOT`, the three lines directly under `<project>`) on a new `my-solutions` branch, and **push it even if red**. That is the only item for the 45-minute block; Task 2 (the parent) only if time is left. DSA, buggy and redos rest until pushes restart ([redo-schedule.md](../revision/redo-schedule.md)).
+> **First task tomorrow (Thu 12 Nov, one-slot day):** `git pull` both repos, then `spring-boot-labs` Chapter 1 **Task 1** (the coordinates: `com.ledgerly : ledgerly-core : 0.1.0-SNAPSHOT`, the three lines directly under `<project>`) on a new `my-solutions` branch, and **push it even if red**. That is the only item for the 45-minute block; Task 2 (the parent) only if time is left. DSA, buggy and redos rest until pushes restart ([redo-schedule.md](../../revision/redo-schedule.md)).

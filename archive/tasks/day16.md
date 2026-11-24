@@ -41,7 +41,7 @@ The code is ✅ 36/36 (`d8306e2`). The localisation write-up was skipped on 5 No
 ## 2️⃣ 🌱 spring-boot-labs Chapter 1: Maven and the pom.xml (~50 min)
 
 > [!IMPORTANT]
-> Repo: [`PrashantSury/spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) · chapter: [`chapters/01-maven-and-the-pom/`](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) · edit **one file**: `lab/pom.xml`. ✅ Done when `mvn -pl chapters/01-maven-and-the-pom test` is green (**19/19**) and the interview question is answered out loud (then written under [interview-answers.md](../interview-answers.md)). Banking module 1 / Drills 2–3 stay **parked**.
+> Repo: [`PrashantSury/spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) · chapter: [`chapters/01-maven-and-the-pom/`](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) · edit **one file**: `lab/pom.xml`. ✅ Done when `mvn -pl chapters/01-maven-and-the-pom test` is green (**19/19**) and the interview question is answered out loud (then written under [interview-answers.md](../../interview-answers.md)). Banking module 1 / Drills 2–3 stay **parked**.
 
 | Step | What | Minutes |
 |---|---|---|
@@ -157,7 +157,7 @@ Brute force is O(n²) time. State the optimised time and space **after** your at
 - [ ] Before any Java on MinStack: pattern / time / space with one sentence each on where the cost comes from.
 
 > [!WARNING]
-> Cap **2**. `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **8 Nov** ([redo-schedule.md](../revision/redo-schedule.md)). Do not start a third redo tonight.
+> Cap **2**. `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **8 Nov** ([redo-schedule.md](../../revision/redo-schedule.md)). Do not start a third redo tonight.
 
 
 ## 🌙 Evening (7 Nov): review, scores, tonight and tomorrow
@@ -167,7 +167,7 @@ Brute force is O(n²) time. State the optimised time and space **after** your at
 > [!NOTE]
 > Evening review at ~8:00 PM IST on tip `f61c7d3` (JDK 21, Maven). Student code today: `3019054` (14:11 IST) null→IAE **in** `ValidParenthesesRedoNov01.java`, merged `f61c7d3`. Weekly review `98cc269` (~2:07 PM IST) already on `main` — not redone here. Chat: `Day04LargestRectangle` symptom table + `[2,1,2]` hand trace graded (**supported**, not cold-clean); table diagnosis correct; sentinel rows corrected after feedback; max **3** accepted; empty-stack width still needs a geometric why + ASCII. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) (still stub / no `my-solutions`). `MinStackRedoNov01` and `DailyTemperatures` untouched. **No new conceptual mistake** logged.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -194,7 +194,7 @@ Brute force is O(n²) time. State the optimised time and space **after** your at
 | 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
 | ⛔ Blocked | none | — |
 
-No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring 🔴 Weak rows stay in [PROGRESS.md](../PROGRESS.md); do not insert them ahead of labs Ch 1.
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring 🔴 Weak rows stay in [PROGRESS.md](../../PROGRESS.md); do not insert them ahead of labs Ch 1.
 
 ### ⏳ Tonight's evening-slot work (finishable; push after each)
 
@@ -221,7 +221,7 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring �
 | 🌱 Spring | `spring-boot-labs` Chapter 1 end-to-end (6 pom tasks + interview Q written); habit: ask what the parent already gives, then add only what is missing | unscored two nights; Ch 1 is the whole Spring slot |
 | 🧩 DSA | Finish `DailyTemperatures` if not green tonight: monotonic stack of **indices**, reason sentences on pattern/time/space (push≤1 + pop≤1 → ≤2n) | problem solving was 4; stub still blocks the next Stack problem |
 | 🐞 Buggy | No new buggy round. Optional: empty-stack width geometric sentence if not graded tonight; Day00 symptom groups stay backlog | write-up for LargestRect is graded (supported); debugging depth still the soft edge |
-| 🔁 Redos (evening) | Cap 2 from [redo-schedule.md](../revision/redo-schedule.md): **`ValidParentheses` (+1, 🔶 re-queue)** then **`MinStack` (+1)** if MinStack still open; else `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` | ValidParen stays same gap; MinStack still never redone |
+| 🔁 Redos (evening) | Cap 2 from [redo-schedule.md](../../revision/redo-schedule.md): **`ValidParentheses` (+1, 🔶 re-queue)** then **`MinStack` (+1)** if MinStack still open; else `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` | ValidParen stays same gap; MinStack still never redone |
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
@@ -241,7 +241,7 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring �
 | 🌱 B2 Q3 / Q6 and the catch-all sentence | ⬜ NOT_STARTED · carried |
 
 > [!NOTE]
-> No commits from Prashant after the evening review (`71728e0` is the review itself; the last student code today is `3019054` at 14:11 IST) and no answers in chat after that review, so there was nothing new to test and no redo to grade. Suites stand from the evening: `ValidParenthesesRedoNov01Test` 18/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 36/36, `Day00BuggyExampleTest` 10/10, `Day02RpnEvaluatorRedoNov01Test` 44/44, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is unchanged from the evening rebuild (cap of 2 on **8 Nov**: `ValidParentheses` then `MinStack`).
+> No commits from Prashant after the evening review (`71728e0` is the review itself; the last student code today is `3019054` at 14:11 IST) and no answers in chat after that review, so there was nothing new to test and no redo to grade. Suites stand from the evening: `ValidParenthesesRedoNov01Test` 18/18, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 36/36, `Day00BuggyExampleTest` 10/10, `Day02RpnEvaluatorRedoNov01Test` 44/44, `DailyTemperaturesTest` 0/18, `MinStackRedoNov01Test` 0/10. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs). No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is unchanged from the evening rebuild (cap of 2 on **8 Nov**: `ValidParentheses` then `MinStack`).
 
 > [!TIP]
 > **Tomorrow's first task (Sun 8 Nov, 6 AM):** `git pull` both repos, create a `my-solutions` branch in [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/01-maven-and-the-pom) and do Chapter 1 Tasks 1-3 in `lab/pom.xml` (parent `4.1.2` **before** your own `groupId`, then coordinates, then `java.version=21`), running the checks after each and pushing even if red. Then Tasks 4-6 and the interview question, then `DailyTemperatures` (3-5 lines of plain-English pseudocode first). 🌙 Evening: cold `ValidParenthesesRedoNov01`, then cold `MinStackRedoNov01`. Ask for a hint after 15 minutes on any step.
@@ -254,7 +254,7 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring �
 | Banking module 1 step 1, Drills 2 and 3 | 🏦🌱 | ⬜ NOT_STARTED (**parked**) | after labs Foundations settle |
 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED | after CarFleet follow-up |
 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS | spare evenings |
-| Redos queued: `ValidParentheses` (+1 🔶) + `MinStack` (+1) (**8 Nov**); then `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../revision/redo-schedule.md) |
+| Redos queued: `ValidParentheses` (+1 🔶) + `MinStack` (+1) (**8 Nov**); then `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../../revision/redo-schedule.md) |
 | `Day00BuggyExample` redo (+1) | 🔁 | 🟡 IN_PROGRESS | queued **11 Nov** |
 
 > [!TIP]

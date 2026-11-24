@@ -108,9 +108,9 @@ No logic was changed; `CarFleetTest` is still 37/37 after the fixes.
 1. **Missing deliverable (not code):** the "Done when" of this task asks for the **pattern line and time/space complexity at the top** of `CarFleet.java`. They are not there yet. Write the three comment lines yourself, and be ready to defend the O(n log n) and the O(n) space in 60 seconds. *Hint:* which step dominates, and what does the stack hold in the worst case?
 2. **Follow-up for tonight's interview angle:** the code only ever reads the top of the stack. *Hint:* what single pair of values would replace the stack, and why is the result the same? Say it in chat; no need to code it unless you want to.
 
-Logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): in chat you first wrote `long time = (target - pos) / spd;` (integer division drops the fraction), the same root cause as Q3.
+Logged in [mistakes/dsa.md](../../revision/mistakes/dsa.md): in chat you first wrote `long time = (target - pos) / spd;` (integer division drops the fraction), the same root cause as Q3.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 | Track | Score | Evidence |
 |---|---|---|
 | 🌱 Spring Boot | **not scored** | no new Spring work; B2 still 18/18 with the catch-all open |
@@ -139,7 +139,7 @@ Logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): in chat you first wrot
 > [!NOTE]
 > Checked at 8 PM on `e20b0b6` with JDK 21 and Maven. Your only code push today is `91cb817` (`CarFleet`, 17:37 IST), already reviewed at midday; nothing was pushed since. Re-run tonight: `CarFleetTest` **37/37**, `course-practice` **18/18**, `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**. No new cosmetic fixes and no new entries in the mistake logs tonight.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -180,7 +180,7 @@ Logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): in chat you first wrot
 | 7 | if time | 🔁 cold redo `Day02RpnEvaluatorRedoNov01` (0/44) first, then `ValidParenthesesRedoNov01` (0/18) | 🔁 | 44/44 and 18/18, cold |
 
 > [!NOTE]
-> Items 1-6 are about 55 minutes, so the redos will most likely slip again; if they do, the 10 PM check moves the queue one more day. [redo-schedule.md](../revision/redo-schedule.md) is unchanged tonight because no redo was graded (`CarFleet` already joined the ladder at midday).
+> Items 1-6 are about 55 minutes, so the redos will most likely slip again; if they do, the 10 PM check moves the queue one more day. [redo-schedule.md](../../revision/redo-schedule.md) is unchanged tonight because no redo was graded (`CarFleet` already joined the ladder at midday).
 
 - [ ] `CarFleet` comment lines pushed
 - [ ] `CarFleet` single-pair follow-up answered
@@ -215,7 +215,7 @@ Logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): in chat you first wrot
 | 🔁 `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01` | 🟡 IN_PROGRESS (0/44, 0/18, not attempted) · moved to Wed 4 Nov evening, the rest of the queue shifts one more day |
 
 > [!NOTE]
-> No commits from Prashant after the 8 PM evening review (the last code push is still `91cb817`, 17:37 IST), and no answers in chat, so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is rewritten for the two missed redos (last graduation now Mon 4 Jan).
+> No commits from Prashant after the 8 PM evening review (the last code push is still `91cb817`, 17:37 IST), and no answers in chat, so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rewritten for the two missed redos (last graduation now Mon 4 Jan).
 
 > [!IMPORTANT]
 > **First task tomorrow (Wed 4 Nov, 6 AM):** 🧩 the `CarFleet` pattern line, time and space as 3 comment lines at the top of `CarFleet.java` (*hint:* which step dominates, and what does the stack hold in the worst case?), **pushed first**, with `CarFleetTest` still 37/37. Then 🌱 the Part B2 catch-all (answer the three guiding questions, fix or remove it, add one 415 or 405 test and the sixth assertion on `malformedJsonReturnsProblemDetail`), 🐞 the `Day04LargestRectangle` symptom table, and in chat the single-pair follow-up, the count-stack re-ask and Q3/Q6. 🌙 Evening: the redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`. Ask for a hint after 15 minutes on any step.

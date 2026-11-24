@@ -3,7 +3,7 @@
 ![Week](https://img.shields.io/badge/Week-2-blue) ![Day](https://img.shields.io/badge/Day-09-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-~60%20min-blue) ![Program](https://img.shields.io/badge/program-from%201%20Nov%202026-purple)
 
 > [!IMPORTANT]
-> Day 09 itself is finished (both cold redos are ✅ COMPLETED). This file is also the home of the **specs of everything still pending**, rewritten for the new program ([docs/PROGRAM.md](../docs/PROGRAM.md)): 🌱 Spring, 🧩 DSA and 🐞 buggy tasks, each with the template and tone of [STYLE-GUIDE.md](../docs/STYLE-GUIDE.md#-spec-templates-and-tone). Done criterion for each task is inside its spec.
+> Day 09 itself is finished (both cold redos are ✅ COMPLETED). This file is also the home of the **specs of everything still pending**, rewritten for the new program ([docs/PROGRAM.md](../../docs/PROGRAM.md)): 🌱 Spring, 🧩 DSA and 🐞 buggy tasks, each with the template and tone of [STYLE-GUIDE.md](../../docs/STYLE-GUIDE.md#-spec-templates-and-tone). Done criterion for each task is inside its spec.
 
 > [!NOTE]
 > **Legend:** 🌅 morning · 🌙 evening · 🔥 revise first · ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (verified) · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` · ⚠️ gotcha. Tick the `- [ ]` boxes as you finish each item. Progress decides the next task, never the calendar.
@@ -24,12 +24,12 @@
 | 8 | Count-stack O(n) question re-ask (scored 3/5) | 🧩 DSA | 🔴 REVISION_REQUIRED | [Re-answer cards](#-re-answer-cards) |
 
 > [!NOTE]
-> 🗄️ **SQL is retired (31 Oct 2026).** Its tasks are not carried; everything SQL lives in [archive/](../archive/README.md). Database questions are asked only as Spring/JPA/Flyway questions.
+> 🗄️ **SQL is retired (31 Oct 2026).** Its tasks are not carried; everything SQL lives in [archive/](../README.md). Database questions are asked only as Spring/JPA/Flyway questions.
 
 ## 📚 Specs of pending tasks
 
 > [!NOTE]
-> Every spec follows the templates in the [style guide](../docs/STYLE-GUIDE.md#-spec-templates-and-tone). 🧩 DSA specs keep the optimised algorithm, the dry run and the answers inside a collapsed block called **Open only after your attempt**. 🐞 Buggy specs state the expected behaviour and the test cases, and never point at the faulty lines.
+> Every spec follows the templates in the [style guide](../../docs/STYLE-GUIDE.md#-spec-templates-and-tone). 🧩 DSA specs keep the optimised algorithm, the dry run and the answers inside a collapsed block called **Open only after your attempt**. 🐞 Buggy specs state the expected behaviour and the test cases, and never point at the faulty lines.
 
 ### 🧩 Car Fleet (DSA)
 
@@ -628,7 +628,7 @@ public class GlobalExceptionHandler {
 ![Module](https://img.shields.io/badge/module-1%20of%2010-blue) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen) ![Status](https://img.shields.io/badge/status-NOT__STARTED-lightgrey) ![Time](https://img.shields.io/badge/slot-~50%20min%20per%20day-yellow)
 
 > [!IMPORTANT]
-> 📂 `banking-app/` · design context: [project-architecture.md](../banking-app/project-architecture.md). This module starts only when Part B2 is ✅ COMPLETED. ✅ Done when a user can log in and get a JWT, a protected endpoint returns 401 without a token, 403 without the permission and 200 with it, and the tests that prove it pass with `mvn verify` in `banking-app`. It will take several mornings; the checklist below is the unit of progress.
+> 📂 `banking-app/` · design context: [project-architecture.md](../../banking-app/project-architecture.md). This module starts only when Part B2 is ✅ COMPLETED. ✅ Done when a user can log in and get a JWT, a protected endpoint returns 401 without a token, 403 without the permission and 200 with it, and the tests that prove it pass with `mvn verify` in `banking-app`. It will take several mornings; the checklist below is the unit of progress.
 
 #### 1️⃣ What are we building
 The security foundation for every other banking module: a hand-written **V2 Flyway migration** for users, roles and permissions; a `POST /auth/login` that checks a password and issues a signed **JWT** carrying the user's permissions; and method-level authorization (`@PreAuthorize`) that reads those permissions. Today the app can only **verify** a token with the RSA public key; nothing can create one and there are no users.
@@ -808,14 +808,14 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 ### 🔁 Redo cards
 
 > [!NOTE]
-> Redos follow [revision/redo-schedule.md](../revision/redo-schedule.md): blank file, 20-30 minutes, three comment lines first (pattern, time, space), then `mvn test -Dtest=<Problem>Test`. They run in the 🌙 evening after the review and after pending morning work, at most two a day. If the blank redo stub does not exist yet, ask for it; do not copy the old solution.
+> Redos follow [revision/redo-schedule.md](../../revision/redo-schedule.md): blank file, 20-30 minutes, three comment lines first (pattern, time, space), then `mvn test -Dtest=<Problem>Test`. They run in the 🌙 evening after the review and after pending morning work, at most two a day. If the blank redo stub does not exist yet, ask for it; do not copy the old solution.
 
 | Redo | Due | Gap | What the problem is | What to be able to say afterwards |
 |---|---|---|---|---|
 | 🐞 `Day02RpnEvaluator` | 1 Nov (reset after the 31 Oct conceptual misses) | +1 | evaluate a Reverse Polish expression with a stack; negative numbers like `"-3"` are numbers, not operators | which pop is the right operand; why `"-3"` is not `"-"`; why the end check is `size() != 1`; where overflow can happen; why `null` and empty input need an explicit guard |
 | 🧩 `ValidParentheses` | 1 Nov (late, never redone) | +1 | brackets `()[]{}` are valid if every opener is closed by the same type, in the right order | why a stack and not a counter; the empty-stack case on a closer; the leftover openers case; O(n) time and O(n) space |
 
-**Result rules.** ✅ clean cold pass moves up one step; 🔶 a pass with a hint or a fix repeats the gap; ❌ a conceptual miss resets to day 1 and is logged in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md).
+**Result rules.** ✅ clean cold pass moves up one step; 🔶 a pass with a hint or a fix repeats the gap; ❌ a conceptual miss resets to day 1 and is logged in [revision/mistakes/dsa.md](../../revision/mistakes/dsa.md).
 
 ### 🎤 Re-answer cards
 
@@ -824,10 +824,10 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 
 | Card | Question | What was missing (from the grading) | Model answer lives in |
 |---|---|---|---|
-| Day 04 Q1 (5/10) | How does a JSON body become a validated `StudentRequest`? Which component converts it, which exception is thrown when validation fails, and what happens with malformed JSON? | named the malformed-JSON exception for the validation failure; the failed `@Valid` throws `MethodArgumentNotValidException`; two exceptions at two steps (convert, then validate) | [day04-answers.md](../spring-boot/interview-answers/day04-answers.md) |
+| Day 04 Q1 (5/10) | How does a JSON body become a validated `StudentRequest`? Which component converts it, which exception is thrown when validation fails, and what happens with malformed JSON? | named the malformed-JSON exception for the validation failure; the failed `@Valid` throws `MethodArgumentNotValidException`; two exceptions at two steps (convert, then validate) | [day04-answers.md](../../spring-boot/interview-answers/day04-answers.md) |
 | Day 04 Q2 (4/10) | Why separate request and response DTOs instead of exposing the `Student` entity? Give two concrete risks. | vague; mass assignment half-covered; missed leaking internal fields and lazy relations, and schema coupling | same file |
 | Day 04 Q3 (6/10) | What is `ProblemDetail`? Why is 409 better than 400 for a duplicate email, and why isn't the "does it exist" check alone enough? | the race: check-then-save is not atomic; the real guarantee is a database unique constraint, with `DataIntegrityViolationException` mapped to 409 | same file |
-| Count-stack O(n) (3/5) | In `RemoveKAdjacentDuplicates`, why is the count-stack solution O(n) and not O(n²)? | the amortised argument: every character is pushed once and popped at most once | [revision/mistakes/dsa.md](../revision/mistakes/dsa.md) |
+| Count-stack O(n) (3/5) | In `RemoveKAdjacentDuplicates`, why is the count-stack solution O(n) and not O(n²)? | the amortised argument: every character is pushed once and popped at most once | [revision/mistakes/dsa.md](../../revision/mistakes/dsa.md) |
 
 **Senior add-ons to prepare for the next scoring:** (1) What does Q3's unique constraint look like for case-insensitive emails, and what does the loser of the race get back? (2) Which of the three DTO risks would be a security finding in an audit, and why? (3) Write the one-minute spoken answer for Q1.
 
@@ -845,7 +845,7 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 ### 📚 Revise first (~5 min)
 | Topic | What to recall |
 |---|---|
-| 🔥 | Read the Day 01 and Day 02 rows in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md), then close it before you start coding. |
+| 🔥 | Read the Day 01 and Day 02 rows in [revision/mistakes/dsa.md](../../revision/mistakes/dsa.md), then close it before you start coding. |
 
 ### 🅰️ Main task (~30 min): Day02RpnEvaluator day-7 redo, cold
 - [x] Without opening `Day02RpnEvaluator.java` or `Day02RpnEvaluatorRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day02RpnEvaluatorRedo7.java` (spec in its Javadoc).
@@ -858,7 +858,7 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 > Think about which pop is the right operand, tokens that only *start* like an operator, and every arithmetic op that can overflow.
 
 > [!TIP]
-> ✅ **Fixed (31 Oct):** the operator fall-through (`else`), the end check (`stack.size() != 1`) and the null/empty guard are all in. The mistake is logged in [revision/mistakes/dsa.md](../revision/mistakes/dsa.md); redo again on 3 Nov and 7 Nov.
+> ✅ **Fixed (31 Oct):** the operator fall-through (`else`), the end check (`stack.size() != 1`) and the null/empty guard are all in. The mistake is logged in [revision/mistakes/dsa.md](../../revision/mistakes/dsa.md); redo again on 3 Nov and 7 Nov.
 
 ### 🔁 Small item (~15 min): Day01ArrayStack day-7 redo, cold (carried from Day 08)
 - [x] Without opening `Day01ArrayStack.java` or `Day01ArrayStackRedo.java`, write `src/main/java/com/prashant/dailytests/redo/Day01ArrayStackRedo7.java` (spec in its Javadoc).
@@ -878,7 +878,7 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-~55%20min-blue)
 
 > [!NOTE]
-> Checked at 8 PM with `mvn test`: `CarFleetTest` 2/37 (both pass by accident on the stub). `CarFleet` was assigned as the backlog item; no push followed, so it stays ⬜ NOT_STARTED and is specified in [Car Fleet](#-car-fleet-dsa) above. SQL, which was also on tonight's list, was cancelled when it was retired on 31 Oct 2026 ([archive/](../archive/README.md)).
+> Checked at 8 PM with `mvn test`: `CarFleetTest` 2/37 (both pass by accident on the stub). `CarFleet` was assigned as the backlog item; no push followed, so it stays ⬜ NOT_STARTED and is specified in [Car Fleet](#-car-fleet-dsa) above. SQL, which was also on tonight's list, was cancelled when it was retired on 31 Oct 2026 ([archive/](../README.md)).
 
 > [!IMPORTANT]
 > ✅ Done when `CarFleetTest` is 37/37 on your pushed code. `git pull` first, run `mvn test`, and reply in chat when you are ready for grading.
@@ -891,7 +891,7 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 | 🔁 `Day01ArrayStackRedo7` (day-7 redo, cold) | ✅ COMPLETED (17/17, d5c0ee9) · clean pass, next redo 7 Nov |
 | 🎤 Day 04 Q1-Q3 | 🔴 REVISION_REQUIRED (graded 15/30: 5 / 4 / 6) · re-answer by Tue 3 Nov |
 | 🧩 `CarFleet` | ⬜ NOT_STARTED (2/37, no push after the 8 PM assignment) · carried |
-| 🗄️ SQL (learn lesson 03, 03 Q1) | 🗃️ Retired 31 Oct 2026, archived in [archive/](../archive/README.md) · not carried |
+| 🗄️ SQL (learn lesson 03, 03 Q1) | 🗃️ Retired 31 Oct 2026, archived in [archive/](../README.md) · not carried |
 | 🐞 `Day04LargestRectangle` | ⬜ NOT_STARTED (15/36) · carried |
 | 🌱 Day 04 Part B2 | ⬜ NOT_STARTED · next Spring task after the re-answers (see the pending table) |
 
@@ -899,4 +899,4 @@ src/test/java/com/prashant/banking/auth  AuthLoginIT                           /
 > No pushes from Prashant after the 8 PM evening assignment, so nothing new to test tonight. No new mistakes and no cosmetic fixes needed.
 
 > [!IMPORTANT]
-> **Next task:** decided by progress, not by the calendar. The pending table at the top of this file lists the order; the redos due 1 Nov (`Day02RpnEvaluator`, `ValidParentheses`) and the Day 04 Q1-Q3 re-answers come first, then `CarFleet`. SQL is retired and no longer carried. From 1 Nov the day follows [docs/PROGRAM.md](../docs/PROGRAM.md) (2 h morning, 1 h evening).
+> **Next task:** decided by progress, not by the calendar. The pending table at the top of this file lists the order; the redos due 1 Nov (`Day02RpnEvaluator`, `ValidParentheses`) and the Day 04 Q1-Q3 re-answers come first, then `CarFleet`. SQL is retired and no longer carried. From 1 Nov the day follows [docs/PROGRAM.md](../../docs/PROGRAM.md) (2 h morning, 1 h evening).

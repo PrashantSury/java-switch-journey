@@ -93,16 +93,16 @@ The code is ✅ 36/36 (`d8306e2`) and the symptom table + `[2, 1, 2]` trace were
 - [ ] MinStack: 3 comment lines + 3-5 lines of plain-English pseudocode; do **not** open `dsa/stack/MinStack`. Push at the end, even if red.
 
 > [!WARNING]
-> Why a new ValidParen file: the old `ValidParenthesesRedoNov01` already holds your 7 Nov answer, so redoing it there is not cold. Cap **2**: `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **9 Nov** ([redo-schedule.md](../revision/redo-schedule.md)).
+> Why a new ValidParen file: the old `ValidParenthesesRedoNov01` already holds your 7 Nov answer, so redoing it there is not cold. Cap **2**: `ScoreOfParentheses` and `RemoveKAdjacentDuplicates` stay queued for **9 Nov** ([redo-schedule.md](../../revision/redo-schedule.md)).
 
 ## 🌙 Evening (8 Nov): review, scores, tonight and tomorrow
 
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~7:58 PM IST on tip `73a1fd7` (JDK 21, Maven). No student commits after the 6 AM session (`1af6500` + `73a1fd7`). Last student code is still `3019054` (7 Nov 14:11 IST). No answers in this chat today to grade. Re-ran: `ValidParenthesesRedoNov01Test` **18/18**, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 36/36, `Day00BuggyExampleTest` 10/10, `Day02RpnEvaluatorRedoNov01Test` 44/44, `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) (still `main` `507aaa3`, no `my-solutions` branch; `Chapter01CheckTest` last verified **1/19** this morning). **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) is unchanged (both 8 Nov redos remain due tonight).
+> Evening review at ~7:58 PM IST on tip `73a1fd7` (JDK 21, Maven). No student commits after the 6 AM session (`1af6500` + `73a1fd7`). Last student code is still `3019054` (7 Nov 14:11 IST). No answers in this chat today to grade. Re-ran: `ValidParenthesesRedoNov01Test` **18/18**, `ValidParenthesesTest` 2/2, `CarFleetTest` 37/37, `Day04LargestRectangleTest` 36/36, `Day00BuggyExampleTest` 10/10, `Day02RpnEvaluatorRedoNov01Test` 44/44, `DailyTemperaturesTest` **0/18**, `ValidParenthesesRedoNov08Test` **0/18**, `MinStackRedoNov01Test` **0/10**. No push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) (still `main` `507aaa3`, no `my-solutions` branch; `Chapter01CheckTest` last verified **1/19** this morning). **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../../revision/redo-schedule.md) is unchanged (both 8 Nov redos remain due tonight).
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -129,7 +129,7 @@ The code is ✅ 36/36 (`d8306e2`) and the symptom table + `[2, 1, 2]` trace were
 | 🏦 Banking module 1 / Drills 2–3 | ⬜ Pending, **parked** | unchanged |
 | ⛔ Blocked | none | — |
 
-No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring 🔴 Weak rows stay in [PROGRESS.md](../PROGRESS.md); do not insert them ahead of labs Ch 1.
+No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring 🔴 Weak rows stay in [PROGRESS.md](../../PROGRESS.md); do not insert them ahead of labs Ch 1.
 
 ### ⏳ Tonight's evening-slot work (finishable; push after each)
 
@@ -171,7 +171,7 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring �
 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED | after CarFleet follow-up |
 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS | spare evenings |
 | `Day00BuggyExample` symptom groups | 🐞 | 🟡 IN_PROGRESS | backlog |
-| Redos queued: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**9 Nov**); `Day03NextGreaterIndex`, `AsteroidCollision` (**10 Nov**) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../revision/redo-schedule.md) |
+| Redos queued: `ScoreOfParentheses`, `RemoveKAdjacentDuplicates` (**9 Nov**); `Day03NextGreaterIndex`, `AsteroidCollision` (**10 Nov**) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../../revision/redo-schedule.md) |
 
 ## 🌒 End of day
 
@@ -190,4 +190,4 @@ No topic is newly 🔴 Weak tonight, so no new weak-topic pack. Carried Spring �
 | 🔁 `MinStackRedoNov01` | 🔁 | not attempted, 0/10 → moves to **Mon 9 Nov** | 🟡 IN_PROGRESS (stub) |
 
 > [!IMPORTANT]
-> **First task tomorrow (Mon 9 Nov, 6 AM):** `git pull` both repos, then `spring-boot-labs` Chapter 1 Tasks 1-3 on a new `my-solutions` branch (parent first, then your coordinates, then `java.version=21`), run `mvn -pl chapters/01-maven-and-the-pom test`, and **push even if red**. Then `DailyTemperatures` (pseudocode first) and the width sentence. Evening redos: `ValidParenthesesRedoNov08` then `MinStackRedoNov01` ([redo-schedule.md](../revision/redo-schedule.md), rebuilt from 9 Nov).
+> **First task tomorrow (Mon 9 Nov, 6 AM):** `git pull` both repos, then `spring-boot-labs` Chapter 1 Tasks 1-3 on a new `my-solutions` branch (parent first, then your coordinates, then `java.version=21`), run `mvn -pl chapters/01-maven-and-the-pom test`, and **push even if red**. Then `DailyTemperatures` (pseudocode first) and the width sentence. Evening redos: `ValidParenthesesRedoNov08` then `MinStackRedoNov01` ([redo-schedule.md](../../revision/redo-schedule.md), rebuilt from 9 Nov).

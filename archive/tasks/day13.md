@@ -162,7 +162,7 @@ None.
 | 2 | Primary key type for `users` (public id in the token `sub` claim) | `bigint` identity or `uuid`; say which and why |
 | 3 | How is "Teller01 = teller01" prevented? | unique index on `lower(username)` or a `citext` column |
 | 4 | What does the password column hold, and how wide must it be? | BCrypt hash string, not the password |
-| 5 | Which columns come from `BaseEntity`? | read [`BaseEntity.java`](../banking-app/src/main/java/com/prashant/banking/common/BaseEntity.java) and copy its columns |
+| 5 | Which columns come from `BaseEntity`? | read [`BaseEntity.java`](../../banking-app/src/main/java/com/prashant/banking/common/BaseEntity.java) and copy its columns |
 
 #### Stubs
 ```text
@@ -262,7 +262,7 @@ Answer in 3-4 lines: `RemoveKAdjacentDuplicates` keeps a stack of (character, co
 > [!NOTE]
 > Checked at 8 PM on `4d1db80` (the 6 AM session commit). There is **no commit from you today and no answer in the repo**, so there was nothing new to run: the suites are exactly as measured at 6 AM (`course-practice` **19/19**, `CarFleetTest` **37/37**, `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**; the two new stubs `SpringDefaultsDrillTest` and `AuthSchemaIT` are red by design). No cosmetic fixes and no new entries in the mistake logs tonight.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -316,7 +316,7 @@ Answer in 3-4 lines: `RemoveKAdjacentDuplicates` keeps a stack of (character, co
 | 5 | if time | 🔁 cold redo `ValidParenthesesRedoNov01` (0/18), pattern note and complexity first | 🔁 | 18/18, cold |
 
 > [!NOTE]
-> Items 1-4 are about 50 minutes, so the redos will most likely slip a fifth time; the 10 PM check then moves the queue one more day. [redo-schedule.md](../revision/redo-schedule.md) is unchanged tonight because no redo was graded. **Moved to tomorrow:** banking module 1 step 1 (40 min), the cold RPN redo (25 min), Q3 and Q6 of the B2 questions.
+> Items 1-4 are about 50 minutes, so the redos will most likely slip a fifth time; the 10 PM check then moves the queue one more day. [redo-schedule.md](../../revision/redo-schedule.md) is unchanged tonight because no redo was graded. **Moved to tomorrow:** banking module 1 step 1 (40 min), the cold RPN redo (25 min), Q3 and Q6 of the B2 questions.
 
 - [ ] `CarFleet` comment lines pushed
 - [ ] Drill 1 pushed, 22 tests green
@@ -350,7 +350,7 @@ Answer in 3-4 lines: `RemoveKAdjacentDuplicates` keeps a stack of (character, co
 | 🔁 `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01` | 🟡 IN_PROGRESS (0/44, 0/18, not attempted) · moved to Thu 5 Nov, the rest of the queue shifts one more day |
 
 > [!NOTE]
-> No commits from Prashant after the 8 PM evening review (`210d691` is the review; the only other commit today is the 6 AM session `4d1db80`) and no answers in chat, so there was nothing new to test and no redo to grade. No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is rewritten for the two missed redos (last graduation now Tue 5 Jan).
+> No commits from Prashant after the 8 PM evening review (`210d691` is the review; the only other commit today is the 6 AM session `4d1db80`) and no answers in chat, so there was nothing new to test and no redo to grade. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rewritten for the two missed redos (last graduation now Tue 5 Jan).
 
 > [!IMPORTANT]
 > **First task tomorrow (Thu 5 Nov, 6 AM):** 🧩 the `CarFleet` pattern line, time and space as 3 comment lines at the top of `CarFleet.java` (*hint:* which step dominates, and what does the stack hold in the worst case?), **pushed first**, with `CarFleetTest` still 37/37. Then 🌱 [Drill 1](#-drill-1-spring-defaults-vs-the-catch-all-about-15-min) (it closes B2, so it comes before Drill 2), 🐞 the `Day04LargestRectangle` symptom table, and in chat the single-pair follow-up and the count-stack re-ask. If time: module 1 step 1 and the cold RPN redo. 🌙 Evening: the redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`. Ask for a hint after 15 minutes on any step.

@@ -25,7 +25,7 @@
 | 30-65 | 🧩 | **Two Sum** carry-over: guiding questions → pseudocode → near-full skeleton → retype from a blank method | `TwoSumTest` **19/19** pushed |
 | 65-80 | 🐞 | Buggy slot (Monday, no new round): **`Day06FirstUniqueCode`** last loop only + symptom-group comment + one comment per fix | `Day06FirstUniqueCodeTest` **20/20** pushed |
 | 80-105 | 🔁 | **`AsteroidCollisionRedoNov17`** cold, 25-min timer | pushed, even red |
-| 105-120 | 🧩 | Buffer: `DailyTemperatures` comments (5 min) → frequency-counting pack exercise ([day28.md](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | pushed / answered |
+| 105-120 | 🧩 | Buffer: `DailyTemperatures` comments (5 min) → frequency-counting pack exercise ([day28.md](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | pushed / answered |
 | Evening | 🔁 | **`CarFleetRedoNov20`** cold (after the review) | pushed, even red |
 
 > [!NOTE]

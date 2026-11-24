@@ -42,7 +42,7 @@ git add -A && git commit -m "Ch1 task 1" && git push -u origin my-solutions
 |---|---|---|---|
 | 🧩 DSA | `DailyTemperatures` stub 0/18 (2-line brute force + 3-5 lines of pseudocode first) | 🟡 IN_PROGRESS (stub) | after one labs push lands |
 | 🐞 Buggy | `Day04LargestRectangle` empty-stack width: one sentence + 3-line ASCII | 🟡 IN_PROGRESS | after DSA resumes |
-| 🔁 Redos | `ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10 | on hold | Sat 14 Nov at the earliest ([redo-schedule.md](../revision/redo-schedule.md)) |
+| 🔁 Redos | `ValidParenthesesRedoNov08` 0/18, `MinStackRedoNov01` 0/10 | on hold | Sat 14 Nov at the earliest ([redo-schedule.md](../../revision/redo-schedule.md)) |
 
 ### 📦 Carried backlog (not for today)
 
@@ -64,9 +64,9 @@ git add -A && git commit -m "Ch1 task 1" && git push -u origin my-solutions
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-15%20min%20max-blue) ![Spring](https://img.shields.io/badge/Spring-unscored-lightgrey) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~8:00 PM IST on tip `3df22ff` (JDK 21.0.13, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test` re-run: **514 run, 46 red**, exactly the three untouched stubs (`DailyTemperaturesTest` 0/18, `ValidParenthesesRedoNov08Test` 0/18, `MinStackRedoNov01Test` 0/10); everything else green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3` (no commit since 6 Nov), no `my-solutions` branch, so today's single item (Task 1, the coordinates) did not land. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../revision/redo-schedule.md) rows are unchanged (queue still on hold).
+> Evening review at ~8:00 PM IST on tip `3df22ff` (JDK 21.0.13, Maven). No student commits after the 6 AM session; last student code is still `3019054` (7 Nov 14:11 IST). No answers in chat today to grade. Full `mvn test` re-run: **514 run, 46 red**, exactly the three untouched stubs (`DailyTemperaturesTest` 0/18, `ValidParenthesesRedoNov08Test` 0/18, `MinStackRedoNov01Test` 0/10); everything else green. [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs): still only `main` `507aaa3` (no commit since 6 Nov), no `my-solutions` branch, so today's single item (Task 1, the coordinates) did not land. **No new conceptual mistake** logged. No redo graded, so [redo-schedule.md](../../revision/redo-schedule.md) rows are unchanged (queue still on hold).
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -147,7 +147,7 @@ Guiding question (for `task1c`): *a teammate depends on `ledgerly-core` at `0.1.
 
 🧭 Process note: the plan said a `my-solutions` branch, and this went to `main`. It isn't scored, and the work counts the same. From the next push on, `git switch -c my-solutions` keeps `main` as the clean stub, so the chapters can be reset or diffed later.
 
-### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Score (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -166,7 +166,7 @@ Today is the **first day with a push**. The rule is two push days before the nor
 | 1 | 5 | Fix `task1c` (and the h2 space), run the chapter checks, push. Ideally on a new `my-solutions` branch | `Chapter01CheckTest` **19/19** pushed |
 | 2 | 10-20 | Chapter 1 interview question in chat: 2-3 sentences on who picks the version and what an upgrade changes, plus `runtime` vs `provided` | answer graded in chat |
 
-If Fri 13 also has a push, that's two push days (12 and 13 Nov). The lighter plan and the redo queue (`ValidParenthesesRedoNov08`, then `MinStackRedoNov01`) can then return **Sat 14 Nov**, earlier than the "Sun 15 Nov at the earliest" noted above, which assumed no push today. [redo-schedule.md](../revision/redo-schedule.md) is unchanged, because no redo was graded.
+If Fri 13 also has a push, that's two push days (12 and 13 Nov). The lighter plan and the redo queue (`ValidParenthesesRedoNov08`, then `MinStackRedoNov01`) can then return **Sat 14 Nov**, earlier than the "Sun 15 Nov at the earliest" noted above, which assumed no push today. [redo-schedule.md](../../revision/redo-schedule.md) is unchanged, because no redo was graded.
 
 ## 🌃 Late push review (12 Nov, 9:01 PM IST): DailyTemperatures + both redos
 
@@ -200,7 +200,7 @@ Guiding question: *which input makes the stack hold the most characters, and how
 
 **🔁 `MinStackRedoNov01` (10/10, cold, first redo since 23 Oct).** ✅ Parallel min stack (each level stores `min(x, previous min)`), so duplicate minimums and `Integer.MIN_VALUE` survive pops. All four operations are O(1), and `pop`, `top` and `getMin` throw `IllegalStateException` on an empty stack. The pattern, time and space lines each have a clear reason (2n entries is still O(n)). Nothing to fix.
 
-### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Score (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -210,7 +210,7 @@ Guiding question: *which input makes the stack hold the most characters, and how
 
 🧪 **Classification:** Daily Temperatures → 🟢 **Strong** (8). **No new weak topic.** The pseudocode gap is a habit, not a concept. "Amortised O(n) reasoning" got fresh evidence for Strong-level work (written reason correct, unprompted), but stays 🟡 until a quiz confirms it. The HTTP / `ResponseEntity` / `@PathVariable` pack (🔴) **stays parked**.
 
-### 🔁 Redo outcomes (rules in [redo-schedule.md](../revision/redo-schedule.md#-rules))
+### 🔁 Redo outcomes (rules in [redo-schedule.md](../../revision/redo-schedule.md#-rules))
 
 | Problem | Result | Ladder | Next due |
 |---|---|---|---|
@@ -218,7 +218,7 @@ Guiding question: *which input makes the stack hold the most characters, and how
 | `MinStack` | ✅ **clean cold pass** (blank stub, 10/10 on the first push) | **+1 → +3** | due **Sun 15 Nov**, queued **Thu 19 Nov** |
 | `DailyTemperatures` (new) | first verified solve, 18/18 | joins at **+1** (rule 9) | due Fri 13 Nov, queued **Wed 18 Nov** |
 
-The redo queue stays on hold on one-slot days. It now starts with `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` on **Sat 14 Nov** (if Fri 13 also has a push). See the rebuilt calendar in [redo-schedule.md](../revision/redo-schedule.md).
+The redo queue stays on hold on one-slot days. It now starts with `ScoreOfParentheses` + `RemoveKAdjacentDuplicates` on **Sat 14 Nov** (if Fri 13 also has a push). See the rebuilt calendar in [redo-schedule.md](../../revision/redo-schedule.md).
 
 ### 🎯 Still open, and tomorrow (Fri 13 Nov): still one slot
 
@@ -249,7 +249,7 @@ Optional, no push needed: add the 3-5 pseudocode lines to `DailyTemperatures` as
 | 🔁 `MinStackRedoNov01` | 🔁 | 10/10 clean cold → +3, queued Thu 19 Nov | ✅ COMPLETED (this rung) |
 
 > [!IMPORTANT]
-> **First task tomorrow (Fri 13 Nov, one slot, 15-30 min):** `git pull` both repos, then in `spring-boot-labs` (ideally `git switch -c my-solutions` first) change the project version in `chapters/01-maven-and-the-pom/lab/pom.xml` to `0.1.0-SNAPSHOT`, run `mvn -pl chapters/01-maven-and-the-pom test` and push. ✅ Done when `Chapter01CheckTest` is **19/19**. Then, optional: the Chapter 1 interview question in chat. A push on Fri 13 makes two push days, and the normal plan and redo queue return Sat 14 Nov ([redo-schedule.md](../revision/redo-schedule.md)).
+> **First task tomorrow (Fri 13 Nov, one slot, 15-30 min):** `git pull` both repos, then in `spring-boot-labs` (ideally `git switch -c my-solutions` first) change the project version in `chapters/01-maven-and-the-pom/lab/pom.xml` to `0.1.0-SNAPSHOT`, run `mvn -pl chapters/01-maven-and-the-pom test` and push. ✅ Done when `Chapter01CheckTest` is **19/19**. Then, optional: the Chapter 1 interview question in chat. A push on Fri 13 makes two push days, and the normal plan and redo queue return Sat 14 Nov ([redo-schedule.md](../../revision/redo-schedule.md)).
 
 ## 🌠 Late labs re-check (12 Nov, 10:26 PM IST): Chapter 1 fix
 
@@ -277,7 +277,7 @@ Optional, no push needed: add the 3-5 pseudocode lines to `DailyTemperatures` as
 
 The fix is exactly the smallest change: one version line plus the h2 tidy-up, and nothing else touched. It came from the 8:04 PM feedback, not from his own final test run, so it counts as a clean correction rather than a first-try 19/19. The 4-space vs 2-space indent in the new blocks is still there. That's cosmetic and not checked.
 
-### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Score (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -297,4 +297,4 @@ The fix is exactly the smallest change: one version line plus the h2 tidy-up, an
 | 1 | 10-15 | 🎤 **Chapter 1 interview question, in chat:** in your own words, 2-3 sentences on who picks the version of `spring-boot-starter-webmvc` when you don't write one and what happens to all your starters when Spring Boot is upgraded, plus the difference between `runtime` and `provided` | answered and graded in chat; Chapter 1 ✅ |
 | — | optional, 15 | Only if you want to keep going: `git switch -c my-solutions`, then [Chapter 2](https://github.com/PrashantSury/spring-boot-labs/tree/main/chapters/02-first-spring-boot-app) **Task 1** (`GET /status` → `200`, `Ledgerly is open`), run its checks, push | Chapter 2 `task1` green |
 
-A push on Fri 13 makes two push days, so the normal plan and the redo queue (`ScoreOfParentheses` + `RemoveKAdjacentDuplicates`) return **Sat 14 Nov**. A chat answer alone isn't a push. [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
+A push on Fri 13 makes two push days, so the normal plan and the redo queue (`ScoreOfParentheses` + `RemoveKAdjacentDuplicates`) return **Sat 14 Nov**. A chat answer alone isn't a push. [redo-schedule.md](../../revision/redo-schedule.md) is unchanged.

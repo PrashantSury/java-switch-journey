@@ -80,7 +80,7 @@ mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 > [!NOTE]
 > Checked at 8 PM on `f1dd0e5` with JDK 21 and Maven. There are **no pushes from you today**; the only commit is the 6 AM morning session. The last code push is still `f4cb8b9` (1 Nov, 08:38 IST). Test results are unchanged from the morning: `course-practice` **11/15**, `CarFleetTest` **2/37**, `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**. No answers were given in chat today. Nothing to grade, so no cosmetic fixes and no new entries in the mistake logs.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -103,7 +103,7 @@ mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 | ⛔ Blocked | none | nothing outside your control is stopping any task |
 
 > [!NOTE]
-> No topic scored Weak **tonight**, because nothing was graded. The other 🔴 Weak rows in [PROGRESS.md](../PROGRESS.md#-weak-topics) come from older answers; their packs are made when each is picked up.
+> No topic scored Weak **tonight**, because nothing was graded. The other 🔴 Weak rows in [PROGRESS.md](../../PROGRESS.md#-weak-topics) come from older answers; their packs are made when each is picked up.
 
 ### ⏳ Pending morning work = tonight's work (in this order)
 
@@ -120,7 +120,7 @@ mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 | 6 | if time | 🔁 cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18) | 🔁 | 44/44 and 18/18, cold |
 
 > [!NOTE]
-> If the redos slip again, the 10 PM check moves the queue one more day (`MinStack` and `ScoreOfParentheses` behind them). [redo-schedule.md](../revision/redo-schedule.md) is unchanged tonight because no redo was graded.
+> If the redos slip again, the 10 PM check moves the queue one more day (`MinStack` and `ScoreOfParentheses` behind them). [redo-schedule.md](../../revision/redo-schedule.md) is unchanged tonight because no redo was graded.
 
 - [ ] `CarFleet` first step pushed
 - [ ] B2 18/18 pushed
@@ -154,7 +154,7 @@ mvn test -Dtest='CarFleetTest,Day04LargestRectangleTest,*RedoNov01Test'
 | 🔁 `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01` | 🟡 IN_PROGRESS (0/44, 0/18, not attempted) · moved to Tue 3 Nov evening, the rest of the queue shifts one more day |
 
 > [!NOTE]
-> No commits from Prashant after the 8 PM evening review (the last one is still `f4cb8b9`, 1 Nov 08:38 IST), and no answers in chat, so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is rewritten for the two missed redos (last graduation now Thu 31 Dec).
+> No commits from Prashant after the 8 PM evening review (the last one is still `f4cb8b9`, 1 Nov 08:38 IST), and no answers in chat, so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rewritten for the two missed redos (last graduation now Thu 31 Dec).
 
 > [!IMPORTANT]
 > **First task tomorrow (Tue 3 Nov, 6 AM):** 🧩 the `CarFleet` first 10-minute step from [day09.md](day09.md#-car-fleet-dsa): the pattern line and time/space as comments at the top of `CarFleet.java`, plus the example `target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]` sorted by position by hand with each car's arrival time, **pushed even if red**. Then 🌱 Part B2 items 1-6 to 18/18 in one commit, 🧩 `CarFleet` code to 37/37, and 🐞 the `Day04LargestRectangle` symptom table. 🌙 Evening: the count-stack re-ask, then the redos `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`.
@@ -206,7 +206,7 @@ Guiding questions:
 
 **3. Logging detail (hint only).** `log.warn(ex.getMessage())` keeps the text but loses the exception and its cause chain. Which `warn` overload keeps both, and why is it not a format-string risk to pass a message that contains `{}`?
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|

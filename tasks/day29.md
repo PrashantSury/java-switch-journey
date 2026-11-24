@@ -35,7 +35,7 @@
 
 #### 1a. Chapter 2 Task 6 interview answer (in chat, ~12 min)
 
-The code is done (19/19, `b4a3717`); the concept is not graded yet, and Chapter 2 is ✅ only once it is. Full question and the three knowledge checks: [day28.md Task 6](day28.md#-1-chapter-2-task-6-interview-the-application-class-17-min--15-min-interview). Say it aloud first, then type it:
+The code is done (19/19, `b4a3717`); the concept is not graded yet, and Chapter 2 is ✅ only once it is. Full question and the three knowledge checks: [day28.md Task 6](../archive/tasks/day28.md#-1-chapter-2-task-6-interview-the-application-class-17-min--15-min-interview). Say it aloud first, then type it:
 
 - What does `@SpringBootApplication` switch on? Name the **three** annotations inside it and what each does.
 - What happens if `AccountController` sits in a package **above** the application class?
@@ -113,7 +113,7 @@ task2a  FAIL  there is no bean named bankClock. Is the method annotated so it be
 
 ### 🧩 2a. DSA warm-up: frequency-counting debugging exercise (~10 min)
 
-From the 🔴 weak-topic pack: [day28.md](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums), part 3. The snippet passes `anagram`/`nagaram`. In chat: one input it gets wrong, why, and the one-line fix. Then Valid Anagram knowledge checks 1-3 ([day28.md](day28.md#-3-dsa-valid-anagram-new-arrays--hashing-2-of-9-25-min)), letters only.
+From the 🔴 weak-topic pack: [day28.md](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums), part 3. The snippet passes `anagram`/`nagaram`. In chat: one input it gets wrong, why, and the one-line fix. Then Valid Anagram knowledge checks 1-3 ([day28.md](../archive/tasks/day28.md#-3-dsa-valid-anagram-new-arrays--hashing-2-of-9-25-min)), letters only.
 
 - [ ] Wrong input + why + one-line fix, in chat.
 - [ ] Valid Anagram checks 1-3, in chat.
@@ -334,7 +334,7 @@ Looking up **before** storing is what stops an element pairing with itself. `[3,
 | 6 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS |
 | 7 | `Day00BuggyExample` symptom groups (write-up) | 🐞 | ⬜ NOT_STARTED |
 | 8 | Maven scopes: one applied question (`provided` in a WAR) at the next check | 🌱 | 🟡 IN_PROGRESS |
-| 9 | Weak-topic packs 2 and 3 (HTTP semantics; `ResponseEntity` vs `@ResponseStatus`), from [day25.md](day25.md) | 🌱 | ⬜ NOT_STARTED |
+| 9 | Weak-topic packs 2 and 3 (HTTP semantics; `ResponseEntity` vs `@ResponseStatus`), from [day25.md](../archive/tasks/day25.md) | 🌱 | ⬜ NOT_STARTED |
 | 10 | Labs README Task 5 tip rewording: waiting for your OK (labs repo not edited) | 🌱 | ⬜ waiting |
 
 ### ✅ Morning checklist
@@ -386,7 +386,7 @@ You went further than the plan in Spring: all six Chapter 3 tasks green on the f
 | `@Component` vs `@Bean` (explaining the choice) | 🟡 Moderate | right rule, missing the "needs code to build" reason |
 | **Singleton beans and shared mutable state (thread-safety)** | 🔴 **Weak** | conceptual miss in the written answer → pack below, logged in [mistakes/spring.md](../revision/mistakes/spring.md) |
 | `@SpringBootApplication` (configuration + auto-configuration + component scan) | ⏳ Pending | code green since 19 Nov; the explanation (Ch 2 Task 6 answer) still not given |
-| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov pack: today's debugging exercise not attempted ([day28.md pack](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) |
+| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov pack: today's debugging exercise not attempted ([day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) |
 | `TwoSum`, `Day06FirstUniqueCode`, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not started |
 | HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs still unattempted |
 | ⛔ Blocked | none | the 12:16 PM Maven error was the command, not a blocker; nothing is in the way |

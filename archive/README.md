@@ -17,6 +17,8 @@
 | 🧪 | [`sql/tests/`](sql/tests) | the lesson checker (`SqlLessonCheckTest`, `LessonSpecs`, `Exercise`), moved out of `src/test/java` so `mvn test` no longer runs it |
 | 🔁 | [`sql/mistakes-sql.md`](sql/mistakes-sql.md) | the SQL mistake log (one row, its redo dates are cancelled) |
 | 📋 | [`tasks/day02-05-morning.md`](tasks/day02-05-morning.md) | the four old split-style daily files `tasks/day02-morning.md` to `day05-morning.md` (archived 1 Nov 2026, verbatim) |
+| 📋 | [`tasks/day06.md`](tasks/day06.md) to [`tasks/day28.md`](tasks/day28.md) | day plans for Days 6-28 (31 Oct - 19 Nov 2026), moved out of `tasks/` on 24 Nov 2026, verbatim except for re-pointed relative links |
+| 📈 | [`progress-2026-11.md`](progress-2026-11.md) | PROGRESS.md history moved out on 24 Nov 2026: evening scores and log rows up to 21 Nov, weekly reviews 1-14 Nov (original rows, original order) |
 
 ## 📊 Where SQL stood when it was retired
 | Item | Status |

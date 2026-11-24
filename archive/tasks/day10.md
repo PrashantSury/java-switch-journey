@@ -16,7 +16,7 @@
 ### ⏱️ Time plan (120 min)
 | Minutes | Track | Item | Spec |
 |---|---|---|---|
-| 0-5 | 🔥 Revise first | Read the Day 04 rows in [mistakes/spring.md](../revision/mistakes/spring.md), then close it | |
+| 0-5 | 🔥 Revise first | Read the Day 04 rows in [mistakes/spring.md](../../revision/mistakes/spring.md), then close it | |
 | 5-20 | 🌱 Spring | Re-answer Day 04 Q1-Q3 in chat (definition → difference → when to use → example, plus a production angle) | [Re-answer cards](day09.md#-re-answer-cards) |
 | 20-55 | 🌱 Spring | Day 04 Part B2: `ProblemDetail` in every error response, malformed JSON → 400, +3 tests | [Part B2](#-day-04-part-b2-problemdetail-in-every-error-response) (full spec below) |
 | 55-90 | 🧩 DSA | `CarFleet` (NeetCode 150, Stack): pattern line and complexity first, then code | [Car Fleet](day09.md#-car-fleet-dsa) |
@@ -36,7 +36,7 @@
 ### 🐞 Buggy (~15 min)
 - [ ] `src/main/java/com/prashant/dailytests/Day04LargestRectangle.java`. Done when `mvn test -Dtest=Day04LargestRectangleTest` is 36/36 with only logical fixes in the main code. Read the failing tests, localise, fix with the smallest change.
 
-### 🔁 Due redos (2, run in the 🌙 evening after the review, per [PROGRAM.md](../docs/PROGRAM.md))
+### 🔁 Due redos (2, run in the 🌙 evening after the review, per [PROGRAM.md](../../docs/PROGRAM.md))
 Blank stubs are ready; each test class was checked against a correct version (all green) and fails on the empty stub.
 
 | Redo | File | Tests | Gap | Timebox |
@@ -361,7 +361,7 @@ Acceptance: test 1 in section 11 is green and the response body never contains t
 > [!NOTE]
 > Checked at 8 PM on `bc6df22` with JDK 21 and Maven. Your only code push today is `f4cb8b9` (08:38 IST, `GlobalExceptionHandler`). Test results: `course-practice` **11/15** (the same 4 old assertions are red), `CarFleetTest` **2/37** (stub, passes by accident), `Day04LargestRectangleTest` **15/36**, `Day02RpnEvaluatorRedoNov01Test` **0/44**, `ValidParenthesesRedoNov01Test` **0/18**. No new conceptual mistakes, so nothing was added to the mistake logs. The one cosmetic issue (the unused `ResponseStatus` import) was left in place on purpose: you are mid-edit in that file, and it is item 3 of the B2 checklist, so a fix from me would only give you a merge conflict.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -395,7 +395,7 @@ Acceptance: test 1 in section 11 is green and the response body never contains t
 | ⛔ Blocked | none | nothing outside your control is stopping any task |
 
 > [!NOTE]
-> No topic scored Weak **tonight**. The other 🔴 Weak rows in [PROGRESS.md](../PROGRESS.md#-weak-topics) come from older answers (HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, the binding annotations, RPN evaluation). Their packs are made when each is picked up; the RPN pack waits until **after** tonight's cold RPN redo so it does not spoil it.
+> No topic scored Weak **tonight**. The other 🔴 Weak rows in [PROGRESS.md](../../PROGRESS.md#-weak-topics) come from older answers (HTTP semantics, `ResponseEntity` vs `@ResponseStatus`, the binding annotations, RPN evaluation). Their packs are made when each is picked up; the RPN pack waits until **after** tonight's cold RPN redo so it does not spoil it.
 
 ### 🎒 Weak-topic pack: amortised O(n) for stack solutions
 
@@ -468,7 +468,7 @@ In a code review on your team, a colleague blocks your PR: "`while` inside `for`
 ### ⏳ Pending morning work = tonight's work (in this order)
 
 > [!IMPORTANT]
-> The rule in [PROGRAM.md](../docs/PROGRAM.md): pending morning work first, redos only after. 60 minutes will not hold everything below, so stop at the line where your time runs out and push what is green. Whatever is left is the first thing tomorrow.
+> The rule in [PROGRAM.md](../../docs/PROGRAM.md): pending morning work first, redos only after. 60 minutes will not hold everything below, so stop at the line where your time runs out and push what is green. Whatever is left is the first thing tomorrow.
 
 | # | Minutes | Item | Track | Done when |
 |---|---|---|---|---|
@@ -479,7 +479,7 @@ In a code review on your team, a colleague blocks your PR: "`while` inside `for`
 | 5 | if time | 🔁 cold redos `Day02RpnEvaluatorRedoNov01` (0/44) and `ValidParenthesesRedoNov01` (0/18) | 🔁 | 44/44 and 18/18, cold |
 
 > [!NOTE]
-> If the two redos don't happen tonight, nothing is lost: they stay first in the queue and take Monday's two evening slots (the reset RPN redo and the most overdue item), and `MinStack` and `ScoreOfParentheses` move back a day. The 10 PM check rewrites [redo-schedule.md](../revision/redo-schedule.md) from what you actually push.
+> If the two redos don't happen tonight, nothing is lost: they stay first in the queue and take Monday's two evening slots (the reset RPN redo and the most overdue item), and `MinStack` and `ScoreOfParentheses` move back a day. The 10 PM check rewrites [redo-schedule.md](../../revision/redo-schedule.md) from what you actually push.
 
 - [ ] B2 18/18 pushed
 - [ ] `CarFleet` 37/37 pushed
@@ -513,7 +513,7 @@ In a code review on your team, a colleague blocks your PR: "`while` inside `for`
 | 🔁 `Day02RpnEvaluatorRedoNov01` / `ValidParenthesesRedoNov01` | 🟡 IN_PROGRESS (0/44, 0/18, not attempted) · moved to Mon 2 Nov evening, the rest of the queue shifts one day |
 
 > [!NOTE]
-> No commits from Prashant after the 8 PM evening review (last one `bc6df22`, 08:43 IST), so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is rewritten for the two missed redos, and the Sunday plan projection in [PROGRESS.md](../PROGRESS.md#-plan-projection-3-h-a-day) is refreshed.
+> No commits from Prashant after the 8 PM evening review (last one `bc6df22`, 08:43 IST), so there was nothing new to test. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rewritten for the two missed redos, and the Sunday plan projection in [PROGRESS.md](../../PROGRESS.md#-plan-projection-3-h-a-day) is refreshed.
 
 > [!IMPORTANT]
 > **First task tomorrow (Mon 2 Nov, 6 AM):** 🌱 finish Day 04 Part B2 items 1-6 from [section 7](#-day-04-part-b2-problemdetail-in-every-error-response): write `malformedJsonReturnsProblemDetail` first (red), then the `HttpMessageNotReadableException` handler, move the 4 old assertions and add the other 2 tests, until `mvn test` in `spring-boot/course-practice` shows **18 tests, 0 failures**, all in one commit. Then 🧩 `CarFleet` (pattern line, a hand-sorted example and complexity first) and 🐞 `Day04LargestRectangle` (group the 21 failing tests by symptom first). 🌙 Evening redos: `Day02RpnEvaluatorRedoNov01` and `ValidParenthesesRedoNov01`.

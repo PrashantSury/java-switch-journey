@@ -139,7 +139,7 @@ Each redo starts with: one pattern line, time and space **each with a because**,
 | Item | Track | Status |
 |---|---|---|
 | Singleton weak pack: `DailyCounter` 3-ways exercise, debugging snippet, scenario ([day29.md](day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state)) | 🌱 | ⬜ NOT_STARTED (evening) |
-| Frequency-counting weak pack debugging exercise + Valid Anagram checks ([day28.md](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | 🧩 | ⬜ NOT_STARTED (evening, 10 min) |
+| Frequency-counting weak pack debugging exercise + Valid Anagram checks ([day28.md](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | 🧩 | ⬜ NOT_STARTED (evening, 10 min) |
 | `DailyTemperatures` comments | 🧩🐞 | 🟡 IN_PROGRESS (open since 12 Nov) |
 | HTTP semantics / `ResponseEntity` packs (16 Nov) | 🌱 | 🔴 weak, unattempted |
 | B2 Q3/Q6; `ScoreOfParentheses` follow-ups; Day 02/03 re-answers | 🎤 | 🟡 / ⬜ |
@@ -178,8 +178,8 @@ Nothing landed today, so I can't score any track honestly. I won't invent a numb
 | Registering beans (`@Component`, `@Bean`, `@Primary`, prototype) in code | 🟢 Strong (unchanged) | Ch 3 15/15 on the first push, 20 Nov |
 | `@Component` vs `@Bean` (explaining the choice) | 🟡 Moderate (unchanged) | right rule, missing the "needs code to build it" reason |
 | Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; pack not attempted → [day29.md pack](day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
-| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov miss; pack not attempted → [day28.md pack](day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
-| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs still not attempted → [day25.md evening](day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
+| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov miss; pack not attempted → [day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
+| HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs still not attempted → [day25.md evening](../archive/tasks/day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
 | `@SpringBootApplication` explanation (Ch 2 Task 6 answer) | ⏳ Pending | code 19/19 since 19 Nov; the answer is owed for a 3rd day |
 | `TwoSum`, `Day06FirstUniqueCode`, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not started |
 | ⛔ Blocked | none | nothing is in the way; the gap is time on task, not a tool or a spec |

@@ -109,7 +109,7 @@ Step 1 only: [day13.md, module 1 step 1](day13.md#-banking-module-1-step-1-the-v
 | `ScoreOfParentheses` follow-up questions | 🧩 | ⬜ NOT_STARTED | after the re-ask |
 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS | evenings with spare time |
 | Next new Stack problem | 🧩 | ⬜ not assigned | only when the `CarFleet` comments and the re-ask are done |
-| Redos queued: `MinStack`, `ScoreOfParentheses` (6 Nov), `RemoveKAdjacentDuplicates`, `Day03NextGreaterIndex` (7 Nov) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../revision/redo-schedule.md), cap 2 a day |
+| Redos queued: `MinStack`, `ScoreOfParentheses` (6 Nov), `RemoveKAdjacentDuplicates`, `Day03NextGreaterIndex` (7 Nov) | 🔁 | 🟡 IN_PROGRESS | [redo-schedule.md](../../revision/redo-schedule.md), cap 2 a day |
 
 > [!TIP]
 > Reply in chat when something is pushed, or when you want an answer graded. Each answer is graded and recorded the same night.
@@ -121,9 +121,9 @@ Step 1 only: [day13.md, module 1 step 1](day13.md#-banking-module-1-step-1-the-v
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Time](https://img.shields.io/badge/time-60%20min-blue) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-8%2F10-brightgreen) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-yellow)
 
 > [!NOTE]
-> Checked at 8 PM on `d8306e2` (JDK 21, Maven). Four pushes today: `1c9c6aa` (Drill 1 and the `CarFleet` comment lines, 15:53), `800ad4f` (cold RPN redo, 16:20), `d8306e2` (`Day04LargestRectangle`, 18:43) and Lumi's minor fixes `7b7c725` (stale comments, one extra assertion, not logged). Suites: `course-practice` **23/23**, `Day02RpnEvaluatorRedoNov01Test` **44/44**, `Day04LargestRectangleTest` **36/36**, `CarFleetTest` **37/37**, `ValidParenthesesRedoNov01Test` 0/18 (not attempted yet). **No new conceptual mistake**, so nothing is added to the logs; the redo cells of the RPN and count-stack rows in [mistakes/dsa.md](../revision/mistakes/dsa.md) are marked ✅.
+> Checked at 8 PM on `d8306e2` (JDK 21, Maven). Four pushes today: `1c9c6aa` (Drill 1 and the `CarFleet` comment lines, 15:53), `800ad4f` (cold RPN redo, 16:20), `d8306e2` (`Day04LargestRectangle`, 18:43) and Lumi's minor fixes `7b7c725` (stale comments, one extra assertion, not logged). Suites: `course-practice` **23/23**, `Day02RpnEvaluatorRedoNov01Test` **44/44**, `Day04LargestRectangleTest` **36/36**, `CarFleetTest` **37/37**, `ValidParenthesesRedoNov01Test` 0/18 (not attempted yet). **No new conceptual mistake**, so nothing is added to the logs; the redo cells of the RPN and count-stack rows in [mistakes/dsa.md](../../revision/mistakes/dsa.md) are marked ✅.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -180,7 +180,7 @@ On the **original** code (`0a9a400`) these 21 tests fail. Group them by what the
 | 4 | 10 | In chat: Q3 of the B2 questions, and one sentence on why the catch-all hid Spring's own 400 and 404 | 🌱 | graded 7+ |
 
 > [!NOTE]
-> Redo cap: the RPN redo counts as today's first, so `ValidParenthesesRedoNov01` is the second and last. [redo-schedule.md](../revision/redo-schedule.md) is updated: RPN +1 → +3 (due Sun 8 Nov), `Day04LargestRectangle` joins at +1 (queued Fri 13 Nov), `ValidParentheses` stays due tonight. If tonight's redo is a clean 18/18 it moves to +3 (the Mon 9 Nov slot already holds it).
+> Redo cap: the RPN redo counts as today's first, so `ValidParenthesesRedoNov01` is the second and last. [redo-schedule.md](../../revision/redo-schedule.md) is updated: RPN +1 → +3 (due Sun 8 Nov), `Day04LargestRectangle` joins at +1 (queued Fri 13 Nov), `ValidParentheses` stays due tonight. If tonight's redo is a clean 18/18 it moves to +3 (the Mon 9 Nov slot already holds it).
 
 - [ ] `Day04LargestRectangle` write-up pushed
 - [ ] `ValidParenthesesRedoNov01` pushed (cold)
@@ -213,7 +213,7 @@ On the **original** code (`0a9a400`) these 21 tests fail. Group them by what the
 | 🌱 Q3 of the B2 questions and the catch-all sentence | 🔴 REVISION_REQUIRED (not answered in chat) · carried |
 
 > [!NOTE]
-> No commits from Prashant after the 8 PM evening review (`56ff10f` is the review itself; the last code push today is `d8306e2`) and no answers in chat, so there was nothing new to test and no redo to grade. No new mistakes and no cosmetic fixes. [redo-schedule.md](../revision/redo-schedule.md) is rebuilt from 6 Nov (cap of 2, most overdue first): no ladder step changed, last graduation Mon 4 Jan 2027.
+> No commits from Prashant after the 8 PM evening review (`56ff10f` is the review itself; the last code push today is `d8306e2`) and no answers in chat, so there was nothing new to test and no redo to grade. No new mistakes and no cosmetic fixes. [redo-schedule.md](../../revision/redo-schedule.md) is rebuilt from 6 Nov (cap of 2, most overdue first): no ladder step changed, last graduation Mon 4 Jan 2027.
 
 > [!TIP]
 > **Tomorrow's first task (Fri 6 Nov, 6 AM):** the morning session sets the first `spring-boot-labs` chapter, starting with the Drill 1 habit (ask what Spring already handles, then add only what is missing). Before it, spend 15 minutes on the `Day04LargestRectangle` symptom table and the `[2, 1, 2]` trace, the quickest open item. The first two redos are `ValidParenthesesRedoNov01` and `MinStack` in the evening.

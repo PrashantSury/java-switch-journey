@@ -154,7 +154,7 @@ Brute force: state it yourself in the comment. For your final version, state tim
 ### 🐞 3. Buggy slot: `DailyTemperatures` comments (15 min)
 
 > [!NOTE]
-> `Day04LargestRectangle` empty-stack width is ✅ **closed** (15 Nov night, ~10:00-10:27 PM IST). Sentence **8/10** after a correction; buggy score stays **7**. Height must come from the popped bar, not the current one ([mistakes/dsa.md](../revision/mistakes/dsa.md)). No new buggy round today.
+> `Day04LargestRectangle` empty-stack width is ✅ **closed** (15 Nov night, ~10:00-10:27 PM IST). Sentence **8/10** after a correction; buggy score stays **7**. Height must come from the popped bar, not the current one ([mistakes/dsa.md](../../revision/mistakes/dsa.md)). No new buggy round today.
 
 The 15 minutes go to a pending comment-only follow-up. `DailyTemperatures` code is already ✅ 18/18 (`d6ca103`). Open the existing file and, **above the Java**, add:
 
@@ -218,7 +218,7 @@ The 15 minutes go to a pending comment-only follow-up. `DailyTemperatures` code 
 - No 404 handling needed: the README asks only to mask the path value, not to look the account up.
 
 ### 🔁 Redo grading and next dates
-Both pass every test, but neither was cold: the code is the original solution copied in. Rule 3 in [redo-schedule.md](../revision/redo-schedule.md): passed after re-reading the original = 🔶, **repeat the same gap (+1)**. Counted from today, due Tue 17 Nov; the cap of 2 (17-21 Nov are already full with older items) queues them on **Sun 22 Nov** as `RemoveKAdjacentDuplicatesRedoNov22` then `ScoreOfParenthesesRedoNov22`, blank files. Before any code: pattern line, time **and the reason**, space **and the reason**, then 3-5 pseudocode lines. For RemoveK the reason sentence is the point: each character is pushed once and popped at most once, so the total work is O(n) even with the inner removals.
+Both pass every test, but neither was cold: the code is the original solution copied in. Rule 3 in [redo-schedule.md](../../revision/redo-schedule.md): passed after re-reading the original = 🔶, **repeat the same gap (+1)**. Counted from today, due Tue 17 Nov; the cap of 2 (17-21 Nov are already full with older items) queues them on **Sun 22 Nov** as `RemoveKAdjacentDuplicatesRedoNov22` then `ScoreOfParenthesesRedoNov22`, blank files. Before any code: pattern line, time **and the reason**, space **and the reason**, then 3-5 pseudocode lines. For RemoveK the reason sentence is the point: each character is pushed once and popped at most once, so the total work is O(n) even with the inner removals.
 
 ### ⏳ Still open today
 - [ ] Scopes grid from memory in chat (warm-up, not done)
@@ -231,9 +231,9 @@ Both pass every test, but neither was cold: the code is the original solution co
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-8%2F10-yellowgreen) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~8:00 PM IST on tip `4b1d6a3` (this repo) and `828c168` (labs `my-solutions`). No student commits after the afternoon check: the last student pushes are still `8f48e9b` (labs, 4:30 PM IST) and `d94f802` (this repo, 4:29 PM IST). **Re-verified tonight** on fresh clones (JDK 21, Maven): labs `Chapter02CheckTest` **7/19** (task1a-c, task2a-b, task3a-b green; 12 red = Tasks 4-6), `ScoreOfParenthesesRedoNov16Test` **37/37**, `RemoveKAdjacentDuplicatesRedoNov16Test` **26/26**, `GenerateParenthesesTest` **0/17** (stub untouched). The afternoon grades stand and are **not counted twice**. The redo ladder was already updated by `4b1d6a3`, so [redo-schedule.md](../revision/redo-schedule.md) has no change tonight. Cosmetic fix: the unused `import com.prashant.dsa.stack.RemoveKAdjacentDuplicates;` was removed from `RemoveKAdjacentDuplicatesRedoNov16` (not logged). One new conceptual entry in [mistakes/spring.md](../revision/mistakes/spring.md): query string written into a path pattern.
+> Evening review at ~8:00 PM IST on tip `4b1d6a3` (this repo) and `828c168` (labs `my-solutions`). No student commits after the afternoon check: the last student pushes are still `8f48e9b` (labs, 4:30 PM IST) and `d94f802` (this repo, 4:29 PM IST). **Re-verified tonight** on fresh clones (JDK 21, Maven): labs `Chapter02CheckTest` **7/19** (task1a-c, task2a-b, task3a-b green; 12 red = Tasks 4-6), `ScoreOfParenthesesRedoNov16Test` **37/37**, `RemoveKAdjacentDuplicatesRedoNov16Test` **26/26**, `GenerateParenthesesTest` **0/17** (stub untouched). The afternoon grades stand and are **not counted twice**. The redo ladder was already updated by `4b1d6a3`, so [redo-schedule.md](../../revision/redo-schedule.md) has no change tonight. Cosmetic fix: the unused `import com.prashant.dsa.stack.RemoveKAdjacentDuplicates;` was removed from `RemoveKAdjacentDuplicatesRedoNov16` (not logged). One new conceptual entry in [mistakes/spring.md](../../revision/mistakes/spring.md): query string written into a path pattern.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -333,14 +333,14 @@ No new material tonight. The two redos for today are done (🔶, re-queued Sun 2
 | 🌱 Spring | Chapter 2 **Task 4** (`GET /accounts/above`, `@RequestParam int balance`): fix the wrong mapping line first, after one line "path is ___, param is ___". Then Task 5 (`/fee`, optional `express`) if time is left. Scopes recall first if not done tonight | the one concept miss today is query param vs path; Task 4 is the natural test of pack 1 |
 | 🧩 DSA | `GenerateParentheses` to 17/17 if not done tonight, pseudocode first; nothing new until it is ✅ | progress decides: still 🟡 |
 | 🐞 Buggy | `DailyTemperatures` comments if not done tonight; no new round until it lands | open since 12 Nov |
-| 🔁 Redos (evening) | `Day03NextGreaterIndex` (+1, late) + `AsteroidCollision` (+1, late), **cold on blank files**. Don't open `dailytests/Day03...` or `dsa/stack/AsteroidCollision`; write pattern, time + reason, space + reason, pseudocode, then code | from [redo-schedule.md](../revision/redo-schedule.md); after today's copies, a cold honest attempt (even red) is the priority |
+| 🔁 Redos (evening) | `Day03NextGreaterIndex` (+1, late) + `AsteroidCollision` (+1, late), **cold on blank files**. Don't open `dailytests/Day03...` or `dsa/stack/AsteroidCollision`; write pattern, time + reason, space + reason, pseudocode, then code | from [redo-schedule.md](../../revision/redo-schedule.md); after today's copies, a cold honest attempt (even red) is the priority |
 
 ## 🌒 End of day
 
 ![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-2-brightgreen) ![Scopes](https://img.shields.io/badge/scopes%20grid-10%2F10-brightgreen)
 
 > [!NOTE]
-> 10 PM check on tip `cab0978`. No student commits after the 8 PM evening review: `spring-boot-labs` `my-solutions` is still `8f48e9b` / `828c168` (merge) and this repo's last student code is `d94f802`, so no suite changed and no tests needed re-running (labs `Chapter02CheckTest` **7/19**, `GenerateParenthesesTest` 0/17). One chat answer landed ~9:05 PM IST: the Maven scopes grid from memory, all 12 cells right (**10/10**, yesterday's `provided`/`runtime` swap fixed). The follow-up MCQ (a WAR on an external Tomcat with the servlet API left at `compile`) was answered C; the answer is B, duplicate servlet-api copies can clash. Logged in [mistakes/spring.md](../revision/mistakes/spring.md). Redo ladder unchanged.
+> 10 PM check on tip `cab0978`. No student commits after the 8 PM evening review: `spring-boot-labs` `my-solutions` is still `8f48e9b` / `828c168` (merge) and this repo's last student code is `d94f802`, so no suite changed and no tests needed re-running (labs `Chapter02CheckTest` **7/19**, `GenerateParenthesesTest` 0/17). One chat answer landed ~9:05 PM IST: the Maven scopes grid from memory, all 12 cells right (**10/10**, yesterday's `provided`/`runtime` swap fixed). The follow-up MCQ (a WAR on an external Tomcat with the servlet API left at `compile`) was answered C; the answer is B, duplicate servlet-api copies can clash. Logged in [mistakes/spring.md](../../revision/mistakes/spring.md). Redo ladder unchanged.
 
 | Item | Track | Outcome | Status |
 |---|---|---|---|

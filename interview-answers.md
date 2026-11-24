@@ -15,7 +15,7 @@
 | 03 | HTTP semantics, mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 5/10 · Q3 7/10 ✅ (17/30); re-answer Q1, Q2 | [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
 | 04 | Request flow, DTOs, errors | ✅ COMPLETED via re-answers (1 Nov: 8/10 · 9/10 · 9/10, 26/30); first answers Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
 | SoP | Score of Parentheses follow-up | ⬜ NOT_STARTED (answers pending) | below |
-| labs Ch1 | Maven / parent / scopes (`spring-boot-labs`) | ✅ COMPLETED (15 Nov, chat interview **7/10**; scopes grid recall 10/10 on 16 Nov) | below · [day24.md](tasks/day24.md#-chapter-1-interview-grade-807-815-am-ist) |
+| labs Ch1 | Maven / parent / scopes (`spring-boot-labs`) | ✅ COMPLETED (15 Nov, chat interview **7/10**; scopes grid recall 10/10 on 16 Nov) | below · [day24.md](archive/tasks/day24.md#-chapter-1-interview-grade-807-815-am-ist) |
 | labs Ch2 | Query params, request binding, `@SpringBootApplication` (`spring-boot-labs`) | ✅ COMPLETED (21 Nov): Task 6 interview (Q4) **7/10** in chat after two corrections; code 19/19. Q1-Q3 are extra practice, not graded | below · [day30.md end of day](tasks/day30.md#-end-of-day) |
 | labs Ch3 | Singleton beans, `@Component` vs `@Bean` (`spring-boot-labs`) | 🔴 REVISION_REQUIRED: Q1 written **5/10** (20 Nov); re-answer + Q2/Q3 first on Sun 22 Nov | below |
 
@@ -44,7 +44,7 @@ Source: `src/main/java/com/prashant/dsa/stack/ScoreOfParentheses.java` (c909bb8)
 > _Answer:_
 
 ## 🌱 spring-boot-labs Chapter 1 — ✅ COMPLETED (7/10, graded in chat 15 Nov)
-Source: [chapters/01-maven-and-the-pom/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/01-maven-and-the-pom/README.md) · assigned [tasks/day15.md](tasks/day15.md)
+Source: [chapters/01-maven-and-the-pom/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/01-maven-and-the-pom/README.md) · assigned [tasks/day15.md](archive/tasks/day15.md)
 
 **Q1.** Who picks the version of `spring-boot-starter-webmvc` when you don't write one, and what happens to all your starters when you upgrade Spring Boot?
 > _Answer:_
@@ -53,7 +53,7 @@ Source: [chapters/01-maven-and-the-pom/README.md](https://github.com/PrashantSur
 > _Answer:_
 
 ## 🌱 spring-boot-labs Chapter 2 — ✅ COMPLETED (code 19/19 at `b4a3717`; Q4 **7/10** in chat, 21 Nov)
-Source: [chapters/02-first-spring-boot-app/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/02-first-spring-boot-app/README.md) · assigned [tasks/day26.md](tasks/day26.md#-1-chapter-2-task-4-carried-over-and-task-5-50-min)
+Source: [chapters/02-first-spring-boot-app/README.md](https://github.com/PrashantSury/spring-boot-labs/blob/main/chapters/02-first-spring-boot-app/README.md) · assigned [tasks/day26.md](archive/tasks/day26.md#-1-chapter-2-task-4-carried-over-and-task-5-50-min)
 
 **Q1.** A client calls `GET /accounts/above?balance=10000` and gets 404, but `/accounts` works. Walk through how `RequestMappingHandlerMapping` matches the request and why `@GetMapping("/accounts/above?balance=N")` never matches.
 > _Answer:_

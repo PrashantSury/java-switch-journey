@@ -93,7 +93,7 @@ runtime        ❌        ✅        ✅   (needed only when the app runs)
 > [!NOTE]
 > Graded on tip `1075608`. Student push on [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) `my-solutions` `1ded3b3` (15 Nov, 8:35 AM IST, "completed chapter2- task 1"). Only file changed: `AccountController.java` — `@GetMapping("/status")` returns `"Ledgerly is open"`. Verified: `Chapter01CheckTest` **19/19**; `Chapter02CheckTest` **3/19** (`task1a`, `task1b`, `task1c` all green). `POST /status` → 405 from Spring's default, with **no** extra handler. Tasks 2-6 not started; first fail is `task2a_list` (`GET /accounts` → 404).
 
-### 📝 Score (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Score (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -110,9 +110,9 @@ runtime        ❌        ✅        ✅   (needed only when the app runs)
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-8%2F10-blue) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey)
 
 > [!NOTE]
-> Evening review at ~8:00 PM IST on tip `fd7b9eb`. No student commits after the morning: this repo's last student code is still `d6ca103` (12 Nov); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) `my-solutions` is `1ded3b3` (8:35 AM IST), `main` `4384b9c`. **Re-verified tonight** on `1ded3b3` (JDK 21, Maven): `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19** (task1a/b/c green, 16 red = Tasks 2-6 not started). No new chat answers after the 8:15 AM interview. **No new conceptual mistake** (the scopes mix-up is already in the weak-topic table as 🟡 Moderate). No redo graded today (one-slot day), so [redo-schedule.md](../revision/redo-schedule.md) is unchanged.
+> Evening review at ~8:00 PM IST on tip `fd7b9eb`. No student commits after the morning: this repo's last student code is still `d6ca103` (12 Nov); [`spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) `my-solutions` is `1ded3b3` (8:35 AM IST), `main` `4384b9c`. **Re-verified tonight** on `1ded3b3` (JDK 21, Maven): `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19** (task1a/b/c green, 16 red = Tasks 2-6 not started). No new chat answers after the 8:15 AM interview. **No new conceptual mistake** (the scopes mix-up is already in the weak-topic table as 🟡 Moderate). No redo graded today (one-slot day), so [redo-schedule.md](../../revision/redo-schedule.md) is unchanged.
 
-### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric))
+### 📝 Scores (rubric in [PROGRAM.md](../../docs/PROGRAM.md#-evening-scoring-rubric))
 
 | Track | Score | Evidence |
 |---|---|---|
@@ -163,7 +163,7 @@ Both morning items are ✅ done, so nothing from this morning is pending. No new
 ![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Pushes](https://img.shields.io/badge/student%20pushes%20today-1-brightgreen)
 
 > [!NOTE]
-> 10 PM check on tip `fd7b9eb`. No student commits after the 8 PM evening review: this repo's last student code is still `d6ca103` (12 Nov) and `spring-boot-labs` `my-solutions` is still `1ded3b3` (8:35 AM IST). At the moment of this check there were no new student commits after the 8 PM review, and the suites still stand: labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19**. Two chat answers then landed ~10:00-10:27 PM IST (scopes grid + LargestRect); they are recorded in the late-chat section below. Housekeeping: the near-term rows in [redo-schedule.md](../revision/redo-schedule.md) were rebuilt so they match the resume date (Mon 16 Nov), and the Sunday plan projection in [PROGRESS.md](../PROGRESS.md#-plan-projection-3-h-a-day) was refreshed.
+> 10 PM check on tip `fd7b9eb`. No student commits after the 8 PM evening review: this repo's last student code is still `d6ca103` (12 Nov) and `spring-boot-labs` `my-solutions` is still `1ded3b3` (8:35 AM IST). At the moment of this check there were no new student commits after the 8 PM review, and the suites still stand: labs `Chapter01CheckTest` **19/19**, `Chapter02CheckTest` **3/19**. Two chat answers then landed ~10:00-10:27 PM IST (scopes grid + LargestRect); they are recorded in the late-chat section below. Housekeeping: the near-term rows in [redo-schedule.md](../../revision/redo-schedule.md) were rebuilt so they match the resume date (Mon 16 Nov), and the Sunday plan projection in [PROGRESS.md](../../PROGRESS.md#-plan-projection-3-h-a-day) was refreshed.
 
 | Item | Track | Outcome | Status |
 |---|---|---|---|
@@ -208,4 +208,4 @@ This was a teach, not a first-try recall, so scopes stay 🟡 Moderate. The **re
 | After the correction | "when stack is empty then width is the current `i` means no elements smaller than popped one" | ✅ correct |
 
 > [!IMPORTANT]
-> Sentence **8/10** after the correction. The write-up item is ✅ **closed**. Buggy score stays **7/10** (the first trace used the current bar's height). Lesson, logged in [mistakes/dsa.md](../revision/mistakes/dsa.md): **height always comes from the popped bar**, not the current one. No new buggy round today; Monday's 15-min buggy slot is the missing `DailyTemperatures` comments instead.
+> Sentence **8/10** after the correction. The write-up item is ✅ **closed**. Buggy score stays **7/10** (the first trace used the current bar's height). Lesson, logged in [mistakes/dsa.md](../../revision/mistakes/dsa.md): **height always comes from the popped bar**, not the current one. No new buggy round today; Monday's 15-min buggy slot is the missing `DailyTemperatures` comments instead.

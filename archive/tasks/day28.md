@@ -72,7 +72,7 @@ public class LedgerlyApplication {
 
 **Then:** `mvn -pl chapters/02-first-spring-boot-app spring-boot:run`, run the README curls on port **8081** (including `curl "localhost:8081/double?n=three"`; note the status and who produced it), stop the app.
 
-**🎤 Interview question (chat, three sentences, aloud first).** *What does `@SpringBootApplication` switch on? Name the three annotations inside it and what each does. What happens if the controller class is in a package above the application class?* Senior add-on: *how would you see why an auto-configuration did or did not apply?* (Already pending in [interview-answers.md](../interview-answers.md) as Ch 2 Q4.)
+**🎤 Interview question (chat, three sentences, aloud first).** *What does `@SpringBootApplication` switch on? Name the three annotations inside it and what each does. What happens if the controller class is in a package above the application class?* Senior add-on: *how would you see why an auto-configuration did or did not apply?* (Already pending in [interview-answers.md](../../interview-answers.md) as Ch 2 Q4.)
 
 **Knowledge checks** (answer in chat first):
 
@@ -301,7 +301,7 @@ This morning's real failures (13 of 25), grouped by **symptom** (what you see, n
 
 - [ ] Each starts with a **pattern line + time and space comments** (one sentence each saying where the cost comes from), then 3-5 lines of pseudocode, then code.
 - [ ] Push at the end of each, even if red.
-- [ ] If neither lands tonight, the queue moves one more day (Fri 20: Day03 + Asteroid; CarFleet + LargestRect to Sat 21) per [redo-schedule.md](../revision/redo-schedule.md).
+- [ ] If neither lands tonight, the queue moves one more day (Fri 20: Day03 + Asteroid; CarFleet + LargestRect to Sat 21) per [redo-schedule.md](../../revision/redo-schedule.md).
 
 ### 📦 Carried backlog (not for today unless a slot frees up)
 
@@ -343,7 +343,7 @@ This morning's real failures (13 of 25), grouped by **symptom** (what you see, n
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-6%2F10-yellow) ![DSA](https://img.shields.io/badge/DSA-6%2F10-yellow) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-green) ![Ch2](https://img.shields.io/badge/Chapter%202-19%2F19-brightgreen)
 
 > [!NOTE]
-> Checked at ~8 PM IST on fresh clones (JDK 21, Maven). Today's student commits: labs `my-solutions` `b4a3717` (11:59 AM IST); this repo `c61da8e` (1:10 PM), `eeb8bb9` (1:50 PM), `2c0c2fb` (4:49 PM), `97dbc9f` (5:55 PM), `b207444` (6:04 PM). Whole suite: **719 run, 28 red, and all 28 are the untouched `AsteroidCollisionRedoNov17` stub**. Chat today: two "check my push" requests (graded at ~5 PM and ~6 PM IST). The Task 6 interview question and the knowledge checks were **not answered**. One conceptual mistake logged ([mistakes/dsa.md](../revision/mistakes/dsa.md), Valid Anagram). Cosmetic, not logged: an unused `import java.util.Arrays` in `ValidAnagram.java` (delete it next time you touch the file).
+> Checked at ~8 PM IST on fresh clones (JDK 21, Maven). Today's student commits: labs `my-solutions` `b4a3717` (11:59 AM IST); this repo `c61da8e` (1:10 PM), `eeb8bb9` (1:50 PM), `2c0c2fb` (4:49 PM), `97dbc9f` (5:55 PM), `b207444` (6:04 PM). Whole suite: **719 run, 28 red, and all 28 are the untouched `AsteroidCollisionRedoNov17` stub**. Chat today: two "check my push" requests (graded at ~5 PM and ~6 PM IST). The Task 6 interview question and the knowledge checks were **not answered**. One conceptual mistake logged ([mistakes/dsa.md](../../revision/mistakes/dsa.md), Valid Anagram). Cosmetic, not logged: an unused `import java.util.Arrays` in `ValidAnagram.java` (delete it next time you touch the file).
 
 A big closing day: four items that had been open for 2-7 days are now green. The scores are moderate because most of it landed with day-3 hints, and the "explain it" half is still missing on every track.
 
@@ -411,7 +411,7 @@ A big closing day: four items that had been open for 2-7 days are now green. The
 | 🌱 Spring | If the Task 6 answer isn't in by then, it's the first 10 minutes. Then **Chapter 3**, starting with the one line "Spring Boot already ___, so I only add ___". | Chapter 2's code is done, but the concept is still ungraded. A senior answer to "what does the main class switch on" matters more in interviews than the annotation itself. |
 | 🧩 DSA | 10-minute warm-up: the pack's **debugging exercise** (sum vs every-slot). Then the new problem **Two Sum** (Arrays & Hashing 3 of 9: a `HashMap` from value to index). Every complexity line gets a "because". | Valid Anagram exposed the lossy-fingerprint gap, and Two Sum is the next "remember what you've seen" step. The missing complexity reasons are the habit to fix this week. |
 | 🐞 Buggy | Friday's **Arrays & Hashing buggy round** (unlocked now that DecodeString is ✅). The symptom-group comment comes **before** any code change, and each fix gets a one-line comment naming its test. | Today's fixes were correct, but the debugging write-up was skipped, and that write-up is what an interviewer listens for. |
-| 🔁 Redos | `CarFleet` + `Day04LargestRectangle` (cap 2). If Asteroid misses tonight, the 10 PM check re-queues it first. | queue per [redo-schedule.md](../revision/redo-schedule.md); Day03 moved to +3 |
+| 🔁 Redos | `CarFleet` + `Day04LargestRectangle` (cap 2). If Asteroid misses tonight, the 10 PM check re-queues it first. | queue per [redo-schedule.md](../../revision/redo-schedule.md); Day03 moved to +3 |
 
 > [!TIP]
 > Today proved you can close things fast once you start: four green files in one afternoon. Tonight's most valuable 10 minutes is the Task 6 answer, because explaining it is what turns a green test into interview points.
@@ -421,7 +421,7 @@ A big closing day: four items that had been open for 2-7 days are now green. The
 ![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-6%2F10-orange) ![DSA](https://img.shields.io/badge/DSA-6%2F10-orange) ![Buggy](https://img.shields.io/badge/Buggy-7%2F10-yellowgreen) ![Ch2](https://img.shields.io/badge/Chapter%202-19%2F19-brightgreen) ![Pending](https://img.shields.io/badge/pending-8-blue)
 
 > [!NOTE]
-> 10 PM check: **no student commits after the 8 PM review** in either repo (labs `my-solutions` still `b4a3717`, 19 Nov 11:59 AM IST; this repo's student code still `b207444`, 6:04 PM IST; tip `4242f4b` is the evening-review commit). No answers in chat after the review, so the evening scores stand (Spring 6, DSA 6, Buggy 7) and the suite result stands (719 run, 28 red = the untouched `AsteroidCollisionRedoNov17` stub). Housekeeping: Lumi removed the unused `import java.util.Arrays` from `ValidAnagram.java` (cosmetic, not logged); `ValidAnagramTest` re-run **18/18**. Asteroid was not attempted for the third evening, so the redo queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)).
+> 10 PM check: **no student commits after the 8 PM review** in either repo (labs `my-solutions` still `b4a3717`, 19 Nov 11:59 AM IST; this repo's student code still `b207444`, 6:04 PM IST; tip `4242f4b` is the evening-review commit). No answers in chat after the review, so the evening scores stand (Spring 6, DSA 6, Buggy 7) and the suite result stands (719 run, 28 red = the untouched `AsteroidCollisionRedoNov17` stub). Housekeeping: Lumi removed the unused `import java.util.Arrays` from `ValidAnagram.java` (cosmetic, not logged); `ValidAnagramTest` re-run **18/18**. Asteroid was not attempted for the third evening, so the redo queue moved one slot ([redo-schedule.md](../../revision/redo-schedule.md)).
 
 | Item | Track | Outcome | Status |
 |---|---|---|---|
@@ -434,4 +434,4 @@ A big closing day: four items that had been open for 2-7 days are now green. The
 | Unused `import java.util.Arrays` in `ValidAnagram.java` | 🧩 | removed by Lumi (cosmetic) | ✅ fixed, 18/18 re-run |
 
 > [!IMPORTANT]
-> **First task Fri 20 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Task 6 interview answer in chat**: the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, plus the `--debug` add-on, and knowledge checks 1-3 from the morning section. That closes Chapter 2. Next: labs **Chapter 3**, starting with the line "Spring Boot already ___, so I only add ___". 🧩 10-minute frequency-counting debugging exercise and the Valid Anagram knowledge checks, then **Two Sum** (Arrays & Hashing 3 of 9) with a "because" on every complexity line. 🐞 `DailyTemperatures` comments, then Friday's Arrays & Hashing buggy round, symptom groups before any fix. 🔁 Evening: `AsteroidCollisionRedoNov17` + `CarFleet`, cold. **Pending items: 8** ([PROGRESS.md](../PROGRESS.md#-pending)).
+> **First task Fri 20 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Task 6 interview answer in chat**: the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, plus the `--debug` add-on, and knowledge checks 1-3 from the morning section. That closes Chapter 2. Next: labs **Chapter 3**, starting with the line "Spring Boot already ___, so I only add ___". 🧩 10-minute frequency-counting debugging exercise and the Valid Anagram knowledge checks, then **Two Sum** (Arrays & Hashing 3 of 9) with a "because" on every complexity line. 🐞 `DailyTemperatures` comments, then Friday's Arrays & Hashing buggy round, symptom groups before any fix. 🔁 Evening: `AsteroidCollisionRedoNov17` + `CarFleet`, cold. **Pending items: 8** ([PROGRESS.md](../../PROGRESS.md#-pending)).
