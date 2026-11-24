@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * Module 1, step 1: proves that V2__create_auth_tables.sql ran and the auth schema is shaped as designed.
- * Spec: tasks/day13.md, "Banking module 1, step 1". Write the bodies by hand; both tests are red until V2 exists.
+ * Spec: banking-app/TASKS.md, Task 1.1. Write the bodies by hand; both tests are red until V2 exists.
  * Needs Docker Desktop running (Testcontainers), like BankingApplicationIT.
  */
 class AuthSchemaIT extends AbstractIntegrationTest {

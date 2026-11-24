@@ -1,6 +1,6 @@
-# 🎨 Markdown style guide (DSA + buggy repo)
+# 🎨 Markdown style guide (DSA, buggy, banking app)
 
-Scope: this repo's DSA, buggy-round and record files. Spring specs are written in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs); [`banking-app/`](../banking-app/README.md) is a standalone project with its own docs.
+Scope: this repo's DSA, buggy-round, banking-app task and record files. Banking tasks ([banking-app/TASKS.md](../banking-app/TASKS.md)) use the lesson tone: why it matters → concept in 1-2 sentences → small example with real output → why each row is in or out → gotchas → 2-3 multiple-choice checks, all inside `<details>`.
 
 ## 📄 Per file type
 

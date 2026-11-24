@@ -1,6 +1,6 @@
-# 🧭 Program: DSA + buggy rounds
+# 🧭 Program: DSA, buggy rounds, banking app
 
-This repo is **DSA (NeetCode by pattern) and buggy rounds only**, with cold redos. Spring practice lives in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs); [`banking-app/`](../banking-app/README.md) is a standalone project kept here and is not part of the daily plan. If another file disagrees with this one about the process, this file wins; [`PROGRESS.md`](../PROGRESS.md) is the tracker.
+This repo tracks three things daily: **DSA** (NeetCode by pattern), **buggy rounds** (with cold redos) and the **banking app** (`banking-app/`, one module at a time). spring-boot-labs chapters are paused at Ch 3. If another file disagrees with this one about the process, this file wins; [`PROGRESS.md`](../PROGRESS.md) is the tracker.
 
 ## 🛤️ Tracks
 
@@ -8,14 +8,15 @@ This repo is **DSA (NeetCode by pattern) and buggy rounds only**, with cold redo
 |---|---|---|---|
 | 🧩 | DSA | one new NeetCode problem each weekday, one pattern at a time in NeetCode order | `src/main/java/com/prashant/dsa/<pattern>/` |
 | 🐞 | Buggy | fix-the-code rounds on the current pattern, **Tue and Fri**; an open round blocks the next one | `src/main/java/com/prashant/dailytests/` |
+| 🏦 | Banking app | one task a day (~25-45 min) from [banking-app/TASKS.md](../banking-app/TASKS.md); a module is ✅ when its tests pass on `verify` and its interview questions score ≥ 7 | `banking-app/` |
 | 🔁 | Redos | cold, 1 → 3 → 7 → 14 → 30 days by result, **max 2 a day** | `src/main/java/com/prashant/dailytests/redo/` |
 
 ## ⏱️ The day
 
 | Slot | What |
 |---|---|
-| 🌅 Morning | 🧩 DSA ~35-40 min · 🐞 buggy slot ~15 min · redo 20-30 min (blank stub, timer) |
-| 🌙 Evening | ① review and score 🧩 DSA and 🐞 Buggy out of 10 ② finish morning leftovers ③ then a redo from the schedule |
+| 🌅 Morning | 🧩 DSA ~35-40 min · 🏦 banking task ~25-45 min · 🐞 buggy slot ~15 min · redo 20-30 min (blank stub, timer) |
+| 🌙 Evening | ① review and score 🧩 DSA, 🏦 Banking and 🐞 Buggy out of 10 ② finish morning leftovers ③ then a redo from the schedule |
 | Weekend | review and cold redos only, no new problems |
 
 - **Progress decides tasks, never the calendar.** A task is replaced only when ✅ COMPLETED. An unfinished problem carries over with stronger hints, never open more than 2 days.
@@ -57,14 +58,14 @@ Each track that had work gets one score out of 10 = rounded average of the dimen
 
 ## 📈 How PROGRESS.md is updated
 
-One page, about 80 lines, no paragraphs. Sections: 🧩 DSA · 🐞 Buggy · 🌱 Spring (paused) · 🔁 Redos · 📈 Scores · 📦 History.
+One page, about 80 lines, no paragraphs. Sections: 🧩 DSA · 🐞 Buggy · 🏦 Banking app · 🔁 Redos · 📈 Scores · 📦 History.
 
 - **Per-track tables:** a new problem or round gets one row when it is handed out; edit that row (Status, Tests, Solved/Score, a short Note) when it is verified. Update the DSA count line, Open now (1-3 bullets) and Weak spots (max 3).
-- **Scores:** one row per day in `📈 Scores (last 7 days)` (Date · DSA · Buggy), `—` when unscored, never an invented number. Keep 7 rows: add today, drop the oldest (it is already in the archive log).
+- **Scores:** one row per day in `📈 Scores (last 7 days)` (Date · DSA · Buggy · Banking), `—` when unscored, never an invented number. Keep 7 rows: add today, drop the oldest (it is already in the archive log).
 - **Redos:** only the next 3-5 due rows; the full calendar stays in [redo-schedule.md](../revision/redo-schedule.md).
 - **Evidence and logs:** the full evening / 10 PM score row (with dimensions and commits) and the log row go to the month's archive file, `archive/progress-YYYY-MM.md`, under its score and log tables.
 - **Weekly review:** written in the archive file; PROGRESS gets one line under 📦 History linking to it.
-- **Spring:** paused; not updated daily.
+- **Banking:** edit the module row (Status, Tests, Notes = current task) and its Open now / Weak spots; the task list lives in `banking-app/TASKS.md` (tick its Status column). spring-boot-labs stays a one-line paused note.
 
 ## 📏 Specs and files
 

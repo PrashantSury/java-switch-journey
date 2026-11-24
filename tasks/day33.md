@@ -1,18 +1,19 @@
-# Day 33 · Tue 24 Nov · ~80 min (+15 buffer)
+# Day 33 · Tue 24 Nov · ~125 min (+15 buffer)
 
-**Focus:** Two Sum closed → Group Anagrams; Day06 last loop; Asteroid cold · **Done when:** `GroupAnagramsTest` 22/22, `Day06FirstUniqueCodeTest` 20/20, Asteroid redo pushed (even red) · Run `git pull` first · Stuck 15 min → ask Lumi.
+**Focus:** Group Anagrams; 🏦 banking app starts (Task 1.1); Day06 last loop; Asteroid cold · **Done when:** `GroupAnagramsTest` 22/22, `AuthSchemaIT` 2/2, `Day06FirstUniqueCodeTest` 20/20, Asteroid redo pushed (even red) · Run `git pull` first · Stuck 15 min → ask Lumi.
 
 ## ✅ Today
 
 | # | Track | Item | File | Tests | Time | Status |
 |---|---|---|---|---|---|---|
 | 1 | 🧩 | Group Anagrams (new, A&H 4 of 9) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 0/22 | 0-40 | ⬜ |
-| 2 | 🐞 | `Day06FirstUniqueCode` last loop (no new round) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 16/20 | 40-55 | 🔴 |
-| 3 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 55-80 | ⬜ |
-| 4 | — | Buffer: Two Sum question (Q1) or `DailyTemperatures` comments (5 min) | — | — | 80-95 | optional |
-| 5 | 🔁 | `CarFleetRedoNov20`, cold (after the review) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | 0/37 | evening | ⬜ |
+| 2 | 🏦 | Banking Task 1.1: V2 auth tables + `AuthSchemaIT` | `banking-app/src/main/resources/db/migration/V2__create_auth_tables.sql` | 0/2 | 40-85 | ⬜ |
+| 3 | 🐞 | `Day06FirstUniqueCode` last loop (no new round) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 16/20 | 85-100 | 🔴 |
+| 4 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 100-125 | ⬜ |
+| 5 | — | Buffer: Two Sum question (Q1) or `DailyTemperatures` comments (5 min) | — | — | 125-140 | optional |
+| 6 | 🔁 | `CarFleetRedoNov20`, cold (after the review) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | 0/37 | evening | ⬜ |
 
-> Short on time: item 2 (`Day06` last loop) → push, even red.
+> Short on time: item 3 (`Day06` last loop) → push, even red; then the 5 V2 decisions as comments (10 min).
 
 ## 🔎 Since yesterday
 
@@ -140,7 +141,58 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 
 </details>
 
-## 2. 🐞 Buggy slot: `Day06FirstUniqueCode` last loop (~15 min)
+## 2. 🏦 Banking: Task 1.1, V2 auth tables + `AuthSchemaIT` (~45 min)
+
+- **Goal:** write `V2__create_auth_tables.sql` by hand: `users`, `roles`, `permissions`, `user_roles`, `role_permissions` in schema `auth`.
+- **Files:** `banking-app/src/main/resources/db/migration/V2__create_auth_tables.sql` (you create it) · `banking-app/src/test/java/com/prashant/banking/auth/AuthSchemaIT.java` (2 stub tests, bodies are yours).
+- **Run:** `docker compose up -d` in `banking-app/`, then `mvn -f banking-app/pom.xml verify` (or run `AuthSchemaIT` from IntelliJ).
+- **Done when:** `mvn -f banking-app/pom.xml verify` → `AuthSchemaIT` 2/2 and `BankingApplicationIT` 1/1.
+- **First:** 5 decisions as comment lines at the top of V2 (table list, PK type, case-insensitive username, password column, `BaseEntity` columns).
+- **Answer:** Q8-Q11 below. Full module plan: [banking-app/TASKS.md](../banking-app/TASKS.md).
+- **Interview:** why a unique index on `lower(username)`, and not an `existsByUsername` check in the service?
+
+<details><summary>📖 Teaching</summary>
+
+**Why it matters.** Every rule later ("only the owner", "a checker approves") needs users and permissions. And Flyway checksums a migration once it has run, so the shape you pick today is the one you live with. You change it with a V3, never by editing V2.
+
+**The concept.** Users get roles, roles get permissions (two join tables). The token will carry the **permissions**, because "may this user read accounts?" is about a permission, not a job title.
+
+**Small example.** A case-insensitive unique username:
+
+```sql
+CREATE TABLE auth.users (
+  id            BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  public_id     UUID         NOT NULL UNIQUE,
+  username      VARCHAR(50)  NOT NULL,
+  password_hash VARCHAR(100) NOT NULL,
+  enabled       BOOLEAN      NOT NULL DEFAULT TRUE
+  -- + the BaseEntity columns: created_at, updated_at, created_by, version
+);
+CREATE UNIQUE INDEX ux_users_username_lower ON auth.users (lower(username));
+```
+
+| Insert | Result |
+|---|---|
+| `'Teller01'` | ✅ 1 row |
+| `'teller01'` | ❌ `duplicate key value violates unique constraint "ux_users_username_lower"` |
+| `'teller02'` | ✅ 1 row: `lower` differs |
+
+Row 2 is out because `lower('teller01') = lower('Teller01')`. In `JdbcTemplate` that error arrives as `DuplicateKeyException`, which is what your second test expects.
+
+**Gotchas**
+- No password, hash or seed user in V2. Ever.
+- `password_hash` holds a BCrypt string (60 chars), not the password.
+- `ddl-auto=validate` will compare your Task 1.2 entities with this SQL, so names and types must match.
+- If V2 already ran on your local DB and you change it: reset the dev DB or add V3.
+
+**Checks (letters only)**
+1. Why not `UNIQUE (username)`? A. slower · B. `Teller01` and `teller01` would both get in · C. Postgres forbids it
+2. Two requests register `teller01` at the same moment and both pass `existsByUsername`. What stops the second one? A. `@Transactional` · B. the unique index · C. nothing
+3. V2 ran yesterday. Today you need a new column. A. edit V2 · B. add V3 · C. `ddl-auto=update`
+
+</details>
+
+## 3. 🐞 Buggy slot: `Day06FirstUniqueCode` last loop (~15 min)
 
 - **Goal:** fix only the last loop (it walks letters 0..25 instead of string positions).
 - **File:** `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java`
@@ -171,6 +223,8 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 | Q1 | 🧩 Two Sum | Why does `put` overwriting duplicates never break this problem? What to store for "all pairs"? |
 | Q2-Q4 | 🧩 Group Anagrams checks | letters only, before the 🔒 block |
 | Q5-Q7 | 🐞 Day06 | one line each, after the trace |
+| Q8 | 🏦 Task 1.1 | Why a unique index on `lower(username)`, not an `existsByUsername` check? (60 s, out loud or 3 lines) |
+| Q9-Q11 | 🏦 Task 1.1 checks | letters only |
 
 <details><summary>📖 Full question text and options</summary>
 
@@ -190,6 +244,12 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 - **Q5.** The method returns a **position in `codes`**. Positions in a string of length `n` run from `0` to ___.
 - **Q6.** So the loop variable stands for ___ (and a better name for it is ___).
 - **Q7.** What happens at row 4 when `codes.length()` is 4, and what happens on a 30-character string where the unique code sits at position 28?
+
+**Q8-Q11 (🏦 Banking Task 1.1):**
+- **Q8.** Why a unique index on `lower(username)`, and not an `existsByUsername` check in the service? (60 s out loud, or 3 lines)
+- **Q9.** Why not `UNIQUE (username)`? A. slower · B. `Teller01` and `teller01` would both get in · C. Postgres forbids it
+- **Q10.** Two requests register `teller01` at the same moment and both pass `existsByUsername`. What stops the second one? A. `@Transactional` · B. the unique index · C. nothing
+- **Q11.** V2 ran yesterday; today you need a new column. A. edit V2 · B. add V3 · C. `ddl-auto=update`
 
 </details>
 
@@ -216,6 +276,7 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 | Track | Score /10 | Evidence |
 |---|---|---|
 | 🧩 DSA | | |
+| 🏦 Banking | | |
 | 🐞 Buggy | | |
 
 | Tonight (in order) | Tomorrow |

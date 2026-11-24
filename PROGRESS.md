@@ -46,20 +46,34 @@ Last updated: Tue 24 Nov 2026 (Day 33)
 - Loop index: alphabet index mixed with string position (Day06)
 - No symptom-group or per-fix comments (Day05, Day06)
 
-## 🌱 Spring Boot (paused 24 Nov 2026)
+## 🏦 Banking app
 
-Not tracked daily. Work lives in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs), `my-solutions`.
+Tracked daily · code [`banking-app/`](banking-app/) · tasks [TASKS.md](banking-app/TASKS.md)
+Run `mvn -f banking-app/pom.xml verify` (Docker running)
 
-- Stopped after Chapter 3 code (15/15, `e619f82`, 20 Nov).
-- Open: Ch 3 interview re-answer (5/10) + senior Q2/Q3.
-- Last Spring score: 7 (21 Nov). Weak: singleton beans and shared state.
-- [`banking-app/`](banking-app/README.md): setup done, module 1 not started.
+| Module | Goal | Status | Tests | Notes |
+|---|---|---|---|---|
+| 0 Setup | Docker Postgres 5433, Flyway V1, 2 DB roles | ✅ | 1/1 | `BankingApplicationIT` |
+| 1 AuthN / AuthZ | login → JWT; 401 / 403 / 200 | ⬜ | 0/2 | 8 tasks; 1.1 assigned 24 Nov |
+| 2 Customer | JPA entities, validation, KYC maker-checker | ⬜ | | |
+| 3 Account | `NUMERIC` money, owner checks, `@Version`, paging | ⬜ | | |
+| 4 Beneficiary | uniqueness, soft delete, `Clock` | ⬜ | | |
+| 5 Transactions | `@Transactional`, locking | ⬜ | | |
+| 6 Fund Transfers | lock order, idempotency | ⬜ | | |
+| 7 Transaction History | projections, keyset paging, N+1 | ⬜ | | |
+| 8 Notifications | domain events, async | ⬜ | | |
+| 9 Statements / Reports | scheduled jobs, batch reads | ⬜ | | |
+| 10 Audit / Compliance | append-only audit, trigger, `REVOKE` | ⬜ | | |
 
-| Chapter | Code | Interview | Status |
-|---|---|---|---|
-| 1 Maven / pom | 19/19 | 7/10 | ✅ 15 Nov |
-| 2 Endpoints, application class | 19/19 | 7/10 | ✅ 21 Nov |
-| 3 Beans | 15/15 | 5/10 | 🔴 re-answer |
+**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2) · [day33.md](tasks/day33.md)
+
+**Weak spots** (from Spring history)
+- HTTP semantics: status codes, idempotency, PUT vs PATCH
+- `ResponseEntity` vs `@ResponseStatus`, `Location` header
+- Singleton beans and shared mutable state
+
+spring-boot-labs chapters: paused at Ch 3 (re-answer open) ·
+[TASKS.md](https://github.com/PrashantSury/spring-boot-labs/blob/my-solutions/TASKS.md)
 
 ## 🔁 Redos
 
@@ -73,15 +87,15 @@ Next due (cold, max 2 a day) · full calendar: [redo-schedule.md](revision/redo-
 
 ## 📈 Scores (last 7 days)
 
-| Date | DSA | Buggy |
-|---|---|---|
-| Wed 18 Nov | — | — |
-| Thu 19 Nov | 6 | 7 |
-| Fri 20 Nov | — | — |
-| Sat 21 Nov | — | 5 |
-| Sun 22 Nov | — | — |
-| Mon 23 Nov | 6 | — |
-| Tue 24 Nov | | |
+| Date | DSA | Buggy | Banking |
+|---|---|---|---|
+| Wed 18 Nov | — | — | — |
+| Thu 19 Nov | 6 | 7 | — |
+| Fri 20 Nov | — | — | — |
+| Sat 21 Nov | — | 5 | — |
+| Sun 22 Nov | — | — | — |
+| Mon 23 Nov | 6 | — | — |
+| Tue 24 Nov | | | |
 
 ## 📦 History
 

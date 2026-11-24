@@ -20,9 +20,14 @@
 
 **PROGRESS.md (one page)**
 - Edit the problem/round row in the DSA or Buggy table; keep Open now ≤ 3 and Weak spots ≤ 3.
-- Daily score → one row in `📈 Scores (last 7 days)`, `—` if unscored; drop the oldest row.
+- Daily score → one row in `📈 Scores (last 7 days)` (DSA · Buggy · Banking), `—` if unscored; drop the oldest row.
 - Detailed score rows, log rows and weekly reviews → `archive/progress-YYYY-MM.md`; one History link line in PROGRESS.
 - Rules: [PROGRAM.md](docs/PROGRAM.md#-how-progressmd-is-updated).
+
+**Banking app**
+- Tasks: [banking-app/TASKS.md](banking-app/TASKS.md); code and tests by Prashant, coach adds only empty stubs/TODOs.
+- Tests are `*IT.java` (Testcontainers): `mvn -f banking-app/pom.xml verify`; root `mvn test` doesn't touch them.
+- Endpoints: fill the method × outcomes grid first; check what Spring already handles.
 
 **Day files** follow [docs/DAY-TEMPLATE.md](docs/DAY-TEMPLATE.md).
 

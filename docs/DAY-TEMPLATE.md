@@ -1,6 +1,6 @@
 # Day file template (`tasks/dayNN.md`)
 
-Every day file uses exactly this layout. This repo is **DSA + buggy rounds only** (🧩 DSA · 🐞 Buggy · 🔁 Redos); Spring work is planned in spring-boot-labs, not here. Rules:
+Every day file uses exactly this layout. Tracks: 🧩 DSA · 🏦 Banking app (`banking-app/`, one task from [banking-app/TASKS.md](../banking-app/TASKS.md)) · 🐞 Buggy · 🔁 Redos. spring-boot-labs chapters are paused. Rules:
 - Outside `<details>`: only the header, tables, short bullets and numbered questions. **No paragraphs.**
 - Each item: 3-6 bullets (goal, file, run, done when, hint rule). Spec, teaching, examples, hints and stubs go in a `📖` `<details>` block; solutions in a separate `🔒` block.
 - Keep the section order and headings below so routines and links can find them. Leave a section in with "none" rather than deleting it.
@@ -16,8 +16,9 @@ Every day file uses exactly this layout. This repo is **DSA + buggy rounds only*
 | # | Track | Item | File | Tests | Time | Status |
 |---|---|---|---|---|---|---|
 | 1 | 🧩 | <new problem> | `<path>` | 0/22 | 40 | ⬜ |
-| 2 | 🐞 | <buggy round or carry-over> | `<path>` | 16/20 | 15 | 🔴 |
-| 3 | 🔁 | <redo> | `<path>` | 0/28 | 25 | ⬜ |
+| 2 | 🏦 | Task 1.N <title> | `banking-app/<path>` | 0/2 | 45 | ⬜ |
+| 3 | 🐞 | <buggy round or carry-over> | `<path>` | 16/20 | 15 | 🔴 |
+| 4 | 🔁 | <redo> | `<path>` | 0/28 | 25 | ⬜ |
 
 > Short on time: <the 15-minute minimum, one line>
 
@@ -54,7 +55,28 @@ Every day file uses exactly this layout. This repo is **DSA + buggy rounds only*
 
 </details>
 
-## 2. 🐞 <Buggy round> (~15 min)
+## 2. 🏦 Banking: Task 1.N <title> (~45 min)
+
+- **Goal:** <one line>
+- **Files:** `banking-app/src/...`
+- **Run:** `mvn -f banking-app/pom.xml verify` (Docker running) or one IT from the IDE
+- **Done when:** <tests green / curl with expected status and body>
+- **First:** fill the method × outcomes grid row; check what Spring already handles.
+- **Interview:** <one question>
+
+<details><summary>📖 Teaching (why it matters, concept, small example with output, gotchas, 2-3 checks)</summary>
+
+(copied from banking-app/TASKS.md for this task)
+
+</details>
+
+<details><summary>🔒 Open only after your attempt</summary>
+
+(answers to the checks, reference design if needed)
+
+</details>
+
+## 3. 🐞 <Buggy round> (~15 min)
 
 (same 3-6 bullets + details blocks)
 
@@ -85,6 +107,7 @@ Every day file uses exactly this layout. This repo is **DSA + buggy rounds only*
 | Track | Score /10 | Evidence |
 |---|---|---|
 | 🧩 DSA | | |
+| 🏦 Banking | | |
 | 🐞 Buggy | | |
 
 | Tonight (in order) | Tomorrow |
