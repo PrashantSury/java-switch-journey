@@ -1,19 +1,18 @@
-# Day 33 · Tue 24 Nov · ~105 min (+15 buffer)
+# Day 33 · Tue 24 Nov · ~80 min (+15 buffer)
 
-**Focus:** Two Sum closed → Group Anagrams; Ch 3 re-answer in writing; Day06 last loop; Asteroid cold · **Done when:** Ch 3 graded ≥ 7, `GroupAnagramsTest` 22/22, `Day06FirstUniqueCodeTest` 20/20, Asteroid redo pushed (even red) · Run `git pull` first · Stuck 15 min → ask Lumi.
+**Focus:** Two Sum closed → Group Anagrams; Day06 last loop; Asteroid cold · **Done when:** `GroupAnagramsTest` 22/22, `Day06FirstUniqueCodeTest` 20/20, Asteroid redo pushed (even red) · Run `git pull` first · Stuck 15 min → ask Lumi.
 
 ## ✅ Today
 
 | # | Track | Item | File | Tests | Time | Status |
 |---|---|---|---|---|---|---|
-| 1 | 🌱 | Ch 3 re-answer, written | `interview-answers.md` (Chapter 3) | — (graded ≥ 7) | 0-25 | 🔴 |
-| 2 | 🧩 | Group Anagrams (new, A&H 4 of 9) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 0/22 | 25-65 | ⬜ |
-| 3 | 🐞 | `Day06FirstUniqueCode` last loop (no new round) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 16/20 | 65-80 | 🔴 |
-| 4 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 80-105 | ⬜ |
-| 5 | — | Buffer: Two Sum question (Q1) or `DailyTemperatures` comments (5 min) | — | — | 105-120 | optional |
-| 6 | 🔁 | `CarFleetRedoNov20`, cold (after the review) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | 0/37 | evening | ⬜ |
+| 1 | 🧩 | Group Anagrams (new, A&H 4 of 9) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 0/22 | 0-40 | ⬜ |
+| 2 | 🐞 | `Day06FirstUniqueCode` last loop (no new round) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 16/20 | 40-55 | 🔴 |
+| 3 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 55-80 | ⬜ |
+| 4 | — | Buffer: Two Sum question (Q1) or `DailyTemperatures` comments (5 min) | — | — | 80-95 | optional |
+| 5 | 🔁 | `CarFleetRedoNov20`, cold (after the review) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | 0/37 | evening | ⬜ |
 
-> Short on time: item 3 (`Day06` last loop) → push, even red.
+> Short on time: item 2 (`Day06` last loop) → push, even red.
 
 ## 🔎 Since yesterday
 
@@ -39,57 +38,20 @@
 
 </details>
 
-## 1. 🌱 Spring: Chapter 3 re-answer, in writing (~25 min)
-
-- **Goal:** explain why a singleton bean's field races, with two real fixes; `@Component` vs `@Bean` with the why.
-- **File:** `interview-answers.md`, Chapter 3 section (replace each `_Answer:_` line), or answer in chat.
-- **Done when:** graded ≥ 7 → Chapter 4 opens (golden rule: no Chapter 4 while this is 🔴).
-- **Answer:** warm-up table, then Q2-Q6 below, then checks Q7-Q9.
-- **Hint rule:** stuck 15 min → ask Lumi.
-
-<details><summary>📖 Spec and teaching</summary>
-
-**Why it matters.** "Is a singleton bean thread-safe?" is asked in nearly every senior Spring loop, usually disguised as "our totals drift under load". Your code for Chapter 3 was 15/15; the open part is the explanation, and it has been open since 20 Nov.
-
-> [!NOTE]
-> Spring gets ~25 min, not ~60, because its open item is an answer, not code. Writing it in the repo means it can be graded even if we don't chat today. Chapter 4 opens the day it scores ≥ 7.
-
-**Warm-up: three tiny examples (3 min, say "races" or "safe" and why):**
-
-```java
-@Service class A { private long total;               void add(long f) { total += f; } }
-@Service class B { private final Clock clock;        long now() { return clock.millis(); } }   // set once in the constructor
-@Service class C {                                   long fee(long amt) { long f = amt / 100; return Math.max(f, 10); } }
-```
-
-| Bean | Shared field written by request threads? | Your verdict |
-|---|---|---|
-| `A` | ? | ? |
-| `B` | ? | ? |
-| `C` | ? | ? |
-
-</details>
-
-<details><summary>🔒 Check the warm-up after you fill the table</summary>
-
-`A` races: one `total` on the heap, every thread does read-add-write. `B` is safe: the field is `final` and only read. `C` is safe: `f` is a local on each thread's own stack.
-
-</details>
-
-## 2. 🧩 DSA: Group Anagrams (new, Arrays & Hashing 4 of 9, ~40 min)
+## 1. 🧩 DSA: Group Anagrams (new, Arrays & Hashing 4 of 9, ~40 min)
 
 - **Goal:** group anagrams with a `HashMap<key, List<String>>`; choose a key two non-anagrams can never share.
 - **File:** `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java`
 - **Run:** `mvn test -Dtest=GroupAnagramsTest`
 - **Done when:** 22/22 pushed, with pseudocode (3-5 lines) + brute force + key choice first, and pattern / time / space lines that each say **because**.
 - **Hint rule:** stuck 15 min → ask Lumi. Not finished today → carries to Wed with guiding questions, then a partial skeleton (never open more than 2 days).
-- **Answer:** checks Q10-Q12 before opening the 🔒 block.
+- **Answer:** checks Q2-Q4 before opening the 🔒 block.
 
 - [ ] Pseudocode (3-5 lines) + brute-force comment with the n = 20 000 numbers.
 - [ ] Key choice comment: what key, and why two non-anagrams can never share it.
 - [ ] Pattern / time / space lines, each with a "because" (name where n and k come from).
 - [ ] `mvn test -Dtest=GroupAnagramsTest` → **22/22**. Push.
-- [ ] Knowledge checks Q10-Q12 in chat before opening the locked block.
+- [ ] Knowledge checks Q2-Q4 in chat before opening the locked block.
 
 <details><summary>📖 Spec and teaching</summary>
 
@@ -174,17 +136,17 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 | Sorted key | O(n · k log k) | O(n · k) | each of n words is sorted (k log k); the map stores every word plus a key of length k |
 | **Count key** | **O(n · (k + 26))** = O(n · k) | O(n · k) | each word is read once (k) and its 26 counts joined once; the map holds all words and keys |
 
-**Answers (Q10-Q12).** (1) **B**: a sum throws information away, so different words collide. (2) **C**. (3) **B**: `int[]` inherits `Object.equals`/`hashCode` (identity), so use `Arrays.toString(count)`, a separator-joined string, or `List<Integer>`.
+**Answers (Q2-Q4).** (1) **B**: a sum throws information away, so different words collide. (2) **C**. (3) **B**: `int[]` inherits `Object.equals`/`hashCode` (identity), so use `Arrays.toString(count)`, a separator-joined string, or `List<Integer>`.
 
 </details>
 
-## 3. 🐞 Buggy slot: `Day06FirstUniqueCode` last loop (~15 min)
+## 2. 🐞 Buggy slot: `Day06FirstUniqueCode` last loop (~15 min)
 
 - **Goal:** fix only the last loop (it walks letters 0..25 instead of string positions).
 - **File:** `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java`
 - **Run:** `mvn test -Dtest=Day06FirstUniqueCodeTest`
 - **Done when:** 20/20 pushed, with the symptom-group comment at the top of the method (which failing tests share one cause) and one `// fix:` comment per change (three in total). Smallest change, no rewrite.
-- **Answer:** fill the trace below, then Q13-Q15.
+- **Answer:** fill the trace below, then Q5-Q7.
 
 | `letter` | `codes.charAt(letter)` | `count[...]` | returns? |
 |---|---|---|---|
@@ -207,48 +169,27 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 | # | For | Question (short) |
 |---|---|---|
 | Q1 | 🧩 Two Sum | Why does `put` overwriting duplicates never break this problem? What to store for "all pairs"? |
-| Q2 | 🌱 warm-up | Does Spring make a singleton bean's fields thread-safe? (yes / no) |
-| Q3 | 🌱 warm-up | What does Spring give you per request for free? |
-| Q4 | 🌱 Q1 part 2 + 3 | Why `total += fee` races + two real fixes; `@Component` vs `@Bean` with the why |
-| Q5 | 🌱 Q2 + Q3 | Drifting `runningTotal` (fix that survives 3 instances + restart); prototype `Receipt` in a singleton |
-| Q6 | 🌱 floor vs cap | `Math.___` for "at least ₹10" and "at most ₹500" |
-| Q7-Q9 | 🌱 checks | letters only |
-| Q10-Q12 | 🧩 Group Anagrams checks | letters only, before the 🔒 block |
-| Q13-Q15 | 🐞 Day06 | one line each, after the trace |
+| Q2-Q4 | 🧩 Group Anagrams checks | letters only, before the 🔒 block |
+| Q5-Q7 | 🐞 Day06 | one line each, after the trace |
 
 <details><summary>📖 Full question text and options</summary>
 
 **Q1 (Two Sum, 2 min, interview-style):** you wrote `seen.put(nums[i], i)`. With `[1, 5, 1, 5]`, the second `1` overwrites index 0 with 2. Why does that never break **this** problem (hint: how many valid pairs are there, and when do you check?), and in the "return **all** pairs" follow-up, what would you store per value instead?
 
-**Q2-Q3 (first, ask what Spring already does for you, 1 min, one line each):**
-- **Q2.** Does Spring make a singleton bean's **fields** thread-safe? (yes / no)
-- **Q3.** What *does* Spring give you per request for free? (think: method locals, request-scoped beans, `@Transactional` + the DB)
 
-**Q4-Q6:** write under the Chapter 3 section of [interview-answers.md](../interview-answers.md) (replace each `_Answer:_` line), 4-8 sentences total for Q1:
-- **Q1 part 2:** *why* `total += fee` races (where a field lives vs where a local lives), then **two real fixes**.
-- **Q1 part 3:** `@Component` vs `@Bean`: the rule **and the why** (what finds each one; when you *must* use `@Bean`).
-- **Q2:** singleton `TransferService` with `private BigDecimal runningTotal` drifts under load. Why, plus two fixes with trade-offs; one must survive **3 instances and a restart**.
-- **Q3:** prototype `Receipt` injected through a singleton's constructor: new receipt per transfer? If not, two ways to get one per call.
-- **Floor vs cap (one line each):** (a) "1% but **at least** ₹10" → `Math.___(amount / 100, 10)`; (b) "2% but **at most** ₹500" → `Math.___(amount * 2 / 100, 500)`.
+**Q2-Q4 (Group Anagrams knowledge checks, letters only, before opening the locked block):**
 
-**Q7-Q9 (Spring knowledge checks, letters only, in chat or under the answers):**
-- **Q7.** Which change alone makes `A` correct inside **one** JVM? A. `volatile long total` · B. `AtomicLong` + `addAndGet` · C. `@Lazy` · D. make `add` `private`
-- **Q8.** Three instances behind a load balancer: which keeps **one** correct total? A. `synchronized add` · B. `AtomicLong` · C. one DB row updated with `total = total + ?` · D. `ThreadLocal<Long>`
-- **Q9.** A prototype bean injected into a singleton's constructor is created: A. once per call · B. once, when the singleton is built · C. once per request · D. never
-
-**Q10-Q12 (Group Anagrams knowledge checks, letters only, before opening the locked block):**
-
-- **Q10.** Key = sum of character codes. For `["ac", "bb"]` the result is:
+- **Q2.** Key = sum of character codes. For `["ac", "bb"]` the result is:
    - A. two groups · B. one group `["ac","bb"]`, which is wrong · C. an exception · D. empty
-- **Q11.** Sorted-key approach, n words of length up to k. Time is:
+- **Q3.** Sorted-key approach, n words of length up to k. Time is:
    - A. O(n) · B. O(n · k) · C. O(n · k log k) · D. O(n² · k)
-- **Q12.** `map.put(new int[]{1,2}, x); map.get(new int[]{1,2})` returns:
+- **Q4.** `map.put(new int[]{1,2}, x); map.get(new int[]{1,2})` returns:
    - A. `x` · B. `null`, because arrays use identity `equals`/`hashCode` · C. an exception · D. `x` only if both arrays are `final`
 
-**Q13-Q15 (Day06, fill rows 2-4 of the trace on paper first, then one line each):**
-- **Q13.** The method returns a **position in `codes`**. Positions in a string of length `n` run from `0` to ___.
-- **Q14.** So the loop variable stands for ___ (and a better name for it is ___).
-- **Q15.** What happens at row 4 when `codes.length()` is 4, and what happens on a 30-character string where the unique code sits at position 28?
+**Q5-Q7 (Day06, fill rows 2-4 of the trace on paper first, then one line each):**
+- **Q5.** The method returns a **position in `codes`**. Positions in a string of length `n` run from `0` to ___.
+- **Q6.** So the loop variable stands for ___ (and a better name for it is ___).
+- **Q7.** What happens at row 4 when `codes.length()` is 4, and what happens on a 30-character string where the unique code sits at position 28?
 
 </details>
 
@@ -256,7 +197,7 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 
 | # | Redo | Stub | Run | When | Done when | Status |
 |---|---|---|---|---|---|---|
-| 1 | `AsteroidCollision` (+1, due since 1 Nov, assigned 17 Nov) | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | `mvn test -Dtest=AsteroidCollisionRedoNov17Test` | morning, 80-105 | 28/28 | ⬜ |
+| 1 | `AsteroidCollision` (+1, due since 1 Nov, assigned 17 Nov) | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | `mvn test -Dtest=AsteroidCollisionRedoNov17Test` | morning, 55-80 | 28/28 | ⬜ |
 | 2 | `CarFleet` (+1, due since 4 Nov, assigned 20 Nov) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | `mvn test -Dtest=CarFleetRedoNov20Test` | evening, after the review | 37/37 | ⬜ |
 
 - **Cold means cold:** blank stub (tests verified), every other tab closed, no look at `dsa/stack/AsteroidCollision.java` or `CarFleet.java`.
@@ -267,17 +208,13 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 
 - `DailyTemperatures` pseudocode/brute-force comments (5 min) · 🧩 · 🟡 open since 12 Nov
 - Frequency-counting weak pack (debugging exercise + Valid Anagram checks); Group Anagrams' key question covers half of it · 🧩 · ⬜ (🔴 Weak)
-- HTTP semantics / `ResponseEntity` packs · 🌱 · ⬜ (🔴 Weak, from 16 Nov)
 - CarFleet single-pair follow-up · 🧩 · 🟡
-- B2 Q3/Q6, `ScoreOfParentheses` follow-ups, Day 02/03 re-answers, Two Sum `put` question · 🎤 · ⬜
-- Banking module 1 · 🏦 · parked
-- **Pending items: 10** (Two Sum closed, Group Anagrams opened; full list in [PROGRESS.md](../PROGRESS.md#-pending)).
+- `ScoreOfParentheses` follow-ups, Two Sum `put` question (Q1) · 🧩 · ⬜
 
 ## 🌙 Evening (filled by the evening review)
 
 | Track | Score /10 | Evidence |
 |---|---|---|
-| 🌱 Spring | | |
 | 🧩 DSA | | |
 | 🐞 Buggy | | |
 
@@ -299,5 +236,84 @@ Brute force: you state it with the reason. Optimised: after your attempt. Time d
 - Mon 23 Nov had no evening review or 10 PM check on record; its outcome (Two Sum 19/19, nothing else) is recorded here and in `PROGRESS.md`, and the redo queue was shifted one day in [redo-schedule.md](../revision/redo-schedule.md).
 - Re-run after today's files: **817 run / 91 red** = `GroupAnagrams` 22 (new stub) + `Day06` 4 + Asteroid 28 + CarFleet 37; everything else green.
 - Legend: 🌱 Spring (`spring-boot-labs`) · 🧩 DSA · 🐞 buggy slot · 🔁 redo · ✅ done · ❌ missed · ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED`. Week 5, Day 33.
+
+</details>
+
+<details><summary>🌱 Spring (moved out of this repo; Spring practice is planned in spring-boot-labs)</summary>
+
+### 🌱 Spring: Chapter 3 re-answer, in writing (~25 min)
+
+- **Goal:** explain why a singleton bean's field races, with two real fixes; `@Component` vs `@Bean` with the why.
+- **File:** `interview-answers.md`, Chapter 3 section (replace each `_Answer:_` line), or answer in chat.
+- **Done when:** graded ≥ 7 → Chapter 4 opens (golden rule: no Chapter 4 while this is 🔴).
+- **Answer:** warm-up table, then S1-S5 below, then checks S6-S8.
+- **Hint rule:** stuck 15 min → ask Lumi.
+
+<details><summary>📖 Spec and teaching</summary>
+
+**Why it matters.** "Is a singleton bean thread-safe?" is asked in nearly every senior Spring loop, usually disguised as "our totals drift under load". Your code for Chapter 3 was 15/15; the open part is the explanation, and it has been open since 20 Nov.
+
+> [!NOTE]
+> Spring gets ~25 min, not ~60, because its open item is an answer, not code. Writing it in the repo means it can be graded even if we don't chat today. Chapter 4 opens the day it scores ≥ 7.
+
+**Warm-up: three tiny examples (3 min, say "races" or "safe" and why):**
+
+```java
+@Service class A { private long total;               void add(long f) { total += f; } }
+@Service class B { private final Clock clock;        long now() { return clock.millis(); } }   // set once in the constructor
+@Service class C {                                   long fee(long amt) { long f = amt / 100; return Math.max(f, 10); } }
+```
+
+| Bean | Shared field written by request threads? | Your verdict |
+|---|---|---|
+| `A` | ? | ? |
+| `B` | ? | ? |
+| `C` | ? | ? |
+
+</details>
+
+<details><summary>🔒 Check the warm-up after you fill the table</summary>
+
+`A` races: one `total` on the heap, every thread does read-add-write. `B` is safe: the field is `final` and only read. `C` is safe: `f` is a local on each thread's own stack.
+
+</details>
+
+
+**Questions (were Q2-Q9 in this file):**
+
+| # | For | Question (short) |
+|---|---|---|
+| S1 | 🌱 warm-up | Does Spring make a singleton bean's fields thread-safe? (yes / no) |
+| S2 | 🌱 warm-up | What does Spring give you per request for free? |
+| S3 | 🌱 Q1 part 2 + 3 | Why `total += fee` races + two real fixes; `@Component` vs `@Bean` with the why |
+| S4 | 🌱 Q2 + Q3 | Drifting `runningTotal` (fix that survives 3 instances + restart); prototype `Receipt` in a singleton |
+| S5 | 🌱 floor vs cap | `Math.___` for "at least ₹10" and "at most ₹500" |
+| S6-S8 | 🌱 checks | letters only |
+
+**S1-S2 (first, ask what Spring already does for you, 1 min, one line each):**
+- **S1.** Does Spring make a singleton bean's **fields** thread-safe? (yes / no)
+- **S2.** What *does* Spring give you per request for free? (think: method locals, request-scoped beans, `@Transactional` + the DB)
+
+**S3-S5:** write under the Chapter 3 section of [interview-answers.md](../interview-answers.md) (replace each `_Answer:_` line), 4-8 sentences total for Q1:
+- **Q1 part 2:** *why* `total += fee` races (where a field lives vs where a local lives), then **two real fixes**.
+- **Q1 part 3:** `@Component` vs `@Bean`: the rule **and the why** (what finds each one; when you *must* use `@Bean`).
+- **Q2:** singleton `TransferService` with `private BigDecimal runningTotal` drifts under load. Why, plus two fixes with trade-offs; one must survive **3 instances and a restart**.
+- **Q3:** prototype `Receipt` injected through a singleton's constructor: new receipt per transfer? If not, two ways to get one per call.
+- **Floor vs cap (one line each):** (a) "1% but **at least** ₹10" → `Math.___(amount / 100, 10)`; (b) "2% but **at most** ₹500" → `Math.___(amount * 2 / 100, 500)`.
+
+**S6-S8 (Spring knowledge checks, letters only, in chat or under the answers):**
+- **S6.** Which change alone makes `A` correct inside **one** JVM? A. `volatile long total` · B. `AtomicLong` + `addAndGet` · C. `@Lazy` · D. make `add` `private`
+- **S7.** Three instances behind a load balancer: which keeps **one** correct total? A. `synchronized add` · B. `AtomicLong` · C. one DB row updated with `total = total + ?` · D. `ThreadLocal<Long>`
+- **S8.** A prototype bean injected into a singleton's constructor is created: A. once per call · B. once, when the singleton is built · C. once per request · D. never
+
+**Original pending list (incl. Spring items), as written this morning:**
+
+- `DailyTemperatures` pseudocode/brute-force comments (5 min) · 🧩 · 🟡 open since 12 Nov
+- Frequency-counting weak pack (debugging exercise + Valid Anagram checks); Group Anagrams' key question covers half of it · 🧩 · ⬜ (🔴 Weak)
+- HTTP semantics / `ResponseEntity` packs · 🌱 · ⬜ (🔴 Weak, from 16 Nov)
+- CarFleet single-pair follow-up · 🧩 · 🟡
+- B2 Q3/Q6, `ScoreOfParentheses` follow-ups, Day 02/03 re-answers, Two Sum `put` question · 🎤 · ⬜
+- Banking module 1 · 🏦 · parked
+- **Pending items: 10** (Two Sum closed, Group Anagrams opened; full list in [PROGRESS.md](../PROGRESS.md#-pending)).
 
 </details>

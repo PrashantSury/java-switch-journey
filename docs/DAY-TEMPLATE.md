@@ -1,6 +1,6 @@
 # Day file template (`tasks/dayNN.md`)
 
-Every day file uses exactly this layout. Rules:
+Every day file uses exactly this layout. This repo is **DSA + buggy rounds only** (🧩 DSA · 🐞 Buggy · 🔁 Redos); Spring work is planned in spring-boot-labs, not here. Rules:
 - Outside `<details>`: only the header, tables, short bullets and numbered questions. **No paragraphs.**
 - Each item: 3-6 bullets (goal, file, run, done when, hint rule). Spec, teaching, examples, hints and stubs go in a `📖` `<details>` block; solutions in a separate `🔒` block.
 - Keep the section order and headings below so routines and links can find them. Leave a section in with "none" rather than deleting it.
@@ -15,10 +15,9 @@ Every day file uses exactly this layout. Rules:
 
 | # | Track | Item | File | Tests | Time | Status |
 |---|---|---|---|---|---|---|
-| 1 | 🌱 | <item> | `<path>` | <n or —> | 25 | ⬜ |
-| 2 | 🧩 | <item> | `<path>` | 0/22 | 40 | ⬜ |
-| 3 | 🐞 | <item> | `<path>` | 16/20 | 15 | 🔴 |
-| 4 | 🔁 | <redo> | `<path>` | 0/28 | 25 | ⬜ |
+| 1 | 🧩 | <new problem> | `<path>` | 0/22 | 40 | ⬜ |
+| 2 | 🐞 | <buggy round or carry-over> | `<path>` | 16/20 | 15 | 🔴 |
+| 3 | 🔁 | <redo> | `<path>` | 0/28 | 25 | ⬜ |
 
 > Short on time: <the 15-minute minimum, one line>
 
@@ -34,11 +33,11 @@ Every day file uses exactly this layout. Rules:
 
 </details>
 
-## 1. 🌱 <Item title> (~25 min)
+## 1. 🧩 <Problem> (~40 min)
 
 - **Goal:** <one line>
 - **File:** `<path>`
-- **Run:** `mvn test -Dtest=<Class>Test` (or "answer in chat")
+- **Run:** `mvn test -Dtest=<Class>Test`
 - **Done when:** <tests / grade>
 - **Hint rule:** stuck 15 min → ask Lumi.
 - **Answer:** questions Q1-Qn below.
@@ -55,11 +54,7 @@ Every day file uses exactly this layout. Rules:
 
 </details>
 
-## 2. 🧩 <Item title> (~40 min)
-
-(same 3-6 bullets + details blocks)
-
-## 3. 🐞 <Item title> (~15 min)
+## 2. 🐞 <Buggy round> (~15 min)
 
 (same 3-6 bullets + details blocks)
 
@@ -67,7 +62,7 @@ Every day file uses exactly this layout. Rules:
 
 | # | For | Question (short; letters only for MCQs) |
 |---|---|---|
-| Q1 | 🌱 | ... |
+| Q1 | 🧩 | ... |
 
 <details><summary>📖 Full question text and options</summary>
 
@@ -89,7 +84,6 @@ Every day file uses exactly this layout. Rules:
 
 | Track | Score /10 | Evidence |
 |---|---|---|
-| 🌱 Spring | | |
 | 🧩 DSA | | |
 | 🐞 Buggy | | |
 
