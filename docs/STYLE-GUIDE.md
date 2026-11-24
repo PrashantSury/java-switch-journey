@@ -3,7 +3,7 @@
 ![Standard](https://img.shields.io/badge/standard-revision%2Fmistakes%2Fdsa.md-purple) ![Applies to](https://img.shields.io/badge/applies%20to-every%20.md%20file-blue)
 
 > [!IMPORTANT]
-> Every `.md` file in this repo opens exactly like [`revision/mistakes/dsa.md`](../revision/mistakes/dsa.md): emoji title, one badge row, an `[!IMPORTANT]` purpose (1-2 sentences), an `[!NOTE]` with a **Legend:** line, then the body. Routines and Lumi must produce this opener for every new or updated file, tasks included.
+> Every `.md` file in this repo opens exactly like [`revision/mistakes/dsa.md`](../revision/mistakes/dsa.md): emoji title, one badge row, an `[!IMPORTANT]` purpose (1-2 sentences), an `[!NOTE]` with a **Legend:** line, then the body. Routines and Lumi must produce this opener for every new or updated file, **except day files** (`tasks/dayNN.md`), which follow [DAY-TEMPLATE.md](DAY-TEMPLATE.md) instead, and the short files Prashant reads (`README.md`, `CONTRIBUTING.md`, `PROBLEMS.md`), which stay plain and concise.
 
 > [!NOTE]
 > **Legend:** ✅ done / correct · ❌ wrong · ⚠️ gotcha · 📌 rule · 🔥 focus · ⬜🟡✅🔴⛔ statuses (see `PROGRESS.md` and [PROGRAM.md](PROGRAM.md)) · 🧩 DSA · 🐞 buggy round · 🗄️ SQL (archived) · 🌱 Spring.
@@ -52,7 +52,7 @@
 | File type | On top of the opener |
 |---|---|
 | **Mistake logs** (`revision/mistakes/<section>.md`: `dsa.md`, `spring.md`; [`revision/mistake-log.md`](../revision/mistake-log.md) is only the index) | One log per section, same table in each (`\| Date \| Problem \| What went wrong \| Redo on day 3 \| Redo on day 7 \|`). Routines append a row to the file of the section, only for **conceptual** mistakes. Cosmetic slips (typos, stale comments, missing braces, unused imports, stray `main()`) are fixed directly in his code and never logged. A new section gets a new file plus one line in the index. |
-| **Daily tasks** (`tasks/dayNN.md`, one file per day) | Badges: Week, Day, slot, time (under the title; evening and end-of-day sections may add a slot badge). IMPORTANT = what the day is for and the done criterion; NOTE = the task legend plus context. Then `## 🌅 Morning` (Spring about 50 / DSA about 35 / Buggy about 15 minutes), `## 🌙 Evening` (review, score each track out of 10, finish pending work), `## 🌒 End of day`, and the specs of the day's tasks written with the [spec templates](#-spec-templates-and-tone); with revise-first topics in a table, work in `- [ ]` checklists, "Done when" in `[!IMPORTANT]`, hints in `[!TIP]`, gotchas in `[!WARNING]`, the carried backlog as a table. |
+| **Daily tasks** (`tasks/dayNN.md`, one file per day) | **Use [DAY-TEMPLATE.md](DAY-TEMPLATE.md) exactly** (no badge row, no IMPORTANT/NOTE opener): header line (day · date · total time) + one Focus/Done-when line, `✅ Today` table, `🔎 Since yesterday`, one `## N. <track> <item>` section per item with 3-6 bullets (goal, file, run `mvn test -Dtest=X`, done when, hint rule), `❓ Questions to answer in chat` (table + full text in `<details>`), `🔁 Redos` table, `📌 Pending` bullets, `🌙 Evening` and `🌒 End of day` as tables, coach notes in the last `<details>`. **No paragraphs outside `<details>`**: the spec templates below go inside each item's `📖 Spec and teaching` block, solutions inside `🔒 Open only after your attempt`. Past days are not rewritten. |
 | **SQL learn lessons** (archived, `archive/sql/learn/lessonNN.md`) | Lesson / time / schema badges; the `⏱ N minutes · schema · status:` line stays inside the NOTE; `## 🎯 What you will learn`, `💡 Concept`, `🧰 Setup`, `🧪 Worked example`, `📝 Exercises` with `### 🔹 Exercise N`, `🔎 Check your work`, `🏁 Done when`. |
 | **Interview answers** | Grade badges in the badge row; verbatim answer in a `diff` block with `-` lines; grade in `[!WARNING]` (<7) or `[!NOTE]`; model answer in `[!TIP]`. |
 | **Revision sheets** (`prerequisites.md`, workbook) | Per topic: `### 📖 Explanation` / `### 📖 Concept notes`, key points in `[!IMPORTANT]`, `### 💡 Example`, `### 🎤 Interview questions` or `### ❓ Questions` (each followed by `> ✍️ My answer:` in the workbook), `### ✅ Section check`. Workbook headings carry a section number and an emoji (`## 🧯 5. Validation and error handling`) and end with `[⬆ Back to contents](#-contents)`. |
@@ -92,6 +92,8 @@
 After section 12 come the **empty stubs**: packages, classes, method signatures, DTOs, `TODO(write by hand)` markers and acceptance criteria. The stubs contain no solution.
 
 ### 🧩 DSA spec
+In a day file, sections 1-4, 6 and 8 go inside the item's `📖 Spec and teaching` `<details>`; 5 and the optimised part of 7 go inside the `🔒` block. "Visible" below means visible before the attempt, not outside `<details>`.
+
 | # | Section | Visible before the attempt? |
 |---|---|---|
 | 1 | Problem understanding, with a worked example | yes |
@@ -120,7 +122,7 @@ The optimised algorithm, its dry run and the answers to the knowledge checks sit
 - The code and the tests are not edited when a spec is rewritten; only the explanation around them.
 
 ### 🔁 Redo card
-A redo card is a three-line spec: the problem, the test class to run (`mvn test -Dtest=<Problem>Test`) and the checklist from [redo-schedule.md](../revision/redo-schedule.md).
+A redo card is one row of the day file's `🔁 Redos` table (redo, stub, `mvn test -Dtest=<Redo>Test`, when, done when, status), plus at most three bullets; the rules come from [redo-schedule.md](../revision/redo-schedule.md).
 
 ## 🔗 Anchors
 - GitHub drops the emoji and keeps the leading hyphen: `## 🧯 5. Validation` is `#-5-validation`. Prefer emoji without a variation selector (🧯, not 🛡️) in headings that are linked to.
