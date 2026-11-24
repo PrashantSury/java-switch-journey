@@ -16,7 +16,7 @@ One row per problem: what it is, where the code lives, how it went. **Next redo 
 ## 🧩 DSA problems (`src/main/java/com/prashant/dsa/<pattern>/`)
 | # | Problem | LC | Diff | Pattern | File | Tests | Solved | Hint | Redos (file · date · result) |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Valid Parentheses | 20 | E | Stack: matching brackets | [ValidParentheses](src/main/java/com/prashant/dsa/stack/ValidParentheses.java) | 2 | | | RedoNov01 · 7 Nov · 🔶 post-feedback · RedoNov08 · 12 Nov · ✅ |
+| 1 | Valid Parentheses | 20 | E | Stack: matching brackets | [ValidParentheses](src/main/java/com/prashant/dsa/stack/ValidParentheses.java) | 20 (18 shared + 2 starter) | | | RedoNov01 · 7 Nov · 🔶 post-feedback · RedoNov08 · 12 Nov · ✅ |
 | 2 | Min Stack | 155 | M | Stack: auxiliary min stack (design) | [MinStack](src/main/java/com/prashant/dsa/stack/MinStack.java) | 10 | | | RedoNov01 · 12 Nov · ✅ |
 | 3 | Score of Parentheses | 856 | M | Stack: nesting depth / running score | [ScoreOfParentheses](src/main/java/com/prashant/dsa/stack/ScoreOfParentheses.java) | 37 | 25 Oct | 🔶 written with help | RedoNov16 · 16 Nov · 🔶 not cold |
 | 4 | Remove All Adjacent Duplicates II | 1209 | M | Stack: count stack (run-length) | [RemoveKAdjacentDuplicates](src/main/java/com/prashant/dsa/stack/RemoveKAdjacentDuplicates.java) | 26 | 29 Oct | | RedoNov16 · 16 Nov · 🔶 not cold |
