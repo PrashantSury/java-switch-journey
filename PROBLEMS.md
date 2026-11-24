@@ -1,10 +1,8 @@
 # 🗂️ Problem tracker
 
-One row per problem: what it is, where the code lives, how it went. **Next redo dates live only in [revision/redo-schedule.md](revision/redo-schedule.md)** (the single source for "what do I redo today?"), so this file never goes stale on dates. Detailed notes stay in [PROGRESS.md](PROGRESS.md).
+Every problem, then a cheat sheet per pattern. Facts as of 24 Nov 2026; next redo dates are kept by the coach in `revision/redo-schedule.md`.
 
-> [!NOTE]
-> **Legend:** ✅ completed · 🟡 in progress · 🔴 revision required · ⬜ not started · 🔶 solved with hints / after a fix · ❌ conceptual miss · E/M/H = Easy/Medium/Hard. A blank date means it is not recorded anywhere. Tests in the 🧩/🐞 tables are the original class; redo files are listed separately.
-> **Update rule:** when a problem is verified, fill its row (date, tests, hint). When a redo is graded, add it to the Redos column. Facts as of **24 Nov 2026**.
+✅ completed · 🔴 revision required · ⬜ not started · 🔶 hints / after a fix · ❌ conceptual miss · E/M/H difficulty · blank = not recorded
 
 ## 📊 Summary
 | Pattern | Done | Open | Problems |
@@ -40,71 +38,14 @@ One row per problem: what it is, where the code lives, how it went. **Next redo 
 | [Day05DecodeString](src/main/java/com/prashant/dailytests/Day05DecodeString.java) | Decode String | 394 | M | Stack of (count, text) | 25 | 19 Nov | 🔶 | |
 | [Day06FirstUniqueCode](src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java) | first index whose code appears once | | E | Frequency counting | 20 | 🔴 16/20 | | |
 
----
+## 📒 Cheat sheets
 
-## 📒 Pattern cheat sheets
-
-### 🥞 Stack
-- **When:** matching pairs (brackets, tags), "undo the last thing", nested structures (`3[a2[c]]`), evaluating expressions, collisions/cancellations between neighbours.
-- **Template:**
-  ```java
-  Deque<Character> stack = new ArrayDeque<>();
-  for (char c : s.toCharArray()) {
-      if (opens(c)) stack.push(c);
-      else if (stack.isEmpty() || stack.pop() != partner(c)) return false;
-  }
-  return stack.isEmpty();
-  ```
-- **Common bugs:** popping an empty stack (check `isEmpty()` first); forgetting the final `isEmpty()` check; operand order on pop (`b = pop(), a = pop()`, then `a - b`); using `Stack` (synchronized, legacy) instead of `ArrayDeque`.
-- **Complexity line:** O(n) time *because each element is pushed once and popped at most once*; O(n) space *because the stack can hold every element*.
-
-### 📉 Monotonic stack
-- **When:** "next/previous greater or smaller element", "how many days until warmer", spans, largest rectangle.
-- **Template (next greater, indices):**
-  ```java
-  int[] ans = new int[n]; Arrays.fill(ans, -1);
-  Deque<Integer> st = new ArrayDeque<>();          // indices, values decreasing
-  for (int i = 0; i < n; i++) {
-      while (!st.isEmpty() && a[i] > a[st.peek()]) ans[st.pop()] = i;
-      st.push(i);
-  }
-  ```
-- **Common bugs:** storing values instead of indices (you lose the distance); `>` vs `>=` with duplicates; in Largest Rectangle using the *current* height instead of the *popped* height, and the width when the stack becomes empty (`i`, not `i - st.peek() - 1`); forgetting the sentinel pass at the end.
-- **Complexity line:** O(n) amortised *because every index is pushed once and popped at most once*.
-
-### #️⃣ Arrays & Hashing
-- **When:** "have I seen this before?" (hash set), "count how many of each" (frequency array/map), "find the partner that completes it" (complement map), "group things that are equivalent" (canonical key).
-- **Templates:**
-  ```java
-  // seen-before
-  Set<Integer> seen = new HashSet<>();
-  for (int x : nums) if (!seen.add(x)) return true;      // add() returns false on duplicate
-  // frequency, lowercase letters
-  int[] count = new int[26];
-  for (char c : s.toCharArray()) count[c - 'a']++;
-  // complement: check BEFORE storing
-  Map<Integer, Integer> idx = new HashMap<>();
-  for (int i = 0; i < n; i++) {
-      long need = (long) target - nums[i];
-      if (need within int range && idx.containsKey((int) need)) return new int[]{idx.get((int) need), i};
-      idx.put(nums[i], i);
-  }
-  // grouping by canonical key
-  Map<String, List<String>> groups = new HashMap<>();
-  groups.computeIfAbsent(key(s), k -> new ArrayList<>()).add(s);
-  ```
-- **Common bugs:** comparing character **sums** instead of counts (`ac` vs `bb`); walking the 26 letters when the question asks for a **string position** (second pass must go `i = 0..n-1`); storing before checking (returns `[i, i]`); `int` overflow in `target - x`; count keys without a separator (`1,11` vs `11,1`).
-- **Complexity line:** O(n) time *because each element costs one O(1) average hash lookup*; O(n) space *because the set/map can hold every element* (O(1) for a fixed `int[26]`).
-
-### 🌳 Backtracking (Generate Parentheses)
-- **When:** "generate all valid ...", choices at each step with rules that prune bad branches.
-- **Template:**
-  ```java
-  void build(StringBuilder sb, int open, int close, int n, List<String> out) {
-      if (sb.length() == 2 * n) { out.add(sb.toString()); return; }
-      if (open < n)     { sb.append('('); build(sb, open + 1, close, n, out); sb.deleteCharAt(sb.length() - 1); }
-      if (close < open) { sb.append(')'); build(sb, open, close + 1, n, out); sb.deleteCharAt(sb.length() - 1); }
-  }
-  ```
-- **Common bugs:** forgetting to undo the choice (`deleteCharAt`); pruning with `close < n` instead of `close < open`; building strings with `+` in every call.
-- **Complexity line:** about O(4^n / √n) results (Catalan number), each O(n) to copy *because every valid string is built once*.
+| Pattern | Use when | Core move | Classic bug | Complexity (because) |
+|---|---|---|---|---|
+| 🥞 Stack | matching pairs, undo-last, nesting (`3[a2[c]]`), expressions, neighbour collisions | push openers; on a closer, pop and compare; end with `isEmpty()` | popping an empty stack; skipping the final `isEmpty()`; RPN operand order (`b = pop(), a = pop()`, then `a - b`); legacy `Stack` instead of `ArrayDeque` | O(n) time, each item pushed once and popped at most once; O(n) space, the stack may hold everything |
+| 📉 Monotonic stack | next/previous greater or smaller, days until warmer, spans, largest rectangle | stack of **indices**, values decreasing; while `a[i] > a[peek]`, pop and answer it with `i` | storing values not indices; `>` vs `>=` on duplicates; Largest Rectangle: use the **popped** height, width `i` when the stack is empty; forgetting the final sentinel pass | O(n) amortised, every index pushed once and popped at most once |
+| #️⃣ Hash set | "seen before?" | `if (!seen.add(x)) return true;` | `contains` + `add` = two lookups | O(n) time, one O(1) average lookup per item; O(n) space |
+| #️⃣ Frequency count | anagrams, first unique, counts | `int[26] count; count[c - 'a']++` | comparing **sums** (`ac` vs `bb`); second pass over the 26 letters instead of string positions `i = 0..n-1` | O(n) time; O(1) space for a fixed `int[26]` |
+| #️⃣ Complement map | pair that sums to target | for each `i`: `need = (long) target - nums[i]`; **check** the map, **then** `put(nums[i], i)` | storing before checking (`[i, i]`); `int` overflow in `target - x` | O(n) time, one lookup per item; O(n) space |
+| #️⃣ Canonical key | group equivalent items (anagrams) | `groups.computeIfAbsent(key(s), k -> new ArrayList<>()).add(s)` | count key without a separator (`1,11` vs `11,1`); `int[]` as a map key (identity `equals`) | O(n·k) count key, O(n·k log k) sorted key; O(n·k) space |
+| 🌳 Backtracking | generate all valid strings/sets with pruning rules | choose → recurse → undo; Generate Parentheses: add `(` if `open < n`, `)` if `close < open` | forgetting to undo (`deleteCharAt`); pruning with `close < n`; string `+` in every call | about O(4^n/√n) results (Catalan), each O(n) to copy |

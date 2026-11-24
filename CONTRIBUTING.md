@@ -1,57 +1,25 @@
-# 🧾 Conventions (for Prashant and for Lumi's routines)
+# 🧾 Rules (short)
 
-These rules apply **from 24 Nov 2026 onwards**. Old files keep their names so the links in the records never break.
+**Naming (new files only; old files keep their names)**
+- DSA problem: `dsa/<pattern>/<Problem>.java` + `<Problem>Test.java`
+- Buggy round: `dailytests/BuggyNN<Problem>.java` (next is `Buggy07`)
+- Cold redo: `dailytests/redo/<Problem>RedoMmmDD.java` (date the stub is handed out, e.g. `CarFleetRedoNov20`)
+- Shared cases: `<Problem>Contract.java` (abstract, next to the original's test)
 
-## 📛 Naming
-| What | Name | Where | Example |
-|---|---|---|---|
-| New DSA problem | `<Problem>` (NeetCode name, PascalCase) | `src/main/java/com/prashant/dsa/<pattern>/` + `src/test/java/.../dsa/<pattern>/<Problem>Test.java` | `dsa/arrayshashing/GroupAnagrams.java` |
-| New buggy round | `BuggyNN<Problem>` (NN continues the old `DayNN` numbering, so the next one is `Buggy07`) | `src/main/java/com/prashant/dailytests/` | `Buggy07TopKFrequent.java` |
-| Cold redo | `<Problem>RedoMmmDD`, the date the blank stub is handed out (`Mmm` = Jan, Feb, ... Dec) | `src/main/java/com/prashant/dailytests/redo/` | `CarFleetRedoNov20.java` |
-| Shared test cases | `<Problem>Contract` (abstract, never run on its own) | next to the original's test | `dsa/stack/CarFleetContract.java` |
+**Stubs**
+- Hand out a stub → add its test class to `open-stubs.txt` (e.g. `**/dsa/arrayshashing/GroupAnagramsTest.java`).
+- It passes → remove the line; it now guards the green suite.
+- `mvn test` must stay green; `mvn test -Popen` shows the open work.
 
-Old names stay as they are: `Day00`-`Day06` buggy rounds, `...Redo` / `...Redo7` redo files.
+**Redo tests (never copy a test file)**
+- Write a tiny subclass of `<Problem>Contract`, e.g.
+  `class CarFleetRedoDec01Test extends CarFleetContract { protected Solver newSolver() { return new CarFleetRedoDec01()::carFleet; } }`
+- Static-method problems (RPN, NextGreaterIndex, ValidParentheses): override the hook, e.g. `evaluate(tokens)`.
+- Stateful problems (MinStack, Day01ArrayStack): copy the adapter from `MinStackTest` / `Day01ArrayStackTest`.
+- First redo of a problem without a contract: turn `<Problem>Test` into `<Problem>Contract` (public abstract, one `protected abstract` hook), then subclass it twice. The test count must not change.
 
-## ➕ Handing out a new stub (problem, buggy round or redo)
-1. Add the stub in `src/main` and its test class in `src/test`.
-2. Add the test class to [`open-stubs.txt`](open-stubs.txt), one line, e.g. `**/dsa/arrayshashing/GroupAnagramsTest.java`.
-3. `mvn test` must stay green (the new class is skipped); `mvn test -Popen` shows it red.
+**Day files** follow [docs/DAY-TEMPLATE.md](docs/DAY-TEMPLATE.md).
 
-## ✅ When the stub passes
-1. Grade it with `mvn test -Dtest=<Class>Test` (all green).
-2. Remove its line from `open-stubs.txt`. From now on the default suite guards it.
-3. Update its row in [PROBLEMS.md](PROBLEMS.md) and the schedule in [revision/redo-schedule.md](revision/redo-schedule.md).
+**Never:** rename old solution files, copy test files, force-push, or use `--no-verify`.
 
-## 🔁 Registering a cold redo's tests (no copying!)
-Each problem's cases live **once** in `<Problem>Contract`. A redo test is a tiny subclass that plugs in the new class:
-
-```java
-package com.prashant.dailytests.redo;
-
-import com.prashant.dsa.stack.CarFleetContract;
-
-/** Runs the shared CarFleetContract cases against {@code CarFleetRedoDec01}. */
-class CarFleetRedoDec01Test extends CarFleetContract {
-    @Override
-    protected Solver newSolver() { return new CarFleetRedoDec01()::carFleet; }
-}
-```
-
-- **Instance method** (`sol.method(...)` style): override `newSolver()` and return `new <Redo>()::<method>` (or `<Redo>::<method>` if the method is static).
-- **Static method** (RPN, NextGreaterIndex, ValidParentheses): override the hook, e.g. `protected int evaluate(String[] tokens) { return Day02RpnEvaluatorRedoDec01.evaluate(tokens); }`.
-- **Stateful design** (MinStack, Day01ArrayStack): override `newStack(...)` and return an adapter; copy the adapter from `MinStackTest` / `Day01ArrayStackTest`.
-- **Problem without a contract yet** (first redo of e.g. TwoSum): turn `<Problem>Test` into `<Problem>Contract` (make it `public abstract`, replace direct calls with one `protected abstract` hook), then make `<Problem>Test` and the redo test subclasses. Check that the test count stays the same before and after.
-- Then add the redo test to `open-stubs.txt` like any other stub.
-
-## 🧪 Commands
-| Goal | Command |
-|---|---|
-| Done suite (must be green) | `mvn test` |
-| Only open stubs | `mvn test -Popen` |
-| Grade one class | `mvn test -Dtest=CarFleetRedoNov20Test` |
-| Everything, open stubs included | `mvn test -Dsurefire.openStubs.excludes=` |
-
-## 🚫 Never
-- Rename or move old solution files (links in the records point at them).
-- Copy a test file for a redo (use the contract).
-- Force-push, or commit with `--no-verify`.
+**Commands:** done suite `mvn test` · open `mvn test -Popen` · one class `mvn test -Dtest=X` · everything `mvn test -Dsurefire.openStubs.excludes=`

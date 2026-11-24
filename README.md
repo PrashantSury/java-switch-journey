@@ -1,43 +1,25 @@
 # ☕ java-switch-journey
 
-![Java](https://img.shields.io/badge/Java-21-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen) ![Tracks](https://img.shields.io/badge/tracks-3-blue) ![Time](https://img.shields.io/badge/day-2h%20%2B%201h-yellow)
+Senior Java backend interview prep: **DSA** (NeetCode by pattern), **buggy rounds** and **cold redos**, plus the daily plan and progress records. Spring work lives in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs) (`my-solutions` branch).
 
-> [!IMPORTANT]
-> Senior Java backend interview preparation, in three tracks: a Spring Boot retail-banking project (parked, in `archive/banking-app`), DSA (NeetCode 150 by pattern) and fix-the-buggy-code problems. SQL was archived on 31 Oct 2026. Start with [docs/PROGRAM.md](docs/PROGRAM.md) (how the program works) and [PROGRESS.md](PROGRESS.md) (where I am).
+## ▶️ How to run (JDK 21, Maven 3.9+)
 
-> [!NOTE]
-> **Legend:** 🧭 program · 📈 tracking · 📋 tasks · 🧩 DSA · 🐞 buggy · 🏦 banking · 🌱 Spring notes · 🔁 revision · 🗄️ archive. Markdown conventions: [docs/STYLE-GUIDE.md](docs/STYLE-GUIDE.md).
-
-## 🗂️ Layout
-| | Path | What |
+| Command | Runs | Expected |
 |---|---|---|
-| 🧭 | [`docs/PROGRAM.md`](docs/PROGRAM.md), [`docs/STYLE-GUIDE.md`](docs/STYLE-GUIDE.md) | the operating model (tracks, time split, statuses, scoring) and the markdown/spec style |
-| 📈 | [`PROGRESS.md`](PROGRESS.md), [`interview-answers.md`](interview-answers.md) | sources of truth: status of every track, graded interview answers |
-| 🧾 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | naming (`<Problem>RedoMmmDD`, `BuggyNN<Problem>`), how to hand out a stub and register a redo's tests |
-| 🗂️ | [`PROBLEMS.md`](PROBLEMS.md) | problem tracker (pattern, difficulty, tests, hints, redos) + a cheat sheet per pattern |
-| 📋 | `tasks/` | one file per day, `dayNN.md`, with the specs of pending tasks; keeps the **last 5 days**, older days move to [`archive/tasks/`](archive/tasks) |
-| 🧩 🐞 | `src/` (root `pom.xml`) | DSA solutions in `dsa/<pattern>/`, buggy rounds in `dailytests/` and `dailytests/redo/`, tests in `src/test/java` |
-| 🏦 | [`archive/banking-app/`](archive/banking-app/README.md) | 🅿️ parked: the Spring Boot banking project (moved to `archive/` on 24 Nov 2026, files intact, still builds); design in [`project-architecture.md`](archive/banking-app/project-architecture.md) |
-| 🌱 | [`archive/spring-boot/`](archive/spring-boot/) | moved to `archive/` on 24 Nov 2026 (active Spring work is in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs)): the finishing `course-practice` module, the revision workbook and `prerequisites.md`, graded answers in `interview-answers/` |
-| 🔁 | `revision/` | spaced-repetition calendar ([`redo-schedule.md`](revision/redo-schedule.md)) and one mistake log per track (`mistakes/dsa.md`, `mistakes/spring.md`; index in [`mistake-log.md`](revision/mistake-log.md)) |
-| 🗄️ | [`archive/`](archive/README.md) | the retired SQL track and the early `day02-05-morning` task files, kept for history |
+| `mvn test` | everything **done** (skips [`open-stubs.txt`](open-stubs.txt)) | 🟢 always green |
+| `mvn test -Popen` | only the open stubs (today's work) | 🔴 until done |
+| `mvn test -Dtest=TwoSumTest` | one class, open or done | grade one push |
 
-> [!NOTE]
-> 🌱 **Spring lives in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs)** (the Ledgerly roadmap; my work is on its `my-solutions` branch). This repo is DSA + buggy rounds + records.
+## 🗂️ Where things are
 
-## ▶️ How to run
-Needs JDK 21 and Maven 3.9+. The root `pom.xml` covers DSA (`dsa/<pattern>/`) and buggy rounds (`dailytests/`, `dailytests/redo/`).
+| Open this | For |
+|---|---|
+| [`tasks/dayNN.md`](tasks/) | **today's plan** (last 5 days; older in [`archive/tasks/`](archive/tasks/)) |
+| [`PROBLEMS.md`](PROBLEMS.md) | every problem + pattern cheat sheets |
+| [`PROGRESS.md`](PROGRESS.md) | "Now" summary at the top, full status below |
+| [`interview-answers.md`](interview-answers.md) | graded interview answers |
+| `src/main/java/com/prashant/dsa/<pattern>/` | DSA solutions |
+| `src/main/java/com/prashant/dailytests/` (+ `redo/`) | buggy rounds and redos |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | naming and stub rules (short) |
 
-| Command | What it runs | Expected |
-|---|---|---|
-| `mvn test` | the **done** suite: everything except the classes listed in [`open-stubs.txt`](open-stubs.txt) | 🟢 always green; red means something finished broke |
-| `mvn test -Popen` | **only** the open stubs listed in `open-stubs.txt` (today's problem, unfinished buggy round, pending redos) | 🔴 red until the work is done |
-| `mvn test -Dtest=TwoSumTest` | one class (works for open and done classes alike) | grade a single push |
-| `mvn test -Dtest='GroupAnagramsTest,Day06*'` | several classes, wildcards allowed | |
-
-**`open-stubs.txt`**: one pattern per line, e.g. `**/dsa/arrayshashing/GroupAnagramsTest.java`; `#` starts a comment.
-- When a stub is handed out (new problem, buggy round or redo), **add** its test class.
-- When the class passes all its tests, **remove** the line, so it joins the green suite and guards against regressions.
-
-> [!TIP]
-> `archive/banking-app` and `archive/spring-boot/course-practice` are separate Maven projects with their own `pom.xml`; the root `mvn test` does not build them. To build one: `mvn -f archive/banking-app/pom.xml test`.
+Coach-maintained, no need to open: `revision/` (redo calendar, mistake logs), `docs/` (program, style guide, [day template](docs/DAY-TEMPLATE.md)), `open-stubs.txt`, `archive/` (SQL, old days, progress history, parked [banking-app](archive/banking-app/README.md), old `spring-boot/`).
