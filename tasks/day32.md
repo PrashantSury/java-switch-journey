@@ -1,3 +1,21 @@
+# Day 32 · Mon 23 Nov · 120 min
+
+**Focus:** catch-up Monday — Ch 3 re-answer, Two Sum with a near-full skeleton, Day06 last loop, Asteroid cold · Past day: kept for history; the original day file is in the block below, unchanged.
+
+## ✅ Today (as planned)
+
+| # | Min | Track | Item | Done when |
+|---|---|---|---|---|
+| 1 | 0-20 | 🌱 | **Ch 3 interview re-answer**, part 2 + part 3, in chat (warm-up demo below first) | graded in chat |
+| 2 | 20-30 | 🌱 | Senior **Q2** + **Q3**, then the floor-vs-cap line | graded in chat; ≥ 7 overall unlocks Chapter 4 tomorrow |
+| 3 | 30-65 | 🧩 | **Two Sum** carry-over: guiding questions → pseudocode → near-full skeleton → retype from a blank method | `TwoSumTest` **19/19** pushed |
+| 4 | 65-80 | 🐞 | Buggy slot (Monday, no new round): **`Day06FirstUniqueCode`** last loop only + symptom-group comment + one comment per fix | `Day06FirstUniqueCodeTest` **20/20** pushed |
+| 5 | 80-105 | 🔁 | **`AsteroidCollisionRedoNov17`** cold, 25-min timer | pushed, even red |
+| 6 | 105-120 | 🧩 | Buffer: `DailyTemperatures` comments (5 min) → frequency-counting pack exercise ([day28.md](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | pushed / answered |
+| 7 | Evening | 🔁 | **`CarFleetRedoNov20`** cold (after the review) | pushed, even red |
+
+<details><summary>📜 Full day file (original layout: morning specs, evening review, end of day)</summary>
+
 # 📅 Day 32 (Mon 23 Nov): catch-up Monday — Ch 3 re-answer, Two Sum with a near-full skeleton, Day06 last loop, Asteroid cold
 
 ![Week](https://img.shields.io/badge/week-5-blue) ![Day](https://img.shields.io/badge/day-32-blue) ![Type](https://img.shields.io/badge/type-catch--up%20weekday-orange) ![Spring](https://img.shields.io/badge/Spring-Ch%203%20re--answer-orange) ![DSA](https://img.shields.io/badge/TwoSum-0%2F19%20carry--over-orange) ![Buggy](https://img.shields.io/badge/Day06-16%2F20-orange) ![Redos](https://img.shields.io/badge/redos-Asteroid%20%2B%20CarFleet-purple) ![DSA%20count](https://img.shields.io/badge/DSA%20verified-9%20of%2045--50-informational)
@@ -222,3 +240,5 @@ Then answer in one line each: (1) What does `letter` stand for in this loop: a l
 
 > [!NOTE]
 > At the measured pace (about 2.3 a week) the goal lands around March 2027. Closing Two Sum today and then one new problem each weekday is what keeps 45-50 reachable.
+
+</details>

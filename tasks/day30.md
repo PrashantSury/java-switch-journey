@@ -1,3 +1,22 @@
+# Day 30 · Sat 21 Nov · 120 min
+
+**Focus:** weekend catch-up — two interview answers, Two Sum and Day06 with stronger hints, two cold redos · Past day: kept for history; the original day file is in the block below, unchanged.
+
+## ✅ Today (as planned)
+
+| # | Min | Track | Item | Done when |
+|---|---|---|---|---|
+| 1 | 0-10 | 🌱 | **Chapter 2 Task 6 interview answer** in chat + Ch 3 knowledge checks 1-3 (letters only) | answered in chat → closes Chapter 2 (owed since 19 Nov) |
+| 2 | 10-30 | 🌱 | **Ch 3 re-answer** (Q1 parts 2-3) + senior **Q2** and **Q3** | written in labs `chapters/03-.../interview-answer.md` on `my-solutions` and pushed, or in chat |
+| 3 | 30-35 | 🌱 | Mistake-log redo: **floor vs cap** (below) | one line in chat |
+| 4 | 35-65 | 🧩 | **Two Sum** carry-over, day 2 of 2, guiding questions → partial skeleton | `TwoSumTest` **19/19** pushed |
+| 5 | 65-80 | 🐞 | **`Day06FirstUniqueCode`** carry-over, symptom groups given | `Day06FirstUniqueCodeTest` **20/20** pushed, one comment per fix |
+| 6 | 80-105 | 🔁 | **`AsteroidCollisionRedoNov17`** cold (25-min timer) | 28/28 pushed (push even if red) |
+| 7 | 105-120 | 🔁 | **`CarFleetRedoNov20`** cold — start it; finish in the evening slot if needed | 37/37 pushed |
+| 8 | ~2 PM | 📆 | Weekly performance review (automatic) | — |
+
+<details><summary>📜 Full day file (original layout: morning specs, evening review, end of day)</summary>
+
 # 📅 Day 30 (Sat 21 Nov): weekend catch-up — two interview answers, Two Sum and Day06 with stronger hints, two cold redos
 
 ![Week](https://img.shields.io/badge/week-4-blue) ![Day](https://img.shields.io/badge/day-30-blue) ![Type](https://img.shields.io/badge/type-weekend%20(no%20new%20problems)-lightgrey) ![Spring](https://img.shields.io/badge/Spring-interview%20answers-green) ![DSA](https://img.shields.io/badge/TwoSum-0%2F19%20day%202%20of%202-orange) ![Buggy](https://img.shields.io/badge/Day06-6%2F20%20day%202-orange) ![Redos](https://img.shields.io/badge/redos-Asteroid%20%2B%20CarFleet-purple)
@@ -231,3 +250,5 @@ Nothing landed today, so I can't score any track honestly. I won't invent a numb
 
 > [!IMPORTANT]
 > **First task Sun 22 Nov:** `git pull` both repos (this repo has tonight's commits on top of `41abb48`). Then the **Spring Ch 3 interview re-answer** in chat (~15 min): part 2, why a singleton bean's field races (the bean's fields live on the **heap**, shared by every request thread, while locals live on **each thread's own stack**) plus **two real fixes** (keep the bean stateless with state in locals / the request / the DB, or a thread-safe type or lock for the read-modify-write, e.g. `AtomicLong`, or a DB `UPDATE ... SET total = total + ?` when it must survive several instances); part 3, the *why* for `@Component` vs `@Bean`; then senior Q2/Q3 and the floor-vs-cap line. Still no Chapter 4. Then 🐞 **`Day06FirstUniqueCode` guided walkthrough** (we trace `"aab"` together and rewrite only the last loop to walk string positions → 20/20, plus the symptom-group comment and one comment per fix) and 🧩 **Two Sum guided walkthrough** (skeleton blanks filled together, then retyped from a blank method → 19/19). Evening: 🔁 `AsteroidCollisionRedoNov17` + `CarFleetRedoNov20`, cold. **Pending items: 10** ([PROGRESS.md](../PROGRESS.md#-pending)).
+
+</details>

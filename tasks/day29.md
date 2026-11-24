@@ -1,3 +1,23 @@
+# Day 29 · Fri 20 Nov · 120 min morning + evening redos
+
+**Focus:** close Chapter 2's interview, start Chapter 3, Two Sum, Friday buggy round · Past day: kept for history; the original day file is in the block below, unchanged.
+
+## ✅ Today (as planned)
+
+| # | Minutes | Track | Item | Done when |
+|---|---|---|---|---|
+| 1 | 0-3 | 🌱 | `git pull` both repos; `git checkout my-solutions` in labs | clean pull |
+| 2 | 3-15 | 🌱 | **Chapter 2 Task 6 interview answer** + day28 knowledge checks 1-3, in chat | answered → graded in chat → Chapter 2 ✅ |
+| 3 | 15-60 | 🌱 | **Chapter 3 Tasks 1-2** (`@Component`, then a `@Bean` `Clock`). Stretch, only if both are green: Tasks 3 + 5 **together** | `task1a`-`task2b` green on pushed `my-solutions` (4/15) |
+| 4 | 60-70 | 🧩 | Weak pack **debugging exercise** (sum vs every slot) + Valid Anagram knowledge checks 1-3, in chat | answered in chat |
+| 5 | 70-100 | 🧩 | **Two Sum** (new, Arrays & Hashing 3 of 9): pseudocode + brute force first | `TwoSumTest` **19/19** pushed |
+| 6 | 100-105 | 🐞 | `DailyTemperatures` brute-force + pseudocode **comments** (open since 12 Nov) | comment-only push |
+| 7 | 105-118 | 🐞 | **`Day06FirstUniqueCode`** (Friday round): symptom-group comment **before** any fix | `Day06FirstUniqueCodeTest` **20/20** pushed (if not reached, it carries to Sat with stronger hints) |
+| 8 | 118-120 | — | Push, buffer, hint requests | nothing left unpushed |
+| 9 | Evening ③ (cap 2) | 🔁 | `AsteroidCollision` then `CarFleet`, cold, 20-30 min each | see the redo table below |
+
+<details><summary>📜 Full day file (original layout: morning specs, evening review, end of day)</summary>
+
 # 📅 Day 29 (Fri 20 Nov): close Chapter 2's interview, start Chapter 3, Two Sum, Friday buggy round
 
 ![Week](https://img.shields.io/badge/Week-4-blue) ![Day](https://img.shields.io/badge/Day-29-blue) ![Slot](https://img.shields.io/badge/slot-6%20AM-yellow) ![Time](https://img.shields.io/badge/time-2%20h-green) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen) ![Java](https://img.shields.io/badge/Java-21-orange)
@@ -464,3 +484,5 @@ You went further than the plan in Spring: all six Chapter 3 tasks green on the f
 
 > [!IMPORTANT]
 > **First task Sat 21 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Chapter 2 Task 6 interview answer in chat** (~10 min): the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, and how to see why an auto-configuration did or didn't apply (`--debug`), plus Ch 3 knowledge checks 1-3, letters only. That closes Chapter 2. Next: the **Ch 3 interview re-answer** (what really makes a singleton safe) + senior Q2/Q3; no Chapter 4 yet. 🧩 **Two Sum** carry-over with stronger hints, then the frequency-counting exercise + Valid Anagram checks. 🐞 `Day06FirstUniqueCode` with stronger hints + `DailyTemperatures` comments. 🔁 `AsteroidCollisionRedoNov17` + `CarFleetRedoNov20`, cold. 📆 Weekly review ~2 PM IST. **Pending items: 11** ([PROGRESS.md](../PROGRESS.md#-pending)).
+
+</details>

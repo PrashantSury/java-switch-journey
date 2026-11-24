@@ -1,3 +1,21 @@
+# Day 31 · Sun 22 Nov · 120 min
+
+**Focus:** weekend catch-up — Ch 3 re-answer, Day06 and Two Sum guided walkthroughs, two cold redos · Past day: kept for history; the original day file is in the block below, unchanged.
+
+## ✅ Today (as planned)
+
+| # | Min | Track | Item | Done when |
+|---|---|---|---|---|
+| 1 | 0-35 | 🌱 | **Ch 3 interview re-answer** in chat: part 2 (why a singleton bean isn't thread-safe by default: where fields live vs where locals live, plus two real fixes), part 3 (the *why* behind `@Component` vs `@Bean`); senior **Q2** (`TransferService` `runningTotal` drift, one fix that survives 3 instances and a restart) and **Q3** (a prototype `Receipt` inside a singleton); floor-vs-cap line; Ch 3 knowledge checks 1-3 (letters only). Questions in [day30.md §1](day30.md#-1-spring-close-chapter-2s-interview-re-answer-chapter-3-35-min-no-new-chapter) | graded in chat |
+| 2 | 35-55 | 🐞 | **`Day06FirstUniqueCode`** guided: trace `"aab"` by hand (answer 2); what should the last loop's index stand for, and what is its upper bound? Rewrite only the last loop; symptom-group comment + one comment per fix | 20/20 pushed |
+| 3 | 55-85 | 🧩 | **Two Sum** guided: (1) what completes the pair? (2) what should an O(1) lookup remember? (3) check before store or store before check? (`[3,2,4]`, target 6) (4) int overflow when target is `MIN_VALUE`? Then pseudocode + three "because" lines, fill the skeleton blanks, retype from a blank method | 19/19 pushed |
+| 4 | 85-90 | 🧩 | Frequency-counting weak-pack exercise + Valid Anagram checks ([day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) | answered |
+| 5 | 90-115 | 🔁 | **`AsteroidCollisionRedoNov17`** cold, 25 min (moved to the morning after 5 skipped evenings) | 28/28 pushed (push even if red) |
+| 6 | 115-120 | 🧩 | `DailyTemperatures` comments | pushed |
+| 7 | Evening | 🔁 | **`CarFleetRedoNov20`** cold | 37/37 pushed |
+
+<details><summary>📜 Full day file (original layout: morning specs, evening review, end of day)</summary>
+
 # 📅 Day 31 (Sun 22 Nov): weekend catch-up — Ch 3 re-answer, Day06 and Two Sum guided walkthroughs, two cold redos
 
 ![Week](https://img.shields.io/badge/week-5-blue) ![Day](https://img.shields.io/badge/day-31-blue) ![Type](https://img.shields.io/badge/type-weekend%20(no%20new%20problems)-lightgrey) ![Spring](https://img.shields.io/badge/Spring-Ch%203%20re--answer-orange) ![DSA](https://img.shields.io/badge/TwoSum-0%2F19%20guided-orange) ![Buggy](https://img.shields.io/badge/Day06-16%2F20-orange) ![Redos](https://img.shields.io/badge/redos-Asteroid%20%2B%20CarFleet-purple)
@@ -103,3 +121,5 @@ Six days in a row with little or no landed work means the plan is too big right 
 
 > [!IMPORTANT]
 > **First task Mon 23 Nov:** `git pull` this repo (tonight's records are on top of `c85379f`). Then the **Spring Ch 3 interview re-answer** in chat (~20 min): part 2, where a singleton bean's field lives (the **heap**, shared by every request thread) compared with a local variable (each thread's **own stack**), plus **two real fixes**; part 3, the *why* for `@Component` vs `@Bean`; then senior Q2. Chapter 4 opens only once this is graded 7 or more.
+
+</details>
