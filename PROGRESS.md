@@ -34,16 +34,16 @@ mvn test          # root project: DSA and buggy rounds
 | 🧭 | `docs/PROGRAM.md`, `docs/STYLE-GUIDE.md` | operating model; markdown and spec style |
 | 🧩 | `src/main/java/com/prashant/dsa/<pattern>/` | DSA solutions, tests in `src/test/java/...` |
 | 🐞 | `src/main/java/com/prashant/dailytests/` and `.../redo/` | buggy rounds and redos, tests in `src/test/java/...` |
-| 🏦 | `banking-app/` | the banking project ([design](banking-app/project-architecture.md)) |
-| 🌱 | `spring-boot/` | `course-practice` (foundation ✅ B2), revision workbook, graded answers — **active Spring slot from 6 Nov:** [`PrashantSury/spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) |
-| 📋 | `tasks/` | one file per day, `dayNN.md`; last 5 days only, older in [`archive/tasks/`](archive/tasks/) |
+| 🏦 | `archive/banking-app/` (🅿️ parked, moved 24 Nov) | the banking project ([design](archive/banking-app/project-architecture.md)) |
+| 🌱 | `archive/spring-boot/` (moved 24 Nov) | `course-practice` (foundation ✅ B2), revision workbook, graded answers — **active Spring slot from 6 Nov:** [`PrashantSury/spring-boot-labs`](https://github.com/PrashantSury/spring-boot-labs) |
+| 📋 | `tasks/` | one file per day, `dayNN.md`; last 5 days only, older in [`archive/tasks/`](archive/tasks) |
 | 🔁 | `revision/` | `redo-schedule.md`, `mistakes/dsa.md`, `mistakes/spring.md`, index `mistake-log.md` |
 | 🗄️ | `archive/` | retired SQL and the early `day02-05-morning` files ([archive/README.md](archive/README.md)) |
 
 ## 🏦 Spring Boot track
 ### 🧱 Banking modules (the project)
 > [!NOTE]
-> Order follows the concepts each module introduces ([project-architecture.md](banking-app/project-architecture.md)). A module is ✅ COMPLETED only after its tests pass and the review has read the code. Milestone 0 (setup: Docker Postgres 5433, Flyway V1, health UP) is ✅ COMPLETED (24 Oct).
+> Order follows the concepts each module introduces ([project-architecture.md](archive/banking-app/project-architecture.md)). A module is ✅ COMPLETED only after its tests pass and the review has read the code. Milestone 0 (setup: Docker Postgres 5433, Flyway V1, health UP) is ✅ COMPLETED (24 Oct).
 
 | # | Module | Concepts introduced | Status |
 |---|---|---|---|
@@ -128,8 +128,8 @@ mvn test          # root project: DSA and buggy rounds
 |---|---|---|
 | Day 01 | ⬜ NOT_STARTED | no graded record |
 | Day 02 | 🟡 IN_PROGRESS | 5 / 7 / 5; re-answer Q1, Q3 |
-| Day 03 | 🟡 IN_PROGRESS | 17/30 (5 / 5 / 7); re-answer Q1, Q2 · [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| Day 04 | ✅ COMPLETED (1 Nov) | first attempt 15/30 (5 / 4 / 6); re-answers 26/30 (Q1 8, Q2 9, Q3 9), graded in chat · [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
+| Day 03 | 🟡 IN_PROGRESS | 17/30 (5 / 5 / 7); re-answer Q1, Q2 · [day03-answers.md](archive/spring-boot/interview-answers/day03-answers.md) |
+| Day 04 | ✅ COMPLETED (1 Nov) | first attempt 15/30 (5 / 4 / 6); re-answers 26/30 (Q1 8, Q2 9, Q3 9), graded in chat · [day04-answers.md](archive/spring-boot/interview-answers/day04-answers.md) |
 | Score of Parentheses follow-up | ⬜ NOT_STARTED | answers pending |
 | labs Chapter 2 Task 6 (`@SpringBootApplication`) | ✅ COMPLETED (21 Nov) | code 19/19 (19 Nov); interview **7/10** in chat 21 Nov 9:38-9:40 PM IST: part 1 ✅; part 2 "gets scanned" → corrected to "not scanned → 404"; part 3 first explained why auto-config applies, then `--debug =true` (accepted) → **Chapter 2 closed** · [interview-answers.md](interview-answers.md) · [day30.md end of day](tasks/day30.md#-end-of-day) · [day28.md Task 6](archive/tasks/day28.md#-1-chapter-2-task-6-interview-the-application-class-17-min--15-min-interview) |
 | labs Chapter 3 Task 6 (singleton beans, `@Component` vs `@Bean`) | 🔴 REVISION_REQUIRED (20 Nov) | written in `interview-answer.md` (`e619f82`): **5/10**, part 1 exact, part 2 fix wrong (deep copies), part 3 missing the why; re-answer + senior Q2/Q3 not given 21 Nov → **Sun 22 Nov, first task** · [interview-answers.md](interview-answers.md) · [day29.md evening](tasks/day29.md#-evening-20-nov-review-scores-tonight-and-tomorrow) |

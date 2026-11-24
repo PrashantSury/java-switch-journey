@@ -6,7 +6,7 @@
 > The design of the retail-banking project: architecture, module dependencies, API contracts, database schema, design decisions, security and deployment. Everything marked ✅ **built** is read from the code and config in this repo. Everything marked 📐 **planned** is intent that is not written yet, and it can change when a module is built.
 
 > [!NOTE]
-> **Legend:** ✅ built (in the code today) · 🟡 partly built · 📐 planned (not written) · 🏦 module · 🔐 security · 🛡️ database. Module status values are the program statuses in [docs/PROGRAM.md](../docs/PROGRAM.md); live status is in [PROGRESS.md](../PROGRESS.md). Setup story: [SETUP-JOURNAL.md](SETUP-JOURNAL.md). Package layout and rules: [README.md](README.md).
+> **Legend:** ✅ built (in the code today) · 🟡 partly built · 📐 planned (not written) · 🏦 module · 🔐 security · 🛡️ database. Module status values are the program statuses in [docs/PROGRAM.md](../../docs/PROGRAM.md); live status is in [PROGRESS.md](../../PROGRESS.md). Setup story: [SETUP-JOURNAL.md](SETUP-JOURNAL.md). Package layout and rules: [README.md](README.md).
 
 ## 🎯 1. What exists today
 | Area | State | Facts |

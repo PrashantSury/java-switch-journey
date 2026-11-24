@@ -162,7 +162,7 @@ None.
 | 2 | Primary key type for `users` (public id in the token `sub` claim) | `bigint` identity or `uuid`; say which and why |
 | 3 | How is "Teller01 = teller01" prevented? | unique index on `lower(username)` or a `citext` column |
 | 4 | What does the password column hold, and how wide must it be? | BCrypt hash string, not the password |
-| 5 | Which columns come from `BaseEntity`? | read [`BaseEntity.java`](../../banking-app/src/main/java/com/prashant/banking/common/BaseEntity.java) and copy its columns |
+| 5 | Which columns come from `BaseEntity`? | read [`BaseEntity.java`](../banking-app/src/main/java/com/prashant/banking/common/BaseEntity.java) and copy its columns |
 
 #### Stubs
 ```text

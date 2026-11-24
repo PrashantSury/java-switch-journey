@@ -6,10 +6,10 @@
 > Re-read before revising. Answer format to practise: **definition → difference → when to use → example**. All three answers are partial, so the set is 🔴 REVISION_REQUIRED until you re-answer Q1-Q3 in chat (by Tue 3 Nov).
 
 > [!NOTE]
-> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: the old `day04-morning.md`, now [archived](../../archive/tasks/day02-05-morning.md) · Answered in chat and graded 31 Oct 2026. Section: §5 Validation and error handling (with §2 Request flow).
+> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: the old `day04-morning.md`, now [archived](../../tasks/day02-05-morning.md) · Answered in chat and graded 31 Oct 2026. Section: §5 Validation and error handling (with §2 Request flow).
 
 > [!WARNING]
-> **Total: 15/30.** Q1, Q2 and Q3 are all 🔴 REVISION_REQUIRED. Q1 and Q3 are logged in [mistakes/spring.md](../../revision/mistakes/spring.md) (redo 3 Nov and 7 Nov).
+> **Total: 15/30.** Q1, Q2 and Q3 are all 🔴 REVISION_REQUIRED. Q1 and Q3 are logged in [mistakes/spring.md](../../../revision/mistakes/spring.md) (redo 3 Nov and 7 Nov).
 
 ## ❓ Q1. How does a JSON body become a validated `StudentRequest`? Which component converts it, which exception is thrown when validation fails, and what happens with malformed JSON?
 

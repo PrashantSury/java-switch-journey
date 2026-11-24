@@ -11,22 +11,22 @@
 | Day | Topic | Status | File |
 |---|---|---|---|
 | 01 | — | ⬜ NOT_STARTED (no graded record found) | — |
-| 02 | Core / DI / mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 7/10 ✅ · Q3 5/10; re-answer Q1, Q3 | [day02-answers.md](spring-boot/interview-answers/day02-answers.md) |
-| 03 | HTTP semantics, mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 5/10 · Q3 7/10 ✅ (17/30); re-answer Q1, Q2 | [day03-answers.md](spring-boot/interview-answers/day03-answers.md) |
-| 04 | Request flow, DTOs, errors | ✅ COMPLETED via re-answers (1 Nov: 8/10 · 9/10 · 9/10, 26/30); first answers Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](spring-boot/interview-answers/day04-answers.md) |
+| 02 | Core / DI / mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 7/10 ✅ · Q3 5/10; re-answer Q1, Q3 | [day02-answers.md](archive/spring-boot/interview-answers/day02-answers.md) |
+| 03 | HTTP semantics, mapping | 🟡 IN_PROGRESS: Q1 5/10 · Q2 5/10 · Q3 7/10 ✅ (17/30); re-answer Q1, Q2 | [day03-answers.md](archive/spring-boot/interview-answers/day03-answers.md) |
+| 04 | Request flow, DTOs, errors | ✅ COMPLETED via re-answers (1 Nov: 8/10 · 9/10 · 9/10, 26/30); first answers Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](archive/spring-boot/interview-answers/day04-answers.md) |
 | SoP | Score of Parentheses follow-up | ⬜ NOT_STARTED (answers pending) | below |
 | labs Ch1 | Maven / parent / scopes (`spring-boot-labs`) | ✅ COMPLETED (15 Nov, chat interview **7/10**; scopes grid recall 10/10 on 16 Nov) | below · [day24.md](archive/tasks/day24.md#-chapter-1-interview-grade-807-815-am-ist) |
 | labs Ch2 | Query params, request binding, `@SpringBootApplication` (`spring-boot-labs`) | ✅ COMPLETED (21 Nov): Task 6 interview (Q4) **7/10** in chat after two corrections; code 19/19. Q1-Q3 are extra practice, not graded | below · [day30.md end of day](tasks/day30.md#-end-of-day) |
 | labs Ch3 | Singleton beans, `@Component` vs `@Bean` (`spring-boot-labs`) | 🔴 REVISION_REQUIRED: Q1 written **5/10** (20 Nov); re-answer + Q2/Q3 first on Sun 22 Nov | below |
 
 ## 📅 Day 03 — 🟡 IN_PROGRESS (17/30)
-Source: the old `day03-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day03-answers.md](spring-boot/interview-answers/day03-answers.md)
+Source: the old `day03-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day03-answers.md](archive/spring-boot/interview-answers/day03-answers.md)
 
 > [!NOTE]
 > Q1 5/10 · Q2 5/10 · Q3 7/10. Q1 and Q2 are 🟡 `IN_PROGRESS` (re-answer them); Q3 is ✅ `COMPLETED`.
 
 ## 📅 Day 04 — ✅ COMPLETED via re-answers (26/30; first attempt 15/30)
-Source: the old `day04-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day04-answers.md](spring-boot/interview-answers/day04-answers.md)
+Source: the old `day04-morning.md`, now [archived](archive/tasks/day02-05-morning.md) · Full answers and grades: [day04-answers.md](archive/spring-boot/interview-answers/day04-answers.md)
 
 > [!WARNING]
 > Q1 5/10 · Q2 4/10 · Q3 6/10. All three are partial, so all three are 🔴 `REVISION_REQUIRED`: re-answer them in chat by Tue 3 Nov. Q1 missed `MethodArgumentNotValidException`, Q2 was vague, Q3 missed the race condition (unique constraint + `DataIntegrityViolationException` → 409). Re-answered 1 Nov: **8/10 · 9/10 · 9/10 (26/30)** ✅, so the set is closed.

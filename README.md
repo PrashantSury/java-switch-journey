@@ -3,7 +3,7 @@
 ![Java](https://img.shields.io/badge/Java-21-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen) ![Tracks](https://img.shields.io/badge/tracks-3-blue) ![Time](https://img.shields.io/badge/day-2h%20%2B%201h-yellow)
 
 > [!IMPORTANT]
-> Senior Java backend interview preparation, in three tracks: a Spring Boot retail-banking project, DSA (NeetCode 150 by pattern) and fix-the-buggy-code problems. SQL was archived on 31 Oct 2026. Start with [docs/PROGRAM.md](docs/PROGRAM.md) (how the program works) and [PROGRESS.md](PROGRESS.md) (where I am).
+> Senior Java backend interview preparation, in three tracks: a Spring Boot retail-banking project (parked, in `archive/banking-app`), DSA (NeetCode 150 by pattern) and fix-the-buggy-code problems. SQL was archived on 31 Oct 2026. Start with [docs/PROGRAM.md](docs/PROGRAM.md) (how the program works) and [PROGRESS.md](PROGRESS.md) (where I am).
 
 > [!NOTE]
 > **Legend:** 🧭 program · 📈 tracking · 📋 tasks · 🧩 DSA · 🐞 buggy · 🏦 banking · 🌱 Spring notes · 🔁 revision · 🗄️ archive. Markdown conventions: [docs/STYLE-GUIDE.md](docs/STYLE-GUIDE.md).
@@ -15,10 +15,10 @@
 | 📈 | [`PROGRESS.md`](PROGRESS.md), [`interview-answers.md`](interview-answers.md) | sources of truth: status of every track, graded interview answers |
 | 🧾 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | naming (`<Problem>RedoMmmDD`, `BuggyNN<Problem>`), how to hand out a stub and register a redo's tests |
 | 🗂️ | [`PROBLEMS.md`](PROBLEMS.md) | problem tracker (pattern, difficulty, tests, hints, redos) + a cheat sheet per pattern |
-| 📋 | `tasks/` | one file per day, `dayNN.md`, with the specs of pending tasks; keeps the **last 5 days**, older days move to [`archive/tasks/`](archive/tasks/) |
+| 📋 | `tasks/` | one file per day, `dayNN.md`, with the specs of pending tasks; keeps the **last 5 days**, older days move to [`archive/tasks/`](archive/tasks) |
 | 🧩 🐞 | `src/` (root `pom.xml`) | DSA solutions in `dsa/<pattern>/`, buggy rounds in `dailytests/` and `dailytests/redo/`, tests in `src/test/java` |
-| 🏦 | [`banking-app/`](banking-app/README.md) | the Spring Boot banking project; design in [`project-architecture.md`](banking-app/project-architecture.md) |
-| 🌱 | `spring-boot/` | the finishing `course-practice` module, the revision workbook and `prerequisites.md`, graded answers in `interview-answers/` |
+| 🏦 | [`archive/banking-app/`](archive/banking-app/README.md) | 🅿️ parked: the Spring Boot banking project (moved to `archive/` on 24 Nov 2026, files intact, still builds); design in [`project-architecture.md`](archive/banking-app/project-architecture.md) |
+| 🌱 | [`archive/spring-boot/`](archive/spring-boot/) | moved to `archive/` on 24 Nov 2026 (active Spring work is in [spring-boot-labs](https://github.com/PrashantSury/spring-boot-labs)): the finishing `course-practice` module, the revision workbook and `prerequisites.md`, graded answers in `interview-answers/` |
 | 🔁 | `revision/` | spaced-repetition calendar ([`redo-schedule.md`](revision/redo-schedule.md)) and one mistake log per track (`mistakes/dsa.md`, `mistakes/spring.md`; index in [`mistake-log.md`](revision/mistake-log.md)) |
 | 🗄️ | [`archive/`](archive/README.md) | the retired SQL track and the early `day02-05-morning` task files, kept for history |
 
@@ -40,4 +40,4 @@ Needs JDK 21 and Maven 3.9+. The root `pom.xml` covers DSA (`dsa/<pattern>/`) an
 - When the class passes all its tests, **remove** the line, so it joins the green suite and guards against regressions.
 
 > [!TIP]
-> `banking-app` and `spring-boot/course-practice` are separate Maven projects with their own `pom.xml`; the root `mvn test` does not build them.
+> `archive/banking-app` and `archive/spring-boot/course-practice` are separate Maven projects with their own `pom.xml`; the root `mvn test` does not build them. To build one: `mvn -f archive/banking-app/pom.xml test`.

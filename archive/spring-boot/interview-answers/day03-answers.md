@@ -6,7 +6,7 @@
 > Re-read before revising. Answer format to practise: **definition → difference → when to use → example**.
 
 > [!NOTE]
-> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: the old `day03-morning.md`, now [archived](../../archive/tasks/day02-05-morning.md) · Graded 28 Oct 2026.
+> **Legend:** ❌ your answer (verbatim) · ✅ correct · ⚠️ gap · 🔧 correction · grade badges: red < 5, orange 5-6, yellowgreen 7-8, brightgreen 9-10. Source questions: the old `day03-morning.md`, now [archived](../../tasks/day02-05-morning.md) · Graded 28 Oct 2026.
 
 > [!WARNING]
 > **Total: 17/30.** Q1 and Q2 go to 🟡 `IN_PROGRESS` (re-answer them). Q3 is solid, with small gaps.

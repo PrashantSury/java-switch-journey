@@ -3,10 +3,10 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen) ![Java](https://img.shields.io/badge/Java-17%2B-orange) ![Mode](https://img.shields.io/badge/mode-write%20your%20own%20answers-purple) ![Sections](https://img.shields.io/badge/sections-20-blue)
 
 > [!IMPORTANT]
-> **This is the single Spring Boot revision file.** It has **concept notes and questions only, no answers.** You write the answer under every question, from memory, then paste the section back to Lumi for grading. Grades go to `interview-answers.md` / `spring-boot/interview-answers/`, and status stays in [PROGRESS.md](../PROGRESS.md) (the source of truth).
+> **This is the single Spring Boot revision file.** It has **concept notes and questions only, no answers.** You write the answer under every question, from memory, then paste the section back to Lumi for grading. Grades go to `interview-answers.md` / `spring-boot/interview-answers/`, and status stays in [PROGRESS.md](../../PROGRESS.md) (the source of truth).
 
 > [!NOTE]
-> **Legend:** ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (verified) · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` (the old Attempted and Ready for revision are `IN_PROGRESS`; see [docs/PROGRAM.md](../docs/PROGRAM.md)) · 🔥 active section · ⚠️ trap · ✍️ your answer. Status in the Map is a snapshot: [PROGRESS.md](../PROGRESS.md) has the live value.
+> **Legend:** ⬜ `NOT_STARTED` · 🟡 `IN_PROGRESS` · ✅ `COMPLETED` (verified) · 🔴 `REVISION_REQUIRED` · ⛔ `BLOCKED` (the old Attempted and Ready for revision are `IN_PROGRESS`; see [docs/PROGRAM.md](../../docs/PROGRAM.md)) · 🔥 active section · ⚠️ trap · ✍️ your answer. Status in the Map is a snapshot: [PROGRESS.md](../../PROGRESS.md) has the live value.
 >
 > **Last reviewed: 30 Oct 2026** against the official Spring Boot 4.x docs and the [Boot 4.0 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide). Stack: course-practice = Boot 4.x on Java 17+, `banking-app` = Boot 4.1.2 on Java 21. Examples use the Student API (`Student`, `StudentRequest`, `StudentDto`, `StudentController`, `StudentService`, `StudentRepository`, `StudentNotFoundException`).
 
@@ -23,7 +23,7 @@
 ## 🧭 Map: workbook sections ↔ prerequisites ↔ PROGRESS.md
 
 > [!NOTE]
-> **P§n** = section *n* of [spring-boot/prerequisites.md](prerequisites.md), the numbering [PROGRESS.md](../PROGRESS.md) tracks. **M1** = the banking-app milestone "Auth tables + login returning a JWT". Statuses below are a snapshot of PROGRESS.md (29 Oct 2026): check PROGRESS.md for the live value.
+> **P§n** = section *n* of [spring-boot/prerequisites.md](prerequisites.md), the numbering [PROGRESS.md](../../PROGRESS.md) tracks. **M1** = the banking-app milestone "Auth tables + login returning a JWT". Statuses below are a snapshot of PROGRESS.md (29 Oct 2026): check PROGRESS.md for the live value.
 
 | # | Workbook section | Prerequisite § | Status in PROGRESS.md |
 |---|---|---|---|

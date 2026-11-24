@@ -30,6 +30,6 @@ application-local.properties
 *.log
 hs_err_pid*
 
-# Postman workspace metadata (the course-practice collection under spring-boot/ stays tracked)
+# Postman workspace metadata (the course-practice collection under archive/spring-boot/ stays tracked)
 .postman/
 postman/globals/
