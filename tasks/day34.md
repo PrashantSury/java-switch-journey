@@ -297,13 +297,29 @@ Q8 `n - 1` · Q9 a position in `codes` (`i` / `pos`) · Q10 row 4: `charAt(4)` o
 
 | Track | Score /10 | Evidence |
 |---|---|---|
-| 🧩 DSA | | |
-| 🏦 Banking | | |
-| 🐞 Buggy | | |
+| 🧩 DSA | — (unscored) | No student code today: `GroupAnagramsTest` 0/22 (stub untouched since 24 Nov), no Q1-Q3 answers; last score 6 (23 Nov) |
+| 🏦 Banking | — (unscored) | No `V2__create_auth_tables.sql` (only V1 in `db/migration`); `AuthSchemaIT` 0/2, Task 1.1 stays 🟡; no Q4-Q7 answers |
+| 🐞 Buggy | — (unscored) | `Day06FirstUniqueCodeTest` 16/20, unchanged since `41abb48` (21 Nov); no trace rows or Q8-Q11; last score 5 |
 
 | Tonight (in order) | Tomorrow |
 |---|---|
-| 1. ... | ... |
+| 1. 🐞 `Day06` last loop → 20/20, push even red (15 min, the minimum; stronger hint is in item 3) | Thu 26 Nov: Group Anagrams review with the **full skeleton** (2-day limit hit); no new DSA problem until it is ✅ |
+| 2. 🧩 Group Anagrams: G1-G5 as comments, then code → 22/22 (open the skeleton after 15 min stuck) | 🏦 Task 1.1 day 3: V2 + `AuthSchemaIT` 2/2 (carry, not new) |
+| 3. 🏦 Task 1.1: the V2 decisions as comment lines (10 min), SQL only if time | 🐞 `Day06` if still red; Fri round only once it is ✅ |
+| 4. 🔁 `CarFleetRedoNov20` cold (0/37), then `AsteroidCollisionRedoNov17` (0/28), only if time; a push before 10 PM still counts | 🔁 Asteroid + CarFleet (moved to Thu 26 Nov) |
+
+<details><summary>📋 Review details (25 Nov, ~8 PM IST)</summary>
+
+- **Today's commits (IST):** one, `a06b007` (6:14 AM, Day 34 morning session by Lumi). No student code since `3a620f4` (TwoSum, 23 Nov 6:11 PM IST). No chat answers (Q1-Q11 open).
+- **Fresh clone, JDK 21.0.13:** `mvn test` ✅ **728 run, 0 failures, 0 errors** (green, no break). `mvn test -Popen` ❌ 107 run / 91 red = `GroupAnagrams` 0/22 · `AsteroidCollisionRedoNov17` 0/28 · `CarFleetRedoNov20` 0/37 · `Day06FirstUniqueCode` 16/20. Nothing passed, so `open-stubs.txt` and PROBLEMS.md are unchanged.
+- **Banking:** no Docker on the review box → `mvn -f banking-app/pom.xml verify -DskipITs` ✅ BUILD SUCCESS; **integration tests not run**. No student code to review. TASKS.md unchanged (1.1 🟡).
+- **Topics:** 🟢 Strong: Stack (13 done; 11 redos overdue). 🟡 Moderate: Arrays & Hashing basics (ContainsDuplicate, TwoSum with hints); interview explanation (5/10, 23 Nov). 🔴 Weak: frequency counting / letter index vs string position (ValidAnagram sums, Day06 last loop). ⬜ Pending: Group Anagrams, Banking Task 1.1, `Day06`, Asteroid + CarFleet redos. ⛔ Blocked: none.
+- **Weak pack:** same topic, same pack → not repeated; use [day33.md 🔴 Weak pack: frequency counting](day33.md#-evening-filled-by-the-evening-review) (its debugging snippet is tonight's item 1, its conceptual question is Q11).
+- **Redos:** Asteroid + CarFleet not attempted → Thu 26 Nov, later queue moved one day, projection rebuilt (74 redos from 26 Nov, last graduation Sat 30 Jan 2027) in [redo-schedule.md](../revision/redo-schedule.md). No conceptual mistake logged (no new work).
+- **Records:** the 24 Nov 10 PM check (~10:05 PM) found no activity, but its push expired; the morning session already re-did its redo shift and PROGRESS table, and its log row is now in the archive. Its `day33.md` 🌒 rows stay unfilled (one-commit, 4-file limit).
+- **Pattern to name:** no student pushes for 2 days and redos missed 9 days running. If ~2 h is too much this week, push only item 1 tonight; a one-line push keeps the streak.
+
+</details>
 
 ## 🌒 End of day (filled by the 10 PM check)
 
