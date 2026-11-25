@@ -71,7 +71,7 @@ Nothing landed today, so no track can be scored honestly. I won't invent a numbe
 | Registering beans (`@Component`, `@Bean`, `@Primary`, prototype) in code | 🟢 Strong (unchanged) | Ch 3 15/15 first push, 20 Nov |
 | `@SpringBootApplication` (Ch 2) | 🟢 Strong enough to move on | Ch 2 ✅ 21 Nov (19/19 + answer 7/10) |
 | `@Component` vs `@Bean` (the why) | 🟡 Moderate (unchanged) | right rule, missing "needs code to build it" |
-| Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; re-answer and pack not attempted → [day29.md pack](day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
+| Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; re-answer and pack not attempted → [day29.md pack](../archive/tasks/day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
 | Frequency counting: counts, and the second pass walks string positions | 🔴 Weak (unchanged) | missed 19 Nov (Valid Anagram) and 21 Nov (`Day06`); pack not attempted → [day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
 | HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs not attempted → [day25.md evening](../archive/tasks/day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
 | `TwoSum`, `Day06` last loop, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not started today |

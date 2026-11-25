@@ -55,7 +55,7 @@
 
 #### 1a. Chapter 2 Task 6 interview answer (in chat, ~12 min)
 
-The code is done (19/19, `b4a3717`); the concept is not graded yet, and Chapter 2 is ✅ only once it is. Full question and the three knowledge checks: [day28.md Task 6](../archive/tasks/day28.md#-1-chapter-2-task-6-interview-the-application-class-17-min--15-min-interview). Say it aloud first, then type it:
+The code is done (19/19, `b4a3717`); the concept is not graded yet, and Chapter 2 is ✅ only once it is. Full question and the three knowledge checks: [day28.md Task 6](../tasks/day28.md#-1-chapter-2-task-6-interview-the-application-class-17-min--15-min-interview). Say it aloud first, then type it:
 
 - What does `@SpringBootApplication` switch on? Name the **three** annotations inside it and what each does.
 - What happens if `AccountController` sits in a package **above** the application class?
@@ -98,7 +98,7 @@ task2a  FAIL  there is no bean named bankClock. Is the method annotated so it be
 
 **Run:** `mvn -pl chapters/03-beans-and-the-application-context test` and the tour: `mvn -q -pl chapters/03-beans-and-the-application-context compile exec:java "-Dexec.mainClass=ledgerly.BeanTour"`.
 
-**🎤 Interview question (Task 6, later this chapter, now pending in [interview-answers.md](../interview-answers.md)).** *Spring beans are singletons by default. What does that mean, is it the same as the singleton pattern, does it make a bean thread-safe, and what is the difference between `@Component` and `@Bean`?* Two senior follow-ups are listed there too (a mutable field in a singleton `TransferService`; a prototype injected into a singleton).
+**🎤 Interview question (Task 6, later this chapter, now pending in [interview-answers.md](../../interview-answers.md)).** *Spring beans are singletons by default. What does that mean, is it the same as the singleton pattern, does it make a bean thread-safe, and what is the difference between `@Component` and `@Bean`?* Two senior follow-ups are listed there too (a mutable field in a singleton `TransferService`; a prototype injected into a singleton).
 
 **Knowledge checks** (answer in chat before the stretch):
 
@@ -133,7 +133,7 @@ task2a  FAIL  there is no bean named bankClock. Is the method annotated so it be
 
 ### 🧩 2a. DSA warm-up: frequency-counting debugging exercise (~10 min)
 
-From the 🔴 weak-topic pack: [day28.md](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums), part 3. The snippet passes `anagram`/`nagaram`. In chat: one input it gets wrong, why, and the one-line fix. Then Valid Anagram knowledge checks 1-3 ([day28.md](../archive/tasks/day28.md#-3-dsa-valid-anagram-new-arrays--hashing-2-of-9-25-min)), letters only.
+From the 🔴 weak-topic pack: [day28.md](../tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums), part 3. The snippet passes `anagram`/`nagaram`. In chat: one input it gets wrong, why, and the one-line fix. Then Valid Anagram knowledge checks 1-3 ([day28.md](../tasks/day28.md#-3-dsa-valid-anagram-new-arrays--hashing-2-of-9-25-min)), letters only.
 
 - [ ] Wrong input + why + one-line fix, in chat.
 - [ ] Valid Anagram checks 1-3, in chat.
@@ -340,7 +340,7 @@ Looking up **before** storing is what stops an element pairing with itself. `[3,
 - [ ] Each starts with a **pattern line + time and space comments** (one sentence each saying where the cost comes from), then 3-5 lines of pseudocode, then code.
 - [ ] CarFleet: remember the exact comparison rule from your own mistake log entry of 3 Nov, not from the old file.
 - [ ] Push at the end of each, even if red.
-- [ ] If either misses tonight, the 10 PM check re-queues it first per [redo-schedule.md](../revision/redo-schedule.md) (missed is not failed).
+- [ ] If either misses tonight, the 10 PM check re-queues it first per [redo-schedule.md](../../revision/redo-schedule.md) (missed is not failed).
 
 ### 📦 Carried backlog (not for today unless a slot frees up)
 
@@ -354,7 +354,7 @@ Looking up **before** storing is what stops an element pairing with itself. `[3,
 | 6 | Day 02 and Day 03 re-answers | 🌱 | 🟡 IN_PROGRESS |
 | 7 | `Day00BuggyExample` symptom groups (write-up) | 🐞 | ⬜ NOT_STARTED |
 | 8 | Maven scopes: one applied question (`provided` in a WAR) at the next check | 🌱 | 🟡 IN_PROGRESS |
-| 9 | Weak-topic packs 2 and 3 (HTTP semantics; `ResponseEntity` vs `@ResponseStatus`), from [day25.md](../archive/tasks/day25.md) | 🌱 | ⬜ NOT_STARTED |
+| 9 | Weak-topic packs 2 and 3 (HTTP semantics; `ResponseEntity` vs `@ResponseStatus`), from [day25.md](../tasks/day25.md) | 🌱 | ⬜ NOT_STARTED |
 | 10 | Labs README Task 5 tip rewording: waiting for your OK (labs repo not edited) | 🌱 | ⬜ waiting |
 
 ### ✅ Morning checklist
@@ -385,7 +385,7 @@ Looking up **before** storing is what stops an element pairing with itself. `[3,
 ![Slot](https://img.shields.io/badge/slot-8%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-7%2F10-green) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![Ch3](https://img.shields.io/badge/Chapter03CheckTest-15%2F15-brightgreen)
 
 > [!NOTE]
-> Checked at ~8 PM IST on fresh clones (JDK 21, Maven 3.9.6). Today's student commits: **labs `my-solutions` `e619f82` "chapter3 completed" (1:04 PM IST)** only. This repo: no student commits (only the three 6 AM session commits, tip `a9ec0d4`), so `TwoSum` (0/19), `Day06FirstUniqueCode` (6/20), the `DailyTemperatures` comments and both redo stubs (Asteroid 0/28, CarFleet 0/37) are untouched. Chat today: a Maven question at 12:16 PM IST (running `-Dtest=Chapter03CheckTest` from the repo root; answered) and a job-listing gap check (no roadmap change, as you asked). The Chapter 2 Task 6 interview answer, the Ch 3 knowledge checks and the DSA warm-up were **not answered in chat**. One conceptual mistake logged ([mistakes/spring.md](../revision/mistakes/spring.md), singleton thread-safety). Cosmetic, not logged (labs repo left as is): `@Component("feeCalculator")` and `@Bean(name="bankClock")` repeat the default names, `@Component` is indented, `@Scope (scopeName="prototype")` has a stray space (`@Scope("prototype")` is the usual form), and `interview-answer.md` has no newline at the end.
+> Checked at ~8 PM IST on fresh clones (JDK 21, Maven 3.9.6). Today's student commits: **labs `my-solutions` `e619f82` "chapter3 completed" (1:04 PM IST)** only. This repo: no student commits (only the three 6 AM session commits, tip `a9ec0d4`), so `TwoSum` (0/19), `Day06FirstUniqueCode` (6/20), the `DailyTemperatures` comments and both redo stubs (Asteroid 0/28, CarFleet 0/37) are untouched. Chat today: a Maven question at 12:16 PM IST (running `-Dtest=Chapter03CheckTest` from the repo root; answered) and a job-listing gap check (no roadmap change, as you asked). The Chapter 2 Task 6 interview answer, the Ch 3 knowledge checks and the DSA warm-up were **not answered in chat**. One conceptual mistake logged ([mistakes/spring.md](../../revision/mistakes/spring.md), singleton thread-safety). Cosmetic, not logged (labs repo left as is): `@Component("feeCalculator")` and `@Bean(name="bankClock")` repeat the default names, `@Component` is indented, `@Scope (scopeName="prototype")` has a stray space (`@Scope("prototype")` is the usual form), and `interview-answer.md` has no newline at the end.
 
 You went further than the plan in Spring: all six Chapter 3 tasks green on the first push, with no hint. DSA and buggy had no work today, so they can't be scored, and the "explain it" half is still the gap.
 
@@ -404,9 +404,9 @@ You went further than the plan in Spring: all six Chapter 3 tasks green on the f
 |---|---|---|
 | Registering beans: `@Component`, `@Bean`, names, `@Primary`, prototype scope (code) | 🟢 Strong | all 15 checks green on the first push, no hint, minimal code |
 | `@Component` vs `@Bean` (explaining the choice) | 🟡 Moderate | right rule, missing the "needs code to build" reason |
-| **Singleton beans and shared mutable state (thread-safety)** | 🔴 **Weak** | conceptual miss in the written answer → pack below, logged in [mistakes/spring.md](../revision/mistakes/spring.md) |
+| **Singleton beans and shared mutable state (thread-safety)** | 🔴 **Weak** | conceptual miss in the written answer → pack below, logged in [mistakes/spring.md](../../revision/mistakes/spring.md) |
 | `@SpringBootApplication` (configuration + auto-configuration + component scan) | ⏳ Pending | code green since 19 Nov; the explanation (Ch 2 Task 6 answer) still not given |
-| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov pack: today's debugging exercise not attempted ([day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) |
+| Frequency counting: counts, not sums | 🔴 Weak (unchanged) | 19 Nov pack: today's debugging exercise not attempted ([day28.md pack](../tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums)) |
 | `TwoSum`, `Day06FirstUniqueCode`, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not started |
 | HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs still unattempted |
 | ⛔ Blocked | none | the 12:16 PM Maven error was the command, not a blocker; nothing is in the way |
@@ -458,7 +458,7 @@ You went further than the plan in Spring: all six Chapter 3 tasks green on the f
 | 🌱 Spring | **No Chapter 4 yet.** Re-answer the Ch 3 interview question in chat (part 2: what actually makes a singleton safe), then the two senior follow-ups (Q2 `runningTotal` drift, Q3 prototype inside a singleton) and the pack's conceptual question. Ch 2 Task 6 answer first if it's still owed. Due mistake-log redo: Ch 2 Task 5 floor vs cap (`Math.max` vs `Math.min`, day 3 was 20 Nov). | The code is strong (15/15, no hint), so more code isn't the gap; explaining thread-safety and the main class is. Two interview answers are open, and Chapter 4 (`@Qualifier`, injection) builds on both. |
 | 🧩 DSA | Weekend: no new problem. **Two Sum carry-over** (day 2 of 2, stronger hints: the level-1 questions, then the one-pass skeleton) if not green tonight; then the frequency-counting debugging exercise and Valid Anagram checks (10 min). Every complexity line gets a "because". | Two Sum is untouched, and the counting weak topic has had no practice since 19 Nov. Nothing stays open more than 2 days. |
 | 🐞 Buggy | **`Day06FirstUniqueCode` carry-over** with stronger hints (symptom groups named for you, you write the fix + one-line comment per test), plus the `DailyTemperatures` comments if still missing. | The Friday round didn't start; the written symptom groups are still the debugging habit to build. |
-| 🔁 Redos | Most overdue first, cold: **Asteroid** (due 1 Nov) and **CarFleet** (due 4 Nov) if they miss tonight; otherwise LargestRect + Day01 as queued. The 10 PM check sets the final pair. | per [redo-schedule.md](../revision/redo-schedule.md); missed is not failed, so no gap changes |
+| 🔁 Redos | Most overdue first, cold: **Asteroid** (due 1 Nov) and **CarFleet** (due 4 Nov) if they miss tonight; otherwise LargestRect + Day01 as queued. The 10 PM check sets the final pair. | per [redo-schedule.md](../../revision/redo-schedule.md); missed is not failed, so no gap changes |
 | 📆 Review | Weekly performance review at ~2 PM IST. | Sat routine |
 
 > [!TIP]
@@ -469,7 +469,7 @@ You went further than the plan in Spring: all six Chapter 3 tasks green on the f
 ![Slot](https://img.shields.io/badge/slot-10%20PM-yellow) ![Spring](https://img.shields.io/badge/Spring-7%2F10-yellowgreen) ![DSA](https://img.shields.io/badge/DSA-unscored-lightgrey) ![Buggy](https://img.shields.io/badge/Buggy-unscored-lightgrey) ![Ch3](https://img.shields.io/badge/Chapter%203-15%2F15-brightgreen) ![Pending](https://img.shields.io/badge/pending-11-blue)
 
 > [!NOTE]
-> 10 PM check: **no student commits after the 8 PM review** in either repo (labs `my-solutions` still `e619f82`, 20 Nov 1:04 PM IST; this repo has no student commits today, tip `a9ec0d4` is the morning session). No answers in chat after the review, so the evening scores stand (Spring 7, DSA and Buggy unscored) and nothing new needed a test run (`TwoSum` 0/19, `Day06FirstUniqueCode` 6/20, Asteroid 0/28, CarFleet 0/37 as at 8 PM). The evening-review notes above were not pushed at 8 PM (the approval expired), so they go in with tonight's commits. Asteroid and CarFleet were not attempted, so the redo queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)). No new conceptual mistake, no cosmetic fix needed.
+> 10 PM check: **no student commits after the 8 PM review** in either repo (labs `my-solutions` still `e619f82`, 20 Nov 1:04 PM IST; this repo has no student commits today, tip `a9ec0d4` is the morning session). No answers in chat after the review, so the evening scores stand (Spring 7, DSA and Buggy unscored) and nothing new needed a test run (`TwoSum` 0/19, `Day06FirstUniqueCode` 6/20, Asteroid 0/28, CarFleet 0/37 as at 8 PM). The evening-review notes above were not pushed at 8 PM (the approval expired), so they go in with tonight's commits. Asteroid and CarFleet were not attempted, so the redo queue moved one slot ([redo-schedule.md](../../revision/redo-schedule.md)). No new conceptual mistake, no cosmetic fix needed.
 
 | Item | Track | Outcome | Status |
 |---|---|---|---|
@@ -483,6 +483,6 @@ You went further than the plan in Spring: all six Chapter 3 tasks green on the f
 | 🔁 `CarFleetRedoNov20` cold | 🔁 | not attempted | 🟡 IN_PROGRESS (Sat 21 Nov, slot 2) |
 
 > [!IMPORTANT]
-> **First task Sat 21 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Chapter 2 Task 6 interview answer in chat** (~10 min): the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, and how to see why an auto-configuration did or didn't apply (`--debug`), plus Ch 3 knowledge checks 1-3, letters only. That closes Chapter 2. Next: the **Ch 3 interview re-answer** (what really makes a singleton safe) + senior Q2/Q3; no Chapter 4 yet. 🧩 **Two Sum** carry-over with stronger hints, then the frequency-counting exercise + Valid Anagram checks. 🐞 `Day06FirstUniqueCode` with stronger hints + `DailyTemperatures` comments. 🔁 `AsteroidCollisionRedoNov17` + `CarFleetRedoNov20`, cold. 📆 Weekly review ~2 PM IST. **Pending items: 11** ([progress archive](../archive/progress-2026-11.md#-pending)).
+> **First task Sat 21 Nov:** `git pull` both repos (this repo has Lumi's commits from tonight). Then the **Chapter 2 Task 6 interview answer in chat** (~10 min): the three annotations inside `@SpringBootApplication` and what each does, what happens when the controller is in a package above the application class, and how to see why an auto-configuration did or didn't apply (`--debug`), plus Ch 3 knowledge checks 1-3, letters only. That closes Chapter 2. Next: the **Ch 3 interview re-answer** (what really makes a singleton safe) + senior Q2/Q3; no Chapter 4 yet. 🧩 **Two Sum** carry-over with stronger hints, then the frequency-counting exercise + Valid Anagram checks. 🐞 `Day06FirstUniqueCode` with stronger hints + `DailyTemperatures` comments. 🔁 `AsteroidCollisionRedoNov17` + `CarFleetRedoNov20`, cold. 📆 Weekly review ~2 PM IST. **Pending items: 11** ([progress archive](../progress-2026-11.md#-pending)).
 
 </details>

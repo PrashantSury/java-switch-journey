@@ -6,7 +6,7 @@
 
 | # | Task | Time | Done when | Status |
 |---|---|---|---|---|
-| 1.1 | V2 auth tables + `AuthSchemaIT` | 45 | `AuthSchemaIT` 2/2, `BankingApplicationIT` still green | ⬜ |
+| 1.1 | V2 auth tables + `AuthSchemaIT` | 45 | `AuthSchemaIT` 2/2, `BankingApplicationIT` still green | 🟡 |
 | 1.2 | Entities + `UserRepository` | 40 | app boots with `ddl-auto=validate`; `UserRepositoryIT` green | ⬜ |
 | 1.3 | `PasswordEncoder` + first admin, no password in git | 30 | `PasswordHashingTest` green; admin created from an env var or a one-off SQL | ⬜ |
 | 1.4 | `JwtEncoder` + `TokenService` | 45 | `TokenServiceTest` green: `sub`, `exp - iat = 900`, `permissions` | ⬜ |

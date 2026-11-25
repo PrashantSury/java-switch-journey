@@ -107,7 +107,7 @@ Row by row, one lost update (`total` starts at 5):
 ![Tests](https://img.shields.io/badge/TwoSumTest-0%2F19-orange) ![Hint](https://img.shields.io/badge/hint-near--full%20skeleton-yellow) ![Status](https://img.shields.io/badge/new%20today-no%20(carry--over)-lightgrey)
 
 > [!IMPORTANT]
-> Not a new problem: Two Sum was assigned Fri 20 Nov and is past its 2-day limit, so per the pace rule the hint level goes all the way up. **Group Anagrams (A&H 4 of 9) is the next new problem, the day after `TwoSumTest` is 19/19.** Full spec, story and rules: [day29.md, Two Sum](day29.md) and the Javadoc in `src/main/java/com/prashant/dsa/arrayshashing/TwoSum.java`.
+> Not a new problem: Two Sum was assigned Fri 20 Nov and is past its 2-day limit, so per the pace rule the hint level goes all the way up. **Group Anagrams (A&H 4 of 9) is the next new problem, the day after `TwoSumTest` is 19/19.** Full spec, story and rules: [day29.md, Two Sum](../archive/tasks/day29.md) and the Javadoc in `src/main/java/com/prashant/dsa/arrayshashing/TwoSum.java`.
 
 **Why it matters.** Contains Duplicate remembered *whether* you'd seen a value, Valid Anagram *how many times*. Two Sum remembers *where*: value → index. "Store what you've seen so the partner is an O(1) lookup" is the core move of the hashing pattern.
 
@@ -264,7 +264,7 @@ Then answer in one line each: (1) What does `letter` stand for in this loop: a l
 | Complexity with a "because" | 🟡 Moderate (improving) | both lines had reasons on the first push; keep doing it |
 | Registering beans in code; `@SpringBootApplication` | 🟢 Strong (unchanged) | Ch 3 15/15, Ch 2 ✅ |
 | `@Component` vs `@Bean` (the why) | 🟡 Moderate (unchanged) | right rule, missing "needs code to build it" |
-| Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; re-answer still owed → [day29.md pack](day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
+| Singleton beans and shared mutable state | 🔴 Weak (unchanged) | 20 Nov conceptual miss; re-answer still owed → [day29.md pack](../archive/tasks/day29.md#-weak-topic-pack-singleton-beans-and-shared-mutable-state) |
 | Frequency counting: counts, and the second pass walks string positions | 🔴 Weak (unchanged) | Valid Anagram 19 Nov, `Day06` 21 Nov; still 16/20 → [day28.md pack](../archive/tasks/day28.md#-weak-topic-pack-frequency-counting-counts-not-sums) |
 | HTTP semantics; `ResponseEntity` vs `@ResponseStatus` | 🔴 Weak (unchanged) | 16 Nov packs not attempted → [day25.md evening](../archive/tasks/day25.md#-weak-topic-pack-2-http-semantics-carried-short) |
 | `Day06` last loop, Ch 3 re-answer, `DailyTemperatures` comments, Asteroid + CarFleet redos | ⏳ Pending | not done today |

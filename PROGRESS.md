@@ -1,10 +1,10 @@
 # 📈 Progress
 
-Last updated: Tue 24 Nov 2026 (Day 33, evening review)
+Last updated: Wed 25 Nov 2026 (Day 34, morning)
 
 ## 🧩 DSA
 
-**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 24 Nov evening: `mvn test` 728/728 green) · details per problem in [PROBLEMS.md](PROBLEMS.md)
+**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 25 Nov morning: `mvn test` 728/728 green) · details per problem in [PROBLEMS.md](PROBLEMS.md)
 
 | Problem | Pattern | Status | Tests | Solved | Notes |
 |---|---|---|---|---|---|
@@ -19,9 +19,9 @@ Last updated: Tue 24 Nov 2026 (Day 33, evening review)
 | ContainsDuplicate | Arrays & Hashing | ✅ | 17/17 | 19 Nov | hints 🔶 |
 | ValidAnagram | Arrays & Hashing | ✅ | 18/18 | 19 Nov | sums ❌ → fixed |
 | TwoSum | Arrays & Hashing | ✅ | 19/19 | 23 Nov | skeleton 🔶 |
-| GroupAnagrams | Arrays & Hashing | ⬜ | 0/22 | | assigned 24 Nov |
+| GroupAnagrams | Arrays & Hashing | ⬜ | 0/22 | | assigned 24 Nov; day 2 of 2 on 25 Nov (skeleton) |
 
-**Open now:** GroupAnagrams (Arrays & Hashing 4 of 9), 0/22 · [day33.md](tasks/day33.md)
+**Open now:** GroupAnagrams (Arrays & Hashing 4 of 9), 0/22, day 2 of 2 · [day34.md](tasks/day34.md)
 
 **Weak spots**
 - Frequency counting: counts, not sums (ValidAnagram)
@@ -40,7 +40,7 @@ Last updated: Tue 24 Nov 2026 (Day 33, evening review)
 | Day05 | decode string | ✅ 25/25 | 7 | 19 Nov |
 | Day06 | first unique code | 🔴 16/20 | 5 | last loop open |
 
-**Open now:** Day06 last loop → 20/20, then the next round
+**Open now:** Day06 last loop → 20/20 (Wed slot, [day34.md](tasks/day34.md)); Fri 27 Nov round only once it is ✅
 
 **Weak spots**
 - Loop index: alphabet index mixed with string position (Day06)
@@ -54,7 +54,7 @@ Run `mvn -f banking-app/pom.xml verify` (Docker running)
 | Module | Goal | Status | Tests | Notes |
 |---|---|---|---|---|
 | 0 Setup | Docker Postgres 5433, Flyway V1, 2 DB roles | ✅ | 1/1 | `BankingApplicationIT` |
-| 1 AuthN / AuthZ | login → JWT; 401 / 403 / 200 | ⬜ | 0/2 | 8 tasks; 1.1 assigned 24 Nov |
+| 1 AuthN / AuthZ | login → JWT; 401 / 403 / 200 | 🟡 | 0/2 | 8 tasks; 1.1 assigned 24 Nov, carried 25 Nov |
 | 2 Customer | JPA entities, validation, KYC maker-checker | ⬜ | | |
 | 3 Account | `NUMERIC` money, owner checks, `@Version`, paging | ⬜ | | |
 | 4 Beneficiary | uniqueness, soft delete, `Clock` | ⬜ | | |
@@ -65,7 +65,7 @@ Run `mvn -f banking-app/pom.xml verify` (Docker running)
 | 9 Statements / Reports | scheduled jobs, batch reads | ⬜ | | |
 | 10 Audit / Compliance | append-only audit, trigger, `REVOKE` | ⬜ | | |
 
-**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2) · [day33.md](tasks/day33.md)
+**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2), day 2 · [day34.md](tasks/day34.md)
 
 **Weak spots** (from Spring history)
 - HTTP semantics: status codes, idempotency, PUT vs PATCH
@@ -81,9 +81,10 @@ Next due (cold, max 2 a day) · full calendar: [redo-schedule.md](revision/redo-
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Tue 24 Nov | AsteroidCollision (+1) | CarFleet (+1) |
-| Wed 25 Nov | Day04LargestRectangle (+1) | Day01ArrayStack (+7) |
-| Thu 26 Nov | Day00BuggyExample (+1) | Day02RpnEvaluator (+3) |
+| Wed 25 Nov | AsteroidCollision (+1) | CarFleet (+1) |
+| Thu 26 Nov | Day04LargestRectangle (+1) | Day01ArrayStack (+7) |
+| Fri 27 Nov | Day00BuggyExample (+1) | Day02RpnEvaluator (+3) |
+| Sat 28 Nov | DailyTemperatures (+1) | ValidParentheses (+3) |
 
 ## 📈 Scores (last 7 days)
 
