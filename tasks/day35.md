@@ -289,13 +289,45 @@ Q8 `n - 1` · Q9 a position in `codes` (`pos`) · Q10 row 4: `charAt(4)` on leng
 
 | Track | Score /10 | Evidence |
 |---|---|---|
-| 🧩 DSA | | |
-| 🏦 Banking | | |
-| 🐞 Buggy | | |
+| 🧩 DSA | — (unscored) | No student code today: `GroupAnagramsTest` 0/22 (stub untouched since 24 Nov), no Q1-Q3 answers; last score 6 (23 Nov) |
+| 🏦 Banking | — (unscored) | No `V2__create_auth_tables.sql` (only V1 in `db/migration`); `AuthSchemaIT` 0/2, Task 1.1 stays 🟡; no Q4-Q7 answers |
+| 🐞 Buggy | — (unscored) | `Day06FirstUniqueCodeTest` 16/20, unchanged since `41abb48` (21 Nov); no Q8-Q11; last score 5 |
 
 | Tonight (in order) | Tomorrow |
 |---|---|
-| | |
+| 1. 🐞 `Day06` last loop → 20/20 (one loop header is given; ~5 min) → push | Fri 27 Nov, **light day, 3 items max:** 🐞 `Day06` if still red (`Buggy07` stays parked until it is ✅) |
+| 2. 🧩 Group Anagrams: 3-5 pseudocode lines, then the 3 blanks → 22/22 → push | 🧩 Group Anagrams if still open (same skeleton, no new problem) |
+| 3. 🔁 `CarFleetRedoNov20` cold, only if time (a push before 10 PM still counts) | 🔁 Asteroid + CarFleet cold (moved to Fri 27 Nov); 🏦 Task 1.1 only if the first two are green |
+
+<details><summary>📋 Review details (26 Nov, ~8 PM IST)</summary>
+
+- **Today's commits (IST):** one, `78404ba` (6:11 AM, Day 35 morning session by Lumi). No student code since `3a620f4` (TwoSum, 23 Nov 6:11 PM IST). No chat answers on record (Q1-Q11 open).
+- **Fresh clone, JDK 21.0.13:** `mvn test` ✅ **728 run, 0 failures, 0 errors** (green, no break). `mvn test -Popen` ❌ 107 run / 91 red = `GroupAnagrams` 0/22 · `AsteroidCollisionRedoNov17` 0/28 · `CarFleetRedoNov20` 0/37 · `Day06FirstUniqueCode` 16/20. Nothing passed, so `open-stubs.txt` and PROBLEMS.md are unchanged.
+- **Banking:** no Docker on the review box → `mvn -f banking-app/pom.xml verify -DskipITs` ✅ BUILD SUCCESS; **integration tests not run**. No student code to review. TASKS.md unchanged (1.1 🟡).
+- **Topics:** 🟢 Strong: Stack (13 done; redos overdue). 🟡 Moderate: Arrays & Hashing basics (ContainsDuplicate, TwoSum with hints); interview explanation (5/10, 23 Nov). 🔴 Weak: frequency counting / letter index vs string position (ValidAnagram sums, Day06 last loop). ⬜ Pending: Group Anagrams, Banking Task 1.1, `Day06`, Asteroid + CarFleet redos. ⛔ Blocked: none.
+- **Redos:** Asteroid + CarFleet not attempted → Fri 27 Nov; every later slot and the projection moved one day (74 redos from 27 Nov, last graduation Sun 31 Jan 2027) in [redo-schedule.md](../revision/redo-schedule.md). No conceptual mistake logged (no new work). No cosmetic fixes (no new code).
+- **Pattern to name:** 4 days without a student push. The plan is now lighter on purpose: tonight's item 1 alone (~5 min) is a real win and keeps the streak.
+
+</details>
+
+<details><summary>🔴 Weak pack: frequency counting (10 min total)</summary>
+
+**Note.** A count array answers "how many of each letter"; its index is a **letter** (`c - 'a'`, 0-25). The answer to "where" is a **position** in the string (`0` to `n - 1`). Read counts by letter, walk the string by position.
+
+**Conceptual (1 line):** `"abc"` and `"cab"` give the same `int[26]`. Why does that make `Arrays.toString(count)` a safe `HashMap` key while `count` itself is not?
+
+**Implementation (5 min):** `boolean sameLetters(String a, String b)` with one `int[26]`: `++` for `a`, `--` for `b`, then check every slot is 0. Pseudocode first (3 lines).
+
+**Debugging (2 min):** what breaks here, and on which input?
+
+```java
+int[] count = new int[26];
+for (char c : s.toCharArray()) count[c - 'a']++;
+for (int i = 0; i < 26; i++) if (count[s.charAt(i) - 'a'] == 1) return i;
+return -1;
+```
+
+</details>
 
 ## 🌒 End of day (filled by the 10 PM check)
 
