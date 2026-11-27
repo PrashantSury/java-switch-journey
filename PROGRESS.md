@@ -1,10 +1,10 @@
 # 📈 Progress
 
-Last updated: Thu 26 Nov 2026 (Day 35, evening review)
+Last updated: Fri 27 Nov 2026 (Day 36, morning session)
 
 ## 🧩 DSA
 
-**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 26 Nov evening: `mvn test` 728/728 green) · details per problem in [PROBLEMS.md](PROBLEMS.md)
+**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 27 Nov morning: `mvn test` 728/728 green) · details per problem in [PROBLEMS.md](PROBLEMS.md)
 
 | Problem | Pattern | Status | Tests | Solved | Notes |
 |---|---|---|---|---|---|
@@ -19,9 +19,9 @@ Last updated: Thu 26 Nov 2026 (Day 35, evening review)
 | ContainsDuplicate | Arrays & Hashing | ✅ | 17/17 | 19 Nov | hints 🔶 |
 | ValidAnagram | Arrays & Hashing | ✅ | 18/18 | 19 Nov | sums ❌ → fixed |
 | TwoSum | Arrays & Hashing | ✅ | 19/19 | 23 Nov | skeleton 🔶 |
-| GroupAnagrams | Arrays & Hashing | ⬜ | 0/22 | | assigned 24 Nov; day 3 (26 Nov) not pushed; full skeleton, 3 blanks |
+| GroupAnagrams | Arrays & Hashing | ⬜ | 0/22 | | assigned 24 Nov; day 4 (27 Nov): full skeleton + per-blank questions |
 
-**Open now:** GroupAnagrams (Arrays & Hashing 4 of 9), 0/22, day 3: full skeleton, no new problem until ✅ · [day35.md](tasks/day35.md)
+**Open now:** GroupAnagrams (Arrays & Hashing 4 of 9), 0/22, day 4: full skeleton + per-blank questions, no new problem until ✅ · [day36.md](tasks/day36.md)
 
 **Weak spots**
 - Frequency counting: counts, not sums (ValidAnagram)
@@ -40,7 +40,7 @@ Last updated: Thu 26 Nov 2026 (Day 35, evening review)
 | Day05 | decode string | ✅ 25/25 | 7 | 19 Nov |
 | Day06 | first unique code | 🔴 16/20 | 5 | last loop open |
 
-**Open now:** Day06 last loop → 20/20 (open since 21 Nov, loop header given, [day35.md](tasks/day35.md)); Fri 27 Nov `Buggy07` stays parked until it is ✅
+**Open now:** Day06 last loop → 20/20 (open since 21 Nov, loop header given, [day36.md](tasks/day36.md)); `Buggy07` parked on Fri 27 Nov, next buggy day Tue 1 Dec once Day06 is ✅
 
 **Weak spots**
 - Loop index: alphabet index mixed with string position (Day06)
@@ -54,7 +54,7 @@ Run `mvn -f banking-app/pom.xml verify` (Docker running)
 | Module | Goal | Status | Tests | Notes |
 |---|---|---|---|---|
 | 0 Setup | Docker Postgres 5433, Flyway V1, 2 DB roles | ✅ | 1/1 | `BankingApplicationIT` |
-| 1 AuthN / AuthZ | login → JWT; 401 / 403 / 200 | 🟡 | 0/2 | 8 tasks; 1.1 assigned 24 Nov, not pushed 24-26 Nov |
+| 1 AuthN / AuthZ | login → JWT; 401 / 403 / 200 | 🟡 | 0/2 | 8 tasks; 1.1 assigned 24 Nov, day 4 on 27 Nov |
 | 2 Customer | JPA entities, validation, KYC maker-checker | ⬜ | | |
 | 3 Account | `NUMERIC` money, owner checks, `@Version`, paging | ⬜ | | |
 | 4 Beneficiary | uniqueness, soft delete, `Clock` | ⬜ | | |
@@ -65,7 +65,7 @@ Run `mvn -f banking-app/pom.xml verify` (Docker running)
 | 9 Statements / Reports | scheduled jobs, batch reads | ⬜ | | |
 | 10 Audit / Compliance | append-only audit, trigger, `REVOKE` | ⬜ | | |
 
-**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2), day 3 Thu 26 Nov (decision table) · [day35.md](tasks/day35.md)
+**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2), day 4 Fri 27 Nov (decision table) · [day36.md](tasks/day36.md)
 
 **Weak spots** (from Spring history)
 - HTTP semantics: status codes, idempotency, PUT vs PATCH

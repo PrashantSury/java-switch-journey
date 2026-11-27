@@ -16,7 +16,7 @@
 | 04 | Request flow, DTOs, errors | ✅ COMPLETED via re-answers (1 Nov: 8/10 · 9/10 · 9/10, 26/30); first answers Q1 5/10 · Q2 4/10 · Q3 6/10 (15/30) | [day04-answers.md](archive/spring-boot/interview-answers/day04-answers.md) |
 | SoP | Score of Parentheses follow-up | ⬜ NOT_STARTED (answers pending) | below |
 | labs Ch1 | Maven / parent / scopes (`spring-boot-labs`) | ✅ COMPLETED (15 Nov, chat interview **7/10**; scopes grid recall 10/10 on 16 Nov) | below · [day24.md](archive/tasks/day24.md#-chapter-1-interview-grade-807-815-am-ist) |
-| labs Ch2 | Query params, request binding, `@SpringBootApplication` (`spring-boot-labs`) | ✅ COMPLETED (21 Nov): Task 6 interview (Q4) **7/10** in chat after two corrections; code 19/19. Q1-Q3 are extra practice, not graded | below · [day30.md end of day](tasks/day30.md#-end-of-day) |
+| labs Ch2 | Query params, request binding, `@SpringBootApplication` (`spring-boot-labs`) | ✅ COMPLETED (21 Nov): Task 6 interview (Q4) **7/10** in chat after two corrections; code 19/19. Q1-Q3 are extra practice, not graded | below · [day30.md end of day](archive/tasks/day30.md#-end-of-day) |
 | labs Ch3 | Singleton beans, `@Component` vs `@Bean` (`spring-boot-labs`) | 🔴 REVISION_REQUIRED: Q1 written **5/10** (20 Nov); re-answer + Q2/Q3 first on Sun 22 Nov | below |
 
 ## 📅 Day 03 — 🟡 IN_PROGRESS (17/30)

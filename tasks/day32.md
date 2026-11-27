@@ -29,7 +29,7 @@
 ## 🌅 Morning
 
 > [!NOTE]
-> State at ~6:15 AM IST (fresh clone, JDK 21, Maven): **no student commits since `41abb48`** (21 Nov 9:21 PM IST, `Day06` 16/20) in this repo, and labs `my-solutions` is still `e619f82` (20 Nov 1:04 PM IST). No chat answers on Sunday. Full re-run: **795 run / 88 red**, exactly the four open files (`TwoSum` 0/19, `Day06FirstUniqueCode` 16/20, `AsteroidCollisionRedoNov17` 0/28, `CarFleetRedoNov20` 0/37); everything else green. Nothing to grade, no redo pushed, no cosmetic fixes, no new mistakes. **Housekeeping:** Sunday's whole record ([day31.md](day31.md) morning, evening review and 10 PM check, plus the matching `PROGRESS.md` and `redo-schedule.md` updates) never reached the repo (push approval expired); it goes in with this commit. The revision-schedule mirror table in `PROGRESS.md` was also out of date (still showed the Sun 22 pair as due); it now matches [redo-schedule.md](../revision/redo-schedule.md).
+> State at ~6:15 AM IST (fresh clone, JDK 21, Maven): **no student commits since `41abb48`** (21 Nov 9:21 PM IST, `Day06` 16/20) in this repo, and labs `my-solutions` is still `e619f82` (20 Nov 1:04 PM IST). No chat answers on Sunday. Full re-run: **795 run / 88 red**, exactly the four open files (`TwoSum` 0/19, `Day06FirstUniqueCode` 16/20, `AsteroidCollisionRedoNov17` 0/28, `CarFleetRedoNov20` 0/37); everything else green. Nothing to grade, no redo pushed, no cosmetic fixes, no new mistakes. **Housekeeping:** Sunday's whole record ([day31.md](../archive/tasks/day31.md) morning, evening review and 10 PM check, plus the matching `PROGRESS.md` and `redo-schedule.md` updates) never reached the repo (push approval expired); it goes in with this commit. The revision-schedule mirror table in `PROGRESS.md` was also out of date (still showed the Sun 22 pair as due); it now matches [redo-schedule.md](../revision/redo-schedule.md).
 
 > [!TIP]
 > **Short on time? The 15-minute minimum:** item 3 (`Day06` last loop) → push, even red. One small push beats a perfect plan that doesn't start. Ask me for a hint after 15 minutes stuck on any step.
@@ -85,7 +85,7 @@ Row by row, one lost update (`total` starts at 5):
 
 **Gotchas.** A one-thread unit test never shows this; it only appears under concurrent load. And it gets worse, not better, with more instances behind a load balancer.
 
-**Your answer (in chat, questions in [day30.md §1](day30.md#-1-spring-close-chapter-2s-interview-re-answer-chapter-3-35-min-no-new-chapter)):**
+**Your answer (in chat, questions in [day30.md §1](../archive/tasks/day30.md#-1-spring-close-chapter-2s-interview-re-answer-chapter-3-35-min-no-new-chapter)):**
 - **Part 2:** using the table above, say *why* `total += fee` races (where the field lives vs where a local lives), then give **two real fixes**.
 - **Part 3:** `@Component` vs `@Bean`: the rule **and the why** (what finds each one; when you *must* use `@Bean`).
 - **Q2:** singleton `TransferService` with `private BigDecimal runningTotal` drifts under load. Why, and two fixes with trade-offs; one must survive **3 instances and a restart**.
