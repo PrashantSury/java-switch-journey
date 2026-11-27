@@ -6,11 +6,11 @@
 
 | # | Track | Item | File | Tests | Time | Status |
 |---|---|---|---|---|---|---|
-| 1 | 🧩 | Group Anagrams (carried, day 4, full skeleton + one guiding question per blank) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 0/22 | 15-55 | ⬜ |
-| 2 | 🏦 | Task 1.1 V2 auth tables + `AuthSchemaIT` (carried, day 4, decision table) | `banking-app/src/main/resources/db/migration/V2__create_auth_tables.sql` | 0/2 | 55-100 | 🟡 |
-| 3 | 🐞 | Buggy slot (Fri, **`Buggy07` parked**: `Day06` is still open): `Day06` last loop (loop header given) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 16/20 | 0-15 | 🔴 |
-| 4 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 100-125 | ⬜ |
-| 5 | 🔁 | `CarFleetRedoNov20`, cold (evening, after the review) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | 0/37 | evening | ⬜ |
+| 1 | 🧩 | Group Anagrams (carried, day 4, full skeleton + one guiding question per blank) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 20/22 | 15-55 | 🟡 |
+| 2 | 🏦 | Task 1.1 V2 auth tables + `AuthSchemaIT` (carried, day 4, decision table) | `banking-app/src/main/resources/db/migration/V2__create_auth_tables.sql` | 0/2 | 55-100 | 🟡 Q4–Q7 ✅, no code |
+| 3 | 🐞 | Buggy slot (Fri, **`Buggy07` parked**: `Day06` is still open): `Day06` last loop (loop header given) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 20/20 | 0-15 | ✅ |
+| 4 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 100-125 | ⬜ wrote comments on the original |
+| 5 | 🔁 | `CarFleetRedoNov20`, cold (evening, after the review) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | 37/37 | evening | 🔶 not cold (copy) |
 
 > Short on time: item 3 first (one loop body, ~5 min) → push; then item 1's three blanks (~15 min) → push. That alone unblocks `Buggy07` and the next new problem.
 
@@ -22,6 +22,7 @@
 | Day 35 evening review (`ec7bf21`, 26 Nov 8:05 PM IST) | all three tracks unscored, no work | — |
 | 26 Nov 10 PM check (`592ef28`, 10:00 PM IST) | no activity; Asteroid + CarFleet moved to today | — |
 | Chat answers (Q1-Q11 of day 35) | none on record → carried below with the same numbers | ⬜ |
+| Student push `663077f` (4:52 PM IST) + `6e3e459` (4:56 PM IST) + Q1–Q11 in chat | graded in the afternoon review below | ✅ Day06 20/20, 🔶 CarFleet redo, 🟡 GroupAnagrams 20/22 |
 
 <details><summary>📖 Review details</summary>
 
@@ -288,8 +289,8 @@ Q8 `n - 1` · Q9 a position in `codes` (`pos`) · Q10 row 4: `charAt(4)` on leng
 
 | # | Redo | Stub | Run | When | Done when | Status |
 |---|---|---|---|---|---|---|
-| 1 | `AsteroidCollision` (+1, due since 1 Nov) | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | `mvn test -Dtest=AsteroidCollisionRedoNov17Test` | morning, 100-125 | 28/28, cold | ⬜ |
-| 2 | `CarFleet` (+1, due since 4 Nov) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | `mvn test -Dtest=CarFleetRedoNov20Test` | evening, after the review | 37/37, cold | ⬜ |
+| 1 | `AsteroidCollision` (+1, due since 1 Nov) | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | `mvn test -Dtest=AsteroidCollisionRedoNov17Test` | morning, 100-125 | 28/28, cold | ⬜ still stub (comments went into the original) |
+| 2 | `CarFleet` (+1, due since 4 Nov) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | `mvn test -Dtest=CarFleetRedoNov20Test` | evening, after the review | 37/37, cold | 🔶 37/37, not cold (copy) |
 
 - **Redo day reminder:** both are due today. Blank stub (tests verified), no look at `dsa/stack/AsteroidCollision.java` or `CarFleet.java`; a copy counts as not passed.
 - Pattern line + time/space (each with a **because**) first, then 20-30 min on a timer. Push even if red: a red cold attempt is data, a skipped one is not.
@@ -297,10 +298,56 @@ Q8 `n - 1` · Q9 a position in `codes` (`pos`) · Q10 row 4: `charAt(4)` on leng
 
 ## 📌 Pending (after today's items)
 
-- `Buggy07` (Arrays & Hashing) · 🐞 · ⬜ parked until `Day06` is ✅
-- `DailyTemperatures` pseudocode/brute-force comments (5 min) · 🧩 · 🟡 open since 12 Nov
+- `Buggy07` (Arrays & Hashing) · 🐞 · ⬜ unblocked, planned Tue 1 Dec
+- `DailyTemperatures` pseudocode/brute-force comments (5 min) · 🧩 · ✅ `6e3e459` (27 Nov)
 - Frequency-counting pack: `firstRepeated` implementation (15 min) + `int[26]` vs `HashMap` interview (5 min) · 🧩 · ⬜ (🔴 Weak)
 - CarFleet single-pair follow-up; `ScoreOfParentheses` follow-ups; Two Sum `put` question (day 33 Q1) · 🧩 · ⬜
+
+
+**Q answers (27 Nov chat).** Q1 **B** · Q2 **C** · Q3 **B** (plus the `Arrays.toString` / `List` fix) · Q4 race + unique index + `lower()` · Q5 **B** · Q6 **B** (`DataIntegrityViolationException`; default `@Transactional` isolation does not help) · Q7 **B** (Flyway checksum) · Q8 `n - 1` · Q9 a position in `codes` (`i` / `pos`) · Q10 🟡 partial (described the fixed `letter < codes.length()` loop; the original `< 26` throws `StringIndexOutOfBoundsException` on length 4 and never reaches index 28) · Q11 the `int[26]` counts are the valid key; a sum collides on `"ac"` / `"bb"`.
+
+## 🕔 Afternoon push review (27 Nov, ~5:25 PM IST)
+
+> Graded `663077f` (4:52 PM IST) and `6e3e459` (4:56 PM IST), plus Q1–Q11 in chat. Fresh clone, JDK 21.0.13. Student logic was not changed. One cosmetic fix: missing newline at the end of `DailyTemperatures.java`. The 🌙 Evening and 🌒 End of day tables below are left for the 8 PM / 10 PM routines.
+
+### 🧪 Tests (fresh clone)
+
+| Suite | Result | Note |
+|---|---|---|
+| `Day06FirstUniqueCodeTest` | **20/20** ✅ | last loop bound `letter < codes.length()` |
+| `GroupAnagramsTest` | **20/22** 🟡 | `uppercase`, `otherCharacters`: AIOOBE (index -31), tests expect IAE |
+| `CarFleetRedoNov20Test` | **37/37** | body copied from `dsa/stack/CarFleet.java` → not a cold pass |
+| `CarFleetTest` | **37/37** | original: comments only, logic unchanged |
+| `AsteroidCollisionRedoNov17Test` | 0/28 (2 fail, 26 errors) | still the blank stub (`UnsupportedOperationException`) |
+| `AsteroidCollisionTest` | **28/28** | original: comment-only pseudocode added, logic unchanged |
+| `DailyTemperaturesTest` | **18/18** | pseudocode comments added; they match the code |
+| `mvn test` | **785/785** green | Day06 and CarFleet redo removed from `open-stubs.txt`; `-Popen` is 50 run / 30 red (GroupAnagrams 20/22, Asteroid 0/28) |
+
+### 🧩 Group Anagrams (quality)
+
+Count-key `"#c0#c1...#c25"` with a clear one-to-one argument (the `#` stops `1,11` vs `11,1`), `LinkedHashMap` + `computeIfAbsent`, null guards, `O(n·k)` / `O(n·k)` with a because. The day-4 skeleton's blank 1 (reject a char outside `'a'-'z'` with IAE) was skipped, so `'B'` does `freq[-31]++` and throws AIOOBE.
+
+### 🔁 Redos
+
+- **CarFleet:** 37/37 but **not cold**. Exception messages, validation order, `long[] {dist, spd}` stack, cross-multiply test and `// else: merges into the fleet ahead` are identical to the original (the same commit also pasted the same pseudocode onto `CarFleet.java`). Copy counts as not a cold pass: 🔶, same gap +1 (rule 3). A new blank stub is needed for the next attempt.
+- **Asteroid:** the redo file is still the stub. Pseudocode comments were added to the original (logic unchanged, 28/28 still green). Missed is not failed; still +1, still due. Write it in `AsteroidCollisionRedoNov17.java`, not the original.
+
+### 📝 Scores (rubric in [PROGRAM.md](../docs/PROGRAM.md#-evening-scoring-rubric); afternoon, for the 8 PM review to keep or adjust)
+
+| Track | Score /10 | Evidence |
+|---|---|---|
+| 🧩 DSA | **8** (🟢 Strong) | 🧠 concept **9**: Q1–Q3 exact, `#` separator and `int[]` identity key understood. 🛠️ implementation **7**: 20/22, core grouping is clean, missing IAE guard. 🧩 problem solving **7**: own `buildKey` helper, but day 4 with the full skeleton and blank 1 skipped. ⏱️ complexity **9**: `O(n·k)` defended. 🎤 interview **9**: Q1–Q3 ready out loud. DailyTemperatures comments ✅ |
+| 🏦 Banking | **—** unscored | Q4–Q7 all correct (race, `lower(username)`, default isolation, Flyway checksum), but Task 1.1 code (V2 + `AuthSchemaIT`) was not pushed, so there is no implementation evidence. Not inflated to a concept-only mark |
+| 🐞 Buggy | **8** (🟢 Strong) | 🧠 concept **7**: Q8, Q9, Q11 right; Q10 partial (answered about the fixed loop). 🛠️ implementation **9**: 20/20, one-line bound fix. 🐞 debugging **8**: localised the 26-vs-n bound, smallest change. 🎤 interview **7**: Q10 did not state the original failures (`charAt(4)` on length 4; stops at 25, misses 28) |
+
+No new conceptual mistakes logged (the Day06 index mix-up is already in [mistakes/dsa.md](../revision/mistakes/dsa.md) from 21 Nov; he fixed the code. The CarFleet copy is a process miss, not a new concept miss).
+
+### ➡️ Still to do (8 PM review can confirm tonight's order)
+
+1. Group Anagrams: reject a char outside `'a'-'z'` with `IllegalArgumentException` → 22/22.
+2. Asteroid redo in `AsteroidCollisionRedoNov17.java` (blank stub, cold, no peeking at the original).
+3. Banking Task 1.1: write `V2__create_auth_tables.sql` and `AuthSchemaIT` (Q4–Q7 already stand).
+4. `Buggy07` is unblocked, planned Tue 1 Dec.
 
 ## 🌙 Evening (filled by the evening review)
 
@@ -322,6 +369,7 @@ Q8 `n - 1` · Q9 a position in `codes` (`pos`) · Q10 row 4: `charAt(4)` on leng
 
 <details><summary>🧹 Coach notes (state, housekeeping)</summary>
 
+- Afternoon grading ~5:25 PM IST: see [the review above](#-afternoon-push-review-27-nov-525-pm-ist). Evening / 10 PM tables still empty on purpose.
 - State at ~6:15 AM IST (fresh clone, JDK 21.0.13): tip `592ef28` (Day 35 10 PM check); no student commits since `3a620f4` (23 Nov). `mvn test` 728/728 green; `-Popen` 107 run / 91 red (the four open files). `GroupAnagramsTest` 22/22 and `Day06FirstUniqueCodeTest` 20/20 re-verified against reference versions (not pushed). `open-stubs.txt` unchanged.
 - Golden rule: no new DSA problem (Group Anagrams open, day 4, past the 2-day limit → full skeleton + per-blank questions); no `Buggy07` on this Friday (`Day06` open); Task 1.1 stays 🟡 in `banking-app/TASKS.md` (day 4, stubs already exist).
 - Housekeeping: `tasks/day30.md` and `day31.md` → `archive/tasks/` (last 5 kept: day32-36); links in `day32.md`, `interview-answers.md`, `redo-schedule.md`, `archive/progress-2026-11.md` re-pointed.

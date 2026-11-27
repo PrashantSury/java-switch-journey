@@ -7,6 +7,4 @@
 # Remove the line as soon as that class passes all of its tests.
 # Lines starting with # are comments.
 **/dsa/arrayshashing/GroupAnagramsTest.java
-**/dailytests/Day06FirstUniqueCodeTest.java
-**/dailytests/redo/CarFleetRedoNov20Test.java
 **/dailytests/redo/AsteroidCollisionRedoNov17Test.java

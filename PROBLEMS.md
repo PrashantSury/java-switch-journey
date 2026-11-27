@@ -1,6 +1,6 @@
 # 🗂️ Problem tracker
 
-Every problem, then a cheat sheet per pattern. Facts as of 24 Nov 2026; next redo dates are kept by the coach in `revision/redo-schedule.md`.
+Every problem, then a cheat sheet per pattern. Facts as of 27 Nov 2026; next redo dates are kept by the coach in `revision/redo-schedule.md`.
 
 ✅ completed · 🔴 revision required · ⬜ not started · 🔶 hints / after a fix · ❌ conceptual miss · E/M/H difficulty · blank = not recorded
 
@@ -8,7 +8,7 @@ Every problem, then a cheat sheet per pattern. Facts as of 24 Nov 2026; next red
 | Pattern | Done | Open | Problems |
 |---|---|---|---|
 | Stack (incl. monotonic stack) | 13 | 0 | ValidParentheses, MinStack, Evaluate RPN, GenerateParentheses, DailyTemperatures, CarFleet, LargestRectangle, AsteroidCollision, ScoreOfParentheses, RemoveKAdjacentDuplicates, NextGreaterIndex, DecodeString, ArrayStack |
-| Arrays & Hashing | 3 | 1 + 1 buggy | ContainsDuplicate, ValidAnagram, TwoSum · open: GroupAnagrams, Day06FirstUniqueCode |
+| Arrays & Hashing | 3 | 1 | ContainsDuplicate, ValidAnagram, TwoSum · open: GroupAnagrams (20/22) |
 | Warm-up | 1 | 0 | Day00BuggyExample |
 
 ## 🧩 DSA problems (`src/main/java/com/prashant/dsa/<pattern>/`)
@@ -18,14 +18,14 @@ Every problem, then a cheat sheet per pattern. Facts as of 24 Nov 2026; next red
 | 2 | Min Stack | 155 | M | Stack: auxiliary min stack (design) | [MinStack](src/main/java/com/prashant/dsa/stack/MinStack.java) | 10 | | | RedoNov01 · 12 Nov · ✅ |
 | 3 | Score of Parentheses | 856 | M | Stack: nesting depth / running score | [ScoreOfParentheses](src/main/java/com/prashant/dsa/stack/ScoreOfParentheses.java) | 37 | 25 Oct | 🔶 written with help | RedoNov16 · 16 Nov · 🔶 not cold |
 | 4 | Remove All Adjacent Duplicates II | 1209 | M | Stack: count stack (run-length) | [RemoveKAdjacentDuplicates](src/main/java/com/prashant/dsa/stack/RemoveKAdjacentDuplicates.java) | 26 | 29 Oct | | RedoNov16 · 16 Nov · 🔶 not cold |
-| 5 | Asteroid Collision | 735 | M | Stack: collision simulation | [AsteroidCollision](src/main/java/com/prashant/dsa/stack/AsteroidCollision.java) | 28 | 31 Oct | | RedoNov17 · open (0/28) |
-| 6 | Car Fleet | 853 | M | Stack: sort by position, monotonic | [CarFleet](src/main/java/com/prashant/dsa/stack/CarFleet.java) | 37 | 3 Nov | 🔶 | RedoNov20 · open (0/37) |
+| 5 | Asteroid Collision | 735 | M | Stack: collision simulation | [AsteroidCollision](src/main/java/com/prashant/dsa/stack/AsteroidCollision.java) | 28 | 31 Oct | | RedoNov17 · still open (0/28); 27 Nov comments went into the original |
+| 6 | Car Fleet | 853 | M | Stack: sort by position, monotonic | [CarFleet](src/main/java/com/prashant/dsa/stack/CarFleet.java) | 37 | 3 Nov | 🔶 | RedoNov20 · 27 Nov · 🔶 not cold (copy) |
 | 7 | Daily Temperatures | 739 | M | Monotonic stack: next warmer day | [DailyTemperatures](src/main/java/com/prashant/dsa/stack/DailyTemperatures.java) | 18 | 12 Nov | | |
 | 8 | Generate Parentheses | 22 | M | Backtracking with two counters | [GenerateParentheses](src/main/java/com/prashant/dsa/stack/GenerateParentheses.java) | 17 | 17 Nov | | |
 | 9 | Contains Duplicate | 217 | E | Hash-set membership | [ContainsDuplicate](src/main/java/com/prashant/dsa/arrayshashing/ContainsDuplicate.java) | 17 | 19 Nov | 🔶 | |
 | 10 | Valid Anagram | 242 | E | Frequency counting (`int[26]`) | [ValidAnagram](src/main/java/com/prashant/dsa/arrayshashing/ValidAnagram.java) | 18 | 19 Nov | ❌ sums → fixed | |
 | 11 | Two Sum | 1 | E | Complement lookup (value → index map) | [TwoSum](src/main/java/com/prashant/dsa/arrayshashing/TwoSum.java) | 19 | 23 Nov | 🔶 | |
-| 12 | Group Anagrams | 49 | M | Canonical key → list (hash map grouping) | [GroupAnagrams](src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java) | 22 | ⬜ open | | |
+| 12 | Group Anagrams | 49 | M | Canonical key → list (hash map grouping) | [GroupAnagrams](src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java) | 20/22 | 🟡 27 Nov | 🔶 day-4 skeleton | missing IAE guard for non-a-z |
 
 ## 🐞 Buggy rounds (`src/main/java/com/prashant/dailytests/`)
 | Round | Problem | LC | Diff | Pattern | Tests | Fixed | Hint | Redos (file · date · result) |
@@ -36,7 +36,7 @@ Every problem, then a cheat sheet per pattern. Facts as of 24 Nov 2026; next red
 | [Day03NextGreaterIndex](src/main/java/com/prashant/dailytests/Day03NextGreaterIndex.java) | next greater element (indices) | | M | Monotonic stack | 37 | 29 Oct | | RedoNov17 · 19 Nov · ✅ |
 | [Day04LargestRectangle](src/main/java/com/prashant/dailytests/Day04LargestRectangle.java) | Largest Rectangle in Histogram | 84 | H | Monotonic stack | 36 | 5 Nov | | |
 | [Day05DecodeString](src/main/java/com/prashant/dailytests/Day05DecodeString.java) | Decode String | 394 | M | Stack of (count, text) | 25 | 19 Nov | 🔶 | |
-| [Day06FirstUniqueCode](src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java) | first index whose code appears once | | E | Frequency counting | 20 | 🔴 16/20 | | |
+| [Day06FirstUniqueCode](src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java) | first index whose code appears once | | E | Frequency counting | 20 | 27 Nov | 🔶 loop header given | |
 
 ## 📒 Cheat sheets
 
