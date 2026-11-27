@@ -24,14 +24,81 @@ package com.prashant.dailytests.redo;
  *    target 10, [3], [3] -> 1 · target 100, [0, 2, 4], [4, 2, 1] -> 1 ·
  *    target 10, [6, 8], [3, 2] -> 2 · target 10, [0, 5], [2, 1] -> 1.
  */
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
 public class CarFleetRedoNov20 {
 
-    // Pattern:
-    // Time:
-    // Space:
+    // Pattern: Sorting + Monotonic Stack (greedy)
+    //
+    // Pseudocode:
+    //   1. Validate inputs.
+    //   2. Pair each car as (position, speed).
+    //   3. Sort cars by position in DESCENDING order (car closest to target first).
+    //   4. For each car, in that order, compare its arrival time to the fleet
+    //      directly ahead of it (top of stack):
+    //        - time = (target - position) / speed
+    //        - if time > time of fleet on top -> it never catches up,
+    //          so it forms a NEW fleet -> push.
+    //        - else (time <= top) -> it catches up and merges into that fleet
+    //          (it must slow down to the fleet's speed) -> do nothing.
+    //   5. Answer = number of fleets on the stack.
+    //
+    // Time:  O(n log n)  -> dominated by sorting; the stack pass is O(n)
+    // Space: O(n)        -> the cars array plus the stack
 
     public int carFleet(int target, int[] position, int[] speed) {
-        // TODO: write from memory
-        throw new UnsupportedOperationException("TODO");
+        if (position == null || speed == null) {
+            throw new IllegalArgumentException("position and speed must not be null");
+        }
+        if (position.length != speed.length) {
+            throw new IllegalArgumentException("position and speed must have the same length");
+        }
+        if (target <= 0) {
+            throw new IllegalArgumentException("target must be positive");
+        }
+
+        int n = position.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int[][] cars = new int[n][2];
+        for (int i = 0; i < n; i++) {
+            if (position[i] < 0 || position[i] >= target) {
+                throw new IllegalArgumentException("position must satisfy 0 <= position < target");
+            }
+            if (speed[i] <= 0) {
+                throw new IllegalArgumentException("speed must be positive");
+            }
+            cars[i][0] = position[i];
+            cars[i][1] = speed[i];
+        }
+
+        // closest to target first
+        Arrays.sort(cars, (a, b) -> Integer.compare(b[0], a[0]));
+
+        for (int i = 1; i < n; i++) {
+            if (cars[i][0] == cars[i - 1][0]) {
+                throw new IllegalArgumentException("two cars share the same starting position");
+            }
+        }
+
+        // each entry: {distance to target, speed} of a fleet's leader
+        Deque<long[]> stack = new ArrayDeque<>();
+        for (int[] car : cars) {
+            long dist = (long) target - car[0];
+            long spd = car[1];
+
+            // dist/spd > topDist/topSpd  <=>  dist * topSpd > topDist * spd
+            // (cross-multiplication avoids floating point error)
+            if (stack.isEmpty()
+                    || dist * stack.peek()[1] > stack.peek()[0] * spd) {
+                stack.push(new long[]{dist, spd});
+            }
+            // else: merges into the fleet ahead
+        }
+        return stack.size();
     }
 }

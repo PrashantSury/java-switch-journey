@@ -34,6 +34,28 @@ import java.util.Deque;
  */
 public class AsteroidCollision {
 
+    /*
+     * Pattern: Monotonic-style Stack (simulation with a stack)
+     *
+     * Pseudocode:
+     *   create empty stack
+     *   for each asteroid a in input:
+     *       alive = true
+     *       if a is moving left (a < 0):
+     *           while alive AND stack not empty AND top of stack moves right (top > 0):
+     *               if top < |a|:   pop top            (top explodes, a keeps going)
+     *               else if top == |a|: pop top; alive = false   (both explode)
+     *               else:           alive = false      (a explodes)
+     *       if alive:
+     *           push a
+     *   return stack contents from bottom to top as an array
+     *
+     * Time:  O(n)  - each asteroid is pushed at most once and popped at most once,
+     *                so total push/pop work across the whole loop is at most 2n.
+     * Space: O(n)  - the stack can hold every asteroid (e.g., all moving right),
+     *                plus the O(n) result array.
+     */
+
     public int[] asteroidCollision(int[] asteroids) {
         if (asteroids == null) {
             throw new IllegalArgumentException("asteroids must not be null");

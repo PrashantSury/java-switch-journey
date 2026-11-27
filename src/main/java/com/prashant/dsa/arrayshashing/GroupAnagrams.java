@@ -1,6 +1,6 @@
 package com.prashant.dsa.arrayshashing;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Group Anagrams (LeetCode 49, NeetCode 150, Arrays &amp; Hashing, problem 4 of 9).
@@ -44,19 +44,64 @@ import java.util.List;
  */
 public class GroupAnagrams {
 
-    // Pseudocode:
-    //
-    // Brute force (and how many pair checks for n = 20 000, because ...):
-    //
-    // Key I chose, and why two different words can never get the same key:
-    //
-    // Pattern:
-    // Time:  O(?) because
-    // Space: O(?) because
+/*
+  Pseudocode:
+ 1. For each string in the array, build a key from its letter-frequency signature
+    (26 counts, each prefixed with '#', e.g. "eat" -> "#1#0#0#0#1#0...#1#0...").
+ 2. Use computeIfAbsent to fetch (or create) the list stored under that key
+    in a HashMap<String, List<String>>, and add the string to it.
+ 3. Return new ArrayList<>(map.values()); each value is one anagram group.
+
+ Brute force: compare every pair of strings with isAnagram().
+   Number of pair checks for n = 20,000:
+     n(n-1)/2 = 20,000 * 19,999 / 2 = 199,990,000  (~2 * 10^8 pair checks)
+   Each check costs O(k), so total time is O(n^2 * k).
+   Pair checking alone also doesn't build groups; you'd still need extra
+   logic (e.g. visited[] / union-find) to merge results into groups.
+
+ Key I chose, and why two different words can never get the same key:
+   The key is the count of each letter a-z, written as "#c0#c1...#c25".
+   Two strings are anagrams if and only if they have identical letter counts,
+   so anagrams always produce the same key, and non-anagrams differ in at least
+   one count, so they produce different keys. The '#' separator makes the
+   encoding unambiguous: without it, counts (1, 11) and (11, 1) would both
+   become "111" and collide. Since the counts can be recovered uniquely from
+   the key, the key-to-multiset mapping is one-to-one.
+
+ Complexity: Time O(n * k), Space O(n * k)
+   (n = number of strings, k = max string length; the key length is a
+   constant 26 counts, so building it is O(k + 26)).
+ */
 
     public List<List<String>> groupAnagrams(String[] strs) {
-        // TODO: write by hand
-        throw new UnsupportedOperationException("TODO: Group Anagrams");
+        if (strs == null) {
+            throw new IllegalArgumentException("input array can not be null");
+        }
+
+        Map<String, List<String>> map = new LinkedHashMap<>();
+
+        for (String s : strs) {
+            String key = buildKey(s);
+            map.computeIfAbsent(key, k -> new ArrayList<>()).add(s);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+
+    // Key = character frequency signature, e.g. "eat" -> "#1#0#0#0#1#0...#1..."
+    private String buildKey(String s) {
+        if (s == null) {
+            throw new IllegalArgumentException("string can not be null");
+        }
+        int[] freq = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            freq[s.charAt(i) - 'a']++;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int count : freq) {
+            sb.append('#').append(count);   // '#' avoids ambiguity like 1,11 vs 11,1
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {

@@ -50,7 +50,7 @@ public class Day06FirstUniqueCode {
             count[codes.charAt(i) - 'a']++;
         }
 
-        for (int letter = 0; letter < 26; letter++) {
+        for (int letter = 0; letter < codes.length(); letter++) {
             if (count[codes.charAt(letter) - 'a'] == 1) {
                 return letter;
             }

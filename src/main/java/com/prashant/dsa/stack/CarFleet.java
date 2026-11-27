@@ -82,9 +82,23 @@ import java.util.Deque;
  */
 public class CarFleet {
 
-    // pattern - stack
-    // time - O(nlogn)
-    // space - O(n)
+    // Pattern: Sorting + Monotonic Stack (greedy)
+    //
+    // Pseudocode:
+    //   1. Validate inputs.
+    //   2. Pair each car as (position, speed).
+    //   3. Sort cars by position in DESCENDING order (car closest to target first).
+    //   4. For each car, in that order, compare its arrival time to the fleet
+    //      directly ahead of it (top of stack):
+    //        - time = (target - position) / speed
+    //        - if time > time of fleet on top -> it never catches up,
+    //          so it forms a NEW fleet -> push.
+    //        - else (time <= top) -> it catches up and merges into that fleet
+    //          (it must slow down to the fleet's speed) -> do nothing.
+    //   5. Answer = number of fleets on the stack.
+    //
+    // Time:  O(n log n)  -> dominated by sorting; the stack pass is O(n)
+    // Space: O(n)        -> the cars array plus the stack
 
     public int carFleet(int target, int[] position, int[] speed) {
         if (position == null || speed == null) {
