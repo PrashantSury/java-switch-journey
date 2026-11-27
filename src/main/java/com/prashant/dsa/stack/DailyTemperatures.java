@@ -42,10 +42,25 @@ import java.util.Deque;
  * comes from.</p>
  */
 public class DailyTemperatures {
-
-// Pattern: Monotonic (decreasing) stack of indices, the "next greater element" pattern.
-// Time: O(n), because each index is pushed once and popped at most once, so the inner while loop does O(n) total work across the whole pass.
-// Space: O(n), because the stack can hold up to n indices (strictly decreasing input) plus the O(n) answer array.
+    // pseudocode:
+    //   1. Validate input: if temperatures is null, throw IllegalArgumentException.
+    //   2. Create answer[] of size n, initialized to 0 (0 means "no warmer day ahead").
+    //   3. Create an empty stack that will hold day indices whose warmer day
+    //      has not been found yet. Temperatures at these indices are
+    //      non-increasing from bottom to top (monotonic decreasing stack).
+    //   4. For each day i from 0 to n - 1:
+    //        a. While the stack is not empty AND temperatures[i] is strictly
+    //           greater than the temperature at the index on top of the stack:
+    //             - pop that index j
+    //             - day i is the first warmer day for j, so answer[j] = i - j
+    //        b. Push i onto the stack (its warmer day is still unknown).
+    //   5. Any indices left on the stack never found a warmer day,
+    //      so their answer stays 0.
+    //   6. Return answer.
+    //
+    // Pattern: Monotonic (decreasing) stack of indices, the "next greater element" pattern.
+    // Time: O(n), because each index is pushed once and popped at most once, so the inner while loop does O(n) total work across the whole pass.
+    // Space: O(n), because the stack can hold up to n indices (strictly decreasing input) plus the O(n) answer array.
 
     /**
      * For each day, how many days until a strictly warmer temperature (0 if none).
