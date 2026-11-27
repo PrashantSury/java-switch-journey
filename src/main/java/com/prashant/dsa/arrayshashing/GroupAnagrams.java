@@ -95,7 +95,13 @@ public class GroupAnagrams {
         }
         int[] freq = new int[26];
         for (int i = 0; i < s.length(); i++) {
-            freq[s.charAt(i) - 'a']++;
+            char c = s.charAt(i);
+
+            if (c < 'a' || c > 'z') {
+                throw new IllegalArgumentException(
+                        "only lowercase letters a-z are allowed, found '" + c + "' in \"" + s + "\"");
+            }
+            freq[c - 'a']++;
         }
         StringBuilder sb = new StringBuilder();
         for (int count : freq) {
