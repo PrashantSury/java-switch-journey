@@ -6,5 +6,4 @@
 # Add a line when a new stub (problem, buggy round or redo) is handed out.
 # Remove the line as soon as that class passes all of its tests.
 # Lines starting with # are comments.
-**/dsa/arrayshashing/GroupAnagramsTest.java
 **/dailytests/redo/AsteroidCollisionRedoNov17Test.java

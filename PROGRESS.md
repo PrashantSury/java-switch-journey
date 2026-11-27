@@ -1,10 +1,10 @@
 # 📈 Progress
 
-Last updated: Fri 27 Nov 2026 (Day 36, evening review ~8:00 PM IST)
+Last updated: Fri 27 Nov 2026 (Day 36, 10 PM check)
 
 ## 🧩 DSA
 
-**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 27 Nov evening, fresh clone: `mvn test` 785/785 green; `-Popen` 50 run / 30 red) · details per problem in [PROBLEMS.md](PROBLEMS.md)
+**Verified: 11 of 45–50** by mid-Jan 2027 (re-checked 27 Nov 10 PM, fresh clone at `a7ba6d5`: `mvn test` 807/807 green; `-Popen` 28 run / 28 red, Asteroid redo only) · details per problem in [PROBLEMS.md](PROBLEMS.md)
 
 | Problem | Pattern | Status | Tests | Solved | Notes |
 |---|---|---|---|---|---|
@@ -19,14 +19,14 @@ Last updated: Fri 27 Nov 2026 (Day 36, evening review ~8:00 PM IST)
 | ContainsDuplicate | Arrays & Hashing | ✅ | 17/17 | 19 Nov | hints 🔶 |
 | ValidAnagram | Arrays & Hashing | ✅ | 18/18 | 19 Nov | sums ❌ → fixed |
 | TwoSum | Arrays & Hashing | ✅ | 19/19 | 23 Nov | skeleton 🔶 |
-| GroupAnagrams | Arrays & Hashing | 🟡 | 20/22 | | assigned 24 Nov; day 4: count-key + `#` separator; missing IAE for non-a-z |
+| GroupAnagrams | Arrays & Hashing | ✅ | 22/22 | 27 Nov | day 4, full skeleton 🔶; a-z IAE guard `a7ba6d5` |
 
-**Open now:** GroupAnagrams 20/22, missing `'a'-'z'` guard (`uppercase`, `otherCharacters` throw AIOOBE, tests expect IAE) · [day36.md](tasks/day36.md)
+**Open now:** no open DSA problem; next new one (A&H 5 of 9) Mon 30 Nov (weekend = review + redos) · Asteroid cold redo 0/28 · [day36.md](tasks/day36.md)
 
 **Weak spots**
 - 🔴 Cold recall: redos copied (ScoreOf, RemoveK 16 Nov; CarFleet 27 Nov) or skipped (Asteroid, due since 1 Nov) · pack in [day36.md evening](tasks/day36.md#-evening-filled-by-the-evening-review)
-- Solving without the skeleton: TwoSum and GroupAnagrams both closed (or nearly) on day 4 (frequency counting now 🟡: Q1, Q11, count key right)
-- Invalid-char guard: GroupAnagrams 20/22, `char - 'a'` on `'B'` is -31
+- Solving without the skeleton: TwoSum and GroupAnagrams both closed on day 4 with the full skeleton (frequency counting 🟡: Q1, Q11, count key right)
+- Spec guards: GroupAnagrams a-z IAE added only after review (`a7ba6d5`); read every "throws" line of the spec first
 
 ## 🐞 Buggy
 
@@ -38,12 +38,12 @@ Last updated: Fri 27 Nov 2026 (Day 36, evening review ~8:00 PM IST)
 | Day03 | next greater index | ✅ 37/37 | | 29 Oct |
 | Day04 | largest rectangle | ✅ 36/36 | 7 | 5 Nov |
 | Day05 | decode string | ✅ 25/25 | 7 | 19 Nov |
-| Day06 | first unique code | ✅ 20/20 | 8 | 27 Nov; last loop bound was `26` |
+| Day06 | first unique code | ✅ 20/20 | 8 | 27 Nov; last loop bound was `26`; Q10 🔶 |
 
 **Open now:** none. `Buggy07` unblocked, planned Tue 1 Dec.
 
 **Weak spots**
-- Loop index: alphabet index mixed with string position (Day06, fixed 27 Nov) — watch it
+- Loop index vs string position (Day06 code fixed 27 Nov; Q10 still 🔶 at 9:34 PM: said AIOOBE, it is `StringIndexOutOfBoundsException`; missed the silent wrong answer on 30 chars) · logged in [mistakes/dsa.md](revision/mistakes/dsa.md)
 - No symptom-group or per-fix comments (Day05, Day06)
 
 ## 🏦 Banking app
@@ -65,7 +65,7 @@ Run `mvn -f banking-app/pom.xml verify` (Docker running)
 | 9 Statements / Reports | scheduled jobs, batch reads | ⬜ | | |
 | 10 Audit / Compliance | append-only audit, trigger, `REVOKE` | ⬜ | | |
 
-**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2); concepts answered, code not pushed · [day36.md](tasks/day36.md)
+**Open now:** Task 1.1 V2 auth tables + `AuthSchemaIT` (0/2); concepts answered, code not pushed by the 27 Nov 10 PM check → day 5 Sat 28 · [day36.md](tasks/day36.md)
 
 **Weak spots** (from Spring history)
 - HTTP semantics: status codes, idempotency, PUT vs PATCH
@@ -81,13 +81,13 @@ Next due (cold, max 2 a day) · full calendar: [redo-schedule.md](revision/redo-
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Fri 27 Nov (tonight) | AsteroidCollision (+1, due 1 Nov) 0/28, cold in the redo file | CarFleet 🔶 37/37 not cold (copy) → +1 repeat |
-| Sat 28 Nov | Day04LargestRectangle (+1) | Day01ArrayStack (+7) |
-| Sun 29 Nov | Day00BuggyExample (+1) | Day02RpnEvaluator (+3) |
-| Mon 30 Nov | DailyTemperatures (+1) | ValidParentheses (+3) |
-| Sat 5 Dec | Day06FirstUniqueCode (+1) | CarFleet (+1 repeat, new blank stub) |
+| Sat 28 Nov | AsteroidCollision (+1, ⏰ due 1 Nov) 0/28, cold in `AsteroidCollisionRedoNov17` | Day04LargestRectangle (+1) |
+| Sun 29 Nov | Day01ArrayStack (+7) | Day00BuggyExample (+1) |
+| Mon 30 Nov | Day02RpnEvaluator (+3) | DailyTemperatures (+1) |
+| Tue 1 Dec | ValidParentheses (+3) | MinStack (+3) |
+| Sun 6 Dec | CarFleet (+1 repeat, new blank stub) | GroupAnagrams (+1, new) |
 
-Asteroid missed tonight → the 10 PM check moves it to Sat 28 and shifts the queue one day.
+Asteroid missed again on 27 Nov (10 PM check) → queue shifted one slot; GroupAnagrams joined at +1.
 
 ## 📈 Scores (last 7 days)
 

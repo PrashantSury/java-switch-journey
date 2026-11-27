@@ -8,7 +8,7 @@ Every problem, then a cheat sheet per pattern. Facts as of 27 Nov 2026; next red
 | Pattern | Done | Open | Problems |
 |---|---|---|---|
 | Stack (incl. monotonic stack) | 13 | 0 | ValidParentheses, MinStack, Evaluate RPN, GenerateParentheses, DailyTemperatures, CarFleet, LargestRectangle, AsteroidCollision, ScoreOfParentheses, RemoveKAdjacentDuplicates, NextGreaterIndex, DecodeString, ArrayStack |
-| Arrays & Hashing | 3 | 1 | ContainsDuplicate, ValidAnagram, TwoSum · open: GroupAnagrams (20/22) |
+| Arrays & Hashing | 4 | 0 | ContainsDuplicate, ValidAnagram, TwoSum, GroupAnagrams |
 | Warm-up | 1 | 0 | Day00BuggyExample |
 
 ## 🧩 DSA problems (`src/main/java/com/prashant/dsa/<pattern>/`)
@@ -25,7 +25,7 @@ Every problem, then a cheat sheet per pattern. Facts as of 27 Nov 2026; next red
 | 9 | Contains Duplicate | 217 | E | Hash-set membership | [ContainsDuplicate](src/main/java/com/prashant/dsa/arrayshashing/ContainsDuplicate.java) | 17 | 19 Nov | 🔶 | |
 | 10 | Valid Anagram | 242 | E | Frequency counting (`int[26]`) | [ValidAnagram](src/main/java/com/prashant/dsa/arrayshashing/ValidAnagram.java) | 18 | 19 Nov | ❌ sums → fixed | |
 | 11 | Two Sum | 1 | E | Complement lookup (value → index map) | [TwoSum](src/main/java/com/prashant/dsa/arrayshashing/TwoSum.java) | 19 | 23 Nov | 🔶 | |
-| 12 | Group Anagrams | 49 | M | Canonical key → list (hash map grouping) | [GroupAnagrams](src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java) | 20/22 | 🟡 27 Nov | 🔶 day-4 skeleton | missing IAE guard for non-a-z |
+| 12 | Group Anagrams | 49 | M | Canonical key → list (hash map grouping) | [GroupAnagrams](src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java) | 22 | 27 Nov | 🔶 day-4 skeleton; a-z IAE guard after review (`a7ba6d5`) | |
 
 ## 🐞 Buggy rounds (`src/main/java/com/prashant/dailytests/`)
 | Round | Problem | LC | Diff | Pattern | Tests | Fixed | Hint | Redos (file · date · result) |

@@ -6,7 +6,7 @@
 
 | # | Track | Item | File | Tests | Time | Status |
 |---|---|---|---|---|---|---|
-| 1 | 🧩 | Group Anagrams (carried, day 4, full skeleton + one guiding question per blank) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 20/22 | 15-55 | 🟡 |
+| 1 | 🧩 | Group Anagrams (carried, day 4, full skeleton + one guiding question per blank) | `src/main/java/com/prashant/dsa/arrayshashing/GroupAnagrams.java` | 22/22 | 15-55 | ✅ `a7ba6d5` |
 | 2 | 🏦 | Task 1.1 V2 auth tables + `AuthSchemaIT` (carried, day 4, decision table) | `banking-app/src/main/resources/db/migration/V2__create_auth_tables.sql` | 0/2 | 55-100 | 🟡 Q4–Q7 ✅, no code |
 | 3 | 🐞 | Buggy slot (Fri, **`Buggy07` parked**: `Day06` is still open): `Day06` last loop (loop header given) | `src/main/java/com/prashant/dailytests/Day06FirstUniqueCode.java` | 20/20 | 0-15 | ✅ |
 | 4 | 🔁 | `AsteroidCollisionRedoNov17`, cold, 25-min timer | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | 0/28 | 100-125 | ⬜ wrote comments on the original |
@@ -289,7 +289,7 @@ Q8 `n - 1` · Q9 a position in `codes` (`pos`) · Q10 row 4: `charAt(4)` on leng
 
 | # | Redo | Stub | Run | When | Done when | Status |
 |---|---|---|---|---|---|---|
-| 1 | `AsteroidCollision` (+1, due since 1 Nov) | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | `mvn test -Dtest=AsteroidCollisionRedoNov17Test` | morning, 100-125 | 28/28, cold | ⬜ still stub (comments went into the original) |
+| 1 | `AsteroidCollision` (+1, due since 1 Nov) | `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` | `mvn test -Dtest=AsteroidCollisionRedoNov17Test` | morning, 100-125 | 28/28, cold | ⬜ still stub at 10 PM → Sat 28 slot 1 |
 | 2 | `CarFleet` (+1, due since 4 Nov) | `src/main/java/com/prashant/dailytests/redo/CarFleetRedoNov20.java` | `mvn test -Dtest=CarFleetRedoNov20Test` | evening, after the review | 37/37, cold | 🔶 37/37, not cold (copy) |
 
 - **Redo day reminder:** both are due today. Blank stub (tests verified), no look at `dsa/stack/AsteroidCollision.java` or `CarFleet.java`; a copy counts as not passed.
@@ -393,10 +393,15 @@ for (int a : asteroids) {
 
 | Time (IST) | What changed | Result |
 |---|---|---|
-| | | |
+| 9:33 PM | `a7ba6d5`: `GroupAnagrams` rejects a char outside `'a'-'z'` with IAE | ✅ `GroupAnagramsTest` **22/22** · removed from `open-stubs.txt` · `mvn test` **807/807** green · PROBLEMS ✅ 27 Nov · verified DSA **11** · joins redo ladder at +1 (Sun 6 Dec) |
+| 9:34 PM | Q10 re-answer in chat: "It will return arrayindexoutofbounexception" | 🔶 still partial: `charAt(4)` on a length-4 String throws `StringIndexOutOfBoundsException` (not AIOOBE); 30 chars → loop stops at 25, silently returns a wrong answer · logged in [mistakes/dsa.md](../revision/mistakes/dsa.md) |
+| 10 PM | Scores re-checked against the rubric | DSA **8** kept (implementation 7 → 8, avg 8.4) · Buggy **8** kept (Q10 still partial) · 🏦 unscored (Task 1.1 not pushed) |
+| 10 PM | `AsteroidCollisionRedoNov17` still the stub (0/28) | Missed, not failed → **Sat 28** slot 1; queue moved one slot ([redo-schedule.md](../revision/redo-schedule.md)) |
+| ➡️ Sat 28 | **First task:** 🔴 cold-recall pack, starting with the cold Asteroid redo in `src/main/java/com/prashant/dailytests/redo/AsteroidCollisionRedoNov17.java` (blank file, original closed, pattern + time/space with a because, 3-5 lines pseudocode, 25-min timer, push even if red; `mvn test -Dtest=AsteroidCollisionRedoNov17Test`) | Then 🏦 Task 1.1 (day 5) · redo 2 `Day04LargestRectangle` · Q10 in one line (which object is indexed, too far vs too short) |
 
 <details><summary>🧹 Coach notes (state, housekeeping)</summary>
 
+- 10 PM check: fresh clone `/workspace/q36-10pm` at `a7ba6d5` (only student commit after `939bae6`). `mvn test -Popen -Dtest=GroupAnagramsTest` 22/22; after removing the line, `mvn test` 807/807 green; `mvn test -Popen` 28 run / 28 red (2 fail, 26 errors, Asteroid redo). Guard reviewed: correct, logic otherwise unchanged; no cosmetic fixes needed. No banking commits; ITs not run (no Docker). GroupAnagrams redo needs a blank stub + `GroupAnagramsContract` before Sun 6 Dec; CarFleet needs `CarFleetRedoNov28`.
 - Afternoon grading ~5:25 PM IST: see [the review above](#-afternoon-push-review-27-nov-525-pm-ist).
 - Evening review ~8 PM IST: tip `84db3b6`, no student commits after the afternoon grading; no new chat answers on record (the parent-chat transcript tool was not available to the review). Fresh clone, JDK 21.0.13: `mvn test` 785/785 green; `-Popen` 50 run / 30 red (`GroupAnagrams` 20/22, `AsteroidCollisionRedoNov17` 0/28); `Day06` 20/20, `CarFleetRedoNov20` 37/37, `CarFleet` 37/37, `AsteroidCollision` 28/28, `DailyTemperatures` 18/18; banking `verify -DskipITs` ✅, ITs not run (no Docker). Scores kept (rubric average). No cosmetic fixes, no new mistakes logged. Redos: Asteroid still due tonight; Day06 (+1) and CarFleet (+1 repeat, new stub `CarFleetRedoNov28` needed) placed on Sat 5 Dec.
 - State at ~6:15 AM IST (fresh clone, JDK 21.0.13): tip `592ef28` (Day 35 10 PM check); no student commits since `3a620f4` (23 Nov). `mvn test` 728/728 green; `-Popen` 107 run / 91 red (the four open files). `GroupAnagramsTest` 22/22 and `Day06FirstUniqueCodeTest` 20/20 re-verified against reference versions (not pushed). `open-stubs.txt` unchanged.
