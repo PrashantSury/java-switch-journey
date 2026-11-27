@@ -353,13 +353,41 @@ No new conceptual mistakes logged (the Day06 index mix-up is already in [mistake
 
 | Track | Score /10 | Evidence |
 |---|---|---|
-| 🧩 DSA | | |
-| 🏦 Banking | | |
-| 🐞 Buggy | | |
+| 🧩 DSA | **8** 🟢 (kept from the afternoon) | concept 9 · impl 7 · problem solving 7 · complexity 9 · interview 9 → 8.2. `GroupAnagramsTest` **20/22** re-run: count key + `#` separator right, IAE guard for non-`a-z` still missing (day 4, full skeleton). Redos are the gap: CarFleet copied, Asteroid 0/28 |
+| 🏦 Banking | **—** unscored | Q4–Q7 correct, but no V2 / `AuthSchemaIT` code pushed; `verify -DskipITs` ✅, **integration tests not run** (no Docker on the review box) |
+| 🐞 Buggy | **8** 🟢 (kept) | concept 7 · impl 9 · debugging 8 · interview 7 → 7.75. `Day06FirstUniqueCodeTest` **20/20**; loop header was given; Q10 still partial |
 
-| Tonight (in order) | Tomorrow |
+| Topic | Class |
 |---|---|
-| 1. ... | ... |
+| Anagram key design (`int[26]` + `#`, array identity) · Flyway / unique index / race (Q4–Q7) | 🟢 Strong |
+| Frequency counting (up from 🔴) · spec guards (non-`a-z` IAE) · loop index vs position (Q10) | 🟡 Moderate |
+| 🔁 Cold recall: redos copied or skipped (ScoreOf, RemoveK, CarFleet copied; Asteroid due since 1 Nov) | 🔴 Weak (same miss 3+ times) |
+| 🏦 Task 1.1 code (V2 + `AuthSchemaIT`) | ⬜ Pending · nothing Blocked |
+
+| Tonight (in order, ~35 min) | Tomorrow (Sat 28) |
+|---|---|
+| 1. `GroupAnagrams`: reject a char outside `'a'-'z'` with IAE → 22/22, push (~5 min) · 2. `AsteroidCollisionRedoNov17` cold, 25-min timer: pattern + time/space lines with a **because**, 3-5 lines of pseudocode, then Java; push even if red · 3. Q10 again in one line: what does the **original** `letter < 26` loop do on a length-4 string, and on a code at position 28? · (Task 1.1 only if you still have energy; otherwise it is tomorrow's first item) | 🏦 Task 1.1 V2 + `AuthSchemaIT` (day 5) · 🔴 cold-recall pack (below, ~15 min) · redos `Day04LargestRectangle` + `Day01ArrayStack` (Asteroid takes slot 1 if missed tonight) |
+
+<details><summary>🔴 Weak-topic pack: cold recall (for tomorrow morning)</summary>
+
+- **Note:** a redo checks memory of the *pattern*, not the file. Copying the original gives green tests and zero signal, so it repeats the gap. Cold = blank file, original closed, pattern line first. A red cold attempt is useful data; a copied green one isn't.
+- **Conceptual (5 min):** Asteroid Collision: name the 3 cases when a left-mover meets the stack top (top smaller / equal / bigger), and say what happens to the stack and to the incoming asteroid in each.
+- **Implementation (15-25 min):** tonight's `AsteroidCollisionRedoNov17` (if it is still red, finish it cold; no new file).
+- **Debugging (10 min):** find the bug, write the failing input and the smallest fix:
+
+```java
+for (int a : asteroids) {
+    boolean alive = true;
+    while (alive && !stack.isEmpty() && stack.peek() > 0 && a < 0) {
+        if (stack.peek() < -a) stack.pop();
+        else if (stack.peek() == -a) stack.pop();
+        else alive = false;
+    }
+    if (alive) stack.push(a);
+}
+```
+
+</details>
 
 ## 🌒 End of day (filled by the 10 PM check)
 
@@ -369,7 +397,8 @@ No new conceptual mistakes logged (the Day06 index mix-up is already in [mistake
 
 <details><summary>🧹 Coach notes (state, housekeeping)</summary>
 
-- Afternoon grading ~5:25 PM IST: see [the review above](#-afternoon-push-review-27-nov-525-pm-ist). Evening / 10 PM tables still empty on purpose.
+- Afternoon grading ~5:25 PM IST: see [the review above](#-afternoon-push-review-27-nov-525-pm-ist).
+- Evening review ~8 PM IST: tip `84db3b6`, no student commits after the afternoon grading; no new chat answers on record (the parent-chat transcript tool was not available to the review). Fresh clone, JDK 21.0.13: `mvn test` 785/785 green; `-Popen` 50 run / 30 red (`GroupAnagrams` 20/22, `AsteroidCollisionRedoNov17` 0/28); `Day06` 20/20, `CarFleetRedoNov20` 37/37, `CarFleet` 37/37, `AsteroidCollision` 28/28, `DailyTemperatures` 18/18; banking `verify -DskipITs` ✅, ITs not run (no Docker). Scores kept (rubric average). No cosmetic fixes, no new mistakes logged. Redos: Asteroid still due tonight; Day06 (+1) and CarFleet (+1 repeat, new stub `CarFleetRedoNov28` needed) placed on Sat 5 Dec.
 - State at ~6:15 AM IST (fresh clone, JDK 21.0.13): tip `592ef28` (Day 35 10 PM check); no student commits since `3a620f4` (23 Nov). `mvn test` 728/728 green; `-Popen` 107 run / 91 red (the four open files). `GroupAnagramsTest` 22/22 and `Day06FirstUniqueCodeTest` 20/20 re-verified against reference versions (not pushed). `open-stubs.txt` unchanged.
 - Golden rule: no new DSA problem (Group Anagrams open, day 4, past the 2-day limit → full skeleton + per-blank questions); no `Buggy07` on this Friday (`Day06` open); Task 1.1 stays 🟡 in `banking-app/TASKS.md` (day 4, stubs already exist).
 - Housekeeping: `tasks/day30.md` and `day31.md` → `archive/tasks/` (last 5 kept: day32-36); links in `day32.md`, `interview-answers.md`, `redo-schedule.md`, `archive/progress-2026-11.md` re-pointed.

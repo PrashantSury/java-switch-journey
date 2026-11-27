@@ -1,10 +1,10 @@
 # 📈 Progress
 
-Last updated: Fri 27 Nov 2026 (Day 36, afternoon push review ~5:25 PM IST)
+Last updated: Fri 27 Nov 2026 (Day 36, evening review ~8:00 PM IST)
 
 ## 🧩 DSA
 
-**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 27 Nov afternoon: `mvn test` 785/785 green after open-stubs update) · details per problem in [PROBLEMS.md](PROBLEMS.md)
+**Verified: 10 of 45–50** by mid-Jan 2027 (re-checked 27 Nov evening, fresh clone: `mvn test` 785/785 green; `-Popen` 50 run / 30 red) · details per problem in [PROBLEMS.md](PROBLEMS.md)
 
 | Problem | Pattern | Status | Tests | Solved | Notes |
 |---|---|---|---|---|---|
@@ -24,8 +24,8 @@ Last updated: Fri 27 Nov 2026 (Day 36, afternoon push review ~5:25 PM IST)
 **Open now:** GroupAnagrams 20/22, missing `'a'-'z'` guard (`uppercase`, `otherCharacters` throw AIOOBE, tests expect IAE) · [day36.md](tasks/day36.md)
 
 **Weak spots**
-- Frequency counting: counts, not sums (ValidAnagram); Q11 today was solid
-- Solving without the skeleton: TwoSum and GroupAnagrams both closed (or nearly) on day 4
+- 🔴 Cold recall: redos copied (ScoreOf, RemoveK 16 Nov; CarFleet 27 Nov) or skipped (Asteroid, due since 1 Nov) · pack in [day36.md evening](tasks/day36.md#-evening-filled-by-the-evening-review)
+- Solving without the skeleton: TwoSum and GroupAnagrams both closed (or nearly) on day 4 (frequency counting now 🟡: Q1, Q11, count key right)
 - Invalid-char guard: GroupAnagrams 20/22, `char - 'a'` on `'B'` is -31
 
 ## 🐞 Buggy
@@ -81,12 +81,13 @@ Next due (cold, max 2 a day) · full calendar: [redo-schedule.md](revision/redo-
 
 | Date | Redo 1 | Redo 2 |
 |---|---|---|
-| Fri 27 Nov | AsteroidCollision (+1) still 0/28 (comments went into the original) | CarFleetRedoNov20 🔶 37/37 not cold (copy) |
+| Fri 27 Nov (tonight) | AsteroidCollision (+1, due 1 Nov) 0/28, cold in the redo file | CarFleet 🔶 37/37 not cold (copy) → +1 repeat |
 | Sat 28 Nov | Day04LargestRectangle (+1) | Day01ArrayStack (+7) |
 | Sun 29 Nov | Day00BuggyExample (+1) | Day02RpnEvaluator (+3) |
 | Mon 30 Nov | DailyTemperatures (+1) | ValidParentheses (+3) |
+| Sat 5 Dec | Day06FirstUniqueCode (+1) | CarFleet (+1 repeat, new blank stub) |
 
-Evening review places Asteroid (still overdue) and Day06's first +1 slot (joins the ladder today). New blank `CarFleet` stub needed for the +1 repeat.
+Asteroid missed tonight → the 10 PM check moves it to Sat 28 and shifts the queue one day.
 
 ## 📈 Scores (last 7 days)
 
