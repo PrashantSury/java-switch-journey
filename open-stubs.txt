@@ -7,3 +7,4 @@
 # Remove the line as soon as that class passes all of its tests.
 # Lines starting with # are comments.
 **/dailytests/redo/AsteroidCollisionRedoNov17Test.java
+**/dailytests/redo/Day04LargestRectangleRedoNov28Test.java
